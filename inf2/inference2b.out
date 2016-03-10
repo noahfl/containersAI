@@ -1,0 +1,154 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Time(skc5)*.
+2[0:Inp] ||  -> Object(skc4)*.
+3[0:Inp] ||  -> Object(skc3)*.
+4[0:Inp] || OSPlace(U,Singleton(V),W)* -> equal(Place(U,V),W).
+5[0:Inp] || equal(Place(U,V),W) -> OSPlace(U,Singleton(V),W)*.
+6[0:Inp] ||  -> CContained(skc5,skc4,Singleton(skc3)) Contained(Place(skc5,skc4),Place(skc5,skc3))*.
+7[0:Inp] || CContained(skc5,skc4,Singleton(skc3)) Contained(Place(skc5,skc4),Place(skc5,skc3))* -> .
+8[0:Inp] || OSPlace(U,Singleton(V),W)* Time(U) Object(V) -> equal(W,Place(U,V)).
+9[0:Inp] || equal(U,Place(V,W)) Time(V) Object(W) -> OSPlace(V,Singleton(W),U)*.
+10[0:Inp] || CContained(U,V,W) Time(U) Object(V) ObjectSet(W) -> OSPlace(U,W,skf3(V,U,W))*.
+11[0:Inp] || CContained(U,V,W) Time(U) Object(V) ObjectSet(W) -> ClosedContainer(U,W,skf2(V,U,W))*.
+12[0:Inp] || CContained(U,V,W)* Time(U) Object(V) ObjectSet(W) -> Contained(Place(U,V),skf3(V,U,X))*.
+13[0:Inp] || CContained(U,V,W)* Time(U) Object(V) ObjectSet(W) -> P(Place(U,V),skf2(V,U,X))*.
+14[0:Inp] || OSPlace(U,V,W)* Contained(Place(U,X),W)* Time(U) Object(X) ObjectSet(V) -> CContained(U,X,V)*.
+15[0:Inp] || ClosedContainer(U,V,W)* P(Place(U,X),W)* Time(U) Object(X) ObjectSet(V) -> CContained(U,X,V)*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: Object, Time.
+ Axiom clauses: 10 Conjecture clauses: 5
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf3 > skf2 > skf1 > skf0 > Slice > Place > RUnion > HPlace > Singleton > ClosedContainer > OSPlace > P > Contained > CContained > Time > RigidObject > Ordered > Region > History > Object > ObjectSet > Lt > Leq > Leq3 > Cavity > RigidHistory > O > EC > DR > Outside > skc13 > skc12 > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Tb2 > Ta2 > Ob2b > Ob2a > Os2
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+3[0:Inp] ||  -> Object(skc3)*.
+2[0:Inp] ||  -> Object(skc4)*.
+1[0:Inp] ||  -> Time(skc5)*.
+5[0:Inp] || equal(Place(U,V),W) -> OSPlace(U,Singleton(V),W)*.
+4[0:Inp] || OSPlace(U,Singleton(V),W)* -> equal(Place(U,V),W).
+6[0:Inp] ||  -> Contained(Place(skc5,skc4),Place(skc5,skc3))* CContained(skc5,skc4,Singleton(skc3)).
+7[0:Inp] || Contained(Place(skc5,skc4),Place(skc5,skc3))* CContained(skc5,skc4,Singleton(skc3)) -> .
+32[0:Res:1.0,11.0] ObjectSet(U) Object(V) || CContained(skc5,V,U) -> ClosedContainer(skc5,U,skf2(V,skc5,U))*.
+33[0:Res:1.0,10.0] ObjectSet(U) Object(V) || CContained(skc5,V,U) -> OSPlace(skc5,U,skf3(V,skc5,U))*.
+20[0:Res:3.0,11.1] ObjectSet(U) Time(V) || CContained(V,skc3,U) -> ClosedContainer(V,U,skf2(skc3,V,U))*.
+26[0:Res:2.0,11.1] ObjectSet(U) Time(V) || CContained(V,skc4,U) -> ClosedContainer(V,U,skf2(skc4,V,U))*.
+21[0:Res:3.0,10.1] ObjectSet(U) Time(V) || CContained(V,skc3,U) -> OSPlace(V,U,skf3(skc3,V,U))*.
+27[0:Res:2.0,10.1] ObjectSet(U) Time(V) || CContained(V,skc4,U) -> OSPlace(V,U,skf3(skc4,V,U))*.
+30[0:Res:1.0,13.0] ObjectSet(U) Object(V) || CContained(skc5,V,U)* -> P(Place(skc5,V),skf2(V,skc5,W))*.
+31[0:Res:1.0,12.0] ObjectSet(U) Object(V) || CContained(skc5,V,U)* -> Contained(Place(skc5,V),skf3(V,skc5,W))*.
+18[0:Res:3.0,13.1] ObjectSet(U) Time(V) || CContained(V,skc3,U)* -> P(Place(V,skc3),skf2(skc3,V,W))*.
+24[0:Res:2.0,13.1] ObjectSet(U) Time(V) || CContained(V,skc4,U)* -> P(Place(V,skc4),skf2(skc4,V,W))*.
+19[0:Res:3.0,12.1] ObjectSet(U) Time(V) || CContained(V,skc3,U)* -> Contained(Place(V,skc3),skf3(skc3,V,W))*.
+25[0:Res:2.0,12.1] ObjectSet(U) Time(V) || CContained(V,skc4,U)* -> Contained(Place(V,skc4),skf3(skc4,V,W))*.
+11[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> ClosedContainer(W,U,skf2(V,W,U))*.
+10[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> OSPlace(W,U,skf3(V,W,U))*.
+28[0:Res:1.0,15.0] ObjectSet(U) Object(V) || P(Place(skc5,V),W)* ClosedContainer(skc5,U,W)* -> CContained(skc5,V,U)*.
+29[0:Res:1.0,14.0] ObjectSet(U) Object(V) || Contained(Place(skc5,V),W)* OSPlace(skc5,U,W)* -> CContained(skc5,V,U)*.
+22[0:Res:2.0,15.1] ObjectSet(U) Time(V) || P(Place(V,skc4),W)* ClosedContainer(V,U,W)* -> CContained(V,skc4,U).
+16[0:Res:3.0,15.1] ObjectSet(U) Time(V) || P(Place(V,skc3),W)* ClosedContainer(V,U,W)* -> CContained(V,skc3,U).
+23[0:Res:2.0,14.1] ObjectSet(U) Time(V) || Contained(Place(V,skc4),W)* OSPlace(V,U,W)* -> CContained(V,skc4,U).
+17[0:Res:3.0,14.1] ObjectSet(U) Time(V) || Contained(Place(V,skc3),W)* OSPlace(V,U,W)* -> CContained(V,skc3,U).
+13[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)* -> P(Place(W,V),skf2(V,W,X))*.
+12[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)* -> Contained(Place(W,V),skf3(V,W,X))*.
+15[0:Inp] ObjectSet(U) Object(V) Time(W) || P(Place(W,V),X)* ClosedContainer(W,U,X)* -> CContained(W,V,U)*.
+14[0:Inp] ObjectSet(U) Object(V) Time(W) || Contained(Place(W,V),X)* OSPlace(W,U,X)* -> CContained(W,V,U)*.
+	Given clause: 3[0:Inp] ||  -> Object(skc3)*.
+	Given clause: 2[0:Inp] ||  -> Object(skc4)*.
+	Given clause: 1[0:Inp] ||  -> Time(skc5)*.
+	Given clause: 5[0:Inp] || equal(Place(U,V),W) -> OSPlace(U,Singleton(V),W)*.
+	Given clause: 4[0:Inp] || OSPlace(U,Singleton(V),W)* -> equal(Place(U,V),W).
+	Given clause: 6[0:Inp] ||  -> Contained(Place(skc5,skc4),Place(skc5,skc3))* CContained(skc5,skc4,Singleton(skc3)).
+	Given clause: 35[1:Spt:6.0] ||  -> Contained(Place(skc5,skc4),Place(skc5,skc3))*.
+	Given clause: 36[1:MRR:7.0,35.0] || CContained(skc5,skc4,Singleton(skc3))* -> .
+	Given clause: 32[0:Res:1.0,11.0] ObjectSet(U) Object(V) || CContained(skc5,V,U) -> ClosedContainer(skc5,U,skf2(V,skc5,U))*.
+	Given clause: 33[0:Res:1.0,10.0] ObjectSet(U) Object(V) || CContained(skc5,V,U) -> OSPlace(skc5,U,skf3(V,skc5,U))*.
+	Given clause: 11[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> ClosedContainer(W,U,skf2(V,W,U))*.
+	Given clause: 20[0:Res:3.0,11.1] ObjectSet(U) Time(V) || CContained(V,skc3,U) -> ClosedContainer(V,U,skf2(skc3,V,U))*.
+	Given clause: 26[0:Res:2.0,11.1] ObjectSet(U) Time(V) || CContained(V,skc4,U) -> ClosedContainer(V,U,skf2(skc4,V,U))*.
+	Given clause: 21[0:Res:3.0,10.1] ObjectSet(U) Time(V) || CContained(V,skc3,U) -> OSPlace(V,U,skf3(skc3,V,U))*.
+	Given clause: 27[0:Res:2.0,10.1] ObjectSet(U) Time(V) || CContained(V,skc4,U) -> OSPlace(V,U,skf3(skc4,V,U))*.
+	Given clause: 10[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> OSPlace(W,U,skf3(V,W,U))*.
+	Given clause: 30[0:Res:1.0,13.0] ObjectSet(U) Object(V) || CContained(skc5,V,U)*+ -> P(Place(skc5,V),skf2(V,skc5,W))*.
+	Given clause: 31[0:Res:1.0,12.0] ObjectSet(U) Object(V) || CContained(skc5,V,U)*+ -> Contained(Place(skc5,V),skf3(V,skc5,W))*.
+	Given clause: 18[0:Res:3.0,13.1] ObjectSet(U) Time(V) || CContained(V,skc3,U)*+ -> P(Place(V,skc3),skf2(skc3,V,W))*.
+	Given clause: 24[0:Res:2.0,13.1] ObjectSet(U) Time(V) || CContained(V,skc4,U)*+ -> P(Place(V,skc4),skf2(skc4,V,W))*.
+	Given clause: 13[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> P(Place(W,V),skf2(V,W,X))*.
+	Given clause: 19[0:Res:3.0,12.1] ObjectSet(U) Time(V) || CContained(V,skc3,U)*+ -> Contained(Place(V,skc3),skf3(skc3,V,W))*.
+	Given clause: 25[0:Res:2.0,12.1] ObjectSet(U) Time(V) || CContained(V,skc4,U)*+ -> Contained(Place(V,skc4),skf3(skc4,V,W))*.
+	Given clause: 28[0:Res:1.0,15.0] ObjectSet(U) Object(V) || P(Place(skc5,V),W)*+ ClosedContainer(skc5,U,W)* -> CContained(skc5,V,U)*.
+	Given clause: 29[0:Res:1.0,14.0] ObjectSet(U) Object(V) || Contained(Place(skc5,V),W)*+ OSPlace(skc5,U,W)* -> CContained(skc5,V,U)*.
+	Given clause: 12[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> Contained(Place(W,V),skf3(V,W,X))*.
+	Given clause: 42[1:SSi:41.1,2.0] ObjectSet(U) || OSPlace(skc5,U,Place(skc5,skc3))* -> CContained(skc5,skc4,U).
+	Given clause: 43[1:Res:5.1,42.1] ObjectSet(Singleton(U)) || equal(Place(skc5,U),Place(skc5,skc3)) -> CContained(skc5,skc4,Singleton(U))*.
+	Given clause: 22[0:Res:2.0,15.1] ObjectSet(U) Time(V) || P(Place(V,skc4),W)*+ ClosedContainer(V,U,W)* -> CContained(V,skc4,U).
+	Given clause: 16[0:Res:3.0,15.1] ObjectSet(U) Time(V) || P(Place(V,skc3),W)*+ ClosedContainer(V,U,W)* -> CContained(V,skc3,U).
+	Given clause: 15[0:Inp] ObjectSet(U) Object(V) Time(W) || P(Place(W,V),X)*+ ClosedContainer(W,U,X)* -> CContained(W,V,U)*.
+	Given clause: 23[0:Res:2.0,14.1] ObjectSet(U) Time(V) || Contained(Place(V,skc4),W)*+ OSPlace(V,U,W)* -> CContained(V,skc4,U).
+	Given clause: 17[0:Res:3.0,14.1] ObjectSet(U) Time(V) || Contained(Place(V,skc3),W)*+ OSPlace(V,U,W)* -> CContained(V,skc3,U).
+	Given clause: 37[0:Res:33.3,4.0] ObjectSet(Singleton(U)) Object(V) || CContained(skc5,V,Singleton(U)) -> equal(skf3(V,skc5,Singleton(U)),Place(skc5,U))**.
+	Given clause: 38[0:Res:21.3,4.0] ObjectSet(Singleton(U)) Time(V) || CContained(V,skc3,Singleton(U)) -> equal(skf3(skc3,V,Singleton(U)),Place(V,U))**.
+	Given clause: 14[0:Inp] ObjectSet(U) Object(V) Time(W) || Contained(Place(W,V),X)*+ OSPlace(W,U,X)* -> CContained(W,V,U)*.
+	Given clause: 39[0:Res:27.3,4.0] ObjectSet(Singleton(U)) Time(V) || CContained(V,skc4,Singleton(U)) -> equal(skf3(skc4,V,Singleton(U)),Place(V,U))**.
+	Given clause: 40[0:Res:10.4,4.0] ObjectSet(Singleton(U)) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> equal(skf3(V,W,Singleton(U)),Place(W,U))**.
+SPASS V 3.5 
+SPASS beiseite: Completion found.
+Problem: inference2b.dfg 
+SPASS derived 29 clauses, backtracked 0 clauses, performed 1 splits and kept 39 clauses.
+SPASS allocated 52306 KBytes.
+SPASS spent	0:00:00.07 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+ The saturated set of worked-off clauses is :
+40[0:Res:10.4,4.0] ObjectSet(Singleton(U)) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> equal(skf3(V,W,Singleton(U)),Place(W,U))**.
+39[0:Res:27.3,4.0] ObjectSet(Singleton(U)) Time(V) || CContained(V,skc4,Singleton(U)) -> equal(skf3(skc4,V,Singleton(U)),Place(V,U))**.
+14[0:Inp] ObjectSet(U) Object(V) Time(W) || Contained(Place(W,V),X)*+ OSPlace(W,U,X)* -> CContained(W,V,U)*.
+38[0:Res:21.3,4.0] ObjectSet(Singleton(U)) Time(V) || CContained(V,skc3,Singleton(U)) -> equal(skf3(skc3,V,Singleton(U)),Place(V,U))**.
+37[0:Res:33.3,4.0] ObjectSet(Singleton(U)) Object(V) || CContained(skc5,V,Singleton(U)) -> equal(skf3(V,skc5,Singleton(U)),Place(skc5,U))**.
+17[0:Res:3.0,14.1] ObjectSet(U) Time(V) || Contained(Place(V,skc3),W)*+ OSPlace(V,U,W)* -> CContained(V,skc3,U).
+23[0:Res:2.0,14.1] ObjectSet(U) Time(V) || Contained(Place(V,skc4),W)*+ OSPlace(V,U,W)* -> CContained(V,skc4,U).
+15[0:Inp] ObjectSet(U) Object(V) Time(W) || P(Place(W,V),X)*+ ClosedContainer(W,U,X)* -> CContained(W,V,U)*.
+16[0:Res:3.0,15.1] ObjectSet(U) Time(V) || P(Place(V,skc3),W)*+ ClosedContainer(V,U,W)* -> CContained(V,skc3,U).
+22[0:Res:2.0,15.1] ObjectSet(U) Time(V) || P(Place(V,skc4),W)*+ ClosedContainer(V,U,W)* -> CContained(V,skc4,U).
+43[1:Res:5.1,42.1] ObjectSet(Singleton(U)) || equal(Place(skc5,U),Place(skc5,skc3)) -> CContained(skc5,skc4,Singleton(U))*.
+42[1:SSi:41.1,2.0] ObjectSet(U) || OSPlace(skc5,U,Place(skc5,skc3))* -> CContained(skc5,skc4,U).
+12[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> Contained(Place(W,V),skf3(V,W,X))*.
+29[0:Res:1.0,14.0] ObjectSet(U) Object(V) || Contained(Place(skc5,V),W)*+ OSPlace(skc5,U,W)* -> CContained(skc5,V,U)*.
+28[0:Res:1.0,15.0] ObjectSet(U) Object(V) || P(Place(skc5,V),W)*+ ClosedContainer(skc5,U,W)* -> CContained(skc5,V,U)*.
+25[0:Res:2.0,12.1] ObjectSet(U) Time(V) || CContained(V,skc4,U)*+ -> Contained(Place(V,skc4),skf3(skc4,V,W))*.
+19[0:Res:3.0,12.1] ObjectSet(U) Time(V) || CContained(V,skc3,U)*+ -> Contained(Place(V,skc3),skf3(skc3,V,W))*.
+13[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> P(Place(W,V),skf2(V,W,X))*.
+24[0:Res:2.0,13.1] ObjectSet(U) Time(V) || CContained(V,skc4,U)*+ -> P(Place(V,skc4),skf2(skc4,V,W))*.
+18[0:Res:3.0,13.1] ObjectSet(U) Time(V) || CContained(V,skc3,U)*+ -> P(Place(V,skc3),skf2(skc3,V,W))*.
+31[0:Res:1.0,12.0] ObjectSet(U) Object(V) || CContained(skc5,V,U)*+ -> Contained(Place(skc5,V),skf3(V,skc5,W))*.
+30[0:Res:1.0,13.0] ObjectSet(U) Object(V) || CContained(skc5,V,U)*+ -> P(Place(skc5,V),skf2(V,skc5,W))*.
+10[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> OSPlace(W,U,skf3(V,W,U))*.
+27[0:Res:2.0,10.1] ObjectSet(U) Time(V) || CContained(V,skc4,U) -> OSPlace(V,U,skf3(skc4,V,U))*.
+21[0:Res:3.0,10.1] ObjectSet(U) Time(V) || CContained(V,skc3,U) -> OSPlace(V,U,skf3(skc3,V,U))*.
+26[0:Res:2.0,11.1] ObjectSet(U) Time(V) || CContained(V,skc4,U) -> ClosedContainer(V,U,skf2(skc4,V,U))*.
+20[0:Res:3.0,11.1] ObjectSet(U) Time(V) || CContained(V,skc3,U) -> ClosedContainer(V,U,skf2(skc3,V,U))*.
+11[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> ClosedContainer(W,U,skf2(V,W,U))*.
+33[0:Res:1.0,10.0] ObjectSet(U) Object(V) || CContained(skc5,V,U) -> OSPlace(skc5,U,skf3(V,skc5,U))*.
+32[0:Res:1.0,11.0] ObjectSet(U) Object(V) || CContained(skc5,V,U) -> ClosedContainer(skc5,U,skf2(V,skc5,U))*.
+36[1:MRR:7.0,35.0] || CContained(skc5,skc4,Singleton(skc3))* -> .
+35[1:Spt:6.0] ||  -> Contained(Place(skc5,skc4),Place(skc5,skc3))*.
+4[0:Inp] || OSPlace(U,Singleton(V),W)* -> equal(Place(U,V),W).
+5[0:Inp] || equal(Place(U,V),W) -> OSPlace(U,Singleton(V),W)*.
+1[0:Inp] ||  -> Time(skc5)*.
+2[0:Inp] ||  -> Object(skc4)*.
+3[0:Inp] ||  -> Object(skc3)*.
+--------------------------SPASS-STOP------------------------------

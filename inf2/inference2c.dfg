@@ -1,0 +1,37 @@
+begin_problem(Scenario2C).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 2, Lemma C*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*25 February 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+functions[(Singleton,1), (Place,2), (Slice,2), (HPlace,1), (Os2,0), (Ob2a,0), (Ob2b,0), (Ta2,0), (Tb2,0)].
+
+predicates[(Time, 1), (RigidObject, 1), (CContained, 3), (Ordered, 2), (Contained, 2), (Region,1), (History,1), (Object,1), (ObjectSet,1), (Lt,2), (Leq,2), (Leq3,3), (P,2), (Cavity,2), (OSPlace,3), (ClosedContainer,3), (RigidHistory,1), (O,2), (EC,2), (DR,2), (Outside,2)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+
+% Inference 1
+formula(forall([tb,ox,ob], CContained(tb,ox,Singleton(ob)))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+
+formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Singleton(ob)), Lt(ta,tb)), CContained(tb,ox,Singleton(ob))))).
+
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+

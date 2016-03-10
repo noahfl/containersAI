@@ -1,0 +1,45 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> RigidObject(skc6)*.
+2[0:Inp] ||  -> Lt(skc4,skc5)*.
+3[0:Inp] ||  -> CContained(skc4,skc7,Singleton(skc6))*.
+4[0:Inp] ||  -> CContained(U,V,Singleton(W))*.
+5[0:Inp] || CContained(skc5,skc7,Singleton(skc6))* -> .
+ This is a first-order Horn problem without equality.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: RigidObject.
+ Axiom clauses: 1 Conjecture clauses: 4
+ Inferences: IORe=1 
+ Reductions: RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RFSub=1 RBSub=1 
+ Extras    : Input Saturation, No Selection, No Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: Singleton > HPlace > Place > Slice > Time > RigidObject > CContained > Ordered > Contained > Region > History > Object > ObjectSet > Lt > Leq > Leq3 > P > Cavity > OSPlace > ClosedContainer > RigidHistory > O > EC > DR > Outside > Os2 > Ob2a > Ob2b > Ta2 > Tb2 > skc0 > skc1 > skc2 > skc3 > skc4 > skc5 > skc6 > skc7
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> RigidObject(skc6)*.
+2[0:Inp] ||  -> Lt(skc4,skc5)*.
+4[0:Inp] ||  -> CContained(U,V,Singleton(W))*.
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: inference2c.dfg 
+SPASS derived 0 clauses, backtracked 0 clauses, performed 0 splits and kept 4 clauses.
+SPASS allocated 45942 KBytes.
+SPASS spent	0:00:00.05 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+Here is a proof with depth 0, length 3 :
+4[0:Inp] ||  -> CContained(U,V,Singleton(W))*.
+5[0:Inp] || CContained(skc5,skc7,Singleton(skc6))* -> .
+6[0:MRR:5.0,4.0] ||  -> .
+Formulae used in the proof : axiom0 conjecture0
+
+--------------------------SPASS-STOP------------------------------

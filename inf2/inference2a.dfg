@@ -1,0 +1,43 @@
+begin_problem(Scenario2).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 2, Lemma A*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*25 February 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+functions[(RUnion,2), (Singleton,1), (Place,2), (Slice,2), (HPlace,1), (Os2,0), (Ob2a,0), (Ob2b,0), (Ta2,0), (Tb2,0)].
+
+predicates[(Time, 1), (RigidObject, 1), (CContained, 3), (Ordered, 2), (Contained, 2), (Region,1), (History,1), (Object,1), (ObjectSet,1), (Lt,2), (Leq,2), (Leq3,3), (P,2), (Cavity,2), (OSPlace,3), (ClosedContainer,3), (RigidHistory,1), (O,2), (EC,2), (DR,2), (Outside,2)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+% OCD1
+formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc)))))).
+
+% ORD1
+formula(forall([t,s,rc], equiv(ClosedContainer(t,s,rc), exists([rs], and(OSPlace(t,s,rs), Cavity(rc,rs)))))).
+
+% SCD3
+formula(forall([u,v], equiv(Contained(u,v), exists([c], and(Cavity(c,v), P(u,c)))))).
+
+
+end_of_list.
+
+list_of_formulae(conjectures).
+
+formula(forall([t,o,s], implies(and(Time(t), Object(o), ObjectSet(s)), and(equiv(CContained(t,o,s), exists([rc], and(ClosedContainer(t,s,rc), P(Place(t,o),rc)))), equiv(CContained(t,o,s), exists([rs], and(OSPlace(t,s,rs), Contained(Place(t,o),rs)))))))).
+
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+
