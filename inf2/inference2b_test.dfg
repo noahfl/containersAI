@@ -1,0 +1,39 @@
+begin_problem(Scenario2B).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 2, Lemma B*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*25 February 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+functions[(F,1), (G,1)].
+
+predicates[(P,2), (Q,1), (W,1)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+% 1
+formula(forall([x,y], equiv(P(F(x),y), equal(y,G(x))))).
+
+% 2
+formula(forall([x], equiv(Q(x), exists([y], and(P(x,y),W(y)))))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+
+formula(forall([x], equiv(Q(F(x)), W(G(x))))).
+
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+

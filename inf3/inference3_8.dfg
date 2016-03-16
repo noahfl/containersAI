@@ -1,0 +1,80 @@
+begin_problem(Scenario3).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 3*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*18 February 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+
+functions[(Slice,2), (Place,2), (HPlace,1), (RUnion,2), (Os3,0), (Ob3,0), (RRed,0), (RGreen,0), (RInside,0), (Ta3,0), (Tb3,0), (HB,0), (HC,0)].
+
+predicates[(Fixed,1), (History,1), (Object,1), (CombinedContainer,3), (Region,1), (P,2), (Outside,2), (Lt,2), (Cavity,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (Continuous,3), (O,2), (DR,2), (Leq,2), (Leq3,3), (EC,2), (AlwaysIntConn,3), (IntConn,1), (Motionless,3), (Stable,2), (Time,1), (Constant,3), (FeasiblePlace,2)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+% C3A1
+formula(Fixed(Ob3)).
+
+% C3A2
+formula(CombinedContainer(Place(Ta3,Ob3), RRed, RInside)).
+
+% C3A3
+formula(P(Place(Ta3, Os3), RInside)).
+
+% C3A4 (unused up to 3.8)
+% formula(Outside(RGreen, RUnion(Place(Ta3, Ob3), RRed))).
+
+% C3A5 (unused up to 3.8)
+% formula(P(Place(Tb3, Os3), RGreen)).
+
+% C3A6
+formula(Lt(Ta3,Tb3)).
+
+% C3A7
+formula(not(equal(Os3,Ob3))).
+
+
+% SCD4
+formula(forall([ra,rb,rc], equiv(CombinedContainer(ra,rb,rc), and(EC(ra,rb), Cavity(rc,RUnion(ra,rb)), not(Cavity(rc,ra)), not(Cavity(rc,rb)))))).
+
+% HIA3 
+formula(forall([r,t1,t2], implies(and(Region(r), Lt(t1,t2)), exists([h], and(Constant(t1,t2,h), equal(Slice(t1,h),r)))))).
+
+
+% HCA4 
+formula(forall([t1,t2,hc,ho], implies(and(Constant(t1,t2,hc), Constant(t1,t2,ho), Cavity(Slice(t1,hc),Slice(t1,ho))),PersistentCavity(t1,t2,hc,ho)))).
+
+
+
+end_of_list.
+
+
+list_of_formulae(conjectures).
+
+% 3.8
+% formula(PersistentCavity(Ta3,Tb3,HC,HB)).
+
+% 3.6
+% formula(Constant(Ta3,Tb3,HB)).
+
+% 3.2
+formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+
+% 3.1 (Proof for this part)
+% formula(Cavity(RInside, RUnion(Place(Ta3,Ob3),RRed))).
+
+end_of_list.
+
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+

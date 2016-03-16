@@ -23,7 +23,10 @@ formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Sing
 % Lemma 2.D
 formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Singleton(ob)), Lt(tb,ta)), CContained(tb,ox,Singleton(ob))))).
 
-% TID2
+% TID1
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+
+% TID2 (maybe I didn't translate this one correctly?
 % ∀ x,y:Time Ordered(x,y) ⇔ Leq(x,y) ⋁ Leq(y,x).
 formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Ordered(x,y), or(Leq(x,y),Leq(y,x)))))).
 

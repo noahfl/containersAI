@@ -7,26 +7,18 @@ Input Problem:
 4[0:Inp] ||  -> CContained(Ta2,Ob2a,Singleton(Ob2b))*.
 5[0:Inp] || CContained(Tb2,Os2,Singleton(Ob2a))* -> .
 6[0:Inp] || Contained(U,V)* Contained(V,W)* -> Contained(U,W)*.
-7[0:Inp] || CContained(U,V,Singleton(W))* RigidObject(W) Lt(U,X)* -> CContained(X,V,Singleton(W))*.
-8[0:Inp] || CContained(U,V,Singleton(W))* RigidObject(W) Lt(X,U)* -> CContained(X,V,Singleton(W))*.
-9[0:Inp] || CContained(U,V,Singleton(W))* RigidObject(W) Ordered(U,X)* -> CContained(X,V,Singleton(W))*.
-10[0:Inp] || CContained(U,V,W) Time(U) Object(V) ObjectSet(W) -> OSPlace(U,W,skf3(V,U,W))*.
-11[0:Inp] || CContained(U,V,W) Time(U) Object(V) ObjectSet(W) -> ClosedContainer(U,W,skf2(V,U,W))*.
-12[0:Inp] || Contained(Place(U,V),Place(U,W))* Time(U) Object(V) Object(W) -> CContained(U,V,Singleton(W)).
-13[0:Inp] || CContained(U,V,Singleton(W)) Time(U) Object(V) Object(W) -> Contained(Place(U,V),Place(U,W))*.
-14[0:Inp] || CContained(U,V,W)* Time(U) Object(V) ObjectSet(W) -> Contained(Place(U,V),skf3(V,U,X))*.
-15[0:Inp] || CContained(U,V,W)* Time(U) Object(V) ObjectSet(W) -> P(Place(U,V),skf2(V,U,X))*.
-16[0:Inp] || OSPlace(U,V,W)* Contained(Place(U,X),W)* Time(U) Object(X) ObjectSet(V) -> CContained(U,X,V)*.
-17[0:Inp] || ClosedContainer(U,V,W)* P(Place(U,X),W)* Time(U) Object(X) ObjectSet(V) -> CContained(U,X,V)*.
+7[0:Inp] || CContained(U,V,Singleton(W))* RigidObject(W) Ordered(U,X)* -> CContained(X,V,Singleton(W))*.
+8[0:Inp] || Contained(Place(U,V),Place(U,W))* Time(U) Object(V) Object(W) -> CContained(U,V,Singleton(W)).
+9[0:Inp] || CContained(U,V,Singleton(W)) Time(U) Object(V) Object(W) -> Contained(Place(U,V),Place(U,W))*.
  This is a first-order Horn problem without equality.
  This is a problem that contains sort information.
  The conjecture is ground.
  The following monadic predicates have finite extensions: RigidObject.
- Axiom clauses: 16 Conjecture clauses: 1
+ Axiom clauses: 8 Conjecture clauses: 1
  Inferences: IEmS=1 ISoR=1 IORe=1 
  Reductions: RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSST=1 RSSi=1 RFSub=1 RBSub=1 RCon=1 
  Extras    : Input Saturation, Dynamic Selection, No Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
- Precedence: Singleton > HPlace > RUnion > Place > Slice > skf0 > skf1 > skf2 > skf3 > ClosedContainer > OSPlace > P > Contained > CContained > Time > RigidObject > Ordered > Region > History > Object > ObjectSet > Lt > Leq > Leq3 > Cavity > RigidHistory > O > EC > DR > Outside > Os2 > Ob2a > Ob2b > Ta2 > Tb2 > skc0 > skc1 > skc2 > skc3 > skc4 > skc5 > skc6 > skc7
+ Precedence: Singleton > HPlace > RUnion > Place > Slice > Contained > CContained > Time > RigidObject > Ordered > Region > History > Object > ObjectSet > Lt > Leq > Leq3 > P > Cavity > OSPlace > ClosedContainer > RigidHistory > O > EC > DR > Outside > Os2 > Ob2a > Ob2b > Ta2 > Tb2
  Ordering  : KBO
 Processed Problem:
 
@@ -39,125 +31,49 @@ Usable Clauses:
 3[0:Inp] ||  -> CContained(Ta2,Os2,Singleton(Ob2a))*.
 5[0:Inp] || CContained(Tb2,Os2,Singleton(Ob2a))* -> .
 6[0:Inp] || Contained(U,V)* Contained(W,U)* -> Contained(W,V)*.
-19[0:Res:8.3,5.0] RigidObject(Ob2a) || Lt(Tb2,U) CContained(U,Os2,Singleton(Ob2a))* -> .
-20[0:Res:9.3,5.0] RigidObject(Ob2a) || Ordered(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
-18[0:Res:7.3,5.0] RigidObject(Ob2a) || Lt(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
-21[0:Res:12.4,5.0] Object(Ob2a) Object(Os2) Time(Tb2) || Contained(Place(Tb2,Os2),Place(Tb2,Ob2a))* -> .
-9[0:Inp] RigidObject(U) || Ordered(V,W)* CContained(V,X,Singleton(U))* -> CContained(W,X,Singleton(U))*.
-8[0:Inp] RigidObject(U) || Lt(V,W)* CContained(W,X,Singleton(U))* -> CContained(V,X,Singleton(U))*.
-7[0:Inp] RigidObject(U) || Lt(V,W)* CContained(V,X,Singleton(U))* -> CContained(W,X,Singleton(U))*.
-10[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> OSPlace(W,U,skf3(V,W,U))*.
-11[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> ClosedContainer(W,U,skf2(V,W,U))*.
-12[0:Inp] Object(U) Object(V) Time(W) || Contained(Place(W,V),Place(W,U))* -> CContained(W,V,Singleton(U)).
-13[0:Inp] Object(U) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> Contained(Place(W,V),Place(W,U))*.
-15[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)* -> P(Place(W,V),skf2(V,W,X))*.
-14[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)* -> Contained(Place(W,V),skf3(V,W,X))*.
-22[0:Res:17.5,5.0] Object(Os2) Time(Tb2) ObjectSet(Singleton(Ob2a)) || P(Place(Tb2,Os2),U) ClosedContainer(Tb2,Singleton(Ob2a),U)* -> .
-23[0:Res:16.5,5.0] Object(Os2) Time(Tb2) ObjectSet(Singleton(Ob2a)) || Contained(Place(Tb2,Os2),U) OSPlace(Tb2,Singleton(Ob2a),U)* -> .
-17[0:Inp] ObjectSet(U) Object(V) Time(W) || P(Place(W,V),X)* ClosedContainer(W,U,X)* -> CContained(W,V,U)*.
-16[0:Inp] ObjectSet(U) Object(V) Time(W) || Contained(Place(W,V),X)* OSPlace(W,U,X)* -> CContained(W,V,U)*.
+10[0:Res:7.3,5.0] RigidObject(Ob2a) || Ordered(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
+11[0:Res:8.4,5.0] Object(Ob2a) Object(Os2) Time(Tb2) || Contained(Place(Tb2,Os2),Place(Tb2,Ob2a))* -> .
+7[0:Inp] RigidObject(U) || Ordered(V,W)* CContained(V,X,Singleton(U))* -> CContained(W,X,Singleton(U))*.
+8[0:Inp] Object(U) Object(V) Time(W) || Contained(Place(W,V),Place(W,U))* -> CContained(W,V,Singleton(U)).
+9[0:Inp] Object(U) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> Contained(Place(W,V),Place(W,U))*.
 	Given clause: 1[0:Inp] ||  -> RigidObject(Ob2b)*.
 	Given clause: 2[0:Inp] ||  -> Ordered(Ta2,Tb2)*.
 	Given clause: 4[0:Inp] ||  -> CContained(Ta2,Ob2a,Singleton(Ob2b))*.
 	Given clause: 3[0:Inp] ||  -> CContained(Ta2,Os2,Singleton(Ob2a))*.
 	Given clause: 5[0:Inp] || CContained(Tb2,Os2,Singleton(Ob2a))* -> .
 	Given clause: 6[0:Inp] || Contained(U,V)*+ Contained(W,U)* -> Contained(W,V)*.
-	Given clause: 19[0:Res:8.3,5.0] RigidObject(Ob2a) || Lt(Tb2,U) CContained(U,Os2,Singleton(Ob2a))* -> .
-	Given clause: 20[0:Res:9.3,5.0] RigidObject(Ob2a) || Ordered(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
-	Given clause: 18[0:Res:7.3,5.0] RigidObject(Ob2a) || Lt(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
-	Given clause: 9[0:Inp] RigidObject(U) || Ordered(V,W)* CContained(V,X,Singleton(U))*+ -> CContained(W,X,Singleton(U))*.
-	Given clause: 27[0:SSi:25.0,1.0] || Ordered(Ta2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-	Given clause: 29[0:SSi:28.0,1.0] || Ordered(Ta2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 30[0:Res:2.0,29.0] || Ordered(Tb2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-	Given clause: 32[0:SSi:31.0,1.0] || Ordered(Tb2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 8[0:Inp] RigidObject(U) || Lt(V,W)* CContained(W,X,Singleton(U))*+ -> CContained(V,X,Singleton(U))*.
-	Given clause: 37[0:SSi:33.0,1.0] || Lt(U,Ta2) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-	Given clause: 38[0:SSi:35.0,1.0] || Ordered(Tb2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 39[0:SSi:36.0,1.0] || Ordered(Ta2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 44[0:Res:2.0,39.0] || Lt(U,Tb2) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-	Given clause: 7[0:Inp] RigidObject(U) || Lt(V,W)* CContained(V,X,Singleton(U))*+ -> CContained(W,X,Singleton(U))*.
-	Given clause: 55[0:SSi:49.0,1.0] || Lt(Ta2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-	Given clause: 42[0:SSi:40.0,1.0] || Lt(U,Ta2)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 43[0:SSi:41.0,1.0] || Lt(U,Ta2)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 47[0:SSi:45.0,1.0] || Lt(U,Tb2)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 10[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> OSPlace(W,U,skf3(V,W,U))*.
-	Given clause: 48[0:SSi:46.0,1.0] || Lt(U,Tb2)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 56[0:SSi:51.0,1.0] || Lt(U,Tb2)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 57[0:SSi:52.0,1.0] || Lt(U,Ta2)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 58[0:SSi:53.0,1.0] || Ordered(Tb2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 11[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> ClosedContainer(W,U,skf2(V,W,U))*.
-	Given clause: 59[0:SSi:54.0,1.0] || Ordered(Ta2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 66[0:Res:2.0,59.0] || Lt(Tb2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-	Given clause: 63[0:SSi:60.0,1.0] || Lt(Ta2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 64[0:SSi:61.0,1.0] || Lt(Ta2,U)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 12[0:Inp] Object(U) Object(V) Time(W) || Contained(Place(W,V),Place(W,U))* -> CContained(W,V,Singleton(U)).
-	Given clause: 65[0:SSi:62.0,1.0] || Lt(Ta2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 70[0:SSi:67.0,1.0] || Lt(Tb2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 71[0:SSi:68.0,1.0] || Lt(Tb2,U)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 72[0:SSi:69.0,1.0] || Lt(Tb2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-	Given clause: 13[0:Inp] Object(U) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> Contained(Place(W,V),Place(W,U))*.
-	Given clause: 21[0:Res:12.4,5.0] Object(Ob2a) Object(Os2) Time(Tb2) || Contained(Place(Tb2,Os2),Place(Tb2,Ob2a))* -> .
-	Given clause: 22[0:Res:17.5,5.0] Object(Os2) Time(Tb2) ObjectSet(Singleton(Ob2a)) || P(Place(Tb2,Os2),U) ClosedContainer(Tb2,Singleton(Ob2a),U)* -> .
-	Given clause: 23[0:Res:16.5,5.0] Object(Os2) Time(Tb2) ObjectSet(Singleton(Ob2a)) || Contained(Place(Tb2,Os2),U) OSPlace(Tb2,Singleton(Ob2a),U)* -> .
-	Given clause: 15[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> P(Place(W,V),skf2(V,W,X))*.
-	Given clause: 14[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> Contained(Place(W,V),skf3(V,W,X))*.
-	Given clause: 17[0:Inp] ObjectSet(U) Object(V) Time(W) || P(Place(W,V),X)*+ ClosedContainer(W,U,X)* -> CContained(W,V,U)*.
-	Given clause: 16[0:Inp] ObjectSet(U) Object(V) Time(W) || Contained(Place(W,V),X)*+ OSPlace(W,U,X)* -> CContained(W,V,U)*.
+	Given clause: 10[0:Res:7.3,5.0] RigidObject(Ob2a) || Ordered(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
+	Given clause: 11[0:Res:8.4,5.0] Object(Ob2a) Object(Os2) Time(Tb2) || Contained(Place(Tb2,Os2),Place(Tb2,Ob2a))* -> .
+	Given clause: 7[0:Inp] RigidObject(U) || Ordered(V,W)* CContained(V,X,Singleton(U))*+ -> CContained(W,X,Singleton(U))*.
+	Given clause: 8[0:Inp] Object(U) Object(V) Time(W) || Contained(Place(W,V),Place(W,U))* -> CContained(W,V,Singleton(U)).
+	Given clause: 15[0:SSi:13.0,1.0] || Ordered(Ta2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
+	Given clause: 17[0:SSi:16.0,1.0] || Ordered(Ta2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
+	Given clause: 18[0:Res:2.0,17.0] || Ordered(Tb2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
+	Given clause: 20[0:SSi:19.0,1.0] || Ordered(Tb2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
+	Given clause: 9[0:Inp] Object(U) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> Contained(Place(W,V),Place(W,U))*.
 SPASS V 3.5 
 SPASS beiseite: Completion found.
 Problem: inference2.dfg 
-SPASS derived 52 clauses, backtracked 0 clauses, performed 0 splits and kept 47 clauses.
-SPASS allocated 52307 KBytes.
-SPASS spent	0:00:00.06 on the problem.
-		0:00:00.02 for the input.
-		0:00:00.02 for the FLOTTER CNF translation.
+SPASS derived 9 clauses, backtracked 0 clauses, performed 0 splits and kept 15 clauses.
+SPASS allocated 52238 KBytes.
+SPASS spent	0:00:00.04 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
 		0:00:00.00 for the reduction.
 
 
  The saturated set of worked-off clauses is :
-16[0:Inp] ObjectSet(U) Object(V) Time(W) || Contained(Place(W,V),X)*+ OSPlace(W,U,X)* -> CContained(W,V,U)*.
-17[0:Inp] ObjectSet(U) Object(V) Time(W) || P(Place(W,V),X)*+ ClosedContainer(W,U,X)* -> CContained(W,V,U)*.
-14[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> Contained(Place(W,V),skf3(V,W,X))*.
-15[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U)*+ -> P(Place(W,V),skf2(V,W,X))*.
-23[0:Res:16.5,5.0] Object(Os2) Time(Tb2) ObjectSet(Singleton(Ob2a)) || Contained(Place(Tb2,Os2),U) OSPlace(Tb2,Singleton(Ob2a),U)* -> .
-22[0:Res:17.5,5.0] Object(Os2) Time(Tb2) ObjectSet(Singleton(Ob2a)) || P(Place(Tb2,Os2),U) ClosedContainer(Tb2,Singleton(Ob2a),U)* -> .
-21[0:Res:12.4,5.0] Object(Ob2a) Object(Os2) Time(Tb2) || Contained(Place(Tb2,Os2),Place(Tb2,Ob2a))* -> .
-13[0:Inp] Object(U) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> Contained(Place(W,V),Place(W,U))*.
-72[0:SSi:69.0,1.0] || Lt(Tb2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-71[0:SSi:68.0,1.0] || Lt(Tb2,U)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-70[0:SSi:67.0,1.0] || Lt(Tb2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-65[0:SSi:62.0,1.0] || Lt(Ta2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-12[0:Inp] Object(U) Object(V) Time(W) || Contained(Place(W,V),Place(W,U))* -> CContained(W,V,Singleton(U)).
-64[0:SSi:61.0,1.0] || Lt(Ta2,U)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-63[0:SSi:60.0,1.0] || Lt(Ta2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-66[0:Res:2.0,59.0] || Lt(Tb2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-59[0:SSi:54.0,1.0] || Ordered(Ta2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-11[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> ClosedContainer(W,U,skf2(V,W,U))*.
-58[0:SSi:53.0,1.0] || Ordered(Tb2,U)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-57[0:SSi:52.0,1.0] || Lt(U,Ta2)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-56[0:SSi:51.0,1.0] || Lt(U,Tb2)*+ Lt(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-48[0:SSi:46.0,1.0] || Lt(U,Tb2)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-10[0:Inp] ObjectSet(U) Object(V) Time(W) || CContained(W,V,U) -> OSPlace(W,U,skf3(V,W,U))*.
-47[0:SSi:45.0,1.0] || Lt(U,Tb2)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-43[0:SSi:41.0,1.0] || Lt(U,Ta2)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-42[0:SSi:40.0,1.0] || Lt(U,Ta2)+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-55[0:SSi:49.0,1.0] || Lt(Ta2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-7[0:Inp] RigidObject(U) || Lt(V,W)* CContained(V,X,Singleton(U))*+ -> CContained(W,X,Singleton(U))*.
-44[0:Res:2.0,39.0] || Lt(U,Tb2) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-39[0:SSi:36.0,1.0] || Ordered(Ta2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-38[0:SSi:35.0,1.0] || Ordered(Tb2,U)*+ Lt(V,U)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-37[0:SSi:33.0,1.0] || Lt(U,Ta2) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-8[0:Inp] RigidObject(U) || Lt(V,W)* CContained(W,X,Singleton(U))*+ -> CContained(V,X,Singleton(U))*.
-32[0:SSi:31.0,1.0] || Ordered(Tb2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-30[0:Res:2.0,29.0] || Ordered(Tb2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-29[0:SSi:28.0,1.0] || Ordered(Ta2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
-27[0:SSi:25.0,1.0] || Ordered(Ta2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
-9[0:Inp] RigidObject(U) || Ordered(V,W)* CContained(V,X,Singleton(U))*+ -> CContained(W,X,Singleton(U))*.
-18[0:Res:7.3,5.0] RigidObject(Ob2a) || Lt(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
-20[0:Res:9.3,5.0] RigidObject(Ob2a) || Ordered(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
-19[0:Res:8.3,5.0] RigidObject(Ob2a) || Lt(Tb2,U) CContained(U,Os2,Singleton(Ob2a))* -> .
+9[0:Inp] Object(U) Object(V) Time(W) || CContained(W,V,Singleton(U)) -> Contained(Place(W,V),Place(W,U))*.
+20[0:SSi:19.0,1.0] || Ordered(Tb2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
+18[0:Res:2.0,17.0] || Ordered(Tb2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
+17[0:SSi:16.0,1.0] || Ordered(Ta2,U)*+ Ordered(U,V)* -> CContained(V,Ob2a,Singleton(Ob2b))*.
+15[0:SSi:13.0,1.0] || Ordered(Ta2,U) -> CContained(U,Ob2a,Singleton(Ob2b))*.
+8[0:Inp] Object(U) Object(V) Time(W) || Contained(Place(W,V),Place(W,U))* -> CContained(W,V,Singleton(U)).
+7[0:Inp] RigidObject(U) || Ordered(V,W)* CContained(V,X,Singleton(U))*+ -> CContained(W,X,Singleton(U))*.
+11[0:Res:8.4,5.0] Object(Ob2a) Object(Os2) Time(Tb2) || Contained(Place(Tb2,Os2),Place(Tb2,Ob2a))* -> .
+10[0:Res:7.3,5.0] RigidObject(Ob2a) || Ordered(U,Tb2) CContained(U,Os2,Singleton(Ob2a))* -> .
 6[0:Inp] || Contained(U,V)*+ Contained(W,U)* -> Contained(W,V)*.
 5[0:Inp] || CContained(Tb2,Os2,Singleton(Ob2a))* -> .
 3[0:Inp] ||  -> CContained(Ta2,Os2,Singleton(Ob2a))*.
