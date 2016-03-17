@@ -17,6 +17,67 @@ end_of_list.
 
 list_of_formulae(axioms).
 
+% Time Ordering
+% Sortal axioms
+% TISA
+formula(forall([x,y], implies(Lt(x,y), and(Time(x), Time(y))))).
+% TISB
+formula(forall([x,y], implies(Leq(x,y), and(Time(x), Time(y))))).
+% TISC
+formula(forall([x,y], implies(Ordered(x,y), and(Time(x), Time(y))))).
+% TISD
+formula(forall([x,y,z], implies(Leq3(x,y,z), and(Time(x), Time(y), Time(z))))).
+
+% Space
+% Basic spatial relations
+% Sortal axioms
+% SBSA
+formula(forall([u,v], implies(or(P(u,v), O(u,v), EC(u,v), DR(u,v)), and(Region(u), Region(v))))).
+% SBSB
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
+
+% Spatial Containment
+% Sortal axioms
+% SCSA
+formula(forall([u,v], implies(or(Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
+
+% Objects
+% Object Sets
+% Sortal axioms
+% OSSA
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x))))).
+
+% Objects and Object Sets: Spatio-Temporal
+% Sortal axioms
+% OTSA
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o))))).
+% OTSB
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+
+% Objects containing regions
+% Sortal axiom
+% ORSA
+formula(forall([t,s,rc], implies(ClosedContainer(t,s,rc), and(Time(t), ObjectSet(s), Region(rc))))).
+
+% Object Containment
+% Sortal axiom
+% OCSA
+formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), ObjectSet(s))))).
+
+% Histories
+% Sortal axioms
+% HISA
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+% HISC
+formula(forall([o], implies(Object(o), History(HPlace(o))))).
+
+% Rigid Objects
+% Sortal axioms
+% RGSA
+formula(forall([o], implies(RigidObject(o), Object(o)))).
+% RGSB
+formula(forall([h], implies(RigidHistory(h), History(h)))).
+
 % Lemma 2.C
 formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Singleton(ob)), Lt(ta,tb)), CContained(tb,ox,Singleton(ob))))).
 
@@ -26,7 +87,7 @@ formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Sing
 % TID1
 formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 
-% TID2 (maybe I didn't translate this one correctly?
+% TID2 
 % ∀ x,y:Time Ordered(x,y) ⇔ Leq(x,y) ⋁ Leq(y,x).
 formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Ordered(x,y), or(Leq(x,y),Leq(y,x)))))).
 
