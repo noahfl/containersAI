@@ -39,7 +39,7 @@ formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
 % Spatial Containment
 % Sortal axioms
 % SCSA
-formula(forall([u,v], implies(or(Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
+formula(forall([u,v], implies(or(Contained(u,v), Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
 
 % Objects
 % Object Sets
@@ -106,10 +106,8 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % full proof
-% formula(CContained(Tb2, Os2, Singleton(Ob2a))).
+formula(CContained(Tb2, Os2, Singleton(Ob2b))).
 
-% 2.4 (proven)
-formula(CContained(Ta2, Os2, Singleton(Ob2b))).
 end_of_list.
 
 list_of_settings(SPASS).
