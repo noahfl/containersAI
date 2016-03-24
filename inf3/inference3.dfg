@@ -10,13 +10,92 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Slice,2), (Place,2), (HPlace,1), (RUnion,2), (Os3,0), (Ob3,0), (RRed,0), (RGreen,0), (RInside,0), (Ta3,0), (Tb3,0)].
+functions[(Singleton,1), (Slice,2), (Place,2), (HPlace,1), (RUnion,2), (Os3,0), (Ob3,0), (RRed,0), (RGreen,0), (RInside,0), (Ta3,0), (Tb3,0)].
 
-predicates[(Fixed,1), (History,1), (Object,1), (CombinedContainer,3), (Region,1), (P,2), (Outside,2), (Lt,2), (Cavity,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (Continuous,3), (O,2), (DR,2), (Leq,2), (Leq3,3), (EC,2), (AlwaysIntConn,3), (IntConn,1), (Motionless,3), (Stable,2), (Time,1), (Constant,3), (FeasiblePlace,2)].
+predicates[(OSPlace,3), (Fixed,1), (Ordered,2), (History,1), (Object,1), (ObjectSet,1), (CombinedContainer,3), (Region,1), (P,2), (Outside,2), (Lt,2), (Cavity,2), (PersistentCavity,4), (Contained,2), (NoExitCavity,4), (NoEntranceCavity,4), (Continuous,3), (O,2), (DR,2), (Leq,2), (Leq3,3), (EC,2), (AlwaysIntConn,3), (IntConn,1), (Motionless,3), (Stable,2), (Time,1), (Constant,3), (FeasiblePlace,2), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1)].
 
 end_of_list.
 
 list_of_formulae(axioms).
+
+% Time Ordering
+% Sortal axioms
+% TISA
+formula(forall([x,y], implies(Lt(x,y), and(Time(x), Time(y))))).
+% TISB
+formula(forall([x,y], implies(Leq(x,y), and(Time(x), Time(y))))).
+% TISC
+formula(forall([x,y], implies(Ordered(x,y), and(Time(x), Time(y))))).
+% TISD
+formula(forall([x,y,z], implies(Leq3(x,y,z), and(Time(x), Time(y), Time(z))))).
+
+% Space
+% Basic spatial relations
+% Sortal axioms
+% SBSA
+formula(forall([u,v], implies(or(P(u,v), O(u,v), EC(u,v), DR(u,v)), and(Region(u), Region(v))))).
+% SBSB
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
+% CombinedContainer
+formula(forall([u,v,w], implies(CombinedContainer(u,v,w), and(Region(u), Region(v), Region(w))))).
+
+% Spatial Containment
+% Sortal axioms
+% SCSA
+formula(forall([u,v], implies(or(Contained(u,v), Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
+
+% Motion
+% Motion and movement
+% Sortal Axioms
+% Motionless
+formula(forall([ta,tb,o], implies(Motionless(ta,tb,o), and(Time(ta),Time(tb),Object(o))))).
+% Stable
+formula(forall([t,o], implies(Stable(t,o), and(Time(t), Object(o))))).
+
+% Objects
+% Object Sets
+% Sortal axioms
+% OSSA
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x))))).
+
+% Objects and Object Sets: Spatio-Temporal
+% Sortal axioms
+% OTSA
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o))))).
+% OTSB
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+% FeasiblePlace
+formula(forall([o,r], implies(FeasiblePlace(o,r), and(Object(o), Region(r))))).
+
+% Objects containing regions
+% Sortal axiom
+% ORSA
+formula(forall([t,s,rc], implies(ClosedContainer(t,s,rc), and(Time(t), ObjectSet(s), Region(rc))))).
+
+% Object Containment
+% Sortal axiom
+% OCSA
+formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), ObjectSet(s))))).
+
+% Histories
+% Sortal axioms
+% HISA
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+% HISC
+formula(forall([o], implies(Object(o), History(HPlace(o))))).
+% PersistentCavity and NoExitCavity
+formula(forall([t1,t2,hc,ho], implies(or(PersistentCavity(t1,t2,hc,ho), NoEntranceCavity(t1,t2,hc,ho), NoExitCavity(t1,t2,hc,ho)), and(Time(t1), Time(t2), History(hc), History(ho))))).
+% Continuous/Constant/AlwaysIntConn
+formula(forall([ta,tb,h], implies(or(Constant(ta,tb,h), Continuous(ta,tb,h), AlwaysIntConn(ta,tb,h)), and(Time(ta), Time(tb), History(h))))).
+% formula(forall([ta,tb,h], implies(Constant(ta,tb,h), and(Time(ta), Time(tb), History(h))))).
+
+% Rigid Objects
+% Sortal axioms
+% RGSA
+formula(forall([o], implies(RigidObject(o), Object(o)))).
+% RGSB
+formula(forall([h], implies(RigidHistory(h), History(h)))).
+
 
 % C3A1
 formula(Fixed(Ob3)).
@@ -44,11 +123,11 @@ formula(not(equal(Os3,Ob3))).
 formula(forall([ra,rb,rc], equiv(CombinedContainer(ra,rb,rc), and(EC(ra,rb), Cavity(rc,RUnion(ra,rb)), not(Cavity(rc,ra)), not(Cavity(rc,rb)))))).
 
 % HIA3 
-% formula(forall([r,t1,t2], implies(and(Region(r), Lt(t1,t2)), exists([h], and(Constant(t1,t2,h), equal(Slice(t1,h),r)))))).
+formula(forall([r,t1,t2], implies(and(Region(r), Lt(t1,t2)), exists([h], and(Constant(t1,t2,h), equal(Slice(t1,h),r)))))).
 
 
 % HCA4 
-% formula(forall([t1,t2,hc,ho], implies(and(Constant(t1,t2,hc), Constant(t1,t2,ho), Cavity(Slice(t1,hc),Slice(t1,ho))),PersistentCavity(t1,t2,hc,ho)))).
+formula(forall([t1,t2,hc,ho], implies(and(Constant(t1,t2,hc), Constant(t1,t2,ho), Cavity(Slice(t1,hc),Slice(t1,ho))), PersistentCavity(t1,t2,hc,ho)))).
 
 % HCD1
 formula(forall([t1,t2,hc,hb], equiv(PersistentCavity(t1,t2,hc,hb), and(NoExitCavity(t1,t2,hc,hb), NoEntranceCavity(t1,t2,hc,hb))))).
@@ -59,7 +138,7 @@ formula(forall([o,ta,tb], implies(and(Object(o), Lt(ta,tb)), Continuous(ta,tb,HP
 % HIA2
 formula(forall([t,o], equal(Place(t,o), Slice(t,HPlace(o))))).
 
-% LemS.F ####Can't find this anywhere####
+% LemS.F 
 formula(forall([u,v,w,x], implies(and(Outside(u,v), P(w,u), Cavity(x,v)), not(P(w,x))))).
 
 
@@ -68,8 +147,11 @@ formula(forall([u,v,w,x], implies(and(Outside(u,v), P(w,u), Cavity(x,v)), not(P(
 
 
 % HID3 
-formula(forall([t1,t2,h,t], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), implies(Leq3(t1,t,t2), equal(Slice(t,h), Slice(t1,h))))))).
+% formula(forall([t1,t2,h,t], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), implies(Leq3(t1,t,t2), equal(Slice(t,h), Slice(t1,h))))))).
 
+formula(forall([t1,t2,h,t], equiv(Constant(t1,t2,h), implies(and(History(h), Lt(t1,t2), Leq3(t1,t,t2)), equal(Slice(t,h), Slice(t1,h)))))).
+
+formula(forall([t1,t2,h,t], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), implies(Leq3(t1,t,t2), equal(Slice(t,h), Slice(t1,h))))))).
 
 % HCA2
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), P(Slice(t1,hs),Slice(t1,hc)), not(P(Slice(t2,hs),Slice(t2,hc)))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
@@ -106,7 +188,28 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Place(tm,Os3),RRed)))).
+% final
+% formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Place(tm,Os3),RRed)))).
+
+% 3.24
+% formula(exists([tm], O(Place(tm,Os3),RUnion(Place(tm,Ob3),RRed)))).
+
+% 3.21 (proof found for this part)
+% formula(exists([tm], equal(Place(tm,Ob3), Place(Ta3, Ob3)))).
+
+% 3.18
+% formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3)))).
+
+% 3.16, work on this one
+
+% 3.14 (proof) 
+formula(equal(Slice(Tb3,HPlace(Os3)), Place(Tb3,Os3))).
+
+% 3.13 (proof)
+% formula(not(P(Place(Tb3,Os3), RInside))).
+
+% 3.8 (proof)
+% formula(exists([HB,HC], PersistentCavity(Ta3,Tb3,HC,HB))).
 
 end_of_list.
 
