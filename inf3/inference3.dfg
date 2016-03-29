@@ -200,17 +200,20 @@ list_of_formulae(conjectures).
 % 3.18
 % formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3)))).
 
-% 3.17
+% 3.17 (no proof)
 % formula(exists([tm,HB], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Slice(tm,HPlace(Os3)),Slice(tm,HB))))).
 
 % 3.16 (proof)
-formula(exists([HC], not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC))))).
+% formula(exists([HC], not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC))))).
 
 % 3.14 (proof) 
 % formula(equal(Slice(Tb3,HPlace(Os3)), Place(Tb3,Os3))).
 
 % 3.13 (proof)
 % formula(not(P(Place(Tb3,Os3), RInside))).
+
+% 3.9 (no proof)
+formula(forall([HB,HC], PersistentCavity(Ta3,Tb3,HC,HB))).
 
 % 3.8 (proof)
 % formula(exists([HB,HC], PersistentCavity(Ta3,Tb3,HC,HB))).
