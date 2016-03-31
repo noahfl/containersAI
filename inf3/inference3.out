@@ -63,40 +63,40 @@ Input Problem:
 60[0:Inp] || Constant(U,V,W)* -> History(W).
 61[0:Inp] ||  -> Lt(U,skf4(V,W,X,U))*.
 62[0:Inp] || AlwaysIntConn(U,V,W)* -> History(W).
-63[0:Inp] ||  -> P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,U))*.
-64[0:Inp] || SkP2(U,V,W,X)* -> Time(X).
-65[0:Inp] || SkP2(U,V,W,X)* -> Time(W).
-66[0:Inp] || SkP2(U,V,W,X)* -> History(V).
-67[0:Inp] || SkP2(U,V,W,X)* -> History(U).
-68[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
-69[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
-70[0:Inp] ||  -> Leq3(U,V,W)* Constant(U,W,X)*.
-71[0:Inp] || Constant(U,V,W)* -> Lt(U,V).
-72[0:Inp] || AlwaysIntConn(U,V,W)* -> Lt(U,V).
-73[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
-74[0:Inp] || O(U,V) DR(U,V)* -> .
-75[0:Inp] || Constant(U,V,W) -> SkP3(W,V,U)*.
-76[0:Inp] || Continuous(U,V,W) -> SkP3(W,V,U)*.
-77[0:Inp] || AlwaysIntConn(U,V,W) -> SkP3(W,V,U)*.
-78[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
-79[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
-80[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
-81[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
-82[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
-83[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
-84[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
-85[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
-86[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-87[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-88[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-89[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
-90[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
-91[0:Inp] || Object(U) Lt(V,W) -> Continuous(V,W,HPlace(U))*.
-92[0:Inp] || equal(Slice(U,V),Slice(W,V))* -> Constant(W,X,V)*.
-93[0:Inp] || Object(U) Lt(V,W) -> AlwaysIntConn(V,W,HPlace(U))*.
-94[0:Inp] || Lt(U,V) -> Leq3(U,W,V)* Motionless(U,V,X)*.
-95[0:Inp] || Region(U) Region(V) -> O(V,U) DR(V,U)*.
-96[0:Inp] || Fixed(U) Lt(V,W)* Time(X) -> Stable(X,U)*.
+63[0:Inp] || SkP2(U,V,W,X)* -> Time(X).
+64[0:Inp] || SkP2(U,V,W,X)* -> Time(W).
+65[0:Inp] || SkP2(U,V,W,X)* -> History(V).
+66[0:Inp] || SkP2(U,V,W,X)* -> History(U).
+67[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+68[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
+69[0:Inp] ||  -> Leq3(U,V,W)* Constant(U,W,X)*.
+70[0:Inp] || Constant(U,V,W)* -> Lt(U,V).
+71[0:Inp] || AlwaysIntConn(U,V,W)* -> Lt(U,V).
+72[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
+73[0:Inp] || O(U,V) DR(U,V)* -> .
+74[0:Inp] || Constant(U,V,W) -> SkP3(W,V,U)*.
+75[0:Inp] || Continuous(U,V,W) -> SkP3(W,V,U)*.
+76[0:Inp] || AlwaysIntConn(U,V,W) -> SkP3(W,V,U)*.
+77[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+78[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+79[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
+80[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
+81[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+82[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+83[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+84[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+85[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+86[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+87[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+88[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
+89[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
+90[0:Inp] || Object(U) Lt(V,W) -> Continuous(V,W,HPlace(U))*.
+91[0:Inp] || equal(Slice(U,V),Slice(W,V))* -> Constant(W,X,V)*.
+92[0:Inp] || Object(U) Lt(V,W) -> AlwaysIntConn(V,W,HPlace(U))*.
+93[0:Inp] || Lt(U,V) -> Leq3(U,W,V)* Motionless(U,V,X)*.
+94[0:Inp] || Region(U) Region(V) -> O(V,U) DR(V,U)*.
+95[0:Inp] || Fixed(U) Lt(V,W)* Time(X) -> Stable(X,U)*.
+96[0:Inp] || Lt(Ta3,U) Lt(U,Tb3) O(Place(U,Os3),RRed)* -> .
 97[0:Inp] || Region(U) Lt(V,W) -> Constant(V,W,skf3(U,V,W))*.
 98[0:Inp] || Fixed(U) Lt(V,W) Time(X)* -> Motionless(V,W,U)*.
 99[0:Inp] || Leq3(U,V,W)* AlwaysIntConn(U,W,X)* -> IntConn(Slice(V,X))*.
@@ -135,36 +135,36 @@ Usable Clauses:
 1[0:Inp] ||  -> Fixed(Ob3)*.
 117[0:MRR:60.0,26.1] ||  -> History(U)*.
 119[0:MRR:10.0,118.0] ||  -> Time(U)*.
-118[0:MRR:71.0,59.1] ||  -> Lt(U,V)*.
+118[0:MRR:70.0,59.1] ||  -> Lt(U,V)*.
 3[0:Inp] || equal(Ob3,Os3)** -> .
-122[0:MRR:84.0,84.1,119.0,117.0] ||  -> Region(Slice(U,V))*.
+121[0:MRR:83.0,83.1,119.0,117.0] ||  -> Region(Slice(U,V))*.
 8[0:Inp] ||  -> P(Place(Tb3,Os3),RGreen)*.
 7[0:Inp] ||  -> P(Place(Ta3,Os3),RInside)*.
 5[0:Inp] RigidObject(U) ||  -> Object(U)*.
 25[0:Inp] ||  -> CombinedContainer(Place(Ta3,Ob3),RRed,RInside)*.
 21[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
-127[0:MRR:96.1,96.2,119.0,118.0] Fixed(U) ||  -> Stable(V,U)*.
+129[0:MRR:96.0,96.1,118.0,118.0] || O(Place(U,Os3),RRed)* -> .
+126[0:MRR:95.1,95.2,119.0,118.0] Fixed(U) ||  -> Stable(V,U)*.
 27[0:Inp] || FeasiblePlace(U,V)* -> IntConn(V).
 20[0:Inp] || Stable(U,V)* -> Object(V).
 22[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
-29[0:Inp] || DR(U,V)* -> Region(V).
-28[0:Inp] || DR(U,V)* -> Region(U).
 23[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
 18[0:Inp] || SkP1(U,V)* -> Region(U).
 17[0:Inp] || SkP1(U,V)* -> Region(V).
+29[0:Inp] || DR(U,V)* -> Region(V).
+28[0:Inp] || DR(U,V)* -> Region(U).
 16[0:Inp] || SkP0(U,V)* -> Region(U).
 15[0:Inp] || SkP0(U,V)* -> Region(V).
 58[0:Inp] ||  -> Outside(RGreen,RUnion(Place(Ta3,Ob3),RRed))*.
-121[0:Rew:69.0,63.0] ||  -> P(Place(Tb3,Os3),Slice(Tb3,U))*.
-123[0:MRR:83.0,119.0] Object(U) ||  -> Region(Place(V,U))*.
+122[0:MRR:82.0,119.0] Object(U) ||  -> Region(Place(V,U))*.
 40[0:Inp] || Contained(U,V) -> SkP1(V,U)*.
 42[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
 41[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
 35[0:Inp] || EC(U,V) -> SkP0(V,U)*.
 36[0:Inp] || DR(U,V) -> SkP0(V,U)*.
-34[0:Inp] || O(U,V) -> SkP0(V,U)*.
 33[0:Inp] || P(U,V) -> SkP0(V,U)*.
-128[0:MRR:98.1,98.2,119.0,118.0] Fixed(U) ||  -> Motionless(V,W,U)*.
+34[0:Inp] || O(U,V) -> SkP0(V,U)*.
+127[0:MRR:98.1,98.2,119.0,118.0] Fixed(U) ||  -> Motionless(V,W,U)*.
 54[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
 50[0:Inp] || ClosedContainer(U,V,W)* -> ObjectSet(V).
 47[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
@@ -175,41 +175,41 @@ Usable Clauses:
 39[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
 38[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
 37[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
-136[0:Res:121.0,33.0] ||  -> SkP0(Slice(Tb3,U),Place(Tb3,Os3))*.
-69[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
-74[0:Inp] || DR(U,V)* O(U,V) -> .
-126[0:MRR:91.1,118.0] Object(U) ||  -> Continuous(V,W,HPlace(U))*.
-125[0:MRR:93.1,118.0] Object(U) ||  -> AlwaysIntConn(V,W,HPlace(U))*.
-68[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
-124[0:MRR:94.0,118.0] ||  -> Motionless(U,V,W)* Leq3(U,X,V)*.
+68[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
+73[0:Inp] || DR(U,V)* O(U,V) -> .
+125[0:MRR:90.1,118.0] Object(U) ||  -> Continuous(V,W,HPlace(U))*.
+124[0:MRR:92.1,118.0] Object(U) ||  -> AlwaysIntConn(V,W,HPlace(U))*.
+67[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+123[0:MRR:93.0,118.0] ||  -> Motionless(U,V,W)* Leq3(U,X,V)*.
 130[0:MRR:102.0,102.1,117.0,118.0] ||  -> AlwaysIntConn(U,V,W)* Leq3(U,X,V)*.
-70[0:Inp] ||  -> Constant(U,V,W)* Leq3(U,X,V)*.
-76[0:Inp] || Continuous(U,V,W) -> SkP3(W,V,U)*.
-77[0:Inp] || AlwaysIntConn(U,V,W) -> SkP3(W,V,U)*.
-75[0:Inp] || Constant(U,V,W) -> SkP3(W,V,U)*.
-81[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
-80[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
-79[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
-78[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+69[0:Inp] ||  -> Constant(U,V,W)* Leq3(U,X,V)*.
+136[0:Res:79.1,129.0] || O(Place(U,Os3),RUnion(RRed,V))* -> .
+137[0:Res:80.1,129.0] || O(Place(U,Os3),RUnion(V,RRed))* -> .
+75[0:Inp] || Continuous(U,V,W) -> SkP3(W,V,U)*.
+76[0:Inp] || AlwaysIntConn(U,V,W) -> SkP3(W,V,U)*.
+74[0:Inp] || Constant(U,V,W) -> SkP3(W,V,U)*.
+80[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
+79[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
+78[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+77[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
 133[0:MRR:104.0,104.1,117.0,118.0] || IntConn(Slice(U,V))* -> AlwaysIntConn(W,X,V)*.
-82[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
-129[0:MRR:97.1,118.0] Region(U) ||  -> Constant(V,W,skf3(U,V,W))*.
-85[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+81[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+128[0:MRR:97.1,118.0] Region(U) ||  -> Constant(V,W,skf3(U,V,W))*.
+84[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
 134[0:MRR:108.0,108.1,22.1,23.1] || FeasiblePlace(U,V) -> equal(Place(skf5(V,U),U),V)**.
 131[0:MRR:100.1,118.0] Region(U) ||  -> equal(Slice(V,skf3(U,V,W)),U)**.
-87[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-88[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-90[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
-86[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-89[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
-95[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
+86[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+87[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+89[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
+85[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+88[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
+94[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
 132[0:MRR:105.1,118.0] || equal(Place(U,V),Place(W,V))* -> Motionless(W,X,V)*.
-92[0:Inp] || equal(Slice(U,V),Slice(W,V))* -> Constant(W,X,V)*.
+91[0:Inp] || equal(Slice(U,V),Slice(W,V))* -> Constant(W,X,V)*.
+138[0:Res:94.2,129.0] Region(RRed) Region(Place(U,Os3)) ||  -> DR(Place(U,Os3),RRed)*.
 99[0:Inp] || AlwaysIntConn(U,V,W)* Leq3(U,X,V)* -> IntConn(Slice(X,W))*.
 135[0:MRR:110.0,119.0] Region(U) Object(V) || equal(Place(W,V),U)* -> FeasiblePlace(V,U)*.
 103[0:Inp] || P(U,V)* Cavity(V,W)* P(U,X)* Outside(X,W)* -> .
-137[0:Res:121.0,103.1] || Cavity(U,V)* Outside(Slice(Tb3,W),V)* P(Place(Tb3,Os3),U)* -> .
-138[0:Res:121.0,103.3] || Outside(U,V)* Cavity(Slice(Tb3,W),V)* P(Place(Tb3,Os3),U)* -> .
 106[0:Inp] || NoEntranceCavity(U,V,W,X)* NoExitCavity(U,V,W,X) -> PersistentCavity(U,V,W,X).
 109[0:Inp] || Motionless(U,V,W)* Leq3(U,X,V)* -> equal(Place(X,W),Place(U,W))*.
 107[0:Inp] || Constant(U,V,W)* Leq3(U,X,V)* -> equal(Slice(X,W),Slice(U,W))*.
@@ -219,55 +219,54 @@ Usable Clauses:
 	Given clause: 1[0:Inp] ||  -> Fixed(Ob3)*.
 	Given clause: 117[0:MRR:60.0,26.1] ||  -> History(U)*.
 	Given clause: 119[0:MRR:10.0,118.0] ||  -> Time(U)*.
-	Given clause: 118[0:MRR:71.0,59.1] ||  -> Lt(U,V)*.
+	Given clause: 118[0:MRR:70.0,59.1] ||  -> Lt(U,V)*.
 	Given clause: 3[0:Inp] || equal(Ob3,Os3)** -> .
-	Given clause: 122[0:MRR:84.0,84.1,119.0,117.0] ||  -> Region(Slice(U,V))*.
+	Given clause: 121[0:MRR:83.0,83.1,119.0,117.0] ||  -> Region(Slice(U,V))*.
 	Given clause: 8[0:Inp] ||  -> P(Place(Tb3,Os3),RGreen)*.
 	Given clause: 7[0:Inp] ||  -> P(Place(Ta3,Os3),RInside)*.
 	Given clause: 5[0:Inp] RigidObject(U) ||  -> Object(U)*.
 	Given clause: 25[0:Inp] ||  -> CombinedContainer(Place(Ta3,Ob3),RRed,RInside)*.
+	Given clause: 129[0:MRR:96.0,96.1,118.0,118.0] || O(Place(U,Os3),RRed)* -> .
 	Given clause: 21[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
-	Given clause: 127[0:MRR:96.1,96.2,119.0,118.0] Fixed(U) ||  -> Stable(V,U)*.
+	Given clause: 126[0:MRR:95.1,95.2,119.0,118.0] Fixed(U) ||  -> Stable(V,U)*.
 	Given clause: 27[0:Inp] || FeasiblePlace(U,V)* -> IntConn(V).
 	Given clause: 20[0:Inp] || Stable(U,V)* -> Object(V).
+	Given clause: 139[0:Res:126.1,20.0] Fixed(U) ||  -> Object(U)*.
 	Given clause: 22[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
-	Given clause: 139[0:Res:127.1,20.0] Fixed(U) ||  -> Object(U)*.
-	Given clause: 29[0:Inp] || DR(U,V)* -> Region(V).
-	Given clause: 28[0:Inp] || DR(U,V)* -> Region(U).
 	Given clause: 23[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
 	Given clause: 18[0:Inp] || SkP1(U,V)* -> Region(U).
 	Given clause: 17[0:Inp] || SkP1(U,V)* -> Region(V).
+	Given clause: 29[0:Inp] || DR(U,V)* -> Region(V).
+	Given clause: 28[0:Inp] || DR(U,V)* -> Region(U).
 	Given clause: 16[0:Inp] || SkP0(U,V)* -> Region(U).
 	Given clause: 15[0:Inp] || SkP0(U,V)* -> Region(V).
 	Given clause: 58[0:Inp] ||  -> Outside(RGreen,RUnion(Place(Ta3,Ob3),RRed))*.
-	Given clause: 121[0:Rew:69.0,63.0] ||  -> P(Place(Tb3,Os3),Slice(Tb3,U))*.
-	Given clause: 136[0:Res:121.0,33.0] ||  -> SkP0(Slice(Tb3,U),Place(Tb3,Os3))*.
-	Given clause: 140[0:Res:136.0,15.0] ||  -> Region(Place(Tb3,Os3))*.
-	Given clause: 123[0:MRR:83.0,119.0] Object(U) ||  -> Region(Place(V,U))*.
+	Given clause: 122[0:MRR:82.0,119.0] Object(U) ||  -> Region(Place(V,U))*.
 	Given clause: 40[0:Inp] || Contained(U,V) -> SkP1(V,U)*.
+	Given clause: 140[0:Res:40.1,17.0] || Contained(U,V)* -> Region(U).
+	Given clause: 141[0:Res:40.1,18.0] || Contained(U,V)* -> Region(V).
 	Given clause: 42[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
-	Given clause: 142[0:Res:40.1,17.0] || Contained(U,V)* -> Region(U).
-	Given clause: 143[0:Res:40.1,18.0] || Contained(U,V)* -> Region(V).
-	Given clause: 144[0:Res:42.1,17.0] || Outside(U,V)* -> Region(U).
-	Given clause: 146[0:Res:58.0,144.0] ||  -> Region(RGreen)*.
+	Given clause: 142[0:Res:42.1,17.0] || Outside(U,V)* -> Region(U).
+	Given clause: 144[0:Res:58.0,142.0] ||  -> Region(RGreen)*.
+	Given clause: 143[0:Res:42.1,18.0] || Outside(U,V)* -> Region(V).
+	Given clause: 145[0:Res:58.0,143.0] ||  -> Region(RUnion(Place(Ta3,Ob3),RRed))*.
 	Given clause: 41[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
-	Given clause: 145[0:Res:42.1,18.0] || Outside(U,V)* -> Region(V).
-	Given clause: 149[0:Res:58.0,145.0] ||  -> Region(RUnion(Place(Ta3,Ob3),RRed))*.
-	Given clause: 147[0:Res:41.1,17.0] || Cavity(U,V)* -> Region(U).
-	Given clause: 148[0:Res:41.1,18.0] || Cavity(U,V)* -> Region(V).
+	Given clause: 146[0:Res:41.1,17.0] || Cavity(U,V)* -> Region(U).
+	Given clause: 147[0:Res:41.1,18.0] || Cavity(U,V)* -> Region(V).
 	Given clause: 35[0:Inp] || EC(U,V) -> SkP0(V,U)*.
-	Given clause: 150[0:Res:35.1,15.0] || EC(U,V)* -> Region(U).
-	Given clause: 151[0:Res:35.1,16.0] || EC(U,V)* -> Region(V).
+	Given clause: 148[0:Res:35.1,15.0] || EC(U,V)* -> Region(U).
 	Given clause: 36[0:Inp] || DR(U,V) -> SkP0(V,U)*.
-	Given clause: 34[0:Inp] || O(U,V) -> SkP0(V,U)*.
+	Given clause: 149[0:Res:35.1,16.0] || EC(U,V)* -> Region(V).
 	Given clause: 33[0:Inp] || P(U,V) -> SkP0(V,U)*.
-	Given clause: 154[0:Res:34.1,15.0] || O(U,V)* -> Region(U).
-	Given clause: 155[0:Res:34.1,16.0] || O(U,V)* -> Region(V).
-	Given clause: 156[0:Res:33.1,15.0] || P(U,V)* -> Region(U).
-	Given clause: 160[0:Res:7.0,156.0] ||  -> Region(Place(Ta3,Os3))*.
-	Given clause: 128[0:MRR:98.1,98.2,119.0,118.0] Fixed(U) ||  -> Motionless(V,W,U)*.
-	Given clause: 157[0:Res:33.1,16.0] || P(U,V)* -> Region(V).
-	Given clause: 163[0:Res:7.0,157.0] ||  -> Region(RInside)*.
+	Given clause: 152[0:Res:33.1,15.0] || P(U,V)* -> Region(U).
+	Given clause: 154[0:Res:8.0,152.0] ||  -> Region(Place(Tb3,Os3))*.
+	Given clause: 34[0:Inp] || O(U,V) -> SkP0(V,U)*.
+	Given clause: 155[0:Res:7.0,152.0] ||  -> Region(Place(Ta3,Os3))*.
+	Given clause: 153[0:Res:33.1,16.0] || P(U,V)* -> Region(V).
+	Given clause: 159[0:Res:7.0,153.0] ||  -> Region(RInside)*.
+	Given clause: 156[0:Res:34.1,15.0] || O(U,V)* -> Region(U).
+	Given clause: 127[0:MRR:98.1,98.2,119.0,118.0] Fixed(U) ||  -> Motionless(V,W,U)*.
+	Given clause: 157[0:Res:34.1,16.0] || O(U,V)* -> Region(V).
 	Given clause: 54[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
 	Given clause: 50[0:Inp] || ClosedContainer(U,V,W)* -> ObjectSet(V).
 	Given clause: 47[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
@@ -277,196 +276,548 @@ Usable Clauses:
 	Given clause: 48[0:Inp] || OSPlace(U,V,W)* -> Region(W).
 	Given clause: 39[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
 	Given clause: 38[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
-	Given clause: 166[0:Res:25.0,38.0] ||  -> Region(RRed)*.
+	Given clause: 162[0:Res:25.0,38.0] ||  -> Region(RRed)*.
 	Given clause: 37[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
-	Given clause: 167[0:Res:25.0,37.0] ||  -> Region(Place(Ta3,Ob3))*.
-	Given clause: 69[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
-	Given clause: 168[0:SpR:69.0,122.0] ||  -> Region(Place(U,V))*.
-	Given clause: 170[0:SpR:69.0,121.0] ||  -> P(Place(Tb3,Os3),Place(Tb3,U))*.
-	Given clause: 171[0:SpR:69.0,136.0] ||  -> SkP0(Place(Tb3,U),Place(Tb3,Os3))*.
-	Given clause: 74[0:Inp] || DR(U,V)* O(U,V) -> .
-	Given clause: 126[0:MRR:91.1,118.0] Object(U) ||  -> Continuous(V,W,HPlace(U))*.
-	Given clause: 125[0:MRR:93.1,118.0] Object(U) ||  -> AlwaysIntConn(V,W,HPlace(U))*.
-	Given clause: 68[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
-	Given clause: 176[0:Res:25.0,68.0] ||  -> EC(Place(Ta3,Ob3),RRed)*.
-	Given clause: 124[0:MRR:94.0,118.0] ||  -> Motionless(U,V,W)* Leq3(U,X,V)*.
+	Given clause: 164[0:Res:25.0,37.0] ||  -> Region(Place(Ta3,Ob3))*.
+	Given clause: 136[0:Res:79.1,129.0] || O(Place(U,Os3),RUnion(RRed,V))* -> .
+	Given clause: 68[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
+	Given clause: 165[0:SpR:68.0,121.0] ||  -> Region(Place(U,V))*.
+	Given clause: 167[0:MRR:163.0,165.0] ||  -> DR(Place(U,Os3),RRed)*.
+	Given clause: 137[0:Res:80.1,129.0] || O(Place(U,Os3),RUnion(V,RRed))* -> .
+	Given clause: 73[0:Inp] || DR(U,V)* O(U,V) -> .
+	Given clause: 125[0:MRR:90.1,118.0] Object(U) ||  -> Continuous(V,W,HPlace(U))*.
+	Given clause: 124[0:MRR:92.1,118.0] Object(U) ||  -> AlwaysIntConn(V,W,HPlace(U))*.
+	Given clause: 67[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+	Given clause: 171[0:Res:25.0,67.0] ||  -> EC(Place(Ta3,Ob3),RRed)*.
+	Given clause: 123[0:MRR:93.0,118.0] ||  -> Motionless(U,V,W)* Leq3(U,X,V)*.
 	Given clause: 130[0:MRR:102.0,102.1,117.0,118.0] ||  -> AlwaysIntConn(U,V,W)* Leq3(U,X,V)*.
-	Given clause: 179[0:Res:124.0,45.0] ||  -> Leq3(U,V,W)* Object(X)*.
-	Given clause: 180[1:Spt:179.1] ||  -> Object(U)*.
-	Given clause: 181[1:MRR:21.0,180.0] ||  -> ObjectSet(Singleton(U))*.
-	Given clause: 182[1:MRR:126.0,180.0] ||  -> Continuous(U,V,HPlace(W))*.
-	Given clause: 183[1:MRR:125.0,180.0] ||  -> AlwaysIntConn(U,V,HPlace(W))*.
-	Given clause: 70[0:Inp] ||  -> Constant(U,V,W)* Leq3(U,X,V)*.
-	Given clause: 81[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
-	Given clause: 80[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
-	Given clause: 79[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
-	Given clause: 185[0:Res:25.0,79.1] || Cavity(RInside,RRed)* -> .
-	Given clause: 78[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
-	Given clause: 186[0:Res:25.0,78.1] || Cavity(RInside,Place(Ta3,Ob3))* -> .
+	Given clause: 174[0:Res:123.0,45.0] ||  -> Leq3(U,V,W)* Object(X)*.
+	Given clause: 175[1:Spt:174.1] ||  -> Object(U)*.
+	Given clause: 176[1:MRR:21.0,175.0] ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 177[1:MRR:125.0,175.0] ||  -> Continuous(U,V,HPlace(W))*.
+	Given clause: 178[1:MRR:124.0,175.0] ||  -> AlwaysIntConn(U,V,HPlace(W))*.
+	Given clause: 69[0:Inp] ||  -> Constant(U,V,W)* Leq3(U,X,V)*.
+	Given clause: 80[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
+	Given clause: 79[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
+	Given clause: 78[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+	Given clause: 180[0:Res:25.0,78.1] || Cavity(RInside,RRed)* -> .
+	Given clause: 77[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+	Given clause: 181[0:Res:25.0,77.1] || Cavity(RInside,Place(Ta3,Ob3))* -> .
 	Given clause: 133[0:MRR:104.0,104.1,117.0,118.0] || IntConn(Slice(U,V))*+ -> AlwaysIntConn(W,X,V)*.
-	Given clause: 76[0:Inp] || Continuous(U,V,W) -> SkP3(W,V,U)*.
-	Given clause: 77[0:Inp] || AlwaysIntConn(U,V,W) -> SkP3(W,V,U)*.
-	Given clause: 75[0:Inp] || Constant(U,V,W) -> SkP3(W,V,U)*.
-	Given clause: 82[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
-	Given clause: 129[0:MRR:97.1,118.0] Region(U) ||  -> Constant(V,W,skf3(U,V,W))*.
-	Given clause: 85[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
-	Given clause: 188[0:Res:85.1,148.0] || CombinedContainer(U,V,W)*+ -> Region(RUnion(U,V))*.
+	Given clause: 75[0:Inp] || Continuous(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 76[0:Inp] || AlwaysIntConn(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 74[0:Inp] || Constant(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 81[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 128[0:MRR:97.1,118.0] Region(U) ||  -> Constant(V,W,skf3(U,V,W))*.
+	Given clause: 84[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+	Given clause: 183[0:Res:84.1,147.0] || CombinedContainer(U,V,W)*+ -> Region(RUnion(U,V))*.
 	Given clause: 134[0:MRR:108.0,108.1,22.1,23.1] || FeasiblePlace(U,V) -> equal(Place(skf5(V,U),U),V)**.
+	Given clause: 186[0:SpR:134.1,167.0] || FeasiblePlace(Os3,U)* -> DR(U,RRed).
+	Given clause: 189[0:SpL:134.1,129.0] || FeasiblePlace(Os3,U)* O(U,RRed) -> .
+	Given clause: 190[0:SpL:134.1,136.0] || FeasiblePlace(Os3,U) O(U,RUnion(RRed,V))* -> .
+	Given clause: 191[0:SpL:134.1,137.0] || FeasiblePlace(Os3,U) O(U,RUnion(V,RRed))* -> .
 	Given clause: 131[0:MRR:100.1,118.0] Region(U) ||  -> equal(Slice(V,skf3(U,V,W)),U)**.
-	Given clause: 194[0:SpR:131.1,121.0] Region(U) ||  -> P(Place(Tb3,Os3),U)*.
-	Given clause: 195[0:SpR:131.1,136.0] Region(U) ||  -> SkP0(U,Place(Tb3,Os3))*.
-	Given clause: 87[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-	Given clause: 88[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-	Given clause: 90[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
-	Given clause: 86[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
-	Given clause: 89[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
-	Given clause: 95[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
-	Given clause: 184[1:MRR:135.1,180.0] Region(U) || equal(Place(V,W),U)*+ -> FeasiblePlace(W,U)*.
-	Given clause: 207[1:SSi:205.0,168.0] ||  -> FeasiblePlace(U,Place(V,U))*.
-	Given clause: 210[1:Res:207.0,27.0] ||  -> IntConn(Place(U,V))*.
+	Given clause: 86[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+	Given clause: 87[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+	Given clause: 89[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
+	Given clause: 85[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+	Given clause: 88[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
+	Given clause: 94[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
+	Given clause: 179[1:MRR:135.1,175.0] Region(U) || equal(Place(V,W),U)*+ -> FeasiblePlace(W,U)*.
+	Given clause: 200[1:SSi:198.0,165.0] ||  -> FeasiblePlace(U,Place(V,U))*.
+	Given clause: 203[1:Res:200.0,27.0] ||  -> IntConn(Place(U,V))*.
 	Given clause: 132[0:MRR:105.1,118.0] || equal(Place(U,V),Place(W,V))*+ -> Motionless(W,X,V)*.
-	Given clause: 212[0:EqR:132.0] ||  -> Motionless(U,V,W)*.
-	Given clause: 92[0:Inp] || equal(Slice(U,V),Slice(W,V))*+ -> Constant(W,X,V)*.
-	Given clause: 216[0:EqR:92.0] ||  -> Constant(U,V,W)*.
-	Given clause: 221[0:MRR:75.0,216.0] ||  -> SkP3(U,V,W)*.
-	Given clause: 215[0:MRR:109.0,212.0] || Leq3(U,V,W)*+ -> equal(Place(V,X),Place(U,X))*.
-	Given clause: 224[0:Res:130.1,215.0] ||  -> AlwaysIntConn(U,V,W)* equal(Place(X,Y),Place(U,Y))*.
-	Given clause: 222[0:MRR:107.0,216.0] || Leq3(U,V,W)*+ -> equal(Slice(V,X),Slice(U,X))*.
-	Given clause: 233[0:SpR:224.1,8.0] ||  -> AlwaysIntConn(Tb3,U,V)* P(Place(W,Os3),RGreen)*.
-	Given clause: 260[2:Spt:233.1] ||  -> P(Place(U,Os3),RGreen)*.
-	Given clause: 261[2:SpR:134.1,260.0] || FeasiblePlace(Os3,U)* -> P(U,RGreen).
-	Given clause: 240[0:SpR:224.1,7.0] ||  -> AlwaysIntConn(Ta3,U,V)* P(Place(W,Os3),RInside)*.
-	Given clause: 265[3:Spt:240.1] ||  -> P(Place(U,Os3),RInside)*.
-	Given clause: 266[3:SpR:134.1,265.0] || FeasiblePlace(Os3,U)* -> P(U,RInside).
-	Given clause: 223[0:MRR:113.2,113.1,216.0] || Cavity(Slice(U,V),Slice(U,W))*+ -> PersistentCavity(U,X,V,W)*.
-	Given clause: 244[0:SpR:224.1,176.0] ||  -> AlwaysIntConn(Ta3,U,V)* EC(Place(W,Ob3),RRed)*.
-	Given clause: 276[4:Spt:244.1] ||  -> EC(Place(U,Ob3),RRed)*.
-	Given clause: 277[4:SpR:134.1,276.0] || FeasiblePlace(Ob3,U)* -> EC(U,RRed).
-	Given clause: 241[0:SpR:224.1,25.0] ||  -> AlwaysIntConn(Ta3,U,V)* CombinedContainer(Place(W,Ob3),RRed,RInside)*.
-	Given clause: 281[5:Spt:241.1] ||  -> CombinedContainer(Place(U,Ob3),RRed,RInside)*.
-	Given clause: 283[5:Res:281.0,188.0] ||  -> Region(RUnion(Place(U,Ob3),RRed))*.
+	Given clause: 207[0:EqR:132.0] ||  -> Motionless(U,V,W)*.
+	Given clause: 91[0:Inp] || equal(Slice(U,V),Slice(W,V))*+ -> Constant(W,X,V)*.
+	Given clause: 211[0:EqR:91.0] ||  -> Constant(U,V,W)*.
+	Given clause: 216[0:MRR:74.0,211.0] ||  -> SkP3(U,V,W)*.
+	Given clause: 210[0:MRR:109.0,207.0] || Leq3(U,V,W)*+ -> equal(Place(V,X),Place(U,X))*.
+	Given clause: 219[0:Res:130.1,210.0] ||  -> AlwaysIntConn(U,V,W)* equal(Place(X,Y),Place(U,Y))*.
+	Given clause: 227[0:SpR:219.1,8.0] ||  -> AlwaysIntConn(Tb3,U,V)* P(Place(W,Os3),RGreen)*.
+	Given clause: 228[0:SpR:219.1,7.0] ||  -> AlwaysIntConn(Ta3,U,V)* P(Place(W,Os3),RInside)*.
+	Given clause: 255[2:Spt:228.1] ||  -> P(Place(U,Os3),RInside)*.
+	Given clause: 256[2:SpR:134.1,255.0] || FeasiblePlace(Os3,U)* -> P(U,RInside).
+	Given clause: 217[0:MRR:107.0,211.0] || Leq3(U,V,W)*+ -> equal(Slice(V,X),Slice(U,X))*.
+	Given clause: 233[0:SpR:219.1,171.0] ||  -> AlwaysIntConn(Ta3,U,V)* EC(Place(W,Ob3),RRed)*.
+	Given clause: 261[3:Spt:233.1] ||  -> EC(Place(U,Ob3),RRed)*.
+	Given clause: 262[3:SpR:134.1,261.0] || FeasiblePlace(Ob3,U)* -> EC(U,RRed).
+	Given clause: 230[0:SpR:219.1,25.0] ||  -> AlwaysIntConn(Ta3,U,V)* CombinedContainer(Place(W,Ob3),RRed,RInside)*.
+	Given clause: 266[4:Spt:230.1] ||  -> CombinedContainer(Place(U,Ob3),RRed,RInside)*.
+	Given clause: 268[4:Res:266.0,183.0] ||  -> Region(RUnion(Place(U,Ob3),RRed))*.
+	Given clause: 218[0:MRR:113.2,113.1,211.0] || Cavity(Slice(U,V),Slice(U,W))*+ -> PersistentCavity(U,X,V,W)*.
+	Given clause: 274[4:Res:266.0,77.1] || Cavity(RInside,Place(U,Ob3))* -> .
+	Given clause: 267[4:SpR:134.1,266.0] || FeasiblePlace(Ob3,U) -> CombinedContainer(U,RRed,RInside)*.
+	Given clause: 275[4:SpR:134.1,268.0] || FeasiblePlace(Ob3,U) -> Region(RUnion(U,RRed))*.
+	Given clause: 282[4:SpL:134.1,274.0] || FeasiblePlace(Ob3,U)* Cavity(RInside,U) -> .
 	Given clause: 99[0:Inp] || AlwaysIntConn(U,V,W)*+ Leq3(U,X,V)* -> IntConn(Slice(X,W))*.
-	Given clause: 289[5:Res:281.0,78.1] || Cavity(RInside,Place(U,Ob3))* -> .
-	Given clause: 282[5:SpR:134.1,281.0] || FeasiblePlace(Ob3,U) -> CombinedContainer(U,RRed,RInside)*.
-	Given clause: 290[5:SpR:134.1,283.0] || FeasiblePlace(Ob3,U) -> Region(RUnion(U,RRed))*.
-	Given clause: 294[5:SpL:134.1,289.0] || FeasiblePlace(Ob3,U)* Cavity(RInside,U) -> .
+	Given clause: 231[0:SpR:219.1,58.0] ||  -> AlwaysIntConn(Ta3,U,V)* Outside(RGreen,RUnion(Place(W,Ob3),RRed))*.
+	Given clause: 252[0:SpR:134.1,227.1] || FeasiblePlace(Os3,U)*+ -> AlwaysIntConn(Tb3,V,W)* P(U,RGreen).
+	Given clause: 299[5:Spt:252.0,252.2] || FeasiblePlace(Os3,U)* -> P(U,RGreen).
+	Given clause: 300[5:Res:200.0,299.0] ||  -> P(Place(U,Os3),RGreen)*.
+	Given clause: 250[0:Con:236.1] ||  -> AlwaysIntConn(U,V,W)* equal(Place(X,Y),Place(Z,Y))*.
+	Given clause: 304[6:Spt:250.0] ||  -> AlwaysIntConn(U,V,W)*.
+	Given clause: 305[6:MRR:99.0,304.0] || Leq3(U,V,W)*+ -> IntConn(Slice(V,X))*.
+	Given clause: 199[1:SpL:134.1,179.1] Region(U) || FeasiblePlace(V,W)*+ equal(W,U)* -> FeasiblePlace(V,U)*.
+	Given clause: 276[0:SpL:68.0,218.0] || Cavity(Slice(U,V),Place(U,W))*+ -> PersistentCavity(U,X,V,HPlace(W))*.
+	Given clause: 278[0:SpL:68.0,218.0] || Cavity(Place(U,V),Slice(U,W))*+ -> PersistentCavity(U,X,HPlace(V),W)*.
+	Given clause: 280[0:MRR:277.0,147.1] || Cavity(Slice(U,V),W) -> PersistentCavity(U,X,V,skf3(W,U,Y))*.
 	Given clause: 103[0:Inp] || P(U,V)*+ Cavity(V,W)* P(U,X)* Outside(X,W)* -> .
-	Given clause: 242[0:SpR:224.1,58.0] ||  -> AlwaysIntConn(Ta3,U,V)* Outside(RGreen,RUnion(Place(W,Ob3),RRed))*.
-	Given clause: 234[0:SpR:224.1,121.0] ||  -> AlwaysIntConn(Tb3,U,V)* P(Place(W,Os3),Slice(Tb3,X))*.
-	Given clause: 313[6:Spt:234.1] ||  -> P(Place(U,Os3),Slice(Tb3,V))*.
-	Given clause: 314[6:SpR:69.0,313.0] ||  -> P(Place(U,Os3),Place(Tb3,V))*.
-	Given clause: 315[6:SpR:131.1,313.0] Region(U) ||  -> P(Place(V,Os3),U)*.
+	Given clause: 316[2:Res:255.0,103.0] || Cavity(RInside,U)* P(Place(V,Os3),W)*+ Outside(W,U)* -> .
+	Given clause: 319[2:Res:255.0,316.1] || Cavity(RInside,U)* Outside(RInside,U) -> .
+	Given clause: 320[5:Res:300.0,316.1] || Cavity(RInside,U)* Outside(RGreen,U) -> .
+	Given clause: 321[2:Res:84.1,319.0] || CombinedContainer(U,V,RInside) Outside(RInside,RUnion(U,V))* -> .
 	Given clause: 106[0:Inp] || NoEntranceCavity(U,V,W,X)* NoExitCavity(U,V,W,X) -> PersistentCavity(U,V,W,X).
-	Given clause: 316[6:SpR:134.1,313.0] || FeasiblePlace(Os3,U) -> P(U,Slice(Tb3,V))*.
-	Given clause: 320[6:SpR:134.1,314.0] || FeasiblePlace(Os3,U) -> P(U,Place(Tb3,V))*.
-	Given clause: 324[6:SpR:134.1,315.1] Region(U) || FeasiblePlace(Os3,V)*+ -> P(V,U)*.
-	Given clause: 235[0:SpR:224.1,136.0] ||  -> AlwaysIntConn(Tb3,U,V)* SkP0(Slice(Tb3,W),Place(X,Os3))*.
-	Given clause: 339[7:Spt:235.1] ||  -> SkP0(Slice(Tb3,U),Place(V,Os3))*.
-	Given clause: 112[0:Inp] || EC(U,V) Cavity(W,RUnion(U,V))* -> Cavity(W,V) Cavity(W,U) CombinedContainer(U,V,W).
-	Given clause: 341[7:SpR:69.0,339.0] ||  -> SkP0(Place(Tb3,U),Place(V,Os3))*.
-	Given clause: 342[7:SpR:131.1,339.0] Region(U) ||  -> SkP0(U,Place(V,Os3))*.
-	Given clause: 340[7:SpR:134.1,339.0] || FeasiblePlace(Os3,U) -> SkP0(Slice(Tb3,V),U)*.
-	Given clause: 346[7:SpR:134.1,341.0] || FeasiblePlace(Os3,U) -> SkP0(Place(Tb3,V),U)*.
-	Given clause: 116[0:Inp] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) AlwaysIntConn(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
-	Given clause: 349[7:SpR:134.1,342.1] Region(U) || FeasiblePlace(Os3,V) -> SkP0(U,V)*.
-	Given clause: 248[0:SpR:224.1,170.0] ||  -> AlwaysIntConn(Tb3,U,V)* P(Place(Tb3,Os3),Place(W,X))*.
-	Given clause: 370[8:Spt:248.1] ||  -> P(Place(Tb3,Os3),Place(U,V))*.
-	Given clause: 371[8:SpR:134.1,370.0] || FeasiblePlace(U,V)*+ -> P(Place(Tb3,Os3),V)*.
-	Given clause: 249[0:SpR:224.1,171.0] ||  -> AlwaysIntConn(Tb3,U,V)* SkP0(Place(W,X),Place(Tb3,Os3))*.
-	Given clause: 376[9:Spt:249.1] ||  -> SkP0(Place(U,V),Place(Tb3,Os3))*.
-	Given clause: 259[0:Res:130.1,222.0] ||  -> AlwaysIntConn(U,V,W)* equal(Slice(X,Y),Slice(U,Y))*.
-	Given clause: 377[9:SpR:134.1,376.0] || FeasiblePlace(U,V)*+ -> SkP0(V,Place(Tb3,Os3))*.
-	Given clause: 392[6:SpR:259.1,313.0] ||  -> AlwaysIntConn(Tb3,U,V)* P(Place(W,Os3),Slice(X,Y))*.
-	Given clause: 416[10:Spt:392.1] ||  -> P(Place(U,Os3),Slice(V,W))*.
-	Given clause: 417[10:SpR:69.0,416.0] ||  -> P(Place(U,Os3),Place(V,W))*.
-	Given clause: 419[10:SpR:134.1,416.0] || FeasiblePlace(Os3,U) -> P(U,Slice(V,W))*.
-	Given clause: 197[0:SpL:131.1,133.0] Region(U) || IntConn(U) -> AlwaysIntConn(V,W,skf3(U,X,Y))*.
-	Given clause: 423[10:SpR:134.1,417.0] || FeasiblePlace(U,V)*+ -> P(Place(W,Os3),V)*.
-	Given clause: 424[10:SpR:134.1,417.0] || FeasiblePlace(Os3,U) -> P(U,Place(V,W))*.
-	Given clause: 395[7:SpR:259.1,339.0] ||  -> AlwaysIntConn(Tb3,U,V)* SkP0(Slice(W,X),Place(Y,Os3))*.
-	Given clause: 440[11:Spt:395.1] ||  -> SkP0(Slice(U,V),Place(W,Os3))*.
-	Given clause: 442[11:SpR:69.0,440.0] ||  -> SkP0(Place(U,V),Place(W,Os3))*.
-	Given clause: 291[0:Res:130.0,99.0] || Leq3(U,V,W)*+ -> Leq3(U,X,W)* IntConn(Slice(V,Y))*.
-	Given clause: 441[11:SpR:134.1,440.0] || FeasiblePlace(Os3,U) -> SkP0(Slice(V,W),U)*.
-	Given clause: 446[11:SpR:134.1,442.0] || FeasiblePlace(Os3,U) -> SkP0(Place(V,W),U)*.
-	Given clause: 447[11:SpR:134.1,442.0] || FeasiblePlace(U,V)*+ -> SkP0(V,Place(W,Os3))*.
-	Given clause: 436[10:SpR:134.1,424.1] || FeasiblePlace(U,V)*+ FeasiblePlace(Os3,W)* -> P(W,V)*.
-	Given clause: 206[1:SpL:134.1,184.1] Region(U) || FeasiblePlace(V,W)*+ equal(W,U)* -> FeasiblePlace(V,U)*.
-	Given clause: 455[11:SpR:134.1,446.1] || FeasiblePlace(U,V)*+ FeasiblePlace(Os3,W) -> SkP0(V,W)*.
-	Given clause: 257[0:Con:247.1] ||  -> AlwaysIntConn(U,V,W)* equal(Place(X,Y),Place(Z,Y))*.
-	Given clause: 462[12:Spt:257.0] ||  -> AlwaysIntConn(U,V,W)*.
-	Given clause: 463[12:MRR:99.0,462.0] || Leq3(U,V,W)*+ -> IntConn(Slice(V,X))*.
-	Given clause: 328[6:MRR:325.0,147.1] || Cavity(U,V)* P(Place(W,Os3),X)*+ Outside(X,V)* -> .
-	Given clause: 464[12:MRR:116.2,462.0] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
-	Given clause: 477[6:MRR:474.0,144.1] || Cavity(U,V)*+ Outside(W,V)* -> .
-	Given clause: 485[6:Res:85.1,477.0] || CombinedContainer(U,V,W)* Outside(X,RUnion(U,V))*+ -> .
-	Given clause: 488[6:Spt:487.0,234.0] ||  -> AlwaysIntConn(Tb3,U,V)*.
-	Given clause: 183[1:MRR:125.0,180.0] ||  -> AlwaysIntConn(U,V,HPlace(W))*.
-	Given clause: 136[0:Res:121.0,33.0] ||  -> SkP0(Slice(Tb3,U),Place(Tb3,Os3))*.
-	Given clause: 121[0:Rew:69.0,63.0] ||  -> P(Place(Tb3,Os3),Slice(Tb3,U))*.
-	Given clause: 171[0:SpR:69.0,136.0] ||  -> SkP0(Place(Tb3,U),Place(Tb3,Os3))*.
-	Given clause: 170[0:SpR:69.0,121.0] ||  -> P(Place(Tb3,Os3),Place(Tb3,U))*.
-	Given clause: 195[0:SpR:131.1,136.0] Region(U) ||  -> SkP0(U,Place(Tb3,Os3))*.
-	Given clause: 194[0:SpR:131.1,121.0] Region(U) ||  -> P(Place(Tb3,Os3),U)*.
+	Given clause: 322[5:Res:84.1,320.0] || CombinedContainer(U,V,RInside) Outside(RGreen,RUnion(U,V))* -> .
+	Given clause: 326[5:Spt:325.0,252.1] ||  -> AlwaysIntConn(Tb3,U,V)*.
+	Given clause: 8[0:Inp] ||  -> P(Place(Tb3,Os3),RGreen)*.
+	Given clause: 178[1:MRR:124.0,175.0] ||  -> AlwaysIntConn(U,V,HPlace(W))*.
+	Given clause: 327[2:Res:8.0,316.1] || Cavity(RInside,U)* Outside(RGreen,U) -> .
 	Given clause: 130[0:MRR:102.0,102.1,117.0,118.0] ||  -> AlwaysIntConn(U,V,W)* Leq3(U,X,V)*.
 	Given clause: 133[0:MRR:104.0,104.1,117.0,118.0] || IntConn(Slice(U,V))*+ -> AlwaysIntConn(W,X,V)*.
-	Given clause: 242[0:SpR:224.1,58.0] ||  -> AlwaysIntConn(Ta3,U,V)* Outside(RGreen,RUnion(Place(W,Ob3),RRed))*.
-	Given clause: 509[7:Spt:242.1] ||  -> Outside(RGreen,RUnion(Place(U,Ob3),RRed))*.
-	Given clause: 510[7:SpR:134.1,509.0] || FeasiblePlace(Ob3,U) -> Outside(RGreen,RUnion(U,RRed))*.
-	Given clause: 229[0:SpR:224.1,171.0] ||  -> AlwaysIntConn(U,V,W)* SkP0(Place(U,X),Place(Tb3,Os3))*.
-	Given clause: 99[0:Inp] || AlwaysIntConn(U,V,W)*+ Leq3(U,X,V)* -> IntConn(Slice(X,W))*.
-	Given clause: 518[6:Res:488.0,99.0] || Leq3(Tb3,U,V)*+ -> IntConn(Slice(U,W))*.
-	Given clause: 228[0:SpR:224.1,170.0] ||  -> AlwaysIntConn(U,V,W)* P(Place(Tb3,Os3),Place(U,X))*.
-	Given clause: 413[0:Con:391.1] ||  -> AlwaysIntConn(U,V,W)* equal(Slice(X,Y),Slice(Z,Y))*.
-	Given clause: 528[8:Spt:413.0] ||  -> AlwaysIntConn(U,V,W)*.
-	Given clause: 529[8:MRR:99.0,528.0] || Leq3(U,V,W)*+ -> IntConn(Slice(V,X))*.
-	Given clause: 103[0:Inp] || P(U,V)*+ Cavity(V,W)* P(U,X)* Outside(X,W)* -> .
-	Given clause: 308[0:MRR:305.0,147.1] || Cavity(U,V)* P(Place(Tb3,Os3),W)*+ Outside(W,V)* -> .
-	Given clause: 544[0:MRR:543.0,144.1] || Cavity(U,V)*+ Outside(W,V)* -> .
-	Given clause: 545[0:Res:85.1,544.0] || CombinedContainer(U,V,W)* Outside(X,RUnion(U,V))*+ -> .
-	Given clause: 551[7:Spt:550.0,242.0] ||  -> AlwaysIntConn(Ta3,U,V)*.
-	Given clause: 488[6:Spt:487.0,234.0] ||  -> AlwaysIntConn(Tb3,U,V)*.
-	Given clause: 183[1:MRR:125.0,180.0] ||  -> AlwaysIntConn(U,V,HPlace(W))*.
+	Given clause: 231[0:SpR:219.1,58.0] ||  -> AlwaysIntConn(Ta3,U,V)* Outside(RGreen,RUnion(Place(W,Ob3),RRed))*.
+	Given clause: 336[6:Spt:231.1] ||  -> Outside(RGreen,RUnion(Place(U,Ob3),RRed))*.
+	Given clause: 337[6:SpR:134.1,336.0] || FeasiblePlace(Ob3,U) -> Outside(RGreen,RUnion(U,RRed))*.
+	Given clause: 331[2:Res:84.1,327.0] || CombinedContainer(U,V,RInside) Outside(RGreen,RUnion(U,V))* -> .
+	Given clause: 347[6:Spt:346.0,231.0] ||  -> AlwaysIntConn(Ta3,U,V)*.
 	Given clause: 58[0:Inp] ||  -> Outside(RGreen,RUnion(Place(Ta3,Ob3),RRed))*.
+	Given clause: 354[2:Spt:353.0,228.0] ||  -> AlwaysIntConn(Ta3,U,V)*.
+	Given clause: 171[0:Res:25.0,67.0] ||  -> EC(Place(Ta3,Ob3),RRed)*.
+	Given clause: 7[0:Inp] ||  -> P(Place(Ta3,Os3),RInside)*.
+	Given clause: 25[0:Inp] ||  -> CombinedContainer(Place(Ta3,Ob3),RRed,RInside)*.
+	Given clause: 145[0:Res:58.0,143.0] ||  -> Region(RUnion(Place(Ta3,Ob3),RRed))*.
+	Given clause: 99[0:Inp] || AlwaysIntConn(U,V,W)*+ Leq3(U,X,V)* -> IntConn(Slice(X,W))*.
+	Given clause: 181[0:Res:25.0,77.1] || Cavity(RInside,Place(Ta3,Ob3))* -> .
+	Given clause: 227[0:SpR:219.1,8.0] ||  -> AlwaysIntConn(Tb3,U,V)* P(Place(W,Os3),RGreen)*.
+	Given clause: 371[3:Spt:227.1] ||  -> P(Place(U,Os3),RGreen)*.
+	Given clause: 372[3:SpR:134.1,371.0] || FeasiblePlace(Os3,U)* -> P(U,RGreen).
+	Given clause: 367[2:Res:354.0,99.0] || Leq3(Ta3,U,V)*+ -> IntConn(Slice(U,W))*.
+	Given clause: 112[0:Inp] || EC(U,V) Cavity(W,RUnion(U,V))* -> Cavity(W,V) Cavity(W,U) CombinedContainer(U,V,W).
+	Given clause: 260[0:Res:130.1,217.0] ||  -> AlwaysIntConn(U,V,W)* equal(Slice(X,Y),Slice(U,Y))*.
+	Given clause: 250[0:Con:236.1] ||  -> AlwaysIntConn(U,V,W)* equal(Place(X,Y),Place(Z,Y))*.
+	Given clause: 406[4:Spt:250.0] ||  -> AlwaysIntConn(U,V,W)*.
+	Given clause: 407[4:MRR:99.0,406.0] || Leq3(U,V,W)*+ -> IntConn(Slice(V,X))*.
+	Given clause: 357[0:Res:7.0,103.0] || Cavity(RInside,U)* P(Place(Ta3,Os3),V)*+ Outside(V,U)* -> .
+	Given clause: 408[4:MRR:116.2,406.0] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
+	Given clause: 409[0:Res:7.0,357.1] || Cavity(RInside,U)* Outside(RInside,U) -> .
+	Given clause: 410[3:Res:371.0,357.1] || Cavity(RInside,U)* Outside(RGreen,U) -> .
+	Given clause: 420[0:Res:84.1,409.0] || CombinedContainer(U,V,RInside) Outside(RInside,RUnion(U,V))* -> .
+	Given clause: 421[3:Res:84.1,410.0] || CombinedContainer(U,V,RInside) Outside(RGreen,RUnion(U,V))* -> .
+	Given clause: 424[3:Spt:423.0,227.0] ||  -> AlwaysIntConn(Tb3,U,V)*.
+	Given clause: 8[0:Inp] ||  -> P(Place(Tb3,Os3),RGreen)*.
+	Given clause: 354[2:Spt:353.0,228.0] ||  -> AlwaysIntConn(Ta3,U,V)*.
+	Given clause: 178[1:MRR:124.0,175.0] ||  -> AlwaysIntConn(U,V,HPlace(W))*.
+	Given clause: 130[0:MRR:102.0,102.1,117.0,118.0] ||  -> AlwaysIntConn(U,V,W)* Leq3(U,X,V)*.
+	Given clause: 367[2:Res:354.0,99.0] || Leq3(Ta3,U,V)*+ -> IntConn(Slice(U,W))*.
+	Given clause: 133[0:MRR:104.0,104.1,117.0,118.0] || IntConn(Slice(U,V))*+ -> AlwaysIntConn(W,X,V)*.
+	Given clause: 404[0:Con:386.1] ||  -> AlwaysIntConn(U,V,W)* equal(Slice(X,Y),Slice(Z,Y))*.
+	Given clause: 433[4:Spt:404.0] ||  -> AlwaysIntConn(U,V,W)*.
+	Given clause: 434[4:MRR:99.0,433.0] || Leq3(U,V,W)*+ -> IntConn(Slice(V,X))*.
+	Given clause: 328[0:Res:8.0,103.0] || Cavity(RGreen,U)* P(Place(Tb3,Os3),V)*+ Outside(V,U)* -> .
+	Given clause: 436[0:Res:8.0,328.1] || Cavity(RGreen,U)* Outside(RGreen,U) -> .
+	Given clause: 435[4:MRR:116.2,433.0] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
+	Given clause: 437[0:Res:84.1,436.0] || CombinedContainer(U,V,RGreen) Outside(RGreen,RUnion(U,V))* -> .
+	Given clause: 447[0:Res:58.0,437.1] || CombinedContainer(Place(Ta3,Ob3),RRed,RGreen)* -> .
+	Given clause: 281[0:MRR:279.0,146.1] || Cavity(U,Slice(V,W)) -> PersistentCavity(V,X,skf3(U,V,Y),W)*.
+	Given clause: 309[0:SpL:68.0,276.0] || Cavity(Place(U,V),Place(U,W))*+ -> PersistentCavity(U,X,HPlace(V),HPlace(W))*.
+	Given clause: 444[4:MRR:443.1,177.0] || P(Place(U,V),Slice(U,W))*+ NoExitCavity(U,X,W,Y)* -> P(Place(X,V),Slice(X,W))* O(Place(skf4(Y,HPlace(V),X,U),V),Slice(skf4(Y,HPlace(V),X,U),Y))*.
+	Given clause: 311[0:MRR:310.0,146.1] || Cavity(U,Place(V,W)) -> PersistentCavity(V,X,skf3(U,V,Y),HPlace(W))*.
+	Given clause: 315[0:MRR:313.0,147.1] || Cavity(Place(U,V),W) -> PersistentCavity(U,X,HPlace(V),skf3(W,U,Y))*.
+	Given clause: 308[0:SpL:134.1,276.0] || FeasiblePlace(U,V) Cavity(Slice(skf5(V,U),W),V)*+ -> PersistentCavity(skf5(V,U),X,W,HPlace(U))*.
+	Given clause: 314[0:SpL:134.1,278.0] || FeasiblePlace(U,V) Cavity(V,Slice(skf5(V,U),W))*+ -> PersistentCavity(skf5(V,U),X,HPlace(U),W)*.
+	Given clause: 442[4:Rew:68.0,438.3] || P(Slice(U,V),Place(U,W))*+ Continuous(U,X,V) NoExitCavity(U,X,HPlace(W),Y)* -> P(Slice(X,V),Place(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
+	Given clause: 449[0:SpL:134.1,309.0] || FeasiblePlace(U,V) Cavity(V,Place(skf5(V,U),W))*+ -> PersistentCavity(skf5(V,U),X,HPlace(U),HPlace(W))*.
+	Given clause: 468[0:Obv:467.0] || FeasiblePlace(U,V)+ Cavity(V,V)* -> PersistentCavity(skf5(V,U),W,HPlace(U),HPlace(U))*.
+	Given clause: 469[1:Res:200.0,468.0] || Cavity(Place(U,V),Place(U,V))*+ -> PersistentCavity(skf5(Place(U,V),V),W,HPlace(V),HPlace(V))*.
+	Given clause: 448[0:SpL:134.1,309.0] || FeasiblePlace(U,V) Cavity(Place(skf5(V,U),W),V)*+ -> PersistentCavity(skf5(V,U),X,HPlace(W),HPlace(U))*.
+	Given clause: 445[4:MRR:439.0,153.1] || P(Slice(U,V),W) Continuous(U,X,V) NoExitCavity(U,X,skf3(W,U,Y),Z)*+ -> P(Slice(X,V),Slice(X,skf3(W,U,Y)))* O(Slice(skf4(Z,V,X,U),V),Slice(skf4(Z,V,X,U),Z))*.
+	Given clause: 458[0:MRR:456.0,146.1] || FeasiblePlace(U,V) Cavity(W,V) -> PersistentCavity(skf5(V,U),X,skf3(W,skf5(V,U),Y),HPlace(U))*.
+	Given clause: 461[0:MRR:460.0,147.1] || FeasiblePlace(U,V) Cavity(V,W) -> PersistentCavity(skf5(V,U),X,HPlace(U),skf3(W,skf5(V,U),Y))*.
+	Given clause: 457[0:Res:84.1,308.1] || CombinedContainer(U,V,Slice(skf5(RUnion(U,V),W),X))*+ FeasiblePlace(W,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),W),Y,X,HPlace(W))*.
+	Given clause: 475[0:Res:84.1,448.1] || CombinedContainer(U,V,Place(skf5(RUnion(U,V),W),X))*+ FeasiblePlace(W,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),W),Y,HPlace(X),HPlace(W))*.
+	Given clause: 446[4:MRR:441.0,152.1] || P(U,Slice(V,W)) Continuous(V,X,skf3(U,V,Y))+ NoExitCavity(V,X,W,Z)* -> P(Slice(X,skf3(U,V,Y)),Slice(X,W))* O(Slice(skf4(Z,skf3(U,V,Y),X,V),skf3(U,V,Y)),Slice(skf4(Z,skf3(U,V,Y),X,V),Z))*.
+	Given clause: 482[0:Obv:481.0] || CombinedContainer(U,V,RUnion(U,V))*+ FeasiblePlace(W,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),W),X,HPlace(W),HPlace(W))*.
+	Given clause: 480[0:MRR:479.0,39.1] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),X),Y,skf3(W,skf5(RUnion(U,V),X),Z),HPlace(X))*.
+	Given clause: 453[4:Rew:68.0,450.2] || P(Place(U,V),Place(U,W))*+ NoExitCavity(U,X,HPlace(W),Y)* -> P(Place(X,V),Place(X,W))* O(Place(skf4(Y,HPlace(V),X,U),V),Slice(skf4(Y,HPlace(V),X,U),Y))*.
+	Given clause: 454[4:MRR:451.0,153.1] || P(Place(U,V),W) NoExitCavity(U,X,skf3(W,U,Y),Z)*+ -> P(Place(X,V),Slice(X,skf3(W,U,Y)))* O(Place(skf4(Z,HPlace(V),X,U),V),Slice(skf4(Z,HPlace(V),X,U),Z))*.
+	Given clause: 477[4:Res:88.1,445.2] || PersistentCavity(U,V,skf3(W,U,X),Y)*+ P(Slice(U,Z),W) Continuous(U,V,Z) -> P(Slice(V,Z),Slice(V,skf3(W,U,X)))* O(Slice(skf4(Y,Z,V,U),Z),Slice(skf4(Y,Z,V,U),Y))*.
+	Given clause: 485[4:Res:88.1,454.1] || PersistentCavity(U,V,skf3(W,U,X),Y)*+ P(Place(U,Z),W) -> P(Place(V,Z),Slice(V,skf3(W,U,X)))* O(Place(skf4(Y,HPlace(Z),V,U),Z),Slice(skf4(Y,HPlace(Z),V,U),Y))*.
+	Given clause: 495[4:Res:281.1,485.0] || Cavity(U,Slice(V,W))*+ P(Place(V,X),U) -> P(Place(Y,X),Slice(Y,skf3(U,V,Z)))* O(Place(skf4(W,HPlace(X),Y,V),X),Slice(skf4(W,HPlace(X),Y,V),W))*.
+	Given clause: 499[4:Rew:68.0,496.3] || Cavity(U,Place(V,W))*+ P(Place(V,X),U) -> P(Place(Y,X),Slice(Y,skf3(U,V,Z)))* O(Place(skf4(HPlace(W),HPlace(X),Y,V),X),Place(skf4(HPlace(W),HPlace(X),Y,V),W))*.
+	Given clause: 487[4:Res:281.1,477.0] || Cavity(U,Slice(V,W))*+ P(Slice(V,X),U) Continuous(V,Y,X) -> P(Slice(Y,X),Slice(Y,skf3(U,V,Z)))* O(Slice(skf4(W,X,Y,V),X),Slice(skf4(W,X,Y,V),W))*.
+	Given clause: 452[4:SpL:134.1,444.0] || FeasiblePlace(U,V) P(V,Slice(skf5(V,U),W))*+ NoExitCavity(skf5(V,U),X,W,Y)* -> P(Place(X,U),Slice(X,W))* O(Place(skf4(Y,HPlace(U),X,skf5(V,U)),U),Slice(skf4(Y,HPlace(U),X,skf5(V,U)),Y))*.
+	Given clause: 491[4:Rew:68.0,488.4] || Cavity(U,Place(V,W))*+ P(Slice(V,X),U) Continuous(V,Y,X) -> P(Slice(Y,X),Slice(Y,skf3(U,V,Z)))* O(Slice(skf4(HPlace(W),X,Y,V),X),Place(skf4(HPlace(W),X,Y,V),W))*.
+	Given clause: 505[4:MRR:503.0,147.1] || Cavity(U,V)* P(Place(W,X),U)+ -> P(Place(Y,X),Slice(Y,skf3(U,W,Z)))* O(Place(skf4(skf3(V,W,X1),HPlace(X),Y,W),X),Slice(skf4(skf3(V,W,X1),HPlace(X),Y,W),skf3(V,W,X1)))*.
+	Given clause: 518[4:Res:8.0,505.1] || Cavity(RGreen,U)+ -> P(Place(V,Os3),Slice(V,skf3(RGreen,Tb3,W)))* O(Place(skf4(skf3(U,Tb3,X),HPlace(Os3),V,Tb3),Os3),Slice(skf4(skf3(U,Tb3,X),HPlace(Os3),V,Tb3),skf3(U,Tb3,X)))*.
+	Given clause: 517[4:Res:7.0,505.1] || Cavity(RInside,U)+ -> P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(skf3(U,Ta3,X),HPlace(Os3),V,Ta3),Os3),Slice(skf4(skf3(U,Ta3,X),HPlace(Os3),V,Ta3),skf3(U,Ta3,X)))*.
+	Given clause: 462[4:SpL:134.1,442.0] || FeasiblePlace(U,V) P(Slice(skf5(V,U),W),V) Continuous(skf5(V,U),X,W) NoExitCavity(skf5(V,U),X,HPlace(U),Y) -> P(Slice(X,W),Place(X,U)) O(Slice(skf4(Y,W,X,skf5(V,U)),W),Slice(skf4(Y,W,X,skf5(V,U)),Y))*.
+	Given clause: 519[4:Res:84.1,518.0] || CombinedContainer(U,V,RGreen)+ -> P(Place(W,Os3),Slice(W,skf3(RGreen,Tb3,X)))* O(Place(skf4(skf3(RUnion(U,V),Tb3,Y),HPlace(Os3),W,Tb3),Os3),Slice(skf4(skf3(RUnion(U,V),Tb3,Y),HPlace(Os3),W,Tb3),skf3(RUnion(U,V),Tb3,Y)))*.
+	Given clause: 520[4:Res:84.1,517.0] || CombinedContainer(U,V,RInside)+ -> P(Place(W,Os3),Slice(W,skf3(RInside,Ta3,X)))* O(Place(skf4(skf3(RUnion(U,V),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(U,V),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(U,V),Ta3,Y)))*.
+	Given clause: 526[4:Res:25.0,520.0] ||  -> P(Place(U,Os3),Slice(U,skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 484[4:SpL:134.1,453.0] || FeasiblePlace(U,V) P(V,Place(skf5(V,U),W))* NoExitCavity(skf5(V,U),X,HPlace(W),Y)*+ -> P(Place(X,U),Place(X,W))* O(Place(skf4(Y,HPlace(U),X,skf5(V,U)),U),Slice(skf4(Y,HPlace(U),X,skf5(V,U)),Y))*.
+	Given clause: 466[4:MRR:464.0,152.1] || P(U,Place(V,W)) Continuous(V,X,skf3(U,V,Y))+ NoExitCavity(V,X,HPlace(W),Z)* -> P(Slice(X,skf3(U,V,Y)),Place(X,W))* O(Slice(skf4(Z,skf3(U,V,Y),X,V),skf3(U,V,Y)),Slice(skf4(Z,skf3(U,V,Y),X,V),Z))*.
+	Given clause: 483[4:SpL:134.1,453.0] || FeasiblePlace(U,V) P(Place(skf5(V,U),W),V) NoExitCavity(skf5(V,U),X,HPlace(U),Y) -> P(Place(X,W),Place(X,U)) O(Place(skf4(Y,HPlace(W),X,skf5(V,U)),W),Slice(skf4(Y,HPlace(W),X,skf5(V,U)),Y))*.
+	Given clause: 538[4:Res:88.1,484.2] || PersistentCavity(skf5(U,V),W,HPlace(X),Y)*+ FeasiblePlace(V,U) P(U,Place(skf5(U,V),X))* -> P(Place(W,V),Place(W,X))* O(Place(skf4(Y,HPlace(V),W,skf5(U,V)),V),Slice(skf4(Y,HPlace(V),W,skf5(U,V)),Y))*.
+	Given clause: 510[4:MRR:508.0,147.1] || Cavity(U,V)* P(Slice(W,X),U)+ Continuous(W,Y,X) -> P(Slice(Y,X),Slice(Y,skf3(U,W,Z)))* O(Slice(skf4(skf3(V,W,X1),X,Y,W),X),Slice(skf4(skf3(V,W,X1),X,Y,W),skf3(V,W,X1)))*.
+	Given clause: 530[4:Res:526.0,328.1] || Cavity(RGreen,U) Outside(Slice(Tb3,skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),Tb3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),Tb3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 514[4:MRR:512.0,153.1] || FeasiblePlace(U,V) P(V,W) NoExitCavity(skf5(V,U),X,skf3(W,skf5(V,U),Y),Z)*+ -> P(Place(X,U),Slice(X,skf3(W,skf5(V,U),Y)))* O(Place(skf4(Z,HPlace(U),X,skf5(V,U)),U),Slice(skf4(Z,HPlace(U),X,skf5(V,U)),Z))*.
+	Given clause: 529[4:Res:526.0,357.1] || Cavity(RInside,U) Outside(Slice(Ta3,skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 500[4:Rew:68.0,497.4] || FeasiblePlace(U,V) Cavity(W,V) P(Place(skf5(V,U),X),W)+ -> P(Place(Y,X),Slice(Y,skf3(W,skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(X),Y,skf5(V,U)),X),Place(skf4(HPlace(U),HPlace(X),Y,skf5(V,U)),U))*.
+	Given clause: 556[4:Obv:554.0] || FeasiblePlace(U,V)+ Cavity(W,V) P(V,W) -> P(Place(X,U),Slice(X,skf3(W,skf5(V,U),Y)))* O(Place(skf4(HPlace(U),HPlace(U),X,skf5(V,U)),U),Place(skf4(HPlace(U),HPlace(U),X,skf5(V,U)),U))*.
+	Given clause: 494[4:Res:280.1,485.0] || Cavity(Slice(U,skf3(V,U,W)),X)*+ P(Place(U,Y),V) -> P(Place(Z,Y),Slice(Z,skf3(V,U,W)))* O(Place(skf4(skf3(X,U,X1),HPlace(Y),Z,U),Y),Slice(skf4(skf3(X,U,X1),HPlace(Y),Z,U),skf3(X,U,X1)))*.
+	Given clause: 486[4:Res:280.1,477.0] || Cavity(Slice(U,skf3(V,U,W)),X)*+ P(Slice(U,Y),V) Continuous(U,Z,Y) -> P(Slice(Z,Y),Slice(Z,skf3(V,U,W)))* O(Slice(skf4(skf3(X,U,X1),Y,Z,U),Y),Slice(skf4(skf3(X,U,X1),Y,Z,U),skf3(X,U,X1)))*.
+	Given clause: 539[4:SpR:68.0,483.4] || FeasiblePlace(U,V) P(Place(skf5(V,U),W),V) NoExitCavity(skf5(V,U),X,HPlace(U),HPlace(Y)) -> P(Place(X,W),Place(X,U)) O(Place(skf4(HPlace(Y),HPlace(W),X,skf5(V,U)),W),Place(skf4(HPlace(Y),HPlace(W),X,skf5(V,U)),Y))*.
+	Given clause: 557[4:Res:200.0,556.0] || Cavity(U,Place(V,W))+ P(Place(V,W),U) -> P(Place(X,W),Slice(X,skf3(U,skf5(Place(V,W),W),Y)))* O(Place(skf4(HPlace(W),HPlace(W),X,skf5(Place(V,W),W)),W),Place(skf4(HPlace(W),HPlace(W),X,skf5(Place(V,W),W)),W))*.
+	Given clause: 552[4:Res:88.1,514.2] || PersistentCavity(skf5(U,V),W,skf3(X,skf5(U,V),Y),Z)*+ FeasiblePlace(V,U) P(U,X) -> P(Place(W,V),Slice(W,skf3(X,skf5(U,V),Y)))* O(Place(skf4(Z,HPlace(V),W,skf5(U,V)),V),Slice(skf4(Z,HPlace(V),W,skf5(U,V)),Z))*.
+	Given clause: 567[4:Res:281.1,552.0] || Cavity(U,Slice(skf5(V,W),X))*+ FeasiblePlace(W,V) P(V,U) -> P(Place(Y,W),Slice(Y,skf3(U,skf5(V,W),Z)))* O(Place(skf4(X,HPlace(W),Y,skf5(V,W)),W),Slice(skf4(X,HPlace(W),Y,skf5(V,W)),X))*.
+	Given clause: 521[4:SpR:68.0,462.5] || FeasiblePlace(U,V) P(Slice(skf5(V,U),W),V) Continuous(skf5(V,U),X,W) NoExitCavity(skf5(V,U),X,HPlace(U),HPlace(Y)) -> P(Slice(X,W),Place(X,U)) O(Slice(skf4(HPlace(Y),W,X,skf5(V,U)),W),Place(skf4(HPlace(Y),W,X,skf5(V,U)),Y))*.
+	Given clause: 573[4:Rew:68.0,568.4] || Cavity(U,Place(skf5(V,W),X))*+ FeasiblePlace(W,V) P(V,U) -> P(Place(Y,W),Slice(Y,skf3(U,skf5(V,W),Z)))* O(Place(skf4(HPlace(X),HPlace(W),Y,skf5(V,W)),W),Place(skf4(HPlace(X),HPlace(W),Y,skf5(V,W)),X))*.
+	Given clause: 546[4:Rew:134.1,545.2] || Cavity(U,V) FeasiblePlace(W,U) P(U,U) -> P(Place(X,W),Place(X,W)) O(Place(skf4(skf3(V,skf5(U,W),Y),HPlace(W),X,skf5(U,W)),W),Slice(skf4(skf3(V,skf5(U,W),Y),HPlace(W),X,skf5(U,W)),skf3(V,skf5(U,W),Y)))*.
+	Given clause: 528[4:SpR:134.1,526.0] || FeasiblePlace(Os3,U)+ -> P(U,Slice(skf5(U,Os3),skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(U,Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(U,Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 492[4:Rew:68.0,489.5] || FeasiblePlace(U,V) Cavity(W,V) P(Slice(skf5(V,U),X),W)+ Continuous(skf5(V,U),Y,X) -> P(Slice(Y,X),Slice(Y,skf3(W,skf5(V,U),Z)))* O(Slice(skf4(HPlace(U),X,Y,skf5(V,U)),X),Place(skf4(HPlace(U),X,Y,skf5(V,U)),U))*.
+	Given clause: 561[4:Res:84.1,486.0] || CombinedContainer(U,V,Slice(W,skf3(X,W,Y)))*+ P(Slice(W,Z),X) Continuous(W,X1,Z) -> P(Slice(X1,Z),Slice(X1,skf3(X,W,Y)))* O(Slice(skf4(skf3(RUnion(U,V),W,X2),Z,X1,W),Z),Slice(skf4(skf3(RUnion(U,V),W,X2),Z,X1,W),skf3(RUnion(U,V),W,X2)))*.
+	Given clause: 593[4:MRR:592.0,39.1] || CombinedContainer(U,V,W)* P(Slice(X,Y),W)+ Continuous(X,Z,Y) -> P(Slice(Z,Y),Slice(Z,skf3(W,X,X1)))* O(Slice(skf4(skf3(RUnion(U,V),X,X2),Y,Z,X),Y),Slice(skf4(skf3(RUnion(U,V),X,X2),Y,Z,X),skf3(RUnion(U,V),X,X2)))*.
+	Given clause: 597[4:MRR:596.2,177.0] || CombinedContainer(U,V,W)* P(Place(X,Y),W)+ -> P(Place(Z,Y),Slice(Z,skf3(W,X,X1)))* O(Place(skf4(skf3(RUnion(U,V),X,X2),HPlace(Y),Z,X),Y),Slice(skf4(skf3(RUnion(U,V),X,X2),HPlace(Y),Z,X),skf3(RUnion(U,V),X,X2)))*.
+	Given clause: 532[4:Res:526.0,103.0] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+	Given clause: 575[4:Rew:68.0,574.4] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V))+ P(RUnion(U,V),W) -> P(Place(Y,X),Slice(Y,skf3(W,skf5(RUnion(U,V),X),Z)))* O(Place(skf4(HPlace(X),HPlace(X),Y,skf5(RUnion(U,V),X)),X),Place(skf4(HPlace(X),HPlace(X),Y,skf5(RUnion(U,V),X)),X))*.
+	Given clause: 559[4:Res:84.1,494.0] || CombinedContainer(U,V,Slice(W,skf3(X,W,Y)))*+ P(Place(W,Z),X) -> P(Place(X1,Z),Slice(X1,skf3(X,W,Y)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Z),X1,W),Z),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Z),X1,W),skf3(RUnion(U,V),W,X2)))*.
+	Given clause: 587[4:Res:200.0,528.0] ||  -> P(Place(U,Os3),Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 604[4:Res:84.1,532.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z)))*.
+	Given clause: 626[4:SSi:625.0,159.0] || CombinedContainer(U,V,RInside) P(Place(Ta3,Os3),W)*+ Outside(W,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))*.
+	Given clause: 630[4:Con:628.3] || CombinedContainer(U,V,RInside) Outside(Slice(Ta3,skf3(RInside,Ta3,W)),RUnion(U,V))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))*.
+	Given clause: 501[4:Rew:68.0,498.4] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) P(Place(skf5(RUnion(U,V),X),Y),W)+ -> P(Place(Z,Y),Slice(Z,skf3(W,skf5(RUnion(U,V),X),X1)))* O(Place(skf4(HPlace(X),HPlace(Y),Z,skf5(RUnion(U,V),X)),Y),Place(skf4(HPlace(X),HPlace(Y),Z,skf5(RUnion(U,V),X)),X))*.
+	Given clause: 516[4:SpL:134.1,505.1] || FeasiblePlace(U,V)+ Cavity(W,X)* P(V,W) -> P(Place(Y,U),Slice(Y,skf3(W,skf5(V,U),Z)))* O(Place(skf4(skf3(X,skf5(V,U),X1),HPlace(U),Y,skf5(V,U)),U),Slice(skf4(skf3(X,skf5(V,U),X1),HPlace(U),Y,skf5(V,U)),skf3(X,skf5(V,U),X1)))*.
+	Given clause: 551[4:MRR:549.0,152.1] || Cavity(U,V)* P(W,U) Continuous(X,Y,skf3(W,X,Z))+ -> P(Slice(Y,skf3(W,X,Z)),Slice(Y,skf3(U,X,X1)))* O(Slice(skf4(skf3(V,X,X2),skf3(W,X,Z),Y,X),skf3(W,X,Z)),Slice(skf4(skf3(V,X,X2),skf3(W,X,Z),Y,X),skf3(V,X,X2)))*.
+	Given clause: 611[4:Res:587.0,328.1] || Cavity(RGreen,U) Outside(Slice(skf5(Place(Tb3,Os3),Os3),skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 610[4:Res:587.0,357.1] || Cavity(RInside,U) Outside(Slice(skf5(Place(Ta3,Os3),Os3),skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+	Given clause: 543[4:Res:315.1,538.0] || Cavity(Place(skf5(U,V),W),X)*+ FeasiblePlace(V,U) P(U,Place(skf5(U,V),W))* -> P(Place(Y,V),Place(Y,W))* O(Place(skf4(skf3(X,skf5(U,V),Z),HPlace(V),Y,skf5(U,V)),V),Slice(skf4(skf3(X,skf5(U,V),Z),HPlace(V),Y,skf5(U,V)),skf3(X,skf5(U,V),Z)))*.
+	Given clause: 599[4:SpL:134.1,597.1] || FeasiblePlace(U,V) CombinedContainer(W,X,Y)*+ P(V,Y) -> P(Place(Z,U),Slice(Z,skf3(Y,skf5(V,U),X1)))* O(Place(skf4(skf3(RUnion(W,X),skf5(V,U),X2),HPlace(U),Z,skf5(V,U)),U),Slice(skf4(skf3(RUnion(W,X),skf5(V,U),X2),HPlace(U),Z,skf5(V,U)),skf3(RUnion(W,X),skf5(V,U),X2)))*.
+	Given clause: 641[4:Res:25.0,599.1] || FeasiblePlace(U,V)+ P(V,RInside) -> P(Place(W,U),Slice(W,skf3(RInside,skf5(V,U),X)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(V,U),Y),HPlace(U),W,skf5(V,U)),U),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(V,U),Y),HPlace(U),W,skf5(V,U)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(V,U),Y)))*.
+	Given clause: 615[4:Res:587.0,103.0] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+	Given clause: 645[4:Rew:134.1,643.4,134.1,643.2] || FeasiblePlace(Os3,U) Cavity(Slice(skf5(U,Os3),skf3(RInside,Ta3,V)),W)*+ P(U,X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(U,Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(U,Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+	Given clause: 493[4:Rew:68.0,490.5] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) P(Slice(skf5(RUnion(U,V),X),Y),W)+ Continuous(skf5(RUnion(U,V),X),Z,Y) -> P(Slice(Z,Y),Slice(Z,skf3(W,skf5(RUnion(U,V),X),X1)))* O(Slice(skf4(HPlace(X),Y,Z,skf5(RUnion(U,V),X)),Y),Place(skf4(HPlace(X),Y,Z,skf5(RUnion(U,V),X)),X))*.
+	Given clause: 646[4:Res:84.1,645.1] || CombinedContainer(U,V,Slice(skf5(W,Os3),skf3(RInside,Ta3,X)))*+ FeasiblePlace(Os3,W) P(W,Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(W,Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(W,Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z)))*.
+	Given clause: 566[4:Res:280.1,552.0] || Cavity(Slice(skf5(U,V),skf3(W,skf5(U,V),X)),Y)*+ FeasiblePlace(V,U) P(U,W) -> P(Place(Z,V),Slice(Z,skf3(W,skf5(U,V),X)))* O(Place(skf4(skf3(Y,skf5(U,V),X1),HPlace(V),Z,skf5(U,V)),V),Slice(skf4(skf3(Y,skf5(U,V),X1),HPlace(V),Z,skf5(U,V)),skf3(Y,skf5(U,V),X1)))*.
+	Given clause: 598[4:MRR:595.0,152.1] || CombinedContainer(U,V,W)* P(X,W) Continuous(Y,Z,skf3(X,Y,X1))+ -> P(Slice(Z,skf3(X,Y,X1)),Slice(Z,skf3(W,Y,X2)))* O(Slice(skf4(skf3(RUnion(U,V),Y,X3),skf3(X,Y,X1),Z,Y),skf3(X,Y,X1)),Slice(skf4(skf3(RUnion(U,V),Y,X3),skf3(X,Y,X1),Z,Y),skf3(RUnion(U,V),Y,X3)))*.
+	Given clause: 636[4:Res:200.0,516.0] || Cavity(U,V)* P(Place(W,X),U)+ -> P(Place(Y,X),Slice(Y,skf3(U,skf5(Place(W,X),X),Z)))* O(Place(skf4(skf3(V,skf5(Place(W,X),X),X1),HPlace(X),Y,skf5(Place(W,X),X)),X),Slice(skf4(skf3(V,skf5(Place(W,X),X),X1),HPlace(X),Y,skf5(Place(W,X),X)),skf3(V,skf5(Place(W,X),X),X1)))*.
+	Given clause: 591[4:MRR:589.0,152.1] || FeasiblePlace(U,V) Cavity(W,V) P(X,W) Continuous(skf5(V,U),Y,skf3(X,skf5(V,U),Z))+ -> P(Slice(Y,skf3(X,skf5(V,U),Z)),Slice(Y,skf3(W,skf5(V,U),X1)))* O(Slice(skf4(HPlace(U),skf3(X,skf5(V,U),Z),Y,skf5(V,U)),skf3(X,skf5(V,U),Z)),Place(skf4(HPlace(U),skf3(X,skf5(V,U),Z),Y,skf5(V,U)),U))*.
+	Given clause: 655[4:Res:8.0,636.1] || Cavity(RGreen,U)+ -> P(Place(V,Os3),Slice(V,skf3(RGreen,skf5(Place(Tb3,Os3),Os3),W)))* O(Place(skf4(skf3(U,skf5(Place(Tb3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Tb3,Os3),Os3)),Os3),Slice(skf4(skf3(U,skf5(Place(Tb3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Tb3,Os3),Os3)),skf3(U,skf5(Place(Tb3,Os3),Os3),X)))*.
+	Given clause: 654[4:Res:7.0,636.1] || Cavity(RInside,U)+ -> P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(skf3(U,skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(U,skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Ta3,Os3),Os3)),skf3(U,skf5(Place(Ta3,Os3),Os3),X)))*.
+	Given clause: 638[4:Res:84.1,543.0] || CombinedContainer(U,V,Place(skf5(W,X),Y))*+ FeasiblePlace(X,W) P(W,Place(skf5(W,X),Y))* -> P(Place(Z,X),Place(Z,Y))* O(Place(skf4(skf3(RUnion(U,V),skf5(W,X),X1),HPlace(X),Z,skf5(W,X)),X),Slice(skf4(skf3(RUnion(U,V),skf5(W,X),X1),HPlace(X),Z,skf5(W,X)),skf3(RUnion(U,V),skf5(W,X),X1)))*.
+	Given clause: 663[4:Rew:134.1,662.2] || CombinedContainer(U,V,W) FeasiblePlace(X,W) P(W,W) -> P(Place(Y,X),Place(Y,X)) O(Place(skf4(skf3(RUnion(U,V),skf5(W,X),Z),HPlace(X),Y,skf5(W,X)),X),Slice(skf4(skf3(RUnion(U,V),skf5(W,X),Z),HPlace(X),Y,skf5(W,X)),skf3(RUnion(U,V),skf5(W,X),Z)))*.
+	Given clause: 652[4:Res:84.1,566.0] || CombinedContainer(U,V,Slice(skf5(W,X),skf3(Y,skf5(W,X),Z)))*+ FeasiblePlace(X,W) P(W,Y) -> P(Place(X1,X),Slice(X1,skf3(Y,skf5(W,X),Z)))* O(Place(skf4(skf3(RUnion(U,V),skf5(W,X),X2),HPlace(X),X1,skf5(W,X)),X),Slice(skf4(skf3(RUnion(U,V),skf5(W,X),X2),HPlace(X),X1,skf5(W,X)),skf3(RUnion(U,V),skf5(W,X),X2)))*.
+	Given clause: 659[4:Res:84.1,655.0] || CombinedContainer(U,V,RGreen)+ -> P(Place(W,Os3),Slice(W,skf3(RGreen,skf5(Place(Tb3,Os3),Os3),X)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(Tb3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Tb3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(Tb3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Tb3,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(Tb3,Os3),Os3),Y)))*.
+	Given clause: 660[4:Res:84.1,654.0] || CombinedContainer(U,V,RInside)+ -> P(Place(W,Os3),Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(Ta3,Os3),Os3),Y)))*.
+	Given clause: 667[4:Res:25.0,660.0] ||  -> P(Place(U,Os3),Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 644[4:Res:84.1,615.0] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,Ta3,X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z)))*.
+	Given clause: 650[4:MRR:648.0,152.1] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) P(Y,W) Continuous(skf5(RUnion(U,V),X),Z,skf3(Y,skf5(RUnion(U,V),X),X1))+ -> P(Slice(Z,skf3(Y,skf5(RUnion(U,V),X),X1)),Slice(Z,skf3(W,skf5(RUnion(U,V),X),X2)))* O(Slice(skf4(HPlace(X),skf3(Y,skf5(RUnion(U,V),X),X1),Z,skf5(RUnion(U,V),X)),skf3(Y,skf5(RUnion(U,V),X),X1)),Place(skf4(HPlace(X),skf3(Y,skf5(RUnion(U,V),X),X1),Z,skf5(RUnion(U,V),X)),X))*.
+	Given clause: 535[4:Res:526.0,444.0] || NoExitCavity(U,V,skf3(RInside,Ta3,W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+	Given clause: 687[4:Res:88.1,535.0] || PersistentCavity(U,V,skf3(RInside,Ta3,W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+	Given clause: 689[4:Res:281.1,687.0] || Cavity(RInside,Slice(Ta3,U))+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,V),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,V),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,V)))* P(Place(W,Os3),Slice(W,skf3(RInside,Ta3,X)))* O(Place(skf4(U,HPlace(Os3),W,Ta3),Os3),Slice(skf4(U,HPlace(Os3),W,Ta3),U))*.
+	Given clause: 692[5:Spt:689.0,689.2,689.3] || Cavity(RInside,Slice(Ta3,U))+ -> P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(U,HPlace(Os3),V,Ta3),Os3),Slice(skf4(U,HPlace(Os3),V,Ta3),U))*.
+	Given clause: 695[5:Rew:68.0,693.2] || Cavity(RInside,Place(Ta3,U))+ -> P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(HPlace(U),HPlace(Os3),V,Ta3),Os3),Place(skf4(HPlace(U),HPlace(Os3),V,Ta3),U))*.
+	Given clause: 642[4:Res:200.0,641.0] || P(Place(U,V),RInside)+ -> P(Place(W,V),Slice(W,skf3(RInside,skf5(Place(U,V),V),X)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(U,V),V),Y),HPlace(V),W,skf5(Place(U,V),V)),V),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(U,V),V),Y),HPlace(V),W,skf5(Place(U,V),V)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(U,V),V),Y)))*.
+	Given clause: 684[4:SSi:668.0,159.0] ||  -> P(Place(skf5(Place(Ta3,Os3),Os3),Os3),RInside) O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U)))*.
+	Given clause: 672[4:Res:667.0,328.1] || Cavity(RGreen,U) Outside(Slice(Tb3,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Tb3,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Tb3,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 670[4:Res:667.0,357.1] || Cavity(RInside,U) Outside(Slice(Ta3,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Ta3,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Ta3,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 669[4:SpR:134.1,667.0] || FeasiblePlace(Os3,U)+ -> P(U,Slice(skf5(U,Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 531[4:Res:526.0,505.1] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,Ta3,V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+	Given clause: 678[4:Res:667.0,103.0] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))*.
+	Given clause: 688[4:Res:280.1,687.0] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),skf3(W,U,Z)))*.
+	Given clause: 707[4:SSi:705.0,159.0] || Cavity(RInside,U)* P(Place(skf5(Place(Ta3,Os3),Os3),Os3),V)*+ Outside(V,U)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 701[4:Res:200.0,669.0] ||  -> P(Place(U,Os3),Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 602[4:Res:526.0,597.1] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,Ta3,X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+	Given clause: 706[4:Res:84.1,678.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z)))*.
+	Given clause: 714[4:Con:713.3] || Cavity(RInside,U) Outside(Slice(skf5(Place(Ta3,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 722[4:Res:701.0,328.1] || Cavity(RGreen,U) Outside(Slice(skf5(Place(Tb3,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+	Given clause: 742[4:SSi:741.0,159.0] || CombinedContainer(U,V,RInside) P(Place(skf5(Place(Ta3,Os3),Os3),Os3),W)*+ Outside(W,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))*.
+	Given clause: 555[4:Res:526.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(V,U),skf3(RInside,Ta3,W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(V,U),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(V,U),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(V,U),skf3(RInside,Ta3,W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+	Given clause: 749[4:MRR:744.0,200.0] || CombinedContainer(U,V,RInside) P(Place(Ta3,Os3),W)*+ Outside(W,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))*.
+	Given clause: 750[4:Con:747.3] || CombinedContainer(U,V,RInside) Outside(Slice(skf5(Place(Ta3,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),RUnion(U,V))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))*.
+	Given clause: 709[4:Res:84.1,688.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(RInside,Ta3,X)))* O(Place(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X1)))*.
+	Given clause: 729[4:Res:701.0,103.0] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))*.
+	Given clause: 656[4:Res:526.0,636.1] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,Ta3,V)),skf5(Place(U,Os3),Os3),Z)))* O(Place(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),Os3),Slice(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),skf3(W,skf5(Place(U,Os3),Os3),X1)))*.
+	Given clause: 763[4:Rew:134.1,760.4,134.1,760.2] || FeasiblePlace(Os3,U) Cavity(Slice(skf5(U,Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ P(U,X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))*.
+	Given clause: 768[4:Res:84.1,763.1] || CombinedContainer(U,V,Slice(skf5(W,Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ FeasiblePlace(Os3,W) P(W,Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(W,Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(W,Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z)))*.
+	Given clause: 762[4:Res:84.1,729.0] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z)))*.
+	Given clause: 681[4:Res:667.0,444.0] || NoExitCavity(U,V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+	Given clause: 633[4:Res:526.0,501.2] || CombinedContainer(U,V,Slice(skf5(RUnion(U,V),W),skf3(RInside,Ta3,X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(RUnion(U,V),W),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(RUnion(U,V),W),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(RUnion(U,V),W),skf3(RInside,Ta3,X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+	Given clause: 773[4:Res:88.1,681.0] || PersistentCavity(U,V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+	Given clause: 629[4:Res:587.0,626.1] || CombinedContainer(U,V,RInside) Outside(Slice(skf5(Place(Ta3,Os3),Os3),skf3(RInside,Ta3,W)),RUnion(U,V))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+	Given clause: 781[6:Spt:629.3] ||  -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,U),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,U),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,U)))*.
+	Given clause: 612[4:Res:587.0,505.1] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+	Given clause: 774[4:Res:280.1,773.0] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),skf3(W,U,Z)))*.
+	Given clause: 765[4:Res:84.1,656.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,Ta3,X)),skf5(Place(W,Os3),Os3),X1)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2)))*.
+	Given clause: 614[4:Res:587.0,597.1] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(W,Os3),Os3),skf3(RInside,Ta3,X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+	Given clause: 780[4:MRR:779.0,200.0] || Cavity(RInside,Place(Ta3,Os3))+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U)))* P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(HPlace(Os3),HPlace(Os3),V,skf5(Place(Ta3,Os3),Os3)),Os3),Place(skf4(HPlace(Os3),HPlace(Os3),V,skf5(Place(Ta3,Os3),Os3)),Os3))*.
+	Given clause: 792[7:Spt:780.1] ||  -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U)))*.
+	Given clause: 613[4:Res:587.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,Ta3,W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,Ta3,W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+	Given clause: 674[4:Res:667.0,505.1] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+	Given clause: 676[4:Res:667.0,597.1] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+	Given clause: 788[4:Res:84.1,774.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))* O(Place(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X1)))*.
+	Given clause: 675[4:Res:667.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(V,U),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(V,U),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(V,U),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(V,U),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+	Given clause: 725[4:Res:701.0,505.1] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+	Given clause: 634[4:Res:587.0,501.2] || CombinedContainer(U,V,Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,Ta3,X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,Ta3,X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+	Given clause: 673[4:Res:667.0,636.1] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),skf5(Place(U,Os3),Os3),Z)))* O(Place(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),Os3),Slice(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),skf3(W,skf5(Place(U,Os3),Os3),X1)))*.
+	Given clause: 727[4:Res:701.0,597.1] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(W,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+	Given clause: 726[4:Res:701.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+	Given clause: 677[4:Res:667.0,501.2] || CombinedContainer(U,V,Slice(skf5(RUnion(U,V),W),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(RUnion(U,V),W),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(RUnion(U,V),W),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(RUnion(U,V),W),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+	Given clause: 813[4:Res:84.1,673.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),skf5(Place(W,Os3),Os3),X1)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2)))*.
+	Given clause: 728[4:Res:701.0,501.2] || CombinedContainer(U,V,Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
 SPASS V 3.5 
-SPASS beiseite: Proof found.
+SPASS beiseite: Completion found.
 Problem: inference3.dfg 
-SPASS derived 391 clauses, backtracked 108 clauses, performed 14 splits and kept 394 clauses.
-SPASS allocated 52659 KBytes.
-SPASS spent	0:00:00.12 on the problem.
-		0:00:00.02 for the input.
+SPASS derived 557 clauses, backtracked 74 clauses, performed 13 splits and kept 459 clauses.
+SPASS allocated 53922 KBytes.
+SPASS spent	0:00:00.22 on the problem.
+		0:00:00.01 for the input.
 		0:00:00.02 for the FLOTTER CNF translation.
-		0:00:00.00 for inferences.
+		0:00:00.03 for inferences.
 		0:00:00.00 for the backtracking.
-		0:00:00.02 for the reduction.
+		0:00:00.11 for the reduction.
 
 
-Here is a proof with depth 5, length 25 :
-17[0:Inp] || SkP1(U,V)* -> Region(V).
+ The saturated set of worked-off clauses is :
+728[4:Res:701.0,501.2] || CombinedContainer(U,V,Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+813[4:Res:84.1,673.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),skf5(Place(W,Os3),Os3),X1)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2)))*.
+677[4:Res:667.0,501.2] || CombinedContainer(U,V,Slice(skf5(RUnion(U,V),W),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(RUnion(U,V),W),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(RUnion(U,V),W),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(RUnion(U,V),W),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+726[4:Res:701.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+727[4:Res:701.0,597.1] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(W,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+673[4:Res:667.0,636.1] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),skf5(Place(U,Os3),Os3),Z)))* O(Place(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),Os3),Slice(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),skf3(W,skf5(Place(U,Os3),Os3),X1)))*.
+634[4:Res:587.0,501.2] || CombinedContainer(U,V,Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,Ta3,X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(skf5(RUnion(U,V),W),Os3),Os3),skf3(RInside,Ta3,X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+725[4:Res:701.0,505.1] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+675[4:Res:667.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(V,U),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(V,U),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),skf5(V,U),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(V,U),skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+788[4:Res:84.1,774.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))* O(Place(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X1)))*.
+676[4:Res:667.0,597.1] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+674[4:Res:667.0,505.1] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+613[4:Res:587.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,Ta3,W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(skf5(V,U),Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(skf5(V,U),Os3),Os3),skf3(RInside,Ta3,W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+792[7:Spt:780.1] ||  -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),U)))*.
+614[4:Res:587.0,597.1] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(Place(W,Os3),Os3),skf3(RInside,Ta3,X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+765[4:Res:84.1,656.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,Ta3,X)),skf5(Place(W,Os3),Os3),X1)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2),HPlace(Os3),Z,skf5(Place(W,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(W,Os3),Os3),X2)))*.
+774[4:Res:280.1,773.0] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),X)))* P(Place(Y,Os3),Slice(Y,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),skf3(W,U,Z)))*.
+612[4:Res:587.0,505.1] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+781[6:Spt:629.3] ||  -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,U),HPlace(Os3),Ta3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,U),HPlace(Os3),Ta3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,U)))*.
+773[4:Res:88.1,681.0] || PersistentCavity(U,V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+633[4:Res:526.0,501.2] || CombinedContainer(U,V,Slice(skf5(RUnion(U,V),W),skf3(RInside,Ta3,X)))+ FeasiblePlace(W,RUnion(U,V)) -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(RUnion(U,V),W),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(RUnion(U,V),W),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(skf5(RUnion(U,V),W),skf3(RInside,Ta3,X)),skf5(RUnion(U,V),W),X1)))* O(Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),Os3),Place(skf4(HPlace(W),HPlace(Os3),Z,skf5(RUnion(U,V),W)),W))*.
+681[4:Res:667.0,444.0] || NoExitCavity(U,V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+762[4:Res:84.1,729.0] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(Place(W,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z)))*.
+768[4:Res:84.1,763.1] || CombinedContainer(U,V,Slice(skf5(W,Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ FeasiblePlace(Os3,W) P(W,Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(W,Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),skf5(W,Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z)))*.
+763[4:Rew:134.1,760.4,134.1,760.2] || FeasiblePlace(Os3,U) Cavity(Slice(skf5(U,Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ P(U,X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))*.
+656[4:Res:526.0,636.1] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,Ta3,V)),skf5(Place(U,Os3),Os3),Z)))* O(Place(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),Os3),Slice(skf4(skf3(W,skf5(Place(U,Os3),Os3),X1),HPlace(Os3),Y,skf5(Place(U,Os3),Os3)),skf3(W,skf5(Place(U,Os3),Os3),X1)))*.
+729[4:Res:701.0,103.0] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))*.
+709[4:Res:84.1,688.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(RInside,Ta3,X)))* O(Place(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X1),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X1)))*.
+555[4:Res:526.0,500.2] || FeasiblePlace(U,V) Cavity(Slice(skf5(V,U),skf3(RInside,Ta3,W)),V)+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(V,U),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),skf5(V,U),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(skf5(V,U),skf3(RInside,Ta3,W)),skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),Os3),Place(skf4(HPlace(U),HPlace(Os3),Y,skf5(V,U)),U))*.
+722[4:Res:701.0,328.1] || Cavity(RGreen,U) Outside(Slice(skf5(Place(Tb3,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+706[4:Res:84.1,678.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Z)))*.
+602[4:Res:526.0,597.1] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(Z,Os3),Slice(Z,skf3(Slice(W,skf3(RInside,Ta3,X)),W,X1)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),Os3),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Os3),Z,W),skf3(RUnion(U,V),W,X2)))*.
+701[4:Res:200.0,669.0] ||  -> P(Place(U,Os3),Slice(skf5(Place(U,Os3),Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(Place(U,Os3),Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+688[4:Res:280.1,687.0] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,Z),HPlace(Os3),Y,U),skf3(W,U,Z)))*.
+678[4:Res:667.0,103.0] || Cavity(Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),Y)))*.
+531[4:Res:526.0,505.1] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,X)))* P(Place(Y,Os3),Slice(Y,skf3(Slice(U,skf3(RInside,Ta3,V)),U,Z)))* O(Place(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),Os3),Slice(skf4(skf3(W,U,X1),HPlace(Os3),Y,U),skf3(W,U,X1)))*.
+669[4:SpR:134.1,667.0] || FeasiblePlace(Os3,U)+ -> P(U,Slice(skf5(U,Os3),skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),skf5(U,Os3),skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+670[4:Res:667.0,357.1] || Cavity(RInside,U) Outside(Slice(Ta3,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Ta3,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Ta3,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+672[4:Res:667.0,328.1] || Cavity(RGreen,U) Outside(Slice(Tb3,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Tb3,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),Tb3,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+642[4:Res:200.0,641.0] || P(Place(U,V),RInside)+ -> P(Place(W,V),Slice(W,skf3(RInside,skf5(Place(U,V),V),X)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(U,V),V),Y),HPlace(V),W,skf5(Place(U,V),V)),V),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(U,V),V),Y),HPlace(V),W,skf5(Place(U,V),V)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(U,V),V),Y)))*.
+695[5:Rew:68.0,693.2] || Cavity(RInside,Place(Ta3,U))+ -> P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(HPlace(U),HPlace(Os3),V,Ta3),Os3),Place(skf4(HPlace(U),HPlace(Os3),V,Ta3),U))*.
+692[5:Spt:689.0,689.2,689.3] || Cavity(RInside,Slice(Ta3,U))+ -> P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(U,HPlace(Os3),V,Ta3),Os3),Slice(skf4(U,HPlace(Os3),V,Ta3),U))*.
+687[4:Res:88.1,535.0] || PersistentCavity(U,V,skf3(RInside,Ta3,W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+535[4:Res:526.0,444.0] || NoExitCavity(U,V,skf3(RInside,Ta3,W),X)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))* P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(X,HPlace(Os3),V,U),Os3),Slice(skf4(X,HPlace(Os3),V,U),X))*.
+650[4:MRR:648.0,152.1] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) P(Y,W) Continuous(skf5(RUnion(U,V),X),Z,skf3(Y,skf5(RUnion(U,V),X),X1))+ -> P(Slice(Z,skf3(Y,skf5(RUnion(U,V),X),X1)),Slice(Z,skf3(W,skf5(RUnion(U,V),X),X2)))* O(Slice(skf4(HPlace(X),skf3(Y,skf5(RUnion(U,V),X),X1),Z,skf5(RUnion(U,V),X)),skf3(Y,skf5(RUnion(U,V),X),X1)),Place(skf4(HPlace(X),skf3(Y,skf5(RUnion(U,V),X),X1),Z,skf5(RUnion(U,V),X)),X))*.
+644[4:Res:84.1,615.0] || CombinedContainer(U,V,Slice(skf5(Place(W,Os3),Os3),skf3(RInside,Ta3,X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(Place(W,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z)))*.
+667[4:Res:25.0,660.0] ||  -> P(Place(U,Os3),Slice(U,skf3(RInside,skf5(Place(Ta3,Os3),Os3),V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W),HPlace(Os3),U,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(Place(Ta3,Os3),Os3),W)))*.
+660[4:Res:84.1,654.0] || CombinedContainer(U,V,RInside)+ -> P(Place(W,Os3),Slice(W,skf3(RInside,skf5(Place(Ta3,Os3),Os3),X)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(Ta3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Ta3,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(Ta3,Os3),Os3),Y)))*.
+659[4:Res:84.1,655.0] || CombinedContainer(U,V,RGreen)+ -> P(Place(W,Os3),Slice(W,skf3(RGreen,skf5(Place(Tb3,Os3),Os3),X)))* O(Place(skf4(skf3(RUnion(U,V),skf5(Place(Tb3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Tb3,Os3),Os3)),Os3),Slice(skf4(skf3(RUnion(U,V),skf5(Place(Tb3,Os3),Os3),Y),HPlace(Os3),W,skf5(Place(Tb3,Os3),Os3)),skf3(RUnion(U,V),skf5(Place(Tb3,Os3),Os3),Y)))*.
+652[4:Res:84.1,566.0] || CombinedContainer(U,V,Slice(skf5(W,X),skf3(Y,skf5(W,X),Z)))*+ FeasiblePlace(X,W) P(W,Y) -> P(Place(X1,X),Slice(X1,skf3(Y,skf5(W,X),Z)))* O(Place(skf4(skf3(RUnion(U,V),skf5(W,X),X2),HPlace(X),X1,skf5(W,X)),X),Slice(skf4(skf3(RUnion(U,V),skf5(W,X),X2),HPlace(X),X1,skf5(W,X)),skf3(RUnion(U,V),skf5(W,X),X2)))*.
+663[4:Rew:134.1,662.2] || CombinedContainer(U,V,W) FeasiblePlace(X,W) P(W,W) -> P(Place(Y,X),Place(Y,X)) O(Place(skf4(skf3(RUnion(U,V),skf5(W,X),Z),HPlace(X),Y,skf5(W,X)),X),Slice(skf4(skf3(RUnion(U,V),skf5(W,X),Z),HPlace(X),Y,skf5(W,X)),skf3(RUnion(U,V),skf5(W,X),Z)))*.
+638[4:Res:84.1,543.0] || CombinedContainer(U,V,Place(skf5(W,X),Y))*+ FeasiblePlace(X,W) P(W,Place(skf5(W,X),Y))* -> P(Place(Z,X),Place(Z,Y))* O(Place(skf4(skf3(RUnion(U,V),skf5(W,X),X1),HPlace(X),Z,skf5(W,X)),X),Slice(skf4(skf3(RUnion(U,V),skf5(W,X),X1),HPlace(X),Z,skf5(W,X)),skf3(RUnion(U,V),skf5(W,X),X1)))*.
+654[4:Res:7.0,636.1] || Cavity(RInside,U)+ -> P(Place(V,Os3),Slice(V,skf3(RInside,skf5(Place(Ta3,Os3),Os3),W)))* O(Place(skf4(skf3(U,skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Ta3,Os3),Os3)),Os3),Slice(skf4(skf3(U,skf5(Place(Ta3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Ta3,Os3),Os3)),skf3(U,skf5(Place(Ta3,Os3),Os3),X)))*.
+655[4:Res:8.0,636.1] || Cavity(RGreen,U)+ -> P(Place(V,Os3),Slice(V,skf3(RGreen,skf5(Place(Tb3,Os3),Os3),W)))* O(Place(skf4(skf3(U,skf5(Place(Tb3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Tb3,Os3),Os3)),Os3),Slice(skf4(skf3(U,skf5(Place(Tb3,Os3),Os3),X),HPlace(Os3),V,skf5(Place(Tb3,Os3),Os3)),skf3(U,skf5(Place(Tb3,Os3),Os3),X)))*.
+591[4:MRR:589.0,152.1] || FeasiblePlace(U,V) Cavity(W,V) P(X,W) Continuous(skf5(V,U),Y,skf3(X,skf5(V,U),Z))+ -> P(Slice(Y,skf3(X,skf5(V,U),Z)),Slice(Y,skf3(W,skf5(V,U),X1)))* O(Slice(skf4(HPlace(U),skf3(X,skf5(V,U),Z),Y,skf5(V,U)),skf3(X,skf5(V,U),Z)),Place(skf4(HPlace(U),skf3(X,skf5(V,U),Z),Y,skf5(V,U)),U))*.
+636[4:Res:200.0,516.0] || Cavity(U,V)* P(Place(W,X),U)+ -> P(Place(Y,X),Slice(Y,skf3(U,skf5(Place(W,X),X),Z)))* O(Place(skf4(skf3(V,skf5(Place(W,X),X),X1),HPlace(X),Y,skf5(Place(W,X),X)),X),Slice(skf4(skf3(V,skf5(Place(W,X),X),X1),HPlace(X),Y,skf5(Place(W,X),X)),skf3(V,skf5(Place(W,X),X),X1)))*.
+598[4:MRR:595.0,152.1] || CombinedContainer(U,V,W)* P(X,W) Continuous(Y,Z,skf3(X,Y,X1))+ -> P(Slice(Z,skf3(X,Y,X1)),Slice(Z,skf3(W,Y,X2)))* O(Slice(skf4(skf3(RUnion(U,V),Y,X3),skf3(X,Y,X1),Z,Y),skf3(X,Y,X1)),Slice(skf4(skf3(RUnion(U,V),Y,X3),skf3(X,Y,X1),Z,Y),skf3(RUnion(U,V),Y,X3)))*.
+566[4:Res:280.1,552.0] || Cavity(Slice(skf5(U,V),skf3(W,skf5(U,V),X)),Y)*+ FeasiblePlace(V,U) P(U,W) -> P(Place(Z,V),Slice(Z,skf3(W,skf5(U,V),X)))* O(Place(skf4(skf3(Y,skf5(U,V),X1),HPlace(V),Z,skf5(U,V)),V),Slice(skf4(skf3(Y,skf5(U,V),X1),HPlace(V),Z,skf5(U,V)),skf3(Y,skf5(U,V),X1)))*.
+646[4:Res:84.1,645.1] || CombinedContainer(U,V,Slice(skf5(W,Os3),skf3(RInside,Ta3,X)))*+ FeasiblePlace(Os3,W) P(W,Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(W,Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),skf5(W,Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z)))*.
+493[4:Rew:68.0,490.5] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) P(Slice(skf5(RUnion(U,V),X),Y),W)+ Continuous(skf5(RUnion(U,V),X),Z,Y) -> P(Slice(Z,Y),Slice(Z,skf3(W,skf5(RUnion(U,V),X),X1)))* O(Slice(skf4(HPlace(X),Y,Z,skf5(RUnion(U,V),X)),Y),Place(skf4(HPlace(X),Y,Z,skf5(RUnion(U,V),X)),X))*.
+645[4:Rew:134.1,643.4,134.1,643.2] || FeasiblePlace(Os3,U) Cavity(Slice(skf5(U,Os3),skf3(RInside,Ta3,V)),W)*+ P(U,X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(U,Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(U,Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+615[4:Res:587.0,103.0] || Cavity(Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+641[4:Res:25.0,599.1] || FeasiblePlace(U,V)+ P(V,RInside) -> P(Place(W,U),Slice(W,skf3(RInside,skf5(V,U),X)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(V,U),Y),HPlace(U),W,skf5(V,U)),U),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(V,U),Y),HPlace(U),W,skf5(V,U)),skf3(RUnion(Place(Ta3,Ob3),RRed),skf5(V,U),Y)))*.
+599[4:SpL:134.1,597.1] || FeasiblePlace(U,V) CombinedContainer(W,X,Y)*+ P(V,Y) -> P(Place(Z,U),Slice(Z,skf3(Y,skf5(V,U),X1)))* O(Place(skf4(skf3(RUnion(W,X),skf5(V,U),X2),HPlace(U),Z,skf5(V,U)),U),Slice(skf4(skf3(RUnion(W,X),skf5(V,U),X2),HPlace(U),Z,skf5(V,U)),skf3(RUnion(W,X),skf5(V,U),X2)))*.
+543[4:Res:315.1,538.0] || Cavity(Place(skf5(U,V),W),X)*+ FeasiblePlace(V,U) P(U,Place(skf5(U,V),W))* -> P(Place(Y,V),Place(Y,W))* O(Place(skf4(skf3(X,skf5(U,V),Z),HPlace(V),Y,skf5(U,V)),V),Slice(skf4(skf3(X,skf5(U,V),Z),HPlace(V),Y,skf5(U,V)),skf3(X,skf5(U,V),Z)))*.
+610[4:Res:587.0,357.1] || Cavity(RInside,U) Outside(Slice(skf5(Place(Ta3,Os3),Os3),skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Ta3,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+611[4:Res:587.0,328.1] || Cavity(RGreen,U) Outside(Slice(skf5(Place(Tb3,Os3),Os3),skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(Tb3,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+551[4:MRR:549.0,152.1] || Cavity(U,V)* P(W,U) Continuous(X,Y,skf3(W,X,Z))+ -> P(Slice(Y,skf3(W,X,Z)),Slice(Y,skf3(U,X,X1)))* O(Slice(skf4(skf3(V,X,X2),skf3(W,X,Z),Y,X),skf3(W,X,Z)),Slice(skf4(skf3(V,X,X2),skf3(W,X,Z),Y,X),skf3(V,X,X2)))*.
+516[4:SpL:134.1,505.1] || FeasiblePlace(U,V)+ Cavity(W,X)* P(V,W) -> P(Place(Y,U),Slice(Y,skf3(W,skf5(V,U),Z)))* O(Place(skf4(skf3(X,skf5(V,U),X1),HPlace(U),Y,skf5(V,U)),U),Slice(skf4(skf3(X,skf5(V,U),X1),HPlace(U),Y,skf5(V,U)),skf3(X,skf5(V,U),X1)))*.
+501[4:Rew:68.0,498.4] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) P(Place(skf5(RUnion(U,V),X),Y),W)+ -> P(Place(Z,Y),Slice(Z,skf3(W,skf5(RUnion(U,V),X),X1)))* O(Place(skf4(HPlace(X),HPlace(Y),Z,skf5(RUnion(U,V),X)),Y),Place(skf4(HPlace(X),HPlace(Y),Z,skf5(RUnion(U,V),X)),X))*.
+604[4:Res:84.1,532.0] || CombinedContainer(U,V,Slice(W,skf3(RInside,Ta3,X)))*+ P(Place(W,Os3),Y)* Outside(Y,RUnion(U,V))* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z),HPlace(Os3),W,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Z)))*.
+587[4:Res:200.0,528.0] ||  -> P(Place(U,Os3),Slice(skf5(Place(U,Os3),Os3),skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(Place(U,Os3),Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+559[4:Res:84.1,494.0] || CombinedContainer(U,V,Slice(W,skf3(X,W,Y)))*+ P(Place(W,Z),X) -> P(Place(X1,Z),Slice(X1,skf3(X,W,Y)))* O(Place(skf4(skf3(RUnion(U,V),W,X2),HPlace(Z),X1,W),Z),Slice(skf4(skf3(RUnion(U,V),W,X2),HPlace(Z),X1,W),skf3(RUnion(U,V),W,X2)))*.
+575[4:Rew:68.0,574.4] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V))+ P(RUnion(U,V),W) -> P(Place(Y,X),Slice(Y,skf3(W,skf5(RUnion(U,V),X),Z)))* O(Place(skf4(HPlace(X),HPlace(X),Y,skf5(RUnion(U,V),X)),X),Place(skf4(HPlace(X),HPlace(X),Y,skf5(RUnion(U,V),X)),X))*.
+532[4:Res:526.0,103.0] || Cavity(Slice(U,skf3(RInside,Ta3,V)),W)*+ P(Place(U,Os3),X)* Outside(X,W)* -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,Y)))*.
+597[4:MRR:596.2,177.0] || CombinedContainer(U,V,W)* P(Place(X,Y),W)+ -> P(Place(Z,Y),Slice(Z,skf3(W,X,X1)))* O(Place(skf4(skf3(RUnion(U,V),X,X2),HPlace(Y),Z,X),Y),Slice(skf4(skf3(RUnion(U,V),X,X2),HPlace(Y),Z,X),skf3(RUnion(U,V),X,X2)))*.
+593[4:MRR:592.0,39.1] || CombinedContainer(U,V,W)* P(Slice(X,Y),W)+ Continuous(X,Z,Y) -> P(Slice(Z,Y),Slice(Z,skf3(W,X,X1)))* O(Slice(skf4(skf3(RUnion(U,V),X,X2),Y,Z,X),Y),Slice(skf4(skf3(RUnion(U,V),X,X2),Y,Z,X),skf3(RUnion(U,V),X,X2)))*.
+561[4:Res:84.1,486.0] || CombinedContainer(U,V,Slice(W,skf3(X,W,Y)))*+ P(Slice(W,Z),X) Continuous(W,X1,Z) -> P(Slice(X1,Z),Slice(X1,skf3(X,W,Y)))* O(Slice(skf4(skf3(RUnion(U,V),W,X2),Z,X1,W),Z),Slice(skf4(skf3(RUnion(U,V),W,X2),Z,X1,W),skf3(RUnion(U,V),W,X2)))*.
+492[4:Rew:68.0,489.5] || FeasiblePlace(U,V) Cavity(W,V) P(Slice(skf5(V,U),X),W)+ Continuous(skf5(V,U),Y,X) -> P(Slice(Y,X),Slice(Y,skf3(W,skf5(V,U),Z)))* O(Slice(skf4(HPlace(U),X,Y,skf5(V,U)),X),Place(skf4(HPlace(U),X,Y,skf5(V,U)),U))*.
+528[4:SpR:134.1,526.0] || FeasiblePlace(Os3,U)+ -> P(U,Slice(skf5(U,Os3),skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(U,Os3),Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),skf5(U,Os3),Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+546[4:Rew:134.1,545.2] || Cavity(U,V) FeasiblePlace(W,U) P(U,U) -> P(Place(X,W),Place(X,W)) O(Place(skf4(skf3(V,skf5(U,W),Y),HPlace(W),X,skf5(U,W)),W),Slice(skf4(skf3(V,skf5(U,W),Y),HPlace(W),X,skf5(U,W)),skf3(V,skf5(U,W),Y)))*.
+573[4:Rew:68.0,568.4] || Cavity(U,Place(skf5(V,W),X))*+ FeasiblePlace(W,V) P(V,U) -> P(Place(Y,W),Slice(Y,skf3(U,skf5(V,W),Z)))* O(Place(skf4(HPlace(X),HPlace(W),Y,skf5(V,W)),W),Place(skf4(HPlace(X),HPlace(W),Y,skf5(V,W)),X))*.
+521[4:SpR:68.0,462.5] || FeasiblePlace(U,V) P(Slice(skf5(V,U),W),V) Continuous(skf5(V,U),X,W) NoExitCavity(skf5(V,U),X,HPlace(U),HPlace(Y)) -> P(Slice(X,W),Place(X,U)) O(Slice(skf4(HPlace(Y),W,X,skf5(V,U)),W),Place(skf4(HPlace(Y),W,X,skf5(V,U)),Y))*.
+567[4:Res:281.1,552.0] || Cavity(U,Slice(skf5(V,W),X))*+ FeasiblePlace(W,V) P(V,U) -> P(Place(Y,W),Slice(Y,skf3(U,skf5(V,W),Z)))* O(Place(skf4(X,HPlace(W),Y,skf5(V,W)),W),Slice(skf4(X,HPlace(W),Y,skf5(V,W)),X))*.
+552[4:Res:88.1,514.2] || PersistentCavity(skf5(U,V),W,skf3(X,skf5(U,V),Y),Z)*+ FeasiblePlace(V,U) P(U,X) -> P(Place(W,V),Slice(W,skf3(X,skf5(U,V),Y)))* O(Place(skf4(Z,HPlace(V),W,skf5(U,V)),V),Slice(skf4(Z,HPlace(V),W,skf5(U,V)),Z))*.
+557[4:Res:200.0,556.0] || Cavity(U,Place(V,W))+ P(Place(V,W),U) -> P(Place(X,W),Slice(X,skf3(U,skf5(Place(V,W),W),Y)))* O(Place(skf4(HPlace(W),HPlace(W),X,skf5(Place(V,W),W)),W),Place(skf4(HPlace(W),HPlace(W),X,skf5(Place(V,W),W)),W))*.
+539[4:SpR:68.0,483.4] || FeasiblePlace(U,V) P(Place(skf5(V,U),W),V) NoExitCavity(skf5(V,U),X,HPlace(U),HPlace(Y)) -> P(Place(X,W),Place(X,U)) O(Place(skf4(HPlace(Y),HPlace(W),X,skf5(V,U)),W),Place(skf4(HPlace(Y),HPlace(W),X,skf5(V,U)),Y))*.
+486[4:Res:280.1,477.0] || Cavity(Slice(U,skf3(V,U,W)),X)*+ P(Slice(U,Y),V) Continuous(U,Z,Y) -> P(Slice(Z,Y),Slice(Z,skf3(V,U,W)))* O(Slice(skf4(skf3(X,U,X1),Y,Z,U),Y),Slice(skf4(skf3(X,U,X1),Y,Z,U),skf3(X,U,X1)))*.
+494[4:Res:280.1,485.0] || Cavity(Slice(U,skf3(V,U,W)),X)*+ P(Place(U,Y),V) -> P(Place(Z,Y),Slice(Z,skf3(V,U,W)))* O(Place(skf4(skf3(X,U,X1),HPlace(Y),Z,U),Y),Slice(skf4(skf3(X,U,X1),HPlace(Y),Z,U),skf3(X,U,X1)))*.
+556[4:Obv:554.0] || FeasiblePlace(U,V)+ Cavity(W,V) P(V,W) -> P(Place(X,U),Slice(X,skf3(W,skf5(V,U),Y)))* O(Place(skf4(HPlace(U),HPlace(U),X,skf5(V,U)),U),Place(skf4(HPlace(U),HPlace(U),X,skf5(V,U)),U))*.
+500[4:Rew:68.0,497.4] || FeasiblePlace(U,V) Cavity(W,V) P(Place(skf5(V,U),X),W)+ -> P(Place(Y,X),Slice(Y,skf3(W,skf5(V,U),Z)))* O(Place(skf4(HPlace(U),HPlace(X),Y,skf5(V,U)),X),Place(skf4(HPlace(U),HPlace(X),Y,skf5(V,U)),U))*.
+514[4:MRR:512.0,153.1] || FeasiblePlace(U,V) P(V,W) NoExitCavity(skf5(V,U),X,skf3(W,skf5(V,U),Y),Z)*+ -> P(Place(X,U),Slice(X,skf3(W,skf5(V,U),Y)))* O(Place(skf4(Z,HPlace(U),X,skf5(V,U)),U),Slice(skf4(Z,HPlace(U),X,skf5(V,U)),Z))*.
+530[4:Res:526.0,328.1] || Cavity(RGreen,U) Outside(Slice(Tb3,skf3(RInside,Ta3,V)),U)*+ -> O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),Tb3,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),Tb3,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+510[4:MRR:508.0,147.1] || Cavity(U,V)* P(Slice(W,X),U)+ Continuous(W,Y,X) -> P(Slice(Y,X),Slice(Y,skf3(U,W,Z)))* O(Slice(skf4(skf3(V,W,X1),X,Y,W),X),Slice(skf4(skf3(V,W,X1),X,Y,W),skf3(V,W,X1)))*.
+538[4:Res:88.1,484.2] || PersistentCavity(skf5(U,V),W,HPlace(X),Y)*+ FeasiblePlace(V,U) P(U,Place(skf5(U,V),X))* -> P(Place(W,V),Place(W,X))* O(Place(skf4(Y,HPlace(V),W,skf5(U,V)),V),Slice(skf4(Y,HPlace(V),W,skf5(U,V)),Y))*.
+483[4:SpL:134.1,453.0] || FeasiblePlace(U,V) P(Place(skf5(V,U),W),V) NoExitCavity(skf5(V,U),X,HPlace(U),Y) -> P(Place(X,W),Place(X,U)) O(Place(skf4(Y,HPlace(W),X,skf5(V,U)),W),Slice(skf4(Y,HPlace(W),X,skf5(V,U)),Y))*.
+466[4:MRR:464.0,152.1] || P(U,Place(V,W)) Continuous(V,X,skf3(U,V,Y))+ NoExitCavity(V,X,HPlace(W),Z)* -> P(Slice(X,skf3(U,V,Y)),Place(X,W))* O(Slice(skf4(Z,skf3(U,V,Y),X,V),skf3(U,V,Y)),Slice(skf4(Z,skf3(U,V,Y),X,V),Z))*.
+484[4:SpL:134.1,453.0] || FeasiblePlace(U,V) P(V,Place(skf5(V,U),W))* NoExitCavity(skf5(V,U),X,HPlace(W),Y)*+ -> P(Place(X,U),Place(X,W))* O(Place(skf4(Y,HPlace(U),X,skf5(V,U)),U),Slice(skf4(Y,HPlace(U),X,skf5(V,U)),Y))*.
+526[4:Res:25.0,520.0] ||  -> P(Place(U,Os3),Slice(U,skf3(RInside,Ta3,V)))* O(Place(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),U,Ta3),Os3),Slice(skf4(skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W),HPlace(Os3),U,Ta3),skf3(RUnion(Place(Ta3,Ob3),RRed),Ta3,W)))*.
+520[4:Res:84.1,517.0] || CombinedContainer(U,V,RInside)+ -> P(Place(W,Os3),Slice(W,skf3(RInside,Ta3,X)))* O(Place(skf4(skf3(RUnion(U,V),Ta3,Y),HPlace(Os3),W,Ta3),Os3),Slice(skf4(skf3(RUnion(U,V),Ta3,Y),HPlace(Os3),W,Ta3),skf3(RUnion(U,V),Ta3,Y)))*.
+519[4:Res:84.1,518.0] || CombinedContainer(U,V,RGreen)+ -> P(Place(W,Os3),Slice(W,skf3(RGreen,Tb3,X)))* O(Place(skf4(skf3(RUnion(U,V),Tb3,Y),HPlace(Os3),W,Tb3),Os3),Slice(skf4(skf3(RUnion(U,V),Tb3,Y),HPlace(Os3),W,Tb3),skf3(RUnion(U,V),Tb3,Y)))*.
+462[4:SpL:134.1,442.0] || FeasiblePlace(U,V) P(Slice(skf5(V,U),W),V) Continuous(skf5(V,U),X,W) NoExitCavity(skf5(V,U),X,HPlace(U),Y) -> P(Slice(X,W),Place(X,U)) O(Slice(skf4(Y,W,X,skf5(V,U)),W),Slice(skf4(Y,W,X,skf5(V,U)),Y))*.
+517[4:Res:7.0,505.1] || Cavity(RInside,U)+ -> P(Place(V,Os3),Slice(V,skf3(RInside,Ta3,W)))* O(Place(skf4(skf3(U,Ta3,X),HPlace(Os3),V,Ta3),Os3),Slice(skf4(skf3(U,Ta3,X),HPlace(Os3),V,Ta3),skf3(U,Ta3,X)))*.
+518[4:Res:8.0,505.1] || Cavity(RGreen,U)+ -> P(Place(V,Os3),Slice(V,skf3(RGreen,Tb3,W)))* O(Place(skf4(skf3(U,Tb3,X),HPlace(Os3),V,Tb3),Os3),Slice(skf4(skf3(U,Tb3,X),HPlace(Os3),V,Tb3),skf3(U,Tb3,X)))*.
+505[4:MRR:503.0,147.1] || Cavity(U,V)* P(Place(W,X),U)+ -> P(Place(Y,X),Slice(Y,skf3(U,W,Z)))* O(Place(skf4(skf3(V,W,X1),HPlace(X),Y,W),X),Slice(skf4(skf3(V,W,X1),HPlace(X),Y,W),skf3(V,W,X1)))*.
+491[4:Rew:68.0,488.4] || Cavity(U,Place(V,W))*+ P(Slice(V,X),U) Continuous(V,Y,X) -> P(Slice(Y,X),Slice(Y,skf3(U,V,Z)))* O(Slice(skf4(HPlace(W),X,Y,V),X),Place(skf4(HPlace(W),X,Y,V),W))*.
+452[4:SpL:134.1,444.0] || FeasiblePlace(U,V) P(V,Slice(skf5(V,U),W))*+ NoExitCavity(skf5(V,U),X,W,Y)* -> P(Place(X,U),Slice(X,W))* O(Place(skf4(Y,HPlace(U),X,skf5(V,U)),U),Slice(skf4(Y,HPlace(U),X,skf5(V,U)),Y))*.
+487[4:Res:281.1,477.0] || Cavity(U,Slice(V,W))*+ P(Slice(V,X),U) Continuous(V,Y,X) -> P(Slice(Y,X),Slice(Y,skf3(U,V,Z)))* O(Slice(skf4(W,X,Y,V),X),Slice(skf4(W,X,Y,V),W))*.
+499[4:Rew:68.0,496.3] || Cavity(U,Place(V,W))*+ P(Place(V,X),U) -> P(Place(Y,X),Slice(Y,skf3(U,V,Z)))* O(Place(skf4(HPlace(W),HPlace(X),Y,V),X),Place(skf4(HPlace(W),HPlace(X),Y,V),W))*.
+495[4:Res:281.1,485.0] || Cavity(U,Slice(V,W))*+ P(Place(V,X),U) -> P(Place(Y,X),Slice(Y,skf3(U,V,Z)))* O(Place(skf4(W,HPlace(X),Y,V),X),Slice(skf4(W,HPlace(X),Y,V),W))*.
+485[4:Res:88.1,454.1] || PersistentCavity(U,V,skf3(W,U,X),Y)*+ P(Place(U,Z),W) -> P(Place(V,Z),Slice(V,skf3(W,U,X)))* O(Place(skf4(Y,HPlace(Z),V,U),Z),Slice(skf4(Y,HPlace(Z),V,U),Y))*.
+477[4:Res:88.1,445.2] || PersistentCavity(U,V,skf3(W,U,X),Y)*+ P(Slice(U,Z),W) Continuous(U,V,Z) -> P(Slice(V,Z),Slice(V,skf3(W,U,X)))* O(Slice(skf4(Y,Z,V,U),Z),Slice(skf4(Y,Z,V,U),Y))*.
+454[4:MRR:451.0,153.1] || P(Place(U,V),W) NoExitCavity(U,X,skf3(W,U,Y),Z)*+ -> P(Place(X,V),Slice(X,skf3(W,U,Y)))* O(Place(skf4(Z,HPlace(V),X,U),V),Slice(skf4(Z,HPlace(V),X,U),Z))*.
+453[4:Rew:68.0,450.2] || P(Place(U,V),Place(U,W))*+ NoExitCavity(U,X,HPlace(W),Y)* -> P(Place(X,V),Place(X,W))* O(Place(skf4(Y,HPlace(V),X,U),V),Slice(skf4(Y,HPlace(V),X,U),Y))*.
+480[0:MRR:479.0,39.1] || CombinedContainer(U,V,W) FeasiblePlace(X,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),X),Y,skf3(W,skf5(RUnion(U,V),X),Z),HPlace(X))*.
+482[0:Obv:481.0] || CombinedContainer(U,V,RUnion(U,V))*+ FeasiblePlace(W,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),W),X,HPlace(W),HPlace(W))*.
+446[4:MRR:441.0,152.1] || P(U,Slice(V,W)) Continuous(V,X,skf3(U,V,Y))+ NoExitCavity(V,X,W,Z)* -> P(Slice(X,skf3(U,V,Y)),Slice(X,W))* O(Slice(skf4(Z,skf3(U,V,Y),X,V),skf3(U,V,Y)),Slice(skf4(Z,skf3(U,V,Y),X,V),Z))*.
+475[0:Res:84.1,448.1] || CombinedContainer(U,V,Place(skf5(RUnion(U,V),W),X))*+ FeasiblePlace(W,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),W),Y,HPlace(X),HPlace(W))*.
+457[0:Res:84.1,308.1] || CombinedContainer(U,V,Slice(skf5(RUnion(U,V),W),X))*+ FeasiblePlace(W,RUnion(U,V)) -> PersistentCavity(skf5(RUnion(U,V),W),Y,X,HPlace(W))*.
+461[0:MRR:460.0,147.1] || FeasiblePlace(U,V) Cavity(V,W) -> PersistentCavity(skf5(V,U),X,HPlace(U),skf3(W,skf5(V,U),Y))*.
+458[0:MRR:456.0,146.1] || FeasiblePlace(U,V) Cavity(W,V) -> PersistentCavity(skf5(V,U),X,skf3(W,skf5(V,U),Y),HPlace(U))*.
+445[4:MRR:439.0,153.1] || P(Slice(U,V),W) Continuous(U,X,V) NoExitCavity(U,X,skf3(W,U,Y),Z)*+ -> P(Slice(X,V),Slice(X,skf3(W,U,Y)))* O(Slice(skf4(Z,V,X,U),V),Slice(skf4(Z,V,X,U),Z))*.
+448[0:SpL:134.1,309.0] || FeasiblePlace(U,V) Cavity(Place(skf5(V,U),W),V)*+ -> PersistentCavity(skf5(V,U),X,HPlace(W),HPlace(U))*.
+469[1:Res:200.0,468.0] || Cavity(Place(U,V),Place(U,V))*+ -> PersistentCavity(skf5(Place(U,V),V),W,HPlace(V),HPlace(V))*.
+468[0:Obv:467.0] || FeasiblePlace(U,V)+ Cavity(V,V)* -> PersistentCavity(skf5(V,U),W,HPlace(U),HPlace(U))*.
+449[0:SpL:134.1,309.0] || FeasiblePlace(U,V) Cavity(V,Place(skf5(V,U),W))*+ -> PersistentCavity(skf5(V,U),X,HPlace(U),HPlace(W))*.
+442[4:Rew:68.0,438.3] || P(Slice(U,V),Place(U,W))*+ Continuous(U,X,V) NoExitCavity(U,X,HPlace(W),Y)* -> P(Slice(X,V),Place(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
+314[0:SpL:134.1,278.0] || FeasiblePlace(U,V) Cavity(V,Slice(skf5(V,U),W))*+ -> PersistentCavity(skf5(V,U),X,HPlace(U),W)*.
+308[0:SpL:134.1,276.0] || FeasiblePlace(U,V) Cavity(Slice(skf5(V,U),W),V)*+ -> PersistentCavity(skf5(V,U),X,W,HPlace(U))*.
+315[0:MRR:313.0,147.1] || Cavity(Place(U,V),W) -> PersistentCavity(U,X,HPlace(V),skf3(W,U,Y))*.
+311[0:MRR:310.0,146.1] || Cavity(U,Place(V,W)) -> PersistentCavity(V,X,skf3(U,V,Y),HPlace(W))*.
+444[4:MRR:443.1,177.0] || P(Place(U,V),Slice(U,W))*+ NoExitCavity(U,X,W,Y)* -> P(Place(X,V),Slice(X,W))* O(Place(skf4(Y,HPlace(V),X,U),V),Slice(skf4(Y,HPlace(V),X,U),Y))*.
+309[0:SpL:68.0,276.0] || Cavity(Place(U,V),Place(U,W))*+ -> PersistentCavity(U,X,HPlace(V),HPlace(W))*.
+281[0:MRR:279.0,146.1] || Cavity(U,Slice(V,W)) -> PersistentCavity(V,X,skf3(U,V,Y),W)*.
+447[0:Res:58.0,437.1] || CombinedContainer(Place(Ta3,Ob3),RRed,RGreen)* -> .
+437[0:Res:84.1,436.0] || CombinedContainer(U,V,RGreen) Outside(RGreen,RUnion(U,V))* -> .
+435[4:MRR:116.2,433.0] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf4(Y,V,X,U),V),Slice(skf4(Y,V,X,U),Y))*.
+436[0:Res:8.0,328.1] || Cavity(RGreen,U)* Outside(RGreen,U) -> .
+328[0:Res:8.0,103.0] || Cavity(RGreen,U)* P(Place(Tb3,Os3),V)*+ Outside(V,U)* -> .
+434[4:MRR:99.0,433.0] || Leq3(U,V,W)*+ -> IntConn(Slice(V,X))*.
+433[4:Spt:404.0] ||  -> AlwaysIntConn(U,V,W)*.
+8[0:Inp] ||  -> P(Place(Tb3,Os3),RGreen)*.
+420[0:Res:84.1,409.0] || CombinedContainer(U,V,RInside) Outside(RInside,RUnion(U,V))* -> .
+409[0:Res:7.0,357.1] || Cavity(RInside,U)* Outside(RInside,U) -> .
+357[0:Res:7.0,103.0] || Cavity(RInside,U)* P(Place(Ta3,Os3),V)*+ Outside(V,U)* -> .
+112[0:Inp] || EC(U,V) Cavity(W,RUnion(U,V))* -> Cavity(W,V) Cavity(W,U) CombinedContainer(U,V,W).
+181[0:Res:25.0,77.1] || Cavity(RInside,Place(Ta3,Ob3))* -> .
+145[0:Res:58.0,143.0] ||  -> Region(RUnion(Place(Ta3,Ob3),RRed))*.
 25[0:Inp] ||  -> CombinedContainer(Place(Ta3,Ob3),RRed,RInside)*.
-41[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
-42[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
+7[0:Inp] ||  -> P(Place(Ta3,Os3),RInside)*.
+171[0:Res:25.0,67.0] ||  -> EC(Place(Ta3,Ob3),RRed)*.
 58[0:Inp] ||  -> Outside(RGreen,RUnion(Place(Ta3,Ob3),RRed))*.
-59[0:Inp] ||  -> Lt(U,V) Constant(U,V,W)*.
-63[0:Inp] ||  -> P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,U))*.
-69[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
-71[0:Inp] || Constant(U,V,W)* -> Lt(U,V).
-85[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
-100[0:Inp] Region(U) || Lt(V,W)* -> equal(Slice(V,skf3(U,V,X)),U)**.
+106[0:Inp] || NoEntranceCavity(U,V,W,X)* NoExitCavity(U,V,W,X) -> PersistentCavity(U,V,W,X).
 103[0:Inp] || P(U,V)*+ Cavity(V,W)* P(U,X)* Outside(X,W)* -> .
-118[0:MRR:71.0,59.1] ||  -> Lt(U,V)*.
-121[0:Rew:69.0,63.0] ||  -> P(Place(Tb3,Os3),Slice(Tb3,U))*.
+280[0:MRR:277.0,147.1] || Cavity(Slice(U,V),W) -> PersistentCavity(U,X,V,skf3(W,U,Y))*.
+278[0:SpL:68.0,218.0] || Cavity(Place(U,V),Slice(U,W))*+ -> PersistentCavity(U,X,HPlace(V),W)*.
+276[0:SpL:68.0,218.0] || Cavity(Slice(U,V),Place(U,W))*+ -> PersistentCavity(U,X,V,HPlace(W))*.
+199[1:SpL:134.1,179.1] Region(U) || FeasiblePlace(V,W)*+ equal(W,U)* -> FeasiblePlace(V,U)*.
+218[0:MRR:113.2,113.1,211.0] || Cavity(Slice(U,V),Slice(U,W))*+ -> PersistentCavity(U,X,V,W)*.
+217[0:MRR:107.0,211.0] || Leq3(U,V,W)*+ -> equal(Slice(V,X),Slice(U,X))*.
+210[0:MRR:109.0,207.0] || Leq3(U,V,W)*+ -> equal(Place(V,X),Place(U,X))*.
+216[0:MRR:74.0,211.0] ||  -> SkP3(U,V,W)*.
+211[0:EqR:91.0] ||  -> Constant(U,V,W)*.
+207[0:EqR:132.0] ||  -> Motionless(U,V,W)*.
+203[1:Res:200.0,27.0] ||  -> IntConn(Place(U,V))*.
+200[1:SSi:198.0,165.0] ||  -> FeasiblePlace(U,Place(V,U))*.
+179[1:MRR:135.1,175.0] Region(U) || equal(Place(V,W),U)*+ -> FeasiblePlace(W,U)*.
+94[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
+88[0:Inp] || PersistentCavity(U,V,W,X) -> NoExitCavity(U,V,W,X)*.
+85[0:Inp] || PersistentCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+89[0:Inp] || PersistentCavity(U,V,W,X) -> NoEntranceCavity(U,V,W,X)*.
+87[0:Inp] || NoExitCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
+86[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP2(X,W,V,U)*.
 131[0:MRR:100.1,118.0] Region(U) ||  -> equal(Slice(V,skf3(U,V,W)),U)**.
-144[0:Res:42.1,17.0] || Outside(U,V)* -> Region(U).
-147[0:Res:41.1,17.0] || Cavity(U,V)* -> Region(U).
-194[0:SpR:131.1,121.0] Region(U) ||  -> P(Place(Tb3,Os3),U)*.
-305[0:Res:194.1,103.0] Region(U) || Cavity(U,V)* P(Place(Tb3,Os3),W)* Outside(W,V)* -> .
-308[0:MRR:305.0,147.1] || Cavity(U,V)* P(Place(Tb3,Os3),W)*+ Outside(W,V)* -> .
-543[0:Res:194.1,308.1] Region(U) || Cavity(V,W)* Outside(U,W)* -> .
-544[0:MRR:543.0,144.1] || Cavity(U,V)*+ Outside(W,V)* -> .
-545[0:Res:85.1,544.0] || CombinedContainer(U,V,W)* Outside(X,RUnion(U,V))*+ -> .
-554[0:Res:58.0,545.1] || CombinedContainer(Place(Ta3,Ob3),RRed,U)* -> .
-557[0:UnC:554.0,25.0] ||  -> .
-Formulae used in the proof : axiom7 axiom23 axiom25 axiom36 conjecture0 axiom34 axiom37 axiom29 axiom30 axiom35
-
+191[0:SpL:134.1,137.0] || FeasiblePlace(Os3,U) O(U,RUnion(V,RRed))* -> .
+190[0:SpL:134.1,136.0] || FeasiblePlace(Os3,U) O(U,RUnion(RRed,V))* -> .
+189[0:SpL:134.1,129.0] || FeasiblePlace(Os3,U)* O(U,RRed) -> .
+186[0:SpR:134.1,167.0] || FeasiblePlace(Os3,U)* -> DR(U,RRed).
+134[0:MRR:108.0,108.1,22.1,23.1] || FeasiblePlace(U,V) -> equal(Place(skf5(V,U),U),V)**.
+183[0:Res:84.1,147.0] || CombinedContainer(U,V,W)*+ -> Region(RUnion(U,V))*.
+84[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+81[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+77[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+180[0:Res:25.0,78.1] || Cavity(RInside,RRed)* -> .
+78[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+79[0:Inp] || O(U,RUnion(V,W))* -> O(U,V).
+80[0:Inp] || O(U,RUnion(V,W))* -> O(U,W).
+177[1:MRR:125.0,175.0] ||  -> Continuous(U,V,HPlace(W))*.
+176[1:MRR:21.0,175.0] ||  -> ObjectSet(Singleton(U))*.
+175[1:Spt:174.1] ||  -> Object(U)*.
+67[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+73[0:Inp] || DR(U,V)* O(U,V) -> .
+137[0:Res:80.1,129.0] || O(Place(U,Os3),RUnion(V,RRed))* -> .
+167[0:MRR:163.0,165.0] ||  -> DR(Place(U,Os3),RRed)*.
+165[0:SpR:68.0,121.0] ||  -> Region(Place(U,V))*.
+68[0:Inp] ||  -> equal(Slice(U,HPlace(V)),Place(U,V))**.
+136[0:Res:79.1,129.0] || O(Place(U,Os3),RUnion(RRed,V))* -> .
+37[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+162[0:Res:25.0,38.0] ||  -> Region(RRed)*.
+38[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+39[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+48[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+51[0:Inp] || ClosedContainer(U,V,W)* -> Region(W).
+47[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+50[0:Inp] || ClosedContainer(U,V,W)* -> ObjectSet(V).
+54[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+157[0:Res:34.1,16.0] || O(U,V)* -> Region(V).
+156[0:Res:34.1,15.0] || O(U,V)* -> Region(U).
+159[0:Res:7.0,153.0] ||  -> Region(RInside)*.
+153[0:Res:33.1,16.0] || P(U,V)* -> Region(V).
+34[0:Inp] || O(U,V) -> SkP0(V,U)*.
+152[0:Res:33.1,15.0] || P(U,V)* -> Region(U).
+33[0:Inp] || P(U,V) -> SkP0(V,U)*.
+149[0:Res:35.1,16.0] || EC(U,V)* -> Region(V).
+36[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+148[0:Res:35.1,15.0] || EC(U,V)* -> Region(U).
+35[0:Inp] || EC(U,V) -> SkP0(V,U)*.
+147[0:Res:41.1,18.0] || Cavity(U,V)* -> Region(V).
+146[0:Res:41.1,17.0] || Cavity(U,V)* -> Region(U).
+41[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
+143[0:Res:42.1,18.0] || Outside(U,V)* -> Region(V).
+144[0:Res:58.0,142.0] ||  -> Region(RGreen)*.
+142[0:Res:42.1,17.0] || Outside(U,V)* -> Region(U).
+42[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
+141[0:Res:40.1,18.0] || Contained(U,V)* -> Region(V).
+140[0:Res:40.1,17.0] || Contained(U,V)* -> Region(U).
+40[0:Inp] || Contained(U,V) -> SkP1(V,U)*.
+15[0:Inp] || SkP0(U,V)* -> Region(V).
+16[0:Inp] || SkP0(U,V)* -> Region(U).
+28[0:Inp] || DR(U,V)* -> Region(U).
+29[0:Inp] || DR(U,V)* -> Region(V).
+17[0:Inp] || SkP1(U,V)* -> Region(V).
+18[0:Inp] || SkP1(U,V)* -> Region(U).
+23[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+27[0:Inp] || FeasiblePlace(U,V)* -> IntConn(V).
+126[0:MRR:95.1,95.2,119.0,118.0] Fixed(U) ||  -> Stable(V,U)*.
+129[0:MRR:96.0,96.1,118.0,118.0] || O(Place(U,Os3),RRed)* -> .
+121[0:MRR:83.0,83.1,119.0,117.0] ||  -> Region(Slice(U,V))*.
+3[0:Inp] || equal(Ob3,Os3)** -> .
+118[0:MRR:70.0,59.1] ||  -> Lt(U,V)*.
+119[0:MRR:10.0,118.0] ||  -> Time(U)*.
+117[0:MRR:60.0,26.1] ||  -> History(U)*.
+1[0:Inp] ||  -> Fixed(Ob3)*.
 --------------------------SPASS-STOP------------------------------

@@ -10,7 +10,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Singleton,1), (Slice,2), (Place,2), (HPlace,1), (RUnion,2), (Os3,0), (Ob3,0), (RRed,0), (RGreen,0), (RInside,0), (Ta3,0), (Tb3,0)].
+functions[(Singleton,1), (Slice,2), (Place,2), (HPlace,1), (RUnion,2), (Os3,0), (Ob3,0), (RRed,0), (RGreen,0), (RInside,0), (Ta3,0), (Tb3,0), (HB,0), (Tm,0)].
 
 predicates[(OSPlace,3), (Fixed,1), (Ordered,2), (History,1), (Object,1), (ObjectSet,1), (CombinedContainer,3), (Region,1), (P,2), (Outside,2), (Lt,2), (Cavity,2), (PersistentCavity,4), (Contained,2), (NoExitCavity,4), (NoEntranceCavity,4), (Continuous,3), (O,2), (DR,2), (Leq,2), (Leq3,3), (EC,2), (AlwaysIntConn,3), (IntConn,1), (Motionless,3), (Stable,2), (Time,1), (Constant,3), (FeasiblePlace,2), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1)].
 
@@ -183,28 +183,41 @@ formula(forall([u,v,w], implies(O(u,RUnion(v,w)), and(O(u,v), O(u,w))))).
 formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v)))))).
 
 
+% HB Axioms
+formula(History(HB)).
+
+% 3.6
+formula(Constant(Ta3,Tb3,HB)).
+
+% 3.7
+formula(equal(Slice(Ta3,HB), RUnion(Place(Ta3,Ob3),RRed))).
+
+% Tm
+formula(Time(Tm)).
+
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
 % final
-formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Place(tm,Os3),RRed)))).
+% formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Place(tm,Os3),RRed)))).
 
-% 3.27
-% formula(forall(
 
 % 3.24
-% formula(exists([tm], O(Place(tm,Os3),RUnion(Place(tm,Ob3),RRed)))).
+% formula(O(Place(Tm,Os3),RUnion(Place(Tm,Ob3),RRed))).
 
 % 3.21 (proof found for this part)
 % formula(exists([tm], equal(Place(tm,Ob3), Place(Ta3, Ob3)))).
+
+% 3.19
+formula(O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB))).
 
 % 3.18
 % formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3)))).
 
 % 3.17 (no proof)
-% formula(exists([tm,HB], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Slice(tm,HPlace(Os3)),Slice(tm,HB))))).
+% formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Slice(tm,HPlace(Os3)),Slice(tm,HB))))).
 
 % 3.16 (proof)
 % formula(exists([HC], not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC))))).
