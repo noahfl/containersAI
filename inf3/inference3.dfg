@@ -12,7 +12,7 @@ list_of_symbols.
 
 functions[(Singleton,1), (Slice,2), (Place,2), (HPlace,1), (RUnion,2), (Os3,0), (Ob3,0), (RRed,0), (RGreen,0), (RInside,0), (Ta3,0), (Tb3,0)].
 
-predicates[(OSPlace,3), (Fixed,1), (Ordered,2), (History,1), (Object,1), (ObjectSet,1), (CombinedContainer,3), (Region,1), (P,2), (Outside,2), (Lt,2), (Cavity,2), (PersistentCavity,4), (Contained,2), (NoExitCavity,4), (NoEntranceCavity,4), (Continuous,3), (O,2), (DR,2), (Leq,2), (Leq3,3), (EC,2), (AlwaysIntConn,3), (IntConn,1), (Motionless,3), (Stable,2), (Time,1), (Constant,3), (FeasiblePlace,2), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1)].
+predicates[(OSPlace,3), (Object,1), (Fixed,1), (Ordered,2), (History,1), (Object,1), (ObjectSet,1), (CombinedContainer,3), (Region,1), (P,2), (Outside,2), (Lt,2), (Cavity,2), (PersistentCavity,4), (Contained,2), (NoExitCavity,4), (NoEntranceCavity,4), (Continuous,3), (O,2), (DR,2), (Leq,2), (Leq3,3), (EC,2), (AlwaysIntConn,3), (IntConn,1), (Motionless,3), (Stable,2), (Time,1), (Constant,3), (FeasiblePlace,2), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1)].
 
 end_of_list.
 
@@ -182,6 +182,10 @@ formula(forall([u,v,w], implies(O(u,RUnion(v,w)), and(O(u,v), O(u,w))))).
 % SBD3
 formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v)))))).
 
+
+formula(and(Time(Ta3), Time(Tb3))).
+
+formula(and(Object(Ob3), Object(Os3))).
 
 end_of_list.
 

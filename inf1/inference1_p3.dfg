@@ -93,6 +93,8 @@ formula(NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))).
 formula(P(Place(Ta1,Ox1),Rc1)).
 % P.3.3 - proved by Part2
 formula(equal(Rc1, Slice(Ta1,Hc1))).
+% C1A1 - given
+formula(RigidObject(Ob1)).
 % C1A3 - given
 formula(Lt(Ta1,Tb1)).
 % C1A4 - given
@@ -111,15 +113,34 @@ formula(forall([u,v], equiv(Cavity(u,v), and(IntConn(u), DR(u,v), forall([r], im
 formula(forall([t1,t2,h], equiv(AlwaysIntConn(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), IntConn(Slice(t,h)))))))).
 % HCA2
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), P(Slice(t1,hs),Slice(t1,hc)), not(P(Slice(t2,hs),Slice(t2,hc)))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
-end_of_list.
 
-% add Lemma 1.A
+% ROA2
+formula(forall([h,t1,tm,t2,r], implies(and(RigidHistory(h), Leq3(t1,tm,t2), Cavity(r,Slice(tm,h))), exists([hc], and(RigidHistory(hc), PersistentCavity(t1,t2,hc,h), equal(r,Slice(tm,hc))))))).
+
+% Lem1.A
+formula(forall([ob,ta,tb], implies(and(Object(ob), Lt(ta,tb)), AlwaysIntConn(ta,tb,HPlace(ob))))).
+
+% Lem1.D
+formula(forall([t,oa,ob], implies(CContained(t,oa,Singleton(ob)), not(equal(oa,ob))))).
+
+end_of_list.
 
 % test previous 1.x assertions to see where it falls apart
 
 list_of_formulae(conjectures).
 % 1.22
-formula(P(Slice(Tb1,HPlace(Ox1)), Slice(Tb1,Hc1))).
+% formula(P(Slice(Tb1,HPlace(Ox1)), Slice(Tb1,Hc1))).
+
+
+% 1.17
+% formula(P(Slice(Ta1,HPlace(Ox1)), Slice(Ta1,Hc1))).
+
+% 1.15
+formula(equal(Slice(Ta1,HPlace(Ox1)), Place(Ta1,Ox1))).
+
+% 1.14
+% formula(Continuous(Ta1,Tb1,HPlace(Ox1))).
+
 end_of_list.
 
 list_of_settings(SPASS).
