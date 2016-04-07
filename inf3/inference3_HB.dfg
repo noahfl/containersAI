@@ -184,9 +184,10 @@ formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v)))))).
 %% 3.2
 % 3.8 proof with this axiom but not without
 % step in the proof it's based on proves (3.2 below) but won't work in full proof
-% formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
-formula(Constant(Ta3,Tb3,HC)).
-formula(equal(Slice(Ta3,HC), RInside)).
+% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
+% formula(Constant(Ta3,Tb3,HC)).
+% formula(equal(Slice(Ta3,HC), RInside)).
 
 
 % HB Axioms
@@ -215,6 +216,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
+% formula(and(Lt(Ta3,Tm), Lt(Tm, Tb3), O(Place(Tm,Os3),RRed))).
 % formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Place(tm,Os3),RRed)))).
 
 
@@ -234,10 +236,10 @@ list_of_formulae(conjectures).
 % formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Slice(tm,HPlace(Os3)),Slice(tm,HB))))).
 
 % 3.16 (no proof)
-% formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
+formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
 
-% 3.15
-formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
+% 3.15 (proof)
+% formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 
 % 3.14 (proof) 
 % formula(equal(Slice(Tb3,HPlace(Os3)), Place(Tb3,Os3))).
@@ -260,8 +262,11 @@ formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 % 3.6 (proof)
 % formula(Constant(Ta3,Tb3,HB)).
 
-% 3.4 (proof)
-formula(equal(Slice(Ta3,HC), RInside)).
+% 3.4 (no proof without 3.2 using HC)
+% formula(equal(Slice(Ta3,HC), RInside)).
+
+% 3.3 (no proof without 3.2 using HC)
+% formula(Constant(Ta3,Tb3,HC)).
 
 % 3.2
 % formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
