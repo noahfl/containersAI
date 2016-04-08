@@ -180,14 +180,14 @@ formula(forall([u,v,w], implies(O(u,RUnion(v,w)), and(O(u,v), O(u,w))))).
 formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v)))))).
 
 %% HC Axioms
-% formula(History(HC)).
+formula(History(HC)).
 %% 3.2
 % 3.8 proof with this axiom but not without
 % step in the proof it's based on proves (3.2 below) but won't work in full proof
-% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
-% formula(Constant(Ta3,Tb3,HC)).
-% formula(equal(Slice(Ta3,HC), RInside)).
+formula(Constant(Ta3,Tb3,HC)).
+formula(equal(Slice(Ta3,HC), RInside)).
 
 
 % HB Axioms
@@ -208,7 +208,7 @@ formula(and(Lt(Ta3,Tm), Lt(Tm,Tb3), O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB)))).
 
 
 % test
-% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 
 end_of_list.
 
