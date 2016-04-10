@@ -193,7 +193,7 @@ formula(History(HC)).
 
 % HB Axioms
 formula(History(HB)).
-
+formula(and(Time(Ta3), Time(Tb3))).
 % 3.5
 formula(and(Constant(Ta3,Tb3,HB), equal(Slice(Ta3,HB), RUnion(Place(Ta3,Ob3), RRed)))).
 
