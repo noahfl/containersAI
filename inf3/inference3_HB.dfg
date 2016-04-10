@@ -148,8 +148,7 @@ formula(forall([u,v,w,x], implies(and(Outside(u,v), P(w,u), Cavity(x,v)), not(P(
 
 
 % HID3 problem area
-formula(forall([t1,t2,h,t], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), implies(Leq3(t1,t,t2), equal(Slice(t,h), Slice(t1,h))))))).
-
+formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h)))))))).
 
 % HCA2
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
@@ -187,13 +186,12 @@ formula(History(HC)).
 % step in the proof it's based on proves (3.2 below) but won't work in full proof
 % formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 % formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
-% formula(Constant(Ta3,Tb3,HC)).
+formula(Constant(Ta3,Tb3,HC)).
 % formula(equal(Slice(Ta3,HC), RInside)).
 
 
 % HB Axioms
 formula(History(HB)).
-formula(and(Time(Ta3), Time(Tb3))).
 % 3.5
 formula(and(Constant(Ta3,Tb3,HB), equal(Slice(Ta3,HB), RUnion(Place(Ta3,Ob3), RRed)))).
 
@@ -209,7 +207,7 @@ formula(and(Lt(Ta3,Tm), Lt(Tm,Tb3), O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB)))).
 
 
 % test
-% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 
 end_of_list.
 
@@ -240,8 +238,8 @@ list_of_formulae(conjectures).
 % formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
 % formula(exists([h], not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,h))))).
 
-% 3.15 (proof)
-% formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
+% 3.15 (no proof)
+formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 
 % 3.14 (proof) 
 % formula(equal(Slice(Tb3,HPlace(Os3)), Place(Tb3,Os3))).
@@ -271,7 +269,7 @@ list_of_formulae(conjectures).
 % formula(Constant(Ta3,Tb3,HB)).
 
 % 3.4 (no proof without 3.2 using HC)
-formula(equal(Slice(Ta3,HC), RInside)).
+% formula(equal(Slice(Ta3,HC), RInside)).
 % formula(exists([h], equal(Slice(Ta3,h), RInside))).
 
 % 3.3 (proof without 3.2 using HC)
