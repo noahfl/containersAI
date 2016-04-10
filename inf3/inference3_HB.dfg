@@ -80,7 +80,8 @@ formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), Ob
 % Histories
 % Sortal axioms
 % HISA
-formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+formula(forall([t,h], implies(and(Time(t), History(h)),Region(Slice(t,h))))).
+%formula(forall([t,h], implies(Slice(t,h), and(Time(t), History(h))))).
 % HISC
 formula(forall([o], implies(Object(o), History(HPlace(o))))).
 % PersistentCavity and NoExitCavity
@@ -151,7 +152,7 @@ formula(forall([t1,t2,h,t], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), 
 
 
 % HCA2
-formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), P(Slice(t1,hs),Slice(t1,hc)), not(P(Slice(t2,hs),Slice(t2,hc)))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
+formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
 
 % Lem1.A
 formula(forall([ob,ta,tb], implies(and(Object(ob), Lt(ta,tb)), AlwaysIntConn(ta,tb,HPlace(ob))))).
@@ -184,10 +185,10 @@ formula(History(HC)).
 %% 3.2
 % 3.8 proof with this axiom but not without
 % step in the proof it's based on proves (3.2 below) but won't work in full proof
-formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
-formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
-formula(Constant(Ta3,Tb3,HC)).
-formula(equal(Slice(Ta3,HC), RInside)).
+% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+% formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
+% formula(Constant(Ta3,Tb3,HC)).
+% formula(equal(Slice(Ta3,HC), RInside)).
 
 
 % HB Axioms
@@ -208,7 +209,7 @@ formula(and(Lt(Ta3,Tm), Lt(Tm,Tb3), O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB)))).
 
 
 % test
-formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 
 end_of_list.
 
@@ -223,7 +224,7 @@ list_of_formulae(conjectures).
 % 3.24
 % formula(O(Place(Tm,Os3),RUnion(Place(Tm,Ob3),RRed))).
 
-% 3.21 (proof found for this part)
+% 3.21 (proof)
 % formula(equal(Place(Tm,Ob3), Place(Ta3, Ob3))).
 
 % 3.19 (proof)
@@ -236,7 +237,8 @@ list_of_formulae(conjectures).
 % formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3), O(Slice(tm,HPlace(Os3)),Slice(tm,HB))))).
 
 % 3.16 (no proof)
-formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
+% formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
+% formula(exists([h], not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,h))))).
 
 % 3.15 (proof)
 % formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
@@ -249,6 +251,12 @@ formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
 
 % 3.12 (proof)
 % formula(P(Slice(Ta3,HPlace(Os3)), Slice(Ta3,HC))).
+
+% 3.11 (proof)
+% formula(equal(Slice(Ta3,HPlace(Os3)), Place(Ta3,Os3))).
+
+% 3.10 (proof)
+% formula(Continuous(Ta3, Tb3, HPlace(Os3))).
 
 % 3.9 (proof)
 % formula(PersistentCavity(Ta3,Tb3,HC,HB)).
@@ -263,9 +271,10 @@ formula(not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,HC)))).
 % formula(Constant(Ta3,Tb3,HB)).
 
 % 3.4 (no proof without 3.2 using HC)
-% formula(equal(Slice(Ta3,HC), RInside)).
+formula(equal(Slice(Ta3,HC), RInside)).
+% formula(exists([h], equal(Slice(Ta3,h), RInside))).
 
-% 3.3 (no proof without 3.2 using HC)
+% 3.3 (proof without 3.2 using HC)
 % formula(Constant(Ta3,Tb3,HC)).
 
 % 3.2
