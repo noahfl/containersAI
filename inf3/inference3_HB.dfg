@@ -147,8 +147,10 @@ formula(forall([u,v,w,x], implies(and(Outside(u,v), P(w,u), Cavity(x,v)), not(P(
 % http://cs.nyu.edu/cs/faculty/davise/containers/SpatialLemmas.txt
 
 
-% HID3 problem area
+% HID3 ##problem area?##
 formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h)))))))).
+
+formula(forall([t1,t2,t,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), implies(Leq3(t1,t,t2), equal(Slice(t,h), Slice(t1,h))))))).
 
 % HCA2
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
@@ -180,34 +182,31 @@ formula(forall([u,v,w], implies(O(u,RUnion(v,w)), and(O(u,v), O(u,w))))).
 formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v)))))).
 
 %% HC Axioms
-formula(History(HC)).
 %% 3.2
 % 3.8 proof with this axiom but not without
 % step in the proof it's based on proves (3.2 below) but won't work in full proof
 % formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 % formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
-formula(Constant(Ta3,Tb3,HC)).
+% formula(Constant(Ta3,Tb3,HC)).
 % formula(equal(Slice(Ta3,HC), RInside)).
 
 
 % HB Axioms
-formula(History(HB)).
 % 3.5
-formula(and(Constant(Ta3,Tb3,HB), equal(Slice(Ta3,HB), RUnion(Place(Ta3,Ob3), RRed)))).
+% formula(and(Constant(Ta3,Tb3,HB), equal(Slice(Ta3,HB), RUnion(Place(Ta3,Ob3), RRed)))).
 
 % 3.6
-formula(Constant(Ta3,Tb3,HB)).
+% formula(Constant(Ta3,Tb3,HB)).
 
 % 3.7
 % formula(equal(Slice(Ta3,HB), RUnion(Place(Ta3,Ob3),RRed))).
 
 % Tm
-formula(Time(Tm)).
-formula(and(Lt(Ta3,Tm), Lt(Tm,Tb3), O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB)))).
+% formula(and(Lt(Ta3,Tm), Lt(Tm,Tb3), O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB)))).
 
 
 % test
-formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
+% formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
 
 end_of_list.
 
@@ -222,13 +221,19 @@ list_of_formulae(conjectures).
 % 3.24
 % formula(O(Place(Tm,Os3),RUnion(Place(Tm,Ob3),RRed))).
 
+% 3.22 (no proof)
+% formula(equal(Slice(Tm,HB), RUnion(Place(Tm,Ob3), RRed))).
+
 % 3.21 (proof)
 % formula(equal(Place(Tm,Ob3), Place(Ta3, Ob3))).
 
-% 3.19 (proof)
+% 3.20 (no proof)
+% formula(equal(Slice(Tm,HB), Slice(Ta3,HB))).
+
+% 3.19 (no proof)
 % formula(O(Slice(Tm,HPlace(Os3)),Slice(Tm,HB))).
 
-% 3.18
+% 3.18 (no proof) 
 % formula(exists([tm], and(Lt(Ta3,tm), Lt(tm,Tb3)))).
 
 % 3.17 (no proof)
@@ -239,7 +244,7 @@ list_of_formulae(conjectures).
 % formula(exists([h], not(P(Slice(Tb3,HPlace(Os3)),Slice(Tb3,h))))).
 
 % 3.15 (no proof)
-formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
+% formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 
 % 3.14 (proof) 
 % formula(equal(Slice(Tb3,HPlace(Os3)), Place(Tb3,Os3))).
@@ -247,7 +252,7 @@ formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 % 3.13 (proof)
 % formula(not(P(Place(Tb3,Os3), RInside))).
 
-% 3.12 (proof)
+% 3.12 (no proof - probably due to 3.4)
 % formula(P(Slice(Ta3,HPlace(Os3)), Slice(Ta3,HC))).
 
 % 3.11 (proof)
@@ -259,7 +264,7 @@ formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 % 3.9 (proof)
 % formula(PersistentCavity(Ta3,Tb3,HC,HB)).
 
-% 3.8 (proof)
+% 3.8 (proof only with 3.3 as axiom)
 % formula(PersistentCavity(Ta3,Tb3,HC,HB)).
 
 % 3.7 (proof)
@@ -268,16 +273,16 @@ formula(equal(Slice(Tb3,HC),Slice(Ta3,HC))).
 % 3.6 (proof)
 % formula(Constant(Ta3,Tb3,HB)).
 
-% 3.4 (no proof without 3.2 using HC)
-% formula(equal(Slice(Ta3,HC), RInside)).
-% formula(exists([h], equal(Slice(Ta3,h), RInside))).
+% 3.4 (no proof without 3.2 using HC as an axiom; seen below 3.2)
+formula(equal(Slice(Ta3,HC), RInside)).
 
-% 3.3 (proof without 3.2 using HC)
+% 3.3 (proof)
 % formula(Constant(Ta3,Tb3,HC)).
 
 % 3.2
 % formula(exists([h], and(Constant(Ta3,Tb3,h), equal(Slice(Ta3,h), RInside)))).
-
+% with HC
+formula(and(Constant(Ta3,Tb3,HC), equal(Slice(Ta3,HC), RInside))).
 end_of_list.
 
 
