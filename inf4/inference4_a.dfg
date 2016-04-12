@@ -1,0 +1,123 @@
+begin_problem(Scenario3).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 3*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*18 February 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+
+functions[(Place,2), (Union,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1)].
+
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+%%%% Sortal Axioms
+
+%%% Time
+%% Actions
+% TASA
+formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Action(a))))).
+
+%%% Objects
+%% Objects containing regions
+% ORSA
+formula(forall([t,o,r], implies(UprightContainer(t,o,r), and(Time(t), Object(o), Region(r))))).
+
+%%% Specific Actions
+%% Safe manipulation
+% ASSA
+formula(forall([t,o], implies(SafelyMovable(t,o), and(Time(t), Object(o))))).
+% ASSB
+formula(forall([t,ox,ob], implies(BoxedIn(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+
+%% Loading an upright container
+% ALSA
+formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb))))).
+% ALSB
+formula(forall([t,r], implies(Reachable(t,r), and(Time(t), Region(r))))).
+%% Fits and small set
+% OFSA
+formula(forall([o], implies(SmallObject(o), Object(o)))).
+
+%%% Spatial Relations
+%% Spatial containment
+%SCSA
+formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb))))).
+%% Much smaller
+% SMSA
+formula(forall([s,r], implies(SmallSet(s,r), and(ObjectSet(s), Region(r))))).
+
+%%% Motion and Manipulation
+%% Stability and falling
+% MSSA
+formula(forall([t], implies(AllStable(t), Time(t)))).
+%% Frame axioms
+% MFSA
+formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o))))).
+%% Grasping an object
+% MGSA
+formula(forall([t], implies(EmptyHanded(t), Time(t)))).
+% MGSB
+formula(forall([t,o], implies(CanGrasp(t,o), and(Time(t), Object(o))))).
+%% Feasibility of Traveling
+% MFSA
+formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
+
+
+%%%% Specifications
+
+% C4A1
+formula(UprightContainer(Ta4,Ob4,Rc4)).
+% C4A2
+formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4))).
+% C4A3
+formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
+% C4A4
+formula(AllStable(Ta4)).
+% C4A5
+formula(EmptyHanded(Ta4)).
+% C4A6
+formula(Graspable(Ta4,Ox4)).
+% C4A7
+formula(Reachable(Ta4,Rc4)).
+% C4A8
+formula(and(not(equal(Ox4,Agent)), not(equal(Agent,Ob4)), not(equal(Ox4,Ob4)))).
+% C4A9
+formula(FullyOutside(Place(Ta4,Agent), Place(Ta4,Ob4))).
+% C4A10
+formula(SafelyMovable(Ta4,Ox4)).
+% C4A11
+formula(SmallObject(Ob4)).
+% C4A12
+formula(not(BoxedIn(Ta4,Agent,Ox4))).
+% C4A13
+formula(NoPartialContents(Ta4,Ob4)).
+
+
+% MFD4
+formula(forall([t,o], equiv(Graspable(t,o), exists([tb,ra], and(Occurs(t,tb,TravelTo(ra)), CanGrasp(tb,o)))))).
+
+end_of_list.
+
+
+list_of_formulae(conjectures).
+
+% 4.1
+formula(exists([tm1,ra], and(Occurs(Ta4,tm1,TravelTo(ra)), CanGrasp(tm1,Ox4)))).
+
+end_of_list.
+
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+
