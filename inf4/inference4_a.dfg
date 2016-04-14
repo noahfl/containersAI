@@ -145,7 +145,7 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-% 4.14
+% 4.14 (no proof, fix)
 formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % 4.13 (proof)
