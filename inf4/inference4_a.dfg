@@ -1,4 +1,4 @@
-begin_problem(Scenario3).
+begin_problem(Scenario4).
 
 list_of_descriptions.
 name({*Qualitative Reasoning About Containers - Case 3*}).
@@ -12,7 +12,7 @@ list_of_symbols.
 
 functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3)].
 
 end_of_list.
 
@@ -78,6 +78,13 @@ formula(forall([t,o], implies(CanGrasp(t,o), and(Time(t), Object(o))))).
 % MFSA
 formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 
+% Temporal Axioms
+% TID3
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% TID1
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% TIA2
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
@@ -139,6 +146,10 @@ formula(forall([ta,tb,o], and(SafelyMovable(ta,o), implies(forall([ox], implies(
 % formula(exists([tm1,ra], and(Occurs(Ta4,tm1,TravelTo(ra)), CanGrasp(tm1,Ox4)))).
 
 % formula(and(Time(Tm1), Region(Ra1))).
+
+% test
+formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4)))).
+
 
 end_of_list.
 
