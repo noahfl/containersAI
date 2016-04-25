@@ -10,9 +10,9 @@ Inference 1: done, 4 parts
 
 Inference 2: done, 1 part
 
-Inference 3: not done
+Inference 3: done, 1 part
 
-Inference 4: not done
+Inference 4: in progress
 
 Inference 5: not done
 
