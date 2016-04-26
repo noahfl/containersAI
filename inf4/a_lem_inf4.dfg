@@ -1,10 +1,10 @@
-begin_problem(Scenario4).
+begin_problem(Scenario4_Lem4A).
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 3*}).
+name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.A*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
-description({*18 February 2016*}).
+description({*25 April 2016*}).
 
 end_of_list.
 
@@ -95,111 +95,28 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
-% C4A1
-formula(UprightContainer(Ta4,Ob4,Rc4)).
-% C4A2
-formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4))).
-% C4A3
-formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
-% C4A4
-formula(AllStable(Ta4)).
-% C4A5
-formula(EmptyHanded(Ta4)).
-% C4A6
-formula(Graspable(Ta4,Ox4)).
-% C4A7
-formula(Reachable(Ta4,Rc4)).
-% C4A8
-formula(and(not(equal(Ox4,Agent)), not(equal(Agent,Ob4)), not(equal(Ox4,Ob4)))).
-% C4A9
-formula(FullyOutside(Place(Ta4,Agent), Place(Ta4,Ob4))).
-% C4A10
-formula(SafelyMovable(Ta4,Ox4)).
-% C4A11
-formula(SmallObject(Ob4)).
-% C4A12
-formula(not(BoxedIn(Ta4,Agent,Ox4))).
-% C4A13
-formula(NoPartialContents(Ta4,Ob4)).
-
-
-% Lemma 4A
-formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o, Agent)), equal(Place(tb,o), Place(ta,o))), AllStable(tb)))).
-
-% Lemma 4G
-formula(forall([ta,tb,r,o,rd], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), implies(Reachable(ta,rd), Reachable(tb,rd))))).
-
-% Lemma 4R
-formula(forall([o,t], implies(SmallObject(o), not(UContained(t,Agent,o))))).
-
-% MFD4
-formula(forall([t,o], equiv(Graspable(t,o), exists([tb,ra], and(Occurs(t,tb,TravelTo(ra)), CanGrasp(tb,o)))))).
-
-% ORD3
-formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
-
-% OCD3
-formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc)))))).
-
-% OCD5
-formula(forall([t,ob,s], implies(and(Time(t), Object(ob), ObjectSet(s)), equiv(equal(s, UContents(t,ob)), forall([ox], equiv(Element(ox,s), UContained(t,ox,ob))))))).
-
-% OSA1
-formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb))))).
-
-% ASA3
-formula(forall([ta,tb,o], and(SafelyMovable(ta,o), implies(forall([ox], implies(not(equal(ox,Agent)), equal(Place(tb,ox), Place(ta,ox)))), SafelyMovable(tb,o))))).
-
 % MRA5
 formula(forall([ta,tb], and(Lt(ta,tb), AllStable(ta), EmptyHanded(ta), forall([o], implies(Object(o), implies(Released(ta,tb,o), and(Motionless(ta,tb,o), AllStable(tb)))))))).
 
+% MOD2
+formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o))))))))).
 
-% formula(exists([tm1,ra], and(Occurs(Ta4,tm1,TravelTo(ra)), CanGrasp(tm1,Ox4)))).
+% MOD3
+formula(forall([ta,tb,r], equiv(Occurs(ta,tb,TravelTo(r)), and(equal(r, Place(tb,Agent)), forall([o], implies(Object(o), Released(ta,tb,o))))))).
 
-% formula(and(Time(Tm1), Region(Ra1))).
+% MGD1
+formula(forall([t], equiv(EmptyHanded(t), and(Time(t), not(exists([o], implies(Object(o), Grasp(t,o)))))))).
 
-% test
-formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4)))).
-
+% test (MOD1)
+formula(forall([ta,tb,o], equiv(Moves(ta,tb,o), and(Lt(ta,tb), not(equal(Place(tb,o), Place(ta,o))))))).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% 4.14 (no proof, fix)
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
-
-% 4.13 (proof)
-% formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4)))).
-
-% 4.12 (proof)
-% formula(not(UContained(Tm1,Agent,Ob4))).
-
-% 4.11 (proof)
-% formula(SafelyMovable(Tm1,Ox4)).
-
-% 4.10 (proof)
-% formula(Reachable(Tm1,Rc4)).
-
-% 4.9 (proof)
-% formula(UprightContainer(Tm1,Ob4,Rc4)).
-
-% 4.6 (proof)
-% formula(equal(Place(Tm1,Ob4), Place(Ta4,Ob4))).
-
-% 4.4 (proof)
-% formula(forall([o], and(Object(o), implies(not(equal(o, Agent)), equal(Place(Tm1,o), Place(Ta4,o)))))).
-
-% 4.3
-% formula(CanGrasp(Tm1,Ox4)).
-% formula(exists([tm1],CanGrasp(tm1,Ox4))).
-% 4.2
-% formula(Occurs(Ta4,Tm1,TravelTo(Ra1))).
-% formula(exists([tm1,ra], Occurs(Ta4,tm1,TravelTo(ra)))).
-
-% 4.1
-% formula(exists([tm1,ra], and(Occurs(Ta4,tm1,TravelTo(ra)), CanGrasp(tm1,Ox4)))).
+% Lem4.A
+formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o, Agent)), equal(Place(tb,o), Place(ta,o))), AllStable(tb)))).
 
 end_of_list.
 
