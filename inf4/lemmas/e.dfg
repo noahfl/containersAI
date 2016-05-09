@@ -1,18 +1,18 @@
-begin_problem(Scenario4_Lem4A).
+begin_problem(Scenario4i_Lem4E).
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.A*}).
+name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.E*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
-description({*25 April 2016*}).
+description({*5 May 2016*}).
 
 end_of_list.
 
 list_of_symbols.
 
-functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0)].
+functions[(Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (T,0), (Ra,0), (Rb,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Trajectory,3), (StaysIn,4), (NoObstacles,2), (Released,3), (Grasp,2), (DR,2), (Feasible,2)].
 
 end_of_list.
 
@@ -24,6 +24,8 @@ list_of_formulae(axioms).
 %% Actions
 % TASA
 formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Action(a))))).
+% TASB
+formula(forall([t,a], implies(Feasible(t,a), and(Time(t), Action(a))))).
 
 %%% Objects
 %% Object sets
@@ -54,7 +56,7 @@ formula(forall([o], implies(SmallObject(o), Object(o)))).
 %%% Spatial Relations
 %% Basic Spatial Relations
 % SRSA
-formula(forall([u,v], implies(P(u,v), and(Region(u), Region(v))))).
+formula(forall([u,v], implies(or(P(u,v),DR(u,v)), and(Region(u), Region(v))))).
 %% Spatial containment
 % SCSA/B
 formula(forall([ra,rb], implies(or(FullyOutside(ra,rb), UprightContainerShape(ra,rb)), and(Region(ra), Region(rb))))).
@@ -63,27 +65,28 @@ formula(forall([ra,rb], implies(or(FullyOutside(ra,rb), UprightContainerShape(ra
 formula(forall([s,r], implies(SmallSet(s,r), and(ObjectSet(s), Region(r))))).
 
 %%% Motion and Manipulation
-%% Motion
-% MMSA
-formula(forall([ta,tb,o], implies(Moves(ta,tb,o), and(Time(ta), Time(tb), Object(o))))).
 %% Stability and falling
 % MSSA
 formula(forall([t], implies(AllStable(t), Time(t)))).
 %% Frame axioms
 % MFSA
 formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o))))).
-% MFSB
-formula(forall([ta,tb,o], implies(or(Released(ta,tb,o), Motionless(ta,tb,o)), and(Time(ta), Time(tb), Object(o))))).
 %% Grasping an object
 % MGSA
 formula(forall([t], implies(EmptyHanded(t), Time(t)))).
 % MGSB
-formula(forall([t,o], implies(CanGrasp(t,o), and(Time(t), Object(o))))).
+formula(forall([t,o], implies(or(CanGrasp(t,o),Grasp(t,o)), and(Time(t), Object(o))))).
 % MGSC
-formula(forall([t,o], implies(Grasp(t,o), and(Time(t), Object(o))))).
+formula(forall([ta,tb,o], implies(Released(ta,tb,o), and(Time(ta), Time(tb), Object(o))))).
 %% Feasibility of Traveling
 % MFSA
 formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
+% MFSB
+formula(forall([ra,rb,rw], implies(Trajectory(ra,rb,rw), and(Time(ra), Time(rb), Time(rw))))).
+% MFSC
+formula(forall([ta,tb,o,r], implies(StaysIn(ta,tb,o,r), and(Time(ta), Time(tb), Object(o), Region(r))))).
+% MFSD
+formula(forall([t,r], implies(NoObstacles(t,r), and(Time(t), Region(r))))).
 
 % Temporal Axioms
 % TID3
@@ -95,28 +98,25 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
-% MRA5
-formula(forall([ta,tb], and(Lt(ta,tb), AllStable(ta), EmptyHanded(ta), forall([o], implies(Object(o), implies(Released(ta,tb,o), and(Motionless(ta,tb,o), AllStable(tb)))))))).
+% MFD1
+formula(forall([t,r], equiv(NoObstacles(t,r), and(Time(t), forall([o], implies(Object(o), implies(not(equal(o,Agent)), DR(Place(t,o),r)))))))).
 
-% MOD2
-formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o))))))))).
+% LemSH
+formula(forall([ra,rb,r], implies(and(DR(r,ra), DR(r,rb)), DR(r,RUnion(ra,rb))))).
 
-% MOD3
-formula(forall([ta,tb,r], equiv(Occurs(ta,tb,TravelTo(r)), and(equal(r, Place(tb,Agent)), forall([o], implies(Object(o), Released(ta,tb,o))))))).
+% Assume
+formula(NoObstacles(T,Ra)).
 
-% MGD1
-formula(forall([t], equiv(EmptyHanded(t), and(Time(t), not(exists([o], implies(Object(o), Grasp(t,o)))))))).
-
-% test (MOD1)
-formula(forall([ta,tb,o], equiv(Moves(ta,tb,o), and(Lt(ta,tb), not(equal(Place(tb,o), Place(ta,o))))))).
+formula(NoObstacles(T,Rb)).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% Lem4.A
-formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o, Agent)), equal(Place(tb,o), Place(ta,o))), AllStable(tb)))).
+% Lem4.E
+formula(forall([t,ra,rb], implies(and(NoObstacles(t,ra), NoObstacles(t,rb)), NoObstacles(t,RUnion(ra,rb))))).
+
 
 end_of_list.
 

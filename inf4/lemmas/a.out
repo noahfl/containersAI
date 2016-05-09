@@ -1,0 +1,221 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> AllStable(skc7)*.
+2[0:Inp] ||  -> EmptyHanded(skc7)*.
+3[0:Inp] ||  -> Region(skc6)*.
+4[0:Inp] ||  -> Object(skc5)*.
+5[0:Inp] ||  -> AllStable(U)*.
+6[0:Inp] ||  -> EmptyHanded(U)*.
+7[0:Inp] ||  -> Lt(U,V)*.
+8[0:Inp] || equal(skc5,Agent)** -> .
+9[0:Inp] ||  -> Object(skf4(U,V))*.
+10[0:Inp] ||  -> Occurs(skc7,skc8,TravelTo(skc6))*.
+11[0:Inp] || SmallObject(U) -> Object(U)*.
+12[0:Inp] || AllStable(U) -> Time(U)*.
+13[0:Inp] || EmptyHanded(U)* -> Time(U).
+14[0:Inp] ||  -> Time(skf3(U,V,W))*.
+15[0:Inp] || EmptyHanded(U)* -> Time(U).
+16[0:Inp] || EmptyHanded(U)* -> Object(V)*.
+17[0:Inp] || Element(U,V)* -> Object(U).
+18[0:Inp] || Element(U,V)* -> ObjectSet(V).
+19[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+20[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+21[0:Inp] || FullyOutside(U,V)* -> Region(U).
+22[0:Inp] || FullyOutside(U,V)* -> Region(V).
+23[0:Inp] || Reachable(U,V)* -> Time(U).
+24[0:Inp] || Reachable(U,V)* -> Region(V).
+25[0:Inp] || P(U,V)* -> Region(U).
+26[0:Inp] || P(U,V)* -> Region(V).
+27[0:Inp] || SkP0(U,V)* -> Region(V).
+28[0:Inp] || SkP0(U,V)* -> Region(U).
+29[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+30[0:Inp] || SmallSet(U,V)* -> Region(V).
+31[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+32[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+33[0:Inp] || CanGrasp(U,V)* -> Time(U).
+34[0:Inp] || CanGrasp(U,V)* -> Object(V).
+35[0:Inp] || Grasp(U,V)* -> Time(U).
+36[0:Inp] || Grasp(U,V)* -> Object(V).
+37[0:Inp] || Graspable(U,V)* -> Time(U).
+38[0:Inp] || Graspable(U,V)* -> Object(V).
+39[0:Inp] || SkP2(U,V)* -> Time(V).
+40[0:Inp] || SkP2(U,V)* -> Time(U).
+41[0:Inp] || Occurs(U,V,W)* -> Time(U).
+42[0:Inp] || Occurs(U,V,W)* -> Time(V).
+43[0:Inp] || Occurs(U,V,W)* -> Action(W).
+44[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+45[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+46[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+47[0:Inp] || UContained(U,V,W)* -> Time(U).
+48[0:Inp] || UContained(U,V,W)* -> Object(V).
+49[0:Inp] || UContained(U,V,W)* -> Object(W).
+50[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+51[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+52[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+53[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+54[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+55[0:Inp] || Moves(U,V,W)* -> Time(U).
+56[0:Inp] || Moves(U,V,W)* -> Time(V).
+57[0:Inp] || Moves(U,V,W)* -> Object(W).
+58[0:Inp] || SkP1(U,V,W)* -> Time(W).
+59[0:Inp] || SkP1(U,V,W)* -> Time(V).
+60[0:Inp] || SkP1(U,V,W)* -> Object(U).
+61[0:Inp] || Lt(U,V) -> SkP2(V,U)*.
+62[0:Inp] || Leq(U,V) -> SkP2(V,U)*.
+63[0:Inp] || Leq3(U,V,W)* -> Time(U).
+64[0:Inp] || Leq3(U,V,W)* -> Time(V).
+65[0:Inp] || Leq3(U,V,W)* -> Time(W).
+66[0:Inp] || Grasp(U,V)* EmptyHanded(U) -> .
+67[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+68[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+69[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
+70[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
+71[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
+72[0:Inp] || equal(Place(skc8,skc5),Place(skc7,skc5))** AllStable(skc8) -> .
+73[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+74[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+75[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+76[0:Inp] || Released(U,V,W)* Object(W) -> Motionless(U,V,W).
+77[0:Inp] || Time(U) Object(skc9) -> Grasp(U,skf5(U))* EmptyHanded(U).
+78[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+79[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+80[0:Inp] || Object(U) Occurs(V,W,TravelTo(X))* -> Released(V,W,U)*.
+81[0:Inp] || Lt(U,V) -> Leq3(U,skf3(W,V,U),V)* Motionless(U,V,W).
+82[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+83[0:Inp] || Released(U,V,skf4(V,U))* equal(W,Place(V,Agent)) -> Occurs(U,V,TravelTo(W))*.
+84[0:Inp] || equal(Place(skf3(U,V,W),U),Place(W,U))** Lt(W,V) -> Motionless(W,V,U).
+85[0:Inp] || Time(U) Leq3(V,U,W)* Motionless(V,W,X)* -> equal(Place(U,X),Place(V,X))*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that has, if any, a non-trivial domain model.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 78 Conjecture clauses: 7
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=2 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf3 > skf0 > skf4 > skf1 > MovingGroup > Contents > UContents > Union > Place > skf5 > skf2 > TravelTo > Action > SkP2 > SkP1 > Grasp > Released > Motionless > Leq3 > Leq > Lt > Occurs > EmptyHanded > Object > Time > Region > UprightContainer > SkP0 > FullyOutside > ObjectSet > SmallSet > AllStable > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > CanGrasp > UprightContainerShape > UContained > P > Element > Moves > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+3[0:Inp] ||  -> Region(skc6)*.
+6[0:Inp] ||  -> EmptyHanded(U)*.
+5[0:Inp] ||  -> AllStable(U)*.
+86[0:MRR:16.0,6.0] ||  -> Object(U)*.
+87[0:MRR:15.0,6.0] ||  -> Time(U)*.
+7[0:Inp] ||  -> Lt(U,V)*.
+89[0:MRR:61.0,7.0] ||  -> SkP2(U,V)*.
+94[0:MRR:78.0,78.1,78.2,87.0,87.0,7.0] ||  -> Leq(U,V)*.
+98[0:Res:10.0,43.0] ||  -> Action(TravelTo(skc6))*.
+8[0:Inp] || equal(skc5,Agent)** -> .
+88[0:MRR:66.0,6.0] || Grasp(U,V)* -> .
+95[0:MRR:75.1,75.0,94.0] ||  -> Leq3(U,V,W)*.
+99[0:Res:10.0,92.0] ||  -> Released(skc7,skc8,U)*.
+10[0:Inp] ||  -> Occurs(skc7,skc8,TravelTo(skc6))*.
+100[0:Res:10.0,74.0] ||  -> equal(Place(skc8,Agent),skc6)**.
+101[0:Res:97.1,90.0] || Motionless(skc7,U,skc5)* -> .
+102[0:Res:97.1,90.0] || Motionless(skc8,U,skc5)* -> .
+18[0:Inp] || Element(U,V)* -> ObjectSet(V).
+29[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+24[0:Inp] || Reachable(U,V)* -> Region(V).
+30[0:Inp] || SmallSet(U,V)* -> Region(V).
+26[0:Inp] || P(U,V)* -> Region(V).
+25[0:Inp] || P(U,V)* -> Region(U).
+22[0:Inp] || FullyOutside(U,V)* -> Region(V).
+21[0:Inp] || FullyOutside(U,V)* -> Region(U).
+28[0:Inp] || SkP0(U,V)* -> Region(U).
+27[0:Inp] || SkP0(U,V)* -> Region(V).
+54[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+53[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+43[0:Inp] || Occurs(U,V,W)* -> Action(W).
+46[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+90[0:MRR:72.1,5.0] || equal(Place(skc8,skc5),Place(skc7,skc5))** -> .
+70[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
+71[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
+91[0:MRR:76.0,86.0] || Released(U,V,W)* -> Motionless(U,V,W).
+92[0:MRR:80.0,86.0] || Occurs(U,V,TravelTo(W))* -> Released(U,V,X)*.
+74[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+97[0:MRR:85.0,85.1,87.0,95.0] || Motionless(U,V,W)* -> equal(Place(X,W),Place(U,W))*.
+96[0:MRR:84.1,7.0] || equal(Place(skf3(U,V,W),U),Place(W,U))** -> Motionless(W,V,U).
+83[0:Inp] || equal(U,Place(V,Agent)) Released(W,V,skf4(V,W))* -> Occurs(W,V,TravelTo(U))*.
+	Given clause: 3[0:Inp] ||  -> Region(skc6)*.
+	Given clause: 6[0:Inp] ||  -> EmptyHanded(U)*.
+	Given clause: 5[0:Inp] ||  -> AllStable(U)*.
+	Given clause: 86[0:MRR:16.0,6.0] ||  -> Object(U)*.
+	Given clause: 87[0:MRR:15.0,6.0] ||  -> Time(U)*.
+	Given clause: 98[0:Res:10.0,43.0] ||  -> Action(TravelTo(skc6))*.
+	Given clause: 7[0:Inp] ||  -> Lt(U,V)*.
+	Given clause: 89[0:MRR:61.0,7.0] ||  -> SkP2(U,V)*.
+	Given clause: 94[0:MRR:78.0,78.1,78.2,87.0,87.0,7.0] ||  -> Leq(U,V)*.
+	Given clause: 8[0:Inp] || equal(skc5,Agent)** -> .
+	Given clause: 99[0:Res:10.0,92.0] ||  -> Released(skc7,skc8,U)*.
+	Given clause: 88[0:MRR:66.0,6.0] || Grasp(U,V)* -> .
+	Given clause: 95[0:MRR:75.1,75.0,94.0] ||  -> Leq3(U,V,W)*.
+	Given clause: 10[0:Inp] ||  -> Occurs(skc7,skc8,TravelTo(skc6))*.
+	Given clause: 18[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 100[0:Res:10.0,74.0] ||  -> equal(Place(skc8,Agent),skc6)**.
+	Given clause: 101[0:Res:97.1,90.0] || Motionless(skc7,U,skc5)* -> .
+	Given clause: 102[0:Res:97.1,90.0] || Motionless(skc8,U,skc5)* -> .
+	Given clause: 29[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 24[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 30[0:Inp] || SmallSet(U,V)* -> Region(V).
+	Given clause: 26[0:Inp] || P(U,V)* -> Region(V).
+	Given clause: 25[0:Inp] || P(U,V)* -> Region(U).
+	Given clause: 22[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 21[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 28[0:Inp] || SkP0(U,V)* -> Region(U).
+	Given clause: 27[0:Inp] || SkP0(U,V)* -> Region(V).
+	Given clause: 54[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+	Given clause: 104[0:Res:54.1,27.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 53[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+	Given clause: 105[0:Res:54.1,28.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 43[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 46[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 90[0:MRR:72.1,5.0] || equal(Place(skc8,skc5),Place(skc7,skc5))** -> .
+	Given clause: 70[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 71[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 91[0:MRR:76.0,86.0] || Released(U,V,W)* -> Motionless(U,V,W).
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: a.dfg 
+SPASS derived 13 clauses, backtracked 0 clauses, performed 0 splits and kept 50 clauses.
+SPASS allocated 52390 KBytes.
+SPASS spent	0:00:00.04 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+Here is a proof with depth 2, length 24 :
+5[0:Inp] ||  -> AllStable(U)*.
+6[0:Inp] ||  -> EmptyHanded(U)*.
+7[0:Inp] ||  -> Lt(U,V)*.
+10[0:Inp] ||  -> Occurs(skc7,skc8,TravelTo(skc6))*.
+15[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+16[0:Inp] EmptyHanded(U) ||  -> Object(V)*.
+72[0:Inp] || equal(Place(skc8,skc5),Place(skc7,skc5))** AllStable(skc8) -> .
+75[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+76[0:Inp] Object(U) || Released(V,W,U)* -> Motionless(V,W,U).
+78[0:Inp] Time(U) Time(V) || Lt(U,V) -> Leq(U,V)*.
+80[0:Inp] Object(U) || Occurs(V,W,TravelTo(X))* -> Released(V,W,U)*.
+85[0:Inp] Time(U) || Leq3(V,U,W)* Motionless(V,W,X)* -> equal(Place(U,X),Place(V,X))*.
+86[0:MRR:16.0,6.0] ||  -> Object(U)*.
+87[0:MRR:15.0,6.0] ||  -> Time(U)*.
+90[0:MRR:72.1,5.0] || equal(Place(skc8,skc5),Place(skc7,skc5))** -> .
+91[0:MRR:76.0,86.0] || Released(U,V,W)* -> Motionless(U,V,W).
+92[0:MRR:80.0,86.0] || Occurs(U,V,TravelTo(W))* -> Released(U,V,X)*.
+94[0:MRR:78.0,78.1,78.2,87.0,87.0,7.0] ||  -> Leq(U,V)*.
+95[0:MRR:75.1,75.0,94.0] ||  -> Leq3(U,V,W)*.
+97[0:MRR:85.0,85.1,87.0,95.0] || Motionless(U,V,W)* -> equal(Place(X,W),Place(U,W))*.
+99[0:Res:10.0,92.0] ||  -> Released(skc7,skc8,U)*.
+101[0:Res:97.1,90.0] || Motionless(skc7,U,skc5)* -> .
+109[0:Res:99.0,91.0] ||  -> Motionless(skc7,skc8,U)*.
+110[0:UnC:109.0,101.0] ||  -> .
+Formulae used in the proof : axiom25 conjecture0 axiom28 axiom20 axiom21 axiom27 axiom26 axiom0
+
+--------------------------SPASS-STOP------------------------------
