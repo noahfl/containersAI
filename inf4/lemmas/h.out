@@ -1,0 +1,450 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> EmptyHanded(skc2)*.
+2[0:Inp] || Grasp(U,V)* -> .
+3[0:Inp] || SmallObject(U) -> Object(U)*.
+4[0:Inp] || AllStable(U)* -> Time(U).
+5[0:Inp] || EmptyHanded(U)* -> Time(U).
+6[0:Inp] ||  -> Time(U)* Feasible(V,W)*.
+7[0:Inp] || EmptyHanded(U)* -> Time(U).
+8[0:Inp] || Time(U) -> EmptyHanded(U)*.
+9[0:Inp] ||  -> Time(skf12(U,V,W))*.
+10[0:Inp] ||  -> Occurs(U,skf13(U),StandStill)*.
+11[0:Inp] || Feasible(U,V)* -> Time(U).
+12[0:Inp] || Feasible(U,V)* -> Action(V).
+13[0:Inp] || Element(U,V)* -> Object(U).
+14[0:Inp] || Element(U,V)* -> ObjectSet(V).
+15[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+16[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+17[0:Inp] || FullyOutside(U,V)* -> Region(U).
+18[0:Inp] || FullyOutside(U,V)* -> Region(V).
+19[0:Inp] || Reachable(U,V)* -> Time(U).
+20[0:Inp] || Reachable(U,V)* -> Region(V).
+21[0:Inp] || SkP0(U,V)* -> Region(V).
+22[0:Inp] || SkP0(U,V)* -> Region(U).
+23[0:Inp] || SkP1(U,V)* -> Region(V).
+24[0:Inp] || SkP1(U,V)* -> Region(U).
+25[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+26[0:Inp] || SmallSet(U,V)* -> Region(V).
+27[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+28[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+29[0:Inp] || SkP2(U,V)* -> Time(V).
+30[0:Inp] || SkP2(U,V)* -> Object(U).
+31[0:Inp] || Graspable(U,V)* -> Time(U).
+32[0:Inp] || Graspable(U,V)* -> Object(V).
+33[0:Inp] || NoObstacles(U,V)* -> Time(U).
+34[0:Inp] || NoObstacles(U,V)* -> Region(V).
+35[0:Inp] || NoObstacles(U,V)* -> Time(U).
+36[0:Inp] ||  -> Lt(U,skf10(V,W,U))*.
+37[0:Inp] || Time(U) -> AllStable(skf13(U))*.
+38[0:Inp] || Feasible(skc2,TravelTo(Place(skc2,Agent)))* -> .
+39[0:Inp] || Occurs(U,V,W)* -> Time(U).
+40[0:Inp] || Occurs(U,V,W)* -> Time(V).
+41[0:Inp] || Occurs(U,V,W)* -> Action(W).
+42[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+43[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+44[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+45[0:Inp] || UContained(U,V,W)* -> Time(U).
+46[0:Inp] || UContained(U,V,W)* -> Object(V).
+47[0:Inp] || UContained(U,V,W)* -> Object(W).
+48[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+49[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+50[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+51[0:Inp] || P(U,V) -> SkP0(V,U)*.
+52[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+53[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+54[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+55[0:Inp] || Motionless(U,V,W)* -> Time(U).
+56[0:Inp] || Motionless(U,V,W)* -> Time(V).
+57[0:Inp] || Motionless(U,V,W)* -> Object(W).
+58[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+59[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+60[0:Inp] || Released(U,V,W)* -> Time(U).
+61[0:Inp] || Released(U,V,W)* -> Time(V).
+62[0:Inp] || Released(U,V,W)* -> Object(W).
+63[0:Inp] || Released(U,V,W)* -> Object(W).
+64[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+65[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+66[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+67[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+68[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
+69[0:Inp] || Occurs(U,V,StandStill) -> Motionless(U,V,Agent)*.
+70[0:Inp] || Time(U) -> Object(skf8(V,W))* NoObstacles(U,X)*.
+71[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+72[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+73[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+74[0:Inp] || equal(skf8(U,V),Agent)** Time(W) -> NoObstacles(W,X)*.
+75[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+76[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+77[0:Inp] || Feasible(U,V) Time(skc5) -> Occurs(U,skf9(V,U),V)*.
+78[0:Inp] || Object(U) Occurs(V,W,TravelTo(X))* -> Released(V,W,U)*.
+79[0:Inp] || DR(Place(U,skf8(V,U)),V)* Time(U) -> NoObstacles(U,V).
+80[0:Inp] || Grasp(skf14(U,V),skf15(V,U))* Grasp(U,skf15(V,U)) -> .
+81[0:Inp] || Object(U) NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+82[0:Inp] || equal(U,Place(V,Agent)) -> Object(skf11(W,X))* Occurs(Y,V,TravelTo(U))*.
+83[0:Inp] || Lt(U,V) -> Leq3(U,skf12(W,V,U),V)* Motionless(U,V,W).
+84[0:Inp] || Motionless(U,V,Agent) -> Leq3(U,skf14(U,V),V)* Occurs(U,V,StandStill).
+85[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+86[0:Inp] || Lt(U,V)* Leq(V,W)* Grasp(V,X)* Released(U,W,X)* -> .
+87[0:Inp] || Lt(U,V) Object(W) -> Leq(skf10(W,V,U),V)* Released(U,V,W).
+88[0:Inp] || Lt(U,V) Object(W) -> Grasp(skf10(W,V,U),W)* Released(U,V,W).
+89[0:Inp] || Grasp(U,V)* Leq3(W,U,X)* Occurs(W,X,StandStill) -> Grasp(W,V)*.
+90[0:Inp] || Grasp(U,V)* Leq3(U,W,X)* Occurs(U,X,StandStill) -> Grasp(W,V)*.
+91[0:Inp] || Released(U,V,skf11(V,U))* equal(W,Place(V,Agent)) -> Occurs(U,V,TravelTo(W))*.
+92[0:Inp] || equal(Place(skf12(U,V,W),U),Place(W,U))** Lt(W,V) -> Motionless(W,V,U).
+93[0:Inp] || Time(U) Leq3(V,U,W)* Motionless(V,W,X)* -> equal(Place(U,X),Place(V,X))*.
+94[0:Inp] || Motionless(U,V,Agent)* -> Grasp(skf14(U,W),skf15(W,U))* Grasp(U,skf15(W,U)) Occurs(U,V,StandStill).
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 92 Conjecture clauses: 2
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf12 > skf10 > skf4 > skf2 > skf15 > skf14 > skf11 > skf9 > skf8 > skf7 > skf6 > skf3 > skf1 > skf0 > RUnion > MovingGroup > Contents > UContents > Union > Place > skf13 > skf5 > TravelTo > Region > SkP0 > Action > SkP2 > Motionless > Grasp > Released > Feasible > NoObstacles > DR > Leq3 > Leq > Lt > Occurs > EmptyHanded > AllStable > Object > Time > UprightContainer > SkP1 > FullyOutside > ObjectSet > SmallSet > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > CanGrasp > UprightContainerShape > UContained > P > Element > SkP3 > skc16 > skc15 > skc14 > skc13 > skc12 > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > StandStill > Tb > T > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+95[0:MRR:11.0,6.1] ||  -> Time(U)*.
+96[0:MRR:8.0,95.0] ||  -> EmptyHanded(U)*.
+97[0:MRR:37.0,95.0] ||  -> AllStable(skf13(U))*.
+2[0:Inp] || Grasp(U,V)* -> .
+10[0:Inp] ||  -> Occurs(U,skf13(U),StandStill)*.
+3[0:Inp] SmallObject(U) ||  -> Object(U)*.
+25[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+14[0:Inp] || Element(U,V)* -> ObjectSet(V).
+12[0:Inp] || Feasible(U,V)* -> Action(V).
+20[0:Inp] || Reachable(U,V)* -> Region(V).
+26[0:Inp] || SmallSet(U,V)* -> Region(V).
+18[0:Inp] || FullyOutside(U,V)* -> Region(V).
+17[0:Inp] || FullyOutside(U,V)* -> Region(U).
+24[0:Inp] || SkP1(U,V)* -> Region(U).
+23[0:Inp] || SkP1(U,V)* -> Region(V).
+22[0:Inp] || SkP0(U,V)* -> Region(U).
+21[0:Inp] || SkP0(U,V)* -> Region(V).
+34[0:Inp] || NoObstacles(U,V)* -> Region(V).
+32[0:Inp] || Graspable(U,V)* -> Object(V).
+28[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+16[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+30[0:Inp] || SkP2(U,V)* -> Object(U).
+13[0:Inp] || Element(U,V)* -> Object(U).
+36[0:Inp] ||  -> Lt(U,skf10(V,W,U))*.
+38[0:Inp] || Feasible(skc2,TravelTo(Place(skc2,Agent)))* -> .
+58[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+54[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+51[0:Inp] || P(U,V) -> SkP0(V,U)*.
+53[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+52[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+101[0:MRR:76.0,76.1,95.0,95.0] || equal(U,V) -> Leq(U,V)*.
+102[0:MRR:75.0,75.1,95.0,95.0] || Lt(U,V) -> Leq(U,V)*.
+41[0:Inp] || Occurs(U,V,W)* -> Action(W).
+44[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+50[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+49[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+47[0:Inp] || UContained(U,V,W)* -> Object(W).
+46[0:Inp] || UContained(U,V,W)* -> Object(V).
+43[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+63[0:Inp] || Released(U,V,W)* -> Object(W).
+57[0:Inp] || Motionless(U,V,W)* -> Object(W).
+98[0:MRR:70.0,95.0] ||  -> Object(skf8(U,V))* NoObstacles(W,X)*.
+66[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+65[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+64[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+67[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+68[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
+108[0:Res:66.1,38.0] || Occurs(skc2,U,TravelTo(Place(skc2,Agent)))* -> .
+69[0:Inp] || Occurs(U,V,StandStill) -> Motionless(U,V,Agent)*.
+107[0:MRR:94.1,94.2,2.0,2.0] || Motionless(U,V,Agent)* -> Occurs(U,V,StandStill).
+99[0:MRR:74.0,95.0] || equal(skf8(U,V),Agent)** -> NoObstacles(W,X)*.
+100[0:MRR:77.1,95.0] || Feasible(U,V) -> Occurs(U,skf9(V,U),V)*.
+104[0:MRR:85.0,85.1,95.0,95.0] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+103[0:MRR:79.0,95.0] || DR(Place(U,skf8(V,U)),V)* -> NoObstacles(U,V).
+72[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+105[0:MRR:88.2,2.0] Object(U) || Lt(V,W) -> Released(V,W,U)*.
+71[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+73[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+78[0:Inp] Object(U) || Occurs(V,W,TravelTo(X))* -> Released(V,W,U)*.
+83[0:Inp] || Lt(U,V) -> Motionless(U,V,W) Leq3(U,skf12(W,V,U),V)*.
+81[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+82[0:Inp] || equal(U,Place(V,Agent)) -> Object(skf11(W,X))* Occurs(Y,V,TravelTo(U))*.
+106[0:MRR:93.0,95.0] || Motionless(U,V,W)* Leq3(U,X,V)* -> equal(Place(X,W),Place(U,W))*.
+91[0:Inp] || equal(U,Place(V,Agent)) Released(W,V,skf11(V,W))* -> Occurs(W,V,TravelTo(U))*.
+92[0:Inp] || Lt(U,V) equal(Place(skf12(W,V,U),W),Place(U,W))** -> Motionless(U,V,W).
+	Given clause: 98[0:MRR:70.0,95.0] ||  -> Object(skf8(U,V))* NoObstacles(W,X)*.
+	Given clause: 109[1:Spt:98.1] ||  -> NoObstacles(U,V)*.
+	Given clause: 95[0:MRR:11.0,6.1] ||  -> Time(U)*.
+	Given clause: 82[0:Inp] || equal(U,Place(V,Agent))+ -> Object(skf11(W,X))* Occurs(Y,V,TravelTo(U))*.
+	Given clause: 112[2:Spt:82.0,82.2] || equal(U,Place(V,Agent)) -> Occurs(W,V,TravelTo(U))*.
+	Given clause: 96[0:MRR:8.0,95.0] ||  -> EmptyHanded(U)*.
+	Given clause: 110[1:MRR:34.0,109.0] ||  -> Region(U)*.
+	Given clause: 97[0:MRR:37.0,95.0] ||  -> AllStable(skf13(U))*.
+	Given clause: 2[0:Inp] || Grasp(U,V)* -> .
+	Given clause: 10[0:Inp] ||  -> Occurs(U,skf13(U),StandStill)*.
+	Given clause: 3[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 25[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 14[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 12[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 32[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 28[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 16[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 30[0:Inp] || SkP2(U,V)* -> Object(U).
+	Given clause: 13[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 36[0:Inp] ||  -> Lt(U,skf10(V,W,U))*.
+	Given clause: 38[0:Inp] || Feasible(skc2,TravelTo(Place(skc2,Agent)))* -> .
+	Given clause: 58[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+	Given clause: 113[0:Res:58.1,30.0] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 54[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+	Given clause: 51[0:Inp] || P(U,V) -> SkP0(V,U)*.
+	Given clause: 53[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+	Given clause: 52[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+	Given clause: 101[0:MRR:76.0,76.1,95.0,95.0] || equal(U,V) -> Leq(U,V)*.
+	Given clause: 102[0:MRR:75.0,75.1,95.0,95.0] || Lt(U,V) -> Leq(U,V)*.
+	Given clause: 41[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 115[0:Res:10.0,41.0] ||  -> Action(StandStill)*.
+	Given clause: 50[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 49[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 47[0:Inp] || UContained(U,V,W)* -> Object(W).
+	Given clause: 46[0:Inp] || UContained(U,V,W)* -> Object(V).
+	Given clause: 43[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 63[0:Inp] || Released(U,V,W)* -> Object(W).
+	Given clause: 57[0:Inp] || Motionless(U,V,W)* -> Object(W).
+	Given clause: 66[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+	Given clause: 117[0:Res:10.0,66.0] ||  -> Feasible(U,StandStill)*.
+	Given clause: 108[0:Res:66.1,38.0] || Occurs(skc2,U,TravelTo(Place(skc2,Agent)))* -> .
+	Given clause: 121[2:Spt:120.0,82.1] ||  -> Object(skf11(U,V))*.
+	Given clause: 65[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 64[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 67[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+	Given clause: 68[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
+	Given clause: 69[0:Inp] || Occurs(U,V,StandStill) -> Motionless(U,V,Agent)*.
+	Given clause: 123[0:Res:69.1,57.0] || Occurs(U,V,StandStill)* -> Object(Agent).
+	Given clause: 124[0:Res:10.0,123.0] ||  -> Object(Agent)*.
+	Given clause: 107[0:MRR:94.1,94.2,2.0,2.0] || Motionless(U,V,Agent)* -> Occurs(U,V,StandStill).
+	Given clause: 122[0:Res:69.1,68.0] || Occurs(U,V,StandStill)* -> Lt(U,V).
+	Given clause: 126[0:Res:10.0,122.0] ||  -> Lt(U,skf13(U))*.
+	Given clause: 100[0:MRR:77.1,95.0] || Feasible(U,V) -> Occurs(U,skf9(V,U),V)*.
+	Given clause: 131[0:MRR:130.0,117.0] ||  -> Lt(U,skf9(StandStill,U))*.
+	Given clause: 104[0:MRR:85.0,85.1,95.0,95.0] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+	Given clause: 72[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+	Given clause: 111[1:MRR:81.1,109.0] Object(U) ||  -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 105[0:MRR:88.2,2.0] Object(U) || Lt(V,W) -> Released(V,W,U)*.
+	Given clause: 71[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+	Given clause: 73[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+	Given clause: 138[0:Res:126.0,71.0] || Lt(U,V) -> Lt(U,skf13(V))*.
+	Given clause: 139[0:Res:131.0,71.0] || Lt(U,V) -> Lt(U,skf9(StandStill,V))*.
+	Given clause: 137[0:Res:36.0,71.0] || Lt(U,V) -> Lt(U,skf10(W,X,V))*.
+	Given clause: 142[0:Res:138.1,71.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(V))*.
+	Given clause: 78[0:Inp] Object(U) || Occurs(V,W,TravelTo(X))*+ -> Released(V,W,U)*.
+	Given clause: 147[0:Res:126.0,142.0] || Lt(U,V) -> Lt(U,skf13(skf13(V)))*.
+	Given clause: 149[0:Res:131.0,142.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,V)))*.
+	Given clause: 145[0:Res:36.0,142.0] || Lt(U,V) -> Lt(U,skf13(skf10(W,X,V)))*.
+	Given clause: 134[0:Res:100.1,72.0] || Feasible(U,TravelTo(V)) -> equal(Place(skf9(TravelTo(V),U),Agent),V)**.
+	Given clause: 83[0:Inp] || Lt(U,V) -> Motionless(U,V,W) Leq3(U,skf12(W,V,U),V)*.
+	Given clause: 143[0:Res:139.1,71.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,V))*.
+	Given clause: 164[0:Res:126.0,143.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(V)))*.
+	Given clause: 169[0:Res:131.0,143.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,V)))*.
+	Given clause: 162[0:Res:36.0,143.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf10(W,X,V)))*.
+	Given clause: 106[0:MRR:93.0,95.0] || Motionless(U,V,W)*+ Leq3(U,X,V)* -> equal(Place(X,W),Place(U,W))*.
+	Given clause: 148[0:Res:138.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(V)))*.
+	Given clause: 183[0:Res:126.0,148.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(V))))*.
+	Given clause: 188[0:Res:131.0,148.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,V))))*.
+	Given clause: 181[0:Res:36.0,148.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf10(W,X,V))))*.
+	Given clause: 91[0:Inp] || equal(U,Place(V,Agent)) Released(W,V,skf11(V,W))*+ -> Occurs(W,V,TravelTo(U))*.
+	Given clause: 150[0:Res:139.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf9(StandStill,V)))*.
+	Given clause: 209[0:Res:126.0,150.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(V))))*.
+	Given clause: 217[0:Res:131.0,150.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf9(StandStill,V))))*.
+	Given clause: 207[0:Res:36.0,150.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf10(W,X,V))))*.
+	Given clause: 92[0:Inp] || Lt(U,V) equal(Place(skf12(W,V,U),W),Place(U,W))** -> Motionless(U,V,W).
+	Given clause: 152[0:Res:147.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(skf13(V))))*.
+	Given clause: 239[0:Res:126.0,152.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(V)))))*.
+	Given clause: 250[0:Res:131.0,152.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf9(StandStill,V)))))*.
+	Given clause: 237[0:Res:36.0,152.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf10(W,X,V)))))*.
+	Given clause: 160[0:Res:83.2,64.0] || Lt(U,V) -> Motionless(U,V,W) Leq(U,skf12(W,V,U))*.
+	Given clause: 165[0:Res:138.1,143.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,skf13(V)))*.
+	Given clause: 276[0:Res:126.0,165.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(V))))*.
+	Given clause: 290[0:Res:131.0,165.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf9(StandStill,V))))*.
+	Given clause: 274[0:Res:36.0,165.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf10(W,X,V))))*.
+	Given clause: 161[0:Res:83.2,65.0] || Lt(U,V) -> Motionless(U,V,W) Leq(skf12(W,V,U),V)*.
+	Given clause: 144[0:Res:137.1,71.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf10(X,Y,V))*.
+	Given clause: 319[0:Res:126.0,144.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf13(V)))*.
+	Given clause: 333[0:Res:131.0,144.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf9(StandStill,V)))*.
+	Given clause: 317[0:Res:36.0,144.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf10(Y,Z,V)))*.
+	Given clause: 151[0:Res:100.1,78.1] Object(U) || Feasible(V,TravelTo(W)) -> Released(V,skf9(TravelTo(W),V),U)*.
+	Given clause: 365[0:Res:151.2,67.0] Object(U) || Feasible(V,TravelTo(W)) -> Lt(V,skf9(TravelTo(W),V))*.
+	Given clause: 370[0:EmS:365.0,124.0] || Feasible(U,TravelTo(V)) -> Lt(U,skf9(TravelTo(V),U))*.
+	Given clause: 154[0:Res:149.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(skf9(StandStill,V))))*.
+	Given clause: 386[0:Res:126.0,154.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,skf13(V)))))*.
+	Given clause: 206[2:SSi:205.0,121.0] || Lt(U,V) equal(W,Place(V,Agent)) -> Occurs(U,V,TravelTo(W))*.
+	Given clause: 418[2:Res:206.2,108.0] || Lt(skc2,U) equal(Place(skc2,Agent),Place(U,Agent))* -> .
+	Given clause: 424[2:EqR:418.1] || Lt(skc2,skc2)* -> .
+	Given clause: 400[0:Res:131.0,154.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,skf9(StandStill,V)))))*.
+	Given clause: 421[2:Res:206.2,41.0] || Lt(U,V)* equal(W,Place(V,Agent))*+ -> Action(TravelTo(W))*.
+	Given clause: 180[0:Res:69.1,106.0] || Occurs(U,V,StandStill) Leq3(U,W,V)* -> equal(Place(W,Agent),Place(U,Agent)).
+	Given clause: 435[2:EqR:421.1] || Lt(U,V)*+ -> Action(TravelTo(Place(V,Agent)))*.
+	Given clause: 445[2:Res:126.0,435.0] ||  -> Action(TravelTo(Place(skf13(U),Agent)))*.
+	Given clause: 461[2:Res:131.0,435.0] ||  -> Action(TravelTo(Place(skf9(StandStill,U),Agent)))*.
+	Given clause: 440[2:Res:36.0,435.0] ||  -> Action(TravelTo(Place(skf10(U,V,W),Agent)))*.
+	Given clause: 420[2:Res:206.2,66.0] || Lt(U,V)* equal(W,Place(V,Agent))*+ -> Feasible(U,TravelTo(W))*.
+	Given clause: 471[2:EqR:420.1] || Lt(U,V) -> Feasible(U,TravelTo(Place(V,Agent)))*.
+	Given clause: 381[0:Res:36.0,154.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,skf10(W,X,V)))))*.
+	Given clause: 166[0:Res:147.1,143.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,skf13(skf13(V))))*.
+	Given clause: 491[0:Res:126.0,166.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(skf13(V)))))*.
+	Given clause: 369[2:SSi:368.0,121.0] || Feasible(U,TravelTo(V)) equal(W,V) -> Occurs(U,skf9(TravelTo(V),U),TravelTo(W))*.
+	Given clause: 528[2:Res:369.2,108.0] || Feasible(skc2,TravelTo(U))* equal(Place(skc2,Agent),U) -> .
+	Given clause: 531[2:Res:369.2,41.0] || Feasible(U,TravelTo(V))*+ equal(W,V)* -> Action(TravelTo(W))*.
+	Given clause: 508[0:Res:131.0,166.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(skf9(StandStill,V)))))*.
+	Given clause: 530[2:Res:369.2,66.0] || Feasible(U,TravelTo(V))*+ equal(W,V)* -> Feasible(U,TravelTo(W))*.
+	Given clause: 439[0:MRR:438.0,122.1] || Occurs(U,V,StandStill) -> Motionless(U,V,W) equal(Place(skf12(W,V,U),Agent),Place(U,Agent))**.
+	Given clause: 486[0:Res:36.0,166.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(skf10(W,X,V)))))*.
+	Given clause: 170[0:Res:139.1,143.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,skf9(StandStill,V)))*.
+	Given clause: 573[0:Res:126.0,170.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,skf13(V))))*.
+	Given clause: 590[0:Res:131.0,170.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,skf9(StandStill,V))))*.
+	Given clause: 437[0:Res:73.2,180.1] || Leq(U,V)* Leq(V,W)* Occurs(U,W,StandStill)*+ -> equal(Place(V,Agent),Place(U,Agent))*.
+	Given clause: 568[0:Res:36.0,170.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,skf10(W,X,V))))*.
+	Given clause: 172[0:Res:164.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf9(StandStill,skf13(V))))*.
+	Given clause: 646[0:Res:126.0,172.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(skf13(V)))))*.
+	Given clause: 663[0:Res:131.0,172.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(skf9(StandStill,V)))))*.
+	Given clause: 273[0:Res:160.2,104.0] || Lt(U,V) -> Motionless(U,V,W) equal(skf12(W,V,U),U) Lt(U,skf12(W,V,U))*.
+	Given clause: 641[0:Res:36.0,172.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(skf10(W,X,V)))))*.
+	Given clause: 185[0:Res:147.1,148.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(skf13(skf13(V)))))*.
+	Given clause: 735[0:Res:126.0,185.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(skf13(V))))))*.
+	Given clause: 755[0:Res:131.0,185.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(skf9(StandStill,V))))))*.
+	Given clause: 316[0:Res:161.2,104.0] || Lt(U,V) -> Motionless(U,V,W) equal(skf12(W,V,U),V) Lt(skf12(W,V,U),V)*.
+	Given clause: 730[0:Res:36.0,185.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(skf10(W,X,V))))))*.
+	Given clause: 380[0:Res:370.1,71.0] || Feasible(U,TravelTo(V)) Lt(W,U) -> Lt(W,skf9(TravelTo(V),U))*.
+	Given clause: 146[0:Res:137.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf10(X,Y,V)))*.
+	Given clause: 847[0:Res:126.0,146.0] || Lt(U,V) -> Lt(U,skf13(skf10(W,X,skf13(V))))*.
+	Given clause: 626[0:Res:10.0,437.2] || Leq(U,V) Leq(V,skf13(U))* -> equal(Place(V,Agent),Place(U,Agent)).
+	Given clause: 870[0:Res:131.0,146.0] || Lt(U,V) -> Lt(U,skf13(skf10(W,X,skf9(StandStill,V))))*.
+	Given clause: 842[0:Res:36.0,146.0] || Lt(U,V) -> Lt(U,skf13(skf10(W,X,skf10(Y,Z,V))))*.
+	Given clause: 320[0:Res:138.1,144.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf10(X,Y,skf13(V)))*.
+	Given clause: 941[0:Res:126.0,320.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf13(skf13(V))))*.
+	Given clause: 628[0:MRR:627.0,117.0] || Leq(U,V) Leq(V,skf9(StandStill,U))* -> equal(Place(V,Agent),Place(U,Agent)).
+	Given clause: 967[0:Res:131.0,320.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf13(skf9(StandStill,V))))*.
+	Given clause: 936[0:Res:36.0,320.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf13(skf10(Y,Z,V))))*.
+	Given clause: 167[0:Res:149.1,143.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,skf13(skf9(StandStill,V))))*.
+	Given clause: 1044[0:Res:126.0,167.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf9(StandStill,skf13(V)))))*.
+	Given clause: 318[0:Res:137.1,144.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf10(X,Y,skf10(Z,X1,V)))*.
+	Given clause: 1070[0:Res:131.0,167.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf9(StandStill,skf9(StandStill,V)))))*.
+	Given clause: 1113[0:Res:126.0,318.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf10(Y,Z,skf13(V))))*.
+	Given clause: 1036[0:Res:36.0,167.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf9(StandStill,skf10(W,X,V)))))*.
+	Given clause: 1139[0:Res:131.0,318.0] || Lt(U,V) -> Lt(U,skf10(W,X,skf10(Y,Z,skf9(StandStill,V))))*.
+	Given clause: 425[2:SpL:134.1,418.1] || Feasible(U,TravelTo(V)) Lt(skc2,skf9(TravelTo(V),U))* equal(Place(skc2,Agent),V) -> .
+	Given clause: 1233[2:Obv:1231.0] || Lt(skc2,U) Feasible(U,TravelTo(V))* equal(Place(skc2,Agent),V) -> .
+	Given clause: 1234[2:Res:471.1,1233.1] || Lt(U,V)* Lt(skc2,U)* equal(Place(skc2,Agent),Place(V,Agent))*+ -> .
+	Given clause: 1235[2:EqR:1234.2] || Lt(U,skc2)*+ Lt(skc2,U)* -> .
+	Given clause: 171[0:Res:164.1,143.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,skf9(StandStill,skf13(V))))*.
+	Given clause: 472[2:SpL:134.1,420.1] || Feasible(U,TravelTo(V)) Lt(W,skf9(TravelTo(V),U))*+ equal(X,V)* -> Feasible(W,TravelTo(X))*.
+	Given clause: 1249[0:Res:126.0,171.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,skf13(skf13(V)))))*.
+	Given clause: 1275[0:Res:131.0,171.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,skf13(skf9(StandStill,V)))))*.
+	Given clause: 1239[0:Res:36.0,171.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf9(StandStill,skf13(skf10(W,X,V)))))*.
+	Given clause: 175[0:Res:169.1,142.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf9(StandStill,skf9(StandStill,V))))*.
+	Given clause: 554[2:SpL:439.2,418.1] || Occurs(U,V,StandStill) Lt(skc2,skf12(W,V,U))* equal(Place(skc2,Agent),Place(U,Agent)) -> Motionless(U,V,W).
+	Given clause: 1368[0:Res:126.0,175.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf9(StandStill,skf13(V)))))*.
+	Given clause: 1394[0:Res:131.0,175.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf9(StandStill,skf9(StandStill,V)))))*.
+	Given clause: 1420[2:MRR:1419.0,122.1] || Occurs(skc2,U,StandStill) -> equal(skf12(V,U,skc2),skc2)** Motionless(skc2,U,V).
+	Given clause: 1476[2:MRR:1475.1,122.1] || Occurs(skc2,U,StandStill) -> Motionless(skc2,U,V)*.
+	Given clause: 716[0:Res:273.3,71.0] || Lt(U,V) Lt(W,U) -> Motionless(U,V,X) equal(skf12(X,V,U),U) Lt(W,skf12(X,V,U))*.
+	Given clause: 1481[2:Res:1476.1,57.0] || Occurs(skc2,U,StandStill)*+ -> Object(V)*.
+	Given clause: 1505[2:Res:10.0,1481.0] ||  -> Object(U)*.
+	Given clause: 1507[2:MRR:111.0,1505.0] ||  -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 1508[2:MRR:105.0,1505.0] || Lt(U,V) -> Released(U,V,W)*.
+	Given clause: 1509[2:MRR:78.0,1505.0] || Occurs(U,V,TravelTo(W))*+ -> Released(U,V,X)*.
+	Given clause: 1510[2:MRR:151.0,1505.0] || Feasible(U,TravelTo(V)) -> Released(U,skf9(TravelTo(V),U),W)*.
+	Given clause: 1358[0:Res:36.0,175.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf9(StandStill,skf10(W,X,V)))))*.
+	Given clause: 186[0:Res:149.1,148.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(skf13(skf9(StandStill,V)))))*.
+	Given clause: 1553[0:Res:126.0,186.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf9(StandStill,skf13(V))))))*.
+	Given clause: 812[0:Res:316.3,71.0] || Lt(U,V) Lt(W,skf12(X,V,U))* -> Motionless(U,V,X) equal(skf12(X,V,U),V) Lt(W,V).
+	Given clause: 1582[0:Res:131.0,186.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf9(StandStill,skf9(StandStill,V))))))*.
+	Given clause: 1543[0:Res:36.0,186.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf9(StandStill,skf10(W,X,V))))))*.
+	Given clause: 190[0:Res:164.1,148.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(skf9(StandStill,skf13(V)))))*.
+	Given clause: 1684[0:Res:126.0,190.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,skf13(skf13(V))))))*.
+	Given clause: 553[2:SpL:439.2,421.1] || Occurs(U,V,StandStill) Lt(W,skf12(X,V,U))*+ equal(Y,Place(U,Agent))* -> Motionless(U,V,X) Action(TravelTo(Y))*.
+	Given clause: 1716[0:Res:131.0,190.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,skf13(skf9(StandStill,V))))))*.
+	Given clause: 1674[0:Res:36.0,190.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf9(StandStill,skf13(skf10(W,X,V))))))*.
+	Given clause: 193[0:Res:183.1,148.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf13(skf13(skf13(skf13(V))))))*.
+	Given clause: 1825[0:Res:126.0,193.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(skf13(skf13(V)))))))*.
+	Given clause: 552[2:SpL:439.2,420.1] || Occurs(U,V,StandStill) Lt(W,skf12(X,V,U))*+ equal(Y,Place(U,Agent))* -> Motionless(U,V,X) Feasible(W,TravelTo(Y))*.
+	Given clause: 1860[0:Res:131.0,193.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(skf13(skf9(StandStill,V)))))))*.
+	Given clause: 1815[0:Res:36.0,193.0] || Lt(U,V) -> Lt(U,skf13(skf13(skf13(skf13(skf13(skf10(W,X,V)))))))*.
+	Given clause: 194[0:Res:183.1,143.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf9(StandStill,skf13(skf13(skf13(V)))))*.
+	Given clause: 1970[0:Res:126.0,194.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(skf13(skf13(V))))))*.
+	Given clause: 709[0:Res:273.3,144.0] || Lt(U,V) Lt(W,U) -> Motionless(U,V,X) equal(skf12(X,V,U),U) Lt(W,skf10(Y,Z,skf12(X,V,U)))*.
+	Given clause: 2008[0:Res:131.0,194.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(skf13(skf9(StandStill,V))))))*.
+	Given clause: 1960[0:Res:36.0,194.0] || Lt(U,V) -> Lt(U,skf9(StandStill,skf13(skf13(skf13(skf10(W,X,V))))))*.
+	Given clause: 211[0:Res:147.1,150.0] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,skf13(skf9(StandStill,skf13(skf13(V)))))*.
+	Given clause: 2139[0:Res:126.0,211.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(skf13(skf13(V))))))*.
+	Given clause: 805[0:Res:316.3,144.0] || Lt(U,V) Lt(W,skf12(X,V,U))*+ -> Motionless(U,V,X) equal(skf12(X,V,U),V) Lt(W,skf10(Y,Z,V))*.
+	Given clause: 2177[0:Res:131.0,211.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(skf13(skf9(StandStill,V))))))*.
+	Given clause: 2129[0:Res:36.0,211.0] || Lt(U,V) -> Lt(U,skf13(skf9(StandStill,skf13(skf13(skf10(W,X,V))))))*.
+	Given clause: 903[0:Res:102.1,626.1] || Lt(U,skf13(V))* Leq(V,U) -> equal(Place(U,Agent),Place(V,Agent)).
+	Given clause: 2287[0:Res:138.1,903.0] || Lt(U,V)+ Leq(V,U)* -> equal(Place(U,Agent),Place(V,Agent))*.
+	Given clause: 904[0:Res:101.1,626.1] || equal(U,skf13(V))+ Leq(V,U)* -> equal(Place(U,Agent),Place(V,Agent))*.
+	Given clause: 2338[0:Res:126.0,2287.0] || Leq(skf13(U),U)*+ -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
+	Given clause: 2410[0:EqR:904.0] || Leq(U,skf13(U))*+ -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
+	Given clause: 2416[2:Rew:2415.0,445.0] ||  -> Action(TravelTo(Place(U,Agent)))*.
+	Given clause: 2415[0:MRR:2413.0,126.0] ||  -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
+	Given clause: 473[2:SpR:134.1,471.1] || Feasible(U,TravelTo(V)) Lt(W,skf9(TravelTo(V),U))* -> Feasible(W,TravelTo(V)).
+	Given clause: 2481[2:SpR:2415.0,471.1] || Lt(U,skf13(V)) -> Feasible(U,TravelTo(Place(V,Agent)))*.
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: h.dfg 
+SPASS derived 2327 clauses, backtracked 2 clauses, performed 2 splits and kept 1538 clauses.
+SPASS allocated 54824 KBytes.
+SPASS spent	0:00:00.77 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.01 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.68 for the reduction.
+
+
+Here is a proof with depth 8, length 41 :
+2[0:Inp] || Grasp(U,V)* -> .
+6[0:Inp] ||  -> Time(U)* Feasible(V,W)*.
+10[0:Inp] ||  -> Occurs(U,skf13(U),StandStill)*.
+11[0:Inp] || Feasible(U,V)* -> Time(U).
+38[0:Inp] || Feasible(skc2,TravelTo(Place(skc2,Agent)))* -> .
+66[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+68[0:Inp] || Motionless(U,V,W)* -> Lt(U,V).
+69[0:Inp] || Occurs(U,V,StandStill) -> Motionless(U,V,Agent)*.
+73[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+75[0:Inp] Time(U) Time(V) || Lt(U,V) -> Leq(U,V)*.
+76[0:Inp] Time(U) Time(V) || equal(U,V) -> Leq(U,V)*.
+82[0:Inp] || equal(U,Place(V,Agent))+ -> Object(skf11(W,X))* Occurs(Y,V,TravelTo(U))*.
+88[0:Inp] Object(U) || Lt(V,W) -> Grasp(skf10(U,W,V),U)* Released(V,W,U).
+91[0:Inp] || equal(U,Place(V,Agent)) Released(W,V,skf11(V,W))*+ -> Occurs(W,V,TravelTo(U))*.
+93[0:Inp] Time(U) || Leq3(V,U,W)* Motionless(V,W,X)* -> equal(Place(U,X),Place(V,X))*.
+95[0:MRR:11.0,6.1] ||  -> Time(U)*.
+101[0:MRR:76.0,76.1,95.0,95.0] || equal(U,V) -> Leq(U,V)*.
+102[0:MRR:75.0,75.1,95.0,95.0] || Lt(U,V) -> Leq(U,V)*.
+105[0:MRR:88.2,2.0] Object(U) || Lt(V,W) -> Released(V,W,U)*.
+106[0:MRR:93.0,95.0] || Motionless(U,V,W)*+ Leq3(U,X,V)* -> equal(Place(X,W),Place(U,W))*.
+108[0:Res:66.1,38.0] || Occurs(skc2,U,TravelTo(Place(skc2,Agent)))* -> .
+112[1:Spt:82.0,82.2] || equal(U,Place(V,Agent)) -> Occurs(W,V,TravelTo(U))*.
+119[1:Res:112.1,108.0] || equal(Place(skc2,Agent),Place(U,Agent))* -> .
+120[1:Obv:119.0] ||  -> .
+121[1:Spt:120.0,82.1] ||  -> Object(skf11(U,V))*.
+122[0:Res:69.1,68.0] || Occurs(U,V,StandStill)* -> Lt(U,V).
+126[0:Res:10.0,122.0] ||  -> Lt(U,skf13(U))*.
+180[0:Res:69.1,106.0] || Occurs(U,V,StandStill) Leq3(U,W,V)* -> equal(Place(W,Agent),Place(U,Agent)).
+205[0:Res:105.2,91.1] Object(skf11(U,V)) || Lt(V,U) equal(W,Place(U,Agent)) -> Occurs(V,U,TravelTo(W))*.
+206[1:SSi:205.0,121.0] || Lt(U,V) equal(W,Place(V,Agent)) -> Occurs(U,V,TravelTo(W))*.
+420[1:Res:206.2,66.0] || Lt(U,V)* equal(W,Place(V,Agent))*+ -> Feasible(U,TravelTo(W))*.
+437[0:Res:73.2,180.1] || Leq(U,V)* Leq(V,W)* Occurs(U,W,StandStill)*+ -> equal(Place(V,Agent),Place(U,Agent))*.
+471[1:EqR:420.1] || Lt(U,V) -> Feasible(U,TravelTo(Place(V,Agent)))*.
+626[0:Res:10.0,437.2] || Leq(U,V) Leq(V,skf13(U))* -> equal(Place(V,Agent),Place(U,Agent)).
+904[0:Res:101.1,626.1] || equal(U,skf13(V))+ Leq(V,U)* -> equal(Place(U,Agent),Place(V,Agent))*.
+2410[0:EqR:904.0] || Leq(U,skf13(U))*+ -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
+2413[0:Res:102.1,2410.0] || Lt(U,skf13(U))* -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
+2415[0:MRR:2413.0,126.0] ||  -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
+2481[1:SpR:2415.0,471.1] || Lt(U,skf13(V)) -> Feasible(U,TravelTo(Place(V,Agent)))*.
+2500[1:Res:2481.1,38.0] || Lt(skc2,skf13(skc2))* -> .
+2502[1:MRR:2500.0,126.0] ||  -> .
+Formulae used in the proof : axiom28 axiom25 axiom30 conjecture0 axiom1 axiom29 axiom16 axiom0 axiom31 axiom21 axiom22 axiom27 axiom26
+
+--------------------------SPASS-STOP------------------------------

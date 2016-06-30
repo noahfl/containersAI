@@ -1,10 +1,10 @@
-begin_problem(Scenario4_Lem4Y).
+begin_problem(Scenario4_Lem4I).
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.Y*}).
+name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.I*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
-description({*25 April 2016*}).
+description({*27 June 2016*}).
 
 end_of_list.
 
@@ -12,7 +12,7 @@ list_of_symbols.
 
 functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (OpenContainerShape,2), (EC,2), (C,2), (OpenContainer,3)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (OpenContainerShape,2), (EC,2), (C,2), (OpenContainer,3), (CContained,3), (BoxWithLid,3), (ClosedContainer,3), (OSPlace,3), (Cavity,2)].
 
 end_of_list.
 
@@ -29,12 +29,17 @@ formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Actio
 %% Object sets
 % OSSA
 formula(forall([x,s], implies(Element(x,s), and(Object(x), ObjectSet(s))))).
+%% Objects and Object Sets: Spatio-Temporal
+% OOSA
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
 %% Objects containing regions
 % ORSA
-formula(forall([t,o,r], implies(or(UprightContainer(t,o,r),OpenContainer(t,o,r)), and(Time(t), Object(o), Region(r))))).
+formula(forall([t,o,r], implies(or(ClosedContainer(t,o,r), UprightContainer(t,o,r), OpenContainer(t,o,r)), and(Time(t), Object(o), Region(r))))).
 %% Object containment
 % OCSA
 formula(forall([t,ox,ob], implies(UContained(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+% OCSB
+formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), ObjectSet(s))))).
 
 %%% Specific Actions
 %% Safe manipulation
@@ -58,6 +63,8 @@ formula(forall([u,v], implies(or(P(u,v), DR(u,v), EC(u,v), C(u,v)), and(Region(u
 %% Spatial containment
 % SCSA/B
 formula(forall([ra,rb], implies(or(FullyOutside(ra,rb), UprightContainerShape(ra,rb), OpenContainerShape(ra,rb)), and(Region(ra), Region(rb))))).
+% SCSC
+formula(forall([u,v], implies(Cavity(u,v), and(Region(u), Region(v))))).
 %% Much smaller
 % SMSA
 formula(forall([s,r], implies(SmallSet(s,r), and(ObjectSet(s), Region(r))))).
@@ -80,6 +87,11 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 % MFSB
 formula(forall([t,r], implies(NoObstacles(t,r), and(Time(t), Region(r))))).
 
+%%% Rigid Objects
+%% Box with lid
+% RBSA
+formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), Object(ol))))).
+
 % Temporal Axioms
 % TID3
 formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
@@ -90,9 +102,8 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
-% ORD2
-formula(forall([t,o,rc], equiv(OpenContainer(t,o,rc), and(Time(t), Object(o), OpenContainerShape(Place(t,o),rc))))).
-
+% ORD1
+formula(forall([t,s,rc], equiv(ClosedContainer(t,s,rc), exists([rs], and(OSPlace(t,s,rs), Cavity(rc,rs)))))).
 
 % ORD3
 formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
@@ -100,26 +111,18 @@ formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o),
 % OCD3
 formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc)))))).
 
-% SCA2
-formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc)))).
+% OCD1
+formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc)))))).
 
-% SCA3
-formula(forall([u,v], implies(OpenContainerShape(u,v), EC(u,v)))).
-
-% SBD4
-formula(forall([u,v], equiv(EC(u,v), and(DR(u,v), C(u,v))))).
-
-formula(forall([u,v], and(equiv(EC(u,v), DR(u,v)), C(u,v)))).
-
-% LemSM
-formula(forall([u,v], implies(DR(u,v), not(equal(u,v))))).
+% RBA5
+formula(forall([ta,tb,ob,ol], and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), implies(equal(Place(tb,ol), Place(ta,ol)), BoxWithLid(tb,ob,ol))))).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-formula(forall([t,o], not(UContained(t,o,o)))).
+formula(forall([ox,oy,ta,tb], and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), implies(equal(Place(ta,oy), Place(tb,oy)), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))))).
 
 end_of_list.
 

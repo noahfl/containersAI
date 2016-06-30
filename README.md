@@ -16,3 +16,6 @@ Inference 4: in progress
 
 Inference 5: not done
 
+###Useful commands###
+
+find . -name "*.c" -print | xargs grep "main("

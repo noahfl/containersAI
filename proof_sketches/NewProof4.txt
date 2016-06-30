@@ -1,0 +1,392 @@
+Proof of Inference 4.a
+
+If there is a small object and a open container in reach, then the agent can 
+reach for the object, put it into the container, and then withdraw his hand 
+from the container.
+
+
+As with most logical proofs of projection, this is largely a matter of
+tracing frame inferences, with the occasional causal inference.
+
+Given:
+
+C.4.A.1: UprightContainer(Ta4,Ob4,Rc4).
+C.4.A.2: FullyOutside(Place(Ta4,Ox4),Place(Ta4,Ob4)).
+C.4.A.3: SmallSet(Union(Contents(Ta4,Rc4),MovingGroup(Ta4,Ox4)),Rc4).
+C.4.A.4: AllStable(Ta4).
+C.4.A.5: EmptyHanded(Ta4).
+C.4.A.6: Graspable(Ta4,Ox4).
+C.4.A.7: Reachable(Ta4,Rc4).
+C.4.A.8: Ox4 != Agent != Ob4.
+C.4.A.9: FullyOutside(Place(Ta4,Agent),Place(Ta4,Ob4)).
+C.4.A.10: SafelyMovable(Ta4,Ox4). 
+C.4.A.11: SmallObject(Ob4).
+C.4.A.12: not BoxedIn(Ta4,Agent,Ox4)
+C.4.A.13: NoPartialContents(Ta,Ob4).
+
+Infer: 4.a: Feasible(Ta4,LoadUprightContainer(Ox4,Ob4). 
+       4.b: forall(tb) Occurs(Ta4,tb,LoadUprightContainer(Ox4,Ob4)) =>
+               exists(tc) Occurs(tb,tc,StandStill) ^ AllStable(tc) ^
+                 UContents(tc,Ob4) =
+                     Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)).
+
+Note: Numbering of lemmas is non-sequential
+        
+Lemma 4.A forall(ta,tb,r,o) Region(r) ^ Occurs(ta,tb,TravelTo(r)) ^
+                   EmptyHanded(ta) ^ AllStable(ta) ^ Object(o) ^ o != Agent =>
+              Place(tb,o) = Place(ta,o) ^ AllStable(tb) 
+
+Proof: MRA5 + MOD3 + MGD1 + MOD2
+              
+
+
+Lemma 4.E NoObstacles(t,ra) ^ NoObstacles(t,rb) => NoObstacles(t,RUnion(ra,rb)
+Assume:4E.1 NoObstacles(T,Ra).
+       4E.2 NoObstacles(T,Rb).
+       4E.3 forall(o:Object) o != Agent => DR(Place(T,o),Ra).   MFD1 + 4E.1 
+       4E.4 forall(o:Object) o != Agent => DR(Place(T,o),Rb).   MFD1 + 4E.2 
+       4E.5 forall(o:Object) o != Agent =>              LemSH + 4E.3 + 4E.4   
+                                   DR(Place(T,o),RUnion(Ra,Rb)). 
+       4E.6 NoObstacles(T,RUnion(Ra,Rb)).                       MFD1 + SE.5
+QED Lemma 4.E
+
+
+Lemma 4.F forall(ta,tb,r,o) Region(r) ^ Occurs(ta,tb,TravelTo(r)) ^
+                 EmptyHanded(ta) ^ AllStable(ta) ^ Feasible(ta,TravelTo(rx)) =>
+             Feasible(tb,TravelTo(rx))
+
+Assume: 4F.1 Region(R).
+        4F.2 Occurs(Ta,Tb,TravelTo(R)).
+        4F.3 EmptyHanded(Ta)
+        4F.4 AllStable(Ta)
+        4F.5 Feasible(Ta,TravelTo(Rx))
+Infer:  4F.6 forall(o) o!= Agent => Place(Tb,o) = Place(Ta,o) 
+                                              Lem4A + 4F.2 + 4F.3 + 4F.4
+        4F.7 exists(tc) Occurs(Ta,tc,TravelTo(Rx)).             TAD1 + 4F.5
+        4F.8 Occurs(Ta,Tc,TravelTo(Rx)).                       4F.7, naming
+        4F.9 exists(rw) Trajectory(Place(Ta,Agent),Rx,rw) ^  MFA7 + 4F.8 + 
+                StaysIn(Ta,Tc,Agent,rw) ^ NoObstacles(Ta,rw).    4F.3 + 4F.4
+        4F.10 Trajectory(Place(Ta,Agent),Rx,Rw).               4F.9, naming
+        4F.11 NoObstacles(Ta,Rw)                               4F.9, naming
+        4F.12 exists(ry) Trajectory(Place(Ta,Agent),R,ry) ^    MFA7 + 4F.2 +
+                         NoObstacles(Ta,ry).                      4F.3 + 4F.4 
+        4F.13 Trajectory(Place(Ta,Agent),R,Ry).                4F.12, naming
+        4F.14 NoObstacles(Ta,Ry)                               4F.12, naming
+        4F.15 Trajectory(R,Rx,RUnion(Ry,Rw)).     MFA4 + MFA5 + 4F.10 + 4F.13
+        4F.15a NoObstacles(Ta,RUnion(Ry,Rw)).          Lem4E + 4F.11 + 4F.14
+        4F.16 NoObstacles(Tb,RUnion(Ry,Rw)).            MFD1 + 4F.6 + 4F.15a
+        4F.17 AllStable(Tb).                      Lem4A + 4F.2 + 4F.3 + 4F.4
+        4F.18 EmptyHanded(Tb).              4F.2 + MOD3 + MGD4 + TID1 + MGD1
+        4F.19 exists(td) Occurs(Tb,td,TravelTo(Rx)) MFA8 + 4F.18 + 4F.17 +
+                                                              4F.16 + 4F.15.
+        4F.20 Feasible(Tb,TravelTo(Rx)).                       TAD1 + 4F.19
+
+Lemma 4.G forall(ta,tb,r,o) Region(r) ^ Occurs(ta,tb,TravelTo(r)) ^
+                   EmptyHanded(ta) ^ AllStable(ta) ^ Reachable(ta,rd) =>
+            Reachable(tb,rd)
+
+Assume: 4G.1 Region(R).
+        4G.2 Occurs(Ta,Tb,TravelTo(R)).
+        4G.3 EmptyHanded(Ta)
+        4G.4 AllStable(Ta)
+        4G.5 Reachable(Ta,Rd)
+Infer   4G.6 exists(rx) IntConn(RUnion(rx,Rd)) ^ Feasible(Ta,TravelTo(rx)).
+                                                               ALD3 + 4G.5
+        4G.7 IntConn(RUnion(Rx,Rd))                           4G.6, naming
+        4G.8 Feasible(Ta,TravelTo(Rx)).                       4G.6, naming 
+        4G.9 Feasible(Tb,TravelTo(Rx)).    Lem4F + 4G.2 + 4G.3 + 4G.4 + 4G.8
+        4G.10 Reachable(Tb,Rd).                           ALD3 + 4G.9 + 4G.7
+
+Lemma 4.H EmptyHanded(t) => Feasible(t,TravelTo(Place(t,Agent)).
+Assume 4H.1 EmptyHanded(T).
+Infer. 4H.2 exists(tb) Occurs(T,tb,StandStill).                         MSA1
+       4H.3 Occurs(T,Tb,StandStill)                            4H.2 + Naming
+       4H.4 Motionless(T,Tb,Agent).                              MOD4 + 4H.3
+       4H.5 forall(o,tm) Leq3(T,tm,Tb) =>                        MOD4 + 4H.3
+                 [Grasp(tm,o) <=-> Grasp(T,o)]
+       4H.6 forall(o) Object(o) => Released(T,Tb,o)      MGD4+MGD1+4H.1+4H.5 
+       4H.7 Occurs(T,Tb,TravelTo(Place(T,Agent))).       MOD3+MOD2+4H.4+4H.6
+       4H.8 Feasible(T,TravelTo(Place(T,Agent))).                  TAD1+4H.7
+
+Lemma 4.I
+forall (ox,oy,ta,tb) Object(ox) ^ Object(oy) ^ Time(ta) ^ Time(tb) ^
+             Place(ta,ox) = Place(tb,ox) ^ Place(ta,oy) = Place(tb,oy) =>
+    [CContained(ta,ox,oy) <=> CContained(tb,ox,oy)] ^
+    [UContained(ta,ox,oy) <=> UContained(tb,ox,oy)] ^
+    [BoxWithLid(ta,ox,oy) <=> BoxWithLid(ta,ox,oy)].
+Proof: OCD1, OCD3, ORD1, ORD3, RBA5
+    
+Lemma 4.J
+forall(ta,tb,ox,oy) Time(ta)^Time(tb)^Object(ox)^Object(oy)^ox!=Agent^
+        [forall(o) o != Agent => Place(tb,o) = Place(ta,o)] => 
+    BLContained(tb,ox,oy) <=> BLContained(ta,ox,oy).
+Assume: 4J.1  [forall(o) o != Agent => Place(Tb,o) = Place(Ta,o)]
+        4J.2 BLContained(Ta,Ox,Oy)
+Infer   4J.3 exists(rc,ol) BoxWithLidC(Ta,Oy,ol,rc)^           RBD2 + 4J.2 
+                                 P(Place(Ta,Ox),rc) 
+        4J.4 BoxWithLidC(Ta,Oy,Ol,Rc)                          4J.3  + naming
+        4J.5 P(Place(Ta,Ox),Rc)                                4J.3  + naming
+        4J.6 BoxWithLid(Ta,Oy,Ol)                              RBD1 + 4J.4
+        4J.7 CombinedContainer(Place(Ta,Oy), Place(Ta,Ol),Rc)  RBD1 + 4J.4
+        4J.8 Oy != Agent ^ Ol != Agent.                        RBA1 + 4J.6
+        4J.9 Place(Tb,Oy)=Place(Ta,Oy)^Place(Tb,Ol)=Place(Ta,Ol)^ 4J.8+4J.1
+             Place(Tb,Ox)=Place(Ta,Ox)
+        4J.10 BoxWithLid(Tb,Oy,Ol)                       RBA5 + 4J.6 + 4J.9
+        4J.11 P(Place(Tb,Ox),Rc)                                4J.5 + 4J.9
+        4J.12 CombinedContainer(Place(Tb,Oy), Place(Tb,Ol),Rc)  4J.7 + 4J.9
+        4J.13 BLContained(Tb,Ox,Oy).                   RBD1 + 4J.10 + 4J.12
+
+Lemma 4.P.   
+forall(o,ta,tb,r) Object(o) ^ Region(r) ^ o != Agent ^ EmptyHanded(ta) ^
+                    AllStable(ta) ^ Occurs(ta,tb,TravelTo(r)) ^
+                    not BoxedIn(ta,Agent,o) ^ CanGrasp(tb,o) =>
+                  MovingGroup(tb,o) = MovingGroup(ta,o). 
+
+Assume 4P.1 Ox != Agent.
+       4P.2 EmptyHanded(Ta)
+       4P.3 AllStable(Ta)
+       4P.4 Occurs(Ta,Tb,TravelTo(R))
+       4P.5 not BoxedIn(Ta,Agent,Ox)
+       4P.6 not BoxedIn(Tb,Agent,Ox)
+Infer  4P.7 forall(o) Object(o) ^ o != Agent =>    Lem4A + 4P.2 + 4P.2 + 4P.3
+                Place(Tb,o) = Place(Ta,o)
+       4P.8 forall(o) BoxedIn(Tb,o,Ox) <=>    ASD4+Lem4I+Lem4J+4P.5+4P.6+4P.7
+                      BoxedIn(Ta,o,Ox)
+       4P.9 forall(ol) BoxWithLid(Tb,Ox,Ol) <=>          Lem4I + 4P.7
+                       BoxWithLid(Ta,Ox,Ol)
+       4P.10 forall(o) SafelyMovesWith(Tb,o,Ox) <=>      ASD5 + 4P.8 + 4P.9
+                       SafelyMovesWith(Tb,o,Ox) 
+       4P.11 forall(o) Element(o,MovingGroup(Tb,Ox)) <=>    ASD6 + 4P.10
+                       Element(o,MovingGroup(Ta,Ox))
+       4P.12  MovingGroup(Tb,Ox) = MovingGroup(Ta,Ox).      OSA1 + 4P.11
+
+Lemma 4.Q forall(ra,rb) MuchSmaller(rb,ra) => not OpenContained(ra,rb).
+Proof by contradiction
+Assume 4Q.1 OpenContained(Ra,Rb).
+       4Q.2 MuchSmaller(Rb,Ra).
+Infer  4Q.3 exists(rc) OpenContainerShape(Rb,rc) ^ P(Ra,rc). SCD6 + 4Q.1
+       4Q.4 OpenContainerShape(Rb,Rc).                      4Q.3 + naming
+       4Q.5 P(Ra,Rc)                                        4Q.3 + naming.
+       4Q.6 P(Rc,ConvexHull(Rb))                            SCA6 + 4Q.4
+       4Q.7 P(Ra,ConvexHull(Rb)).                    LemSA + 4Q.5 + 4Q.6
+       4Q.8 MuchSmaller(ConvexHull(Rb),Ra).                 SMA4 + 4Q.2
+       4Q.9 MuchSmaller(Ra,Ra).                        SMA2 + 4Q.7 + 4Q.8.
+       4Q.10 Contradiction                             SMA1 + 4Q.9.
+
+Lemma 4.R forall(o,t) SmallObject(o) => not UContained(t,Agent,o)
+Assume 4R.1 SmallObject(O)
+       4R.2 Time(T)
+Infer  4R.3 forall(ra,rb) FeasiblePlace(Agent,ra) ^       OFD2 + 4R.1
+                             FeasiblePlace(o,rb) => MuchSmaller(rb,ra).
+       4R.4 MuchSmaller(Place(T,O),Place(T,Agent)).       OTD3 + 4R.2
+       4R.5 not OpenContained(Place(T,Agent),Place(T,O)). Lem4Q + 4R.4
+       4R.6 not UContained(T,Agent,O).    OCD3 + ORD3 + SCA2 + SCD6 + 4R.5.
+
+
+
+
+Lemma 4.W  forall(t:Time;r:Region) 
+              OSPlace(t,Contents(t,r),ru) => P(ru,r).
+Assume 4W.1 OSPlace(T,Contents(T,R),RU).
+Infer  4W.2 forall(o) Element(o,Contents(T,R)) => P(Place(T,o),R).  OTD2
+       4W.3 P(RU,R).                                      OTD1 + 4W.1 + 4W.2.
+
+Lemma 4.D forall(t:Time;r:Region) Fits(Contents(t,r),r).
+4D.1 Contents(T,R) = Null => Fits(Contents(T,R),R).                 OFD1
+Assume 4D.2 Contents(T,R) != Null                               
+Infer  4D.3 exists(rc) OSPlace(T,Contents(T,R),rc).                 OTA3
+       4D.4 OSPlace(T,Contents(T,R),RC)                      Naming 4D.3  
+       4D.5 Fits(Contents(T,R),RC)                    LemSB + OFD1 + 4D.4
+       4D.6 P(RC,R)                                          Lem4W + 4D.4
+       4D.7 Fits(Contents(T,R),R)                      OFD2 + 4D.5 + 4D.6
+4D.8 Contents(T,R) != Null => Fits(Contents(T,R),R) Discharge 4D.7 against
+                                                                      4D.2
+4D.9 forall(t:Time;r:Region) Fits(Contents(t,r),r).           4D.1 + 4D.8
+
+Lemma 4.V. UprightContainer(ta,ob,rc) ^ Motionless(ta,tb,ob) ^
+               Constant(ta,tb,hc) ^ rc = Slice(ta,hc) =>
+           DynamicUContainer(ta,tb,ob,hc).
+Assume 4V.1 UprightContainer(Ta,Ob,Rc)
+       4V.2 Motionless(Ta,Tb,Ob).
+       4V.3 Constant(Ta,Tb,Hc)
+       4V.4 Rc = Slice(Ta,Hc)
+Infer  4V.5 Continuous(Ta,Tb,Hc)                              HIA4 + 4V.3
+       4V.6 Fits(Contents(Ta,Rc),Rc).                              Lem4D
+       Assume 4V.7 Leq(Ta,Tm,Tb)
+       Infer  4V.8 Place(Tm,Ob) = Place(Ta,Ob)         MOD2 + 4V.2 + 4V.7
+              4V.9 Rc = Slice(Tm,Hc).                  HID3 + 4V.4 + 4V.7
+              4V.10 UprightContainer(Tm,Ob,Slice(Tm,Hc)) ORD3+4V.1+4V.8+4V.9
+              4V.11 Fits(Contents(Ta,Slice(Ta,Hc)),     4V.6 + 4V.4 + 4V.9
+                                     Slice(Tm,Hc))
+       4V.12 forall(tm) Leq3(Ta,tm,Tb) =>  Discharge 4V.10, 4V.11 against 4V.7
+                          UprightContainer(tm,Ob,Slice(Tm,Hc)) ^
+                          Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc)).
+       4V.13 DynamicUContainer(Ta,Tb,Ob,Hc).            HUD1 + 4V.5 + 4V.12
+
+Lemma 4.Y. forall(o,t) not UContained(t,o,o). OCD3+ORD3+SCA2+SCA3+SBD4+LemSM
+
+Problem specification: 
+C.4.A.1: UprightContainer(Ta4,Ob4,Rc4).
+C.4.A.2: FullyOutside(Place(Ta4,Ox4),Place(Ta4,Ob4)).
+C.4.A.3: SmallSet(Union(Contents(Ta4,Rc4),MovingGroup(Ta4,Ox4)),Rc4).
+C.4.A.4: AllStable(Ta4).
+C.4.A.5: EmptyHanded(Ta4).
+C.4.A.6: Graspable(Ta4,Ox4).
+C.4.A.7: Reachable(Ta4,Rc4).
+C.4.A.8: Ox4 != Agent != Ob4.
+C.4.A.9: FullyOutside(Place(Ta4,Agent),Place(Ta4,Ob4)).
+C.4.A.10: SafelyMovable(Ta4,Ox4). 
+C.4.A.11: SmallObject(Ob4).
+C.4.A.12: not BoxedIn(Ta4,Agent,Ox4).
+C.4.A.13: NoPartialContents(Ta4,Ob4).
+Proof of Inference 4.a
+
+4.1  exists(tm1,ra) Occurs(Ta4,tm1,TravelTo(ra)) ^ CanGrasp(tm1,Ox4).
+                                                            C4A6 + MFD4
+4.2 Occurs(Ta4,Tm1,TravelTo(Ra1)).                          4.1, naming
+4.3 CanGrasp(Tm1,Ox4)                                       4.1, naming
+4.4 forall(o) Object(o) ^ o != Agent =>          Lem4A + 4.2 + C4A4 + C4A5
+       Place(Tm1,o) = Place(Ta4,o)                 
+4.5 AllStable(Tm1)                               Lem4A + 4.2 + C4A4 + C4A5
+4.6 Place(Tm1,Ob4) = Place(Ta4,Ob4)                             C4A8 + 4.4
+4.7 deliberately omitted
+4.8 deliberately omitted           
+4.9 UprightContainer(Tm1,Ob4,Rc4).                ORD3 (twice) + C4A1 + 4.6
+4.10 Reachable(Tm1,Rc4).                  Lem4G + 4.2 + C4A5 + C4A4 + C4A7
+4.11 SafelyMovable(Tm1,Ox4).                                  ASA3 + C4A10
+4.12 not UContained(Tm1,Agent,Ob4).                          Lem4R + C4A11
+4.13 forall(o) UContained(Tm1,o,Ob4) <=>          OCD3 + ORD3 + 4.4 + 4.12
+               UContained(Ta4,o,Ob4)        
+4.14 UContents(Tm1,Ob4) = UContents(Ta4,Ob4)            OCD5 + OSA1 + 4.13
+4.15 MovingGroup(Tm1,Ox4) = MovingGroup(Ta4,Ox4)   Lem4P + C4A5 + C4A4 + 
+                                                        C4A12 + 4.2 + 4.3
+4.16 SmallSet(Union(UContents(Tm1,Ob4),                 C4A3 + 4.14 + 4.15
+                    MovingGroup(Ta4,Ox4)), Rc4)
+4.16a Feasible(Tm1,PutInUC(Ox4,Ob1)).    ALA1+4.9+4.3+4.10+4.11+4.5+C4A11+4.16
+4.17 exists(tm2) Occurs(Tm1,tm2,PutInUC(Ox4,Ob1)).             TAD1 + 4.16a
+4.18 Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4)).                       4.17 + naming
+4.19 Feasible(Ta4,TravelTo(Place(Ta4,Agent))).                Lem4H + C4A5  
+4.20 Feasible(Tm1,TravelTo(Place(Ta4,Agent))).     Lem4F+4.2+C4A4+C4A5+4.19
+4.21 FullyOutside(Place(Ta4,Agent),Place(Tm1,Ob4))           C4A9 + 4.6
+4.22 Feasible(Tm2,TravelTo(Place(Ta4,Agent))).     ALA2 + 4.18 + 4.20 + 4.21
+4.23 exists(tb4) Occurs(Tm2,tb4,TravelTo(Place(Ta4,Agent)))    TAD1 + 4.22
+4.24 Occurs(Tm2,Tb4,TravelTo(Place(Ta4,Agent))).              4.23, naming
+4.25 Occurs(Tm1,Tb4,Sequence(PutInUc(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))
+                                                        TAD2 + 4.18 + 4.24
+4.26 Occurs(Ta4,Tb4,Sequence(TravelTo(Ra4),             TAD2 + 4.2  + 4.25
+                      Sequence(PutInUc(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))
+4.27 Occurs(Ta4,Tb4,LoadUprightContainer(Ox4,Ob4)).     ALD2 + C4A9 + 4.26.
+4.28 Feasible(Ta4,LoadUprightContainer(Ox4,Ob4)).              TAD1 + 4.27
+QED Inference 4.a
+
+
+Proof of Inference 4.b
+
+Assume: 4.29 Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)).
+Infer:  4.30 Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),          ALD2 + 4.29
+                      Sequence(PutInUc(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))
+        4.31 exists(tm1,tm2)                                TAD2 + 4.30
+               Occurs(Ta4,tm1,TravelTo(Ra4)) ^
+               Occurs(tm1,tm2,PutInUc(Ox4,Ob4)) ^
+               Occurs(tm2,Tb,TravelTo(Place(Ta4,Agent)) 
+        4.32 Occurs(Ta4,Tm1,TravelTo(Ra4)).               4.31 + naming
+        4.33 Occurs(Tm1,Tm2,PutInUc(Ox4,Ob4))             4.31 + naming
+        4.34 Occurs(Tm2,Tb,TravelTo(Place(Ta4,Agent))     4.31 + naming
+        4.35 exists(rc,rx) UprightContainer(Tm1,Ob4,rc) ^ ALD1 + 4.33
+                P(rx,rc) ^ OV(Place(Tm2,Agent),rc) ^
+                SafeManipulate(Tm1,Tm2,Ox4,rx).
+        4.36 UprightContainer(Tm1,Ob4,Rc1)                4.35 + naming
+        4.37 P(Rx1,Rc1)                                   4.35 + naming
+        4.38 SafeManipulate(Tm1,Tm2,Ox4,Rc1).             4.35 + naming
+        4.39 forall(o) Object(o) ^ o != Agent => Lem4A + 4.32 + C4A4 + C4A5
+                 Place(Tm1,o) = Place(Ta4,o)                 
+        4.40 AllStable(Tm1).                     Lem4A + 4.32 + C4A4 + C4A5
+        4.41 UContents(Tm1,Ob4) = UContents(Ta4,Ob4)  As in 4.14 of Inf 4.a 
+        4.42 MovingGroup(Tm1,Ox4) =                   As in 4.15 of Inf 4.a
+                 MovingGroup(Ta1,Ox4) 
+        4.43 OSPlace(Tm2,MovingGroup(Tm1,Ox4),Rc1)         ASA1 + 4.38
+        4.44 OSPlace(Tm2,MovingGroup(Ta4,Ox4),Rc1)         4.43 + 4.42
+        4.45 forall(o) Element(o,MovingGroup(Ta4,Ox4)) =>
+                       P(Place(Tm2,o),Rc1)                 OTD1 + 4.44
+        4.46 forall(o:Object) o != Agent ^                 ASA2 + 4.38
+                not Element(o,MovingGroup(Tm1,Ox4)) =>
+                Motionless(Tm1,Tm2,o)
+        4.47 forall(o:Object) o != Agent ^                 MOD2 + 4.46 
+                not Element(o,MovingGroup(Tm1,Ox4)) =>
+                Place(Tm1,o) = Place(Tm2,o)
+        Assume: 4.48 Element(Ob4,MovingGroup(Tm1,Ox4))
+        Infer:  4.49 Element(Ob4,MovingGroup(Ta1,Ox4))     4.48 + 4.42
+                4.50 Element(Ob4,Union(Contents(Ta4,Rc4),  OSD6 + 4.49
+                                       MovingGroup(Ta4,Ox4)))
+                4.50A OMuchSmaller(Ob4,Rc4)                OFD4 + C4A3 + 4.50
+                4.51 MuchSmaller(Place(Tm1,Ob4),Rc4).      OFD3 + OTD3 + 4.50A
+                4.52 not OpenContainerShape(Place(Tm1,Ob1),Rc4). SMA5 + 4.51
+                4.53 Contradiction ORD3 + SCA2 + 4.36 + 4.52
+       4.54 not Element(Ob4,MovingGroup(Tm1,Ox4)). Discharge 4.53 against 4.48
+       4.55 Place(Tm2,Ob4) = Place(Tm1,Ob4).               4.47 + 4.54 + C4A8
+       4.55a Place(Tm2,Ob4) = Place(Ta4,Ob4).              4.55 + 4.39 + C4A8
+       4.56 UprightContainer(Tm2,Ob4,Rc1).         ORD3(twice) + 4.36 + 4.55a
+       4.57 forall(o) Element(o,MovingGroup(Ta4,Ox4)) =>   OCD3 + 4.45 + 4.56
+                      UContained(Tm2,o,Ob4)
+       4.58 PartiallyContained(Place(Tm2,Agent),           ALD1 + 4.33
+                                    Place(Tm2,Ob4)).
+       4.59 not OpenContained(Place(Tm2,Agent),            SCD8 + 4.58
+                                    Place(Tm2,Ob4))
+       4.60 not UContained(Tm2,Agent,Ob4)           OCD3 + ORD3 + SCA2 + 4.59
+       4.61 not UContained(Ta4,Agent,Ob4)                    ASD4 + C4A12
+       4.62 forall(o:Object) o != Agent ^                    4.47 + 4.39  
+                not Element(o,MovingGroup(Ta4,Ox4)) =>   
+                Place(Tm2,o) = Place(Ta4,o)
+       4.63 forall(o:Object) o != Agent ^            OCD3 + ORD3 + 4.62 + 4.55 
+                not Element(o,MovingGroup(Ta4,Ox4)) =>    
+                UContained(Tm2,o,Ob4) <=> UContained(Ta1,o,Ob4)
+       4.64 forall(o) UContained(Tm2,o,Ob4) <=>      4.63 + 4.57 + 4.60 + 4.61
+               UContained(Ta4,o,Ob4) V 
+               Element(o,MovingGroup(Ta4,Ox4))
+       4.65 forall(o:Object)                               ASA2 + 4.38 + 4.64
+                not UContained(Tm2,o,Ob4) ^ o != Agent =>
+                StableThroughout(Tm1,Tm2,o)
+       4.66 forall(o:Object)                               MRD3 + 4.65
+                not UContained(Tm2,o,Ob4) ^ o != Agent =>
+                Stable(Tm2,o)
+       4.67 forall(o:Object) Released(Tm2,Tb,o).           MOD3 + 4.34
+       4.68 forall(o:Object)                               MRD4 + C4A2
+             not PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4))
+       4.69 forall(o:Object)                             4.68 + 4.62 + 4.57
+              o != Agent ^ not UContained(Tm2,o,Ob4) =>
+              not PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4))
+       4.70 forall(ox:Object)                     MRA4 + 4.69 + 4.66 + 4.67
+                 ox != Agent ^ not UContained(Tm2,ox,Ob4) =>
+                 Motionless(Tm2,Tb,ox) ^ StableThroughout(Tm2,Tb,ox).
+       4.71 Motionless(Tm2,Tb,Ob4)                     4.70 + C4A8 + Lem4Y
+       Assume 4.72 UContained(Tm2,Ox,Ob4).
+       Infer  4.73 exists(rc2)                               OCD3 + 4.72
+                      UprightContainerShape(Place(Tm2,Ob4),rc2) ^
+                      P(Place(Tm2,Ox,rc2))
+              4.74 UprightContainerShape(Place(Tm2,Ob4),Rc2) Naming 4.73
+              4.75 P(Place(Tm2,Ox),Rc2)                      Naming 4.73
+              4.76 exists(hc) Constant(Tm2,Tb,hc) ^          HIA3 
+                              Slice(Tm2,hc)=Rc2.   
+              4.77 Constant(Tm2,Tb,Hc1).                     Naming 4.76 
+              4.78 Slice(Tm2,Hc1)=Rc2.                       Naming 4.76
+              4.79 DynamicUContainer(Tm2,Tb,Ob4,Hc1) Lem4V+4.56+4.71+4.77+4.78
+              4.80 UContained(Tb,Ox,Ob4)      HUA1+MGD4+4.79+4.75+4.78+4.67
+      4.81 forall(o) UContained(Tm2,o,Ob4) =>  Discharge 4.80 against 4.72
+                           UContained(Tb,o,Ob4).
+      4.82 forall(o) not UContained(Tm2,o,Ob4) =>   OCD3 + MOD2 + 4.71
+                       not UContained(Tb,o,Ob4).
+      4.83 forall(o) UContained(Tb,o,Ob4) <=> UContained(Tm2,o,Ob4) 4.81+4.82
+      4.84 exists(tc) Occurs(Tb,tc,StandStill) ^ AllStable(Tc). MSA1
+      4.85 Occurs(Tb,Tc,StandStill).                          Naming 4.84
+      4.86 AllStable(Tc)                                      Naming 4.84
+      4.87 forall(o) UContained(Tc,o,Ob4) <=> UContained(Tb,o,Ob4) 
+                                        Exactly analogous to proof of 4.83
+      4.88 forall(o) UContained(Tc,o,Ob4) <=>      4.64 + 4.83 + 4.87
+               UContained(Ta4,o,Ob4) V 
+               Element(o,MovingGroup(Ta4,Ox4))
+      4.89 forall(o) Element(o,UContents(Tc,Ob4)) <=>    OCD5 + 4.88
+               Element(o,UContents(Ta4,Ob4)) V 
+               Element(o,MovingGroup(Ta4,Ox4))
+      4.90 UContents(Tc,Ob4) =                         OSD6 + OSA1 + 4.89
+             Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4))
+QED.

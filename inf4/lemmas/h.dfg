@@ -4,13 +4,13 @@ list_of_descriptions.
 name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.H*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
-description({*25 April 2016*}).
+description({*27 June 2016*}).
 
 end_of_list.
 
 list_of_symbols.
 
-functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (T,0), (StandStill,0)].
+functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (T,0), (Tb,0), (StandStill,0)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (Feasible,2), (Released,3), (Grasp,2), (Motionless,3)].
 
@@ -110,7 +110,8 @@ formula(forall([ta,tb,o,t], equiv(Released(ta,tb,o), and(Object(o), Lt(ta,tb), f
 formula(forall([ta,tb,r], equiv(Occurs(ta,tb,TravelTo(r)), and(equal(r, Place(tb,Agent)), forall([o], implies(Object(o), Released(ta,tb,o))))))).
 
 % MGD1
-formula(forall([t], equiv(EmptyHanded(t), and(Time(t), not(exists([o], implies(Object(o), Grasp(t,o)))))))).
+
+formula(forall([t], and(equiv(EmptyHanded(t), Time(t)), not(exists([o], Grasp(t,o)))))).
 
 % MOD2
 formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o))))))))).
@@ -121,9 +122,6 @@ formula(forall([ta], implies(Time(ta), exists([tb], and(Occurs(ta,tb,StandStill)
 % MOD4
 formula(forall([ta,tb], equiv(Occurs(ta,tb,StandStill), and(Motionless(ta,tb,Agent), forall([t,o], implies(Leq3(ta,t,tb), equiv(Grasp(t,o), Grasp(ta,o)))))))).
 
-% Assume
-
-formula(EmptyHanded(T)).
 
 end_of_list.
 

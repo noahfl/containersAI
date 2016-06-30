@@ -1,0 +1,75 @@
+Inference 2.
+
+Qualitative prediction. If Ob2b is a rigid object and a closed
+container containing Ob2a, and Ob2a is a closed container
+(not necessarily rigid) containing object Os2, then Os2
+will remain inside Ob2b.
+
+C.2.A.1: RigidObject(Ob2b).
+C.2.A.2: CContained(Ta2,Os2,Singleton(Ob2a)).
+C.2.A.3: CContained(Ta2,Ob2a,Singleton(Ob2b)).
+C.2.A.4: Ordered(Ta2,Tb2).
+
+Infer: CContained(Tb2,Os2,Singleton(Ob2a)).
+
+
+
+Lemma 2.A forall(t,o,s) Time(t) ^ Object(o) ^ ObjectSet(s) =>
+              [CContained(t,o,s) <=>
+               exists(rc) ClosedContainer(t,s,rc) ^ P(Place(t,o),rc) <=>
+               exists(rs) OSPlace(t,s,rs) ^ Contained(Place(t,o),rs)
+              ]
+    Proof: OCD1, ORD1, SCD3.
+
+Lemma 2.B. forall(t,os,ob) Time(t) ^ Object(os) ^ Object(ob) =>
+             [CContained(t,os,Singleton(ob)) <=> 
+              Contained(t,Place(t,os),Place(t,ob))]
+
+   Proof: By Lemma 1.B OSPlace(t,Singleton(ob),rs) <=> Place(t,ob)=rs.
+          The result then follows from lemma 2.A.
+
+Lemma 2.C
+forall [ob,ox,ta,tb]
+     RigidObject(ob) ^ CContained(ta,ox,Singleton(ob)) ^ Lt(ta,tb) =>
+         CContained(tb,ox,Singleton(ob)).
+
+Proof: Universal abstraction from Inference 1.
+
+Lemma 2.D
+forall [ob,ox,ta,tb]
+     RigidObject(ob) ^ CContained(ta,ox,Singleton(ob)) ^ Lt(tb,ta) =>
+    CContained(tb,ox,Singleton(ob)).
+
+This is identical to Lemma 2.C  except for the order of time points.
+
+The proof is the same as the proof of Inference 1 except for the following
+replacements:
+
+13. NoEntranceCavity(Ta1,Tb1,Hc1,HPlace(Ob1)).  11 + HCD1.
+In the justification of step 20:
+     P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))
+   replace HCA2 by HCA3.
+21. Leq3(Tb1,Tb1,Ta1).
+
+Lemma 2.E
+forall [ob,ox,ta,tb]
+     RigidObject(ob) ^ CContained(ta,ox,Singleton(ob)) ^ Ordered(ta,tb) => 
+    CContained(tb,ox,Singleton(ob)).
+
+Proof: From Lemmas 2.C and 2.D  and TID2
+We have proven both cases Lt(ta,tb) and Lt(tb,ta); and the case ta=tb is
+trivial.
+
+
+
+Proof of Inference 2.
+
+2.1  Contained(Place(Ta2,Os2),Place(Ta2,Ob2a)).              C2A2 + Lem2.B
+2.2  Contained(Place(Ta2,Ob2a),Place(Ta2,Ob2b)).             C2A3 + Lem2.B
+2.3  Contained(Place(Ta2,Os2),Place(Ta2,Ob2b)).           2.1 + 2.2 + SCA1
+2.4  CContained(Ta2,Os2,Singleton(Ob2b)).                     2.3 + Lem2.B
+2.5  CContained(Tb2,Os2,Singleton(Ob2b)).        Lem2.E + C2A1 + C2A4 +2.4
+                                            
+
+
+
