@@ -124,9 +124,9 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-formula(forall([ox,oy,ta,tb], and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), implies(equal(Place(ta,oy), Place(tb,oy)), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))))).
+% formula(forall([ox,oy,ta,tb], and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), implies(equal(Place(ta,oy), Place(tb,oy)), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))))).
 
-% formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy)))))).
+formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy)))))).
 
 end_of_list.
 
