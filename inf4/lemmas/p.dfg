@@ -155,8 +155,10 @@ list_of_formulae(conjectures).
 % final
 % formula(forall([o,ta,tb,r], and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), implies(CanGrasp(tb,o), equal(MovingGroup(tb,o), MovingGroup(ta,o)))))).
 
+formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
+
 % 4P.12
-formula(equal(MovingGroup(Tb,Ox), MovingGroup(Ta,Ox))).
+% formula(equal(MovingGroup(Tb,Ox), MovingGroup(Ta,Ox))).
 
 % 4P.11
 % formula(forall([o], equiv(Element(o,MovingGroup(Tb,Ox)), Element(o,MovingGroup(Ta,Ox))))).
