@@ -1,0 +1,143 @@
+begin_problem(Scenario4_Lem4V).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 4, Lemma 4.H*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*7 July 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+
+functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (T,0), (Tb,0), (StandStill,0), (Slice,2), (Ta,0), (Tb,0), (Ob,0), (Hc,0), (Rc,0)].
+
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (Feasible,2), (Released,3), (Grasp,2), (Motionless,3), (Fits,2), (Constant,3), (Continuous,3), (DynamicUContainer,4), (History,1)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+%%%% Sortal Axioms
+
+%%% Time
+%% Actions
+% TASA
+formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Action(a))))).
+% TASB
+formula(forall([t,a], implies(Feasible(t,a), and(Time(t), Action(a))))).
+
+%%% Objects
+%% Object sets
+% OSSA
+formula(forall([x,s], implies(Element(x,s), and(Object(x), ObjectSet(s))))).
+%% Objects containing regions
+% ORSA
+formula(forall([t,o,r], implies(UprightContainer(t,o,r), and(Time(t), Object(o), Region(r))))).
+%% Object containment
+% OCSA
+formula(forall([t,ox,ob], implies(UContained(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+%% Fits and small set
+% OFSA
+formula(forall([s,r], implies(Fits(s,r), and(ObjectSet(s), Region(r))))).
+
+%%% Specific Actions
+%% Safe manipulation
+% ASSA
+formula(forall([t,o], implies(SafelyMovable(t,o), and(Time(t), Object(o))))).
+% ASSB
+formula(forall([t,ox,ob], implies(BoxedIn(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+%% Loading an upright container
+% ALSA
+formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb))))).
+% ALSB
+formula(forall([t,r], implies(Reachable(t,r), and(Time(t), Region(r))))).
+%% Fits and small set
+% OFSA
+formula(forall([o], implies(SmallObject(o), Object(o)))).
+
+%%% Spatial Relations
+%% Basic Spatial Relations
+% SRSA
+formula(forall([u,v], implies(or(P(u,v), DR(u,v)), and(Region(u), Region(v))))).
+%% Spatial containment
+% SCSA/B
+formula(forall([ra,rb], implies(or(FullyOutside(ra,rb), UprightContainerShape(ra,rb)), and(Region(ra), Region(rb))))).
+%% Much smaller
+% SMSA
+formula(forall([s,r], implies(SmallSet(s,r), and(ObjectSet(s), Region(r))))).
+
+%%% Motion and Manipulation
+%% Stability and falling
+% MSSA
+formula(forall([t], implies(AllStable(t), Time(t)))).
+%% Frame axioms
+% MFSA
+formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o))))).
+%% Motion
+% MMSA
+formula(forall([ta,tb,o], implies(Motionless(ta,tb,o), and(Time(ta), Time(tb), Object(o))))).
+%% Grasping an object
+% MGSA
+formula(forall([t], implies(EmptyHanded(t), Time(t)))).
+% MGSB
+formula(forall([t,o], implies(or(CanGrasp(t,o), Grasp(t,o)), and(Time(t), Object(o))))).
+% MGSC
+formula(forall([ta,tb,o], implies(Released(ta,tb,o), and(Time(ta), Time(tb), Object(o))))).
+%% Feasibility of Traveling
+% MFSA
+formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
+% MFSB
+formula(forall([t,r], implies(NoObstacles(t,r), and(Time(t), Region(r))))).
+
+%%% Histories
+%% Basic properties of histories
+% HBSA
+formula(forall([t1,t2,h], implies(or(Continuous(t1,t2,h), Constant(t1,t2,h)), and(Time(t1), Time(t2), History(h))))).
+%% Dynamic upright containers
+formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(ta), Time(tb), Object(ob), History(hc))))).
+
+% Temporal Axioms
+% TID3
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% TID1
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% TIA2
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+
+%%%% Specifications
+
+% MOD2
+formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o))))))))).
+
+% Lem4D
+formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
+
+% ORD3
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
+
+% HID3
+formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h)))))))).
+
+% HIA4
+formula(forall([ta,tb,h], equiv(Constant(ta,tb,h), Continuous(ta,tb,h)))).
+
+% HUD1 (o and ob, may be issue?)
+formula(forall([ta,tb,ob,hc], equiv(DynamicUContainer(ta,tb,ob,hc), and(Continuous(ta,tb,hc), forall([tm], implies(Leq3(ta,tm,tb), and(UprightContainer(tm,ob,Slice(tm,hc)), Fits(Contents(ta,Slice(ta,hc)),Slice(tm,hc))))))))).
+
+end_of_list.
+
+
+list_of_formulae(conjectures).
+
+formula(forall([ta,tb,ob,hc,rc], implies(and(UprightContainer(ta,ob,rc), Motionless(ta,tb,ob), Constant(ta,tb,hc), equal(rc,Slice(ta,hc))), DynamicUContainer(ta,tb,ob,hc)))).
+
+end_of_list.
+
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+
