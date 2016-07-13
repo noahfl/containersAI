@@ -18,4 +18,5 @@ Inference 5: not done
 
 ###Useful commands###
 
-find . -name "*.c" -print | xargs grep "main("
+find . -name "*.dfg" -print | xargs grep "OTA3"
+
