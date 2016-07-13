@@ -158,9 +158,9 @@ formula(forall([ta,tb,o], and(SafelyMovable(ta,o), implies(forall([ox], implies(
 formula(forall([ta,tb], and(Lt(ta,tb), AllStable(ta), EmptyHanded(ta), forall([o], implies(Object(o), implies(Released(ta,tb,o), and(Motionless(ta,tb,o), AllStable(tb)))))))).
 
 % Lem4P
-formula(forall([o,ta,tb,r], and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), implies(CanGrasp(tb,o), equal(MovingGroup(tb,o), MovingGroup(ta,o))))), Lem4P).
+% formula(forall([o,ta,tb,r], and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), implies(CanGrasp(tb,o), equal(MovingGroup(tb,o), MovingGroup(ta,o))))), Lem4P).
 
-formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o)))), Lem4Pb).
+% formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o)))), Lem4Pb).
 
 % Lem4H
 formula(forall([t], implies(EmptyHanded(t), Feasible(t,TravelTo(Place(t,Agent)))))).
@@ -211,13 +211,13 @@ list_of_formulae(conjectures).
 % formula(Feasible(Tm1,PutInUC(Ox4,Ob4))).
 
 % 4.16
-%formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
+formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 
 % 4.15 (problem with Lem4P, ask Ernie)
 % formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % 4.14 (no proof, fix)
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % 4.13 (proof)
 % formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4)))).
