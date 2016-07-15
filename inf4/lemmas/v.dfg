@@ -114,7 +114,7 @@ formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], 
 formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 
 % ORD3
-formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))), ORD3).
 
 % HID3
 formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h)))))))).
@@ -135,11 +135,16 @@ formula(equal(Rc,Slice(Ta,Hc)),assume4).
 formula(Leq3(Ta,Tm,Tb),assume7).
 
 % test
-formula(equal(Place(Tm,Ob), Place(Ta,Ob)),test1).
+% formula(equal(Place(Tm,Ob), Place(Ta,Ob)),test1).
 
 
 % test
 formula(forall([tm,hc], Region(Slice(tm,hc)))).
+formula(forall([t,o], Region(Place(t,o)))).
+
+% 4V10 test
+% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
+
 end_of_list.
 
 
@@ -151,19 +156,25 @@ list_of_formulae(conjectures).
 % 4V13
 % formula(DynamicUContainer(Ta,Tb,Ob,Hc)).
 
+% 4V12 (tm/Tm?)
+% formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
+
+% 4V11
+% formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc))).
+
 % 4V10
 formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
 
-% 4V9
+% 4V9 (proof)
 % formula(equal(Rc,Slice(Tm,Hc))).
 
-% 4V8
+% 4V8 (proof)
 % formula(equal(Place(Tm,Ob), Place(Ta,Ob))).
 
-% 4V6
+% 4V6 (proof)
 % formula(Fits(Contents(Ta,Rc),Rc)).
 
-% 4V5
+% 4V5 (proof)
 % formula(Continuous(Ta,Tb,Hc)).
 
 end_of_list.

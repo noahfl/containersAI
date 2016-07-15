@@ -10,7 +10,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Ta,0), (T,0), (R,0), (Rd,0), (Null,0)].
+functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Ta,0), (T,0), (R,0), (Rd,0), (Null,0), (RC,0)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (IntConn,1), (Feasible,2), (Fits,2), (OSPlace,3), (MuchSmaller,2), (OMuchSmaller,2), (FeasiblePlace,2), (DR,2)].
 
@@ -107,57 +107,67 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 %%%% Specifications
 
 % OFD1
-formula(forall([s,r,t], equiv(Fits(s,r), or(equal(s,Null), exists([ra], and(OSPlace(t,s,ra), P(ra,r))))))).
+formula(forall([s,r,t], equiv(Fits(s,r), or(equal(s,Null), exists([ra], and(OSPlace(t,s,ra), P(ra,r)))))),OFD1).
 
 % OFD2
-formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r)))))).
+formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
 
 % OTA1 (test)
-formula(forall([p,q,t], implies(and(Object(p), Object(q), Time(t), not(equal(p,q))), DR(Place(t,p), Place(t,q))))).
+formula(forall([p,q,t], implies(and(Object(p), Object(q), Time(t), not(equal(p,q))), DR(Place(t,p), Place(t,q)))),OTA1).
 
 % OTA2 (test)
-formula(not(exists([t,r], OSPlace(t,Null,r)))).
+formula(not(exists([t,r], OSPlace(t,Null,r))),OTA2).
 
 % OTD1
 % formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
 
 % OTA4 (test)
-formula(forall([o,r], implies(FeasiblePlace(o,r), IntConn(r)))).
+formula(forall([o,r], implies(FeasiblePlace(o,r), IntConn(r))),OTA4).
 
-% OTA3
-formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), forall([ra], implies(OSPlace(s,t,ra), equal(ra,r)))))))))).
+% OTA3 (not sure if this is right)
+formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), forall([ra], implies(OSPlace(s,t,ra), equal(ra,r))))))))),OTA3a).
 
-formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r)))))))))))).
+% formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3b).
 
 % LemSB
-formula(forall([u], implies(Region(u), P(u,u)))).
+formula(forall([u], implies(Region(u), P(u,u))),LemSB).
 
 % Lem4W
-formula(forall([t,r,ru], implies(and(Time(t), Region(r)), implies(OSPlace(t,Contents(t,r),ru), P(ru,r))))).
+formula(forall([t,r,ru], implies(and(Time(t), Region(r)), implies(OSPlace(t,Contents(t,r),ru), P(ru,r)))),Lem4W).
 
-% Assume
-% formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
+
+% assume
 % formula(not(equal(Contents(T,R),Null))).
-% formula(implies(not(equal(Contents(T,R),Null)), Fits(Contents(T,R),R))).
-% formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
 
 
 % test
 % formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).
+
+% test (4D4)
+% formula(OSPlace(T,Contents(T,R),RC),4D4).
+
+% test (4D3)
+% formula(exists([rc], OSPlace(T,Contents(T,R),rc)),4D3).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% final
-% formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
+% final (proof with 4D3 or 4D4 given)
+formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 
 % 4D.7
 % formula(Fits(Contents(T,R),R)).
 
+% 4D6
+% formula(P(RC,R)).
+
+% 4D5
+% formula(Fits(Contents(T,R),RC)).
+
 % 4D.3
-formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
+% formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
 
 % 4D.1
 % formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).

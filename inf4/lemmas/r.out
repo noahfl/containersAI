@@ -347,9 +347,9 @@ Usable Clauses:
 	Given clause: 229[1:Res:187.0,72.1] SmallObject(U) ||  -> OMuchSmaller(U,skf6(V))*.
 	Given clause: 228[0:Res:222.0,72.1] SmallObject(U) ||  -> OMuchSmaller(U,Place(V,Agent))*.
 	Given clause: 223[0:Res:222.0,75.0] || OMuchSmaller(U,V) -> MuchSmaller(Place(W,U),V)*.
-SPASS V 3.5 
+SPASS V 3.7 
 SPASS beiseite: Proof found.
-Problem: r.dfg 
+Problem: lemmas/r.dfg 
 SPASS derived 142 clauses, backtracked 49 clauses, performed 3 splits and kept 217 clauses.
 SPASS allocated 52583 KBytes.
 SPASS spent	0:00:00.06 on the problem.
@@ -357,7 +357,7 @@ SPASS spent	0:00:00.06 on the problem.
 		0:00:00.02 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
-		0:00:00.00 for the reduction.
+		0:00:00.01 for the reduction.
 
 
 Here is a proof with depth 7, length 36 :
@@ -397,6 +397,6 @@ Here is a proof with depth 7, length 36 :
 225[0:Res:222.0,89.0] ||  -> OMuchSmaller(skc3,Place(U,Agent))*.
 235[0:Res:223.1,182.0] || OMuchSmaller(skc3,Place(skc4,Agent))* -> .
 236[0:MRR:235.0,225.0] ||  -> .
-Formulae used in the proof : conjecture0 axiom4 axiom8 axiom6 axiom34 axiom28 axiom31 axiom29 axiom32 axiom30 axiom35 axiom33
+Formulae used in the proof : conjecture0 axiom4 axiom8 axiom6 SCA2 OFD2 Lem4Q OFD3 ORD3 OTD3 SCD6 OCD3
 
 --------------------------SPASS-STOP------------------------------

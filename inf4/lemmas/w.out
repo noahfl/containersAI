@@ -265,14 +265,14 @@ Usable Clauses:
 	Given clause: 202[0:SSi:201.0,169.0] ||  -> ObjectSet(Contents(skc5,skc4))*.
 	Given clause: 196[0:Res:81.2,92.0] Object(U) || P(Place(skc5,U),skc3) -> P(Place(skc5,U),skc4)*.
 	Given clause: 86[0:Res:66.2,3.0] || P(Place(U,skf3(V,skc3,U)),skc3)* OSPlace(U,V,skc4) -> .
-SPASS V 3.5 
+SPASS V 3.7 
 SPASS beiseite: Proof found.
-Problem: w.dfg 
+Problem: lemmas/w.dfg 
 SPASS derived 70 clauses, backtracked 0 clauses, performed 0 splits and kept 99 clauses.
 SPASS allocated 55646 KBytes.
-SPASS spent	0:00:00.03 on the problem.
-		0:00:00.01 for the input.
-		0:00:00.01 for the FLOTTER CNF translation.
+SPASS spent	0:00:00.06 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
 		0:00:00.00 for the reduction.
@@ -296,6 +296,6 @@ Here is a proof with depth 4, length 17 :
 171[0:Res:168.0,93.0] ||  -> P(Place(skc5,skf3(Contents(skc5,skc3),U,V)),skc3)*.
 207[0:Res:171.0,86.0] || OSPlace(skc5,Contents(skc5,skc3),skc4)* -> .
 208[0:MRR:207.0,9.0] ||  -> .
-Formulae used in the proof : conjecture0 axiom2 axiom27 axiom28
+Formulae used in the proof : conjecture0 axiom2 OTD1 OTD2
 
 --------------------------SPASS-STOP------------------------------

@@ -110,32 +110,69 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 
 % SCD6
-formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc)))))).
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
 
 % SCA6
-formula(forall([u,v], implies(OpenContainerShape(u,v), P(v,ConvexHull(u))))).
+formula(forall([u,v], implies(OpenContainerShape(u,v), P(v,ConvexHull(u)))),SCA6).
 
 % LemSA
-formula(forall([u,v,w], implies(and(P(u,v), P(v,w)), P(u,w)))).
+formula(forall([u,v,w], implies(and(P(u,v), P(v,w)), P(u,w))),LemSA).
 
 % SMA1
-formula(forall([ra], not(MuchSmaller(ra,ra)))).
+formula(forall([ra], not(MuchSmaller(ra,ra))),SMA1).
 
 % SMA2
-formula(forall([ra,rb,rc], and(MuchSmaller(ra,rb), implies(MuchSmaller(rb,rc), MuchSmaller(ra,rc))))).
+formula(forall([ra,rb,rc], implies(and(MuchSmaller(ra,rb), MuchSmaller(rb,rc)), MuchSmaller(ra,rc))),SMA2).
 
 % SMA4
-formula(forall([ra,rb], implies(MuchSmaller(ra,rb), MuchSmaller(ConvexHull(ra),rb)))).
+formula(forall([ra,rb], implies(MuchSmaller(ra,rb), MuchSmaller(ConvexHull(ra),rb))),SMA4).
 
+% assume (proof only works with these assumptions included)
+formula(OpenContained(Ra,Rb),assume1).
+formula(MuchSmaller(Rb,Ra),assume2).
 
+% 4Q5
+formula(P(Ra,Rc),4Q5).
 
+% 4Q4
+formula(OpenContainerShape(Rb,Rc),4Q4).
+
+% 4Q9
+% formula(MuchSmaller(Ra,Ra),4Q9).
+
+% 4Q8
+% formula(MuchSmaller(ConvexHull(Rb),Ra),4Q8).
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
 % final
-formula(forall([ra,rb], implies(MuchSmaller(rb,ra), not(OpenContained(ra,rb))))).
+% formula(forall([ra,rb], implies(MuchSmaller(rb,ra), not(OpenContained(ra,rb))))).
+
+% test
+formula(not(OpenContained(Ra,Rb))).
+
+% 4Q9
+% formula(MuchSmaller(Ra,Ra)).
+
+% 4Q8
+% formula(MuchSmaller(ConvexHull(Rb),Ra)).
+
+% 4Q7 (proof with 4Q4 an 4Q5 as axioms)
+% formula(P(Ra,ConvexHull(Rb))).
+
+% 4Q6
+% formula(P(Rc,ConvexHull(Rb))).
+
+% 4Q5
+% formula(P(Ra,Rc)).
+
+% 4Q4
+% formula(OpenContainerShape(Rb,Rc)).
+
+% 4Q3 (proof)
+% formula(exists([rc], and(OpenContainerShape(Rb,rc), P(Ra,rc)))).
 
 end_of_list.
 

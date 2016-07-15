@@ -109,8 +109,6 @@ formula(forall([u,v], implies(OpenContainerShape(u,v), EC(u,v)))).
 % SBD4
 formula(forall([u,v], equiv(EC(u,v), and(DR(u,v), C(u,v))))).
 
-formula(forall([u,v], and(equiv(EC(u,v), DR(u,v)), C(u,v)))).
-
 % LemSM
 formula(forall([u,v], implies(DR(u,v), not(equal(u,v))))).
 

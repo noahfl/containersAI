@@ -98,19 +98,19 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))),TID1).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
 %%%% Specifications
 
 % OTD1
-formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
+formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra)))))),OTD1).
 
 % OTD2
-formula(forall([o,r,t], implies(and(Object(o), Region(r), Time(t)), equiv(Element(o,Contents(t,r)), P(Place(t,o),r))))).
+formula(forall([o,r,t], implies(and(Object(o), Region(r), Time(t)), equiv(Element(o,Contents(t,r)), P(Place(t,o),r)))),OTD2).
 
 end_of_list.
 

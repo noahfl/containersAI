@@ -99,15 +99,10 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 %%%% Specifications
 
 % MFD1
-formula(forall([t,r], equiv(NoObstacles(t,r), and(Time(t), forall([o], implies(Object(o), implies(not(equal(o,Agent)), DR(Place(t,o),r)))))))).
+formula(forall([t,r], equiv(NoObstacles(t,r), and(Time(t), forall([o], implies(Object(o), implies(not(equal(o,Agent)), DR(Place(t,o),r))))))),MFD1).
 
 % LemSH
-formula(forall([ra,rb,r], implies(and(DR(r,ra), DR(r,rb)), DR(r,RUnion(ra,rb))))).
-
-% Assume
-formula(NoObstacles(T,Ra)).
-
-formula(NoObstacles(T,Rb)).
+formula(forall([ra,rb,r], implies(and(DR(r,ra), DR(r,rb)), DR(r,RUnion(ra,rb)))),LemSH).
 
 end_of_list.
 

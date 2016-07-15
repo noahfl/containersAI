@@ -94,20 +94,20 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 %%%% Specifications
 
 % ALD3
-formula(forall([ta,r], equiv(Reachable(ta,r), exists([rx], implies(Region(rx), and(IntConn(RUnion(rx,r)), Feasible(ta,TravelTo(rx)))))))).
+formula(forall([ta,r], equiv(Reachable(ta,r), exists([rx], implies(Region(rx), and(IntConn(RUnion(rx,r)), Feasible(ta,TravelTo(rx))))))),ALD3).
 
 % Lem 4F (check)
-formula(forall([ta,tb,r,o,rx], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Feasible(ta,TravelTo(rx))), Feasible(tb,TravelTo(rx))))).
+formula(forall([ta,tb,r,o,rx], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Feasible(ta,TravelTo(rx))), Feasible(tb,TravelTo(rx)))),Lem4F).
 
-formula(Region(R)).
+% formula(Region(R)).
 
-formula(Occurs(Ta,Tb,TravelTo(R))).
+% formula(Occurs(Ta,Tb,TravelTo(R))).
 
-formula(EmptyHanded(Ta)).
+% formula(EmptyHanded(Ta)).
 
-formula(AllStable(Ta)).
+% formula(AllStable(Ta)).
 
-formula(Reachable(Ta,Rd)).
+% formula(Reachable(Ta,Rd)).
 
 
 end_of_list.

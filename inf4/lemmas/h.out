@@ -390,17 +390,17 @@ Usable Clauses:
 	Given clause: 2415[0:MRR:2413.0,126.0] ||  -> equal(Place(skf13(U),Agent),Place(U,Agent))**.
 	Given clause: 473[2:SpR:134.1,471.1] || Feasible(U,TravelTo(V)) Lt(W,skf9(TravelTo(V),U))* -> Feasible(W,TravelTo(V)).
 	Given clause: 2481[2:SpR:2415.0,471.1] || Lt(U,skf13(V)) -> Feasible(U,TravelTo(Place(V,Agent)))*.
-SPASS V 3.5 
+SPASS V 3.7 
 SPASS beiseite: Proof found.
-Problem: h.dfg 
+Problem: lemmas/h.dfg 
 SPASS derived 2327 clauses, backtracked 2 clauses, performed 2 splits and kept 1538 clauses.
 SPASS allocated 54824 KBytes.
-SPASS spent	0:00:00.77 on the problem.
+SPASS spent	0:00:00.81 on the problem.
 		0:00:00.02 for the input.
 		0:00:00.02 for the FLOTTER CNF translation.
 		0:00:00.01 for inferences.
 		0:00:00.00 for the backtracking.
-		0:00:00.68 for the reduction.
+		0:00:00.73 for the reduction.
 
 
 Here is a proof with depth 8, length 41 :
@@ -445,6 +445,6 @@ Here is a proof with depth 8, length 41 :
 2481[1:SpR:2415.0,471.1] || Lt(U,skf13(V)) -> Feasible(U,TravelTo(Place(V,Agent)))*.
 2500[1:Res:2481.1,38.0] || Lt(skc2,skf13(skc2))* -> .
 2502[1:MRR:2500.0,126.0] ||  -> .
-Formulae used in the proof : axiom28 axiom25 axiom30 conjecture0 axiom1 axiom29 axiom16 axiom0 axiom31 axiom21 axiom22 axiom27 axiom26
+Formulae used in the proof : MGD1 TAD1 MSA1 conjecture0 axiom1 MOD2 axiom16 axiom0 MOD4 axiom21 axiom22 MOD3 MGD4
 
 --------------------------SPASS-STOP------------------------------

@@ -178,13 +178,13 @@ Usable Clauses:
 	Given clause: 70[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
 	Given clause: 71[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
 	Given clause: 91[0:MRR:76.0,86.0] || Released(U,V,W)* -> Motionless(U,V,W).
-SPASS V 3.5 
+SPASS V 3.7 
 SPASS beiseite: Proof found.
-Problem: a.dfg 
+Problem: lemmas/a.dfg 
 SPASS derived 13 clauses, backtracked 0 clauses, performed 0 splits and kept 50 clauses.
 SPASS allocated 52390 KBytes.
-SPASS spent	0:00:00.04 on the problem.
-		0:00:00.01 for the input.
+SPASS spent	0:00:00.05 on the problem.
+		0:00:00.02 for the input.
 		0:00:00.01 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
@@ -216,6 +216,6 @@ Here is a proof with depth 2, length 24 :
 101[0:Res:97.1,90.0] || Motionless(skc7,U,skc5)* -> .
 109[0:Res:99.0,91.0] ||  -> Motionless(skc7,skc8,U)*.
 110[0:UnC:109.0,101.0] ||  -> .
-Formulae used in the proof : axiom25 conjecture0 axiom28 axiom20 axiom21 axiom27 axiom26 axiom0
+Formulae used in the proof : MRA5 conjecture0 MGD1 axiom20 axiom21 MOD3 MOD2 axiom0
 
 --------------------------SPASS-STOP------------------------------

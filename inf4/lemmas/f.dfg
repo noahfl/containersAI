@@ -82,57 +82,57 @@ formula(forall([ta,tb,o], implies(Released(ta,tb,o), and(Time(ta), Time(tb), Obj
 % MFSA
 formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 % MFSB
-formula(forall([ra,rb,rw], implies(Trajectory(ra,rb,rw), and(Time(ra), Time(rb), Time(rw))))).
+formula(forall([ra,rb,rw], implies(Trajectory(ra,rb,rw), and(Time(ra), Time(rb), Time(rw)))),MFSB).
 % MFSC
-formula(forall([ta,tb,o,r], implies(StaysIn(ta,tb,o,r), and(Time(ta), Time(tb), Object(o), Region(r))))).
+formula(forall([ta,tb,o,r], implies(StaysIn(ta,tb,o,r), and(Time(ta), Time(tb), Object(o), Region(r)))),MFSC).
 % MFSD
-formula(forall([t,r], implies(NoObstacles(t,r), and(Time(t), Region(r))))).
+formula(forall([t,r], implies(NoObstacles(t,r), and(Time(t), Region(r)))),MFSD).
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))),TID1).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
 %%%% Specifications
 
 % Lem4.A
-formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o,Agent)), and(equal(Place(tb,o),Place(ta,o)), AllStable(tb)))))).
+formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), not(equal(o,Agent))), and(equal(Place(tb,o), Place(ta,o)), AllStable(tb)))),Lem4A).
 
 % Lem4.E
-formula(forall([t,ra,rb], and(NoObstacles(t,ra), implies(NoObstacles(t,rb), NoObstacles(t,RUnion(ra,rb)))))).
+formula(forall([t,ra,rb], and(NoObstacles(t,ra), implies(NoObstacles(t,rb), NoObstacles(t,RUnion(ra,rb))))),Lem4E).
 
 % MOD3
-formula(forall([ta,tb,r], equiv(Occurs(ta,tb,TravelTo(r)), and(equal(r, Place(tb,Agent)), forall([o], implies(Object(o), Released(ta,tb,o))))))).
+formula(forall([ta,tb,r], equiv(Occurs(ta,tb,TravelTo(r)), and(equal(r, Place(tb,Agent)), forall([o], implies(Object(o), Released(ta,tb,o)))))),MOD3).
 
 % MGD1
-formula(forall([t], equiv(EmptyHanded(t), and(Time(t), not(exists([o], implies(Object(o), Grasp(t,o)))))))).
+formula(forall([t], equiv(EmptyHanded(t), and(Time(t), not(exists([o], implies(Object(o), Grasp(t,o))))))),MGD1).
 
 % MFD1
-formula(forall([t,r], equiv(NoObstacles(t,r), and(Time(t), forall([o], implies(Object(o), implies(not(equal(o,Agent)), DR(Place(t,o),r)))))))).
+formula(forall([t,r], equiv(NoObstacles(t,r), and(Time(t), forall([o], implies(Object(o), implies(not(equal(o,Agent)), DR(Place(t,o),r))))))),MFD1).
 
 % MFA4
-formula(forall([ra,rb,rw], implies(Trajectory(ra,rb,rw), Trajectory(rb,ra,rw)))).
+formula(forall([ra,rb,rw], implies(Trajectory(ra,rb,rw), Trajectory(rb,ra,rw))),MFA4).
 
 % MFA5
-formula(forall([ra,rb,rw,rc,rx], and(Trajectory(ra,rb,rw), implies(Trajectory(rb,rc,rx), Trajectory(ra,rc,RUnion(rw,rx)))))).
+% formula(forall([ra,rb,rw,rc,rx], and(Trajectory(ra,rb,rw), implies(Trajectory(rb,rc,rx), Trajectory(ra,rc,RUnion(rw,rx))))),MFA5).
+
+formula(forall([ra,rb,rw,rc,rx], implies(and(Trajectory(ra,rb,rw), Trajectory(rb,rc,rx)), Trajectory(ra,rc,RUnion(rw,rx)))),MFA5).
 
 % MFA7
-formula(forall([ta,tb,rb], and(EmptyHanded(ta), AllStable(ta), implies(Occurs(ta,tb,TravelTo(rb)), exists([rw], implies(Region(rw), and(Trajectory(Place(ta,Agent),rb,rw), StaysIn(ta,tb,Agent,rw), NoObstacles(ta,rw)))))))).
+formula(forall([ta,tb,rb], implies(and(EmptyHanded(ta),AllStable(ta),Occurs(ta,tb,TravelTo(rb))), exists([rw], and(Trajectory(Place(ta,Agent),rb,rw),StaysIn(ta,tb,Agent,rw),NoObstacles(ta,rw))))),MFA7).
 
 % MFA8
-formula(forall([t,rw,rb], and(EmptyHanded(t), AllStable(t), NoObstacles(t,rw), implies(Trajectory(Place(t,Agent),rb,rw), exists([tb], implies(Time(tb), and(Occurs(t,tb,TravelTo(rb)), StaysIn(t,tb,Agent,rw)))))))).
+
+formula(forall([t,rw,rb], implies(and(EmptyHanded(t), AllStable(t), NoObstacles(t,rw), Trajectory(Place(t,Agent),rb,rw)), exists([tb], and(Occurs(t,tb,TravelTo(rb)), StaysIn(t,tb,Agent,rw))))),MFA8).
 
 % TAD1
-formula(forall([ta,a], equiv(Feasible(ta,a), exists([tb], implies(Time(tb), Occurs(ta,tb,a)))))).
+formula(forall([ta,a], equiv(Feasible(ta,a), exists([tb], implies(Time(tb), Occurs(ta,tb,a))))),TAD1).
 
 % MGD4
-formula(forall([ta,tb,o,t], equiv(Released(ta,tb,o), and(Object(o), Lt(ta,tb), forall([t], implies(and(Lt(ta,t), Leq(t,tb)), not(Grasp(t,o)))))))).
-
-
-
+formula(forall([ta,tb,o,t], equiv(Released(ta,tb,o), and(Object(o), Lt(ta,tb), forall([t], implies(and(Lt(ta,t), Leq(t,tb)), not(Grasp(t,o))))))),MGD4).
 
 end_of_list.
 

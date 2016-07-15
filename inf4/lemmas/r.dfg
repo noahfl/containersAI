@@ -100,37 +100,37 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))),TID1).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
 %%%% Specifications
 
 % OFD2
-formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r)))))).
+formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
 
 % OFD3 (this isn't included in the proof sketch, but adding it allows the proof to go through)
-formula(forall([o], equiv(SmallObject(o), forall([ra], implies(FeasiblePlace(Agent,ra), OMuchSmaller(o,ra)))))).
+formula(forall([o], equiv(SmallObject(o), forall([ra], implies(FeasiblePlace(Agent,ra), OMuchSmaller(o,ra))))),OFD3).
 
 % OTD3
-formula(forall([t,o,r], implies(and(Time(t),Object(o)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r))))))).
+formula(forall([t,o,r], implies(and(Time(t),Object(o)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r)))))),OTD3).
 
 % Lem4Q
-formula(forall([ra,rb], implies(MuchSmaller(rb,ra), not(OpenContained(ra,rb))))).
+formula(forall([ra,rb], implies(MuchSmaller(rb,ra), not(OpenContained(ra,rb)))),Lem4Q).
 
 % ORD3
-formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))),ORD3).
 
 % OCD3
-formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc)))))).
+formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
 
 % SCA2
-formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc)))).
+formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc))),SCA2).
 
 % SCD6
-formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc)))))).
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
 
 % Assume
 % formula(SmallObject(O)).
