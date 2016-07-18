@@ -115,16 +115,11 @@ formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightCon
 formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc)))))).
 
 % RBA5
-formula(forall([ta,tb,ob,ol], and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), implies(equal(Place(tb,ol), Place(ta,ol)), BoxWithLid(tb,ob,ol))))).
-
-formula(forall([ta,tb,ob,ol], and(BoxWithLid(ta,ob,ol), implies(and(equal(Place(tb,ob), Place(ta,ob)), equal(Place(tb,ol), Place(ta,ol))), BoxWithLid(tb,ob,ol))))).
-
+formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol),equal(Place(tb,ob),Place(ta,ob)), equal(Place(tb,ol),Place(ta,ol))), BoxWithLid(tb,ob,ol)))).
 end_of_list.
 
 
 list_of_formulae(conjectures).
-
-% formula(forall([ox,oy,ta,tb], and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), implies(equal(Place(ta,oy), Place(tb,oy)), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))))).
 
 formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy)))))).
 

@@ -108,22 +108,22 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 %%%% Specifications
 
 % MOD2
-formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o))))))))).
+formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
 
 % Lem4D
-formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
+formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r))),Lem4D).
 
 % ORD3
 formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))), ORD3).
 
 % HID3
-formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h)))))))).
+formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h))))))),HID3).
 
 % HIA4
-formula(forall([ta,tb,h], equiv(Constant(ta,tb,h), Continuous(ta,tb,h)))).
+formula(forall([ta,tb,h], equiv(Constant(ta,tb,h), Continuous(ta,tb,h))),HIA4).
 
 % HUD1 (o and ob, may be issue?)
-formula(forall([ta,tb,ob,hc], equiv(DynamicUContainer(ta,tb,ob,hc), and(Continuous(ta,tb,hc), forall([tm], implies(Leq3(ta,tm,tb), and(UprightContainer(tm,ob,Slice(tm,hc)), Fits(Contents(ta,Slice(ta,hc)),Slice(tm,hc))))))))).
+formula(forall([ta,tb,ob,hc], equiv(DynamicUContainer(ta,tb,ob,hc), and(Continuous(ta,tb,hc), forall([tm], implies(Leq3(ta,tm,tb), and(UprightContainer(tm,ob,Slice(tm,hc)), Fits(Contents(ta,Slice(ta,hc)),Slice(tm,hc)))))))),HUD1).
 
 
 % assume
@@ -143,7 +143,7 @@ formula(forall([tm,hc], Region(Slice(tm,hc)))).
 formula(forall([t,o], Region(Place(t,o)))).
 
 % 4V10 test
-% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
+formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
 
 end_of_list.
 
@@ -156,14 +156,16 @@ list_of_formulae(conjectures).
 % 4V13
 % formula(DynamicUContainer(Ta,Tb,Ob,Hc)).
 
-% 4V12 (tm/Tm?)
-% formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
+% 4V12 (tm/Tm?) (relies on 4V10 which also doesn't work, but using 4V10 as
+%                an axiom doesn't seem to help)
+formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
 
-% 4V11
+% 4V11 (proof)
 % formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc))).
 
-% 4V10
-formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
+% 4V10 (NO proof; ORD3 works fine in other proofs so it can't be the issue.
+%       proofs found for 4V8 and 4V9 so I'm not sure what the issue is)
+% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
 
 % 4V9 (proof)
 % formula(equal(Rc,Slice(Tm,Hc))).

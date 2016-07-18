@@ -111,41 +111,37 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
-
 % RBA5
-% formula(forall([ta,tb,ob,ol], and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), implies(equal(Place(tb,ol), Place(ta,ol)), BoxWithLid(tb,ob,ol))))).
-
+formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), equal(Place(tb,ol), Place(ta,ol))), BoxWithLid(tb,ob,ol))),RBA5).
 
 % Lem4A
-% formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), not(equal(o,Agent))), and(equal(Place(tb,o), Place(ta,o)), AllStable(tb))))).
-
-formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o,Agent)), and(equal(Place(tb,o),Place(ta,o)), AllStable(tb)))))).
+formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), not(equal(o,Agent))), and(equal(Place(tb,o), Place(ta,o)), AllStable(tb)))),Lem4A).
 
 % OSA1
-formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb))))).
+formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
 
 % ASD4
-formula(forall([t,ox,ob], equiv(BoxedIn(t,ox,ob), or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob))))).
+formula(forall([t,ox,ob], equiv(BoxedIn(t,ox,ob), or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)))),ASD4).
 
 % ASD5
-formula(forall([t,ox,ob], equiv(SafelyMovesWith(t,ox,ob), or(equal(ox,ob), BoxedIn(t,ox,ob), BoxWithLid(t,ob,ox))))).
+formula(forall([t,ox,ob], equiv(SafelyMovesWith(t,ox,ob), or(equal(ox,ob), BoxedIn(t,ox,ob), BoxWithLid(t,ob,ox)))),ASD5).
 
 % ASD6 (corrected from paper; ta -> t)
-formula(forall([t,o,ox], implies(and(Time(t), Object(o), Object(ox)), equiv(Element(ox,MovingGroup(t,o)), SafelyMovesWith(t,ox,o))))).
+formula(forall([t,o,ox], implies(and(Time(t), Object(o), Object(ox)), equiv(Element(ox,MovingGroup(t,o)), SafelyMovesWith(t,ox,o)))),ASD6).
 
 % Lem4J
-% formula(forall([ta,tb,ox,oy], and(Time(ta), Time(tb), Object(ox), Object(oy), not(equal(ox,Agent)), implies(forall([o], implies(not(equal(o,Agent)), equal(Place(tb,o), Place(ta,o)))), equiv(BLContained(tb,ox,oy), BLContained(ta,ox,oy))))),4J).
-
-formula(forall([ta,tb,ox,oy], implies(and(Time(ta), Time(tb), Object(ox), Object(oy), not(equal(ox,Agent)), forall([o], implies(not(equal(o,Agent)), equal(Place(tb,o), Place(ta,o))))), equiv(BLContained(tb,ox,oy), BLContained(ta,ox,oy))))).
+formula(forall([ta,tb,ox,oy], implies(and(Time(ta), Time(tb), Object(ox), Object(oy), not(equal(ox,Agent)), forall([o], implies(not(equal(o,Agent)), equal(Place(tb,o), Place(ta,o))))), equiv(BLContained(tb,ox,oy), BLContained(ta,ox,oy)))),Lem4J).
 
 % Lem4I
-formula(forall([ox,oy,ta,tb], and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), implies(equal(Place(ta,oy), Place(tb,oy)), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))))).
-
-formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy)))))).
+formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))),Lem4I).
 
 % assume
-formula(not(BoxedIn(Ta,Agent,Ox))).
-formula(not(BoxedIn(Tb,Agent,Ox))).
+formula(not(equal(Ox,Agent)),assume1).
+formula(EmptyHanded(Ta),assume2).
+formula(AllStable(Ta),assume3).
+formula(Occurs(Ta,Tb,TravelTo(R)),assume4).
+formula(not(BoxedIn(Ta,Agent,Ox)),assume5).
+formula(not(BoxedIn(Tb,Agent,Ox)),assume6).
  
 end_of_list.
 
@@ -155,7 +151,7 @@ list_of_formulae(conjectures).
 % final
 % formula(forall([o,ta,tb,r], and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), implies(CanGrasp(tb,o), equal(MovingGroup(tb,o), MovingGroup(ta,o)))))).
 
-formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
+% formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
 
 % 4P.12
 % formula(equal(MovingGroup(Tb,Ox), MovingGroup(Ta,Ox))).
@@ -173,7 +169,7 @@ formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)
 % formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
 
 % 4P.7
-% formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).
+formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).
 
 end_of_list.
 

@@ -119,7 +119,7 @@ formula(forall([p,q,t], implies(and(Object(p), Object(q), Time(t), not(equal(p,q
 formula(not(exists([t,r], OSPlace(t,Null,r))),OTA2).
 
 % OTD1
-% formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
+formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
 
 % OTA4 (test)
 formula(forall([o,r], implies(FeasiblePlace(o,r), IntConn(r))),OTA4).
@@ -127,7 +127,7 @@ formula(forall([o,r], implies(FeasiblePlace(o,r), IntConn(r))),OTA4).
 % OTA3 (not sure if this is right)
 formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), forall([ra], implies(OSPlace(s,t,ra), equal(ra,r))))))))),OTA3a).
 
-% formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3b).
+formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3b).
 
 % LemSB
 formula(forall([u], implies(Region(u), P(u,u))),LemSB).
