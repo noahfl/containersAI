@@ -80,26 +80,26 @@ formula(forall([h], implies(RigidHistory(h), History(h)))).
 
 
 % Axiom SCA1 - given 
-formula(forall([u,v,w], implies(and(Contained(u,v), Contained(v,w)), Contained(u,w)))).
+formula(forall([u,v,w], implies(and(Contained(u,v), Contained(v,w)), Contained(u,w))),SCA1).
 
 % C2A1 - given
-formula(RigidObject(Ob2b)).
+formula(RigidObject(Ob2b),C2A1).
 
 % C2A2 - given
-formula(CContained(Ta2, Os2, Singleton(Ob2a))).
+formula(CContained(Ta2, Os2, Singleton(Ob2a)),C2A2).
 
 % C2A3 - given
-formula(CContained(Ta2, Ob2a, Singleton(Ob2b))).
+formula(CContained(Ta2, Ob2a, Singleton(Ob2b)),C2A3).
 
 % C2A4 - given
-formula(Ordered(Ta2, Tb2)).
+formula(Ordered(Ta2, Tb2),C2A4).
 
 
 % Lemma 2.B
-formula(forall([t,os,ob], implies(and(Time(t), Object(os), Object(ob)), equiv(CContained(t,os,Singleton(ob)), Contained(Place(t,os),Place(t,ob)))))).
+formula(forall([t,os,ob], implies(and(Time(t), Object(os), Object(ob)), equiv(CContained(t,os,Singleton(ob)), Contained(Place(t,os),Place(t,ob))))),Lem2B).
 
 % Lemma 2.E
-formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Singleton(ob)), Ordered(ta,tb)), CContained(tb,ox,Singleton(ob))))).
+formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Singleton(ob)), Ordered(ta,tb)), CContained(tb,ox,Singleton(ob)))),Lem2E).
 
 end_of_list.
 

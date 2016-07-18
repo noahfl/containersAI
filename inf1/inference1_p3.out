@@ -687,12 +687,12 @@ SPASS beiseite: Proof found.
 Problem: inference1_p3.dfg 
 SPASS derived 1572 clauses, backtracked 155 clauses, performed 16 splits and kept 1281 clauses.
 SPASS allocated 54792 KBytes.
-SPASS spent	0:00:01.38 on the problem.
+SPASS spent	0:00:00.66 on the problem.
 		0:00:00.02 for the input.
 		0:00:00.02 for the FLOTTER CNF translation.
-		0:00:00.04 for inferences.
-		0:00:00.04 for the backtracking.
-		0:00:01.21 for the reduction.
+		0:00:00.03 for inferences.
+		0:00:00.02 for the backtracking.
+		0:00:00.54 for the reduction.
 
 
 Here is a proof with depth 8, length 62 :
@@ -758,6 +758,6 @@ Here is a proof with depth 8, length 62 :
 1782[0:MRR:1781.0,2.0] ||  -> equal(Ob1,Ox1)**.
 1784[0:Rew:1782.0,8.0] ||  -> CContained(Ta1,Ox1,Singleton(Ox1))*.
 1863[0:MRR:1784.0,26.0] ||  -> .
-Formulae used in the proof : axiom25 axiom27 axiom19 axiom23 axiom24 axiom26 axiom0 axiom15 axiom22 axiom37 axiom12 axiom18 axiom31 axiom33 conjecture0 axiom28 axiom36 axiom29 axiom30 axiom34
+Formulae used in the proof : C1A1 C1A3 axiom19 Pdot3dot2 Pdot3dot3 C1A2 axiom0 axiom15 Pdot3dot1 Lem1D axiom12 axiom18 SBD3 HID4 1dot22 HIA1 Lem1A HIA2 OTA2 HCA2
 
 --------------------------SPASS-STOP------------------------------

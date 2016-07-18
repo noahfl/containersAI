@@ -195,13 +195,13 @@ Usable Clauses:
 	Given clause: 146[0:SSi:142.0,3.0,1.1] || Ordered(Ta2,U) Contained(V,Place(U,Ob2a))* -> Contained(V,Place(U,Ob2b)).
 	Given clause: 156[0:MRR:155.0,37.1] || CContained(Ta2,U,Singleton(Ob2a))* -> CContained(Ta2,U,Singleton(Ob2b)).
 	Given clause: 160[0:Res:5.0,156.0] ||  -> CContained(Ta2,Os2,Singleton(Ob2b))*.
-SPASS V 3.5 
+SPASS V 3.7 
 SPASS beiseite: Proof found.
 Problem: inference2.dfg 
 SPASS derived 71 clauses, backtracked 0 clauses, performed 0 splits and kept 97 clauses.
 SPASS allocated 52341 KBytes.
-SPASS spent	0:00:00.06 on the problem.
-		0:00:00.01 for the input.
+SPASS spent	0:00:00.05 on the problem.
+		0:00:00.02 for the input.
 		0:00:00.01 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
@@ -238,6 +238,6 @@ Here is a proof with depth 6, length 29 :
 160[0:Res:5.0,156.0] ||  -> CContained(Ta2,Os2,Singleton(Ob2b))*.
 161[0:Res:160.0,49.1] || Ordered(Ta2,Tb2)* -> .
 169[0:MRR:161.0,2.0] ||  -> .
-Formulae used in the proof : axiom17 axiom20 axiom14 axiom18 axiom19 conjecture0 axiom2 axiom11 axiom16 axiom22 axiom21
+Formulae used in the proof : C2A1 C2A4 axiom14 C2A2 C2A3 conjecture0 axiom2 axiom11 SCA1 Lem2E Lem2B
 
 --------------------------SPASS-STOP------------------------------
