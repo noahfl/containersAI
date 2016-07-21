@@ -107,22 +107,13 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 %%%% Specifications
 
 % OFD1
-formula(forall([s,r,t], equiv(Fits(s,r), or(equal(s,Null), exists([ra], and(OSPlace(t,s,ra), P(ra,r)))))),OFD1).
+formula(forall([s,r], equiv(Fits(s,r), or(equal(s,Null), exists([t,ra], and(OSPlace(t,s,ra), P(ra,r)))))),OFD1).
 
 % OFD2
-formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
-
-% OTA1 (test)
-formula(forall([p,q,t], implies(and(Object(p), Object(q), Time(t), not(equal(p,q))), DR(Place(t,p), Place(t,q)))),OTA1).
-
-% OTA2 (test)
-formula(not(exists([t,r], OSPlace(t,Null,r))),OTA2).
+% formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
 
 % OTD1
 formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
-
-% OTA4 (test)
-formula(forall([o,r], implies(FeasiblePlace(o,r), IntConn(r))),OTA4).
 
 % OTA3 (not sure if this is right)
 formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), forall([ra], implies(OSPlace(s,t,ra), equal(ra,r))))))))),OTA3a).
@@ -155,7 +146,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final (proof with 4D3 or 4D4 given)
-formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
+% formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 
 % 4D.7
 % formula(Fits(Contents(T,R),R)).
@@ -167,7 +158,7 @@ formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 % formula(Fits(Contents(T,R),RC)).
 
 % 4D.3
-% formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
+formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
 
 % 4D.1
 % formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).

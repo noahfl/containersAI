@@ -10,7 +10,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2)].
+functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Singleton,1)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (OpenContainerShape,2), (EC,2), (C,2), (OpenContainer,3), (CContained,3), (BoxWithLid,3), (ClosedContainer,3), (OSPlace,3), (Cavity,2)].
 
@@ -103,25 +103,28 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 %%%% Specifications
 
 % ORD1
-formula(forall([t,s,rc], equiv(ClosedContainer(t,s,rc), exists([rs], and(OSPlace(t,s,rs), Cavity(rc,rs)))))).
+formula(forall([t,s,rc], equiv(ClosedContainer(t,s,rc), exists([rs], and(OSPlace(t,s,rs), Cavity(rc,rs))))),ORD1).
 
 % ORD3
-formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))),ORD3).
 
 % OCD3
-formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc)))))).
+formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
 
 % OCD1
-formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc)))))).
+formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc))))),OCD1).
 
 % RBA5
-formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol),equal(Place(tb,ob),Place(ta,ob)), equal(Place(tb,ol),Place(ta,ol))), BoxWithLid(tb,ob,ol)))).
-end_of_list.
+formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol),equal(Place(tb,ob),Place(ta,ob)), equal(Place(tb,ol),Place(ta,ol))), BoxWithLid(tb,ob,ol))),RBA5).
 
+% Lem1B
+formula(forall([t,o,r], implies(and(Time(t), Object(o)), equiv(OSPlace(t,Singleton(o),r), equal(r,Place(t,o))))),Lem1B).
+
+end_of_list.
 
 list_of_formulae(conjectures).
 
-formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,oy), CContained(tb,ox,oy)), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy)))))).
+formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,Singleton(oy)), CContained(tb,ox,Singleton(oy))), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))), Lem4I).
 
 end_of_list.
 

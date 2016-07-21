@@ -127,23 +127,23 @@ formula(forall([ta,tb,ob,hc], equiv(DynamicUContainer(ta,tb,ob,hc), and(Continuo
 
 
 % assume
-formula(UprightContainer(Ta,Ob,Rc),assume1).
-formula(Motionless(Ta,Tb,Ob),assume2).
-formula(Constant(Ta,Tb,Hc),assume3).
-formula(equal(Rc,Slice(Ta,Hc)),assume4).
+% formula(UprightContainer(Ta,Ob,Rc),assume1).
+% formula(Motionless(Ta,Tb,Ob),assume2).
+% formula(Constant(Ta,Tb,Hc),assume3).
+% formula(equal(Rc,Slice(Ta,Hc)),assume4).
 
-formula(Leq3(Ta,Tm,Tb),assume7).
+% formula(Leq3(Ta,Tm,Tb),assume7).
 
 % test
 % formula(equal(Place(Tm,Ob), Place(Ta,Ob)),test1).
 
 
 % test
-formula(forall([tm,hc], Region(Slice(tm,hc)))).
-formula(forall([t,o], Region(Place(t,o)))).
+% formula(forall([tm,hc], Region(Slice(tm,hc)))).
+% formula(forall([t,o], Region(Place(t,o)))).
 
 % 4V10 test
-formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
+% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
 
 end_of_list.
 
@@ -151,7 +151,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-% formula(forall([ta,tb,ob,hc,rc], implies(and(UprightContainer(ta,ob,rc), Motionless(ta,tb,ob), Constant(ta,tb,hc), equal(rc,Slice(ta,hc))), DynamicUContainer(ta,tb,ob,hc)))).
+formula(forall([ta,tb,ob,hc,rc], implies(and(UprightContainer(ta,ob,rc), Motionless(ta,tb,ob), Constant(ta,tb,hc), equal(rc,Slice(ta,hc))), DynamicUContainer(ta,tb,ob,hc)))).
 
 % 4V13
 % formula(DynamicUContainer(Ta,Tb,Ob,Hc)).
@@ -165,7 +165,7 @@ formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm
 
 % 4V10 (NO proof; ORD3 works fine in other proofs so it can't be the issue.
 %       proofs found for 4V8 and 4V9 so I'm not sure what the issue is)
-% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
+formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
 
 % 4V9 (proof)
 % formula(equal(Rc,Slice(Tm,Hc))).
