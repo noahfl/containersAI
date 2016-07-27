@@ -117,14 +117,13 @@ formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(t
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
-
 
 % ALD2
 formula(forall([ta,tb,ox,ob], implies(and(Time(ta), Time(tb), Object(ox), Object(ob)), equiv(Occurs(ta,tb,LoadUprightContainer(ox,ob)), exists([r1,r3], and(FullyOutside(r3,Place(ta,ob)), Occurs(ta,tb,Sequence(TravelTo(r1),Sequence(PutInUC(ox,ob),TravelTo(r3))))))))),ALD2).
@@ -134,6 +133,9 @@ formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action
 
 % test 4.29
 formula(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)),4dot29).
+
+% test 4.30
+% formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
 
 end_of_list.
 

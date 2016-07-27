@@ -103,7 +103,7 @@ formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
 formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
@@ -116,7 +116,7 @@ formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r))),L
 % ORD3
 formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))), ORD3).
 
-% HID3
+% HID3 
 formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h))))))),HID3).
 
 % HIA4
@@ -127,12 +127,12 @@ formula(forall([ta,tb,ob,hc], equiv(DynamicUContainer(ta,tb,ob,hc), and(Continuo
 
 
 % assume
-formula(UprightContainer(Ta,Ob,Rc),assume1).
-formula(Motionless(Ta,Tb,Ob),assume2).
-formula(Constant(Ta,Tb,Hc),assume3).
-formula(equal(Rc,Slice(Ta,Hc)),assume4).
+% formula(UprightContainer(Ta,Ob,Rc),assume1).
+% formula(Motionless(Ta,Tb,Ob),assume2).
+% formula(Constant(Ta,Tb,Hc),assume3).
+% formula(equal(Rc,Slice(Ta,Hc)),assume4).
 
-formula(Leq3(Ta,Tm,Tb),assume7).
+% formula(Leq3(Ta,Tm,Tb),assume7).
 
 % test
 % formula(equal(Place(Tm,Ob), Place(Ta,Ob)),4V8).
@@ -144,8 +144,8 @@ formula(Leq3(Ta,Tm,Tb),assume7).
 % formula(forall([t,o], Region(Place(t,o)))).
 
 % 4V10 test
-formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
-formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc)),4V11).
+% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
+% formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc)),4V11).
 
 % 4V12 test
 % formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc))))),4V12).
@@ -164,25 +164,25 @@ list_of_formulae(conjectures).
 
 % 4V12 (tm/Tm?) (relies on 4V10 which also doesn't work, but using 4V10 as
 %                an axiom doesn't seem to help)
-formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
+% formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
 
-% 4V11 (proof)
+% 4V11 (proof when adding in assumptions)
 % formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc))).
 
 % 4V10 (NO proof; ORD3 works fine in other proofs so it can't be the issue.
 %       proofs found for 4V8 and 4V9 so I'm not sure what the issue is)
 % formula(UprightContainer(Tm,Ob,Slice(Tm,Hc))).
 
-% 4V9 (proof)
-% formula(equal(Rc,Slice(Tm,Hc))).
+% 4V9 (proof when adding in assumptions)
+formula(equal(Rc,Slice(Tm,Hc))).
 
-% 4V8 (proof)
+% 4V8 (proof when adding in assumptions)
 % formula(equal(Place(Tm,Ob), Place(Ta,Ob))).
 
-% 4V6 (proof)
+% 4V6 (proof when adding in assumptions) 
 % formula(Fits(Contents(Ta,Rc),Rc)).
 
-% 4V5 (proof)
+% 4V5 (proof when adding in assumptions) 
 % formula(Continuous(Ta,Tb,Hc)).
 
 end_of_list.
