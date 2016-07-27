@@ -113,12 +113,10 @@ formula(forall([s,r], equiv(Fits(s,r), or(equal(s,Null), exists([t,ra], and(OSPl
 % formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
 
 % OTD1
-formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
+% formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra))))))).
 
-% OTA3 (not sure if this is right)
-formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), forall([ra], implies(OSPlace(s,t,ra), equal(ra,r))))))))),OTA3a).
-
-formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3b).
+% OTA3
+formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3).
 
 % LemSB
 formula(forall([u], implies(Region(u), P(u,u))),LemSB).
@@ -135,7 +133,7 @@ formula(forall([t,r,ru], implies(and(Time(t), Region(r)), implies(OSPlace(t,Cont
 % formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).
 
 % test (4D4)
-% formula(OSPlace(T,Contents(T,R),RC),4D4).
+formula(OSPlace(T,Contents(T,R),RC),4D4).
 
 % test (4D3)
 % formula(exists([rc], OSPlace(T,Contents(T,R),rc)),4D3).
@@ -148,6 +146,12 @@ list_of_formulae(conjectures).
 % final (proof with 4D3 or 4D4 given)
 % formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 
+% 4D.9
+% formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
+
+% 4D.8
+formula(implies(not(equal(Contents(T,R),Null)), Fits(Contents(T,R),R))).
+
 % 4D.7
 % formula(Fits(Contents(T,R),R)).
 
@@ -157,8 +161,11 @@ list_of_formulae(conjectures).
 % 4D5
 % formula(Fits(Contents(T,R),RC)).
 
+% 4D.4
+% formula(OSPlace(T,Contents(T,R),RC)).
+
 % 4D.3
-formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
+% formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
 
 % 4D.1
 % formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).

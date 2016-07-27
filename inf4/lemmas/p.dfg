@@ -111,9 +111,6 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
-% RBA5
-formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), equal(Place(tb,ol), Place(ta,ol))), BoxWithLid(tb,ob,ol))),RBA5).
-
 % Lem4A
 formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), not(equal(o,Agent))), and(equal(Place(tb,o), Place(ta,o)), AllStable(tb)))),Lem4A).
 
@@ -150,7 +147,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
+% formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
 
 % 4P.12
 % formula(equal(MovingGroup(Tb,Ox), MovingGroup(Ta,Ox))).
@@ -168,7 +165,7 @@ formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)
 % formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
 
 % 4P.7
-% formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).
+formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).
 
 end_of_list.
 

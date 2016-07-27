@@ -82,35 +82,34 @@ formula(forall([t,r], implies(NoObstacles(t,r), and(Time(t), Region(r))))).
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
-% ORD2
-formula(forall([t,o,rc], equiv(OpenContainer(t,o,rc), and(Time(t), Object(o), OpenContainerShape(Place(t,o),rc))))).
-
-
 % ORD3
-formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc))))).
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))),ORD3).
 
 % OCD3
-formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc)))))).
+formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
 
 % SCA2
-formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc)))).
+formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc))),SCA2).
 
 % SCA3
-formula(forall([u,v], implies(OpenContainerShape(u,v), EC(u,v)))).
+formula(forall([u,v], implies(OpenContainerShape(u,v), EC(u,v))),SCA3).
 
 % SBD4
-formula(forall([u,v], equiv(EC(u,v), and(DR(u,v), C(u,v))))).
+formula(forall([u,v], equiv(EC(u,v), and(DR(u,v), C(u,v)))),SBD4).
 
 % LemSM
-formula(forall([u,v], implies(DR(u,v), not(equal(u,v))))).
+formula(forall([u,v], implies(DR(u,v), not(equal(u,v)))),LemSM).
+
+% LemSE
+formula(forall([u,v,w], implies(and(P(u,v), DR(v,w)), DR(u,w)))).
 
 end_of_list.
 
