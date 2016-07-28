@@ -10,15 +10,67 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Ta,0), (T,0), (R,0), (Rd,0), (Null,0), (RC,0)].
+functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Ta,0), (T,0), (R,0), (Rd,0), (Null,0), (RC,0), (Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (IntConn,1), (Feasible,2), (Fits,2), (OSPlace,3), (MuchSmaller,2), (OMuchSmaller,2), (FeasiblePlace,2), (DR,2)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (IntConn,1), (Feasible,2), (Fits,2), (OSPlace,3), (MuchSmaller,2), (OMuchSmaller,2), (FeasiblePlace,2), (DR,2), (History,1)].
 
 end_of_list.
 
 list_of_formulae(axioms).
 
 %%%% Sortal Axioms
+
+%%% Functions
+
+% Sequence
+formula(forall([a1,a2], implies(and(Action(a1), Action(a2)), Action(Sequence(a1,a2))))).
+% RUnion
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
+% ConvexHull
+formula(forall([r], implies(Region(r), Region(ConvexHull(r))))).
+% Singleton
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x))))).
+% Pair
+formula(forall([x,y], implies(and(Object(x), Object(y)), ObjectSet(Pair(x,y))))).
+% Union
+formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), ObjectSet(Union(sa,sb))))).
+% Place
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o))))).
+% Contents
+formula(forall([t,r], implies(and(Time(t), Region(r)), ObjectSet(Contents(t,r))))).
+% CContents
+formula(forall([t,s], implies(and(Time(t), ObjectSet(s)), ObjectSet(CContents(t,s))))).
+% UContents
+formula(forall([t,s], implies(and(Time(t), ObjectSet(s)), ObjectSet(UContents(t,s))))).
+% TravelTo
+formula(forall([r], implies(Region(r), Action(TravelTo(r))))).
+% StandStill
+formula(Action(StandStill)).
+% ManipTo
+formula(forall([o,r], implies(and(Object(o), Region(r)), Action(ManipTo(o,r))))).
+% Slice
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+% HPlace
+formula(forall([o], implies(Object(o), History(HPlace(o))))).
+% HUnion
+formula(forall([ha,hb], implies(and(History(ha), History(hb)), History(HUnion(ha,hb))))).
+% MovingGroup
+formula(forall([t,ox], implies(and(Time(t), Object(ox)), ObjectSet(MovingGroup(t,ox))))).
+% PutInUC
+formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(PutInUC(ox,ob))))).
+% LoadUprightContainer
+formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(LoadUprightContainer(ox,ob))))).
+
+% T
+formula(Time(T)).
+% R
+formula(Region(R)).
+% RC
+formula(Region(RC)).
+% Null
+formula(ObjectSet(Null)).
+% Agent
+formula(Object(Agent)).
 
 %%% Time
 %% Actions
@@ -123,14 +175,14 @@ formula(forall([t,r,ru], implies(and(Time(t), Region(r)), implies(OSPlace(t,Cont
 
 
 % assume
-% formula(not(equal(Contents(T,R),Null))).
+formula(not(equal(Contents(T,R),Null))).
 
 
 % test
 % formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).
 
 % test (4D4)
-formula(OSPlace(T,Contents(T,R),RC),4D4).
+% formula(OSPlace(T,Contents(T,R),RC),4D4).
 
 % test (4D3)
 % formula(exists([rc], OSPlace(T,Contents(T,R),rc)),4D3).
@@ -141,7 +193,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final (proof with 4D3 or 4D4 given)
-formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
+% formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 
 % 4D.9
 % formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
@@ -153,13 +205,13 @@ formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
 % formula(Fits(Contents(T,R),R)).
 
 % 4D6
-formula(P(RC,R)).
+% formula(P(RC,R)).
 
 % 4D5
 % formula(Fits(Contents(T,R),RC)).
 
 % 4D.4
-% formula(OSPlace(T,Contents(T,R),RC)).
+formula(OSPlace(T,Contents(T,R),RC)).
 
 % 4D.3
 % formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
