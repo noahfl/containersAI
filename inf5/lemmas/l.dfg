@@ -128,11 +128,11 @@ formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), 
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
