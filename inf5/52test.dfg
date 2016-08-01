@@ -1,19 +1,19 @@
-begin_problem(Scenario4b).
+begin_problem(Scenario5a).
 
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 4b*}).
+name({*Qualitative Reasoning About Containers - Case 5a*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
-description({*12 July 2016*}).
+description({*16 July 2016*}).
 
 end_of_list.
 
 list_of_symbols.
 
-functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0)].
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4)].
 
 end_of_list.
 
@@ -59,7 +59,6 @@ formula(forall([t,ox], implies(and(Time(t), Object(ox)), ObjectSet(MovingGroup(t
 formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(PutInUC(ox,ob))))).
 % LoadUprightContainer
 formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(LoadUprightContainer(ox,ob))))).
-
 
 %%% Time
 %% Actions
@@ -110,12 +109,14 @@ formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r))))).
 %%% Spatial Relations
 %% Basic Spatial Relations
 % SRSA
-formula(forall([u,v], implies(or(P(u,v),O(u,v), OV(u,v)), and(Region(u), Region(v))))).
+formula(forall([u,v], implies(or(EC(u,v), P(u,v), O(u,v), OV(u,v)), and(Region(u), Region(v))))).
 %% Spatial containment
 % SCSA/B
 formula(forall([ra,rb], implies(or(OpenContained(ra,rb), FullyOutside(ra,rb), OpenContainerShape(ra,rb), UprightContainerShape(ra,rb)), and(Region(ra), Region(rb))))).
 % SCSC
 formula(forall([ra,rb], implies(or(Cavity(ra,rb), PartiallyContained(ra,rb)), and(Region(ra), Region(rb))))).
+% SCSD
+formula(forall([ra,rb,rc], implies(CombinedContainer(ra,rb,rc), and(Region(ra), Region(rb), Region(rc))))).
 %% Much smaller
 % SMSA
 formula(forall([ra,rb], implies(MuchSmaller(ra,rb), and(Region(ra), Region(rb))))).
@@ -151,55 +152,69 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 %% Basic properties of histories
 % HBSA
 formula(forall([t1,t2,h], implies(Constant(t1,t2,h), and(Time(t1), Time(t2), History(h))))).
+%% Dynamic containers and cavities
+formula(forall([t1,t2,hc,ho], implies(or(PersistentCavity(t1,t2,hc,ho),NoExitCavity(t1,t2,hc,ho), NoEntranceCavity(t1,t2,hc,ho)), and(Time(t1), Time(t2), History(hc), History(ho))))).
 %% Dynamic upright containers
 % HDSA
 formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(ta), Time(tb), Object(ob), History(hc))))).
 
+%%% Rigid objects
+%% Box with lid
+% RBSA
+formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), Object(ol))))).
+% RBSB
+formula(forall([t,ob,ol,r], implies(BoxWithLidC(t,ob,ol,r), and(Time(t), Object(ob), Object(ol), Region(r))))).
+
+
 % Temporal Axioms
 % TID3
-% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
-% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
-% Ta4
-formula(Time(Ta4)).
-% Tb
-formula(Time(Tb)).
-% Ox4
-formula(Object(Ox4)).
-% Ob4
-formula(Object(Ob4)).
-% Ra4
-formula(Region(Ra4)).
-% Agent
-formula(Object(Agent)).
+% Ta5
+formula(Time(Ta5)).
+% Tb5
+formula(Time(Tb5)).
+% Ob5
+formula(Object(Ob5)).
+% Ol5
+formula(Object(Ol5)).
+% Rc5
+formula(Region(Rc5)).
+% Os5
+formula(Object(Os5)).
+% Hu
+formula(History(Hu)).
+% Hc
+formula(History(Hc)).
 
 %%%% Specifications
 
-% ALD2
-formula(forall([ta,tb,ox,ob], implies(and(Time(ta), Time(tb), Object(ox), Object(ob)), equiv(Occurs(ta,tb,LoadUprightContainer(ox,ob)), exists([r1,r3], and(FullyOutside(r3,Place(ta,ob)), Occurs(ta,tb,Sequence(TravelTo(r1),Sequence(PutInUC(ox,ob),TravelTo(r3))))))))),ALD2).
+% MOD2
+formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
 
-% TAD2
-formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action(a2)), equiv(Occurs(ta,tb,Sequence(a1,a2)), exists([tx], and(Occurs(ta,tx,a1), Occurs(tx,tb,a2)))))),TAD2).
+% assume
+formula(Motionless(Ta5,Tb5,Ol5),assume).
 
-% test 4.29
-formula(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)),4dot29).
-
-% test 4.30
-% formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+% 5.2 test
+% formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% 4.31 (proof when 4.30 used; now just need proof for 4.30)
-% formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
+% 5.18
+% formula(forall([t], implies(Leq3(Ta5,t,Tb5), equal(Slice(t,Hu), RUnion(Place(t,Ob5),Place(t,Ol5)))))).
 
-% 4.30
-formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+% 5.5
+% formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(RUnion(Place(tc,Ob5),Place(tc,Ol5)), RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)))))).
+
+% 5.2
+formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5))))).
 
 end_of_list.
 

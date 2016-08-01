@@ -188,19 +188,22 @@ formula(forall([x,y,z], implies(and(Object(x), Object(y), Object(z)), equiv(Elem
 formula(forall([x], not(Element(x,Null))),OSD1).
 
 % OTA3
-% formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3).
+formula(forall([s,t], implies(and(ObjectSet(s), Time(t)), implies(not(equal(s,Null)), and(exists([r], and(OSPlace(s,t,r), not(exists([ra], and(OSPlace(s,t,ra), not(equal(ra,r))))))))))),OTA3).
 
 % OTD1
 formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra)))))),OTD1).
 
 % SBD6 (not sure how to do the scope for the last part)
-formula(forall([u,v,w], implies(and(Region(u), Region(v)), equiv(equal(w,RUnion(u,v)), and(P(u,w), P(v,w), forall([x], implies(and(P(u,x), P(v,x)), P(w,x))))))),SBD6a).
 
-% formula(forall([u,v,w], implies(and(Region(u), Region(v)),equiv(equal(w,RUnion(u,v)), forall([x], implies(and(P(u,w), P(v,w), P(u,x), P(v,x)), P(w,x)))))),SBD6b).
+% no proof with this formulation
+% formula(forall([u,v,w], implies(and(Region(u), Region(v)), equiv(equal(w,RUnion(u,v)), and(P(u,w), P(v,w), forall([x], implies(and(P(u,x), P(v,x)), P(w,x))))))),SBD6a).
+
+% proof with this formulation
+formula(forall([u,v,w], implies(and(Region(u), Region(v)),equiv(equal(w,RUnion(u,v)), forall([x], implies(and(P(u,w), P(v,w), P(u,x), P(v,x)), P(w,x)))))),SBD6b).
 
 % assume
-formula(and(Time(T), Object(Oa),Object(Ob)),assume1).
-formula(equal(Su,Pair(Oa,Ob)),naming).
+% formula(and(Time(T), Object(Oa),Object(Ob)),assume1).
+% formula(equal(Su,Pair(Oa,Ob)),naming).
 
 % test
 % formula(exists([r], OSPlace(T,Su,r)),5G4).

@@ -136,6 +136,10 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 % TIA2
 % formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
+formula(Time(Ta4)).
+formula(Time(Tm1)).
+formula(Object(Ob4)).
+
 %%%% Specifications
 
 % OCD5
