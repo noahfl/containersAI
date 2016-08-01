@@ -178,32 +178,8 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-% final (proof with 4D3 or 4D4 given)
+% final
 formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
-
-% 4D.9
-% formula(forall([t,r], implies(and(Time(t), Region(r)), Fits(Contents(t,r),r)))).
-
-% 4D.8
-% formula(implies(not(equal(Contents(T,R),Null)), Fits(Contents(T,R),R))).
-
-% 4D.7
-% formula(Fits(Contents(T,R),R)).
-
-% 4D6
-% formula(P(RC,R)).
-
-% 4D5
-% formula(Fits(Contents(T,R),RC)).
-
-% 4D.4
-% formula(OSPlace(T,Contents(T,R),RC)).
-
-% 4D.3
-% formula(exists([rc], OSPlace(T,Contents(T,R),rc))).
-
-% 4D.1
-% formula(implies(equal(Contents(T,R), Null), Fits(Contents(T,R),R))).
 
 end_of_list.
 

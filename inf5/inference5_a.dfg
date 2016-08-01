@@ -242,8 +242,11 @@ list_of_formulae(conjectures).
 % 5.5
 % formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(RUnion(Place(tc,Ob5),Place(tc,Ol5)), RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)))))).
 
+% 5.4
+formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5))))).
+
 % 5.2
-formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5))))).
+% formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5))))).
 
 end_of_list.
 

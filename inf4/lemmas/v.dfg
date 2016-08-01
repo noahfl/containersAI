@@ -177,17 +177,12 @@ formula(Leq3(Ta,Tm,Tb),assume7).
 % formula(equal(Place(Tm,Ob), Place(Ta,Ob)),4V8).
 % formula(equal(Rc,Slice(Tm,Hc)),4V9).
 
-
-% test
-% formula(forall([tm,hc], Region(Slice(tm,hc)))).
-% formula(forall([t,o], Region(Place(t,o)))).
-
 % 4V10 test
 % formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
 % formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc)),4V11).
 
 % 4V12 test
-formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc))))),4V12).
+% formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc))))),4V12).
 
 % Ta Tb Tm Ob Hc Rc
 formula(Time(Ta)).
@@ -203,14 +198,13 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-formula(forall([ta,tb,ob,hc,rc], implies(and(UprightContainer(ta,ob,rc), Motionless(ta,tb,ob), Constant(ta,tb,hc), equal(rc,Slice(ta,hc))), DynamicUContainer(ta,tb,ob,hc)))).
+% formula(forall([ta,tb,ob,hc,rc], implies(and(UprightContainer(ta,ob,rc), Motionless(ta,tb,ob), Constant(ta,tb,hc), equal(rc,Slice(ta,hc))), DynamicUContainer(ta,tb,ob,hc)))).
 
 % 4V13
 % formula(DynamicUContainer(Ta,Tb,Ob,Hc)).
 
-% 4V12 (tm/Tm?) (relies on 4V10 which also doesn't work, but using 4V10 as
-%                an axiom doesn't seem to help)
-% formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
+% 4V12 (tm/Tm?) 
+formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc)))))).
 
 % 4V11 (proof when adding in assumptions)
 % formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc))).
