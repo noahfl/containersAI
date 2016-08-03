@@ -40,7 +40,7 @@ formula(forall([t,r], implies(and(Time(t), Region(r)), ObjectSet(Contents(t,r)))
 % CContents
 formula(forall([t,s], implies(and(Time(t), ObjectSet(s)), ObjectSet(CContents(t,s))))).
 % UContents
-formula(forall([t,s], implies(and(Time(t), ObjectSet(s)), ObjectSet(UContents(t,s))))).
+formula(forall([t,s], implies(and(Time(t), Object(s)), ObjectSet(UContents(t,s))))).
 % TravelTo
 formula(forall([r], implies(Region(r), Action(TravelTo(r))))).
 % StandStill
@@ -199,7 +199,10 @@ list_of_formulae(conjectures).
 % formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
 
 % 4.30
-formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+% formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+
+% 4.30a
+formula(exists([ra], Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))))).
 
 end_of_list.
 

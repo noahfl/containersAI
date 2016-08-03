@@ -142,14 +142,92 @@ formula(Object(Ob4)).
 
 %%%% Specifications
 
+% C4A1
+formula(UprightContainer(Ta4,Ob4,Rc4)).
+% C4A2
+formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4))).
+% C4A3
+formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
+% C4A4
+formula(AllStable(Ta4)).
+% C4A5
+formula(EmptyHanded(Ta4)).
+% C4A6
+formula(Graspable(Ta4,Ox4)).
+% C4A7
+formula(Reachable(Ta4,Rc4)).
+% C4A8
+formula(and(not(equal(Ox4,Agent)), not(equal(Agent,Ob4)), not(equal(Ox4,Ob4)))).
+% C4A9
+formula(FullyOutside(Place(Ta4,Agent), Place(Ta4,Ob4))).
+% C4A10
+formula(SafelyMovable(Ta4,Ox4)).
+% C4A11
+formula(SmallObject(Ob4)).
+% C4A12
+formula(not(BoxedIn(Ta4,Agent,Ox4))).
+% C4A13
+formula(NoPartialContents(Ta4,Ob4)).
+
+
+% Lemma 4A
+formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o, Agent)), equal(Place(tb,o), Place(ta,o))), AllStable(tb))),Lem4A).
+
+% Lemma 4G
+formula(forall([ta,tb,r,o,rd], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), implies(Reachable(ta,rd), Reachable(tb,rd)))),Lem4G).
+
+% Lemma 4R
+formula(forall([o,t], implies(SmallObject(o), not(UContained(t,Agent,o)))),Lem4R).
+
+% MFD4
+formula(forall([t,o], equiv(Graspable(t,o), exists([tb,ra], and(Occurs(t,tb,TravelTo(ra)), CanGrasp(tb,o))))),MFD4).
+
+% ORD3
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))),ORD3).
+
+% OCD3
+formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
+
+
 % OCD5
 formula(forall([t,ob,s], implies(and(Time(t), Object(ob), ObjectSet(s)), equiv(equal(s, UContents(t,ob)), forall([ox], equiv(Element(ox,s), UContained(t,ox,ob)))))),OCD5).
 
 % OSA1
 formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
 
+% ASA3
+formula(forall([ta,tb,o], and(SafelyMovable(ta,o), implies(forall([ox], implies(not(equal(ox,Agent)), equal(Place(tb,ox), Place(ta,ox)))), SafelyMovable(tb,o)))),ASA3).
+
+% MRA5
+formula(forall([ta,tb], and(Lt(ta,tb), AllStable(ta), EmptyHanded(ta), forall([o], implies(Object(o), implies(Released(ta,tb,o), and(Motionless(ta,tb,o), AllStable(tb))))))),MRA5).
+
+% Lem4P
+formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o)))),Lem4P).
+
+% Lem4H
+formula(forall([t], implies(EmptyHanded(t), Feasible(t,TravelTo(Place(t,Agent))))),Lem4H).
+
+% Lem4F
+formula(forall([ta,tb,r,o,rx], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Feasible(ta,TravelTo(rx))), Feasible(tb,TravelTo(rx)))),Lem4F).
+
+% ALA1
+formula(forall([ta,ob,rc,ox], implies(and(UprightContainer(ta,ob,rc), CanGrasp(ta,ox), Reachable(ta,rc), SafelyMovable(ta,ox), AllStable(ta), SmallObject(ob), SmallSet(Union(UContents(ta,ob),MovingGroup(ta,ox)),rc)), Feasible(ta,PutInUC(ox,ob)))),ALA1).
+
+% ALA2
+formula(forall([o,ob,ta,rx,tb], implies(and(Occurs(ta,tb,PutInUC(o,ob)), Feasible(ta,TravelTo(rx)), FullyOutside(rx,Place(ta,ob))), Feasible(tb,TravelTo(rx)))),ALA2).
+
+% ALD2
+formula(forall([ta,tb,ox,ob], implies(and(Time(ta), Time(tb), Object(ox), Object(ob)), equiv(Occurs(ta,tb,LoadUprightContainer(ox,ob)), exists([r1,r3], and(FullyOutside(r3,Place(ta,ob)), Occurs(ta,tb,Sequence(TravelTo(r1),Sequence(PutInUC(ox,ob),TravelTo(r3))))))))),ALD2).
+
+% TAD1
+formula(forall([ta,a], equiv(Feasible(ta,a), exists([tb], implies(Time(tb), Occurs(ta,tb,a))))),TAD1).
+
+% TAD2
+formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action(a2)), equiv(Occurs(ta,tb,Sequence(a1,a2)), exists([tx], and(Occurs(ta,tx,a1), Occurs(tx,tb,a2)))))),TAD2).
+
+
 % 4.13
-formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
+% formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
 
 end_of_list.
 

@@ -12,7 +12,7 @@ list_of_symbols.
 
 functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (OpenContainerShape,2), (EC,2), (C,2), (OpenContainer,3), (History,1)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (DR,2), (NoObstacles,2), (OpenContainerShape,2), (EC,2), (C,2), (OpenContainer,3), (History,1), (O,2)].
 
 end_of_list.
 
@@ -93,7 +93,7 @@ formula(forall([o], implies(SmallObject(o), Object(o)))).
 %%% Spatial Relations
 %% Basic Spatial Relations
 % SRSA
-formula(forall([u,v], implies(or(P(u,v), DR(u,v), EC(u,v), C(u,v)), and(Region(u), Region(v))))).
+formula(forall([u,v], implies(or(O(u,v), P(u,v), DR(u,v), EC(u,v), C(u,v)), and(Region(u), Region(v))))).
 %% Spatial containment
 % SCSA/B
 formula(forall([ra,rb], implies(or(FullyOutside(ra,rb), UprightContainerShape(ra,rb), OpenContainerShape(ra,rb)), and(Region(ra), Region(rb))))).
@@ -149,6 +149,18 @@ formula(forall([u,v], implies(DR(u,v), not(equal(u,v)))),LemSM).
 
 % LemSE
 formula(forall([u,v,w], implies(and(P(u,v), DR(v,w)), DR(u,w)))).
+
+% SBD3
+% formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD2).
+
+% LemSP
+% formula(forall([u,v], implies(O(u,v), O(v,u))),LemSP).
+
+% SBD2
+% formula(forall([u,v], equiv(O(u,v), exists([z], and(P(z,u), P(z,v))))),SBD2).
+
+% LemSQ
+formula(forall([u,v], implies(DR(u,v), DR(v,u))),LemSQ).
 
 end_of_list.
 

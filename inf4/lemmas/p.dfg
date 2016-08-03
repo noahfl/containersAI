@@ -168,7 +168,7 @@ formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), Em
 formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
 
 % ASD4
-formula(forall([t,ox,ob], equiv(BoxedIn(t,ox,ob), or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)))),ASD4).
+formula(forall([t,ox,ob], equiv(BoxedIn(t,ox,ob), or(CContained(t,ox,Singleton(ob)), UContained(t,ox,ob), BLContained(t,ox,ob)))),ASD4).
 
 % ASD5
 formula(forall([t,ox,ob], equiv(SafelyMovesWith(t,ox,ob), or(equal(ox,ob), BoxedIn(t,ox,ob), BoxWithLid(t,ob,ox)))),ASD5).
@@ -209,10 +209,10 @@ list_of_formulae(conjectures).
 % formula(forall([o], equiv(SafelyMovesWith(Tb,o,Ox), SafelyMovesWith(Ta,o,Ox)))).
 
 % 4P.9
-% formula(forall([o], equiv(BoxWithLid(Tb,Ox,Ol), BoxWithLid(Ta,Ox,Ol)))).
+formula(forall([o], equiv(BoxWithLid(Tb,Ox,Ol), BoxWithLid(Ta,Ox,Ol)))).
 
 % 4P.8
-formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
+% formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
 
 % 4P.7
 % formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).

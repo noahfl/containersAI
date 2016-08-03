@@ -144,15 +144,8 @@ formula(forall([t,ob,ol,r], implies(BoxWithLidC(t,ob,ol,r), and(Time(t), Object(
 
 %%%% Specifications
 
-% ASD4
-formula(forall([t,ox,ob], equiv(BoxedIn(t,ox,ob), or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)))),ASD4).
-
-% Lem4J
-formula(forall([ta,tb,ox,oy], implies(and(Time(ta), Time(tb), Object(ox), Object(oy), not(equal(ox,Agent)), forall([o], implies(not(equal(o,Agent)), equal(Place(tb,o), Place(ta,o))))), equiv(BLContained(tb,ox,oy), BLContained(ta,ox,oy)))),Lem4J).
-
 % Lem4I
 formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,Singleton(oy)), CContained(tb,ox,Singleton(oy))), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))), Lem4I).
-
 
 % assume
 formula(not(equal(Ox,Agent)),assume1).
@@ -164,6 +157,9 @@ formula(not(BoxedIn(Tb,Agent,Ox)),assume6).
  
 % 4P.7
 formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).
+
+% 4P.8
+formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
 
 % Agent
 formula(Object(Agent)).
@@ -181,7 +177,7 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
+formula(forall([ol], equiv(BoxWithLid(Tb,Ox,ol), BoxWithLid(Ta,Ox,ol)))).
 
 end_of_list.
 
