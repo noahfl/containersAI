@@ -182,7 +182,7 @@ formula(Object(Agent)).
 formula(forall([ta,tb,ox,ob], implies(and(Time(ta), Time(tb), Object(ox), Object(ob)), equiv(Occurs(ta,tb,LoadUprightContainer(ox,ob)), exists([r1,r3], and(FullyOutside(r3,Place(ta,ob)), Occurs(ta,tb,Sequence(TravelTo(r1),Sequence(PutInUC(ox,ob),TravelTo(r3))))))))),ALD2).
 
 % TAD2
-formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action(a2)), equiv(Occurs(ta,tb,Sequence(a1,a2)), exists([tx], and(Occurs(ta,tx,a1), Occurs(tx,tb,a2)))))),TAD2).
+% formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action(a2)), equiv(Occurs(ta,tb,Sequence(a1,a2)), exists([tx], and(Occurs(ta,tx,a1), Occurs(tx,tb,a2)))))),TAD2).
 
 % test 4.29
 formula(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)),4dot29).

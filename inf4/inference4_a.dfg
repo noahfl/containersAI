@@ -234,16 +234,19 @@ formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action
 % test
 % formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
 
+% 4.13
+% formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
+
 % test 4.14
-% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % test 4.15
-% formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
+formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % 4.3
-formula(CanGrasp(Tm1,Ox4),4dot3).
+% formula(CanGrasp(Tm1,Ox4),4dot3).
 % 4.2
-formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot4).
+% formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot4).
 
 end_of_list.
 
@@ -260,13 +263,13 @@ list_of_formulae(conjectures).
 % formula(Feasible(Tm1,PutInUC(Ox4,Ob4))).
 
 % 4.16
-% formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
+formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 
 % 4.15 (proves with 4.2 and 4.3 given)
 % formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % 4.14 (no proof, fix)
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % 4.13 (proof)
 % formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4)))).

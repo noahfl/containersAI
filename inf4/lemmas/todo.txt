@@ -13,8 +13,7 @@ D
 
 UNFINISHED:
 P
-v
-Y
+R?
 
 NOTES:
 find a way to make OSA1 work; perhaps another axiom/definition?

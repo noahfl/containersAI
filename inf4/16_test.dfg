@@ -139,25 +139,28 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 formula(Time(Ta4)).
 formula(Time(Tm1)).
 formula(Object(Ob4)).
+formula(Region(Rc4)).
 
 %%%% Specifications
 
-% OCD5
-formula(forall([t,ob,s], implies(and(Time(t), Object(ob), ObjectSet(s)), equiv(equal(s, UContents(t,ob)), forall([ox], equiv(Element(ox,s), UContained(t,ox,ob)))))),OCD5).
+% test 4.15
+formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
-% OSA1
-formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
+% C4A3
+formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
 
-% 4.13
-formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
+% test 4.14
+formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% 4.14 (no proof, fix)
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+% 4.16
+formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
+
+
 
 end_of_list.
 

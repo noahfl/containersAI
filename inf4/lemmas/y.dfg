@@ -150,15 +150,6 @@ formula(forall([u,v], implies(DR(u,v), not(equal(u,v)))),LemSM).
 % LemSE
 formula(forall([u,v,w], implies(and(P(u,v), DR(v,w)), DR(u,w)))).
 
-% SBD3
-% formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD2).
-
-% LemSP
-% formula(forall([u,v], implies(O(u,v), O(v,u))),LemSP).
-
-% SBD2
-% formula(forall([u,v], equiv(O(u,v), exists([z], and(P(z,u), P(z,v))))),SBD2).
-
 % LemSQ
 formula(forall([u,v], implies(DR(u,v), DR(v,u))),LemSQ).
 

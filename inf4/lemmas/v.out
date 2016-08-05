@@ -477,9 +477,9 @@ SPASS beiseite: Proof found.
 Problem: v.dfg 
 SPASS derived 316 clauses, backtracked 0 clauses, performed 0 splits and kept 217 clauses.
 SPASS allocated 52646 KBytes.
-SPASS spent	0:00:00.11 on the problem.
-		0:00:00.03 for the input.
-		0:00:00.03 for the FLOTTER CNF translation.
+SPASS spent	0:00:00.07 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
 		0:00:00.01 for the reduction.

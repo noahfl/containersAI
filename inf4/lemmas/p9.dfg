@@ -148,18 +148,18 @@ formula(forall([t,ob,ol,r], implies(BoxWithLidC(t,ob,ol,r), and(Time(t), Object(
 formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,Singleton(oy)), CContained(tb,ox,Singleton(oy))), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))), Lem4I).
 
 % assume
-formula(not(equal(Ox,Agent)),assume1).
-formula(EmptyHanded(Ta),assume2).
-formula(AllStable(Ta),assume3).
-formula(Occurs(Ta,Tb,TravelTo(R)),assume4).
-formula(not(BoxedIn(Ta,Agent,Ox)),assume5).
-formula(not(BoxedIn(Tb,Agent,Ox)),assume6).
+% formula(not(equal(Ox,Agent)),assume1).
+% formula(EmptyHanded(Ta),assume2).
+% formula(AllStable(Ta),assume3).
+% formula(Occurs(Ta,Tb,TravelTo(R)),assume4).
+% formula(not(BoxedIn(Ta,Agent,Ox)),assume5).
+% formula(not(BoxedIn(Tb,Agent,Ox)),assume6).
  
 % 4P.7
 formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,o),Place(Ta,o))))).
 
 % 4P.8
-formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
+% formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
 
 % Agent
 formula(Object(Agent)).

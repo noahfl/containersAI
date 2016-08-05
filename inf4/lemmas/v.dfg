@@ -166,28 +166,9 @@ formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), fo
 % HIA4
 formula(forall([ta,tb,h], implies(Constant(ta,tb,h), Continuous(ta,tb,h))),HIA4).
 
-% HUD1 (o and ob, may be issue?)
+% HUD1
 formula(forall([ta,tb,ob,hc], equiv(DynamicUContainer(ta,tb,ob,hc), and(Continuous(ta,tb,hc), forall([tm], implies(Leq3(ta,tm,tb), and(UprightContainer(tm,ob,Slice(tm,hc)), Fits(Contents(ta,Slice(ta,hc)),Slice(tm,hc)))))))),HUD1).
 
-
-% assume
-% formula(UprightContainer(Ta,Ob,Rc),assume1).
-% formula(Motionless(Ta,Tb,Ob),assume2).
-% formula(Constant(Ta,Tb,Hc),assume3).
-% formula(equal(Rc,Slice(Ta,Hc)),assume4).
-
-% formula(Leq3(Ta,Tm,Tb),assume7).
-
-% test
-% formula(equal(Place(Tm,Ob), Place(Ta,Ob)),4V8).
-% formula(equal(Rc,Slice(Tm,Hc)),4V9).
-
-% 4V10 test
-% formula(UprightContainer(Tm,Ob,Slice(Tm,Hc)),4V10).
-% formula(Fits(Contents(Ta,Slice(Ta,Hc)),Slice(Tm,Hc)),4V11).
-
-% 4V12 test
-% formula(forall([tm], implies(Leq3(Ta,tm,Tb), and(UprightContainer(tm,Ob,Slice(tm,Hc)), Fits(Contents(Ta,Slice(Ta,Hc)),Slice(tm,Hc))))),4V12).
 
 % Ta Tb Tm Ob Hc Rc
 formula(Time(Ta)).
