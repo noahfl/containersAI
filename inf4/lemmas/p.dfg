@@ -59,16 +59,6 @@ formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(PutInUC(ox,o
 % LoadUprightContainer
 formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(LoadUprightContainer(ox,ob))))).
 
-% Agent
-formula(Object(Agent)). 
-% Ta
-formula(Time(Ta)).
-% Tb
-formula(Time(Tb)).
-% R
-formula(Region(R)).
-% Ox
-formula(Object(Ox)).
 
 %%% Time
 %% Actions
@@ -182,6 +172,21 @@ formula(forall([ta,tb,ox,oy], implies(and(Time(ta), Time(tb), Object(ox), Object
 % Lem4I
 formula(forall([ox,oy,ta,tb], implies(and(Object(ox), Object(oy), Time(ta), Time(tb), equal(Place(ta,ox), Place(tb,ox)), equal(Place(ta,oy), Place(tb,oy))), and(equiv(CContained(ta,ox,Singleton(oy)), CContained(tb,ox,Singleton(oy))), equiv(UContained(ta,ox,oy), UContained(tb,ox,oy)), equiv(BoxWithLid(ta,ox,oy), BoxWithLid(tb,ox,oy))))), Lem4I).
 
+% modified RBA1
+formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(not(equal(ob,Agent)), not(equal(ol,Agent))))),RBA1mod).
+
+% Agent
+formula(Object(Agent)).
+% Ta
+formula(Time(Ta)).
+% Tb
+formula(Time(Tb)).
+% R
+formula(Region(R)).
+% Ox
+formula(Object(Ox)).
+
+
 % assume
 formula(not(equal(Ox,Agent)),assume1).
 formula(EmptyHanded(Ta),assume2).
@@ -197,7 +202,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-% formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
+formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
 
 % 4P.12
 % formula(equal(MovingGroup(Tb,Ox), MovingGroup(Ta,Ox))).
@@ -209,7 +214,7 @@ list_of_formulae(conjectures).
 % formula(forall([o], equiv(SafelyMovesWith(Tb,o,Ox), SafelyMovesWith(Ta,o,Ox)))).
 
 % 4P.9
-formula(forall([o], equiv(BoxWithLid(Tb,Ox,Ol), BoxWithLid(Ta,Ox,Ol)))).
+% formula(forall([o], equiv(BoxWithLid(Tb,Ox,Ol), BoxWithLid(Ta,Ox,Ol)))).
 
 % 4P.8
 % formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).

@@ -161,6 +161,9 @@ formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tb,
 % 4P.8
 % formula(forall([o], equiv(BoxedIn(Tb,o,Ox), BoxedIn(Ta,o,Ox)))).
 
+% modified RBA1
+formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(not(equal(ob,Agent)), not(equal(ol,Agent))))),RBA1mod).
+
 % Agent
 formula(Object(Agent)).
 % Ta
