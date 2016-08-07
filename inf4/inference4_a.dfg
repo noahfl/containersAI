@@ -150,7 +150,7 @@ formula(UprightContainer(Ta4,Ob4,Rc4)).
 % C4A2
 formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4))).
 % C4A3
-formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
+formula(SmallSet(Union(UContents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
 % C4A4
 formula(AllStable(Ta4)).
 % C4A5

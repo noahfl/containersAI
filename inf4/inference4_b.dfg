@@ -11,7 +11,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0)].
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Rq,0)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2)].
 
@@ -322,17 +322,32 @@ formula(forall([t,ta,tb,ob,hc,o], implies(and(DynamicUContainer(ta,tb,ob,hc), P(
 % MSA1
 formula(forall([ta], implies(Time(ta), exists([tb], and(Occurs(ta,tb,StandStill), AllStable(tb))))),MSA1).
 
+% Ta4
+formula(Time(Ta4)).
+% Tb
+formula(Time(Tb)).
+% Ox4
+formula(Object(Ox4)).
+% Ob4
+formula(Object(Ob4)).
+% Ra4
+formula(Region(Ra4)).
+% Agent
+formula(Object(Agent)).
+% Rq
+formula(Region(Rq)).
+
 % assume
 formula(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)),assume).
 
 % test 4.30
-formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+% formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
 
 % test 4.14
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot14).
+% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot14).
 
 % test 4.15
-formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot15).
+% formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot15).
 
 end_of_list.
 
@@ -346,10 +361,14 @@ list_of_formulae(conjectures).
 % formula(OSPlace(Tm2,MovingGroup(Ta4,Ox4),Rc1)).
 
 % 4.31
-formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
+% formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
 
 % 4.30
-% formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+
+% 4.30a
+% formula(exists([ra,rq], and(FullyOutside(rq,Place(Ta4,Ob4)), Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(rq))))))).
+
 
 end_of_list.
 
