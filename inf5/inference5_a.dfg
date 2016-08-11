@@ -222,6 +222,9 @@ formula(forall([r,t1,t2], implies(and(Region(r), Lt(t1,t2)), exists([h], and(Con
 % RBD1
 formula(forall([t,ob,ol,rc], equiv(BoxWithLidC(t,ob,ol,rc), and(BoxWithLid(t,ob,ol), CombinedContainer(Place(t,ob), Place(t,ol),rc)))),RBD1).
 
+% HCA4
+formula(forall([t1,t2,hc,ho], implies(and(Constant(t1,t2,hc), Constant(t1,t2,ho), Cavity(Slice(t1,hc),Slice(t1,ho))), PersistentCavity(t1,t2,hc,ho))),HCA4).
+
 % SCD4
 formula(forall([ra,rb,rc], equiv(CombinedContainer(ra,rb,rc), and(EC(ra,rb), Cavity(rc,RUnion(ra,rb)), not(Cavity(rc,ra)), not(Cavity(rc,rb))))),SCD4).
 
@@ -237,6 +240,18 @@ formula(Motionless(Ta5,Tb5,Ol5),assume).
 % 5.2 test
 % formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
 
+% 5.8 test
+formula(equal(Slice(Ta5,Hu),RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)))).
+
+% 5.7 test
+formula(Constant(Ta5,Tb5,Hu)).
+
+% 5.10 test
+formula(Constant(Ta5,Tb5,Hc)).
+
+% 5.11 test
+% formula(equal(Slice(Ta5,Hc),Rc5)).
+
 end_of_list.
 
 
@@ -245,22 +260,37 @@ list_of_formulae(conjectures).
 % 5.18
 % formula(forall([t], implies(Leq3(Ta5,t,Tb5), equal(Slice(t,Hu), RUnion(Place(t,Ob5),Place(t,Ol5)))))).
 
+% 5.16
+formula(NoExitCavity(Ta5,Tb5,Hc,Hu)).
+
 % 5.15
 % formula(PersistentCavity(Ta5,Tb5,Hc,Hu)).
 
-% 5.7
-formula(Constant(Ta5,Tb5,Hu)).
+% 5.14 (proof)
+% formula(Cavity(Rc5,RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)))).
 
-% 5.6
+% 5.12 (proof)
+% formula(CombinedContainer(Place(Ta5,Ob5),Place(Ta5,Ol5),Rc5)).
+
+% 5.9 (proof)
+% formula(exists([h], and(Constant(Ta5,Tb5,h), equal(Slice(Ta5,h),Rc5)))).
+
+% 5.8 (no proof)
+% formula(equal(Slice(Ta5,Hu),RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)))).
+
+% 5.7 (no proof)
+% formula(Constant(Ta5,Tb5,Hu)).
+
+% 5.6 (proof)
 % formula(exists([h], and(Constant(Ta5,Tb5,h), equal(Slice(Ta5,h), RUnion(Place(Ta5,Ob5), Place(Ta5,Ol5)))))).
 
-% 5.5
+% 5.5 (proof)
 % formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(RUnion(Place(tc,Ob5),Place(tc,Ol5)), RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)))))).
 
-% 5.4
+% 5.4 (proof)
 % formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5))))).
 
-% 5.2
+% 5.2 (proof)
 % formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5))))).
 
 end_of_list.

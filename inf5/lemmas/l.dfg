@@ -173,19 +173,25 @@ formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), 
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
+
+% Lem5K
+% formula(forall([t,ob,ol,rc], implies(BoxWithLidC(t,ob,ol,rc), ClosedContainer(t,Pair(ob,ol),rc))),Lem5K).
 
 % RBD1
 formula(forall([t,ob,ol,rc], equiv(BoxWithLidC(t,ob,ol,rc), and(BoxWithLid(t,ob,ol), CombinedContainer(Place(t,ob),Place(t,ol),rc)))),RBD1).
 
 % LemSN
 formula(forall([u,v,w,x], implies(and(CombinedContainer(u,v,w), P(x,w)), and(DR(x,u), DR(x,v)))),LemSN).
+
+% LemSM
+% formula(forall([u,v,w,x], implies(and(CombinedContainer(u,v,w), P(x,w)), and(DR(x,u), DR(x,v)))),LemSN).
 
 % LemSE
 formula(forall([u,v,w], implies(and(P(u,v), DR(v,w)), DR(u,w))),LemSE).

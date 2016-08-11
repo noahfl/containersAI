@@ -168,8 +168,6 @@ formula(ObjectSet(Null)).
 
 %%%% Specifications
 
-% ----------------
-
 % OSD4
 formula(forall([x,y,z], implies(and(Object(x), Object(y), Object(z)), equiv(Element(z,Pair(x,y)), or(equal(z,x), equal(z,y))))),OSD4).
 
