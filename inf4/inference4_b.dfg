@@ -195,12 +195,6 @@ formula(NoPartialContents(Ta4,Ob4),C4A13).
 % Lemma 4A
 formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), not(equal(o,Agent))), and(equal(Place(tb,o), Place(ta,o)), AllStable(tb))))).
 
-% Lemma 4G
-formula(forall([ta,tb,r,rd,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Reachable(ta,rd)), Reachable(tb,rd)))).
-
-% Lemma 4R
-formula(forall([o,t], implies(SmallObject(o), not(UContained(t,Agent,o)))),Lem4R).
-
 % Lemma 4Y
 formula(forall([t,o], not(UContained(t,o,o))),Lem4Y).
 
@@ -337,11 +331,15 @@ formula(Object(Agent)).
 % Rq
 formula(Region(Rq)).
 
-% assume
+% assume 4.29
 formula(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)),assume).
 
 % test 4.30
 % formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+
+% 4.30a test
+formula(exists([ra,rq], and(FullyOutside(rq,Place(Ta4,Ob4)), Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(rq))))))).
+
 
 % test 4.14
 % formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot14).
@@ -364,7 +362,7 @@ list_of_formulae(conjectures).
 % formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
 
 % 4.30
-formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))))).
+formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Rq))))).
 
 % 4.30a
 % formula(exists([ra,rq], and(FullyOutside(rq,Place(Ta4,Ob4)), Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(rq))))))).

@@ -143,11 +143,11 @@ formula(forall([t,ob,ol,r], implies(BoxWithLidC(t,ob,ol,r), and(Time(t), Object(
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+ %formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 %%%% Specifications
 
@@ -178,22 +178,22 @@ formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(not(equal(ob,Agent)),
 % Agent
 formula(Object(Agent)).
 % Ta
-formula(Time(Ta)).
+% formula(Time(Ta)).
 % Tb
-formula(Time(Tb)).
+% formula(Time(Tb)).
 % R
-formula(Region(R)).
+% formula(Region(R)).
 % Ox
-formula(Object(Ox)).
+% formula(Object(Ox)).
 
 
 % assume
-formula(not(equal(Ox,Agent)),assume1).
-formula(EmptyHanded(Ta),assume2).
-formula(AllStable(Ta),assume3).
-formula(Occurs(Ta,Tb,TravelTo(R)),assume4).
-formula(not(BoxedIn(Ta,Agent,Ox)),assume5).
-formula(not(BoxedIn(Tb,Agent,Ox)),assume6).
+% formula(not(equal(Ox,Agent)),assume1).
+% formula(EmptyHanded(Ta),assume2).
+% formula(AllStable(Ta),assume3).
+% formula(Occurs(Ta,Tb,TravelTo(R)),assume4).
+% formula(not(BoxedIn(Ta,Agent,Ox)),assume5).
+% formula(not(BoxedIn(Tb,Agent,Ox)),assume6).
 
 
 end_of_list.
@@ -201,10 +201,10 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-% final
+% final (no proof)
 formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o))))).
 
-% 4P.12
+% 4P.12 (proof)
 % formula(equal(MovingGroup(Tb,Ox), MovingGroup(Ta,Ox))).
 
 % 4P.11

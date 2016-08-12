@@ -139,11 +139,11 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 
 % Temporal Axioms
 % TID3
-formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
+% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
 % TID1
-formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))),TID1).
+% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))),TID1).
 % TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
+% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
 % Agent
 formula(Object(Agent)).
@@ -177,9 +177,10 @@ formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape
 formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
 
 % Assume
-formula(SmallObject(O)).
-formula(Time(T)).
+% formula(SmallObject(O)).
+% formula(Time(T)).
 % formula(forall([ra,rb,o], and(FeasiblePlace(Agent,ra), implies(FeasiblePlace(o,rb), MuchSmaller(rb,ra))))).
+
 
 end_of_list.
 

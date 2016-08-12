@@ -139,6 +139,7 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 formula(Time(Ta4)).
 formula(Time(Tm1)).
 formula(Object(Ob4)).
+formula(Object(Ox4)).
 formula(Region(Rc4)).
 
 %%%% Specifications
@@ -147,7 +148,7 @@ formula(Region(Rc4)).
 formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % C4A3
-formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
+formula(SmallSet(Union(UContents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
 
 % test 4.14
 formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).

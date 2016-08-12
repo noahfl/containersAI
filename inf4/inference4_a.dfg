@@ -200,9 +200,6 @@ formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(foral
 % ASA3
 formula(forall([ta,tb,o], and(SafelyMovable(ta,o), implies(forall([ox], implies(not(equal(ox,Agent)), equal(Place(tb,ox), Place(ta,ox)))), SafelyMovable(tb,o)))),ASA3).
 
-% MRA5
-formula(forall([ta,tb], and(Lt(ta,tb), AllStable(ta), EmptyHanded(ta), forall([o], implies(Object(o), implies(Released(ta,tb,o), and(Motionless(ta,tb,o), AllStable(tb))))))),MRA5).
-
 % Lem4P
 formula(forall([o,ta,tb,r], implies(and(Object(o), Region(r), not(equal(o,Agent)), EmptyHanded(ta), AllStable(ta), Occurs(ta,tb,TravelTo(r)), not(BoxedIn(ta,Agent,o)), CanGrasp(tb,o)), equal(MovingGroup(tb,o), MovingGroup(ta,o)))),Lem4P).
 
@@ -238,10 +235,10 @@ formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action
 % formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
 
 % test 4.14
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % test 4.15
-formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
+% formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % 4.3
 % formula(CanGrasp(Tm1,Ox4),4dot3).
@@ -263,13 +260,13 @@ list_of_formulae(conjectures).
 % formula(Feasible(Tm1,PutInUC(Ox4,Ob4))).
 
 % 4.16
-formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
+% formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 
 % 4.15 (proves with 4.2 and 4.3 given)
 % formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % 4.14 (no proof, fix)
-% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % 4.13 (proof)
 % formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4)))).
