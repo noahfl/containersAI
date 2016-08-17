@@ -191,7 +191,7 @@ formula(forall([t,ob,ol,rc], equiv(BoxWithLidC(t,ob,ol,rc), and(BoxWithLid(t,ob,
 formula(forall([u,v,w,x], implies(and(CombinedContainer(u,v,w), P(x,w)), and(DR(x,u), DR(x,v)))),LemSN).
 
 % LemSM
-% formula(forall([u,v,w,x], implies(and(CombinedContainer(u,v,w), P(x,w)), and(DR(x,u), DR(x,v)))),LemSN).
+formula(forall([u,v], implies(DR(u,v), not(equal(u,v)))),LemSM).
 
 % LemSE
 formula(forall([u,v,w], implies(and(P(u,v), DR(v,w)), DR(u,w))),LemSE).

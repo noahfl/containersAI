@@ -257,13 +257,16 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-% 5.18
+% 5.18 (proof)
 % formula(forall([t], implies(Leq3(Ta5,t,Tb5), equal(Slice(t,Hu), RUnion(Place(t,Ob5),Place(t,Ol5)))))).
 
-% 5.16
-formula(NoExitCavity(Ta5,Tb5,Hc,Hu)).
+% 5.17
+formula(NoEntranceCavity(Ta5,Tb5,Hc,Hu)).
 
-% 5.15
+% 5.16 (no proof)
+% formula(NoExitCavity(Ta5,Tb5,Hc,Hu)).
+
+% 5.15 (no proof)
 % formula(PersistentCavity(Ta5,Tb5,Hc,Hu)).
 
 % 5.14 (proof)
