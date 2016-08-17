@@ -162,8 +162,8 @@ formula(forall([t,o], implies(or(Grasp(t,o),CanGrasp(t,o)), and(not(CContained(t
 % LemSO
 formula(forall([t,oa,ob], implies(UContained(t,oa,ob), OContained(t,oa,ob))),LemSO).
 
-% RBA4
-formula(forall([t,ob], implies(BLContained(t,Agent,ob), not(Grasp(t,ob)))),RBA4).
+% RBA4 (use Grasp or CanGrasp?)
+formula(forall([t,ob], implies(BLContained(t,Agent,ob), not(CanGrasp(t,ob)))),RBA4).
 
 % Agent
 formula(Object(Agent)).
@@ -178,8 +178,8 @@ formula(Object(OL)).
 
 
 % assume
-formula(CanGrasp(T,O),assume1).
-formula(BoxedIn(T,Agent,O),assume2).
+% formula(CanGrasp(T,O),assume1).
+% formula(BoxedIn(T,Agent,O),assume2).
 
 end_of_list.
 
@@ -187,21 +187,21 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final 
-% formula(forall([t,o], implies(CanGrasp(t,o), not(BoxedIn(t,Agent,o))))).
+formula(forall([t,o], implies(CanGrasp(t,o), not(BoxedIn(t,Agent,o))))).
 
 % 4B7
-formula(not(BLContained(T,Agent,O))).
+% formula(not(BLContained(T,Agent,O))).
 
-% 4B6
+% 4B6 (proof)
 % formula(not(UContained(T,Agent,O))).
 
-% 4B5
+% 4B5 (proof)
 % formula(not(OContained(T,Agent,O))).
 
-% 4B4
+% 4B4 (proof)
 % formula(not(CContained(T,Agent,Singleton(O)))).
 
-% 4B3
+% 4B3 (proof)
 % formula(or(CContained(T,Agent,Singleton(O)), UContained(T,Agent,O), BLContained(T,Agent,O))).
 
 end_of_list.
