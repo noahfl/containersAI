@@ -14,7 +14,7 @@ Inference 3: done, 1 part
 
 Inference 4: in progress
 
-Inference 5: not done
+Inference 5: in progress
 
 ###Useful commands###
 
