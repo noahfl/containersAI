@@ -243,20 +243,20 @@ formula(forall([ta,tb,o], implies(and(Object(o), Lt(ta,tb)), Continuous(ta,tb,HP
 % HID3
 formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h))))))),HID3).
 
-% 5.16
+% 5.16 (given from part a)
 formula(NoExitCavity(Ta5,Tb5,Hc,Hu),5dot16).
 
 % 5.25
 formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)), Leq3(Ta5,t,Tb5)), not(O(Slice(t,HPlace(o)),Slice(Tm,Hu))))),5dot25).
 
-% 5.10
+% 5.10 (given from part a)
 formula(Constant(Ta5,Tb5,Hc),5dot10).
 
-% 5.11
+% 5.11 (given from part a)
 formula(equal(Slice(Ta5,Hc),Rc5),5dot11).
 
-% 5.35 (no proof) 
-formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
+% 5.35 test
+% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu)))),5dot35).
 
 % assume
 % formula(Object(Oa),assume1). (redundant)
@@ -270,10 +270,10 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
+% formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
 
 % 5.35 (no proof) 
-% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
+formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
 
 % 5.34 (proof) 
 % formula(not(P(Slice(Tx,HPlace(Oa)),Slice(Tx,Hc)))).
