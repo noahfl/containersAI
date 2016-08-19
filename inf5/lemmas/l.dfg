@@ -181,9 +181,6 @@ formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), 
 
 %%%% Specifications
 
-% Lem5K
-% formula(forall([t,ob,ol,rc], implies(BoxWithLidC(t,ob,ol,rc), ClosedContainer(t,Pair(ob,ol),rc))),Lem5K).
-
 % RBD1
 formula(forall([t,ob,ol,rc], equiv(BoxWithLidC(t,ob,ol,rc), and(BoxWithLid(t,ob,ol), CombinedContainer(Place(t,ob),Place(t,ol),rc)))),RBD1).
 
@@ -205,7 +202,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-formula(forall([t,ob,ol,rc,oa], implies(and(BoxWithLidC(t,ob,ol,rc), Object(oa), P(Place(t,oa),rc)), and(not(equal(ob,oa)), not(equal(ob,ol)), not(equal(oa,ol))))),Lem5L).
+formula(forall([t,ob,ol,rc,oa], implies(and(BoxWithLidC(t,ob,ol,rc), Object(oa), P(Place(t,oa),rc)), and(not(equal(ob,oa)), not(equal(oa,ol))))),Lem5L).
 
 end_of_list.
 
