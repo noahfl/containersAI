@@ -25,7 +25,7 @@ formula(forall([tb,ox,ob], CContained(tb,ox,Singleton(ob)))).
 formula(forall([ta,tb,hc,ob], NoEntranceCavity(ta,tb,hc, HPlace(ob)))).
 
 % HCA3
-formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb))))))).
+formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb)))))),HCA3).
 
 % 21. edit to 2D proof
 formula(forall([tb,ta], Leq3(tb,tb,ta))).

@@ -216,7 +216,7 @@ formula(Constant(Ta5,Tb5,Hu)).
 formula(Constant(Ta5,Tb5,Hc)).
 
 % 5.11 test
-% formula(equal(Slice(Ta5,Hc),Rc5)).
+formula(equal(Slice(Ta5,Hc),Rc5)).
 
 end_of_list.
 

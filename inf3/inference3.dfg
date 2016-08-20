@@ -175,7 +175,7 @@ formula(forall([o,r], implies(and(Region(r),Object(o)), equiv(FeasiblePlace(o,r)
 
 
 % OTA4 (for Lemma 1.A)
-formula(forall([o,r], implies(FeasiblePlace(o,r),IntConn(r)))).
+formula(forall([o,r], implies(FeasiblePlace(o,r),IntConn(r))),OTA4).
 
 % MOD2
 formula(forall([ta,tb,o,t], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), implies(Leq3(ta,t,tb), equal(Place(t,o),Place(ta,o))))))).
