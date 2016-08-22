@@ -1,8 +1,8 @@
-begin_problem(Scenario5d).
+begin_problem(Scenario5e).
 
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 5d*}).
+name({*Qualitative Reasoning About Containers - Case 5e*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
 description({*16 July 2016*}).
@@ -11,9 +11,9 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0), (Tm,0),(Oa,0), (Tx,0)].
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0), (Tm,0),(Oa,0), (Tx,0), (Su,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1), (Isolates,3), (ClosedContainer,3), (CausallyIsolated,3), (StaticCausallyIsolated,3), (RigidObject,1)].
 
 end_of_list.
 
@@ -88,6 +88,16 @@ formula(forall([t,o,r], implies(UprightContainer(t,o,r), and(Time(t), Object(o),
 %% Object containment
 % OCSA
 formula(forall([t,ox,ob], implies(or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)), and(Time(t), Object(ox), Object(ob))))).
+%% Fits and small set
+% OFSA
+formula(forall([o], implies(SmallObject(o), Object(o)))).
+% OFSB
+formula(forall([s,r], implies(or(Fits(s,r), SmallSet(s,r)), and(ObjectSet(s), Region(r))))).
+% OFSC
+formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r))))).
+%% Isolates
+% OISA
+formula(forall([t,sp,sx], implies(Isolates(t,sp,sx), and(Time(t), ObjectSet(sp), ObjectSet(sx))))). 
 
 %%% Specific Actions
 %% Safe manipulation
@@ -104,13 +114,7 @@ formula(forall([ta,tb,o], implies(or(PreserveCContents(ta,tb,o), PreserveUConten
 formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb))))).
 % ALSB
 formula(forall([t,r], implies(Reachable(t,r), and(Time(t), Region(r))))).
-%% Fits and small set
-% OFSA
-formula(forall([o], implies(SmallObject(o), Object(o)))).
-% OFSB
-formula(forall([s,r], implies(or(Fits(s,r), SmallSet(s,r)), and(ObjectSet(s), Region(r))))).
-% OFSC
-formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r))))).
+
 
 %%% Spatial Relations
 %% Basic Spatial Relations
@@ -143,6 +147,8 @@ formula(forall([t,o], implies(Stable(t,o), and(Time(t), Object(o))))).
 formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o))))).
 % MFSB
 formula(forall([ta,tb,o], implies(or(StableThroughout(ta,tb,o), Released(ta,tb,o), Motionless(ta,tb,o)), and(Time(ta), Time(tb), Object(o))))).
+% MFSC
+formula(forall([ta,tb,s], implies(or(CausallyIsolated(ta,tb,s), StaticCausallyIsolated(ta,tb,s)), and(Time(ta), Time(tb), ObjectSet(s))))).
 %% Grasping an object
 % MGSA
 formula(forall([t], implies(EmptyHanded(t), Time(t)))).
@@ -169,6 +175,9 @@ formula(forall([t1,t2,hc,ho], implies(or(PersistentCavity(t1,t2,hc,ho),NoExitCav
 formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(ta), Time(tb), Object(ob), History(hc))))).
 
 %%% Rigid objects
+%% Basic rigid objects
+% RRSA
+formula(forall([o], implies(RigidObject(o), Object(o)))).
 %% Box with lid
 % RBSA
 formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), Object(ol))))).
@@ -206,138 +215,158 @@ formula(Time(Tm)).
 formula(Object(Oa)).
 % Tx
 formula(Time(Tx)).
+% Agent
+formula(Object(Agent)).
+% Su
+formula(ObjectSet(Su)).
 
 %%%% Specifications
 
 % C5A1
-% formula(BoxWithLidC(Ta5,Ob5,Ol5,Rc5),C5A1).
+formula(BoxWithLidC(Ta5,Ob5,Ol5,Rc5),C5A1).
 % C5A2
-% formula(P(Place(Ta5,Os5),Rc5),C5A2).
+formula(P(Place(Ta5,Os5),Rc5),C5A2).
 % C5A3
-% formula(not(P(Place(Ta5,Agent),Rc5)),C5A3).
+formula(not(P(Place(Ta5,Agent),Rc5)),C5A3).
 % C5A4
-% formula(AllStable(Ta5),C5A4).
+formula(AllStable(Ta5),C5A4).
 % C5A5
-% formula(not(equal(Place(Ta5,Os5),Place(Tb5,Os5))),C5A5).
+formula(not(equal(Place(Ta5,Os5),Place(Tb5,Os5))),C5A5).
 % C5A6
 % formula(Motionless(Ta5,Tb5,Ob5),C5A6).
 
 % --------
 
-% HIA2
-formula(forall([t,o], implies(and(Time(t), Object(o)), equal(Place(t,o), Slice(t,HPlace(o))))),HIA2).
+% OSD4
+formula(forall([x,y,z], implies(and(Object(x), Object(y), Object(z)), equiv(Element(z,Pair(x,y)), or(equal(z,x), equal(z,y))))),OSD4).
 
-% Lem1A
-formula(forall([ob,ta,tb], implies(and(Object(ob), Lt(ta,tb)), AlwaysIntConn(ta,tb,HPlace(ob)))),Lem1A).
+% RBD1
+formula(forall([t,ob,ol,rc], equiv(BoxWithLidC(t,ob,ol,rc), and(BoxWithLid(t,ob,ol), CombinedContainer(Place(t,ob), Place(t,ol),rc)))),RBD1).
 
-% TIA2
-formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
+% RBA1
+formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(RigidObject(ob), RigidObject(ol), Stable(t,ol), not(equal(ob,Agent)), not(equal(ol,Agent)), exists([rc], CombinedContainer(Place(t,ob),Place(t,ol),rc))))),RBA1).
 
-% HIA1
-formula(forall([ta,tb,o], implies(and(Object(o), Lt(ta,tb)), Continuous(ta,tb,HPlace(o)))),HIA1).
+% RBA5
+formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), equal(Place(tb,ol), Place(ta,ol))), BoxWithLid(tb,ob,ol))),RBA5).
 
-% HID3
-formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h))))))),HID3).
+% Lem5K
+formula(forall([t,ob,ol,rc], implies(BoxWithLidC(t,ob,ol,rc), ClosedContainer(t,Pair(ob,ol),rc))),Lem5K).
 
-% SBD3
-formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v))))),SBD3).
+% OIA3
+formula(forall([t,sp,rc], implies(and(ClosedContainer(t,sp,rc), not(P(Place(t,Agent),rc)), not(Element(Agent,sp))), Isolates(t,sp,Contents(t,rc)))),OIA3).
 
-% OTD3
-formula(forall([t,o,r], implies(and(Time(t),Object(o)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r)))))),OTD3).
+% OSA1
+formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
 
-% OTA4
-formula(forall([o,r], implies(FeasiblePlace(o,r),IntConn(r))),OTA4).
+% OTD2
+formula(forall([o,r,t], implies(and(Object(o), Region(r), Time(t)), equiv(Element(o,Contents(t,r)), P(Place(t,o),r)))),OTD2).
 
-% SCD1
-formula(forall([u,v], equiv(Cavity(u,v), and(IntConn(u), DR(u,v), forall([r], implies(and(IntConn(r), O(r,u), DR(r,v)), P(r,u)))))),SCD1).
+% MRD1
+formula(forall([ta,tb,sx], equiv(CausallyIsolated(ta,tb,sx), exists([sp], implies(ObjectSet(sp), and(forall([o], implies(Element(o,sp), Motionless(ta,tb,o))), forall([t], implies(and(Leq(ta,t), Lt(t,tb)), Isolates(t,sp,sx)))))))),MRD1).
 
-% HCA3
-formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb)))))),HCA3).
+% MRD2
+formula(forall([ta,tb,s], equiv(StaticCausallyIsolated(ta,tb,s), and(CausallyIsolated(ta,tb,s), forall([ox], implies(Element(ox,s), Stable(ta,ox)))))),MRD2).
 
-% LemSD
-formula(forall([u,v], implies(P(u,v), not(DR(u,v)))),LemSD).
+% MSD1
+formula(forall([t], equiv(AllStable(t), forall([o], implies(Object(o), or(equal(o,Agent), Stable(t,o), Grasp(t,o)))))),MSD1).
 
-% 5.8
-formula(equal(Slice(Ta5,Hu),RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5))),5dot8).
+% OSD2
+formula(forall([x,y], implies(and(Object(x), Object(y)), equiv(Element(y,Singleton(x)), equal(y,x)))),OSD2).
 
-% 5.7
-formula(Constant(Ta5,Tb5,Hu),5dot7).
+% MRA2
+formula(forall([ta,tb,s,o], implies(and(StaticCausallyIsolated(ta,tb,s), Element(o,s)), and(Motionless(ta,tb,o), StableThroughout(ta,tb,o)))),MRA2).
 
-% 5.14
-formula(Cavity(Rc5,RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5))),5dot14).
+% MOD2
+formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
 
-% 5.17
-formula(NoEntranceCavity(Ta5,Tb5,Hc,Hu),5dot17).
 
-% 5.25
-formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)), Leq3(Ta5,t,Tb5)), not(O(Slice(t,HPlace(o)),Slice(Tm,Hu))))),5dot25).
+% 5.2
+formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
 
-% 5.10 (given from part a)
-formula(Constant(Ta5,Tb5,Hc),5dot10).
+% 5.4
+formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5)))),5dot4).
 
-% 5.11 (given from part a)
-formula(equal(Slice(Ta5,Hc),Rc5),5dot11).
+% 5.37
+formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
+
+% 5.53
+formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5))),5dot53).
+
+% 5.53a
+formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), not(P(Place(tx,o),Rc5)))),5dot53a).
+
+% 5.54
+formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
+
 
 % assume
-formula(Object(Oa),assume1). % (redundant)
-formula(and(not(equal(Ob5,Oa)), not(equal(Oa,Ol5))),assume2).
-formula(not(P(Place(Ta5,Oa),Rc5)),assume3).
-formula(Leq3(Ta5,Tx,Tb5),assume4).
-formula(not(DR(Place(Tx,Oa),Rc5)),assume5).
+formula(Leq3(Ta5,Tx,Tb5),assume1).
 
-% 5.48 test
-% formula(DR(Place(Tx,Oa),Slice(Tx,Hu)),5dot48).
+% 5.58 test
+formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5),5dot58).
 
-% 5.43 test
-formula(Continuous(Ta5,Tx,HPlace(Oa)),5dot43).
+% 5.59 test
+formula(ClosedContainer(Tx,Su,Rc5),5dot59).
 
-% 5.51 test
-% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hc)))),5dot51).
+% 5.60 test
+% formula(Isolates(Tx,Su,Contents(Tx,Rc5)),5dot60).
 
-% 5.50 test
-formula(P(Place(Tx,Oa),Rc5),5dot50).
+% 5.61 test
+% formula(equal(Contents(Tx,Rc5), Contents(Ta5,Rc5)),5dot61).
 
-% 5.53 test
-% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5))),5dot53).
+% 5.64 test
+% formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
+
+% 5.65 test
+formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
+
+% 5.66 test
+% formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot66).
+
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% 5.53a (proof given 5.53)
-% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), not(P(Place(tx,o),Rc5))))).
+% full inference (proof)
+% formula(not(Motionless(Ta5,Tb5,Ol5))).
 
+% 5.68 (proof)
+% formula(Motionless(Ta5,Tb5,Os5)).
 
-% 5.53 (NO proof with axioms supplied; may be tied to 5.51)
-% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5)))).
+% 5.67 (proof)
+% formula(Element(Os5,Contents(Ta5,Rc5))).
 
-% 5.51 (NO proof; typo on Hb?)
-formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hc))))).
+% 5.66 (NO proof)
+formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
-% 5.50 (proof given 5.48)
-% formula(P(Place(Tx,Oa),Rc5)).
+% 5.65 (NO proof)
+% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
-% 5.49 (proof)
-% formula(IntConn(Place(Tx,Oa))).
+% 5.64 (NO proof)
+% formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5))))).
 
-% 5.48 (NO proof)
-% formula(DR(Place(Tx,Oa),Slice(Tx,Hu))).
+% 5.62 (proof)
+% formula(Isolates(Tx,Su,Contents(Ta5,Rc5))).
 
-% 5.47 (proof)
-% formula(Cavity(Rc5,Slice(Tx,Hu))).
+% 5.61 (NO proof)
+% formula(equal(Contents(Tx,Rc5), Contents(Ta5,Rc5))).
 
-% 5.46 (proof)
-% formula(O(Place(Tx,Oa),Rc5)).
+% 5.60 (proof given 5.59)
+% formula(Isolates(Tx,Su,Contents(Tx,Rc5))).
 
-% 5.45 (proof)
-% formula(equal(Slice(Tx,Hc),Rc5)).
+% 5.59 (proof)
+% formula(ClosedContainer(Tx,Su,Rc5)).
 
-% 5.44 (proof)
-% formula(not(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc)))).
+% 5.58 (NO proof)
+% formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
 
-% 5.43 (proof)
-% formula(Continuous(Ta5,Tx,HPlace(Oa))).
+% 5.56 (proof)
+% formula(not(Element(Agent,Su))).
+
+% 5.55 (proof)
+% formula(forall([o], equiv(Element(o,Su), or(equal(o,Ob5), equal(o,Ol5))))).
 
 
 end_of_list.

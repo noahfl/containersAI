@@ -1,8 +1,8 @@
-begin_problem(Scenario5b).
+begin_problem(Scenario5c).
 
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 5b*}).
+name({*Qualitative Reasoning About Containers - Case 5c*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
 description({*16 July 2016*}).
