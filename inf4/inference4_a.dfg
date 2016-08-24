@@ -11,7 +11,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2)].
+functions[(Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Tm2,0), (Tb4,0)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (History,1)].
 
@@ -137,7 +137,9 @@ formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
 % formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
 
 formula(Time(Ta4)).
+formula(Time(Tb4)).
 formula(Time(Tm1)).
+formula(Time(Tm2)).
 formula(Object(Ob4)).
 formula(Object(Ox4)).
 formula(Region(Rc4)).
@@ -146,38 +148,39 @@ formula(Object(Agent)).
 %%%% Specifications
 
 % C4A1
-formula(UprightContainer(Ta4,Ob4,Rc4)).
+formula(UprightContainer(Ta4,Ob4,Rc4),C4A1).
 % C4A2
-formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4))).
+formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4)),C4A2).
 % C4A3
-formula(SmallSet(Union(UContents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4)).
+formula(SmallSet(Union(UContents(Ta4,Ob4), MovingGroup(Ta4,Ox4)), Rc4),C4A3).
 % C4A4
-formula(AllStable(Ta4)).
+formula(AllStable(Ta4),C4A4).
 % C4A5
-formula(EmptyHanded(Ta4)).
+formula(EmptyHanded(Ta4),C4A5).
 % C4A6
-formula(Graspable(Ta4,Ox4)).
+formula(Graspable(Ta4,Ox4),C4A6).
 % C4A7
-formula(Reachable(Ta4,Rc4)).
+formula(Reachable(Ta4,Rc4),C4A7).
 % C4A8
-formula(and(not(equal(Ox4,Agent)), not(equal(Agent,Ob4)), not(equal(Ox4,Ob4)))).
+formula(and(not(equal(Ox4,Agent)), not(equal(Agent,Ob4)), not(equal(Ox4,Ob4))),C4A8).
 % C4A9
-formula(FullyOutside(Place(Ta4,Agent), Place(Ta4,Ob4))).
+formula(FullyOutside(Place(Ta4,Agent), Place(Ta4,Ob4)),C4A9).
 % C4A10
-formula(SafelyMovable(Ta4,Ox4)).
+formula(SafelyMovable(Ta4,Ox4),C4A10).
 % C4A11
-formula(SmallObject(Ob4)).
+formula(SmallObject(Ob4),C4A11).
 % C4A12
-formula(not(BoxedIn(Ta4,Agent,Ox4))).
+formula(not(BoxedIn(Ta4,Agent,Ox4)),C4A12).
 % C4A13
-formula(NoPartialContents(Ta4,Ob4)).
+formula(NoPartialContents(Ta4,Ob4),C4A13).
 
 
 % Lemma 4A
-formula(forall([ta,tb,r,o], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), implies(not(equal(o, Agent)), equal(Place(tb,o), Place(ta,o))), AllStable(tb))),Lem4A).
+formula(forall([ta,tb,r,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Object(o), not(equal(o,Agent))), and(equal(Place(tb,o), Place(ta,o)), AllStable(tb)))),Lem4A).
+
 
 % Lemma 4G
-formula(forall([ta,tb,r,o,rd], and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), implies(Reachable(ta,rd), Reachable(tb,rd)))),Lem4G).
+formula(forall([ta,tb,r,rd,o], implies(and(Region(r), Occurs(ta,tb,TravelTo(r)), EmptyHanded(ta), AllStable(ta), Reachable(ta,rd)), Reachable(tb,rd))),Lem4G).
 
 % Lemma 4R
 formula(forall([o,t], implies(SmallObject(o), not(UContained(t,Agent,o)))),Lem4R).
@@ -237,37 +240,86 @@ formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action
 % formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
 
 % test 4.14
-formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
+% formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot14).
 
 % test 4.15
-formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
+% formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot15).
+
+% 4.16a test
+% formula(Feasible(Tm1,PutInUC(Ox4,Ob4)),4dot16a).
 
 % 4.3
 % formula(CanGrasp(Tm1,Ox4),4dot3).
 % 4.2
-% formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot4).
+formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot4).
 
+% 4.4 test
+% formula(forall([o], and(Object(o), implies(not(equal(o, Agent)), equal(Place(Tm1,o), Place(Ta4,o))))),4dot4).
+
+% 4.20 test
+% formula(Feasible(Tm1,TravelTo(Place(Ta4,Agent))),4dot20).
+
+% 4.18 test
+formula(Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4)),4dot18).
+
+% 4.24 test
+formula(Occurs(Tm1,Tb4,TravelTo(Place(Ta4,Agent))),4dot24).
+
+% 4.25 test
+formula(Occurs(Tm1,Tb4,Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))),4dot25).
+
+% 4.26 test
+formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Rc4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))),4dot26).
+
+% 4.27 test
+formula(Occurs(Ta4,Tb4,LoadUprightContainer(Ox4,Ob4)),4dot27).
 end_of_list.
-
 
 list_of_formulae(conjectures).
 
-% final
+% final (proof given 4.27)
 % formula(Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))).
 
-% 4.20
+% 4.27 (proof given 4.26)
+% formula(Occurs(Ta4,Tb4,LoadUprightContainer(Ox4,Ob4))).
+
+% 4.26 (NO proof; issue with TAD2?)
+% formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Rc4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))),4dot26).
+
+% 4.25 (NO proof; issue with TAD2?)
+% formula(Occurs(Tm1,Tb4,Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))).
+
+% 4.23 (proof)
+% formula(exists([tb4], Occurs(Tm2,tb4,TravelTo(Place(Ta4,Agent))))).
+
+% 4.22 (proof given 4.20 and 4.18)
+% formula(Feasible(Tm2,TravelTo(Place(Ta4,Agent)))).
+
+% 4.21 (proof)
+% formula(FullyOutside(Place(Ta4,Agent),Place(Tm1,Ob4))).
+
+% 4.20 (NO proof, issue with C4A4+C4A5?) 
 % formula(Feasible(Tm1,TravelTo(Place(Ta4,Agent)))).
+
+% 4.19 (proof)
+% formula(Feasible(Ta4,TravelTo(Place(Ta4,Agent)))).
+
+% 4.18
+% formula(Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4))).
+
+% 4.17 (proof)
+% formula(exists([tm2], Occurs(Tm1,tm2,PutInUC(Ox4,Ob4)))).
 
 % 4.16a
 % formula(Feasible(Tm1,PutInUC(Ox4,Ob4))).
 
-% 4.16
-formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
+% 4.16 (proof)
+% formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 
-% 4.15 (proves with 4.2 and 4.3 given)
+% 4.15 (NO proof, issue with C4A4+C4A5?)
 % formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
-% 4.14 (no proof, fix)
+% 4.14 (proof with 4.13 as axiom)
 % formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4))).
 
 % 4.13 (proof)
@@ -279,7 +331,7 @@ formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 % 4.11 (proof)
 % formula(SafelyMovable(Tm1,Ox4)).
 
-% 4.10 (proof)
+% 4.10 (NO proof, issue with C4A4+C4A5?)
 % formula(Reachable(Tm1,Rc4)).
 
 % 4.9 (proof)
@@ -288,7 +340,10 @@ formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 % 4.6 (proof)
 % formula(equal(Place(Tm1,Ob4), Place(Ta4,Ob4))).
 
-% 4.4 (proof)
+% 4.5 (NO proof, issue with C4A4+C4A5?)
+% formula(AllStable(Tm1)).
+
+% 4.4 (NO proof, issue with C4A4+C4A5?)
 % formula(forall([o], and(Object(o), implies(not(equal(o, Agent)), equal(Place(Tm1,o), Place(Ta4,o)))))).
 
 % 4.3

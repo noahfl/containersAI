@@ -110,7 +110,7 @@ formula(forall([t,o], implies(and(Time(t), Object(o)), equal(Place(t,o), Slice(t
 % OTA2 (redone)
 formula(forall([p,q,t], implies(and(Object(p), Object(q), Time(t)), implies(not(equal(p,q)), DR(Place(t,p),Place(t,q))))),OTA2).
 % SBD3
-formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v))))),SBD3).
+formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
 % SCD1
 formula(forall([u,v], equiv(Cavity(u,v), and(IntConn(u), DR(u,v), forall([r], implies(and(IntConn(r), O(r,u), DR(r,v)), P(r,u)))))),SCD1).
 % HID4

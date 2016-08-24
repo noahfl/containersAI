@@ -145,13 +145,13 @@ formula(Region(Rc4)).
 %%%% Specifications
 
 % C4A3
-formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4),C4A3).
+% formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4),C4A3).
 
 % OCD5
 formula(forall([t,ob,s], implies(and(Time(t), Object(ob), ObjectSet(s)), equiv(equal(s, UContents(t,ob)), forall([ox], equiv(Element(ox,s), UContained(t,ox,ob)))))),OCD5).
 
 % OSA1
-formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
+% formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
 
 
 % 4.13

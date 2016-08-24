@@ -240,7 +240,7 @@ formula(forall([ta,tb,o], implies(and(Object(o), Lt(ta,tb)), Continuous(ta,tb,HP
 formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h))))))),HID3).
 
 % SBD3
-formula(forall([u,v], equiv(DR(u,v), and(Region(u), Region(v), not(O(u,v))))),SBD3).
+formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
 
 % OTD3
 formula(forall([t,o,r], implies(and(Time(t),Object(o)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r)))))),OTD3).
@@ -291,6 +291,9 @@ formula(not(DR(Place(Tx,Oa),Rc5)),assume5).
 % 5.43 test
 formula(Continuous(Ta5,Tx,HPlace(Oa)),5dot43).
 
+% 5.44 test
+formula(not(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))),5dot44).
+
 % 5.51 test
 % formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hc)))),5dot51).
 
@@ -313,7 +316,7 @@ list_of_formulae(conjectures).
 % formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5)))).
 
 % 5.51 (NO proof; typo on Hb?)
-formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hc))))).
+% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
 
 % 5.50 (proof given 5.48)
 % formula(P(Place(Tx,Oa),Rc5)).
@@ -322,7 +325,7 @@ formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,
 % formula(IntConn(Place(Tx,Oa))).
 
 % 5.48 (NO proof)
-% formula(DR(Place(Tx,Oa),Slice(Tx,Hu))).
+formula(DR(Place(Tx,Oa),Slice(Tx,Hu))).
 
 % 5.47 (proof)
 % formula(Cavity(Rc5,Slice(Tx,Hu))).

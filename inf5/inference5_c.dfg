@@ -264,7 +264,7 @@ formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,
 formula(and(not(equal(Ob5,Oa)), not(equal(Ob5,Ol5)), not(equal(Oa,Ol5))),5dot30).
 
 % 5.34a test
-formula(NoExitCavity(Ta5,Tx,Hc,Hu)).
+formula(NoExitCavity(Ta5,Tx,Hc,Hu),5dot34a).
 
 % assume
 formula(Object(Oa),assume1). % (redundant)

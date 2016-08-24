@@ -303,10 +303,10 @@ formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
 formula(Leq3(Ta5,Tx,Tb5),assume1).
 
 % 5.58 test
-formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5),5dot58).
+% formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5),5dot58).
 
 % 5.59 test
-formula(ClosedContainer(Tx,Su,Rc5),5dot59).
+% formula(ClosedContainer(Tx,Su,Rc5),5dot59).
 
 % 5.60 test
 % formula(Isolates(Tx,Su,Contents(Tx,Rc5)),5dot60).
@@ -318,7 +318,7 @@ formula(ClosedContainer(Tx,Su,Rc5),5dot59).
 % formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
 
 % 5.65 test
-formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
+% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
 
 % 5.66 test
 % formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot66).
@@ -330,7 +330,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % full inference (proof)
-% formula(not(Motionless(Ta5,Tb5,Ol5))).
+formula(not(Motionless(Ta5,Tb5,Ol5))).
 
 % 5.68 (proof)
 % formula(Motionless(Ta5,Tb5,Os5)).
@@ -339,7 +339,7 @@ list_of_formulae(conjectures).
 % formula(Element(Os5,Contents(Ta5,Rc5))).
 
 % 5.66 (NO proof)
-formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+% formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
 % 5.65 (NO proof)
 % formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
