@@ -11,7 +11,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Rq,0), (Rx1,0)].
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Rq,0), (Rx1,0), (Ox,0), (Rc2,0), (Hc1,0), (Tc,0)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2)].
 
@@ -337,22 +337,36 @@ formula(Region(Rq)).
 formula(Region(Rc1)).
 % Rx1
 formula(Region(Rx1)).
+% Ox
+formula(Object(Ox)).
+% Tm1
+formula(Time(Tm1)).
+% Tm2
+formula(Time(Tm2)).
+% Rc2
+formula(Region(Rc2)).
+% Hc1
+formula(History(Hc1)).
+% Tc
+formula(Time(Tc)).
+% StandStill
+formula(Action(StandStill)).
 
 % assume 4.29
 formula(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)),assume).
 
 % test 4.30
-% formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Rq)))),4dot30).
+formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Rq)))),4dot30).
 
 % 4.30a test
-% formula(exists([ra,rq], and(FullyOutside(rq,Place(Ta4,Ob4)), Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(rq))))))).
+formula(exists([ra,rq], and(FullyOutside(rq,Place(Ta4,Ob4)), Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(rq))))))).
 
 
 % test 4.14 (4.41)
 % formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot41).
 
 % test 4.15 (4.42)
-formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
+% formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
 
 % 4.32 test
 % formula(Occurs(Ta4,Tm1,TravelTo(Ra4)),4dot32).
@@ -361,7 +375,7 @@ formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
 % formula(Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4)),4dot33).
 
 % 4.34 test
-formula(Occurs(Tm1,Tb,TravelTo(Rq)),4dot34).
+% formula(Occurs(Tm1,Tb,TravelTo(Rq)),4dot34).
 
 % 4.36 test
 % formula(UprightContainer(Tm1,Ob4,Rc1),4dot36).
@@ -372,17 +386,31 @@ formula(Occurs(Tm1,Tb,TravelTo(Rq)),4dot34).
 % 4.38 test
 % formula(SafeManipulate(Tm1,Tm2,Ox4,Rc1),4dot38).
 
+% 4.39 test
+% formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tm1,o), Place(Ta4,o)))),4dot39).
+
+
 % 4.46 test
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o)))),4dot46).
 
+% 4.47 test
+% formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), equal(Place(Tm1,o),Place(Tm2,o))))),4dot47).
+
 % 4.48
 % formula(Element(Ob4,MovingGroup(Tm1,Ox4)),4dot48).
+
+% 4.50A test
+% formula(OMuchSmaller(Ob4,Rc4),4.50A).
+
 
 % 4.51
 % formula(MuchSmaller(Place(Tm1,Ob4),Rc4),4dot51).
 
 % 4.54 test
 % formula(not(Element(Ob4,MovingGroup(Tm1,Ox4))),4dot54).
+
+% 4.55A test
+% formula(equal(Place(Tm2,Ob4),Place(Ta4,Ob4)),4dot55A).
 
 % 4.56 test 
 % formula(UprightContainer(Tm2,Ob4,Rc1),4dot56).
@@ -396,8 +424,15 @@ formula(Occurs(Tm1,Tb,TravelTo(Rq)),4dot34).
 % 4.55 test
 % formula(equal(Place(Tm2,Ob4),Place(Tm1,Ob4)),4dot55).
 
+% 4.56 test
+% formula(UprightContainer(Tm2,Ob4,Rc1),4dot56).
+
+
 % 4.57 test
-formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob4))),4dot57).
+% formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob4))),4dot57).
+
+% 4.59 test
+% formula(not(OpenContained(Place(Tm2,Agent),Place(Tm2,Ob4))),4dot59).
 
 % 4.61 test
 % formula(UContained(Ta4,Agent,Ob4),4dot61).
@@ -409,40 +444,127 @@ formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob
 % formula(not(UContained(Tm2,Agent,Ob4)),4dot60).
 
 % 4.62 test
-formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equal(Place(Tm2,o),Place(Ta4,o))))),4dot62).
+% formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equal(Place(Tm2,o),Place(Ta4,o))))),4dot62).
 
-% 4.64 (NO proof, even with all given)
+% 4.64 test
 % formula(forall([o], equiv(UContained(Tm2,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot64).
 
 % 4.65 test
 % formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), StableThroughout(Tm1,Tm2,o)))),4dot65).
 
 % 4.67
-formula(forall([o], implies(Object(o), Released(Tm2,Tb,o))),4dot67).
+% formula(forall([o], implies(Object(o), Released(Tm2,Tb,o))),4dot67).
 
 % 4.66
-formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o)))),4dot66).
+% formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o)))),4dot66).
 
 % 4.68 test
 % formula(forall([o], implies(Object(o), not(PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4))))),4dot68).
 
 % 4.69 test
-formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69).
+% formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69).
 
 % 4.70 test
-formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox))))),4dot70).
-end_of_list.
+% formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox))))),4dot70).
+
+% 4.71 test
+% formula(Motionless(Tm2,Tb,Ob4),4dot71).
+
+% 4.73 test
+% formula(exists([rc2], and(UprightContainerShape(Place(Tm2,Ob4),rc2), P(Place(Tm2,Ox),rc2))),4dot73).
+
+% 4.74 test
+% formula(UprightContainerShape(Place(Tm2,Ob4),Rc2),4dot74).
+
+% 4.75 test
+% formula(P(Place(Tm2,Ox),Rc2),4dot75).
+
+% 4.77
+% formula(Constant(Tm2,Tb,Hc1),4dot78).
+
+% 4.78
+% formula(equal(Slice(Tm2,Hc1),Rc2),4dot78).
 
 % assume
-formula(UContained(Tm2,Ox,Ob4),4dot72).
+% formula(UContained(Tm2,Ox,Ob4),4dot72).
+
+% 4.80 test
+% formula(UContained(Tb,Ox,Ob4),4dot80).
+
+% 4.79 test
+% formula(DynamicUContainer(Tm2,Tb,Ob4,Hc1),4dot79).
+
+% 4.81 test
+% formula(forall([o], implies(UContained(Tm2,o,Ob4), UContained(Tb,o,Ob4))),4dot81).
+
+% 4.82 test
+% formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
+
+% 4.83 test
+% formula(forall([o], equiv(UContained(Tb,o,Ob4), UContained(Tm2,o,Ob4))),4dot83).
+
+% 4.84 test
+% formula(exists([tc], and(Occurs(Tb,tc,StandStill), AllStable(tc))),4dot84).
+
+% 4.85
+% formula(Occurs(Tb,Tc,StandStill),4dot87).
+
+% 4.86
+% formula(AllStable(Tc),4dot86).
+
+% 4.87 test
+% formula(forall([o], equiv(UContained(Tc,o,Ob4), UContained(Tb,o,Ob4))),4dot87).
+
+% 4.88 test
+% formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
+
+% 4.89 test
+% formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
+
+
+end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% final
+% final (NO proof)
 % formula(forall([tb], implies(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)), exists([tc], and(Occurs(tb,tc,StandStill), AllStable(tc), equal(UContents(tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))))))).
 
+% 4.90 (NO proof)
+% formula(equal(UContents(Tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))).
 
+% 4.89 (proof)
+% formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
+
+% 4.88 (proof)
+% formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
+
+% 4.87 (NO proof)
+% formula(forall([o], equiv(UContained(Tc,o,Ob4), UContained(Tb,o,Ob4))),4dot87).
+
+% 4.84 (proof)
+% formula(exists([tc], and(Occurs(Tb,tc,StandStill), AllStable(tc))),4dot84).
+
+% 4.83 (proof)
+% formula(forall([o], equiv(UContained(Tb,o,Ob4), UContained(Tm2,o,Ob4))),4dot83).
+
+% 4.82 (NO proof)
+% formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
+
+% 4.81 (NO proof)
+% formula(forall([o], implies(UContained(Tm2,o,Ob4), UContained(Tb,o,Ob4)))).
+
+% 4.80 (NO proof; potential issue with HUA1)
+% formula(UContained(Tb,Ox,Ob4)).
+
+% 4.79 (proof)
+% formula(DynamicUContainer(Tm2,Tb,Ob4,Hc1)).
+
+% 4.76 (proof)
+% formula(exists([hc], and(Constant(Tm2,Tb,hc), equal(Slice(Tm2,hc),Rc2)))).
+
+% 4.73 (proof)
+% formula(exists([rc2], and(UprightContainerShape(Place(Tm2,Ob4),rc2), P(Place(Tm2,Ox),rc2))),4dot73).
 
 % 4.71 (proof)
 % formula(Motionless(Tm2,Tb,Ob4)).
@@ -485,7 +607,6 @@ list_of_formulae(conjectures).
 
 % 4.58 (proof)
 % formula(PartiallyContained(Place(Tm2,Agent),Place(Tm2,Ob4))).
-
 
 % 4.57 (technically proves, but only with 4.45 provided)
 % formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob4)))).
@@ -542,7 +663,7 @@ list_of_formulae(conjectures).
 % formula(exists([rc,rx], and(UprightContainer(Tm1,Ob4,rc), P(rx,rc), OV(Place(Tm2,Agent),rc), SafeManipulate(Tm1,Tm2,Ox4,rx)))).
 
 % 4.31 (NO proof)
-% formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
+formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Place(Ta4,Agent)))))).
 
 % 4.30
 % formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Rq))))).

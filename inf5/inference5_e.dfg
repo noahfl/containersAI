@@ -233,7 +233,7 @@ formula(AllStable(Ta5),C5A4).
 % C5A5
 formula(not(equal(Place(Ta5,Os5),Place(Tb5,Os5))),C5A5).
 % C5A6
-% formula(Motionless(Ta5,Tb5,Ob5),C5A6).
+formula(Motionless(Ta5,Tb5,Ob5),C5A6).
 
 % --------
 
@@ -287,20 +287,20 @@ formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol
 formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5)))),5dot4).
 
 % 5.37
-formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
+% formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
 
 % 5.53
-formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5))),5dot53).
+% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5))),5dot53).
 
 % 5.53a
-formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), not(P(Place(tx,o),Rc5)))),5dot53a).
+% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), not(P(Place(tx,o),Rc5)))),5dot53a).
 
 % 5.54
-formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
+% formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
 
 
-% assume
-formula(Leq3(Ta5,Tx,Tb5),assume1).
+% 5.57 (assume)
+formula(Leq3(Ta5,Tx,Tb5),5dot57).
 
 % 5.58 test
 % formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5),5dot58).
@@ -313,6 +313,9 @@ formula(Leq3(Ta5,Tx,Tb5),assume1).
 
 % 5.61 test
 % formula(equal(Contents(Tx,Rc5), Contents(Ta5,Rc5)),5dot61).
+
+% 5.62 test
+% formula(Isolates(Tx,Su,Contents(Ta5,Rc5)),5dot62).
 
 % 5.64 test
 % formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
@@ -330,7 +333,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % full inference (proof)
-formula(not(Motionless(Ta5,Tb5,Ol5))).
+% formula(not(Motionless(Ta5,Tb5,Ol5))).
 
 % 5.68 (proof)
 % formula(Motionless(Ta5,Tb5,Os5)).
@@ -360,7 +363,7 @@ formula(not(Motionless(Ta5,Tb5,Ol5))).
 % formula(ClosedContainer(Tx,Su,Rc5)).
 
 % 5.58 (NO proof)
-% formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
+formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
 
 % 5.56 (proof)
 % formula(not(Element(Agent,Su))).

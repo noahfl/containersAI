@@ -207,27 +207,6 @@ formula(Time(Tx)).
 
 %%%% Specifications
 
-% C5A1
-formula(BoxWithLidC(Ta5,Ob5,Ol5,Rc5),C5A1).
-% C5A2
-formula(P(Place(Ta5,Os5),Rc5),C5A2).
-% C5A3
-formula(not(P(Place(Ta5,Agent),Rc5)),C5A3).
-% C5A4
-formula(AllStable(Ta5),C5A4).
-% C5A5
-formula(not(equal(Place(Ta5,Os5),Place(Tb5,Os5))),C5A5).
-% C5A6
-formula(Motionless(Ta5,Tb5,Ob5),C5A6).
-
-% --------
-
-% HIA2
-formula(forall([t,o], implies(and(Time(t), Object(o)), equal(Place(t,o), Slice(t,HPlace(o))))),HIA2).
-
-% Lem5L
-formula(forall([t,ob,ol,rc,oa], implies(and(BoxWithLidC(t,ob,ol,rc), Object(oa), P(Place(t,oa),rc)), and(not(equal(ob,oa)), not(equal(ob,ol)), not(equal(oa,ol))))),Lem5L).
-
 % HCA2
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoExitCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), P(Slice(t1,hs),Slice(t1,hc)), not(P(Slice(t2,hs),Slice(t2,hc)))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb)))))),HCA2).
 
@@ -237,34 +216,25 @@ formula(forall([ob,ta,tb], implies(and(Object(ob), Lt(ta,tb)), AlwaysIntConn(ta,
 % TIA2
 formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
-% HIA1
-formula(forall([ta,tb,o], implies(and(Object(o), Lt(ta,tb)), Continuous(ta,tb,HPlace(o)))),HIA1).
-
-% HID3
-formula(forall([t1,t2,h], equiv(Constant(t1,t2,h), and(History(h), Lt(t1,t2), forall([t], implies(Leq3(t1,t,t2), equal(Slice(t,h),Slice(t1,h))))))),HID3).
-
-% HCA6
-formula(forall([t1,t2,hc,hb,tm], implies(and(NoExitCavity(t1,t2,hc,hb), Lt(t1,tm), Lt(tm,t2)), and(NoExitCavity(t1,tm,hc,hb), NoExitCavity(tm,t2,hc,hb)))),HCA6).
-
-% 5.16 (given from part a)
-% formula(NoExitCavity(Ta5,Tb5,Hc,Hu),5dot16).
-
 % 5.25
-% formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)), Leq3(Ta5,t,Tb5)), not(O(Slice(t,HPlace(o)),Slice(Tm,Hu))))),5dot25).
-
-% 5.10 (given from part a)
-% formula(Constant(Ta5,Tb5,Hc),5dot10).
-
-% 5.11 (given from part a)
-% formula(equal(Slice(Ta5,Hc),Rc5),5dot11).
+formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)), Leq3(Ta5,t,Tb5)), not(O(Slice(t,HPlace(o)),Slice(Tm,Hu))))),5dot25).
 
 % 5.35 test
-% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu)))),5dot35).
+formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu)))),5dot35).
 % 5.30 (proof)
-% formula(and(not(equal(Ob5,Oa)), not(equal(Ob5,Ol5)), not(equal(Oa,Ol5))),5dot30).
+formula(and(not(equal(Ob5,Oa)), not(equal(Ob5,Ol5)), not(equal(Oa,Ol5))),5dot30).
+
+% 5.34 (proof) 
+formula(not(P(Slice(Tx,HPlace(Oa)),Slice(Tx,Hc))),5dot34).
 
 % 5.34a test
-% formula(NoExitCavity(Ta5,Tx,Hc,Hu),5dot34a).
+formula(NoExitCavity(Ta5,Tx,Hc,Hu),5dot34a).
+
+% 5.32 test 
+formula(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc)),5dot32).
+
+% 5.31 test
+formula(Continuous(Ta5,Tx,HPlace(Oa)),5dot31).
 
 % assume
 formula(Object(Oa),assume1). % (redundant)
@@ -279,28 +249,10 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-% formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
+formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
 
 % 5.35 (proof) 
-formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
-
-% 5.34a (proof)
-% formula(NoExitCavity(Ta5,Tx,Hc,Hu)).
-
-% 5.34 (proof) 
-% formula(not(P(Slice(Tx,HPlace(Oa)),Slice(Tx,Hc)))).
-
-% 5.33 (proof) 
-% formula(equal(Slice(Tx,Hc),Rc5)).
-
-% 5.32 (proof) 
-% formula(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))).
-
-% 5.31 (proof) 
-% formula(Continuous(Ta5,Tx,HPlace(Oa))).
-
-% 5.30 (proof)
-% formula(and(not(equal(Ob5,Oa)), not(equal(Ob5,Ol5)), not(equal(Oa,Ol5)))).
+% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
 
 end_of_list.
 
