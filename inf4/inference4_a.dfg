@@ -143,6 +143,7 @@ formula(Time(Tm2)).
 formula(Object(Ob4)).
 formula(Object(Ox4)).
 formula(Region(Rc4)).
+formula(Region(Ra1)).
 formula(Object(Agent)).
 
 
@@ -229,14 +230,10 @@ formula(forall([ta,a], equiv(Feasible(ta,a), exists([tb], implies(Time(tb), Occu
 % TAD2
 formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action(a2)), equiv(Occurs(ta,tb,Sequence(a1,a2)), exists([tx], and(Occurs(ta,tx,a1), Occurs(tx,tb,a2)))))),TAD2).
 
-
-
 % formula(exists([tm1,ra], and(Occurs(Ta4,tm1,TravelTo(ra)), CanGrasp(tm1,Ox4)))).
 
-% formula(and(Time(Tm1), Region(Ra1))).
-
 % 4.13
-% formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
+formula(forall([o], equiv(UContained(Tm1,o,Ob4), UContained(Ta4,o,Ob4))),4dot13).
 
 % test 4.14
 % formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot14).
@@ -257,7 +254,7 @@ formula(forall([ta,tb,a1,a2], implies(and(Time(ta), Time(tb), Action(a1), Action
 % formula(SafelyMovable(Tm1,Ox4),4dot11).
 
 % 4.3
-% formula(CanGrasp(Tm1,Ox4),4dot3).
+formula(CanGrasp(Tm1,Ox4),4dot3).
 % 4.2
 formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot2).
 
@@ -270,13 +267,13 @@ formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot2).
 % 4.16 test
 % formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4),4dot16).
 % 4.20 test
-% formula(Feasible(Tm1,TravelTo(Place(Ta4,Agent))),4dot20).
+formula(Feasible(Tm1,TravelTo(Place(Ta4,Agent))),4dot20).
 
 % 4.18 test
-% formula(Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4)),4dot18).
+formula(Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4)),4dot18).
 
 % 4.24 test
-% formula(Occurs(Tm1,Tb4,TravelTo(Place(Ta4,Agent))),4dot24).
+% formula(Occurs(Tm2,Tb4,TravelTo(Place(Ta4,Agent))),4dot24).
 
 % 4.25 test
 % formula(Occurs(Tm1,Tb4,Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent)))),4dot25).
@@ -286,32 +283,34 @@ formula(Occurs(Ta4,Tm1,TravelTo(Ra1)),4dot2).
 
 % 4.27 test
 % formula(Occurs(Ta4,Tb4,LoadUprightContainer(Ox4,Ob4)),4dot27).
+
+
 end_of_list.
 
 list_of_formulae(conjectures).
 
-% final (proof given 4.27)
-% formula(Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))).
+% final (proof with naming axioms and axioms needed for 4.22 and 4.14)
+formula(Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))).
 
-% 4.27 (proof given 4.26)
+% 4.27 (proof)
 % formula(Occurs(Ta4,Tb4,LoadUprightContainer(Ox4,Ob4))).
 
-% 4.26 (NO proof; issue with TAD2?)
-formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Rc4),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))),4dot26).
+% 4.26 (proof)
+% formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Ra1),Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))),4dot26).
 
-% 4.25 (NO proof; issue with TAD2?)
+% 4.25 (proof)
 % formula(Occurs(Tm1,Tb4,Sequence(PutInUC(Ox4,Ob4),TravelTo(Place(Ta4,Agent))))).
 
 % 4.23 (proof)
 % formula(exists([tb4], Occurs(Tm2,tb4,TravelTo(Place(Ta4,Agent))))).
 
-% 4.22 (proof given 4.20 and 4.18)
+% 4.22 (proof given 4.20 and 4.18 as axioms)
 % formula(Feasible(Tm2,TravelTo(Place(Ta4,Agent)))).
 
 % 4.21 (proof)
-% formula(FullyOutside(Place(Ta4,Agent),Place(Tm1,Ob4))).
+% formula(fullyoutside(place(ta4,agent),place(tm1,ob4))).
 
-% 4.20 (NO proof, issue with C4A4+C4A5?) 
+% 4.20 (proof)
 % formula(Feasible(Tm1,TravelTo(Place(Ta4,Agent)))).
 
 % 4.19 (proof)
@@ -323,13 +322,13 @@ formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Rc4),Sequence(PutInUC(Ox4,Ob4),TravelTo
 % 4.17 (proof)
 % formula(exists([tm2], Occurs(Tm1,tm2,PutInUC(Ox4,Ob4)))).
 
-% 4.16a (NO proof, even with everything as axioms)
+% 4.16a (proof)
 % formula(Feasible(Tm1,PutInUC(Ox4,Ob4))).
 
 % 4.16 (proof)
 % formula(SmallSet(Union(UContents(Tm1,Ob4),MovingGroup(Ta4,Ox4)),Rc4)).
 
-% 4.15 (NO proof, issue with C4A4+C4A5?)
+% 4.15 (proof)
 % formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4))).
 
 % 4.14 (proof with 4.13 as axiom)
@@ -344,7 +343,7 @@ formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Rc4),Sequence(PutInUC(Ox4,Ob4),TravelTo
 % 4.11 (proof)
 % formula(SafelyMovable(Tm1,Ox4)).
 
-% 4.10 (NO proof, issue with C4A4+C4A5?)
+% 4.10 (proof)
 % formula(Reachable(Tm1,Rc4)).
 
 % 4.9 (proof)
@@ -353,12 +352,11 @@ formula(Occurs(Ta4,Tb4,Sequence(TravelTo(Rc4),Sequence(PutInUC(Ox4,Ob4),TravelTo
 % 4.6 (proof)
 % formula(equal(Place(Tm1,Ob4), Place(Ta4,Ob4))).
 
-% 4.5 (NO proof, issue with C4A4+C4A5?)
+% 4.5 (proof)
 % formula(AllStable(Tm1)).
 
-% 4.4 (NO proof, issue with C4A4+C4A5?)
-formula(forall([o], and(Object(o), implies(not(equal(o, Agent)), equal(Place(Tm1,o), Place(Ta4,o)))))).
-
+% 4.4 (proof)
+% formula(forall([o], implies(and(Object(o), not(equal(o, Agent))), equal(Place(Tm1,o), Place(Ta4,o)))),4dot4).
 
 % 4.1 (proof)
 % formula(exists([tm1,ra], and(Occurs(Ta4,tm1,TravelTo(ra)), CanGrasp(tm1,Ox4)))).
