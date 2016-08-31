@@ -267,7 +267,7 @@ formula(Constant(Ta5,Tb5,Hu),5dot7).
 formula(Cavity(Rc5,RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5))),5dot14).
 
 % 5.17
-formula(NoEntranceCavity(Ta5,Tb5,Hc,Hu),5dot17).
+% formula(NoEntranceCavity(Ta5,Tb5,Hc,Hu),5dot17).
 
 % 5.25
 formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)), Leq3(Ta5,t,Tb5)), not(O(Slice(t,HPlace(o)),Slice(t,Hu))))),5dot25).
@@ -279,11 +279,11 @@ formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)
 % formula(equal(Slice(Ta5,Hc),Rc5),5dot11).
 
 % assume
-formula(Object(Oa),assume1). % (redundant)
-formula(and(not(equal(Ob5,Oa)), not(equal(Oa,Ol5))),assume2).
-formula(not(P(Place(Ta5,Oa),Rc5)),assume3).
-formula(Leq3(Ta5,Tx,Tb5),assume4).
-formula(not(DR(Place(Tx,Oa),Rc5)),assume5).
+formula(Object(Oa),5dot38). % (redundant)
+formula(and(not(equal(Ob5,Oa)), not(equal(Oa,Ol5))),5dot39).
+formula(not(P(Place(Ta5,Oa),Rc5)),5dot40).
+formula(and(Lt(Ta5,Tx),Leq(Tx,Tb5)),5dot41).
+formula(not(DR(Place(Tx,Oa),Rc5)),5d0t42).
 
 % 5.48 test
 % formula(DR(Place(Tx,Oa),Slice(Tx,Hu)),5dot48).
@@ -313,7 +313,7 @@ list_of_formulae(conjectures).
 
 
 % 5.53 (NO proof with axioms supplied; may be tied to 5.51)
-formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5)))).
+formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Lt(Ta5,tx), Leq(tx,Tb5)), DR(Place(tx,o),Rc5)))).
 
 % 5.51 (NO proof with axioms supplied)
 % formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
