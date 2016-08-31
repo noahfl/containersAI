@@ -60,123 +60,128 @@ formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(PutInUC(ox,o
 % LoadUprightContainer
 formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(LoadUprightContainer(ox,ob)))),LoadUprightContainer).
 
-
 %%% Time
+%% Time ordering
+% TOSA
+formula(forall([x,y,z], implies(Leq3(x,y,z), and(Time(x), Time(y), Time(z)))),TOSA).
+% TOSB
+formula(forall([x,y], implies(or(Lt(x,y), Leq(x,y)), and(Time(x), Time(y)))),TOSB).
 %% Actions
 % TASA
-formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Action(a))))).
+formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Action(a)))),TASA).
 % TASB
-formula(forall([t,a], implies(Feasible(t,a), and(Time(t), Action(a))))).
+formula(forall([t,a], implies(Feasible(t,a), and(Time(t), Action(a)))),TASB).
 
 %%% Objects
 %% Object sets
 % OSSA
-formula(forall([x,s], implies(Element(x,s), and(Object(x), ObjectSet(s))))).
+formula(forall([x,s], implies(Element(x,s), and(Object(x), ObjectSet(s)))),OSSA).
 %% Objects and object sets: spatio-temporal
 % OOSA
-formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r)))),OOSA).
 % OOSB
-formula(forall([o,r], implies(FeasiblePlace(o,r), and(Object(o), Region(r))))).
+formula(forall([o,r], implies(FeasiblePlace(o,r), and(Object(o), Region(r)))),OOSB).
 %% Objects containing regions
 % ORSA
-formula(forall([t,o,r], implies(UprightContainer(t,o,r), and(Time(t), Object(o), Region(r))))).
+formula(forall([t,o,r], implies(UprightContainer(t,o,r), and(Time(t), Object(o), Region(r)))),ORSA).
 %% Object containment
 % OCSA
-formula(forall([t,ox,ob], implies(or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)), and(Time(t), Object(ox), Object(ob))))).
+formula(forall([t,ox,ob], implies(or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)), and(Time(t), Object(ox), Object(ob)))),OCSA).
 
 %%% Specific Actions
 %% Safe manipulation
 % ASSA
-formula(forall([t,o], implies(SafelyMovable(t,o), and(Time(t), Object(o))))).
+formula(forall([t,o], implies(SafelyMovable(t,o), and(Time(t), Object(o)))),ASSA).
 % ASSB
-formula(forall([t,ox,ob], implies(BoxedIn(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+formula(forall([t,ox,ob], implies(BoxedIn(t,ox,ob), and(Time(t), Object(ox), Object(ob)))),ASSB).
 % ASSC
-formula(forall([ta,tb,o,r], implies(SafeManipulate(ta,tb,o,r), and(Time(ta), Time(tb), Object(o), Region(r))))).
+formula(forall([ta,tb,o,r], implies(SafeManipulate(ta,tb,o,r), and(Time(ta), Time(tb), Object(o), Region(r)))),ASSC).
 % ASSD
-formula(forall([ta,tb,o], implies(or(PreserveCContents(ta,tb,o), PreserveUContents(ta,tb,o), PreserveBoxWithLid(ta,tb,o)), and(Time(ta), Time(tb), Object(o))))).
+formula(forall([ta,tb,o], implies(or(PreserveCContents(ta,tb,o), PreserveUContents(ta,tb,o), PreserveBoxWithLid(ta,tb,o)), and(Time(ta), Time(tb), Object(o)))),ASSD).
 %% Loading an upright container
 % ALSA
-formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb))))).
+formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb)))),ALSA).
 % ALSB
-formula(forall([t,r], implies(Reachable(t,r), and(Time(t), Region(r))))).
+formula(forall([t,r], implies(Reachable(t,r), and(Time(t), Region(r)))),ALSB).
 %% Fits and small set
 % OFSA
-formula(forall([o], implies(SmallObject(o), Object(o)))).
+formula(forall([o], implies(SmallObject(o), Object(o))),OFSA).
 % OFSB
-formula(forall([s,r], implies(or(Fits(s,r), SmallSet(s,r)), and(ObjectSet(s), Region(r))))).
+formula(forall([s,r], implies(or(Fits(s,r), SmallSet(s,r)), and(ObjectSet(s), Region(r)))),OFSB).
 % OFSC
-formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r))))).
+formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r)))),OFSC).
 
 %%% Spatial Relations
 %% Basic Spatial Relations
 % SRSA
-formula(forall([u,v], implies(or(P(u,v),O(u,v), OV(u,v)), and(Region(u), Region(v))))).
+formula(forall([u,v], implies(or(P(u,v),O(u,v), OV(u,v)), and(Region(u), Region(v)))),SRSA).
 %% Spatial containment
 % SCSA/B
-formula(forall([ra,rb], implies(or(OpenContained(ra,rb), FullyOutside(ra,rb), OpenContainerShape(ra,rb), UprightContainerShape(ra,rb)), and(Region(ra), Region(rb))))).
+formula(forall([ra,rb], implies(or(OpenContained(ra,rb), FullyOutside(ra,rb), OpenContainerShape(ra,rb), UprightContainerShape(ra,rb)), and(Region(ra), Region(rb)))),SCSA).
 % SCSC
-formula(forall([ra,rb], implies(or(Cavity(ra,rb), PartiallyContained(ra,rb)), and(Region(ra), Region(rb))))).
+formula(forall([ra,rb], implies(or(Cavity(ra,rb), PartiallyContained(ra,rb)), and(Region(ra), Region(rb)))),SCSC).
 %% Much smaller
 % SMSA
-formula(forall([ra,rb], implies(MuchSmaller(ra,rb), and(Region(ra), Region(rb))))).
+formula(forall([ra,rb], implies(MuchSmaller(ra,rb), and(Region(ra), Region(rb)))),SMSA).
 
 %%% Motion and Manipulation
 %% Motion
 % MMSA
-formula(forall([ta,tb,o], implies(Moves(ta,tb,o), and(Time(ta), Time(tb), Object(o))))).
+formula(forall([ta,tb,o], implies(Moves(ta,tb,o), and(Time(ta), Time(tb), Object(o)))),MMSA).
 %% Stability and falling
 % MSSA
-formula(forall([t], implies(AllStable(t), Time(t)))).
+formula(forall([t], implies(AllStable(t), Time(t))),MMSA).
 % MSSB
-formula(forall([t,o], implies(Stable(t,o), and(Time(t), Object(o))))).
+formula(forall([t,o], implies(Stable(t,o), and(Time(t), Object(o)))),MMSB).
 %% Frame axioms
 % MFSA
-formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o))))).
+formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o)))),MFSA).
 % MFSB
-formula(forall([ta,tb,o], implies(or(StableThroughout(ta,tb,o), Released(ta,tb,o), Motionless(ta,tb,o)), and(Time(ta), Time(tb), Object(o))))).
+formula(forall([ta,tb,o], implies(or(StableThroughout(ta,tb,o), Released(ta,tb,o), Motionless(ta,tb,o)), and(Time(ta), Time(tb), Object(o)))),MFSB).
 %% Grasping an object
 % MGSA
-formula(forall([t], implies(EmptyHanded(t), Time(t)))).
+formula(forall([t], implies(EmptyHanded(t), Time(t))),MGSA).
 % MGSB
-formula(forall([t,o], implies(CanGrasp(t,o), and(Time(t), Object(o))))).
+formula(forall([t,o], implies(CanGrasp(t,o), and(Time(t), Object(o)))),MGSB).
 % MGSC
-formula(forall([t,o], implies(Grasp(t,o), and(Time(t), Object(o))))).
+formula(forall([t,o], implies(Grasp(t,o), and(Time(t), Object(o)))),MGSC).
 % MGSD
-formula(forall([ta,tb,o], implies(Grasps(ta,tb,o), and(Time(ta), Time(tb), Object(o))))).
+formula(forall([ta,tb,o], implies(Grasps(ta,tb,o), and(Time(ta), Time(tb), Object(o)))),MGSD).
 %% Feasibility of Traveling
 % MFSA
-formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
+formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o)))),MFSA).
 
 %%% Histories
 %% Basic properties of histories
 % HBSA
-formula(forall([t1,t2,h], implies(Constant(t1,t2,h), and(Time(t1), Time(t2), History(h))))).
+formula(forall([t1,t2,h], implies(Constant(t1,t2,h), and(Time(t1), Time(t2), History(h)))),HBSA).
 %% Dynamic upright containers
 % HDSA
-formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(ta), Time(tb), Object(ob), History(hc))))).
+formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(ta), Time(tb), Object(ob), History(hc)))),HDSA).
 
 % Temporal Axioms
 % TID3
-% formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
 % TID1
-% formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))),TID1).
 % TIA2
-% formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
+
 
 % Ta4
-formula(Time(Ta4)).
+formula(Time(Ta4),Ta4).
 % Tb
-formula(Time(Tb)).
+formula(Time(Tb),Tb).
 % Ox4
-formula(Object(Ox4)).
+formula(Object(Ox4),Ox4).
 % Ob4
-formula(Object(Ob4)).
+formula(Object(Ob4),Ob4).
 % Ra4
-formula(Region(Ra4)).
+formula(Region(Ra4),Ra4).
 % Agent
-formula(Object(Agent)).
+formula(Object(Agent),Agent).
 % Rq
-formula(Region(Rq)).
+formula(Region(Rq),Rq).
 
 %%%% Specifications
 
