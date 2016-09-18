@@ -11,9 +11,9 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Rq,0), (Rx1,0), (Ox,0), (Rc2,0), (Hc1,0), (Tc,0), (Ta,0), (Tb,0), (Oa,0), (Ox,0)].
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Rq,0), (Rx1,0), (Ox,0), (Rc2,0), (Hc1,0), (Tc,0), (Ta,0), (Tb,0), (Oa,0), (Ox,0), (R,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (SafelyMovesWith,3), (BoxWithLid,3)].
 
 end_of_list.
 
@@ -93,7 +93,7 @@ formula(forall([t,ox,ob], implies(or(CContained(t,ox,ob), UContained(t,ox,ob), B
 % ASSA
 formula(forall([t,o], implies(SafelyMovable(t,o), and(Time(t), Object(o)))),ASSA).
 % ASSB
-formula(forall([t,ox,ob], implies(BoxedIn(t,ox,ob), and(Time(t), Object(ox), Object(ob)))),ASSB).
+formula(forall([t,ox,ob], implies(or(SafelyMovesWith(t,ox,ob), BoxedIn(t,ox,ob)), and(Time(t), Object(ox), Object(ob)))),ASSB).
 % ASSC
 formula(forall([ta,tb,o,r], implies(SafeManipulate(ta,tb,o,r), and(Time(ta), Time(tb), Object(o), Region(r)))),ASSC).
 % ASSD
@@ -159,6 +159,11 @@ formula(forall([t1,t2,h], implies(Constant(t1,t2,h), and(Time(t1), Time(t2), His
 % HDSA
 formula(forall([ta,tb,ob,hc], implies(DynamicUContainer(ta,tb,ob,hc), and(Time(ta), Time(tb), Object(ob), History(hc)))),HDSA).
 
+%%% Rigid Objects
+%% Box with lid
+% RBSA
+% formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(Time(t), Object(ob), Oject(ol)))),RBSA).
+
 % Temporal Axioms
 % TID3
 formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z)))),TID3).
@@ -173,11 +178,12 @@ formula(Time(Ta),Ta).
 formula(Time(Tb),Tb).
 formula(Object(Oa),Oa).
 formula(Object(Ox),Ox).
+formula(Region(R),R).
 
 
 % assume
 formula(AllStable(Ta),assume1).
-formula(SafeManipulate(Ta,Tb,Oa),assume2).
+formula(SafeManipulate(Ta,Tb,Oa,R),assume2).
 formula(Object(Ox),assume3). % redundant
 
 % ASD5
@@ -187,7 +193,7 @@ formula(forall([t,ox,ob], equiv(SafelyMovesWith(t,ox,ob), or(equal(ox,ob), Boxed
 formula(forall([t,o,ox], implies(and(Time(t), Object(o), Object(ox)), equiv(Element(ox,MovingGroup(t,o)), SafelyMovesWith(t,ox,o)))),ASD6).
 
 % ASA1
-formula(forall([ta,tb,o,r], implies(SafeManipulate(ta,tb,o,r), and(Grasps(ta,tb,o), forall([ox,tm], implies(and(Object(ox), Time(tm)), and(not(equal(ox,o)), implies(Leq3(ta,tm,tb), not(Grasp(ta,ox))), OSPlace(tb,MovingGroup(ta,o),r), PreserveContents(ta,tb,o), PreserveUContents(ta,tb,o), PreserveBoxWithLid(ta,tb,o))))))),ASA1).
+formula(forall([ta,tb,o,r], implies(SafeManipulate(ta,tb,o,r), and(Grasps(ta,tb,o), forall([ox,tm], implies(and(Object(ox), Time(tm)), and(not(equal(ox,o)), implies(Leq3(ta,tm,tb), not(Grasp(ta,ox))), OSPlace(tb,MovingGroup(ta,o),r), PreserveCContents(ta,tb,o), PreserveUContents(ta,tb,o), PreserveBoxWithLid(ta,tb,o))))))),ASA1).
 
 % MSD1
 formula(forall([t], equiv(AllStable(t), forall([o], implies(Object(o), or(equal(o,Agent), Stable(t,o), Grasp(t,o)))))),MSD1).
@@ -197,7 +203,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % final
-formula(forall([ta,tb,o,ox], implies(and(AllStable(ta), SafeManipulate(ta,tb,o), Object(ox)), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), Stable(ta,ox)))),Lem4C).
+formula(forall([ta,tb,o,ox,r], implies(and(AllStable(ta), SafeManipulate(ta,tb,o,r), Object(ox)), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), Stable(ta,ox)))),Lem4C).
 
 end_of_list.
 
