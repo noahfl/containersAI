@@ -231,21 +231,21 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
-% ASA2 (Stable takes 2 args, only one shown in axiom in paper? i just used ta for now and i'll see if i can tweak it to make it work properly)
-formula(forall([ta,tb,o,r], implies(and(SafeManipulate(ta,tb,o,r), forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), Stable(ta,ox))))), forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), and(Motionless(ta,tb,ox), StableThroughout(ta,tb,ox))))))),ASA2).
+% OTD1
+formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra)))))),OTD1).
 
 % 4.38 test
 formula(SafeManipulate(Tm1,Tm2,Ox4,Rc1),4dot38).
 
-% 4.45A
-formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
+% 4.40
+formula(AllStable(Tm1),4dot40).
 
 end_of_list.
 
 list_of_formulae(conjectures).
 
-% 4.46 (NO proof, likely issue with ASA2)
-formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o))))).
+% 4.45A
+formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
 end_of_list.
 

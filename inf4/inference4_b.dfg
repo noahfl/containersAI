@@ -389,6 +389,8 @@ formula(UprightContainer(Tm1,Ob4,Rc1),4dot36).
 % 4.39 test
 % formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tm1,o), Place(Ta4,o)))),4dot39).
 
+% 4.45A test
+formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
 % 4.46 test
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o)))),4dot46).
@@ -600,7 +602,7 @@ list_of_formulae(conjectures).
 % formula(UContained(Ta4,Agent,Ob4)).
 
 % 4.60 (NO proof, maybe issue with OCD3?)
-formula(not(UContained(Tm2,Agent,Ob4))).
+% formula(not(UContained(Tm2,Agent,Ob4))).
 
 % 4.59 (proof)
 % formula(not(OpenContained(Place(Tm2,Agent),Place(Tm2,Ob4)))).
@@ -642,7 +644,10 @@ formula(not(UContained(Tm2,Agent,Ob4))).
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), equal(Place(Tm1,o),Place(Tm2,o)))))).
 
 % 4.46 (NO proof, likely issue with ASA2)
-% formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o))))).
+formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o))))).
+
+% 4.45A (NO proof)
+% formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
 % 4.45 (proof)
 % formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), P(Place(Tm2,o),Rc1)))).
@@ -660,7 +665,7 @@ formula(not(UContained(Tm2,Agent,Ob4))).
 % formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tm1,o), Place(Ta4,o))))).
 
 % 4.35 (proof)
-formula(exists([rc,rx], and(UprightContainer(Tm1,Ob4,rc), P(rx,rc), SafeManipulate(Tm1,Tm2,Ox4,rx)))).
+% formula(exists([rc,rx], and(UprightContainer(Tm1,Ob4,rc), P(rx,rc), SafeManipulate(Tm1,Tm2,Ox4,rx)))).
 
 % 4.31 (proof in a separate file)
 % formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Rq))))).
