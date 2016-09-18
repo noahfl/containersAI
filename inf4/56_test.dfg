@@ -237,8 +237,8 @@ formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o),
 % 4.36
 formula(UprightContainer(Tm1,Ob4,Rc1),4dot36).
 
-% 4.55A (proof)
-formula(equal(Place(Tm2,Ob4),Place(Ta4,Ob4)),4dot55A).
+% 4.55 (proof)
+formula(equal(Place(Tm2,Ob4), Place(Tm1,Ob4)),4dot55).
 
 end_of_list.
 

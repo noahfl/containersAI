@@ -272,7 +272,7 @@ formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), Lt(ta,tb)))).
 formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra)))))),OTD1).
 
 % OTD3
-formula(forall([t,o,r], implies(and(Time(t),Object(o), Region(r)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r)))))),OTD3).
+formula(forall([t,o,r], implies(and(Time(t),Object(o), Region(r)), equiv(FeasiblePlace(o,r), exists([tr], and(Time(tr), equal(Place(tr,o),r)))))),OTD3).
 
 % MOD2
 formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
@@ -378,7 +378,7 @@ formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(
 % formula(Occurs(Tm1,Tb,TravelTo(Rq)),4dot34).
 
 % 4.36 test
-% formula(UprightContainer(Tm1,Ob4,Rc1),4dot36).
+formula(UprightContainer(Tm1,Ob4,Rc1),4dot36).
 
 % 4.37 test
 % formula(P(Rx1,Rc1),4dot37).
@@ -422,7 +422,7 @@ formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equal(Place(Tm2,o),Place(Ta4,o))))),4dot62).
 
 % 4.55 test
-% formula(equal(Place(Tm2,Ob4),Place(Tm1,Ob4)),4dot55).
+formula(equal(Place(Tm2,Ob4),Place(Tm1,Ob4)),4dot55).
 
 % 4.56 test
 % formula(UprightContainer(Tm2,Ob4,Rc1),4dot56).
@@ -432,7 +432,7 @@ formula(Occurs(Ta4,Tb,Sequence(TravelTo(Ra4),Sequence(PutInUC(Ox4,Ob4),TravelTo(
 % formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob4))),4dot57).
 
 % 4.59 test
-% formula(not(OpenContained(Place(Tm2,Agent),Place(Tm2,Ob4))),4dot59).
+formula(not(OpenContained(Place(Tm2,Agent),Place(Tm2,Ob4))),4dot59).
 
 % 4.61 test
 % formula(UContained(Ta4,Agent,Ob4),4dot61).
@@ -600,7 +600,7 @@ list_of_formulae(conjectures).
 % formula(UContained(Ta4,Agent,Ob4)).
 
 % 4.60 (NO proof, maybe issue with OCD3?)
-% formula(not(UContained(Tm2,Agent,Ob4))).
+formula(not(UContained(Tm2,Agent,Ob4))).
 
 % 4.59 (proof)
 % formula(not(OpenContained(Place(Tm2,Agent),Place(Tm2,Ob4)))).
@@ -611,7 +611,7 @@ list_of_formulae(conjectures).
 % 4.57 (technically proves, but only with 4.45 provided)
 % formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob4)))).
 
-% 4.56 (NO proof)
+% 4.56 (proof)
 % formula(UprightContainer(Tm2,Ob4,Rc1)).
 
 % 4.55A (proof)
@@ -659,11 +659,11 @@ list_of_formulae(conjectures).
 % 4.39 (proof)
 % formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tm1,o), Place(Ta4,o))))).
 
-% 4.35 (NO proof)
-% formula(exists([rc,rx], and(UprightContainer(Tm1,Ob4,rc), P(rx,rc), OV(Place(Tm2,Agent),rc), SafeManipulate(Tm1,Tm2,Ox4,rx)))).
+% 4.35 (proof)
+formula(exists([rc,rx], and(UprightContainer(Tm1,Ob4,rc), P(rx,rc), SafeManipulate(Tm1,Tm2,Ox4,rx)))).
 
-% 4.31 (NO proof)
-formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Rq))))).
+% 4.31 (proof in a separate file)
+% formula(exists([t1,t2], and(Occurs(Ta4,t1,TravelTo(Ra4)), Occurs(t1,t2,PutInUC(Ox4,Ob4)), Occurs(t2,Tb,TravelTo(Rq))))).
 
 % 4.30a (proof)
 % formula(exists([ra,rq], and(FullyOutside(rq,Place(Ta4,Ob4)), Occurs(Ta4,Tb,Sequence(TravelTo(ra),Sequence(PutInUC(Ox4,Ob4),TravelTo(rq))))))).

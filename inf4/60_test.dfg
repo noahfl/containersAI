@@ -243,6 +243,9 @@ formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape
 % 4.59 test
 formula(not(OpenContained(Place(Tm2,Agent),Place(Tm2,Ob4))),4dot59).
 
+% SCD6
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
+
 
 end_of_list.
 

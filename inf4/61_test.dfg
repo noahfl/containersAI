@@ -192,7 +192,7 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 % C4A11
 % formula(SmallObject(Ob4),C4A11).
 % C4A12
-% formula(not(BoxedIn(Ta4,Agent,Ox4)),C4A12).
+% formula(not(BoxedIn(Ta4,Agent,Ob4)),C4A12).
 % C4A13
 % formula(NoPartialContents(Ta4,Ob4),C4A13).
 
@@ -233,7 +233,7 @@ formula(Action(StandStill),StandStill).
 
 
 % C4A12
-formula(not(BoxedIn(Ta4,Agent,Ox4)),C4A12).
+formula(not(BoxedIn(Ta4,Agent,Ob4)),C4A12).
 
 % ASD4
 formula(forall([t,ox,ob], equiv(BoxedIn(t,ox,ob), or(CContained(t,ox,Singleton(ob)), UContained(t,ox,ob), BLContained(t,ox,ob)))),ASD4).

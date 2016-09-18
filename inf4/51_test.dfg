@@ -230,13 +230,15 @@ formula(History(Hc1),Hc1).
 formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
+% Rc4
+formula(Region(Rc4),Rc4).
 
 
 % OFD3
 formula(forall([o], equiv(SmallObject(o), forall([ra], implies(FeasiblePlace(Agent,ra), OMuchSmaller(o,ra))))),OFD3).
 
 % OTD3
-formula(forall([t,o,r], implies(and(Time(t),Object(o), Region(r)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r)))))),OTD3).
+formula(forall([t,o,r], implies(and(Time(t),Object(o), Region(r)), equiv(FeasiblePlace(o,r), exists([tr], and(Time(tr), equal(Place(tr,o),r)))))),OTD3).
 
 % 4.50A
 formula(OMuchSmaller(Ob4,Rc4),4dot50A).
