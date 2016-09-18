@@ -242,7 +242,7 @@ formula(forall([o], implies(Element(o,MovingGroup(Ta4,Ox4)), UContained(Tm2,o,Ob
 formula(not(UContained(Tm2,Agent,Ob4)),4dot60).
 
 % 4.61
-formula(UContained(Ta4,Agent,Ob4),4dot61).
+formula(not(UContained(Ta4,Agent,Ob4)),4dot61).
 
 end_of_list.
 

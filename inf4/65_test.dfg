@@ -231,14 +231,18 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
-% ASA2 (Stable takes 2 args, only one shown in axiom in paper? i just used ta for now and i'll see if i can tweak it to make it work properly)
+% ASA2
 formula(forall([ta,tb,o,r], implies(and(SafeManipulate(ta,tb,o,r), forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), Stable(ta,ox))))), forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), and(Motionless(ta,tb,ox), StableThroughout(ta,tb,ox))))))),ASA2).
+
 
 % 4.38 test
 formula(SafeManipulate(Tm1,Tm2,Ox4,Rc1),4dot38).
 
 % 4.64 test
 formula(forall([o], equiv(UContained(Tm2,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot64).
+
+% 4.45A
+formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
 end_of_list.
 

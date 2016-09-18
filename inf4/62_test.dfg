@@ -237,8 +237,8 @@ formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Elem
 % 4.39 test
 formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tm1,o), Place(Ta4,o)))),4dot39).
 
-% 4.15
-formula(equal(UContents(Tm1,Ox4), UContents(Ta4,Ob4)),4dot15).
+% 4.42
+formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
 
 end_of_list.
 

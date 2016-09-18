@@ -234,8 +234,8 @@ formula(Action(StandStill),StandStill).
 formula(Region(Rc4),Rc4).
 
 
-% OFD3
-formula(forall([o], equiv(SmallObject(o), forall([ra], implies(FeasiblePlace(Agent,ra), OMuchSmaller(o,ra))))),OFD3).
+% OFD2
+formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
 
 % OTD3
 formula(forall([t,o,r], implies(and(Time(t),Object(o), Region(r)), equiv(FeasiblePlace(o,r), exists([tr], and(Time(tr), equal(Place(tr,o),r)))))),OTD3).
