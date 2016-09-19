@@ -237,14 +237,32 @@ formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o),
 % SCA2
 formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc))),SCA2).
 
+% OSD6
+formula(forall([sa,sb,x], implies(and(ObjectSet(sa), ObjectSet(sb), Object(x)), equiv(Element(x,Union(sa,sb)), or(Element(x,sa), Element(x,sb))))),OSD6).
+
+% OFD4
+formula(forall([s,r], equiv(SmallSet(s,r), and(exists([ra], and(Fits(s,ra), MuchSmaller(ra,r))), forall([o], implies(Element(o,s), OMuchSmaller(o,r)))))),OFD4).
+
+% C4A3
+formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4),C4A3).
+
+% OFD2
+formula(forall([o,r], equiv(OMuchSmaller(o,r), forall([rb], implies(FeasiblePlace(o,rb), MuchSmaller(rb,r))))),OFD2).
+
+% OTD3
+formula(forall([t,o,r], implies(and(Time(t),Object(o)), equiv(FeasiblePlace(o,r), exists([tr], implies(Time(tr), equal(Place(tr,o),r)))))),OTD3).
+
+% SMA5
+formula(forall([ra,rb], implies(MuchSmaller(ra,rb), and(not(Cavity(rb,ra)), not(OpenContainerShape(ra,rb))))),SMA5).
+
 % 4.48
 formula(Element(Ob4,MovingGroup(Tm1,Ox4)),4dot48).
 
 % 4.36
 formula(UprightContainer(Tm1,Ob4,Rc1),4dot36).
 
-% 4.52
-formula(not(OpenContainerShape(Place(Tm1,Ob4),Rc4)),4dot52).
+% 4.42
+formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
 
 end_of_list.
 
