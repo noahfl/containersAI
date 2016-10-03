@@ -236,7 +236,7 @@ formula(Action(StandStill),StandStill).
 formula(forall([ta,tb,r], equiv(Occurs(ta,tb,TravelTo(r)), and(equal(r, Place(tb,Agent)), forall([o], implies(Object(o), Released(ta,tb,o)))))),MOD3).
 
 % 4.34 test
-formula(Occurs(Tm1,Tb,TravelTo(Rq)),4dot34).
+formula(Occurs(Tm2,Tb,TravelTo(Rq)),4dot34).
 
 
 end_of_list.

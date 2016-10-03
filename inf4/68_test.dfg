@@ -234,8 +234,8 @@ formula(Action(StandStill),StandStill).
 % MRD4
 formula(forall([t,o], implies(and(Time(t), Object(o)), equiv(NoPartialContents(t,o), forall([oc], implies(Object(oc), implies(PartiallyContained(Place(t,oc),Place(t,o)), equal(oc,Agent))))))),MRD4).
 
-% C4A2
-formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4)),C4A2).
+% C4A13
+formula(NoPartialContents(Ta4,Ob4),C4A13).
 
 
 end_of_list.

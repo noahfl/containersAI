@@ -234,6 +234,10 @@ formula(Action(StandStill),StandStill).
 % MRA4
 formula(forall([ta,tb,ob], implies(and(Time(ta), Time(tb), Object(ob)), implies(and(NoPartialContents(ta,ob), forall([ox], implies(Object(ox), or(equal(ox,Agent), UContained(ta,ox,ob), and(Stable(ta,ox), Released(ta,tb,ox)))))), forall([ox], implies(Object(ox), or(equal(ox,Agent), UContained(ta,ox,ob), and(Motionless(ta,tb,ox), StableThroughout(ta,tb,ox)))))))),MRA4).
 
+% MRD4
+formula(forall([t,o], implies(and(Time(t), Object(o)), equiv(NoPartialContents(t,o), forall([oc], implies(Object(oc), implies(PartiallyContained(Place(t,oc),Place(t,o)), equal(oc,Agent))))))),MRD4).
+
+
 % 4.67
 formula(forall([o], implies(Object(o), Released(Tm2,Tb,o))),4dot67).
 

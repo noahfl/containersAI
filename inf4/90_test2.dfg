@@ -169,35 +169,6 @@ formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
 %%%% Specifications
 
-% C4A1
-% formula(UprightContainer(Ta4,Ob4,Rc4),C4A1).
-% C4A2
-% formula(FullyOutside(Place(Ta4,Ox4), Place(Ta4, Ob4)),C4A2).
-% C4A3
-% formula(SmallSet(Union(Contents(Ta4,Rc4), MovingGroup(Ta4,Ox4)), Rc4),C4A3).
-% C4A4
-% formula(AllStable(Ta4),C4A4).
-% C4A5
-% formula(EmptyHanded(Ta4),C4A5).
-% C4A6
-% formula(Graspable(Ta4,Ox4),C4A6).
-% C4A7
-% formula(Reachable(Ta4,Rc4),C4A7).
-% C4A8
-% formula(and(not(equal(Ox4,Agent)), not(equal(Agent,Ob4)), not(equal(Ox4,Ob4))),C4A8).
-% C4A9
-% formula(FullyOutside(Place(Ta4,Agent), Place(Ta4,Ob4)),C4A9).
-% C4A10
-% formula(SafelyMovable(Ta4,Ox4),C4A10).
-% C4A11
-% formula(SmallObject(Ob4),C4A11).
-% C4A12
-% formula(not(BoxedIn(Ta4,Agent,Ox4)),C4A12).
-% C4A13
-% formula(NoPartialContents(Ta4,Ob4),C4A13).
-
-
-
 % Ta4
 formula(Time(Ta4),Ta4).
 % Tb
@@ -231,25 +202,21 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
-% OCD3
-formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
+% OSD6
+formula(forall([sa,sb,x], implies(and(ObjectSet(sa), ObjectSet(sb), Object(x)), equiv(Element(x,Union(sa,sb)), or(Element(x,sa), Element(x,sb))))),OSD6).
 
-% MOD2
-formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
+% OSA1
+formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
 
-% 4.71 (proof)
-formula(Motionless(Tm2,Tb,Ob4),4dot71).
-
-% 4.70
-formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox)))))).
+% 4.89 (proof)
+formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
 
 end_of_list.
 
 list_of_formulae(conjectures).
 
-% 4.82 (NO proof)
-formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
-
+% 4.90 (NO proof)
+formula(equal(UContents(Tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))).
 
 end_of_list.
 

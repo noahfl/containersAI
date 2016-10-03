@@ -231,25 +231,31 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
-% OCD3
-formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
+% MGD4
+formula(forall([ta,tb,o,t], equiv(Released(ta,tb,o), and(Object(o), Lt(ta,tb), forall([t], implies(and(Lt(ta,t), Leq(t,tb)), not(Grasp(t,o))))))),MGD4).
 
-% MOD2
-formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
+% HUA1 (ta,tb vs t1,t2 in paper? also issue with T value in slice at the end)
+formula(forall([ta,tb,ob,hc,o], implies(and(DynamicUContainer(ta,tb,ob,hc), P(Place(ta,o),Slice(ta,hc)), not(UContained(ta,o,ob))), exists([tm,oy], and(Lt(ta,tm), Lt(tm,tb), Grasp(tm,oy), O(Place(tm,oy),Slice(tm,HPlace(hc))))))),HUA1).
 
-% 4.71 (proof)
-formula(Motionless(Tm2,Tb,Ob4),4dot71).
+% 4.79 test
+formula(DynamicUContainer(Tm2,Tb,Ob4,Hc1),4dot79).
 
-% 4.70
-formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox)))))).
+% 4.78
+formula(equal(Slice(Tm2,Hc1),Rc2),4dot78).
+
+% 4.75 test
+formula(P(Place(Tm2,Ox),Rc2),4dot75).
+
+% 4.67
+formula(forall([o], implies(Object(o), Released(Tm2,Tb,o))),4dot67).
+
 
 end_of_list.
 
 list_of_formulae(conjectures).
 
-% 4.82 (NO proof)
-formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
-
+% 4.80 test
+formula(UContained(Tb,Ox,Ob4),4dot80).
 
 end_of_list.
 

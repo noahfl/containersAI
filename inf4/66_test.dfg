@@ -232,7 +232,7 @@ formula(Time(Tc),Tc).
 formula(Action(StandStill),StandStill).
 
 % MRD3
-formula(forall([ta,tb,o], equiv(StableThroughout(ta,tb,o), forall([t], implies(Leq3(ta,t,tb), Stable(t,o))))),MRD3).
+formula(forall([ta,tb,o], equiv(StableThroughout(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Leq3(ta,t,tb), Stable(t,o)))))),MRD3).
 
 % 4.65 (NO proof)
 formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), StableThroughout(Tm1,Tm2,o))))).
