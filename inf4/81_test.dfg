@@ -231,6 +231,7 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
+
 % 4.72
 formula(UContained(Tm2,Ox,Ob4),4dot72).
 

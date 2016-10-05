@@ -234,8 +234,8 @@ formula(Action(StandStill),StandStill).
 % MGD4
 formula(forall([ta,tb,o,t], equiv(Released(ta,tb,o), and(Object(o), Lt(ta,tb), forall([t], implies(and(Lt(ta,t), Leq(t,tb)), not(Grasp(t,o))))))),MGD4).
 
-% HUA1 (ta,tb vs t1,t2 in paper? also issue with T value in slice at the end)
-formula(forall([ta,tb,ob,hc,o], implies(and(DynamicUContainer(ta,tb,ob,hc), P(Place(ta,o),Slice(ta,hc)), not(UContained(ta,o,ob))), exists([tm,oy], and(Lt(ta,tm), Lt(tm,tb), Grasp(tm,oy), O(Place(tm,oy),Slice(tm,HPlace(hc))))))),HUA1).
+% HUA1
+formula(forall([ta,tb,o,ob,hc], implies(and(DynamicUContainer(ta,tb,ob,hc), P(Place(ta,o),Slice(ta,hc)), not(UContained(tb,o,ob))), exists([tm,oy], and(Lt(ta,tm), Lt(tm,tb), Grasp(tm,oy), O(Place(tm,oy),Slice(tm,HPlace(hc))))))),HUA1).
 
 % 4.79 test
 formula(DynamicUContainer(Tm2,Tb,Ob4,Hc1),4dot79).
