@@ -319,6 +319,11 @@ formula(forall([ta,tb,ob,hc,o], implies(and(DynamicUContainer(ta,tb,ob,hc), P(Pl
 % MSA1
 formula(forall([ta], implies(Time(ta), exists([tb], and(Occurs(ta,tb,StandStill), AllStable(tb))))),MSA1).
 
+% Lem4U
+formula(forall([t,ox,ob], implies(UContained(t,ox,ob), not(PartiallyContained(Place(t,ox),Place(t,ob))))),4U).
+
+
+
 % Ta4
 formula(Time(Ta4),Ta4).
 % Tb
@@ -458,13 +463,17 @@ formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), n
 formula(forall([o], implies(Object(o), Released(Tm2,Tb,o))),4dot67).
 
 % 4.66
-% formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o)))),4dot66).
+formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o)))),4dot66).
 
 % 4.68 test
-% formula(forall([o], implies(Object(o), not(PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4))))),4dot68).
+% formula(forall([o], implies(Object(o), implies(not(equal(Agent,o)), not(PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4)))))),4dot68).
+
 
 % 4.69 test
-formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69).
+% formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69).
+
+% 4.69A
+formula(forall([o], implies(Object(o),implies(not(equal(o,Agent)), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69A).
 
 % 4.70 test
 % formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox))))),4dot70).
@@ -524,6 +533,8 @@ formula(DynamicUContainer(Tm2,Tb,Ob4,Hc1),4dot79).
 % formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
 
 
+
+
 end_of_list.
 
 
@@ -572,13 +583,17 @@ formula(UContained(Tb,Ox,Ob4)).
 % formula(Motionless(Tm2,Tb,Ob4)).
 
 % 4.70
-% formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox)))))).
+formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox)))))).
+
+% 4.69A
+% formula(forall([o], implies(Object(o),implies(not(equal(o,Agent)), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69A).
 
 % 4.69 (proof)
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4))))))).
 
-% 4.68 (NO proof)
-% formula(forall([o], implies(Object(o), not(PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4)))))).
+% 4.68 (proof)
+% formula(forall([o], implies(Object(o), implies(not(equal(Agent,o)), not(PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4)))))),4dot68).
+
 
 %  4.67 (proof)
 % formula(forall([o], implies(Object(o), Released(Tm2,Tb,o)))).

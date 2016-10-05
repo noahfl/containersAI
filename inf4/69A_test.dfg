@@ -231,19 +231,19 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
-% MRD4
-formula(forall([t,o], implies(and(Time(t), Object(o)), equiv(NoPartialContents(t,o), forall([oc], implies(Object(oc), implies(PartiallyContained(Place(t,oc),Place(t,o)), equal(oc,Agent))))))),MRD4).
 
-% C4A13
-formula(NoPartialContents(Ta4,Ob4),C4A13).
+% 4.69 test
+formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69).
 
+% Lem4U
+formula(forall([t,ox,ob], implies(UContained(t,ox,ob), not(PartiallyContained(Place(t,ox),Place(t,ob))))),4U).
 
 end_of_list.
 
 list_of_formulae(conjectures).
 
-% 4.68 (proof)
-formula(forall([o], implies(Object(o), implies(not(equal(Agent,o)), not(PartiallyContained(Place(Ta4,o),Place(Ta4,Ob4)))))),4dot68).
+% 4.69A
+formula(forall([o], implies(Object(o),implies(not(equal(o,Agent)), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69A).
 
 end_of_list.
 

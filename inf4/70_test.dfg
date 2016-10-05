@@ -244,14 +244,15 @@ formula(forall([o], implies(Object(o), Released(Tm2,Tb,o))),4dot67).
 % 4.66
 formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o)))),4dot66).
 
-% 4.69 test
-formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(UContained(Tm2,o,Ob4))), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69).
+% 4.69A
+formula(forall([o], implies(Object(o),implies(not(equal(o,Agent)), not(PartiallyContained(Place(Tm2,o),Place(Tm2,Ob4)))))),4dot69A).
+
 
 end_of_list.
 
 list_of_formulae(conjectures).
 
-% 4.70 (NO proof)
+% 4.70 (proof)
 formula(forall([ox], implies(Object(ox), implies(and(not(equal(ox,Agent)), not(UContained(Tm2,ox,Ob4))), and(Motionless(Tm2,Tb,ox), StableThroughout(Tm2,Tb,ox)))))).
 
 end_of_list.
