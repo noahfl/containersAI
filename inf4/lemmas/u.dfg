@@ -162,6 +162,8 @@ formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightCon
 % SCA2
 formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc))),SCA2).
 
+% SCD6
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
 
 
 end_of_list.
