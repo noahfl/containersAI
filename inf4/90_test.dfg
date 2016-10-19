@@ -45,7 +45,10 @@ formula(Object(Ob4),Ob4).
 
 
 % OSD6
-formula(forall([sa,sb,x], implies(and(ObjectSet(sa), ObjectSet(sb), Object(x)), equiv(Element(x,Union(sa,sb)), or(Element(x,sa), Element(x,sb))))),OSD6).
+% formula(forall([sa,sb,x], implies(and(ObjectSet(sa), ObjectSet(sb), Object(x)), equiv(Element(x,Union(sa,sb)), or(Element(x,sa), Element(x,sb))))),OSD6).
+
+% OSD6
+formula(forall([sa,sb,x], implies(and(ObjectSet(sa), ObjectSet(sb)), equiv(Element(x,Union(sa,sb)), or(Element(x,sa), Element(x,sb))))),OSD6).
 
 % OSA1
 formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
