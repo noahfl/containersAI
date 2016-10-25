@@ -400,10 +400,14 @@ formula(Occurs(Tm2,Tb,TravelTo(Rq)),4dot34).
 % formula(P(Rx1,Rc1),4dot37).
 
 % 4.38 test
-% formula(SafeManipulate(Tm1,Tm2,Ox4,Rc1),4dot38).
+formula(SafeManipulate(Tm1,Tm2,Ox4,Rc1),4dot38).
 
 % 4.39 test
 % formula(forall([o], implies(and(Object(o), not(equal(o,Agent))), equal(Place(Tm1,o), Place(Ta4,o)))),4dot39).
+
+% 4.40 test
+formula(AllStable(Tm1),4dot40).
+
 
 % 4.45A test
 % formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
@@ -588,7 +592,7 @@ list_of_formulae(conjectures).
 % formula(forall([o], equiv(UContained(Tb,o,Ob4), UContained(Tm2,o,Ob4))),4dot83).
 
 % 4.82 (NO proof)
-formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
+% formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
 
 % 4.82F
 % formula(forall([rc], equiv(UprightContainer(Tm2,Ob4,rc), UprightContainer(Tb,Ob4,rc))),4dot82F).
@@ -642,7 +646,7 @@ formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)
 %  4.67 (proof)
 % formula(forall([o], implies(Object(o), Released(Tm2,Tb,o)))).
 
-% 4.66 (NO proof)
+% 4.66 (proof in separate file)
 % formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o))))).
 
 % 4.65 (NO proof, likely issue with ASA2)
@@ -654,7 +658,7 @@ formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)
 % 4.63 (proof with 4.55 provided; however doesn't use OCD3)
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equiv(UContained(Tm2,o,Ob4), UContained(Ta4,o,Ob4)))))).
 
-% 4.62 (NO proof)
+% 4.62 (proof in separate file)
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equal(Place(Tm2,o),Place(Ta4,o)))))).
 
 % 4.61 (proof)
@@ -705,7 +709,7 @@ formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)
 % 4.46 (proof in separate file)
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o))))).
 
-% 4.45A (NO proof)
+% 4.45A (proof)
 % formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
 % 4.45 (proof)

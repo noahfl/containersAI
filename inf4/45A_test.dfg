@@ -231,8 +231,9 @@ formula(Time(Tc),Tc).
 % StandStill
 formula(Action(StandStill),StandStill).
 
-% OTD1
-formula(forall([t,s,r], equiv(OSPlace(t,s,r), and(forall([o], implies(Object(o), implies(Element(o,s), P(Place(t,o),r)))), forall([ra], implies(forall([o], implies(Element(o,s), P(Place(t,o),ra))), P(r,ra)))))),OTD1).
+% Lem4C
+formula(forall([ta,tb,o,ox,r], implies(and(AllStable(ta), SafeManipulate(ta,tb,o,r), Object(ox)), or(equal(ox,Agent), Element(ox,MovingGroup(ta,o)), Stable(ta,ox)))),Lem4C).
+
 
 % 4.38 test
 formula(SafeManipulate(Tm1,Tm2,Ox4,Rc1),4dot38).
