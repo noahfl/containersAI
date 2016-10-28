@@ -246,8 +246,8 @@ formula(forall([ra,rb], implies(OpenContained(ra,rb), not(FullyOutside(ra,rb))))
 % LemSO
 formula(forall([t,oa,ob], implies(UContained(t,oa,ob), OContained(t,oa,ob))),LemSO).
 
-% OCD1
-formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc))))),OCD1).
+% SCD6
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
 
 % ORD2
 formula(forall([t,o,rc], equiv(OpenContainer(t,o,rc), and(Time(t), Object(o), OpenContainerShape(Place(t,o),rc)))),ORD2).

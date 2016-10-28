@@ -292,6 +292,9 @@ formula(forall([s,r], equiv(SmallSet(s,r), and(exists([ra], and(Fits(s,ra), Much
 % SMA5
 formula(forall([ra,rb], implies(MuchSmaller(ra,rb), and(not(Cavity(rb,ra)), not(OpenContainerShape(ra,rb))))),SMA5).
 
+% SCD6
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
+
 % SCD8
 formula(forall([ra,rb], equiv(PartiallyContained(ra,rb), and(not(OpenContained(ra,rb)), exists([rc], and(P(rc,ra), OpenContained(rc,rb)))))),SCD8).
 
@@ -382,7 +385,7 @@ formula(FullyOutside(Rq,Place(Ta4,Ob4)),4dot30B).
 % formula(equal(UContents(Tm1,Ob4), UContents(Ta4,Ob4)),4dot41).
 
 % test 4.15 (4.42)
-% formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
+formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
 
 % 4.32 test
 % formula(Occurs(Ta4,Tm1,TravelTo(Ra4)),4dot32).
@@ -410,7 +413,7 @@ formula(AllStable(Tm1),4dot40).
 
 
 % 4.45A test
-% formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
+formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
 % 4.46 test
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Tm1,Ox4)))), Motionless(Tm1,Tm2,o)))),4dot46).
@@ -469,7 +472,7 @@ formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Elem
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equal(Place(Tm2,o),Place(Ta4,o))))),4dot62).
 
 % 4.64 test
-% formula(forall([o], equiv(UContained(Tm2,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot64).
+formula(forall([o], equiv(UContained(Tm2,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot64).
 
 % 4.65 test
 % formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), StableThroughout(Tm1,Tm2,o)))),4dot65).
@@ -523,11 +526,11 @@ formula(DynamicUContainer(Tm2,Tb,Ob4,Hc1),4dot79).
 % 4.81 test
 % formula(forall([o], implies(UContained(Tm2,o,Ob4), UContained(Tb,o,Ob4))),4dot81).
 
-% 4.82F
-formula(forall([rc], equiv(UprightContainer(Tm2,Ob4,rc), UprightContainer(Tb,Ob4,rc))),4dot82F).
+% 4.82F (proof)
+% formula(forall([rc], equiv(UprightContainer(Tm2,Ob4,rc), UprightContainer(Tb,Ob4,rc))),4dot82F).
 
 % 4.82E
-formula(not(UContained(Tb,Agent,Ob4)),4dot82E).
+% formula(not(UContained(Tb,Agent,Ob4)),4dot82E).
 
 % 4.82D test
 formula(FullyOutside(Place(Tb,Agent),Place(Tb,Ob4)),4dot82D).
@@ -557,7 +560,7 @@ formula(FullyOutside(Place(Tb,Agent),Place(Ta4,Ob4)),4dot82B).
 % formula(forall([o], equiv(UContained(Tc,o,Ob4), UContained(Tb,o,Ob4))),4dot87).
 
 % 4.88 test
-% formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
+formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
 
 % 4.89 test
 % formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
@@ -570,19 +573,19 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-% final (NO proof)
+% final
 % formula(forall([tb], implies(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)), exists([tc], and(Occurs(tb,tc,StandStill), AllStable(tc), equal(UContents(tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))))))).
 
-% 4.90 (NO proof)
+% 4.90 (proof in 4.90a)
 % formula(equal(UContents(Tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))).
 
 % 4.89 (proof)
-% formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
+formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
 
 % 4.88 (proof)
 % formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
 
-% 4.87 (NO proof)
+% 4.87
 % formula(forall([o], equiv(UContained(Tc,o,Ob4), UContained(Tb,o,Ob4))),4dot87).
 
 % 4.84 (proof)
@@ -591,13 +594,13 @@ list_of_formulae(conjectures).
 % 4.83 (proof)
 % formula(forall([o], equiv(UContained(Tb,o,Ob4), UContained(Tm2,o,Ob4))),4dot83).
 
-% 4.82 (NO proof)
+% 4.82 (proof in separate file)
 % formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
 
 % 4.82F
 % formula(forall([rc], equiv(UprightContainer(Tm2,Ob4,rc), UprightContainer(Tb,Ob4,rc))),4dot82F).
 
-% 4.82E (NO proof)
+% 4.82E (proof)
 % formula(not(UContained(Tb,Agent,Ob4)),4dot82E).
 
 % 4.82D (proof)
@@ -612,10 +615,10 @@ list_of_formulae(conjectures).
 % 4.82A (proof)
 % formula(equal(Rq,Place(Tb,Agent)),4dot82A).
 
-% 4.81 (NO proof)
+% 4.81
 % formula(forall([o], implies(UContained(Tm2,o,Ob4), UContained(Tb,o,Ob4)))).
 
-% 4.80 (NO proof; potential issue with HUA1)
+% 4.80 (proof in separate file)
 % formula(UContained(Tb,Ox,Ob4)).
 
 % 4.79 (proof)
@@ -649,13 +652,13 @@ list_of_formulae(conjectures).
 % 4.66 (proof in separate file)
 % formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), Stable(Tm2,o))))).
 
-% 4.65 (NO proof, likely issue with ASA2)
+% 4.65 (proof)
 % formula(forall([o], implies(Object(o), implies(and(not(UContained(Tm2,o,Ob4)), not(equal(o,Agent))), StableThroughout(Tm1,Tm2,o))))).
 
 % 4.64 (proof)
 % formula(forall([o], equiv(UContained(Tm2,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4)))))).
 
-% 4.63 (proof with 4.55 provided; however doesn't use OCD3)
+% 4.63 (proof with 4.55 provided)
 % formula(forall([o], implies(Object(o), implies(and(not(equal(o,Agent)), not(Element(o,MovingGroup(Ta4,Ox4)))), equiv(UContained(Tm2,o,Ob4), UContained(Ta4,o,Ob4)))))).
 
 % 4.62 (proof in separate file)
@@ -685,7 +688,7 @@ list_of_formulae(conjectures).
 % 4.55 (proof)
 % formula(equal(Place(Tm2,Ob4),Place(Tm1,Ob4))).
 
-% 4.54 (NO proof)
+% 4.54
 % formula(not(Element(Ob4,MovingGroup(Tm1,Ox4)))).
 
 % 4.52 (proof)
