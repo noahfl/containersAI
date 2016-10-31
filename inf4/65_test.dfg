@@ -244,6 +244,9 @@ formula(forall([o], equiv(UContained(Tm2,o,Ob4), or(UContained(Ta4,o,Ob4), Eleme
 % 4.45A
 formula(forall([ox], implies(Object(ox), or(equal(ox,Agent), Element(ox,MovingGroup(Tm1,Ox4)), Stable(Tm1,ox)))),4dot45a).
 
+% 4.42
+formula(equal(MovingGroup(Tm1,Ox4), MovingGroup(Ta4,Ox4)),4dot42).
+
 end_of_list.
 
 list_of_formulae(conjectures).

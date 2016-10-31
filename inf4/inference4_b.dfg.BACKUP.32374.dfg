@@ -576,7 +576,11 @@ list_of_formulae(conjectures).
 % final
 % formula(forall([tb], implies(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)), exists([tc], and(Occurs(tb,tc,StandStill), AllStable(tc), equal(UContents(tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))))))).
 
+<<<<<<< HEAD
+% 4.90 (see other file)
+=======
 % 4.90 (proof in 4.90a)
+>>>>>>> e973b859f7bea577a5bac2af051ed5fe9b9daa42
 % formula(equal(UContents(Tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))).
 
 % 4.89 (proof)
@@ -594,7 +598,11 @@ formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(T
 % 4.83 (proof)
 % formula(forall([o], equiv(UContained(Tb,o,Ob4), UContained(Tm2,o,Ob4))),4dot83).
 
+<<<<<<< HEAD
+% 4.82 (proof in other file)
+=======
 % 4.82 (proof in separate file)
+>>>>>>> e973b859f7bea577a5bac2af051ed5fe9b9daa42
 % formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
 
 % 4.82F
