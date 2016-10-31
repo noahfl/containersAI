@@ -557,7 +557,7 @@ formula(FullyOutside(Place(Tb,Agent),Place(Ta4,Ob4)),4dot82B).
 % formula(forall([o], equiv(UContained(Tc,o,Ob4), UContained(Tb,o,Ob4))),4dot87).
 
 % 4.88 test
-% formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
+formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
 
 % 4.89 test
 % formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
@@ -573,16 +573,16 @@ list_of_formulae(conjectures).
 % final (NO proof)
 % formula(forall([tb], implies(Occurs(Ta4,Tb,LoadUprightContainer(Ox4,Ob4)), exists([tc], and(Occurs(tb,tc,StandStill), AllStable(tc), equal(UContents(tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))))))).
 
-% 4.90 (NO proof)
+% 4.90 (see other file)
 % formula(equal(UContents(Tc,Ob4), Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))).
 
 % 4.89 (proof)
-% formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
+formula(forall([o], equiv(Element(o,UContents(Tc,Ob4)), or(Element(o,UContents(Ta4,Ob4)), Element(o,MovingGroup(Ta4,Ox4))))),4dot89).
 
 % 4.88 (proof)
 % formula(forall([o], equiv(UContained(Tc,o,Ob4), or(UContained(Ta4,o,Ob4), Element(o,MovingGroup(Ta4,Ox4))))),4dot88).
 
-% 4.87 (NO proof)
+% 4.87
 % formula(forall([o], equiv(UContained(Tc,o,Ob4), UContained(Tb,o,Ob4))),4dot87).
 
 % 4.84 (proof)
@@ -591,7 +591,7 @@ list_of_formulae(conjectures).
 % 4.83 (proof)
 % formula(forall([o], equiv(UContained(Tb,o,Ob4), UContained(Tm2,o,Ob4))),4dot83).
 
-% 4.82 (NO proof)
+% 4.82 (proof in other file)
 % formula(forall([o], implies(not(UContained(Tm2,o,Ob4)), not(UContained(Tb,o,Ob4)))),4dot82).
 
 % 4.82F

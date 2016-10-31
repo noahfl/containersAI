@@ -222,155 +222,25 @@ formula(ObjectSet(Su)).
 
 %%%% Specifications
 
-% C5A1
-formula(BoxWithLidC(Ta5,Ob5,Ol5,Rc5),C5A1).
-% C5A2
-formula(P(Place(Ta5,Os5),Rc5),C5A2).
-% C5A3
-formula(not(P(Place(Ta5,Agent),Rc5)),C5A3).
-% C5A4
-formula(AllStable(Ta5),C5A4).
-% C5A5
-formula(not(equal(Place(Ta5,Os5),Place(Tb5,Os5))),C5A5).
-% C5A6
-formula(Motionless(Ta5,Tb5,Ob5),C5A6).
-
-% --------
-
-% OSD4
-formula(forall([x,y,z], implies(and(Object(x), Object(y), Object(z)), equiv(Element(z,Pair(x,y)), or(equal(z,x), equal(z,y))))),OSD4).
-
-% RBD1
-formula(forall([t,ob,ol,rc], equiv(BoxWithLidC(t,ob,ol,rc), and(BoxWithLid(t,ob,ol), CombinedContainer(Place(t,ob), Place(t,ol),rc)))),RBD1).
-
-% RBA1
-formula(forall([t,ob,ol], implies(BoxWithLid(t,ob,ol), and(RigidObject(ob), RigidObject(ol), Stable(t,ol), not(equal(ob,Agent)), not(equal(ol,Agent)), exists([rc], CombinedContainer(Place(t,ob),Place(t,ol),rc))))),RBA1).
-
-% RBA5
-formula(forall([ta,tb,ob,ol], implies(and(BoxWithLid(ta,ob,ol), equal(Place(tb,ob), Place(ta,ob)), equal(Place(tb,ol), Place(ta,ol))), BoxWithLid(tb,ob,ol))),RBA5).
-
-% Lem5K
-formula(forall([t,ob,ol,rc], implies(BoxWithLidC(t,ob,ol,rc), ClosedContainer(t,Pair(ob,ol),rc))),Lem5K).
-
-% OIA3
-formula(forall([t,sp,rc], implies(and(ClosedContainer(t,sp,rc), not(P(Place(t,Agent),rc)), not(Element(Agent,sp))), Isolates(t,sp,Contents(t,rc)))),OIA3).
-
-% OSA1
-formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))),OSA1).
-
-% OTD2
-formula(forall([o,r,t], implies(and(Object(o), Region(r), Time(t)), equiv(Element(o,Contents(t,r)), P(Place(t,o),r)))),OTD2).
-
-% MRD1
-formula(forall([ta,tb,sx], equiv(CausallyIsolated(ta,tb,sx), exists([sp], implies(ObjectSet(sp), and(forall([o], implies(Element(o,sp), Motionless(ta,tb,o))), forall([t], implies(and(Leq(ta,t), Lt(t,tb)), Isolates(t,sp,sx)))))))),MRD1).
-
 % MRD2
 formula(forall([ta,tb,s], equiv(StaticCausallyIsolated(ta,tb,s), and(CausallyIsolated(ta,tb,s), forall([ox], implies(Element(ox,s), Stable(ta,ox)))))),MRD2).
 
 % MSD1
 formula(forall([t], equiv(AllStable(t), forall([o], implies(Object(o), or(equal(o,Agent), Stable(t,o), Grasp(t,o)))))),MSD1).
 
-% OSD2
-formula(forall([x,y], implies(and(Object(x), Object(y)), equiv(Element(y,Singleton(x)), equal(y,x)))),OSD2).
+% C5A4
+formula(AllStable(Ta5),C5A4).
 
-% MRA2
-formula(forall([ta,tb,s,o], implies(and(StaticCausallyIsolated(ta,tb,s), Element(o,s)), and(Motionless(ta,tb,o), StableThroughout(ta,tb,o)))),MRA2).
-
-% MOD2
-formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
-
-
-% 5.2
-formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
-
-% 5.4
-formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5)))),5dot4).
-
-% 5.37
-% formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
-
-% 5.53
-% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5))),5dot53).
-
-% 5.53a
-% formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), not(P(Place(tx,o),Rc5)))),5dot53a).
-
-% 5.54
-% formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
-
-
-% 5.57 (assume)
-formula(Leq3(Ta5,Tx,Tb5),5dot57).
-
-% 5.58 test
-% formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5),5dot58).
-
-% 5.59 test
-% formula(ClosedContainer(Tx,Su,Rc5),5dot59).
-
-% 5.60 test
-% formula(Isolates(Tx,Su,Contents(Tx,Rc5)),5dot60).
-
-% 5.61 test
-% formula(equal(Contents(Tx,Rc5), Contents(Ta5,Rc5)),5dot61).
-
-% 5.62 test
-% formula(Isolates(Tx,Su,Contents(Ta5,Rc5)),5dot62).
-
-% 5.64 test
-% formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
-
-% 5.65 test
-% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
-
-% 5.66 test
-% formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot66).
-
+% 5.65 (NO proof)
+formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% full inference (proof)
-% formula(not(Motionless(Ta5,Tb5,Ol5))).
-
-% 5.68 (proof)
-% formula(Motionless(Ta5,Tb5,Os5)).
-
-% 5.67 (proof)
-% formula(Element(Os5,Contents(Ta5,Rc5))).
-
 % 5.66 (NO proof)
-% formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
-
-% 5.65 (NO proof)
-% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
-
-% 5.64 (NO proof)
-% formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5))))).
-
-% 5.62 (proof)
-% formula(Isolates(Tx,Su,Contents(Ta5,Rc5))).
-
-% 5.61 (proof in separate file)
-% formula(equal(Contents(Tx,Rc5), Contents(Ta5,Rc5))).
-
-% 5.60 (proof given 5.59)
-% formula(Isolates(Tx,Su,Contents(Tx,Rc5))).
-
-% 5.59 (proof)
-% formula(ClosedContainer(Tx,Su,Rc5)).
-
-% 5.58 (proof in separate file)
-formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
-
-% 5.56 (proof)
-% formula(not(Element(Agent,Su))).
-
-% 5.55 (proof)
-% formula(forall([o], equiv(Element(o,Su), or(equal(o,Ob5), equal(o,Ol5))))).
-
+formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
 end_of_list.
 
