@@ -12,7 +12,7 @@ Inference 2: done, 1 part
 
 Inference 3: done, 1 part
 
-Inference 4: in progress
+Inference 4: done, 2 parts (multiple auxiliary parts)
 
 Inference 5: in progress
 
