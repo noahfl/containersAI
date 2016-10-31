@@ -583,14 +583,14 @@ Usable Clauses:
 	Given clause: 168[0:Inp] Object(U) || P(Place(V,U),W)*+ OpenContainer(V,X,W)* -> OContained(V,U,X)*.
 	Given clause: 403[0:SSi:402.0,7.0] || OpenContainer(Tb,U,skf3(Agent,Tb,V))* -> OContained(Tb,Agent,U).
 	Given clause: 399[0:Res:397.1,131.1] || OContained(Tb,Agent,U) FullyOutside(Place(Tb,Agent),Place(Tb,U))* -> .
-SPASS V 3.7 
+SPASS V 3.5 
 SPASS beiseite: Proof found.
-Problem: inf4/82E_test.dfg 
+Problem: 82E_test.dfg 
 SPASS derived 110 clauses, backtracked 0 clauses, performed 0 splits and kept 237 clauses.
 SPASS allocated 55693 KBytes.
-SPASS spent	0:00:00.03 on the problem.
-		0:00:00.00 for the input.
-		0:00:00.01 for the FLOTTER CNF translation.
+SPASS spent	0:00:00.08 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
 		0:00:00.00 for inferences.
 		0:00:00.00 for the backtracking.
 		0:00:00.00 for the reduction.
