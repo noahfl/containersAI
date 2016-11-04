@@ -225,6 +225,9 @@ formula(ObjectSet(Su)).
 % MRD1
 formula(forall([ta,tb,sx], equiv(CausallyIsolated(ta,tb,sx), exists([sp], implies(ObjectSet(sp), and(forall([o], implies(Element(o,sp), Motionless(ta,tb,o))), forall([t], implies(and(Leq(ta,t), Lt(t,tb)), Isolates(t,sp,sx)))))))),MRD1).
 
+% MOD2
+formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
+
 % 5.2
 formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
 
