@@ -232,7 +232,7 @@ formula(forall([ob,ta,tb], implies(and(Object(ob), Lt(ta,tb)), AlwaysIntConn(ta,
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb)))))),HCA3).
 
 % HCA7
-formula(forall([t1,t2,tm,hc,hb], implies(and(NoEntranceCavity(t1,t2,hc,hb), Lt(t1,tm), Lt(tm,t2)), and(NoEntranceCavity(t1,t2,hc,hb), NoEntranceCavity(t1,t2,hc,hb)))),HCA7).
+formula(forall([t1,t2,tm,hc,hb], implies(and(NoEntranceCavity(t1,t2,hc,hb), Lt(t1,tm), Lt(tm,t2)), and(NoEntranceCavity(t1,tm,hc,hb), NoEntranceCavity(tm,t2,hc,hb)))),HCA7).
 
 % 5.41
 formula(and(Lt(Ta5,Tx),Leq(Tx,Tb5)),5dot41).
@@ -258,8 +258,8 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-% 5.53 (NO proof with axioms supplied; may be tied to 5.51)
-formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Lt(Ta5,tx), Leq(tx,Tb5)), DR(Place(tx,o),Rc5)))).
+% 5.51 (NO proof with axioms supplied)
+formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu)))),5dot51).
 
 end_of_list.
 
