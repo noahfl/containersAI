@@ -250,6 +250,9 @@ formula(Continuous(Ta5,Tx,HPlace(Oa)),5dot43).
 % 5.44 test
 formula(not(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))),5dot44).
 
+% 5.45 test
+formula(equal(Slice(Tx,Hc),Rc5),5dot45).
+
 
 % 5.50 test
 formula(P(Place(Tx,Oa),Rc5),5dot50).
