@@ -254,6 +254,10 @@ formula(forall([u,v], equiv(Cavity(u,v), and(IntConn(u), DR(u,v), forall([r], im
 % HCA3
 formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb)))))),HCA3).
 
+% HCA7
+formula(forall([t1,t2,tm,hc,hb], implies(and(NoEntranceCavity(t1,t2,hc,hb), Lt(t1,tm), Lt(tm,t2)), and(NoEntranceCavity(t1,tm,hc,hb), NoEntranceCavity(tm,t2,hc,hb)))),HCA7).
+
+
 % LemSD
 formula(forall([u,v], implies(P(u,v), not(DR(u,v)))),LemSD).
 
@@ -267,7 +271,7 @@ formula(Constant(Ta5,Tb5,Hu),5dot7).
 formula(Cavity(Rc5,RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5))),5dot14).
 
 % 5.17
-% formula(NoEntranceCavity(Ta5,Tb5,Hc,Hu),5dot17).
+formula(NoEntranceCavity(Ta5,Tb5,Hc,Hu),5dot17).
 
 % 5.25
 formula(forall([o,t], implies(and(Object(o), not(equal(o,Ob5)), not(equal(o,Ol5)), Leq3(Ta5,t,Tb5)), not(O(Slice(t,HPlace(o)),Slice(t,Hu))))),5dot25).
@@ -289,16 +293,19 @@ formula(not(DR(Place(Tx,Oa),Rc5)),5d0t42).
 % formula(DR(Place(Tx,Oa),Slice(Tx,Hu)),5dot48).
 
 % 5.43 test
-% formula(Continuous(Ta5,Tx,HPlace(Oa)),5dot43).
+formula(Continuous(Ta5,Tx,HPlace(Oa)),5dot43).
 
 % 5.44 test
-% formula(not(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))),5dot44).
+formula(not(P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))),5dot44).
+
+% 5.45 test
+formula(equal(Slice(Tx,Hc),Rc5),5dot45).
 
 % 5.51 test
-formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hc)))),5dot51).
+% formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hc)))),5dot51).
 
 % 5.50 test
-% formula(P(Place(Tx,Oa),Rc5),5dot50).
+formula(P(Place(Tx,Oa),Rc5),5dot50).
 
 % 5.53 test
 % formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Leq3(Ta5,tx,Tb5)), DR(Place(tx,o),Rc5))),5dot53).
@@ -315,7 +322,7 @@ list_of_formulae(conjectures).
 % 5.53 (NO proof with axioms supplied; may be tied to 5.51)
 formula(forall([o,tx], implies(and(Object(o), not(P(Place(Ta5,o),Rc5)), Lt(Ta5,tx), Leq(tx,Tb5)), DR(Place(tx,o),Rc5)))).
 
-% 5.51 (NO proof with axioms supplied)
+% 5.51 (proof with axioms supplied)
 % formula(exists([tm], and(Lt(Ta5,tm), Lt(tm,Tx), O(Slice(tm,HPlace(Oa)),Slice(tm,Hu))))).
 
 % 5.50 (proof)
