@@ -234,6 +234,9 @@ formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Cont
 % HCA7
 formula(forall([t1,t2,tm,hc,hb], implies(and(NoEntranceCavity(t1,t2,hc,hb), Lt(t1,tm), Lt(tm,t2)), and(NoEntranceCavity(t1,tm,hc,hb), NoEntranceCavity(tm,t2,hc,hb)))),HCA7).
 
+% HIA2
+formula(forall([t,o], implies(and(Time(t), Object(o)), equal(Place(t,o), Slice(t,HPlace(o))))),HIA2).
+
 % 5.41
 formula(and(Lt(Ta5,Tx),Leq(Tx,Tb5)),5dot41).
 
