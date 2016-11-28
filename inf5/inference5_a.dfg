@@ -296,6 +296,9 @@ formula(forall([t], implies(Leq3(Ta5,t,Tb5), equal(Slice(t,Hu), RUnion(Place(t,O
 % 5.4 (proof)
 % formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5))))).
 
+% 5.3 (proof)
+% formula(Lt(Ta5,Tb5),5dot3).
+
 % 5.2 (proof)
 % formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5))))).
 

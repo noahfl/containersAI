@@ -222,34 +222,20 @@ formula(ObjectSet(Su)).
 
 %%%% Specifications
 
-% MRD2
-formula(forall([ta,tb,s], equiv(StaticCausallyIsolated(ta,tb,s), and(CausallyIsolated(ta,tb,s), forall([ox], implies(Element(ox,s), Stable(ta,ox)))))),MRD2).
+% MGA1
+formula(forall([t,sp,sx,o], implies(and(Isolates(t,sp,sx), Element(o,sx)), and(not(Grasp(t,o)), not(CanGrasp(t,o))))),MGA1).
 
-% MSD1
-formula(forall([t], equiv(AllStable(t), forall([o], implies(Object(o), or(equal(o,Agent), Stable(t,o), Grasp(t,o)))))),MSD1).
-
-% C5A4
-formula(AllStable(Ta5),C5A4).
-
-% 5.3 (proof)
-formula(Lt(Ta5,Tb5),5dot3).
-
-% 5.65A
-formula(not(Element(Agent,Contents(Ta5,Rc5))),5dot65A).
-
-% 5.65B
-formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Su)), not(Grasp(tx,ox)))),5dot65B).
-
-% 5.65 (proof)
-formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
+% 5.64 test
+formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% 5.66 (NO proof)
-formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+% 5.65B
+formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Su)), not(Grasp(tx,ox)))),5dot65B).
+
 
 end_of_list.
 

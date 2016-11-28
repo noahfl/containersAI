@@ -279,14 +279,17 @@ formula(forall([ta,tb,s,o], implies(and(StaticCausallyIsolated(ta,tb,s), Element
 % MOD2
 formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
 
+% MGA1
+formula(forall([t,sp,sx,o], implies(and(Isolates(t,sp,sx), Element(o,sx)), and(not(Grasp(t,o)), not(CanGrasp(t,o))))),MGA1).
+
 % 5.1
-formula(Motionless(Ta5,Tb5,Ol5)).
+% formula(Motionless(Ta5,Tb5,Ol5)).
 
 % 5.2
-formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
+% formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
 
 % 5.4
-formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5)))),5dot4).
+% formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob5)))),5dot4).
 
 % 5.37
 % formula(forall([o,tx], implies(and(Object(o), P(Place(Ta5,o),Rc5), Leq3(Ta5,tx,Tb5)), P(Place(tx,o),Rc5))),5dot37).
@@ -301,10 +304,10 @@ formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob
 % formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
 
 % 5.55 
-formula(forall([o], equiv(Element(o,Su), or(equal(o,Ob5), equal(o,Ol5)))),5dot56).
+% formula(forall([o], equiv(Element(o,Su), or(equal(o,Ob5), equal(o,Ol5)))),5dot56).
 
 % 5.57 (assume)
-formula(Leq3(Ta5,Tx,Tb5),5dot57).
+% formula(Leq3(Ta5,Tx,Tb5),5dot57).
 
 % 5.58 test
 % formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5),5dot58).
@@ -348,11 +351,14 @@ list_of_formulae(conjectures).
 % 5.66 (NO proof)
 % formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
-% 5.65 (NO proof)
-formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+% 5.65A
+% formula(not(Element(Agent,Contents(Ta5,Rc5))),5dot65A).
 
-% 5.64 (NO proof)
-% formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5))))).
+% 5.65B
+formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Su)), not(Grasp(tx,ox)))),5dot65B).
+
+% 5.65 (proof in separate file)
+% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
 % 5.62 (proof)
 % formula(Isolates(Tx,Su,Contents(Ta5,Rc5))).

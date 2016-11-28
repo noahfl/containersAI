@@ -13,7 +13,7 @@ list_of_symbols.
 
 functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Ra4,0), (Rc1,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0), (Tm,0),(Oa,0), (Tx,0), (Su,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1), (Isolates,3), (ClosedContainer,3), (CausallyIsolated,3), (StaticCausallyIsolated,3), (RigidObject,1)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1), (Isolates,3), (ClosedContainer,3), (CausallyIsolated,3), (StaticCausallyIsolated,3), (RigidObject,1), (IsolatesCand,2), (Disjoint,2)].
 
 end_of_list.
 
@@ -77,6 +77,8 @@ formula(forall([t,a], implies(Feasible(t,a), and(Time(t), Action(a))))).
 %% Object sets
 % OSSA
 formula(forall([x,s], implies(Element(x,s), and(Object(x), ObjectSet(s))))).
+%OSSB
+formula(forall([sa,sb], implies(Disjoint(sa,sb), and(ObjectSet(sa),ObjectSet(sb))))).
 %% Objects and object sets: spatio-temporal
 % OOSA
 formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
@@ -97,7 +99,9 @@ formula(forall([s,r], implies(or(Fits(s,r), SmallSet(s,r)), and(ObjectSet(s), Re
 formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r))))).
 %% Isolates
 % OISA
-formula(forall([t,sp,sx], implies(Isolates(t,sp,sx), and(Time(t), ObjectSet(sp), ObjectSet(sx))))). 
+formula(forall([t,sp,sx], implies(Isolates(t,sp,sx), and(Time(t), ObjectSet(sp), ObjectSet(sx))))).
+% OISB
+formula(forall([sp,sx], implies(IsolatesCand(sp,sx), and(ObjectSet(sp), ObjectSet(sx))))). 
 
 %%% Specific Actions
 %% Safe manipulation
@@ -222,34 +226,22 @@ formula(ObjectSet(Su)).
 
 %%%% Specifications
 
-% MRD2
-formula(forall([ta,tb,s], equiv(StaticCausallyIsolated(ta,tb,s), and(CausallyIsolated(ta,tb,s), forall([ox], implies(Element(ox,s), Stable(ta,ox)))))),MRD2).
+% 5.64 test
+formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
 
-% MSD1
-formula(forall([t], equiv(AllStable(t), forall([o], implies(Object(o), or(equal(o,Agent), Stable(t,o), Grasp(t,o)))))),MSD1).
+% OID1
+formula(forall([sp,sx], equiv(IsolatesCand(sp,sx), and(not(Element(Agent,sp)), not(Element(Agent,sx)), Disjoint(sp,sx)))),OID1).
 
-% C5A4
-formula(AllStable(Ta5),C5A4).
-
-% 5.3 (proof)
-formula(Lt(Ta5,Tb5),5dot3).
-
-% 5.65A
-formula(not(Element(Agent,Contents(Ta5,Rc5))),5dot65A).
-
-% 5.65B
-formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Su)), not(Grasp(tx,ox)))),5dot65B).
-
-% 5.65 (proof)
-formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
+% OIA1
+formula(forall([t,sp,sx], implies(Isolates(t,sp,sx), IsolatesCand(sp,sx))),OIA1).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-% 5.66 (NO proof)
-formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+% 5.65A
+formula(not(Element(Agent,Contents(Ta5,Rc5))),5dot65A).
 
 end_of_list.
 
