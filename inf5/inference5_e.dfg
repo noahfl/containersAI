@@ -262,7 +262,7 @@ formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), implies(foral
 formula(forall([o,r,t], implies(and(Object(o), Region(r), Time(t)), equiv(Element(o,Contents(t,r)), P(Place(t,o),r)))),OTD2).
 
 % MRD1
-formula(forall([ta,tb,sx], equiv(CausallyIsolated(ta,tb,sx), exists([sp], implies(ObjectSet(sp), and(forall([o], implies(Element(o,sp), Motionless(ta,tb,o))), forall([t], implies(and(Leq(ta,t), Lt(t,tb)), Isolates(t,sp,sx)))))))),MRD1).
+formula(forall([ta,tb,sx], equiv(CausallyIsolated(ta,tb,sx), exists([sp], and(ObjectSet(sp), and(forall([o], implies(Element(o,sp), Motionless(ta,tb,o))), forall([t], implies(and(Leq(ta,t), Lt(t,tb)), Isolates(t,sp,sx)))))))),MRD1).
 
 % MRD2
 formula(forall([ta,tb,s], equiv(StaticCausallyIsolated(ta,tb,s), and(CausallyIsolated(ta,tb,s), forall([ox], implies(Element(ox,s), Stable(ta,ox)))))),MRD2).
@@ -279,6 +279,8 @@ formula(forall([ta,tb,s,o], implies(and(StaticCausallyIsolated(ta,tb,s), Element
 % MOD2
 formula(forall([ta,tb,o], equiv(Motionless(ta,tb,o), and(Lt(ta,tb), forall([t], implies(Time(t), implies(Leq3(ta,t,tb), equal(Place(t,o), Place(ta,o)))))))),MOD2).
 
+% 5.1
+formula(Motionless(Ta5,Tb5,Ol5)).
 
 % 5.2
 formula(forall([tm], implies(Leq3(Ta5,tm,Tb5), equal(Place(tm,Ol5), Place(Ta5,Ol5)))),5dot2).
@@ -298,6 +300,8 @@ formula(forall([tc], implies(Leq3(Ta5,tc,Tb5), equal(Place(tc,Ob5), Place(Ta5,Ob
 % 5.54
 % formula(equal(Su,Pair(Ob5,Ol5)),5dot54).
 
+% 5.55 
+formula(forall([o], equiv(Element(o,Su), or(equal(o,Ob5), equal(o,Ol5)))),5dot56).
 
 % 5.57 (assume)
 formula(Leq3(Ta5,Tx,Tb5),5dot57).
@@ -318,7 +322,7 @@ formula(Leq3(Ta5,Tx,Tb5),5dot57).
 % formula(Isolates(Tx,Su,Contents(Ta5,Rc5)),5dot62).
 
 % 5.64 test
-% formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
+formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5)))),5dot64).
 
 % 5.65 test
 % formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)),5dot65).
@@ -345,7 +349,7 @@ list_of_formulae(conjectures).
 % formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
 % 5.65 (NO proof)
-% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
 
 % 5.64 (NO proof)
 % formula(forall([tx], implies(Leq3(Ta5,tx,Tb5), Isolates(tx,Su,Contents(Ta5,Rc5))))).
@@ -363,7 +367,7 @@ list_of_formulae(conjectures).
 % formula(ClosedContainer(Tx,Su,Rc5)).
 
 % 5.58 (proof in separate file)
-formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
+% formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
 
 % 5.56 (proof)
 % formula(not(Element(Agent,Su))).

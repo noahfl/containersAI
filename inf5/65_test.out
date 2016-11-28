@@ -1,0 +1,1482 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Action(StandStill)*.
+2[0:Inp] ||  -> Time(Ta5)*.
+3[0:Inp] ||  -> Time(Tb5)*.
+4[0:Inp] ||  -> Object(Ob5)*.
+5[0:Inp] ||  -> Object(Ol5)*.
+6[0:Inp] ||  -> Region(Rc5)*.
+7[0:Inp] ||  -> Object(Os5)*.
+8[0:Inp] ||  -> History(Hu)*.
+9[0:Inp] ||  -> History(Hc)*.
+10[0:Inp] ||  -> Time(Tm)*.
+11[0:Inp] ||  -> Object(Oa)*.
+12[0:Inp] ||  -> Time(Tx)*.
+13[0:Inp] ||  -> Object(Agent)*.
+14[0:Inp] ||  -> ObjectSet(Su)*.
+15[0:Inp] ||  -> Motionless(Ta5,Tb5,Ob5)*.
+16[0:Inp] ||  -> Motionless(Ta5,Tb5,Ol5)*.
+17[0:Inp] || SmallObject(U) -> Object(U)*.
+18[0:Inp] || IntConn(U) -> Region(U)*.
+19[0:Inp] || AllStable(U) -> Time(U)*.
+20[0:Inp] || EmptyHanded(U) -> Time(U)*.
+21[0:Inp] || RigidObject(U) -> Object(U)*.
+22[0:Inp] ||  -> ObjectSet(skf3(U,V,W))*.
+23[0:Inp] || Region(U) -> Region(ConvexHull(U))*.
+24[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+25[0:Inp] || Region(U) -> Action(TravelTo(U))*.
+26[0:Inp] || Object(U) -> History(HPlace(U))*.
+27[0:Inp] || SkP0(U,V)* -> Time(V).
+28[0:Inp] || SkP0(U,V)* -> Time(U).
+29[0:Inp] || Feasible(U,V)* -> Time(U).
+30[0:Inp] || Feasible(U,V)* -> Action(V).
+31[0:Inp] || Element(U,V)* -> Object(U).
+32[0:Inp] || Element(U,V)* -> ObjectSet(V).
+33[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+34[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+35[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+36[0:Inp] || SkP2(U,V)* -> Region(U).
+37[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+38[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+39[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+40[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+41[0:Inp] || FullyOutside(U,V)* -> Region(U).
+42[0:Inp] || FullyOutside(U,V)* -> Region(V).
+43[0:Inp] || Reachable(U,V)* -> Time(U).
+44[0:Inp] || Reachable(U,V)* -> Region(V).
+45[0:Inp] || SkP4(U,V)* -> Region(V).
+46[0:Inp] || SkP4(U,V)* -> Region(U).
+47[0:Inp] || SkP5(U,V)* -> Region(V).
+48[0:Inp] || SkP5(U,V)* -> Region(U).
+49[0:Inp] || SkP6(U,V)* -> Region(V).
+50[0:Inp] || SkP6(U,V)* -> Region(U).
+51[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+52[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+53[0:Inp] || Stable(U,V)* -> Time(U).
+54[0:Inp] || Stable(U,V)* -> Object(V).
+55[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+56[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+57[0:Inp] || CanGrasp(U,V)* -> Time(U).
+58[0:Inp] || CanGrasp(U,V)* -> Object(V).
+59[0:Inp] || Grasp(U,V)* -> Time(U).
+60[0:Inp] || Grasp(U,V)* -> Object(V).
+61[0:Inp] || Graspable(U,V)* -> Time(U).
+62[0:Inp] || Graspable(U,V)* -> Object(V).
+63[0:Inp] || CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))* -> .
+64[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+65[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+66[0:Inp] || Leq3(U,V,W)* -> Time(U).
+67[0:Inp] || Leq3(U,V,W)* -> Time(V).
+68[0:Inp] || Leq3(U,V,W)* -> Time(W).
+69[0:Inp] || Occurs(U,V,W)* -> Time(U).
+70[0:Inp] || Occurs(U,V,W)* -> Time(V).
+71[0:Inp] || Occurs(U,V,W)* -> Action(W).
+72[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+73[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+74[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+75[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+76[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+77[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+78[0:Inp] || SkP1(U,V,W)* -> Time(W).
+79[0:Inp] || SkP1(U,V,W)* -> Object(V).
+80[0:Inp] || SkP1(U,V,W)* -> Object(U).
+81[0:Inp] || Fits(U,V) -> SkP2(V,U)*.
+82[0:Inp] || SmallSet(U,V) -> SkP2(V,U)*.
+83[0:Inp] || Isolates(U,V,W)* -> Time(U).
+84[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+85[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+86[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+87[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+88[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+89[0:Inp] || SkP3(U,V,W)* -> Time(W).
+90[0:Inp] || SkP3(U,V,W)* -> Time(V).
+91[0:Inp] || SkP3(U,V,W)* -> Object(U).
+92[0:Inp] || DR(U,V) -> SkP4(V,U)*.
+93[0:Inp] || EC(U,V) -> SkP4(V,U)*.
+94[0:Inp] || P(U,V) -> SkP4(V,U)*.
+95[0:Inp] || O(U,V) -> SkP4(V,U)*.
+96[0:Inp] || OV(U,V) -> SkP4(V,U)*.
+97[0:Inp] || OpenContained(U,V) -> SkP5(V,U)*.
+98[0:Inp] || FullyOutside(U,V) -> SkP5(V,U)*.
+99[0:Inp] || OpenContainerShape(U,V) -> SkP5(V,U)*.
+100[0:Inp] || UprightContainerShape(U,V) -> SkP5(V,U)*.
+101[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+102[0:Inp] || PartiallyContained(U,V) -> SkP6(V,U)*.
+103[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+104[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+105[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+106[0:Inp] || Moves(U,V,W)* -> Time(U).
+107[0:Inp] || Moves(U,V,W)* -> Time(V).
+108[0:Inp] || Moves(U,V,W)* -> Object(W).
+109[0:Inp] || SkP7(U,V,W)* -> Time(W).
+110[0:Inp] || SkP7(U,V,W)* -> Time(V).
+111[0:Inp] || SkP7(U,V,W)* -> Object(U).
+112[0:Inp] || SkP8(U,V,W)* -> Time(W).
+113[0:Inp] || SkP8(U,V,W)* -> Time(V).
+114[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+115[0:Inp] || Grasps(U,V,W)* -> Time(U).
+116[0:Inp] || Grasps(U,V,W)* -> Time(V).
+117[0:Inp] || Grasps(U,V,W)* -> Object(W).
+118[0:Inp] || Constant(U,V,W)* -> Time(U).
+119[0:Inp] || Constant(U,V,W)* -> Time(V).
+120[0:Inp] || Constant(U,V,W)* -> History(W).
+121[0:Inp] || SkP9(U,V,W)* -> Time(W).
+122[0:Inp] || SkP9(U,V,W)* -> Time(V).
+123[0:Inp] || SkP9(U,V,W)* -> History(U).
+124[0:Inp] || BoxWithLid(U,V,W)* -> Time(U).
+125[0:Inp] || BoxWithLid(U,V,W)* -> Object(V).
+126[0:Inp] || BoxWithLid(U,V,W)* -> Object(W).
+127[0:Inp] || equal(U,Ob5) -> Element(U,Su)*.
+128[0:Inp] || equal(U,Ol5) -> Element(U,Su)*.
+129[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(U).
+130[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(V).
+131[0:Inp] || SafeManipulate(U,V,W,X)* -> Object(W).
+132[0:Inp] || SafeManipulate(U,V,W,X)* -> Region(X).
+133[0:Inp] || SkP10(U,V,W,X)* -> Time(X).
+134[0:Inp] || SkP10(U,V,W,X)* -> Time(W).
+135[0:Inp] || SkP10(U,V,W,X)* -> History(V).
+136[0:Inp] || SkP10(U,V,W,X)* -> History(U).
+137[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(U).
+138[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(V).
+139[0:Inp] || DynamicUContainer(U,V,W,X)* -> Object(W).
+140[0:Inp] || DynamicUContainer(U,V,W,X)* -> History(X).
+141[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+142[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+143[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+144[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+145[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+146[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+147[0:Inp] || CContained(U,V,W) -> SkP1(W,V,U)*.
+148[0:Inp] || UContained(U,V,W) -> SkP1(W,V,U)*.
+149[0:Inp] || BLContained(U,V,W) -> SkP1(W,V,U)*.
+150[0:Inp] || PreserveCContents(U,V,W) -> SkP3(W,V,U)*.
+151[0:Inp] || PreserveUContents(U,V,W) -> SkP3(W,V,U)*.
+152[0:Inp] || PreserveBoxWithLid(U,V,W) -> SkP3(W,V,U)*.
+153[0:Inp] || StableThroughout(U,V,W) -> SkP7(W,V,U)*.
+154[0:Inp] || Released(U,V,W) -> SkP7(W,V,U)*.
+155[0:Inp] || Motionless(U,V,W) -> SkP7(W,V,U)*.
+156[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+157[0:Inp] || StaticCausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+158[0:Inp] || AlwaysIntConn(U,V,W) -> SkP9(W,V,U)*.
+159[0:Inp] || Continuous(U,V,W) -> SkP9(W,V,U)*.
+160[0:Inp] || Action(U) Action(V) -> Action(Sequence(U,V))*.
+161[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+162[0:Inp] || Object(U) Object(V) -> ObjectSet(Pair(U,V))*.
+163[0:Inp] || ObjectSet(U) ObjectSet(V) -> ObjectSet(Union(U,V))*.
+164[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+165[0:Inp] || Time(U) Region(V) -> ObjectSet(Contents(U,V))*.
+166[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(CContents(U,V))*.
+167[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(UContents(U,V))*.
+168[0:Inp] || Object(U) Region(V) -> Action(ManipTo(U,V))*.
+169[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+170[0:Inp] || History(U) History(V) -> History(HUnion(U,V))*.
+171[0:Inp] || Time(U) Object(V) -> ObjectSet(MovingGroup(U,V))*.
+172[0:Inp] || Object(U) Object(V) -> Action(PutInUC(U,V))*.
+173[0:Inp] || Object(U) Object(V) -> Action(LoadUprightContainer(U,V))*.
+174[0:Inp] || Element(U,Su)* -> equal(U,Ob5) equal(U,Ol5).
+175[0:Inp] || PersistentCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+176[0:Inp] || NoExitCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+177[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+178[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+179[0:Inp] || Leq3(Ta5,U,Tb5) -> Isolates(U,Su,Contents(Ta5,Rc5))*.
+180[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+181[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+182[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+183[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+184[0:Inp] || Element(U,skf3(V,W,X))* CausallyIsolated(X,W,V) -> Motionless(X,W,U).
+185[0:Inp] || ObjectSet(U) -> Leq(V,skf5(W,V,X,Y))* Element(skf4(U,Z,X1),U)* CausallyIsolated(V,W,X2)*.
+186[0:Inp] || ObjectSet(U) -> Lt(skf5(V,W,X,Y),V)* Element(skf4(U,Z,X1),U)* CausallyIsolated(X2,V,X3)*.
+187[0:Inp] || Leq(U,V) Lt(V,W) CausallyIsolated(U,W,X) -> Isolates(V,skf3(X,W,U),X)*.
+188[0:Inp] || Isolates(skf5(U,V,W,X),X,W)* ObjectSet(X) -> Element(skf4(X,Y,Z),X)* CausallyIsolated(V,U,W).
+189[0:Inp] || Motionless(U,V,skf4(W,V,U))* ObjectSet(W) -> Leq(U,skf5(V,U,X,Y))* CausallyIsolated(U,V,Z)*.
+190[0:Inp] || Motionless(U,V,skf4(W,V,U))* ObjectSet(W) -> Lt(skf5(V,X,Y,Z),V)* CausallyIsolated(U,V,X1)*.
+191[0:Inp] || Isolates(skf5(U,V,W,X),X,W)* Motionless(V,U,skf4(X,U,V))* ObjectSet(X) -> CausallyIsolated(V,U,W).
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 190 Conjecture clauses: 1
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf5 > skf2 > skf4 > skf3 > skf1 > skf0 > LoadUprightContainer > PutInUC > MovingGroup > HUnion > Slice > ManipTo > UContents > CContents > Union > Pair > RUnion > Place > Contents > Sequence > HPlace > TravelTo > Singleton > ConvexHull > Action > SkP8 > SkP7 > SkP0 > CausallyIsolated > Isolates > History > Motionless > Leq3 > Leq > Lt > Element > ObjectSet > Region > Object > Time > UprightContainer > SkP5 > FullyOutside > SkP2 > SmallSet > AllStable > EmptyHanded > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > Occurs > CanGrasp > UprightContainerShape > SkP1 > UContained > SkP4 > P > Released > Grasp > Moves > Feasible > SafeManipulate > SkP6 > PartiallyContained > OSPlace > SkP3 > PreserveCContents > PreserveUContents > PreserveBoxWithLid > Stable > StableThroughout > Fits > MuchSmaller > OMuchSmaller > OpenContainerShape > OpenContained > CContained > BLContained > DynamicUContainer > O > Cavity > Constant > Grasps > FeasiblePlace > OV > BoxWithLidC > BoxWithLid > CombinedContainer > EC > SkP10 > PersistentCavity > NoExitCavity > NoEntranceCavity > DR > SkP9 > Continuous > AlwaysIntConn > IntConn > ClosedContainer > StaticCausallyIsolated > RigidObject > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Su > Tx > Oa > Tm > Hc > Hu > Tb5 > Os5 > Rc5 > Ol5 > Ob5 > Ta5 > Rc1 > Ra4 > Tm2 > Tb > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4 > StandStill
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> Action(StandStill)*.
+9[0:Inp] ||  -> History(Hc)*.
+8[0:Inp] ||  -> History(Hu)*.
+14[0:Inp] ||  -> ObjectSet(Su)*.
+6[0:Inp] ||  -> Region(Rc5)*.
+13[0:Inp] ||  -> Object(Agent)*.
+11[0:Inp] ||  -> Object(Oa)*.
+7[0:Inp] ||  -> Object(Os5)*.
+5[0:Inp] ||  -> Object(Ol5)*.
+4[0:Inp] ||  -> Object(Ob5)*.
+12[0:Inp] ||  -> Time(Tx)*.
+10[0:Inp] ||  -> Time(Tm)*.
+3[0:Inp] ||  -> Time(Tb5)*.
+2[0:Inp] ||  -> Time(Ta5)*.
+16[0:Inp] ||  -> Motionless(Ta5,Tb5,Ol5)*.
+15[0:Inp] ||  -> Motionless(Ta5,Tb5,Ob5)*.
+18[0:Inp] IntConn(U) ||  -> Region(U)*.
+21[0:Inp] RigidObject(U) ||  -> Object(U)*.
+17[0:Inp] SmallObject(U) ||  -> Object(U)*.
+20[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+19[0:Inp] AllStable(U) ||  -> Time(U)*.
+22[0:Inp] ||  -> ObjectSet(skf3(U,V,W))*.
+25[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+26[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+24[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+23[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+30[0:Inp] || Feasible(U,V)* -> Action(V).
+35[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+32[0:Inp] || Element(U,V)* -> ObjectSet(V).
+52[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+51[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+44[0:Inp] || Reachable(U,V)* -> Region(V).
+38[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+34[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+42[0:Inp] || FullyOutside(U,V)* -> Region(V).
+41[0:Inp] || FullyOutside(U,V)* -> Region(U).
+50[0:Inp] || SkP6(U,V)* -> Region(U).
+49[0:Inp] || SkP6(U,V)* -> Region(V).
+36[0:Inp] || SkP2(U,V)* -> Region(U).
+48[0:Inp] || SkP5(U,V)* -> Region(U).
+47[0:Inp] || SkP5(U,V)* -> Region(V).
+46[0:Inp] || SkP4(U,V)* -> Region(U).
+45[0:Inp] || SkP4(U,V)* -> Region(V).
+62[0:Inp] || Graspable(U,V)* -> Object(V).
+60[0:Inp] || Grasp(U,V)* -> Object(V).
+58[0:Inp] || CanGrasp(U,V)* -> Object(V).
+56[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+54[0:Inp] || Stable(U,V)* -> Object(V).
+40[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+37[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+33[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+31[0:Inp] || Element(U,V)* -> Object(U).
+61[0:Inp] || Graspable(U,V)* -> Time(U).
+59[0:Inp] || Grasp(U,V)* -> Time(U).
+57[0:Inp] || CanGrasp(U,V)* -> Time(U).
+55[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+53[0:Inp] || Stable(U,V)* -> Time(U).
+43[0:Inp] || Reachable(U,V)* -> Time(U).
+39[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+29[0:Inp] || Feasible(U,V)* -> Time(U).
+28[0:Inp] || SkP0(U,V)* -> Time(U).
+27[0:Inp] || SkP0(U,V)* -> Time(V).
+63[0:Inp] || CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))* -> .
+128[0:Inp] || equal(U,Ol5) -> Element(U,Su)*.
+127[0:Inp] || equal(U,Ob5) -> Element(U,Su)*.
+102[0:Inp] || PartiallyContained(U,V) -> SkP6(V,U)*.
+101[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+82[0:Inp] || SmallSet(U,V) -> SkP2(V,U)*.
+81[0:Inp] || Fits(U,V) -> SkP2(V,U)*.
+64[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+65[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+100[0:Inp] || UprightContainerShape(U,V) -> SkP5(V,U)*.
+99[0:Inp] || OpenContainerShape(U,V) -> SkP5(V,U)*.
+97[0:Inp] || OpenContained(U,V) -> SkP5(V,U)*.
+98[0:Inp] || FullyOutside(U,V) -> SkP5(V,U)*.
+96[0:Inp] || OV(U,V) -> SkP4(V,U)*.
+95[0:Inp] || O(U,V) -> SkP4(V,U)*.
+94[0:Inp] || P(U,V) -> SkP4(V,U)*.
+93[0:Inp] || EC(U,V) -> SkP4(V,U)*.
+92[0:Inp] || DR(U,V) -> SkP4(V,U)*.
+71[0:Inp] || Occurs(U,V,W)* -> Action(W).
+120[0:Inp] || Constant(U,V,W)* -> History(W).
+123[0:Inp] || SkP9(U,V,W)* -> History(U).
+73[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+114[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+85[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+84[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+105[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+104[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+103[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+77[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+74[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+126[0:Inp] || BoxWithLid(U,V,W)* -> Object(W).
+125[0:Inp] || BoxWithLid(U,V,W)* -> Object(V).
+117[0:Inp] || Grasps(U,V,W)* -> Object(W).
+108[0:Inp] || Moves(U,V,W)* -> Object(W).
+88[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+87[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+76[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+111[0:Inp] || SkP7(U,V,W)* -> Object(U).
+91[0:Inp] || SkP3(U,V,W)* -> Object(U).
+80[0:Inp] || SkP1(U,V,W)* -> Object(U).
+79[0:Inp] || SkP1(U,V,W)* -> Object(V).
+124[0:Inp] || BoxWithLid(U,V,W)* -> Time(U).
+119[0:Inp] || Constant(U,V,W)* -> Time(V).
+118[0:Inp] || Constant(U,V,W)* -> Time(U).
+116[0:Inp] || Grasps(U,V,W)* -> Time(V).
+115[0:Inp] || Grasps(U,V,W)* -> Time(U).
+107[0:Inp] || Moves(U,V,W)* -> Time(V).
+106[0:Inp] || Moves(U,V,W)* -> Time(U).
+86[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+75[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+72[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+70[0:Inp] || Occurs(U,V,W)* -> Time(V).
+69[0:Inp] || Occurs(U,V,W)* -> Time(U).
+122[0:Inp] || SkP9(U,V,W)* -> Time(V).
+121[0:Inp] || SkP9(U,V,W)* -> Time(W).
+113[0:Inp] || SkP8(U,V,W)* -> Time(V).
+112[0:Inp] || SkP8(U,V,W)* -> Time(W).
+110[0:Inp] || SkP7(U,V,W)* -> Time(V).
+109[0:Inp] || SkP7(U,V,W)* -> Time(W).
+90[0:Inp] || SkP3(U,V,W)* -> Time(V).
+89[0:Inp] || SkP3(U,V,W)* -> Time(W).
+78[0:Inp] || SkP1(U,V,W)* -> Time(W).
+83[0:Inp] || Isolates(U,V,W)* -> Time(U).
+68[0:Inp] || Leq3(U,V,W)* -> Time(W).
+67[0:Inp] || Leq3(U,V,W)* -> Time(V).
+66[0:Inp] || Leq3(U,V,W)* -> Time(U).
+146[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+145[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+140[0:Inp] || DynamicUContainer(U,V,W,X)* -> History(X).
+136[0:Inp] || SkP10(U,V,W,X)* -> History(U).
+135[0:Inp] || SkP10(U,V,W,X)* -> History(V).
+144[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+132[0:Inp] || SafeManipulate(U,V,W,X)* -> Region(X).
+143[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+142[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+139[0:Inp] || DynamicUContainer(U,V,W,X)* -> Object(W).
+131[0:Inp] || SafeManipulate(U,V,W,X)* -> Object(W).
+141[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+138[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(V).
+137[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(U).
+130[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(V).
+129[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(U).
+134[0:Inp] || SkP10(U,V,W,X)* -> Time(W).
+133[0:Inp] || SkP10(U,V,W,X)* -> Time(X).
+159[0:Inp] || Continuous(U,V,W) -> SkP9(W,V,U)*.
+158[0:Inp] || AlwaysIntConn(U,V,W) -> SkP9(W,V,U)*.
+157[0:Inp] || StaticCausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+156[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+154[0:Inp] || Released(U,V,W) -> SkP7(W,V,U)*.
+153[0:Inp] || StableThroughout(U,V,W) -> SkP7(W,V,U)*.
+152[0:Inp] || PreserveBoxWithLid(U,V,W) -> SkP3(W,V,U)*.
+151[0:Inp] || PreserveUContents(U,V,W) -> SkP3(W,V,U)*.
+150[0:Inp] || PreserveCContents(U,V,W) -> SkP3(W,V,U)*.
+149[0:Inp] || BLContained(U,V,W) -> SkP1(W,V,U)*.
+148[0:Inp] || UContained(U,V,W) -> SkP1(W,V,U)*.
+147[0:Inp] || CContained(U,V,W) -> SkP1(W,V,U)*.
+155[0:Inp] || Motionless(U,V,W) -> SkP7(W,V,U)*.
+174[0:Inp] || Element(U,Su)* -> equal(U,Ol5) equal(U,Ob5).
+160[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+168[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+173[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+172[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+170[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+163[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+162[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+167[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+166[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+165[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+171[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+161[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+169[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+164[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+179[0:Inp] || Leq3(Ta5,U,Tb5) -> Isolates(U,Su,Contents(Ta5,Rc5))*.
+178[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+177[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+176[0:Inp] || NoExitCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+175[0:Inp] || PersistentCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+180[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+181[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+182[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+183[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+184[0:Inp] || Element(U,skf3(V,W,X))* CausallyIsolated(X,W,V) -> Motionless(X,W,U).
+196[0:Res:185.3,63.0] ObjectSet(U) ||  -> Leq(Ta5,skf5(Tb5,Ta5,V,W))* Element(skf4(U,X,Y),U)*.
+195[0:Res:186.3,63.0] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)* Lt(skf5(Tb5,X,Y,Z),Tb5)*.
+197[0:Res:189.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))* -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))* -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+192[0:MRR:188.0,84.1] || Isolates(skf5(U,V,W,X),X,W)* -> Element(skf4(X,Y,Z),X)* CausallyIsolated(V,U,W).
+187[0:Inp] || Lt(U,V) Leq(W,U) CausallyIsolated(W,V,X) -> Isolates(U,skf3(X,V,W),X)*.
+185[0:Inp] ObjectSet(U) ||  -> Leq(V,skf5(W,V,X,Y))* Element(skf4(U,Z,X1),U)* CausallyIsolated(V,W,X2)*.
+186[0:Inp] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)* Lt(skf5(X,Y,Z,X1),X)* CausallyIsolated(X2,X,X3)*.
+193[0:MRR:191.0,84.1] || Motionless(U,V,skf4(W,V,U))* Isolates(skf5(V,U,X,W),W,X)* -> CausallyIsolated(U,V,X).
+189[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))* -> Leq(V,skf5(W,V,X,Y))* CausallyIsolated(V,W,Z)*.
+190[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))* -> Lt(skf5(W,X,Y,Z),W)* CausallyIsolated(V,W,X1)*.
+	Given clause: 185[0:Inp] ObjectSet(U) ||  -> Leq(V,skf5(W,V,X,Y))* Element(skf4(U,Z,X1),U)* CausallyIsolated(V,W,X2)*.
+	Given clause: 200[1:Spt:185.0,185.2] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)*.
+	Given clause: 1[0:Inp] ||  -> Action(StandStill)*.
+	Given clause: 9[0:Inp] ||  -> History(Hc)*.
+	Given clause: 8[0:Inp] ||  -> History(Hu)*.
+	Given clause: 14[0:Inp] ||  -> ObjectSet(Su)*.
+	Given clause: 6[0:Inp] ||  -> Region(Rc5)*.
+	Given clause: 13[0:Inp] ||  -> Object(Agent)*.
+	Given clause: 11[0:Inp] ||  -> Object(Oa)*.
+	Given clause: 7[0:Inp] ||  -> Object(Os5)*.
+	Given clause: 5[0:Inp] ||  -> Object(Ol5)*.
+	Given clause: 4[0:Inp] ||  -> Object(Ob5)*.
+	Given clause: 12[0:Inp] ||  -> Time(Tx)*.
+	Given clause: 10[0:Inp] ||  -> Time(Tm)*.
+	Given clause: 3[0:Inp] ||  -> Time(Tb5)*.
+	Given clause: 2[0:Inp] ||  -> Time(Ta5)*.
+	Given clause: 16[0:Inp] ||  -> Motionless(Ta5,Tb5,Ol5)*.
+	Given clause: 15[0:Inp] ||  -> Motionless(Ta5,Tb5,Ob5)*.
+	Given clause: 18[0:Inp] IntConn(U) ||  -> Region(U)*.
+	Given clause: 21[0:Inp] RigidObject(U) ||  -> Object(U)*.
+	Given clause: 17[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 20[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 19[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 22[0:Inp] ||  -> ObjectSet(skf3(U,V,W))*.
+	Given clause: 25[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+	Given clause: 26[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+	Given clause: 24[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 23[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+	Given clause: 30[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 35[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+	Given clause: 32[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 52[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+	Given clause: 51[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+	Given clause: 44[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 38[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+	Given clause: 34[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+	Given clause: 42[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 41[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 50[0:Inp] || SkP6(U,V)* -> Region(U).
+	Given clause: 49[0:Inp] || SkP6(U,V)* -> Region(V).
+	Given clause: 36[0:Inp] || SkP2(U,V)* -> Region(U).
+	Given clause: 48[0:Inp] || SkP5(U,V)* -> Region(U).
+	Given clause: 47[0:Inp] || SkP5(U,V)* -> Region(V).
+	Given clause: 46[0:Inp] || SkP4(U,V)* -> Region(U).
+	Given clause: 45[0:Inp] || SkP4(U,V)* -> Region(V).
+	Given clause: 62[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 60[0:Inp] || Grasp(U,V)* -> Object(V).
+	Given clause: 58[0:Inp] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 56[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 54[0:Inp] || Stable(U,V)* -> Object(V).
+	Given clause: 40[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 37[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+	Given clause: 33[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+	Given clause: 31[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 61[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 59[0:Inp] || Grasp(U,V)* -> Time(U).
+	Given clause: 57[0:Inp] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 55[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 53[0:Inp] || Stable(U,V)* -> Time(U).
+	Given clause: 43[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 39[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 29[0:Inp] || Feasible(U,V)* -> Time(U).
+	Given clause: 28[0:Inp] || SkP0(U,V)* -> Time(U).
+	Given clause: 27[0:Inp] || SkP0(U,V)* -> Time(V).
+	Given clause: 63[0:Inp] || CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))* -> .
+	Given clause: 128[0:Inp] || equal(U,Ol5) -> Element(U,Su)*.
+	Given clause: 127[0:Inp] || equal(U,Ob5) -> Element(U,Su)*.
+	Given clause: 203[0:Res:128.1,31.0] || equal(U,Ol5) -> Object(U)*.
+	Given clause: 206[0:Res:127.1,31.0] || equal(U,Ob5) -> Object(U)*.
+	Given clause: 102[0:Inp] || PartiallyContained(U,V) -> SkP6(V,U)*.
+	Given clause: 209[0:Res:102.1,49.0] || PartiallyContained(U,V)* -> Region(U).
+	Given clause: 101[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+	Given clause: 210[0:Res:102.1,50.0] || PartiallyContained(U,V)* -> Region(V).
+	Given clause: 211[0:Res:101.1,49.0] || Cavity(U,V)* -> Region(U).
+	Given clause: 212[0:Res:101.1,50.0] || Cavity(U,V)* -> Region(V).
+	Given clause: 82[0:Inp] || SmallSet(U,V) -> SkP2(V,U)*.
+	Given clause: 81[0:Inp] || Fits(U,V) -> SkP2(V,U)*.
+	Given clause: 213[0:Res:82.1,36.0] || SmallSet(U,V)* -> Region(V).
+	Given clause: 214[0:Res:82.1,35.0] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 215[0:Res:81.1,36.0] || Fits(U,V)* -> Region(V).
+	Given clause: 216[0:Res:81.1,35.0] || Fits(U,V)* -> ObjectSet(U).
+	Given clause: 64[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+	Given clause: 217[0:Res:64.1,27.0] || Lt(U,V)* -> Time(U).
+	Given clause: 218[0:Res:64.1,28.0] || Lt(U,V)* -> Time(V).
+	Given clause: 65[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+	Given clause: 221[0:Res:65.1,27.0] || Leq(U,V)* -> Time(U).
+	Given clause: 100[0:Inp] || UprightContainerShape(U,V) -> SkP5(V,U)*.
+	Given clause: 222[0:Res:65.1,28.0] || Leq(U,V)* -> Time(V).
+	Given clause: 225[0:Res:100.1,47.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 226[0:Res:100.1,48.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 99[0:Inp] || OpenContainerShape(U,V) -> SkP5(V,U)*.
+	Given clause: 97[0:Inp] || OpenContained(U,V) -> SkP5(V,U)*.
+	Given clause: 227[0:Res:99.1,47.0] || OpenContainerShape(U,V)* -> Region(U).
+	Given clause: 228[0:Res:99.1,48.0] || OpenContainerShape(U,V)* -> Region(V).
+	Given clause: 229[0:Res:97.1,47.0] || OpenContained(U,V)* -> Region(U).
+	Given clause: 230[0:Res:97.1,48.0] || OpenContained(U,V)* -> Region(V).
+	Given clause: 98[0:Inp] || FullyOutside(U,V) -> SkP5(V,U)*.
+	Given clause: 96[0:Inp] || OV(U,V) -> SkP4(V,U)*.
+	Given clause: 233[0:Res:96.1,45.0] || OV(U,V)* -> Region(U).
+	Given clause: 234[0:Res:96.1,46.0] || OV(U,V)* -> Region(V).
+	Given clause: 95[0:Inp] || O(U,V) -> SkP4(V,U)*.
+	Given clause: 94[0:Inp] || P(U,V) -> SkP4(V,U)*.
+	Given clause: 235[0:Res:95.1,45.0] || O(U,V)* -> Region(U).
+	Given clause: 236[0:Res:95.1,46.0] || O(U,V)* -> Region(V).
+	Given clause: 237[0:Res:94.1,45.0] || P(U,V)* -> Region(U).
+	Given clause: 238[0:Res:94.1,46.0] || P(U,V)* -> Region(V).
+	Given clause: 93[0:Inp] || EC(U,V) -> SkP4(V,U)*.
+	Given clause: 239[0:Res:93.1,45.0] || EC(U,V)* -> Region(U).
+	Given clause: 240[0:Res:93.1,46.0] || EC(U,V)* -> Region(V).
+	Given clause: 92[0:Inp] || DR(U,V) -> SkP4(V,U)*.
+	Given clause: 241[0:Res:92.1,45.0] || DR(U,V)* -> Region(U).
+	Given clause: 71[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 242[0:Res:92.1,46.0] || DR(U,V)* -> Region(V).
+	Given clause: 120[0:Inp] || Constant(U,V,W)* -> History(W).
+	Given clause: 123[0:Inp] || SkP9(U,V,W)* -> History(U).
+	Given clause: 73[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+	Given clause: 114[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+	Given clause: 85[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+	Given clause: 84[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+	Given clause: 105[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+	Given clause: 104[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+	Given clause: 103[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+	Given clause: 77[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 74[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+	Given clause: 126[0:Inp] || BoxWithLid(U,V,W)* -> Object(W).
+	Given clause: 125[0:Inp] || BoxWithLid(U,V,W)* -> Object(V).
+	Given clause: 117[0:Inp] || Grasps(U,V,W)* -> Object(W).
+	Given clause: 108[0:Inp] || Moves(U,V,W)* -> Object(W).
+	Given clause: 88[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 87[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 76[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 111[0:Inp] || SkP7(U,V,W)* -> Object(U).
+	Given clause: 91[0:Inp] || SkP3(U,V,W)* -> Object(U).
+	Given clause: 80[0:Inp] || SkP1(U,V,W)* -> Object(U).
+	Given clause: 79[0:Inp] || SkP1(U,V,W)* -> Object(V).
+	Given clause: 124[0:Inp] || BoxWithLid(U,V,W)* -> Time(U).
+	Given clause: 119[0:Inp] || Constant(U,V,W)* -> Time(V).
+	Given clause: 118[0:Inp] || Constant(U,V,W)* -> Time(U).
+	Given clause: 116[0:Inp] || Grasps(U,V,W)* -> Time(V).
+	Given clause: 115[0:Inp] || Grasps(U,V,W)* -> Time(U).
+	Given clause: 107[0:Inp] || Moves(U,V,W)* -> Time(V).
+	Given clause: 106[0:Inp] || Moves(U,V,W)* -> Time(U).
+	Given clause: 86[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 75[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+	Given clause: 72[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+	Given clause: 70[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 69[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 122[0:Inp] || SkP9(U,V,W)* -> Time(V).
+	Given clause: 121[0:Inp] || SkP9(U,V,W)* -> Time(W).
+	Given clause: 113[0:Inp] || SkP8(U,V,W)* -> Time(V).
+	Given clause: 112[0:Inp] || SkP8(U,V,W)* -> Time(W).
+	Given clause: 110[0:Inp] || SkP7(U,V,W)* -> Time(V).
+	Given clause: 109[0:Inp] || SkP7(U,V,W)* -> Time(W).
+	Given clause: 90[0:Inp] || SkP3(U,V,W)* -> Time(V).
+	Given clause: 89[0:Inp] || SkP3(U,V,W)* -> Time(W).
+	Given clause: 78[0:Inp] || SkP1(U,V,W)* -> Time(W).
+	Given clause: 83[0:Inp] || Isolates(U,V,W)* -> Time(U).
+	Given clause: 68[0:Inp] || Leq3(U,V,W)* -> Time(W).
+	Given clause: 67[0:Inp] || Leq3(U,V,W)* -> Time(V).
+	Given clause: 66[0:Inp] || Leq3(U,V,W)* -> Time(U).
+	Given clause: 220[0:MRR:219.0,218.1] || Lt(U,V) -> Leq(U,V)*.
+	Given clause: 146[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 202[1:Res:200.1,31.0] ObjectSet(U) ||  -> Object(skf4(U,V,W))*.
+	Given clause: 145[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 140[0:Inp] || DynamicUContainer(U,V,W,X)* -> History(X).
+	Given clause: 136[0:Inp] || SkP10(U,V,W,X)* -> History(U).
+	Given clause: 135[0:Inp] || SkP10(U,V,W,X)* -> History(V).
+	Given clause: 144[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+	Given clause: 132[0:Inp] || SafeManipulate(U,V,W,X)* -> Region(X).
+	Given clause: 143[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+	Given clause: 142[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+	Given clause: 139[0:Inp] || DynamicUContainer(U,V,W,X)* -> Object(W).
+	Given clause: 131[0:Inp] || SafeManipulate(U,V,W,X)* -> Object(W).
+	Given clause: 141[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+	Given clause: 138[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(V).
+	Given clause: 137[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(U).
+	Given clause: 130[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(V).
+	Given clause: 129[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(U).
+	Given clause: 134[0:Inp] || SkP10(U,V,W,X)* -> Time(W).
+	Given clause: 133[0:Inp] || SkP10(U,V,W,X)* -> Time(X).
+	Given clause: 159[0:Inp] || Continuous(U,V,W) -> SkP9(W,V,U)*.
+	Given clause: 158[0:Inp] || AlwaysIntConn(U,V,W) -> SkP9(W,V,U)*.
+	Given clause: 245[0:Res:159.1,121.0] || Continuous(U,V,W)* -> Time(U).
+	Given clause: 246[0:Res:159.1,122.0] || Continuous(U,V,W)* -> Time(V).
+	Given clause: 247[0:Res:159.1,123.0] || Continuous(U,V,W)* -> History(W).
+	Given clause: 248[0:Res:158.1,121.0] || AlwaysIntConn(U,V,W)* -> Time(U).
+	Given clause: 157[0:Inp] || StaticCausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+	Given clause: 249[0:Res:158.1,122.0] || AlwaysIntConn(U,V,W)* -> Time(V).
+	Given clause: 250[0:Res:158.1,123.0] || AlwaysIntConn(U,V,W)* -> History(W).
+	Given clause: 251[0:Res:157.1,112.0] || StaticCausallyIsolated(U,V,W)* -> Time(U).
+	Given clause: 252[0:Res:157.1,113.0] || StaticCausallyIsolated(U,V,W)* -> Time(V).
+	Given clause: 156[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+	Given clause: 253[0:Res:157.1,114.0] || StaticCausallyIsolated(U,V,W)* -> ObjectSet(W).
+	Given clause: 254[0:Res:156.1,112.0] || CausallyIsolated(U,V,W)* -> Time(U).
+	Given clause: 255[0:Res:156.1,113.0] || CausallyIsolated(U,V,W)* -> Time(V).
+	Given clause: 256[0:Res:156.1,114.0] || CausallyIsolated(U,V,W)* -> ObjectSet(W).
+	Given clause: 154[0:Inp] || Released(U,V,W) -> SkP7(W,V,U)*.
+	Given clause: 257[0:Res:154.1,109.0] || Released(U,V,W)* -> Time(U).
+	Given clause: 258[0:Res:154.1,110.0] || Released(U,V,W)* -> Time(V).
+	Given clause: 259[0:Res:154.1,111.0] || Released(U,V,W)* -> Object(W).
+	Given clause: 153[0:Inp] || StableThroughout(U,V,W) -> SkP7(W,V,U)*.
+	Given clause: 152[0:Inp] || PreserveBoxWithLid(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 260[0:Res:153.1,109.0] || StableThroughout(U,V,W)* -> Time(U).
+	Given clause: 261[0:Res:153.1,110.0] || StableThroughout(U,V,W)* -> Time(V).
+	Given clause: 262[0:Res:153.1,111.0] || StableThroughout(U,V,W)* -> Object(W).
+	Given clause: 263[0:Res:152.1,89.0] || PreserveBoxWithLid(U,V,W)* -> Time(U).
+	Given clause: 151[0:Inp] || PreserveUContents(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 264[0:Res:152.1,90.0] || PreserveBoxWithLid(U,V,W)* -> Time(V).
+	Given clause: 265[0:Res:152.1,91.0] || PreserveBoxWithLid(U,V,W)* -> Object(W).
+	Given clause: 266[0:Res:151.1,89.0] || PreserveUContents(U,V,W)* -> Time(U).
+	Given clause: 267[0:Res:151.1,90.0] || PreserveUContents(U,V,W)* -> Time(V).
+	Given clause: 150[0:Inp] || PreserveCContents(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 268[0:Res:151.1,91.0] || PreserveUContents(U,V,W)* -> Object(W).
+	Given clause: 269[0:Res:150.1,89.0] || PreserveCContents(U,V,W)* -> Time(U).
+	Given clause: 270[0:Res:150.1,90.0] || PreserveCContents(U,V,W)* -> Time(V).
+	Given clause: 271[0:Res:150.1,91.0] || PreserveCContents(U,V,W)* -> Object(W).
+	Given clause: 149[0:Inp] || BLContained(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 272[0:Res:149.1,78.0] || BLContained(U,V,W)* -> Time(U).
+	Given clause: 273[0:Res:149.1,79.0] || BLContained(U,V,W)* -> Object(V).
+	Given clause: 274[0:Res:149.1,80.0] || BLContained(U,V,W)* -> Object(W).
+	Given clause: 148[0:Inp] || UContained(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 147[0:Inp] || CContained(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 275[0:Res:148.1,78.0] || UContained(U,V,W)* -> Time(U).
+	Given clause: 276[0:Res:148.1,79.0] || UContained(U,V,W)* -> Object(V).
+	Given clause: 277[0:Res:148.1,80.0] || UContained(U,V,W)* -> Object(W).
+	Given clause: 278[0:Res:147.1,78.0] || CContained(U,V,W)* -> Time(U).
+	Given clause: 155[0:Inp] || Motionless(U,V,W) -> SkP7(W,V,U)*.
+	Given clause: 279[0:Res:147.1,79.0] || CContained(U,V,W)* -> Object(V).
+	Given clause: 280[0:Res:147.1,80.0] || CContained(U,V,W)* -> Object(W).
+	Given clause: 281[0:Res:155.1,109.0] || Motionless(U,V,W)* -> Time(U).
+	Given clause: 282[0:Res:155.1,110.0] || Motionless(U,V,W)* -> Time(V).
+	Given clause: 174[0:Inp] || Element(U,Su)* -> equal(U,Ol5) equal(U,Ob5).
+	Given clause: 283[0:Res:155.1,111.0] || Motionless(U,V,W)* -> Object(W).
+	Given clause: 160[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+	Given clause: 168[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+	Given clause: 173[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+	Given clause: 172[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+	Given clause: 170[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+	Given clause: 163[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 162[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+	Given clause: 167[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 166[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 165[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 171[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+	Given clause: 161[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 169[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+	Given clause: 164[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+	Given clause: 224[0:MRR:223.0,222.1] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+	Given clause: 179[0:Inp] || Leq3(Ta5,U,Tb5) -> Isolates(U,Su,Contents(Ta5,Rc5))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 178[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+	Given clause: 177[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+	Given clause: 298[0:Res:177.1,133.0] || NoEntranceCavity(U,V,W,X)* -> Time(U).
+	Given clause: 299[0:Res:177.1,134.0] || NoEntranceCavity(U,V,W,X)* -> Time(V).
+	Given clause: 300[0:Res:177.1,135.0] || NoEntranceCavity(U,V,W,X)* -> History(W).
+	Given clause: 301[0:Res:177.1,136.0] || NoEntranceCavity(U,V,W,X)* -> History(X).
+	Given clause: 176[0:Inp] || NoExitCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+	Given clause: 302[0:Res:176.1,133.0] || NoExitCavity(U,V,W,X)* -> Time(U).
+	Given clause: 303[0:Res:176.1,134.0] || NoExitCavity(U,V,W,X)* -> Time(V).
+	Given clause: 304[0:Res:176.1,135.0] || NoExitCavity(U,V,W,X)* -> History(W).
+	Given clause: 305[0:Res:176.1,136.0] || NoExitCavity(U,V,W,X)* -> History(X).
+	Given clause: 175[0:Inp] || PersistentCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+	Given clause: 306[0:Res:175.1,133.0] || PersistentCavity(U,V,W,X)* -> Time(U).
+	Given clause: 307[0:Res:175.1,134.0] || PersistentCavity(U,V,W,X)* -> Time(V).
+	Given clause: 308[0:Res:175.1,135.0] || PersistentCavity(U,V,W,X)* -> History(W).
+	Given clause: 309[0:Res:175.1,136.0] || PersistentCavity(U,V,W,X)* -> History(X).
+	Given clause: 180[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+	Given clause: 315[0:Res:180.2,297.0] || Leq(Ta5,U)*+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 316[0:Res:220.1,315.0] || Lt(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 291[1:SSi:288.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 321[1:SSi:318.0,14.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+	Given clause: 322[2:Spt:321.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 182[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+	Given clause: 326[2:SSi:323.0,14.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 332[0:MRR:331.0,221.1] || equal(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 184[0:Inp] || Element(U,skf3(V,W,X))* CausallyIsolated(X,W,V) -> Motionless(X,W,U).
+	Given clause: 192[0:MRR:188.0,84.1] || Isolates(skf5(U,V,W,X),X,W)*+ -> Element(skf4(X,Y,Z),X)* CausallyIsolated(V,U,W).
+	Given clause: 338[1:SSi:337.0,22.0] || CausallyIsolated(U,V,W) -> Motionless(U,V,skf4(skf3(W,V,U),X,Y))*.
+	Given clause: 341[1:Res:338.1,283.0] || CausallyIsolated(U,V,W) -> Object(skf4(skf3(W,V,U),X,Y))*.
+	Given clause: 197[0:Res:189.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 347[2:MRR:346.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 187[0:Inp] || Lt(U,V) Leq(W,U) CausallyIsolated(W,V,X) -> Isolates(U,skf3(X,V,W),X)*.
+	Given clause: 349[2:Res:347.0,222.0] ||  -> Time(skf5(Tb5,Ta5,U,V))*.
+	Given clause: 351[2:Res:347.0,315.0] || Leq(skf5(Tb5,Ta5,U,V),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 356[2:Res:220.1,351.0] || Lt(skf5(Tb5,Ta5,U,V),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 358[2:SSi:357.1,357.0,349.0,3.0] || equal(skf5(Tb5,Ta5,U,V),Tb5)** -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 193[0:MRR:191.0,84.1] || Motionless(U,V,skf4(W,V,U))* Isolates(skf5(V,U,X,W),W,X)*+ -> CausallyIsolated(U,V,X).
+	Given clause: 348[2:Res:347.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 370[2:MRR:356.0,369.0] ||  -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 369[2:MRR:368.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 189[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))*+ -> Leq(V,skf5(W,V,X,Y))* CausallyIsolated(V,W,Z)*.
+	Given clause: 373[2:Res:369.0,217.0] ||  -> Time(skf5(Tb5,U,V,W))*.
+	Given clause: 371[2:Res:369.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 378[2:Res:348.1,371.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)** Lt(Ta5,Tb5).
+	Given clause: 379[3:Spt:378.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)**.
+	Given clause: 380[3:Rew:379.0,347.0] ||  -> Leq(Ta5,Ta5)*.
+	Given clause: 190[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))*+ -> Lt(skf5(W,X,Y,Z),W)* CausallyIsolated(V,W,X1)*.
+	Given clause: 381[3:SpR:379.0,369.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 385[3:SpL:379.0,371.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 397[3:Res:385.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 384[3:SpL:379.0,192.0] || Isolates(Ta5,U,V)*+ -> Element(skf4(U,W,X),U)* CausallyIsolated(Ta5,Tb5,V)*.
+	Given clause: 361[2:Rew:322.0,359.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 405[3:MRR:403.1,403.2,15.0,63.0] || Leq3(Ta5,Ta5,Tb5)* -> .
+	Given clause: 407[3:MRR:406.0,380.0] || Leq(Ta5,Tb5)* -> .
+	Given clause: 412[3:Spt:410.0,378.1] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 347[2:MRR:346.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 413[3:Res:412.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 360[0:Res:187.3,193.1] || Lt(skf5(U,V,W,skf3(W,X,Y)),X)*+ Leq(Y,skf5(U,V,W,skf3(W,X,Y)))* CausallyIsolated(Y,X,W) Motionless(V,U,skf4(skf3(W,X,Y),U,V))* -> CausallyIsolated(V,U,W).
+	Given clause: 419[3:Res:413.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 348[2:Res:347.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 376[2:SSi:374.0,14.0] || Motionless(U,V,Ob5)+ -> Leq(U,skf5(V,U,W,X))* CausallyIsolated(U,V,Y)*.
+	Given clause: 392[2:SSi:390.0,14.0] || Motionless(U,V,Ob5)+ -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 355[0:Res:187.3,192.0] || Lt(skf5(U,V,W,skf3(W,X,Y)),X)*+ Leq(Y,skf5(U,V,W,skf3(W,X,Y)))* CausallyIsolated(Y,X,W) -> Element(skf4(skf3(W,X,Y),Z,X1),skf3(W,X,Y))* CausallyIsolated(V,U,W).
+	Given clause: 377[1:SSi:375.0,22.0] || CausallyIsolated(U,V,W)*+ -> Leq(U,skf5(V,U,X,Y))* CausallyIsolated(U,V,Z)*.
+	Given clause: 393[1:SSi:391.0,22.0] || CausallyIsolated(U,V,W)*+ -> Lt(skf5(V,X,Y,Z),V)* CausallyIsolated(U,V,X1)*.
+	Given clause: 362[2:Res:348.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 432[2:Res:362.2,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> equal(skf5(Tb5,Ta5,W,X),Ta5) Lt(V,skf5(Tb5,Ta5,W,X))*.
+	Given clause: 404[2:Res:180.2,361.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 438[2:Res:220.1,404.1] || Lt(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5) Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 448[2:Spt:445.0,321.1] ||  -> Element(Ol5,Su)*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 317[1:EqF:291.0,291.1] || equal(Ol5,Ob5) -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 197[0:Res:189.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 460[1:SSi:455.0,14.0] || equal(Ol5,Ob5) -> Element(Ob5,Su)*.
+	Given clause: 466[1:MRR:465.1,15.0] || equal(Ol5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 471[1:Res:466.1,222.0] || equal(Ol5,Ob5) -> Time(skf5(Tb5,Ta5,U,V))*.
+	Given clause: 315[0:Res:180.2,297.0] || Leq(Ta5,U)*+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 479[1:MRR:478.1,15.0] || equal(Ol5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 482[1:Res:479.1,217.0] || equal(Ol5,Ob5) -> Time(skf5(Tb5,U,V,W))*.
+	Given clause: 316[0:Res:220.1,315.0] || Lt(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 332[0:MRR:331.0,221.1] || equal(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 339[0:Res:179.1,192.0] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ -> Element(skf4(Su,W,X),Su)* CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 486[3:Spt:339.0,339.2] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 449[1:SSi:345.0,22.0,3.0,2.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 291[1:SSi:288.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 450[1:SSi:367.0,22.0,3.0,2.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 498[1:MRR:497.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 503[4:Spt:498.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 500[1:MRR:499.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 508[5:Spt:500.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 511[5:Res:508.0,217.0] ||  -> Time(skf5(Tb5,U,V,W))*.
+	Given clause: 509[5:Res:508.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 507[4:Res:503.0,315.0] || Leq(skf5(Tb5,Ta5,U,V),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 516[5:MRR:514.0,508.0] ||  -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 501[1:SSi:494.0,14.0] || Motionless(U,V,Ol5)+ -> equal(skf4(Su,V,U),Ob5) Leq(U,skf5(V,U,W,X))* CausallyIsolated(U,V,Y)*.
+	Given clause: 504[4:Res:503.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 521[5:Res:504.1,509.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)** Lt(Ta5,Tb5).
+	Given clause: 522[6:Spt:521.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)**.
+	Given clause: 523[6:Rew:522.0,503.0] ||  -> Leq(Ta5,Ta5)*.
+	Given clause: 524[6:SpR:522.0,508.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 502[1:SSi:493.0,14.0] || Motionless(U,V,Ol5)+ -> equal(skf4(Su,V,U),Ob5)** Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 533[6:MRR:528.1,63.0] || Leq3(Ta5,Ta5,Tb5)* -> .
+	Given clause: 544[6:MRR:543.0,523.0] || Leq(Ta5,Tb5)* -> .
+	Given clause: 549[6:Spt:547.0,521.1] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 503[4:Spt:498.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 550[6:Res:549.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 487[3:Res:180.2,486.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 556[6:Res:550.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 504[4:Res:503.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 518[4:Res:504.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 461[1:SSi:459.0,14.0] || equal(Ol5,Ob5) Motionless(U,V,Ob5)+ -> Leq(U,skf5(V,U,W,X))* CausallyIsolated(U,V,Y)*.
+	Given clause: 462[1:SSi:458.0,14.0] || equal(Ol5,Ob5) Motionless(U,V,Ob5)+ -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 569[4:Res:518.2,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> equal(skf5(Tb5,Ta5,W,X),Ta5) Lt(V,skf5(Tb5,Ta5,W,X))*.
+	Given clause: 561[3:Res:220.1,487.1] || Lt(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5) Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 583[5:Spt:580.0,500.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 599[4:Spt:598.0,498.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 607[4:SSi:600.0,14.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 613[4:MRR:612.1,449.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 623[3:Spt:622.0,339.1] ||  -> Element(skf4(Su,U,V),Su)*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 626[3:Res:623.0,31.0] ||  -> Object(skf4(Su,U,V))*.
+	Given clause: 460[1:SSi:455.0,14.0] || equal(Ol5,Ob5) -> Element(Ob5,Su)*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 482[1:Res:479.1,217.0] || equal(Ol5,Ob5) -> Time(skf5(Tb5,U,V,W))*.
+	Given clause: 197[0:Res:189.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 466[1:MRR:465.1,15.0] || equal(Ol5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 479[1:MRR:478.1,15.0] || equal(Ol5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 315[0:Res:180.2,297.0] || Leq(Ta5,U)*+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 316[0:Res:220.1,315.0] || Lt(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 332[0:MRR:331.0,221.1] || equal(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 449[1:SSi:345.0,22.0,3.0,2.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 450[1:SSi:367.0,22.0,3.0,2.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 498[1:MRR:497.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 653[4:Spt:498.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 359[0:Res:179.1,193.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 655[4:Res:653.0,222.0] ||  -> Time(skf5(Tb5,Ta5,U,V))*.
+	Given clause: 657[4:Res:653.0,315.0] || Leq(skf5(Tb5,Ta5,U,V),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 659[4:Res:220.1,657.0] || Lt(skf5(Tb5,Ta5,U,V),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 662[4:Res:479.1,659.0] || equal(Ol5,Ob5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 658[0:Res:180.2,359.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 661[4:SSi:660.1,660.0,655.0,3.0] || equal(skf5(Tb5,Ta5,U,V),Tb5)** -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 500[1:MRR:499.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 669[5:Spt:500.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 670[5:MRR:659.0,669.0] ||  -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 673[5:Res:669.0,217.0] ||  -> Time(skf5(Tb5,U,V,W))*.
+	Given clause: 663[0:Res:220.1,658.0] || Lt(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 671[5:Res:669.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 654[4:Res:653.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 680[5:Res:654.1,671.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)** Lt(Ta5,Tb5).
+	Given clause: 681[6:Spt:680.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)**.
+	Given clause: 682[6:Rew:681.0,653.0] ||  -> Leq(Ta5,Ta5)*.
+	Given clause: 668[0:MRR:667.0,221.1] || equal(skf5(U,V,Contents(Ta5,Rc5),Su),Ta5)+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 684[6:SpR:681.0,669.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 693[6:SpL:681.0,671.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 709[6:Res:693.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 683[6:Rew:681.0,666.0] || Leq(Ta5,Tb5) Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 719[6:MRR:718.1,15.0] || Leq(Ta5,Tb5)* -> .
+	Given clause: 724[6:Spt:722.0,680.1] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 653[4:Spt:498.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 725[6:Res:724.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 732[6:Res:725.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 654[4:Res:653.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 666[4:MRR:665.2,63.0] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5)) -> .
+	Given clause: 744[5:MRR:742.0,669.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 751[5:Spt:750.0,500.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 772[4:Spt:771.0,498.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 776[4:SpR:772.0,623.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 786[4:MRR:785.1,449.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 791[4:Res:786.0,222.0] ||  -> Time(skf5(Tb5,Ta5,U,V))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 783[4:MRR:782.1,450.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 799[4:Res:783.0,217.0] ||  -> Time(skf5(Tb5,U,V,W))*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 795[4:MRR:794.1,794.2,15.0,63.0] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> .
+	Given clause: 806[1:Spt:804.0,185.1,185.3] ||  -> Leq(U,skf5(V,U,W,X))* CausallyIsolated(U,V,Y)*.
+	Given clause: 186[0:Inp] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)* Lt(skf5(X,Y,Z,X1),X)* CausallyIsolated(X2,X,X3)*.
+	Given clause: 825[2:Spt:186.0,186.1] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)*.
+	Given clause: 816[1:MRR:167.1,814.0] ObjectSet(U) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 814[1:MRR:809.0,254.0] ||  -> Time(U)*.
+	Given clause: 817[1:MRR:166.1,814.0] ObjectSet(U) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 818[1:MRR:165.1,814.0] Region(U) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 819[1:MRR:171.1,814.0] Object(U) ||  -> ObjectSet(MovingGroup(V,U))*.
+	Given clause: 820[1:MRR:169.1,814.0] History(U) ||  -> Region(Slice(V,U))*.
+	Given clause: 821[1:MRR:164.1,814.0] Object(U) ||  -> Region(Place(V,U))*.
+	Given clause: 815[1:MRR:182.1,182.0,814.0] || equal(U,V) -> Leq(U,V)*.
+	Given clause: 826[2:Res:825.1,31.0] ObjectSet(U) ||  -> Object(skf4(U,V,W))*.
+	Given clause: 811[1:Res:806.1,256.0] ||  -> Leq(U,skf5(V,U,W,X))* ObjectSet(Y)*.
+	Given clause: 834[3:Spt:811.1] ||  -> ObjectSet(U)*.
+	Given clause: 835[3:MRR:190.0,834.0] || Motionless(U,V,skf4(W,V,U))*+ -> Lt(skf5(V,X,Y,Z),V)* CausallyIsolated(U,V,X1)*.
+	Given clause: 837[3:MRR:826.0,834.0] ||  -> Object(skf4(U,V,W))*.
+	Given clause: 836[3:MRR:825.0,834.0] ||  -> Element(skf4(U,V,W),U)*.
+	Given clause: 830[2:SSi:828.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 844[3:SpR:830.0,836.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+	Given clause: 847[4:Spt:844.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 823[1:MRR:197.0,811.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 854[4:SpR:847.0,836.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 858[4:MRR:857.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 861[4:Res:858.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 838[3:MRR:198.0,834.0] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 851[4:Rew:847.0,359.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 864[4:MRR:863.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 866[4:Res:864.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 868[4:Res:861.1,866.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)** Lt(Ta5,Tb5).
+	Given clause: 869[5:Spt:868.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)**.
+	Given clause: 870[5:Rew:869.0,858.0] ||  -> Leq(Ta5,Ta5)*.
+	Given clause: 831[2:SSi:829.0,22.0] || CausallyIsolated(U,V,W) -> Motionless(U,V,skf4(skf3(W,V,U),X,Y))*.
+	Given clause: 872[5:SpR:869.0,864.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 878[5:MRR:875.1,875.2,15.0,63.0] || Leq3(Ta5,Ta5,Tb5)* -> .
+	Given clause: 885[5:MRR:884.0,870.0] || Leq(Ta5,Tb5)* -> .
+	Given clause: 889[5:Spt:888.0,868.1] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 858[4:MRR:857.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 807[1:Res:806.0,224.0] ||  -> CausallyIsolated(U,V,W)* equal(skf5(V,U,X,Y),U) Lt(U,skf5(V,U,X,Y))*.
+	Given clause: 890[5:Res:889.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 894[5:Res:890.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 861[4:Res:858.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 893[4:Res:807.2,866.0] ||  -> CausallyIsolated(U,Tb5,V)* equal(skf5(Tb5,U,W,X),U)** Lt(U,Tb5).
+	Given clause: 850[4:Rew:847.0,658.2] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 909[4:Obv:900.1] ||  -> CausallyIsolated(U,Tb5,V)* Lt(U,Tb5).
+	Given clause: 856[4:SpL:847.0,835.0] || Motionless(U,V,Ob5)+ -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 882[3:Res:831.1,835.0] || CausallyIsolated(U,V,W)*+ -> Lt(skf5(V,X,Y,Z),V)* CausallyIsolated(U,V,X1)*.
+	Given clause: 862[4:Res:861.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 852[4:Rew:847.0,824.1] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 926[4:Res:220.1,852.0] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 930[4:Spt:929.0,844.1] ||  -> Element(Ol5,Su)*.
+	Given clause: 842[2:EqF:830.0,830.1] || equal(Ol5,Ob5) -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 934[3:SpR:842.1,836.0] || equal(Ol5,Ob5) -> Element(Ob5,Su)*.
+	Given clause: 830[2:SSi:828.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 823[1:MRR:197.0,811.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 948[2:MRR:947.0,806.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 949[2:Res:948.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 838[3:MRR:198.0,834.0] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 954[3:MRR:952.1,15.0] || equal(Ol5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 359[0:Res:179.1,193.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 953[3:Res:831.1,838.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 955[3:MRR:951.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 961[5:Spt:955.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 962[5:Res:961.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 965[5:Res:949.1,962.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)** Lt(Ta5,Tb5).
+	Given clause: 966[6:Spt:965.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)**.
+	Given clause: 658[0:Res:180.2,359.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 967[6:Rew:966.0,948.0] ||  -> Leq(Ta5,Ta5)*.
+	Given clause: 970[6:SpR:966.0,961.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 975[6:SpL:966.0,962.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 985[6:Res:975.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 846[3:SpL:830.0,835.0] || Motionless(U,V,Ol5)+ -> equal(skf4(Su,V,U),Ob5)** Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 976[6:MRR:973.2,63.0] || Leq3(Ta5,Ta5,Tb5) Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 993[6:MRR:992.1,15.0] || Leq3(Ta5,Ta5,Tb5)* -> .
+	Given clause: 995[6:MRR:994.0,967.0] || Leq(Ta5,Tb5)* -> .
+	Given clause: 999[6:Spt:998.0,965.1] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 948[2:MRR:947.0,806.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 892[1:Res:807.2,178.0] || Lt(U,V)+ -> CausallyIsolated(V,W,X)* equal(skf5(W,V,Y,Z),V) Lt(U,skf5(W,V,Y,Z))*.
+	Given clause: 1000[6:Res:999.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 1007[6:Res:1000.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 949[2:Res:948.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 964[5:Res:807.2,962.0] ||  -> CausallyIsolated(U,Tb5,V)* equal(skf5(Tb5,U,W,X),U)** Lt(U,Tb5).
+	Given clause: 824[1:Con:810.2] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 1025[5:Obv:1014.1] ||  -> CausallyIsolated(U,Tb5,V)* Lt(U,Tb5).
+	Given clause: 950[2:Res:949.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 1005[6:Res:999.0,892.0] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5) Lt(Ta5,skf5(U,Tb5,W,X))*.
+	Given clause: 936[3:SpL:842.1,835.0] || equal(Ol5,Ob5) Motionless(U,V,Ob5)+ -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 668[0:MRR:667.0,221.1] || equal(skf5(U,V,Contents(Ta5,Rc5),Su),Ta5)+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1037[2:Res:950.2,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> equal(skf5(Tb5,Ta5,W,X),Ta5) Lt(V,skf5(Tb5,Ta5,W,X))*.
+	Given clause: 1006[6:Res:1000.1,892.0] || Lt(U,Ta5)+ -> CausallyIsolated(Tb5,V,W)* equal(skf5(V,Tb5,X,Y),Tb5) Lt(U,skf5(V,Tb5,X,Y))*.
+	Given clause: 1004[5:Res:961.0,892.0] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5) Lt(skf5(Tb5,Y,Z,X1),skf5(U,Tb5,W,X))*.
+	Given clause: 1033[1:Res:220.1,824.0] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 663[0:Res:220.1,658.0] || Lt(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1052[5:MRR:1051.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 1065[5:Spt:1064.0,955.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 1067[5:SpR:1065.0,836.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 1072[5:MRR:1071.1,953.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 1081[3:Spt:1080.0,811.0] ||  -> Leq(U,skf5(V,U,W,X))*.
+	Given clause: 14[0:Inp] ||  -> ObjectSet(Su)*.
+	Given clause: 22[0:Inp] ||  -> ObjectSet(skf3(U,V,W))*.
+	Given clause: 24[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 214[0:Res:82.1,35.0] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 216[0:Res:81.1,35.0] || Fits(U,V)* -> ObjectSet(U).
+	Given clause: 35[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+	Given clause: 32[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 818[1:MRR:165.1,814.0] Region(U) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 816[1:MRR:167.1,814.0] ObjectSet(U) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 817[1:MRR:166.1,814.0] ObjectSet(U) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 819[1:MRR:171.1,814.0] Object(U) ||  -> ObjectSet(MovingGroup(V,U))*.
+	Given clause: 114[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+	Given clause: 73[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+	Given clause: 84[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+	Given clause: 85[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+	Given clause: 253[0:Res:157.1,114.0] || StaticCausallyIsolated(U,V,W)* -> ObjectSet(W).
+	Given clause: 163[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 256[0:Res:156.1,114.0] || CausallyIsolated(U,V,W)* -> ObjectSet(W).
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 826[2:Res:825.1,31.0] ObjectSet(U) ||  -> Object(skf4(U,V,W))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 162[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+	Given clause: 825[2:Spt:186.0,186.1] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)*.
+	Given clause: 1103[2:SSi:1098.0,14.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+	Given clause: 1104[4:Spt:1103.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 1116[4:SSi:1114.0,14.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 315[0:Res:180.2,297.0] || Leq(Ta5,U)*+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 192[0:MRR:188.0,84.1] || Isolates(skf5(U,V,W,X),X,W)*+ -> Element(skf4(X,Y,Z),X)* CausallyIsolated(V,U,W).
+	Given clause: 316[0:Res:220.1,315.0] || Lt(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 332[0:MRR:331.0,221.1] || equal(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 1122[3:Res:1081.0,315.0] || Leq(skf5(U,Ta5,V,W),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 1128[3:Res:815.1,1122.0] || equal(skf5(U,Ta5,V,W),Tb5)** -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 190[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))*+ -> Lt(skf5(W,X,Y,Z),W)* CausallyIsolated(V,W,X1)*.
+	Given clause: 1129[3:Res:220.1,1122.0] || Lt(skf5(U,Ta5,V,W),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 881[2:Res:831.1,283.0] || CausallyIsolated(U,V,W) -> Object(skf4(skf3(W,V,U),X,Y))*.
+	Given clause: 1082[3:Res:1081.0,224.0] ||  -> equal(skf5(U,V,W,X),V) Lt(V,skf5(U,V,W,X))*.
+	Given clause: 1132[4:SSi:1130.0,14.0] || Motionless(U,V,Ob5)+ -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 1141[4:MRR:1140.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 1144[4:Res:1141.0,1129.0] ||  -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 1142[4:Res:1141.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1145[4:Res:1082.1,1142.0] ||  -> equal(skf5(Tb5,U,V,W),U)** Lt(U,Tb5).
+	Given clause: 1110[4:Rew:1104.0,359.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1154[4:Obv:1148.0] ||  -> Lt(U,Tb5)*.
+	Given clause: 1155[4:MRR:1105.0,1154.0] || Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5))*.
+	Given clause: 1162[4:Spt:1161.0,1103.1] ||  -> Element(Ol5,Su)*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 842[2:EqF:830.0,830.1] || equal(Ol5,Ob5) -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 1174[2:SSi:1170.0,14.0] || equal(Ol5,Ob5) -> Element(Ob5,Su)*.
+	Given clause: 1176[2:MRR:1175.1,15.0] || equal(Ol5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 315[0:Res:180.2,297.0] || Leq(Ta5,U)*+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 1123[0:Res:179.1,192.0] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ -> Element(skf4(Su,W,X),Su)* CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1186[5:Spt:1123.0,1123.2] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 316[0:Res:220.1,315.0] || Lt(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 332[0:MRR:331.0,221.1] || equal(Ta5,U)+ Leq(U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 1122[3:Res:1081.0,315.0] || Leq(skf5(U,Ta5,V,W),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 1128[3:Res:815.1,1122.0] || equal(skf5(U,Ta5,V,W),Tb5)** -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 355[0:Res:187.3,192.0] || Lt(skf5(U,V,W,skf3(W,X,Y)),X)*+ Leq(Y,skf5(U,V,W,skf3(W,X,Y)))* CausallyIsolated(Y,X,W) -> Element(skf4(skf3(W,X,Y),Z,X1),skf3(W,X,Y))* CausallyIsolated(V,U,W).
+	Given clause: 1129[3:Res:220.1,1122.0] || Lt(skf5(U,Ta5,V,W),Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 1193[3:Res:1176.1,1129.0] || equal(Ol5,Ob5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 830[2:SSi:828.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 1163[2:SSi:1139.0,22.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 1202[2:MRR:1201.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 1204[6:Spt:1202.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 1208[6:Res:1204.0,1129.0] ||  -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 1205[6:Res:1204.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1209[6:Res:1082.1,1205.0] ||  -> equal(skf5(Tb5,U,V,W),U)** Lt(U,Tb5).
+	Given clause: 1220[6:Obv:1212.0] ||  -> Lt(U,Tb5)*.
+	Given clause: 1133[2:SSi:1131.0,22.0] || CausallyIsolated(U,V,W)*+ -> Lt(skf5(V,X,Y,Z),V)* CausallyIsolated(U,V,X1)*.
+	Given clause: 1221[6:MRR:1033.0,1220.0] || Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 1226[6:SpL:842.1,1221.0] || equal(Ol5,Ob5) Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5))*.
+	Given clause: 1230[6:MRR:1227.1,15.0] || equal(Ol5,Ob5)** -> .
+	Given clause: 1225[6:SpL:830.0,1221.0] || Motionless(Ta5,U,Ol5) -> equal(skf4(Su,U,Ta5),Ob5) CausallyIsolated(Ta5,U,Contents(Ta5,Rc5))*.
+	Given clause: 1203[2:SSi:1199.0,14.0] || Motionless(U,V,Ol5)+ -> equal(skf4(Su,V,U),Ob5)** Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+	Given clause: 1234[6:MRR:1231.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 1244[6:Spt:1243.0,1202.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+	Given clause: 1250[6:SSi:1246.0,14.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 1253[6:MRR:1252.1,1163.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 1193[3:Res:1176.1,1129.0] || equal(Ol5,Ob5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 842[2:EqF:830.0,830.1] || equal(Ol5,Ob5) -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 1257[6:Res:1253.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1267[6:Res:1082.1,1257.0] ||  -> equal(skf5(Tb5,U,V,W),U)** Lt(U,Tb5).
+	Given clause: 1187[5:Res:180.2,1186.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1278[6:Obv:1270.0] ||  -> Lt(U,Tb5)*.
+	Given clause: 1279[6:MRR:1129.0,1278.0] ||  -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 1280[6:MRR:1033.0,1278.0] || Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 1291[2:Spt:1290.0,186.2,186.3] ||  -> Lt(skf5(U,V,W,X),U)* CausallyIsolated(Y,U,Z)*.
+	Given clause: 336[0:EqR:332.0] || Leq(Ta5,Tb5) -> ObjectSet(Contents(Ta5,Rc5))*.
+	Given clause: 297[0:Res:179.1,85.0] || Leq3(Ta5,U,Tb5)* -> ObjectSet(Contents(Ta5,Rc5)).
+	Given clause: 811[1:Res:806.1,256.0] ||  -> Leq(U,skf5(V,U,W,X))* ObjectSet(Y)*.
+	Given clause: 1301[3:Spt:811.1] ||  -> ObjectSet(U)*.
+	Given clause: 806[1:Spt:804.0,185.1,185.3] ||  -> Leq(U,skf5(V,U,W,X))* CausallyIsolated(U,V,Y)*.
+	Given clause: 822[1:MRR:196.0,811.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* Element(skf4(W,X,Y),W)*.
+	Given clause: 1303[4:Spt:822.1] ||  -> Element(skf4(U,V,W),U)*.
+	Given clause: 1304[4:Res:1303.0,31.0] ||  -> Object(skf4(U,V,W))*.
+	Given clause: 823[1:MRR:197.0,811.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 1305[4:Res:1303.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 1308[4:SpR:1305.0,1303.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+	Given clause: 1313[5:Spt:1308.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 1321[5:SpR:1313.0,1303.0] ||  -> Element(Ob5,Su)*.
+	Given clause: 1325[5:MRR:1324.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 1297[2:MRR:198.0,1295.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 1330[5:MRR:1329.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 1331[5:Res:1330.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1328[5:Res:1325.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 1335[5:Res:1328.1,1331.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)** Lt(Ta5,Tb5).
+	Given clause: 1336[6:Spt:1335.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5)**.
+	Given clause: 1318[5:Rew:1313.0,359.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1337[6:Rew:1336.0,1325.0] ||  -> Leq(Ta5,Ta5)*.
+	Given clause: 1340[6:SpR:1336.0,1330.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 1348[6:MRR:1346.1,1346.2,15.0,63.0] || Leq3(Ta5,Ta5,Tb5)* -> .
+	Given clause: 1352[6:MRR:1351.0,1337.0] || Leq(Ta5,Tb5)* -> .
+	Given clause: 1356[6:Spt:1355.0,1335.1] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 1292[2:Res:1291.0,178.0] || Lt(U,skf5(V,W,X,Y))*+ -> CausallyIsolated(Z,V,X1)* Lt(U,V).
+	Given clause: 1325[5:MRR:1324.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 1357[6:Res:1356.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 1360[6:Res:1357.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 1328[5:Res:1325.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 807[1:Res:806.0,224.0] ||  -> CausallyIsolated(U,V,W)* equal(skf5(V,U,X,Y),U) Lt(U,skf5(V,U,X,Y))*.
+	Given clause: 1369[2:Con:1368.2] ||  -> CausallyIsolated(U,V,W)* equal(skf5(V,U,X,Y),U)** Lt(U,V).
+	Given clause: 1385[2:Con:1384.2] ||  -> CausallyIsolated(U,V,W)* Lt(U,V).
+	Given clause: 1362[6:Res:1291.0,1360.0] || Lt(U,skf5(Ta5,V,W,X))*+ -> CausallyIsolated(Y,Ta5,Z)* Lt(U,Tb5).
+	Given clause: 1393[7:Spt:1362.0,1362.2] || Lt(U,skf5(Ta5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1394[7:Res:807.2,1393.0] ||  -> CausallyIsolated(U,Ta5,V)* equal(skf5(Ta5,U,W,X),U)** Lt(U,Tb5).
+	Given clause: 1317[5:Rew:1313.0,658.2] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1406[7:Con:1398.3] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5) Leq(U,U)*.
+	Given clause: 1407[7:MRR:1402.2,178.0] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(U,Tb5)*.
+	Given clause: 1408[7:Con:1404.3] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(V,Tb5) Lt(U,Ta5)*.
+	Given clause: 1430[7:Res:1356.0,1408.0] ||  -> CausallyIsolated(Tb5,Ta5,U)* Lt(Tb5,Tb5) Lt(Ta5,Ta5).
+	Given clause: 1298[2:Con:1294.3] || Leq(U,skf5(V,W,X,skf3(X,V,U)))*+ CausallyIsolated(U,V,X) Motionless(W,V,skf4(skf3(X,V,U),V,W))* -> CausallyIsolated(W,V,X).
+	Given clause: 1429[7:Res:1330.0,1408.0] ||  -> CausallyIsolated(Tb5,Ta5,U)* Lt(Tb5,Tb5) Lt(skf5(Tb5,V,W,X),Ta5)*.
+	Given clause: 1422[7:Res:1291.0,1407.0] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(skf5(V,Y,Z,X1),Tb5)*.
+	Given clause: 1443[7:Fac:1422.0,1422.1] ||  -> CausallyIsolated(Ta5,Ta5,U)* Lt(skf5(Ta5,V,W,X),Tb5)*.
+	Given clause: 1450[7:Con:1449.1] ||  -> CausallyIsolated(U,Ta5,V)* CausallyIsolated(Ta5,Ta5,W)* Lt(U,Tb5).
+	Given clause: 1458[8:Spt:1450.0,1450.2] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5).
+	Given clause: 1306[4:Res:1303.0,184.0] || CausallyIsolated(U,V,W) -> Motionless(U,V,skf4(skf3(W,V,U),X,Y))*.
+	Given clause: 1334[5:Res:1328.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 1333[5:Res:1291.0,1331.0] ||  -> CausallyIsolated(U,skf5(Tb5,V,W,X),Y)* Lt(skf5(skf5(Tb5,V,W,X),Z,X1,X2),Tb5)*.
+	Given clause: 1395[7:Res:1291.0,1393.0] ||  -> CausallyIsolated(U,skf5(Ta5,V,W,X),Y)* Lt(skf5(skf5(Ta5,V,W,X),Z,X1,X2),Tb5)*.
+	Given clause: 1447[7:Res:1422.2,178.0] || Lt(U,skf5(V,W,X,Y))*+ -> CausallyIsolated(Z,V,X1)* CausallyIsolated(V,Ta5,X2)* Lt(U,Tb5).
+	Given clause: 1315[5:Rew:1313.0,824.1] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 1477[7:Con:1473.2] ||  -> CausallyIsolated(U,V,W)* equal(skf5(V,U,X,Y),U)** CausallyIsolated(V,Ta5,Z)* Lt(U,Tb5).
+	Given clause: 1515[7:Con:1514.2] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(U,Tb5).
+	Given clause: 1314[5:Rew:1313.0,1033.1] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 1544[5:Spt:1539.0,1308.1] ||  -> Element(Ol5,Su)*.
+	Given clause: 1392[2:Res:1385.0,63.0] ||  -> Lt(Ta5,Tb5)*.
+	Given clause: 823[1:MRR:197.0,811.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 1547[2:Res:1392.0,178.0] || Lt(U,Ta5) -> Lt(U,Tb5)*.
+	Given clause: 1549[4:MRR:1548.0,806.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 1307[4:EqF:1305.0,1305.1] || equal(Ol5,Ob5) -> equal(skf4(Su,U,V),Ob5)**.
+	Given clause: 1554[4:SpR:1307.1,1303.0] || equal(Ol5,Ob5) -> Element(Ob5,Su)*.
+	Given clause: 1297[2:MRR:198.0,1295.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 1561[4:MRR:1560.0,1291.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 1550[2:Res:1547.1,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> Lt(V,Tb5)*.
+	Given clause: 1562[4:Res:1561.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1305[4:Res:1303.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 359[0:Res:179.1,193.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1552[4:Res:1549.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 1564[2:Res:1291.0,1550.0] || Lt(U,skf5(Ta5,V,W,X))*+ -> CausallyIsolated(Y,Ta5,Z)* Lt(U,Tb5).
+	Given clause: 1576[6:Spt:1564.0,1564.2] || Lt(U,skf5(Ta5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 1577[6:Res:807.2,1576.0] ||  -> CausallyIsolated(U,Ta5,V)* equal(skf5(Ta5,U,W,X),U)** Lt(U,Tb5).
+	Given clause: 1590[6:Con:1581.3] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5) Leq(U,U)*.
+	Given clause: 658[0:Res:180.2,359.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1591[6:MRR:1585.2,178.0] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(U,Tb5)*.
+	Given clause: 1592[6:Con:1587.3] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(V,Tb5) Lt(U,Ta5)*.
+	Given clause: 1617[6:Res:1392.0,1592.0] ||  -> CausallyIsolated(Tb5,Ta5,U)* Lt(Tb5,Tb5) Lt(Ta5,Ta5).
+	Given clause: 1618[6:Res:1561.0,1592.0] ||  -> CausallyIsolated(Tb5,Ta5,U)* Lt(Tb5,Tb5) Lt(skf5(Tb5,V,W,X),Ta5)*.
+	Given clause: 892[1:Res:807.2,178.0] || Lt(U,V)+ -> CausallyIsolated(V,W,X)* equal(skf5(W,V,Y,Z),V) Lt(U,skf5(W,V,Y,Z))*.
+	Given clause: 1610[6:Res:1291.0,1591.0] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(skf5(V,Y,Z,X1),Tb5)*.
+	Given clause: 1632[6:Fac:1610.0,1610.1] ||  -> CausallyIsolated(Ta5,Ta5,U)* Lt(skf5(Ta5,V,W,X),Tb5)*.
+	Given clause: 1640[6:Con:1639.1] ||  -> CausallyIsolated(U,Ta5,V)* CausallyIsolated(Ta5,Ta5,W)* Lt(U,Tb5).
+	Given clause: 1649[7:Spt:1640.0,1640.2] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5).
+	Given clause: 1573[4:Res:1552.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 1358[2:Res:1291.0,1292.0] ||  -> CausallyIsolated(U,skf5(V,W,X,Y),Z)* CausallyIsolated(X1,V,X2)* Lt(skf5(skf5(V,W,X,Y),X3,X4,X5),V)*.
+	Given clause: 1629[2:Res:1392.0,892.0] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5) Lt(Ta5,skf5(U,Tb5,W,X))*.
+	Given clause: 1671[2:Con:1668.2] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5)** Lt(Ta5,U).
+	Given clause: 1692[2:Con:1675.3] ||  -> CausallyIsolated(Tb5,U,V)* Lt(Ta5,U) Leq(Tb5,Tb5).
+	Given clause: 1710[8:Spt:1692.0,1692.1] ||  -> CausallyIsolated(Tb5,U,V)* Lt(Ta5,U).
+	Given clause: 1566[4:Res:1291.0,1562.0] ||  -> CausallyIsolated(U,skf5(Tb5,V,W,X),Y)* Lt(skf5(skf5(Tb5,V,W,X),Z,X1,X2),Tb5)*.
+	Given clause: 824[1:Con:810.2] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 1578[6:Res:1291.0,1576.0] ||  -> CausallyIsolated(U,skf5(Ta5,V,W,X),Y)* Lt(skf5(skf5(Ta5,V,W,X),Z,X1,X2),Tb5)*.
+	Given clause: 1637[6:Res:1610.2,178.0] || Lt(U,skf5(V,W,X,Y))*+ -> CausallyIsolated(Z,V,X1)* CausallyIsolated(V,Ta5,X2)* Lt(U,Tb5).
+	Given clause: 1730[6:Con:1723.2] ||  -> CausallyIsolated(U,V,W)* equal(skf5(V,U,X,Y),U)** CausallyIsolated(V,Ta5,Z)* Lt(U,Tb5).
+	Given clause: 1770[6:Con:1769.2] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(U,Tb5).
+	Given clause: 1434[2:Res:220.1,1298.0] || Lt(U,skf5(V,W,X,skf3(X,V,U)))*+ CausallyIsolated(U,V,X) Motionless(W,V,skf4(skf3(X,V,U),V,W))* -> CausallyIsolated(W,V,X).
+	Given clause: 1652[4:Res:1573.2,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> equal(skf5(Tb5,Ta5,W,X),Ta5) Lt(V,skf5(Tb5,Ta5,W,X))*.
+	Given clause: 1626[2:Res:1547.1,892.0] || Lt(U,Ta5)+ -> CausallyIsolated(Tb5,V,W)* equal(skf5(V,Tb5,X,Y),Tb5) Lt(U,skf5(V,Tb5,X,Y))*.
+	Given clause: 1630[4:Res:1561.0,892.0] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5) Lt(skf5(Tb5,Y,Z,X1),skf5(U,Tb5,W,X))*.
+	Given clause: 1807[4:Con:1802.2] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5)** Lt(skf5(Tb5,Y,Z,X1),U)*.
+	Given clause: 1433[2:Res:815.1,1298.0] || equal(skf5(U,V,W,skf3(W,U,X)),X)**+ CausallyIsolated(X,U,W) Motionless(V,U,skf4(skf3(W,U,X),U,V))* -> CausallyIsolated(V,U,W).
+	Given clause: 1853[4:Con:1815.3] ||  -> CausallyIsolated(Tb5,U,V)* Lt(skf5(Tb5,W,X,Y),U)* Leq(Tb5,Tb5).
+	Given clause: 1879[9:Spt:1853.0,1853.1] ||  -> CausallyIsolated(Tb5,U,V)* Lt(skf5(Tb5,W,X,Y),U)*.
+	Given clause: 1882[9:Res:1879.1,178.0] || Lt(U,skf5(Tb5,V,W,X))*+ -> CausallyIsolated(Tb5,Y,Z)* Lt(U,Y)*.
+	Given clause: 1893[9:Res:1573.2,1882.0] || Lt(U,Ta5)*+ -> equal(skf5(Tb5,Ta5,V,W),Ta5)** CausallyIsolated(Tb5,X,Y)* Lt(U,X)*.
+	Given clause: 1900[10:Spt:1893.0,1893.2,1893.3] || Lt(U,Ta5)*+ -> CausallyIsolated(Tb5,V,W)* Lt(U,V)*.
+	Given clause: 1901[10:Res:1291.0,1900.0] ||  -> CausallyIsolated(U,Ta5,V)* CausallyIsolated(Tb5,W,X)* Lt(skf5(Ta5,Y,Z,X1),W)*.
+	Given clause: 1904[11:Spt:1901.0] ||  -> CausallyIsolated(U,Ta5,V)*.
+	Given clause: 668[0:MRR:667.0,221.1] || equal(skf5(U,V,Contents(Ta5,Rc5),Su),Ta5)+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1892[9:Res:807.2,1882.0] ||  -> CausallyIsolated(U,Tb5,V)* equal(skf5(Tb5,U,W,X),U)** CausallyIsolated(Tb5,Y,Z)* Lt(U,Y)*.
+	Given clause: 1945[9:Con:1919.3] ||  -> CausallyIsolated(U,Tb5,V)* CausallyIsolated(Tb5,W,X)* Lt(U,W)*.
+	Given clause: 1964[9:Res:1945.2,178.0] || Lt(U,V)*+ -> CausallyIsolated(V,Tb5,W)* CausallyIsolated(Tb5,X,Y)* Lt(U,X)*.
+	Given clause: 1884[9:Res:1879.1,1292.0] ||  -> CausallyIsolated(Tb5,skf5(U,V,W,X),Y)* CausallyIsolated(Z,U,X1)* Lt(skf5(Tb5,X2,X3,X4),U)*.
+	Given clause: 663[0:Res:220.1,658.0] || Lt(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 1965[9:Res:1945.2,1292.0] ||  -> CausallyIsolated(U,Tb5,V)* CausallyIsolated(Tb5,skf5(W,X,Y,Z),X1)* CausallyIsolated(X2,W,X3)* Lt(U,W)*.
+	Given clause: 1975[9:Res:1291.0,1964.0] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Tb5,X)* CausallyIsolated(Tb5,Y,Z)* Lt(skf5(V,X1,X2,X3),Y)*.
+	Given clause: 1713[4:Res:1566.1,178.0] || Lt(U,skf5(skf5(Tb5,V,W,X),Y,Z,X1))*+ -> CausallyIsolated(X2,skf5(Tb5,V,W,X),X3)* Lt(U,Tb5).
+	Given clause: 2043[4:Con:2032.2] ||  -> CausallyIsolated(U,skf5(Tb5,V,W,X),Y)* equal(skf5(skf5(Tb5,V,W,X),U,Z,X1),U)** Lt(U,Tb5).
+	Given clause: 1033[1:Res:220.1,824.0] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 2105[4:MRR:2102.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 2118[4:Spt:2117.0,822.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 2119[2:MRR:2106.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 1692[2:Con:1675.3] ||  -> CausallyIsolated(Tb5,U,V)* Lt(Ta5,U) Leq(Tb5,Tb5).
+	Given clause: 2123[5:Spt:1692.0,1692.1] ||  -> CausallyIsolated(Tb5,U,V)* Lt(Ta5,U).
+	Given clause: 1296[2:MRR:195.0,1295.1] ||  -> Element(skf4(U,V,W),U)* Lt(skf5(Tb5,X,Y,Z),Tb5)*.
+	Given clause: 2124[6:Spt:1296.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+	Given clause: 192[0:MRR:188.0,84.1] || Isolates(skf5(U,V,W,X),X,W)*+ -> Element(skf4(X,Y,Z),X)* CausallyIsolated(V,U,W).
+	Given clause: 2126[6:Res:2124.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 2120[4:Res:2118.0,224.0] ||  -> equal(skf5(Tb5,Ta5,U,V),Ta5) Lt(Ta5,skf5(Tb5,Ta5,U,V))*.
+	Given clause: 1564[2:Res:1291.0,1550.0] || Lt(U,skf5(Ta5,V,W,X))*+ -> CausallyIsolated(Y,Ta5,Z)* Lt(U,Tb5).
+	Given clause: 2141[7:Spt:1564.0,1564.2] || Lt(U,skf5(Ta5,V,W,X))* -> Lt(U,Tb5).
+	Given clause: 2142[7:Res:807.2,2141.0] ||  -> CausallyIsolated(U,Ta5,V)* equal(skf5(Ta5,U,W,X),U)** Lt(U,Tb5).
+	Given clause: 1123[0:Res:179.1,192.0] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ -> Element(skf4(Su,W,X),Su)* CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 2192[8:Spt:1123.0,1123.2] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 2168[7:Con:2148.3] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5) Leq(U,U)*.
+	Given clause: 2169[7:MRR:2159.2,178.0] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(U,Tb5)*.
+	Given clause: 2195[8:Con:2193.1] || Leq3(Ta5,U,Tb5) -> Lt(U,Tb5) CausallyIsolated(U,Ta5,Contents(Ta5,Rc5))*.
+	Given clause: 2170[7:Con:2161.3] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(V,Tb5) Lt(U,Ta5)*.
+	Given clause: 355[0:Res:187.3,192.0] || Lt(skf5(U,V,W,skf3(W,X,Y)),X)*+ Leq(Y,skf5(U,V,W,skf3(W,X,Y)))* CausallyIsolated(Y,X,W) -> Element(skf4(skf3(W,X,Y),Z,X1),skf3(W,X,Y))* CausallyIsolated(V,U,W).
+	Given clause: 2210[7:Res:2124.0,2170.0] ||  -> CausallyIsolated(Tb5,Ta5,U)* Lt(Tb5,Tb5) Lt(skf5(Tb5,V,W,X),Ta5)*.
+	Given clause: 2199[7:Res:1291.0,2169.0] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(skf5(V,Y,Z,X1),Tb5)*.
+	Given clause: 2230[7:Fac:2199.0,2199.1] ||  -> CausallyIsolated(Ta5,Ta5,U)* Lt(skf5(Ta5,V,W,X),Tb5)*.
+	Given clause: 2240[7:Con:2239.1] ||  -> CausallyIsolated(U,Ta5,V)* CausallyIsolated(Ta5,Ta5,W)* Lt(U,Tb5).
+	Given clause: 2254[9:Spt:2240.0,2240.2] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5).
+	Given clause: 1299[2:Con:1293.2] || Leq(U,skf5(V,W,X,skf3(X,V,U)))*+ CausallyIsolated(U,V,X) -> Element(skf4(skf3(X,V,U),Y,Z),skf3(X,V,U))* CausallyIsolated(W,V,X).
+	Given clause: 2253[7:Con:2251.1] || Motionless(Ta5,Ta5,skf4(Su,Ta5,Ta5))* -> CausallyIsolated(Ta5,Ta5,Contents(Ta5,Rc5)).
+	Given clause: 2241[7:Con:2238.1] || Motionless(Ta5,U,skf4(Su,U,Ta5))*+ -> CausallyIsolated(U,Ta5,V)* CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 2136[4:Res:2120.1,178.0] || Lt(U,Ta5) -> equal(skf5(Tb5,Ta5,V,W),Ta5) Lt(U,skf5(Tb5,Ta5,V,W))*.
+	Given clause: 2132[6:Res:1291.0,2126.0] ||  -> CausallyIsolated(U,skf5(Tb5,V,W,X),Y)* Lt(skf5(skf5(Tb5,V,W,X),Z,X1,X2),Tb5)*.
+	Given clause: 2194[8:Res:180.2,2192.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 2143[7:Res:1291.0,2141.0] ||  -> CausallyIsolated(U,skf5(Ta5,V,W,X),Y)* Lt(skf5(skf5(Ta5,V,W,X),Z,X1,X2),Tb5)*.
+	Given clause: 2235[7:Res:2199.2,178.0] || Lt(U,skf5(V,W,X,Y))*+ -> CausallyIsolated(Z,V,X1)* CausallyIsolated(V,Ta5,X2)* Lt(U,Tb5).
+	Given clause: 2295[7:Con:2288.2] ||  -> CausallyIsolated(U,V,W)* equal(skf5(V,U,X,Y),U)** CausallyIsolated(V,Ta5,Z)* Lt(U,Tb5).
+	Given clause: 2344[7:Con:2343.2] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(U,Tb5).
+	Given clause: 2256[2:Res:220.1,1299.0] || Lt(U,skf5(V,W,X,skf3(X,V,U)))*+ CausallyIsolated(U,V,X) -> Element(skf4(skf3(X,V,U),Y,Z),skf3(X,V,U))* CausallyIsolated(W,V,X).
+	Given clause: 2261[4:Res:2136.2,178.0] || Lt(U,Ta5)*+ Lt(V,U)* -> equal(skf5(Tb5,Ta5,W,X),Ta5) Lt(V,skf5(Tb5,Ta5,W,X))*.
+	Given clause: 2125[6:Res:2124.0,892.0] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5) Lt(skf5(Tb5,Y,Z,X1),skf5(U,Tb5,W,X))*.
+	Given clause: 2387[6:Con:2380.2] ||  -> CausallyIsolated(Tb5,U,V)* equal(skf5(U,Tb5,W,X),Tb5)** Lt(skf5(Tb5,Y,Z,X1),U)*.
+	Given clause: 2444[6:Con:2396.3] ||  -> CausallyIsolated(Tb5,U,V)* Lt(skf5(Tb5,W,X,Y),U)* Leq(Tb5,Tb5).
+	Given clause: 2479[10:Spt:2444.0,2444.1] ||  -> CausallyIsolated(Tb5,U,V)* Lt(skf5(Tb5,W,X,Y),U)*.
+	Given clause: 2255[2:Res:815.1,1299.0] || equal(skf5(U,V,W,skf3(W,U,X)),X)**+ CausallyIsolated(X,U,W) -> Element(skf4(skf3(W,U,X),Y,Z),skf3(W,U,X))* CausallyIsolated(V,U,W).
+	Given clause: 2482[10:Res:2479.1,178.0] || Lt(U,skf5(Tb5,V,W,X))*+ -> CausallyIsolated(Tb5,Y,Z)* Lt(U,Y)*.
+	Given clause: 2496[10:Res:2136.2,2482.0] || Lt(U,Ta5)*+ -> equal(skf5(Tb5,Ta5,V,W),Ta5)** CausallyIsolated(Tb5,X,Y)* Lt(U,X)*.
+	Given clause: 2503[11:Spt:2496.0,2496.2,2496.3] || Lt(U,Ta5)*+ -> CausallyIsolated(Tb5,V,W)* Lt(U,V)*.
+	Given clause: 2504[11:Res:1291.0,2503.0] ||  -> CausallyIsolated(U,Ta5,V)* CausallyIsolated(Tb5,W,X)* Lt(skf5(Ta5,Y,Z,X1),W)*.
+	Given clause: 2507[12:Spt:2504.0] ||  -> CausallyIsolated(U,Ta5,V)*.
+	Given clause: 2495[10:Res:807.2,2482.0] ||  -> CausallyIsolated(U,Tb5,V)* equal(skf5(Tb5,U,W,X),U)** CausallyIsolated(Tb5,Y,Z)* Lt(U,Y)*.
+	Given clause: 1032[1:Res:815.1,824.0] || equal(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)**+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+	Given clause: 2557[10:Con:2524.3] ||  -> CausallyIsolated(U,Tb5,V)* CausallyIsolated(Tb5,W,X)* Lt(U,W)*.
+	Given clause: 2583[10:Res:2557.2,178.0] || Lt(U,V)*+ -> CausallyIsolated(V,Tb5,W)* CausallyIsolated(Tb5,X,Y)* Lt(U,X)*.
+	Given clause: 2484[10:Res:2479.1,1292.0] ||  -> CausallyIsolated(Tb5,skf5(U,V,W,X),Y)* CausallyIsolated(Z,U,X1)* Lt(skf5(Tb5,X2,X3,X4),U)*.
+	Given clause: 2584[10:Res:2557.2,1292.0] ||  -> CausallyIsolated(U,Tb5,V)* CausallyIsolated(Tb5,skf5(W,X,Y,Z),X1)* CausallyIsolated(X2,W,X3)* Lt(U,W)*.
+	Given clause: 2278[8:Res:220.1,2194.1] || Lt(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5) Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 2641[8:Spt:2639.0,1123.1] ||  -> Element(skf4(Su,U,V),Su)*.
+	Given clause: 2642[8:Res:2641.0,31.0] ||  -> Object(skf4(Su,U,V))*.
+	Given clause: 2168[7:Con:2148.3] ||  -> CausallyIsolated(U,Ta5,V)* Lt(U,Tb5) Leq(U,U)*.
+	Given clause: 2230[7:Fac:2199.0,2199.1] ||  -> CausallyIsolated(Ta5,Ta5,U)* Lt(skf5(Ta5,V,W,X),Tb5)*.
+	Given clause: 2169[7:MRR:2159.2,178.0] || Lt(U,V)*+ -> CausallyIsolated(V,Ta5,W)* Lt(U,Tb5)*.
+	Given clause: 359[0:Res:179.1,193.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+	Given clause: 2344[7:Con:2343.2] ||  -> CausallyIsolated(U,V,W)* CausallyIsolated(V,Ta5,X)* Lt(U,Tb5).
+	Given clause: 2643[8:Res:2641.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+	Given clause: 2673[6:Spt:2672.0,1296.0] ||  -> Element(skf4(U,V,W),U)*.
+	Given clause: 2674[6:Res:2673.0,31.0] ||  -> Object(skf4(U,V,W))*.
+	Given clause: 2119[2:MRR:2106.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+	Given clause: 1297[2:MRR:198.0,1295.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+	Given clause: 2675[6:Res:2673.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: 65_test.dfg 
+SPASS derived 1900 clauses, backtracked 376 clauses, performed 39 splits and kept 1453 clauses.
+SPASS allocated 54145 KBytes.
+SPASS spent	0:00:00.23 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.02 for inferences.
+		0:00:00.01 for the backtracking.
+		0:00:00.11 for the reduction.
+
+
+Here is a proof with depth 8, length 257 :
+2[0:Inp] ||  -> Time(Ta5)*.
+3[0:Inp] ||  -> Time(Tb5)*.
+14[0:Inp] ||  -> ObjectSet(Su)*.
+15[0:Inp] ||  -> Motionless(Ta5,Tb5,Ob5)*.
+16[0:Inp] ||  -> Motionless(Ta5,Tb5,Ol5)*.
+22[0:Inp] ||  -> ObjectSet(skf3(U,V,W))*.
+27[0:Inp] || SkP0(U,V)* -> Time(V).
+28[0:Inp] || SkP0(U,V)* -> Time(U).
+63[0:Inp] || CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))* -> .
+64[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+65[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+84[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+114[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+156[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+174[0:Inp] || Element(U,Su)* -> equal(U,Ol5) equal(U,Ob5).
+178[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+179[0:Inp] || Leq3(Ta5,U,Tb5) -> Isolates(U,Su,Contents(Ta5,Rc5))*.
+180[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+181[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+183[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+184[0:Inp] || Element(U,skf3(V,W,X))* CausallyIsolated(X,W,V) -> Motionless(X,W,U).
+185[0:Inp] ObjectSet(U) ||  -> Leq(V,skf5(W,V,X,Y))* Element(skf4(U,Z,X1),U)* CausallyIsolated(V,W,X2)*.
+186[0:Inp] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)* Lt(skf5(X,Y,Z,X1),X)* CausallyIsolated(X2,X,X3)*.
+188[0:Inp] ObjectSet(U) || Isolates(skf5(V,W,X,U),U,X)* -> Element(skf4(U,Y,Z),U)* CausallyIsolated(W,V,X).
+189[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))*+ -> Leq(V,skf5(W,V,X,Y))* CausallyIsolated(V,W,Z)*.
+190[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))*+ -> Lt(skf5(W,X,Y,Z),W)* CausallyIsolated(V,W,X1)*.
+191[0:Inp] ObjectSet(U) || Motionless(V,W,skf4(U,W,V))* Isolates(skf5(W,V,X,U),U,X)* -> CausallyIsolated(V,W,X).
+192[0:MRR:188.0,84.1] || Isolates(skf5(U,V,W,X),X,W)*+ -> Element(skf4(X,Y,Z),X)* CausallyIsolated(V,U,W).
+193[0:MRR:191.0,84.1] || Motionless(U,V,skf4(W,V,U))* Isolates(skf5(V,U,X,W),W,X)*+ -> CausallyIsolated(U,V,X).
+195[0:Res:186.3,63.0] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)* Lt(skf5(Tb5,X,Y,Z),Tb5)*.
+196[0:Res:185.3,63.0] ObjectSet(U) ||  -> Leq(Ta5,skf5(Tb5,Ta5,V,W))* Element(skf4(U,X,Y),U)*.
+197[0:Res:189.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+198[0:Res:190.3,63.0] ObjectSet(U) || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+200[1:Spt:185.0,185.2] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)*.
+217[0:Res:64.1,27.0] || Lt(U,V)* -> Time(U).
+218[0:Res:64.1,28.0] || Lt(U,V)* -> Time(V).
+219[0:MRR:181.1,217.1] Time(U) || Lt(V,U) -> Leq(V,U)*.
+220[0:MRR:219.0,218.1] || Lt(U,V) -> Leq(U,V)*.
+221[0:Res:65.1,27.0] || Leq(U,V)* -> Time(U).
+222[0:Res:65.1,28.0] || Leq(U,V)* -> Time(V).
+223[0:MRR:183.1,221.1] Time(U) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+224[0:MRR:223.0,222.1] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+256[0:Res:156.1,114.0] || CausallyIsolated(U,V,W)* -> ObjectSet(W).
+288[1:Res:200.1,174.0] ObjectSet(Su) ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+291[1:SSi:288.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+318[1:SpR:291.0,200.1] ObjectSet(Su) ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+321[1:SSi:318.0,14.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+322[2:Spt:321.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+337[1:Res:200.1,184.0] ObjectSet(skf3(U,V,W)) || CausallyIsolated(W,V,U) -> Motionless(W,V,skf4(skf3(U,V,W),X,Y))*.
+338[1:SSi:337.0,22.0] || CausallyIsolated(U,V,W) -> Motionless(U,V,skf4(skf3(W,V,U),X,Y))*.
+339[0:Res:179.1,192.0] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ -> Element(skf4(Su,W,X),Su)* CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+344[2:SpL:322.0,197.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+345[1:Res:338.1,197.1] ObjectSet(skf3(U,Tb5,Ta5)) || CausallyIsolated(Ta5,Tb5,U)* -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+346[2:SSi:344.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+347[2:MRR:346.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+359[0:Res:179.1,193.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+361[2:Rew:322.0,359.1] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+367[1:Res:338.1,198.1] ObjectSet(skf3(U,Tb5,Ta5)) || CausallyIsolated(Ta5,Tb5,U)* -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+390[2:SpL:322.0,190.1] ObjectSet(Su) || Motionless(U,V,Ob5) -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+392[2:SSi:390.0,14.0] || Motionless(U,V,Ob5)+ -> Lt(skf5(V,W,X,Y),V)* CausallyIsolated(U,V,Z)*.
+404[2:Res:180.2,361.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+438[2:Res:220.1,404.1] || Lt(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5) Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))* Motionless(V,U,Ob5) -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+444[2:Res:347.0,438.1] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,Ob5) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+445[2:MRR:444.0,444.1,444.2,392.1,15.0,63.0] ||  -> .
+448[2:Spt:445.0,321.1] ||  -> Element(Ol5,Su)*.
+449[1:SSi:345.0,22.0,3.0,2.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Leq(Ta5,skf5(Tb5,Ta5,V,W))*.
+450[1:SSi:367.0,22.0,3.0,2.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+486[3:Spt:339.0,339.2] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+487[3:Res:180.2,486.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+495[1:SpL:291.0,198.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+496[1:SpL:291.0,197.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+497[1:SSi:496.0,14.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+498[1:MRR:497.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+499[1:SSi:495.0,14.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+500[1:MRR:499.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+503[4:Spt:498.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+508[5:Spt:500.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+561[3:Res:220.1,487.1] || Lt(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5) Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+579[4:Res:503.0,561.1] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+580[5:MRR:579.0,579.1,508.0,63.0] ||  -> .
+583[5:Spt:580.0,500.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+584[4:MRR:579.1,63.0] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> .
+592[5:SpL:583.0,190.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+595[5:SSi:592.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+596[5:MRR:595.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+597[5:MRR:596.1,450.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+598[5:UnC:597.0,584.0] ||  -> .
+599[4:Spt:598.0,498.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+605[4:SpL:599.0,190.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+606[4:SpL:599.0,189.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* CausallyIsolated(Ta5,Tb5,W)*.
+608[4:SSi:605.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+609[4:MRR:608.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+610[4:MRR:609.1,450.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+611[4:SSi:606.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* CausallyIsolated(Ta5,Tb5,W)*.
+612[4:MRR:611.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* CausallyIsolated(Ta5,Tb5,W)*.
+613[4:MRR:612.1,449.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+620[4:Res:613.0,561.1] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+621[4:MRR:620.1,63.0] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> .
+622[4:MRR:621.0,610.0] ||  -> .
+623[3:Spt:622.0,339.1] ||  -> Element(skf4(Su,U,V),Su)*.
+653[4:Spt:498.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+658[0:Res:180.2,359.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))+ Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* Motionless(V,U,skf4(Su,U,V))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+665[4:Res:653.0,658.0] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5)) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+666[4:MRR:665.2,63.0] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5)) -> .
+669[5:Spt:500.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+742[4:Res:220.1,666.0] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5)) -> .
+744[5:MRR:742.0,669.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+745[5:SpL:291.0,744.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+748[5:MRR:745.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+749[5:Rew:748.0,744.0] || Motionless(Ta5,Tb5,Ob5)* -> .
+750[5:MRR:749.0,15.0] ||  -> .
+751[5:Spt:750.0,500.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+752[5:Rew:751.0,742.1] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,Ob5) -> .
+753[5:MRR:752.1,15.0] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> .
+766[5:SpL:751.0,190.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+768[5:SSi:766.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+769[5:MRR:768.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+770[5:MRR:769.1,450.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+771[5:UnC:770.0,753.0] ||  -> .
+772[4:Spt:771.0,498.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+779[4:SpL:772.0,190.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+780[4:SpL:772.0,189.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* CausallyIsolated(Ta5,Tb5,W)*.
+781[4:SSi:779.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+782[4:MRR:781.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+783[4:MRR:782.1,450.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+784[4:SSi:780.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* CausallyIsolated(Ta5,Tb5,W)*.
+785[4:MRR:784.0,15.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* CausallyIsolated(Ta5,Tb5,W)*.
+786[4:MRR:785.1,449.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+793[4:Res:786.0,658.0] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5)) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+794[4:Rew:772.0,793.1] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,Tb5,Ob5) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+795[4:MRR:794.1,794.2,15.0,63.0] || Leq(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> .
+802[4:Res:220.1,795.0] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> .
+804[4:MRR:802.0,783.0] ||  -> .
+806[1:Spt:804.0,185.1,185.3] ||  -> Leq(U,skf5(V,U,W,X))* CausallyIsolated(U,V,Y)*.
+810[1:Res:806.0,658.0] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,V)* CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+811[1:Res:806.1,256.0] ||  -> Leq(U,skf5(V,U,W,X))* ObjectSet(Y)*.
+822[1:MRR:196.0,811.1] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))* Element(skf4(W,X,Y),W)*.
+824[1:Con:810.2] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+825[2:Spt:186.0,186.1] ObjectSet(U) ||  -> Element(skf4(U,V,W),U)*.
+828[2:Res:825.1,174.0] ObjectSet(Su) ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+829[2:Res:825.1,184.0] ObjectSet(skf3(U,V,W)) || CausallyIsolated(W,V,U) -> Motionless(W,V,skf4(skf3(U,V,W),X,Y))*.
+830[2:SSi:828.0,14.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+831[2:SSi:829.0,22.0] || CausallyIsolated(U,V,W) -> Motionless(U,V,skf4(skf3(W,V,U),X,Y))*.
+834[3:Spt:811.1] ||  -> ObjectSet(U)*.
+835[3:MRR:190.0,834.0] || Motionless(U,V,skf4(W,V,U))*+ -> Lt(skf5(V,X,Y,Z),V)* CausallyIsolated(U,V,X1)*.
+836[3:MRR:825.0,834.0] ||  -> Element(skf4(U,V,W),U)*.
+838[3:MRR:198.0,834.0] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+844[3:SpR:830.0,836.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+847[4:Spt:844.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+852[4:Rew:847.0,824.1] || Leq(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+863[4:SpL:847.0,838.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+864[4:MRR:863.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+926[4:Res:220.1,852.0] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+928[4:Res:864.0,926.0] || Motionless(Ta5,Tb5,Ob5) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))*.
+929[4:MRR:928.0,928.1,15.0,63.0] ||  -> .
+930[4:Spt:929.0,844.1] ||  -> Element(Ol5,Su)*.
+951[3:SpL:830.0,838.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+953[3:Res:831.1,838.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+955[3:MRR:951.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+961[5:Spt:955.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1033[1:Res:220.1,824.0] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)*+ Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+1051[5:Res:961.0,1033.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+1052[5:MRR:1051.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+1059[5:SpL:830.0,1052.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+1062[5:MRR:1059.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+1063[5:Rew:1062.0,1052.0] || Motionless(Ta5,Tb5,Ob5)* -> .
+1064[5:MRR:1063.0,15.0] ||  -> .
+1065[5:Spt:1064.0,955.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+1070[5:SpL:1065.0,835.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+1071[5:MRR:1070.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+1072[5:MRR:1071.1,953.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1078[5:Res:1072.0,1033.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+1079[5:Rew:1065.0,1078.0] || Motionless(Ta5,Tb5,Ob5) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))*.
+1080[5:MRR:1079.0,1079.1,15.0,63.0] ||  -> .
+1081[3:Spt:1080.0,811.0] ||  -> Leq(U,skf5(V,U,W,X))*.
+1082[3:Res:1081.0,224.0] ||  -> equal(skf5(U,V,W,X),V) Lt(V,skf5(U,V,W,X))*.
+1098[2:SpR:830.0,825.1] ObjectSet(Su) ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+1103[2:SSi:1098.0,14.0] ||  -> equal(skf4(Su,U,V),Ob5)** Element(Ol5,Su).
+1104[4:Spt:1103.0] ||  -> equal(skf4(Su,U,V),Ob5)**.
+1105[4:Rew:1104.0,1033.1] || Lt(skf5(U,Ta5,Contents(Ta5,Rc5),Su),Tb5)* Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+1123[0:Res:179.1,192.0] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)*+ -> Element(skf4(Su,W,X),Su)* CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+1138[4:SpL:1104.0,198.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1139[2:Res:831.1,198.1] ObjectSet(skf3(U,Tb5,Ta5)) || CausallyIsolated(Ta5,Tb5,U)* -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+1140[4:SSi:1138.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1141[4:MRR:1140.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1142[4:Res:1141.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+1145[4:Res:1082.1,1142.0] ||  -> equal(skf5(Tb5,U,V,W),U)** Lt(U,Tb5).
+1148[4:SpR:1145.0,1141.0] ||  -> Lt(U,Tb5)* Lt(U,Tb5)*.
+1154[4:Obv:1148.0] ||  -> Lt(U,Tb5)*.
+1155[4:MRR:1105.0,1154.0] || Motionless(Ta5,U,Ob5) -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5))*.
+1159[4:Res:1155.1,63.0] || Motionless(Ta5,Tb5,Ob5)* -> .
+1161[4:MRR:1159.0,15.0] ||  -> .
+1162[4:Spt:1161.0,1103.1] ||  -> Element(Ol5,Su)*.
+1163[2:SSi:1139.0,22.0] || CausallyIsolated(Ta5,Tb5,U)*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+1200[2:SpL:830.0,198.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+1201[2:SSi:1200.0,14.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+1202[2:MRR:1201.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5) Lt(skf5(Tb5,U,V,W),Tb5)*.
+1204[5:Spt:1202.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1205[5:Res:1204.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+1209[5:Res:1082.1,1205.0] ||  -> equal(skf5(Tb5,U,V,W),U)** Lt(U,Tb5).
+1212[5:SpR:1209.0,1204.0] ||  -> Lt(U,Tb5)* Lt(U,Tb5)*.
+1220[5:Obv:1212.0] ||  -> Lt(U,Tb5)*.
+1221[5:MRR:1033.0,1220.0] || Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+1225[5:SpL:830.0,1221.0] || Motionless(Ta5,U,Ol5) -> equal(skf4(Su,U,Ta5),Ob5) CausallyIsolated(Ta5,U,Contents(Ta5,Rc5))*.
+1231[5:Res:1225.2,63.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+1234[5:MRR:1231.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+1241[5:SpL:1234.0,1221.0] || Motionless(Ta5,Tb5,Ob5) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))*.
+1243[5:MRR:1241.0,1241.1,15.0,63.0] ||  -> .
+1244[5:Spt:1243.0,1202.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+1249[5:SpL:1244.0,190.1] ObjectSet(Su) || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+1251[5:SSi:1249.0,14.0] || Motionless(Ta5,Tb5,Ob5) -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+1252[5:MRR:1251.0,15.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)* CausallyIsolated(Ta5,Tb5,X)*.
+1253[5:MRR:1252.1,1163.0] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+1257[5:Res:1253.0,178.0] || Lt(U,skf5(Tb5,V,W,X))* -> Lt(U,Tb5).
+1267[5:Res:1082.1,1257.0] ||  -> equal(skf5(Tb5,U,V,W),U)** Lt(U,Tb5).
+1270[5:SpR:1267.0,1253.0] ||  -> Lt(U,Tb5)* Lt(U,Tb5)*.
+1278[5:Obv:1270.0] ||  -> Lt(U,Tb5)*.
+1280[5:MRR:1033.0,1278.0] || Motionless(Ta5,U,skf4(Su,U,Ta5))* -> CausallyIsolated(Ta5,U,Contents(Ta5,Rc5)).
+1289[5:SpL:1244.0,1280.0] || Motionless(Ta5,Tb5,Ob5) -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))*.
+1290[5:MRR:1289.0,1289.1,15.0,63.0] ||  -> .
+1291[2:Spt:1290.0,186.2,186.3] ||  -> Lt(skf5(U,V,W,X),U)* CausallyIsolated(Y,U,Z)*.
+1295[2:Res:1291.1,256.0] ||  -> Lt(skf5(U,V,W,X),U)* ObjectSet(Y)*.
+1296[2:MRR:195.0,1295.1] ||  -> Element(skf4(U,V,W),U)* Lt(skf5(Tb5,X,Y,Z),Tb5)*.
+1297[2:MRR:198.0,1295.1] || Motionless(Ta5,Tb5,skf4(U,Tb5,Ta5))*+ -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+1303[3:Spt:822.1] ||  -> Element(skf4(U,V,W),U)*.
+1305[3:Res:1303.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+1306[3:Res:1303.0,184.0] || CausallyIsolated(U,V,W) -> Motionless(U,V,skf4(skf3(W,V,U),X,Y))*.
+1560[3:Res:1306.1,1297.0] || CausallyIsolated(Ta5,Tb5,U)* -> Lt(skf5(Tb5,V,W,X),Tb5)*.
+1561[3:MRR:1560.0,1291.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+2097[2:Res:1291.0,1033.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> CausallyIsolated(U,Tb5,V)* CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+2102[3:Res:1561.0,1033.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+2105[3:MRR:2102.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+2106[2:Con:2097.1] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+2112[3:SpL:1305.0,2105.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+2115[3:MRR:2112.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+2116[3:Rew:2115.0,2105.0] || Motionless(Ta5,Tb5,Ob5)* -> .
+2117[3:MRR:2116.0,15.0] ||  -> .
+2118[3:Spt:2117.0,822.0] ||  -> Leq(Ta5,skf5(Tb5,Ta5,U,V))*.
+2119[2:MRR:2106.1,63.0] || Motionless(Ta5,Tb5,skf4(Su,Tb5,Ta5))* -> .
+2124[4:Spt:1296.1] ||  -> Lt(skf5(Tb5,U,V,W),Tb5)*.
+2192[5:Spt:1123.0,1123.2] || Leq3(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+2194[5:Res:180.2,2192.0] || Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su)) Leq(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+2278[5:Res:220.1,2194.1] || Lt(skf5(U,V,Contents(Ta5,Rc5),Su),Tb5) Leq(Ta5,skf5(U,V,Contents(Ta5,Rc5),Su))* -> CausallyIsolated(V,U,Contents(Ta5,Rc5)).
+2638[5:Res:2118.0,2278.1] || Lt(skf5(Tb5,Ta5,Contents(Ta5,Rc5),Su),Tb5)* -> CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5)).
+2639[5:MRR:2638.0,2638.1,2124.0,63.0] ||  -> .
+2641[5:Spt:2639.0,1123.1] ||  -> Element(skf4(Su,U,V),Su)*.
+2643[5:Res:2641.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+2669[5:SpL:2643.0,2119.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+2670[5:MRR:2669.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+2671[5:Rew:2670.0,2119.0] || Motionless(Ta5,Tb5,Ob5)* -> .
+2672[5:MRR:2671.0,15.0] ||  -> .
+2673[4:Spt:2672.0,1296.0] ||  -> Element(skf4(U,V,W),U)*.
+2675[4:Res:2673.0,174.0] ||  -> equal(skf4(Su,U,V),Ol5)** equal(skf4(Su,U,V),Ob5).
+2681[4:SpL:2675.0,2119.0] || Motionless(Ta5,Tb5,Ol5) -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+2683[4:MRR:2681.0,16.0] ||  -> equal(skf4(Su,Tb5,Ta5),Ob5)**.
+2684[4:Rew:2683.0,2119.0] || Motionless(Ta5,Tb5,Ob5)* -> .
+2685[4:MRR:2684.0,15.0] ||  -> .
+Formulae used in the proof : axiom65 axiom66 axiom77 C5A6 axiom80 MRD1 axiom19 5dot65 axiom31 axiom49 5dot55 TIA2 5dot64 TID3 TID1
+
+--------------------------SPASS-STOP------------------------------
