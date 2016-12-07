@@ -14,7 +14,9 @@ Inference 3: done, 1 part
 
 Inference 4: done, 2 parts (multiple auxiliary parts)
 
-Inference 5: in progress
+Inference 5: done, 5 parts (multiple auxiliary parts)
+
+Spatial Lemmas: in progress
 
 ###Useful commands###
 

@@ -235,6 +235,10 @@ formula(forall([sp,sx], equiv(IsolatesCand(sp,sx), and(not(Element(Agent,sp)), n
 % OIA1
 formula(forall([t,sp,sx], implies(Isolates(t,sp,sx), IsolatesCand(sp,sx))),OIA1).
 
+% 5.3
+formula(Lt(Ta5,Tb5),5dot3).
+
+
 end_of_list.
 
 

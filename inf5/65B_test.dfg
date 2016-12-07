@@ -234,7 +234,7 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % 5.65B
-formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Su)), not(Grasp(tx,ox)))),5dot65B).
+formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Contents(Ta5,Rc5))), not(Grasp(tx,ox)))),5dot65B).
 
 
 end_of_list.
