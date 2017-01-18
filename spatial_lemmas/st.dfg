@@ -1,10 +1,10 @@
-begin_problem(Scenario4_Lem4Q).
+begin_problem(SpatialLemma).
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 4, Lemma 4Q*}).
+name({*Qualitative Reasoning About Containers - Spatial Lemma SA*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
-description({*27 June 2016*}).
+description({*23 December 2016*}).
 
 end_of_list.
 

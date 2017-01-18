@@ -2,7 +2,7 @@ begin_problem(SpatialLemma).
 
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 5e*}).
+name({*Qualitative Reasoning About Containers - Spatial Lemma SM*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
 description({*23 December 2016*}).

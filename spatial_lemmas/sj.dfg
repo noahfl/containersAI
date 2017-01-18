@@ -2,7 +2,7 @@ begin_problem(SpatialLemma).
 
 
 list_of_descriptions.
-name({*Qualitative Reasoning About Containers - Case 5e*}).
+name({*Qualitative Reasoning About Containers - Spatial Lemma SJ*}).
 author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
 status(unsatisfiable).
 description({*23 December 2016*}).
@@ -11,7 +11,7 @@ end_of_list.
 
 list_of_symbols.
 
-functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Rb,0), (Rc,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0), (Tm,0),(Oa,0), (Tx,0), (Su,0)].
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (U,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (V,0), (Rc,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0), (Tm,0),(Oa,0), (Tx,0), (Su,0)].
 
 predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1), (Isolates,3), (ClosedContainer,3), (CausallyIsolated,3), (StaticCausallyIsolated,3), (RigidObject,1),(C,2), (Outside,2), (DC,2)].
 
@@ -193,8 +193,8 @@ formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y),
 % TIA2
 formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z))),TIA2).
 
-formula(Region(Ra)).
-formula(Region(Rb)).
+formula(Region(U)).
+formula(Region(V)).
 formula(Region(Rc)).
 
 %%%% Specifications
@@ -208,12 +208,27 @@ formula(forall([r], implies(Region(r), P(r,ConvexHull(r)))),SCA4).
 % LemSI
 formula(forall([u,v,w], implies(and(DC(u,v), P(w,v)), DC(u,v))),LemSI).
 
+
+% assume
+formula(FullyOutside(U,V),assume).
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-formula(forall([u,v], implies(FullyOutside(u,v), DC(u,v))),LemSJ).
+% formula(forall([u,v], implies(FullyOutside(u,v), DC(u,v))),LemSJ).
+
+% SJ5
+formula(DC(U,V)).
+
+% SJ4 (proof)
+% formula(P(V,ConvexHull(V)),SJ4).
+
+% SJ3 (proof)
+% formula(P(U,ConvexHull(U)),SJ3).
+
+% SJ2 (proof)
+% formula(DC(ConvexHull(U),ConvexHull(V)),SJ2).
 
 end_of_list.
 
