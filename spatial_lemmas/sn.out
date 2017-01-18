@@ -1,0 +1,798 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Action(StandStill)*.
+2[0:Inp] ||  -> Region(Ra)*.
+3[0:Inp] ||  -> Region(Rb)*.
+4[0:Inp] ||  -> Region(Rc)*.
+5[0:Inp] ||  -> P(skc5,skc4)*.
+6[0:Inp] ||  -> CombinedContainer(skc7,skc6,skc4)*.
+7[0:Inp] ||  -> IntConn(skf2(U,V))*.
+8[0:Inp] || SmallObject(U) -> Object(U)*.
+9[0:Inp] || IntConn(U)* -> Region(U).
+10[0:Inp] || AllStable(U) -> Time(U)*.
+11[0:Inp] || EmptyHanded(U) -> Time(U)*.
+12[0:Inp] || RigidObject(U) -> Object(U)*.
+13[0:Inp] || Region(U) -> Region(ConvexHull(U))*.
+14[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+15[0:Inp] || Region(U) -> Action(TravelTo(U))*.
+16[0:Inp] || Object(U) -> History(HPlace(U))*.
+17[0:Inp] || SkP0(U,V)* -> Time(V).
+18[0:Inp] || SkP0(U,V)* -> Time(U).
+19[0:Inp] || Feasible(U,V)* -> Time(U).
+20[0:Inp] || Feasible(U,V)* -> Action(V).
+21[0:Inp] || Element(U,V)* -> Object(U).
+22[0:Inp] || Element(U,V)* -> ObjectSet(V).
+23[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+24[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+25[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+26[0:Inp] || SkP2(U,V)* -> Region(U).
+27[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+28[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+29[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+30[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+31[0:Inp] || FullyOutside(U,V)* -> Region(U).
+32[0:Inp] || FullyOutside(U,V)* -> Region(V).
+33[0:Inp] || Reachable(U,V)* -> Time(U).
+34[0:Inp] || Reachable(U,V)* -> Region(V).
+35[0:Inp] || SkP4(U,V)* -> Region(V).
+36[0:Inp] || SkP4(U,V)* -> Region(U).
+37[0:Inp] || SkP5(U,V)* -> Region(V).
+38[0:Inp] || SkP5(U,V)* -> Region(U).
+39[0:Inp] || SkP6(U,V)* -> Region(V).
+40[0:Inp] || SkP6(U,V)* -> Region(U).
+41[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+42[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+43[0:Inp] || Stable(U,V)* -> Time(U).
+44[0:Inp] || Stable(U,V)* -> Object(V).
+45[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+46[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+47[0:Inp] || CanGrasp(U,V)* -> Time(U).
+48[0:Inp] || CanGrasp(U,V)* -> Object(V).
+49[0:Inp] || Grasp(U,V)* -> Time(U).
+50[0:Inp] || Grasp(U,V)* -> Object(V).
+51[0:Inp] || Graspable(U,V)* -> Time(U).
+52[0:Inp] || Graspable(U,V)* -> Object(V).
+53[0:Inp] || Cavity(U,V)* -> IntConn(U).
+54[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+55[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+56[0:Inp] || Leq3(U,V,W)* -> Time(U).
+57[0:Inp] || Leq3(U,V,W)* -> Time(V).
+58[0:Inp] || Leq3(U,V,W)* -> Time(W).
+59[0:Inp] || Occurs(U,V,W)* -> Time(U).
+60[0:Inp] || Occurs(U,V,W)* -> Time(V).
+61[0:Inp] || Occurs(U,V,W)* -> Action(W).
+62[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+63[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+64[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+65[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+66[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+67[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+68[0:Inp] || SkP1(U,V,W)* -> Time(W).
+69[0:Inp] || SkP1(U,V,W)* -> Object(V).
+70[0:Inp] || SkP1(U,V,W)* -> Object(U).
+71[0:Inp] || Fits(U,V) -> SkP2(V,U)*.
+72[0:Inp] || SmallSet(U,V) -> SkP2(V,U)*.
+73[0:Inp] || Isolates(U,V,W)* -> Time(U).
+74[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+75[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+76[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+77[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+78[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+79[0:Inp] || SkP3(U,V,W)* -> Time(W).
+80[0:Inp] || SkP3(U,V,W)* -> Time(V).
+81[0:Inp] || SkP3(U,V,W)* -> Object(U).
+82[0:Inp] || DR(U,V) -> SkP4(V,U)*.
+83[0:Inp] || DC(U,V) -> SkP4(V,U)*.
+84[0:Inp] || EC(U,V) -> SkP4(V,U)*.
+85[0:Inp] || C(U,V) -> SkP4(V,U)*.
+86[0:Inp] || P(U,V) -> SkP4(V,U)*.
+87[0:Inp] || O(U,V) -> SkP4(V,U)*.
+88[0:Inp] || OV(U,V) -> SkP4(V,U)*.
+89[0:Inp] || OpenContained(U,V) -> SkP5(V,U)*.
+90[0:Inp] || FullyOutside(U,V) -> SkP5(V,U)*.
+91[0:Inp] || OpenContainerShape(U,V) -> SkP5(V,U)*.
+92[0:Inp] || UprightContainerShape(U,V) -> SkP5(V,U)*.
+93[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+94[0:Inp] || Outside(U,V) -> SkP6(V,U)*.
+95[0:Inp] || PartiallyContained(U,V) -> SkP6(V,U)*.
+96[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+97[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+98[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+99[0:Inp] || Moves(U,V,W)* -> Time(U).
+100[0:Inp] || Moves(U,V,W)* -> Time(V).
+101[0:Inp] || Moves(U,V,W)* -> Object(W).
+102[0:Inp] || SkP7(U,V,W)* -> Time(W).
+103[0:Inp] || SkP7(U,V,W)* -> Time(V).
+104[0:Inp] || SkP7(U,V,W)* -> Object(U).
+105[0:Inp] || SkP8(U,V,W)* -> Time(W).
+106[0:Inp] || SkP8(U,V,W)* -> Time(V).
+107[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+108[0:Inp] || Grasps(U,V,W)* -> Time(U).
+109[0:Inp] || Grasps(U,V,W)* -> Time(V).
+110[0:Inp] || Grasps(U,V,W)* -> Object(W).
+111[0:Inp] || Constant(U,V,W)* -> Time(U).
+112[0:Inp] || Constant(U,V,W)* -> Time(V).
+113[0:Inp] || Constant(U,V,W)* -> History(W).
+114[0:Inp] || SkP9(U,V,W)* -> Time(W).
+115[0:Inp] || SkP9(U,V,W)* -> Time(V).
+116[0:Inp] || SkP9(U,V,W)* -> History(U).
+117[0:Inp] || BoxWithLid(U,V,W)* -> Time(U).
+118[0:Inp] || BoxWithLid(U,V,W)* -> Object(V).
+119[0:Inp] || BoxWithLid(U,V,W)* -> Object(W).
+120[0:Inp] || Cavity(U,V) -> DR(U,V)*.
+121[0:Inp] || DR(skc5,skc7)* DR(skc5,skc6) -> .
+122[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(U).
+123[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(V).
+124[0:Inp] || SafeManipulate(U,V,W,X)* -> Object(W).
+125[0:Inp] || SafeManipulate(U,V,W,X)* -> Region(X).
+126[0:Inp] || SkP10(U,V,W,X)* -> Time(X).
+127[0:Inp] || SkP10(U,V,W,X)* -> Time(W).
+128[0:Inp] || SkP10(U,V,W,X)* -> History(V).
+129[0:Inp] || SkP10(U,V,W,X)* -> History(U).
+130[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(U).
+131[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(V).
+132[0:Inp] || DynamicUContainer(U,V,W,X)* -> Object(W).
+133[0:Inp] || DynamicUContainer(U,V,W,X)* -> History(X).
+134[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+135[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+136[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+137[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+138[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+139[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+140[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+141[0:Inp] || CContained(U,V,W) -> SkP1(W,V,U)*.
+142[0:Inp] || UContained(U,V,W) -> SkP1(W,V,U)*.
+143[0:Inp] || BLContained(U,V,W) -> SkP1(W,V,U)*.
+144[0:Inp] || PreserveCContents(U,V,W) -> SkP3(W,V,U)*.
+145[0:Inp] || PreserveUContents(U,V,W) -> SkP3(W,V,U)*.
+146[0:Inp] || PreserveBoxWithLid(U,V,W) -> SkP3(W,V,U)*.
+147[0:Inp] || StableThroughout(U,V,W) -> SkP7(W,V,U)*.
+148[0:Inp] || Released(U,V,W) -> SkP7(W,V,U)*.
+149[0:Inp] || Motionless(U,V,W) -> SkP7(W,V,U)*.
+150[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+151[0:Inp] || StaticCausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+152[0:Inp] || AlwaysIntConn(U,V,W) -> SkP9(W,V,U)*.
+153[0:Inp] || Continuous(U,V,W) -> SkP9(W,V,U)*.
+154[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+155[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+156[0:Inp] || Action(U) Action(V) -> Action(Sequence(U,V))*.
+157[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+158[0:Inp] || Object(U) Object(V) -> ObjectSet(Pair(U,V))*.
+159[0:Inp] || ObjectSet(U) ObjectSet(V) -> ObjectSet(Union(U,V))*.
+160[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+161[0:Inp] || Time(U) Region(V) -> ObjectSet(Contents(U,V))*.
+162[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(CContents(U,V))*.
+163[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(UContents(U,V))*.
+164[0:Inp] || Object(U) Region(V) -> Action(ManipTo(U,V))*.
+165[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+166[0:Inp] || History(U) History(V) -> History(HUnion(U,V))*.
+167[0:Inp] || Time(U) Object(V) -> ObjectSet(MovingGroup(U,V))*.
+168[0:Inp] || Object(U) Object(V) -> Action(PutInUC(U,V))*.
+169[0:Inp] || Object(U) Object(V) -> Action(LoadUprightContainer(U,V))*.
+170[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+171[0:Inp] || PersistentCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+172[0:Inp] || NoExitCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+173[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+174[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+175[0:Inp] || P(U,V)* DR(W,V)* -> DR(U,W)*.
+176[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+177[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+178[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+179[0:Inp] || Region(U) Region(V) -> P(V,W)* equal(W,RUnion(U,V))*.
+180[0:Inp] || Region(U) Region(V) -> P(U,W)* equal(W,RUnion(U,V))*.
+181[0:Inp] || DR(U,V) IntConn(U) -> O(skf2(V,U),U)* Cavity(U,V).
+182[0:Inp] || DR(U,V) IntConn(U) -> DR(skf2(V,U),V)* Cavity(U,V).
+183[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+184[0:Inp] || P(skf2(U,V),V)* DR(V,U) IntConn(V) -> Cavity(V,U).
+185[0:Inp] || Region(U) Region(V) -> P(U,skf3(W,U,X))* equal(W,RUnion(U,V))*.
+186[0:Inp] || Region(U) Region(V) -> P(V,skf3(W,U,V))* equal(W,RUnion(U,V)).
+187[0:Inp] || IntConn(U) O(U,V)* DR(U,W)* Cavity(V,W)* -> P(U,V).
+188[0:Inp] || P(U,skf3(U,V,W))* Region(X) Region(Y) -> equal(U,RUnion(X,Y))*.
+189[0:Inp] || Cavity(U,RUnion(V,W))* EC(V,W) -> Cavity(U,V) Cavity(U,W) CombinedContainer(V,W,U).
+190[0:Inp] || equal(U,RUnion(V,W))* P(V,X)* P(W,X)* P(W,U)* P(V,U)* Region(V) Region(W) -> P(U,X)*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 187 Conjecture clauses: 3
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf3 > skf1 > skf2 > skf0 > LoadUprightContainer > PutInUC > MovingGroup > HUnion > Slice > ManipTo > UContents > CContents > Union > Pair > RUnion > Place > Contents > Sequence > HPlace > TravelTo > Singleton > ConvexHull > ObjectSet > Action > SkP6 > SkP4 > IntConn > DR > EC > CombinedContainer > Cavity > O > P > Region > SkP0 > Leq3 > Leq > Lt > Time > History > Object > UprightContainer > SkP5 > FullyOutside > SkP2 > SmallSet > AllStable > EmptyHanded > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > Occurs > CanGrasp > UprightContainerShape > SkP1 > UContained > Element > SkP7 > Motionless > Released > Grasp > Moves > Feasible > SafeManipulate > PartiallyContained > OSPlace > SkP3 > PreserveCContents > PreserveUContents > PreserveBoxWithLid > Stable > StableThroughout > Fits > MuchSmaller > OMuchSmaller > OpenContainerShape > OpenContained > CContained > BLContained > DynamicUContainer > Constant > Grasps > FeasiblePlace > OV > BoxWithLidC > BoxWithLid > SkP10 > PersistentCavity > NoExitCavity > NoEntranceCavity > SkP9 > Continuous > AlwaysIntConn > Isolates > ClosedContainer > SkP8 > CausallyIsolated > StaticCausallyIsolated > RigidObject > C > Outside > DC > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Su > Tx > Oa > Tm > Hc > Hu > Tb5 > Os5 > Rc5 > Ol5 > Ob5 > Ta5 > Rc > Rb > Tm2 > Tb > Ra > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4 > StandStill
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> Action(StandStill)*.
+4[0:Inp] ||  -> Region(Rc)*.
+3[0:Inp] ||  -> Region(Rb)*.
+2[0:Inp] ||  -> Region(Ra)*.
+199[0:Res:6.0,96.0] ||  -> Region(skc7)*.
+200[0:Res:6.0,97.0] ||  -> Region(skc6)*.
+201[0:Res:6.0,98.0] ||  -> Region(skc4)*.
+5[0:Inp] ||  -> P(skc5,skc4)*.
+198[0:Res:6.0,140.0] ||  -> EC(skc7,skc6)*.
+192[0:Res:5.0,86.0] ||  -> SkP4(skc4,skc5)*.
+6[0:Inp] ||  -> CombinedContainer(skc7,skc6,skc4)*.
+7[0:Inp] ||  -> IntConn(skf2(U,V))*.
+202[0:Res:6.0,155.1] || Cavity(skc4,skc6)* -> .
+203[0:Res:6.0,154.1] || Cavity(skc4,skc7)* -> .
+12[0:Inp] RigidObject(U) ||  -> Object(U)*.
+8[0:Inp] SmallObject(U) ||  -> Object(U)*.
+11[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+10[0:Inp] AllStable(U) ||  -> Time(U)*.
+9[0:Inp] IntConn(U) ||  -> Region(U)*.
+197[0:Res:6.0,170.0] ||  -> Cavity(skc4,RUnion(skc7,skc6))*.
+16[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+15[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+14[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+13[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+53[0:Inp] || Cavity(U,V)* -> IntConn(U).
+20[0:Inp] || Feasible(U,V)* -> Action(V).
+22[0:Inp] || Element(U,V)* -> ObjectSet(V).
+25[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+52[0:Inp] || Graspable(U,V)* -> Object(V).
+50[0:Inp] || Grasp(U,V)* -> Object(V).
+48[0:Inp] || CanGrasp(U,V)* -> Object(V).
+46[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+44[0:Inp] || Stable(U,V)* -> Object(V).
+30[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+27[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+23[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+21[0:Inp] || Element(U,V)* -> Object(U).
+51[0:Inp] || Graspable(U,V)* -> Time(U).
+49[0:Inp] || Grasp(U,V)* -> Time(U).
+47[0:Inp] || CanGrasp(U,V)* -> Time(U).
+45[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+43[0:Inp] || Stable(U,V)* -> Time(U).
+33[0:Inp] || Reachable(U,V)* -> Time(U).
+29[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+19[0:Inp] || Feasible(U,V)* -> Time(U).
+18[0:Inp] || SkP0(U,V)* -> Time(U).
+17[0:Inp] || SkP0(U,V)* -> Time(V).
+42[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+41[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+34[0:Inp] || Reachable(U,V)* -> Region(V).
+28[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+24[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+32[0:Inp] || FullyOutside(U,V)* -> Region(V).
+31[0:Inp] || FullyOutside(U,V)* -> Region(U).
+26[0:Inp] || SkP2(U,V)* -> Region(U).
+40[0:Inp] || SkP6(U,V)* -> Region(U).
+39[0:Inp] || SkP6(U,V)* -> Region(V).
+38[0:Inp] || SkP5(U,V)* -> Region(U).
+37[0:Inp] || SkP5(U,V)* -> Region(V).
+36[0:Inp] || SkP4(U,V)* -> Region(U).
+35[0:Inp] || SkP4(U,V)* -> Region(V).
+72[0:Inp] || SmallSet(U,V) -> SkP2(V,U)*.
+71[0:Inp] || Fits(U,V) -> SkP2(V,U)*.
+54[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+55[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+95[0:Inp] || PartiallyContained(U,V) -> SkP6(V,U)*.
+94[0:Inp] || Outside(U,V) -> SkP6(V,U)*.
+93[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+92[0:Inp] || UprightContainerShape(U,V) -> SkP5(V,U)*.
+91[0:Inp] || OpenContainerShape(U,V) -> SkP5(V,U)*.
+89[0:Inp] || OpenContained(U,V) -> SkP5(V,U)*.
+90[0:Inp] || FullyOutside(U,V) -> SkP5(V,U)*.
+88[0:Inp] || OV(U,V) -> SkP4(V,U)*.
+85[0:Inp] || C(U,V) -> SkP4(V,U)*.
+83[0:Inp] || DC(U,V) -> SkP4(V,U)*.
+87[0:Inp] || O(U,V) -> SkP4(V,U)*.
+84[0:Inp] || EC(U,V) -> SkP4(V,U)*.
+82[0:Inp] || DR(U,V) -> SkP4(V,U)*.
+86[0:Inp] || P(U,V) -> SkP4(V,U)*.
+120[0:Inp] || Cavity(U,V) -> DR(U,V)*.
+113[0:Inp] || Constant(U,V,W)* -> History(W).
+61[0:Inp] || Occurs(U,V,W)* -> Action(W).
+116[0:Inp] || SkP9(U,V,W)* -> History(U).
+75[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+74[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+63[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+107[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+119[0:Inp] || BoxWithLid(U,V,W)* -> Object(W).
+118[0:Inp] || BoxWithLid(U,V,W)* -> Object(V).
+110[0:Inp] || Grasps(U,V,W)* -> Object(W).
+101[0:Inp] || Moves(U,V,W)* -> Object(W).
+78[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+77[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+66[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+104[0:Inp] || SkP7(U,V,W)* -> Object(U).
+81[0:Inp] || SkP3(U,V,W)* -> Object(U).
+70[0:Inp] || SkP1(U,V,W)* -> Object(U).
+69[0:Inp] || SkP1(U,V,W)* -> Object(V).
+117[0:Inp] || BoxWithLid(U,V,W)* -> Time(U).
+112[0:Inp] || Constant(U,V,W)* -> Time(V).
+111[0:Inp] || Constant(U,V,W)* -> Time(U).
+109[0:Inp] || Grasps(U,V,W)* -> Time(V).
+108[0:Inp] || Grasps(U,V,W)* -> Time(U).
+100[0:Inp] || Moves(U,V,W)* -> Time(V).
+99[0:Inp] || Moves(U,V,W)* -> Time(U).
+76[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+73[0:Inp] || Isolates(U,V,W)* -> Time(U).
+65[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+62[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+60[0:Inp] || Occurs(U,V,W)* -> Time(V).
+59[0:Inp] || Occurs(U,V,W)* -> Time(U).
+115[0:Inp] || SkP9(U,V,W)* -> Time(V).
+114[0:Inp] || SkP9(U,V,W)* -> Time(W).
+106[0:Inp] || SkP8(U,V,W)* -> Time(V).
+105[0:Inp] || SkP8(U,V,W)* -> Time(W).
+103[0:Inp] || SkP7(U,V,W)* -> Time(V).
+102[0:Inp] || SkP7(U,V,W)* -> Time(W).
+80[0:Inp] || SkP3(U,V,W)* -> Time(V).
+79[0:Inp] || SkP3(U,V,W)* -> Time(W).
+68[0:Inp] || SkP1(U,V,W)* -> Time(W).
+58[0:Inp] || Leq3(U,V,W)* -> Time(W).
+57[0:Inp] || Leq3(U,V,W)* -> Time(V).
+56[0:Inp] || Leq3(U,V,W)* -> Time(U).
+67[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+64[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+98[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+97[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+96[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+191[0:Res:5.0,175.0] || DR(U,skc4)* -> DR(skc5,U)*.
+121[0:Inp] || DR(skc5,skc6) DR(skc5,skc7)* -> .
+140[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+139[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+138[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+133[0:Inp] || DynamicUContainer(U,V,W,X)* -> History(X).
+129[0:Inp] || SkP10(U,V,W,X)* -> History(U).
+128[0:Inp] || SkP10(U,V,W,X)* -> History(V).
+136[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+135[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+132[0:Inp] || DynamicUContainer(U,V,W,X)* -> Object(W).
+124[0:Inp] || SafeManipulate(U,V,W,X)* -> Object(W).
+134[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+131[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(V).
+130[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(U).
+123[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(V).
+122[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(U).
+127[0:Inp] || SkP10(U,V,W,X)* -> Time(W).
+126[0:Inp] || SkP10(U,V,W,X)* -> Time(X).
+137[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+125[0:Inp] || SafeManipulate(U,V,W,X)* -> Region(X).
+153[0:Inp] || Continuous(U,V,W) -> SkP9(W,V,U)*.
+152[0:Inp] || AlwaysIntConn(U,V,W) -> SkP9(W,V,U)*.
+151[0:Inp] || StaticCausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+150[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+149[0:Inp] || Motionless(U,V,W) -> SkP7(W,V,U)*.
+148[0:Inp] || Released(U,V,W) -> SkP7(W,V,U)*.
+147[0:Inp] || StableThroughout(U,V,W) -> SkP7(W,V,U)*.
+146[0:Inp] || PreserveBoxWithLid(U,V,W) -> SkP3(W,V,U)*.
+145[0:Inp] || PreserveUContents(U,V,W) -> SkP3(W,V,U)*.
+144[0:Inp] || PreserveCContents(U,V,W) -> SkP3(W,V,U)*.
+143[0:Inp] || BLContained(U,V,W) -> SkP1(W,V,U)*.
+142[0:Inp] || UContained(U,V,W) -> SkP1(W,V,U)*.
+141[0:Inp] || CContained(U,V,W) -> SkP1(W,V,U)*.
+155[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+154[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+166[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+156[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+169[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+168[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+164[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+159[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+158[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+163[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+162[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+167[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+161[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+165[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+160[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+157[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+170[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+174[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+175[0:Inp] || DR(U,V)* P(W,V)* -> DR(W,U)*.
+173[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+172[0:Inp] || NoExitCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+171[0:Inp] || PersistentCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+176[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+177[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+178[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+180[0:Inp] Region(U) Region(V) ||  -> P(V,W)* equal(W,RUnion(V,U))*.
+179[0:Inp] Region(U) Region(V) ||  -> P(U,W)* equal(W,RUnion(V,U))*.
+181[0:Inp] IntConn(U) || DR(U,V) -> Cavity(U,V) O(skf2(V,U),U)*.
+182[0:Inp] IntConn(U) || DR(U,V) -> Cavity(U,V) DR(skf2(V,U),V)*.
+183[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+184[0:Inp] IntConn(U) || DR(U,V) P(skf2(V,U),U)* -> Cavity(U,V).
+216[0:Obv:215.2] Region(skc5) || P(skc5,U)* equal(RUnion(skc5,skc5),skc4)** -> P(skc4,U).
+217[0:Obv:214.2] Region(skc5) || equal(U,RUnion(skc5,skc5))* P(skc5,U)* -> P(U,skc4)*.
+186[0:Inp] Region(U) Region(V) ||  -> equal(W,RUnion(V,U)) P(U,skf3(W,V,U))*.
+185[0:Inp] Region(U) Region(V) ||  -> equal(W,RUnion(V,U))* P(V,skf3(W,V,X))*.
+187[0:Inp] IntConn(U) || Cavity(V,W)* DR(U,W)* O(U,V)* -> P(U,V).
+188[0:Inp] Region(U) Region(V) || P(W,skf3(W,X,Y))* -> equal(W,RUnion(V,U))*.
+226[0:Obv:205.2] Region(U) Region(skc5) || P(U,skc4) equal(RUnion(skc5,U),skc4)** -> P(skc4,skc4).
+224[0:Obv:207.2] Region(U) Region(skc5) || P(U,skc4) equal(RUnion(U,skc5),skc4)** -> P(skc4,skc4).
+189[0:Inp] || EC(U,V) Cavity(W,RUnion(U,V))* -> Cavity(W,V) Cavity(W,U) CombinedContainer(U,V,W).
+194[0:Res:5.0,190.4] Region(U) Region(skc5) || P(U,V)* P(U,skc4) P(skc5,V)* equal(RUnion(skc5,U),skc4)** -> P(skc4,V).
+196[0:Res:5.0,190.3] Region(U) Region(skc5) || P(U,V)* P(U,skc4) P(skc5,V)* equal(RUnion(U,skc5),skc4)** -> P(skc4,V).
+193[0:Res:5.0,190.6] Region(U) Region(skc5) || P(U,V)* P(U,skc4) equal(V,RUnion(skc5,U))* P(skc5,V)* -> P(V,skc4)*.
+195[0:Res:5.0,190.2] Region(U) Region(skc5) || P(U,V)* P(U,skc4) equal(V,RUnion(U,skc5))* P(skc5,V)* -> P(V,skc4)*.
+190[0:Inp] Region(U) Region(V) || P(V,W)* P(V,X)* P(U,X)* P(U,W)* equal(X,RUnion(V,U))* -> P(X,W)*.
+	Given clause: 1[0:Inp] ||  -> Action(StandStill)*.
+	Given clause: 4[0:Inp] ||  -> Region(Rc)*.
+	Given clause: 3[0:Inp] ||  -> Region(Rb)*.
+	Given clause: 2[0:Inp] ||  -> Region(Ra)*.
+	Given clause: 5[0:Inp] ||  -> P(skc5,skc4)*.
+	Given clause: 199[0:Res:6.0,96.0] ||  -> Region(skc7)*.
+	Given clause: 200[0:Res:6.0,97.0] ||  -> Region(skc6)*.
+	Given clause: 201[0:Res:6.0,98.0] ||  -> Region(skc4)*.
+	Given clause: 198[0:Res:6.0,140.0] ||  -> EC(skc7,skc6)*.
+	Given clause: 6[0:Inp] ||  -> CombinedContainer(skc7,skc6,skc4)*.
+	Given clause: 192[0:Res:5.0,86.0] ||  -> SkP4(skc4,skc5)*.
+	Given clause: 202[0:Res:6.0,155.1] || Cavity(skc4,skc6)* -> .
+	Given clause: 203[0:Res:6.0,154.1] || Cavity(skc4,skc7)* -> .
+	Given clause: 7[0:Inp] ||  -> IntConn(skf2(U,V))*.
+	Given clause: 12[0:Inp] RigidObject(U) ||  -> Object(U)*.
+	Given clause: 197[0:Res:6.0,170.0] ||  -> Cavity(skc4,RUnion(skc7,skc6))*.
+	Given clause: 8[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 11[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 10[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 9[0:Inp] IntConn(U) ||  -> Region(U)*.
+	Given clause: 16[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+	Given clause: 15[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+	Given clause: 14[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 13[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+	Given clause: 53[0:Inp] || Cavity(U,V)* -> IntConn(U).
+	Given clause: 228[0:Res:197.0,53.0] ||  -> IntConn(skc4)*.
+	Given clause: 20[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 22[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 25[0:Inp] || SkP2(U,V)* -> ObjectSet(V).
+	Given clause: 52[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 50[0:Inp] || Grasp(U,V)* -> Object(V).
+	Given clause: 48[0:Inp] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 46[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 44[0:Inp] || Stable(U,V)* -> Object(V).
+	Given clause: 30[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 27[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+	Given clause: 23[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+	Given clause: 21[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 51[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 49[0:Inp] || Grasp(U,V)* -> Time(U).
+	Given clause: 47[0:Inp] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 45[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 43[0:Inp] || Stable(U,V)* -> Time(U).
+	Given clause: 33[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 29[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 19[0:Inp] || Feasible(U,V)* -> Time(U).
+	Given clause: 18[0:Inp] || SkP0(U,V)* -> Time(U).
+	Given clause: 17[0:Inp] || SkP0(U,V)* -> Time(V).
+	Given clause: 42[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+	Given clause: 41[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+	Given clause: 34[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 28[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+	Given clause: 24[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+	Given clause: 32[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 31[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 26[0:Inp] || SkP2(U,V)* -> Region(U).
+	Given clause: 40[0:Inp] || SkP6(U,V)* -> Region(U).
+	Given clause: 39[0:Inp] || SkP6(U,V)* -> Region(V).
+	Given clause: 38[0:Inp] || SkP5(U,V)* -> Region(U).
+	Given clause: 37[0:Inp] || SkP5(U,V)* -> Region(V).
+	Given clause: 36[0:Inp] || SkP4(U,V)* -> Region(U).
+	Given clause: 35[0:Inp] || SkP4(U,V)* -> Region(V).
+	Given clause: 230[0:Res:192.0,35.0] ||  -> Region(skc5)*.
+	Given clause: 191[0:Res:5.0,175.0] || DR(U,skc4)*+ -> DR(skc5,U)*.
+	Given clause: 72[0:Inp] || SmallSet(U,V) -> SkP2(V,U)*.
+	Given clause: 239[0:Res:72.1,26.0] || SmallSet(U,V)* -> Region(V).
+	Given clause: 240[0:Res:72.1,25.0] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 71[0:Inp] || Fits(U,V) -> SkP2(V,U)*.
+	Given clause: 241[0:Res:71.1,26.0] || Fits(U,V)* -> Region(V).
+	Given clause: 54[0:Inp] || Lt(U,V) -> SkP0(V,U)*.
+	Given clause: 242[0:Res:71.1,25.0] || Fits(U,V)* -> ObjectSet(U).
+	Given clause: 243[0:Res:54.1,17.0] || Lt(U,V)* -> Time(U).
+	Given clause: 244[0:Res:54.1,18.0] || Lt(U,V)* -> Time(V).
+	Given clause: 55[0:Inp] || Leq(U,V) -> SkP0(V,U)*.
+	Given clause: 95[0:Inp] || PartiallyContained(U,V) -> SkP6(V,U)*.
+	Given clause: 247[0:Res:55.1,17.0] || Leq(U,V)* -> Time(U).
+	Given clause: 248[0:Res:55.1,18.0] || Leq(U,V)* -> Time(V).
+	Given clause: 251[0:Res:95.1,39.0] || PartiallyContained(U,V)* -> Region(U).
+	Given clause: 252[0:Res:95.1,40.0] || PartiallyContained(U,V)* -> Region(V).
+	Given clause: 94[0:Inp] || Outside(U,V) -> SkP6(V,U)*.
+	Given clause: 253[0:Res:94.1,39.0] || Outside(U,V)* -> Region(U).
+	Given clause: 254[0:Res:94.1,40.0] || Outside(U,V)* -> Region(V).
+	Given clause: 93[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+	Given clause: 255[0:Res:93.1,39.0] || Cavity(U,V)* -> Region(U).
+	Given clause: 92[0:Inp] || UprightContainerShape(U,V) -> SkP5(V,U)*.
+	Given clause: 256[0:Res:93.1,40.0] || Cavity(U,V)* -> Region(V).
+	Given clause: 260[0:Res:197.0,256.0] ||  -> Region(RUnion(skc7,skc6))*.
+	Given clause: 258[0:Res:92.1,37.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 259[0:Res:92.1,38.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 91[0:Inp] || OpenContainerShape(U,V) -> SkP5(V,U)*.
+	Given clause: 261[0:Res:91.1,37.0] || OpenContainerShape(U,V)* -> Region(U).
+	Given clause: 262[0:Res:91.1,38.0] || OpenContainerShape(U,V)* -> Region(V).
+	Given clause: 89[0:Inp] || OpenContained(U,V) -> SkP5(V,U)*.
+	Given clause: 263[0:Res:89.1,37.0] || OpenContained(U,V)* -> Region(U).
+	Given clause: 90[0:Inp] || FullyOutside(U,V) -> SkP5(V,U)*.
+	Given clause: 264[0:Res:89.1,38.0] || OpenContained(U,V)* -> Region(V).
+	Given clause: 88[0:Inp] || OV(U,V) -> SkP4(V,U)*.
+	Given clause: 267[0:Res:88.1,35.0] || OV(U,V)* -> Region(U).
+	Given clause: 268[0:Res:88.1,36.0] || OV(U,V)* -> Region(V).
+	Given clause: 85[0:Inp] || C(U,V) -> SkP4(V,U)*.
+	Given clause: 269[0:Res:85.1,35.0] || C(U,V)* -> Region(U).
+	Given clause: 270[0:Res:85.1,36.0] || C(U,V)* -> Region(V).
+	Given clause: 83[0:Inp] || DC(U,V) -> SkP4(V,U)*.
+	Given clause: 271[0:Res:83.1,35.0] || DC(U,V)* -> Region(U).
+	Given clause: 87[0:Inp] || O(U,V) -> SkP4(V,U)*.
+	Given clause: 272[0:Res:83.1,36.0] || DC(U,V)* -> Region(V).
+	Given clause: 273[0:Res:87.1,35.0] || O(U,V)* -> Region(U).
+	Given clause: 274[0:Res:87.1,36.0] || O(U,V)* -> Region(V).
+	Given clause: 84[0:Inp] || EC(U,V) -> SkP4(V,U)*.
+	Given clause: 82[0:Inp] || DR(U,V) -> SkP4(V,U)*.
+	Given clause: 275[0:Res:84.1,35.0] || EC(U,V)* -> Region(U).
+	Given clause: 276[0:Res:84.1,36.0] || EC(U,V)* -> Region(V).
+	Given clause: 277[0:Res:82.1,35.0] || DR(U,V)* -> Region(U).
+	Given clause: 278[0:Res:82.1,36.0] || DR(U,V)* -> Region(V).
+	Given clause: 86[0:Inp] || P(U,V) -> SkP4(V,U)*.
+	Given clause: 281[0:Res:86.1,35.0] || P(U,V)* -> Region(U).
+	Given clause: 282[0:Res:86.1,36.0] || P(U,V)* -> Region(V).
+	Given clause: 120[0:Inp] || Cavity(U,V) -> DR(U,V)*.
+	Given clause: 294[0:Res:120.1,191.0] || Cavity(U,skc4) -> DR(skc5,U)*.
+	Given clause: 113[0:Inp] || Constant(U,V,W)* -> History(W).
+	Given clause: 297[0:Res:294.1,191.0] || Cavity(skc4,skc4) -> DR(skc5,skc5)*.
+	Given clause: 61[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 116[0:Inp] || SkP9(U,V,W)* -> History(U).
+	Given clause: 75[0:Inp] || Isolates(U,V,W)* -> ObjectSet(W).
+	Given clause: 74[0:Inp] || Isolates(U,V,W)* -> ObjectSet(V).
+	Given clause: 63[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+	Given clause: 107[0:Inp] || SkP8(U,V,W)* -> ObjectSet(U).
+	Given clause: 119[0:Inp] || BoxWithLid(U,V,W)* -> Object(W).
+	Given clause: 118[0:Inp] || BoxWithLid(U,V,W)* -> Object(V).
+	Given clause: 110[0:Inp] || Grasps(U,V,W)* -> Object(W).
+	Given clause: 101[0:Inp] || Moves(U,V,W)* -> Object(W).
+	Given clause: 78[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 77[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 66[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 104[0:Inp] || SkP7(U,V,W)* -> Object(U).
+	Given clause: 81[0:Inp] || SkP3(U,V,W)* -> Object(U).
+	Given clause: 70[0:Inp] || SkP1(U,V,W)* -> Object(U).
+	Given clause: 69[0:Inp] || SkP1(U,V,W)* -> Object(V).
+	Given clause: 117[0:Inp] || BoxWithLid(U,V,W)* -> Time(U).
+	Given clause: 112[0:Inp] || Constant(U,V,W)* -> Time(V).
+	Given clause: 111[0:Inp] || Constant(U,V,W)* -> Time(U).
+	Given clause: 109[0:Inp] || Grasps(U,V,W)* -> Time(V).
+	Given clause: 108[0:Inp] || Grasps(U,V,W)* -> Time(U).
+	Given clause: 100[0:Inp] || Moves(U,V,W)* -> Time(V).
+	Given clause: 99[0:Inp] || Moves(U,V,W)* -> Time(U).
+	Given clause: 76[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 73[0:Inp] || Isolates(U,V,W)* -> Time(U).
+	Given clause: 65[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+	Given clause: 62[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+	Given clause: 60[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 59[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 115[0:Inp] || SkP9(U,V,W)* -> Time(V).
+	Given clause: 114[0:Inp] || SkP9(U,V,W)* -> Time(W).
+	Given clause: 106[0:Inp] || SkP8(U,V,W)* -> Time(V).
+	Given clause: 105[0:Inp] || SkP8(U,V,W)* -> Time(W).
+	Given clause: 103[0:Inp] || SkP7(U,V,W)* -> Time(V).
+	Given clause: 102[0:Inp] || SkP7(U,V,W)* -> Time(W).
+	Given clause: 80[0:Inp] || SkP3(U,V,W)* -> Time(V).
+	Given clause: 79[0:Inp] || SkP3(U,V,W)* -> Time(W).
+	Given clause: 68[0:Inp] || SkP1(U,V,W)* -> Time(W).
+	Given clause: 58[0:Inp] || Leq3(U,V,W)* -> Time(W).
+	Given clause: 57[0:Inp] || Leq3(U,V,W)* -> Time(V).
+	Given clause: 56[0:Inp] || Leq3(U,V,W)* -> Time(U).
+	Given clause: 67[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 64[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+	Given clause: 98[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+	Given clause: 97[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+	Given clause: 96[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+	Given clause: 246[0:MRR:245.0,244.1] || Lt(U,V) -> Leq(U,V)*.
+	Given clause: 121[0:Inp] || DR(skc5,skc6) DR(skc5,skc7)* -> .
+	Given clause: 307[0:Res:120.1,121.1] || Cavity(skc5,skc7) DR(skc5,skc6)* -> .
+	Given clause: 308[0:Res:294.1,121.1] || Cavity(skc7,skc4) DR(skc5,skc6)* -> .
+	Given clause: 309[0:Res:120.1,307.1] || Cavity(skc5,skc6) Cavity(skc5,skc7)* -> .
+	Given clause: 310[0:Res:294.1,307.1] || Cavity(skc6,skc4)* Cavity(skc5,skc7) -> .
+	Given clause: 140[0:Inp] || CombinedContainer(U,V,W)* -> EC(U,V).
+	Given clause: 311[0:Res:120.1,308.1] || Cavity(skc5,skc6) Cavity(skc7,skc4)* -> .
+	Given clause: 312[0:Res:294.1,308.1] || Cavity(skc6,skc4) Cavity(skc7,skc4)* -> .
+	Given clause: 139[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 138[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 133[0:Inp] || DynamicUContainer(U,V,W,X)* -> History(X).
+	Given clause: 129[0:Inp] || SkP10(U,V,W,X)* -> History(U).
+	Given clause: 128[0:Inp] || SkP10(U,V,W,X)* -> History(V).
+	Given clause: 136[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+	Given clause: 135[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+	Given clause: 132[0:Inp] || DynamicUContainer(U,V,W,X)* -> Object(W).
+	Given clause: 124[0:Inp] || SafeManipulate(U,V,W,X)* -> Object(W).
+	Given clause: 134[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+	Given clause: 131[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(V).
+	Given clause: 130[0:Inp] || DynamicUContainer(U,V,W,X)* -> Time(U).
+	Given clause: 123[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(V).
+	Given clause: 122[0:Inp] || SafeManipulate(U,V,W,X)* -> Time(U).
+	Given clause: 127[0:Inp] || SkP10(U,V,W,X)* -> Time(W).
+	Given clause: 126[0:Inp] || SkP10(U,V,W,X)* -> Time(X).
+	Given clause: 137[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+	Given clause: 125[0:Inp] || SafeManipulate(U,V,W,X)* -> Region(X).
+	Given clause: 155[0:Inp] || Cavity(U,V) CombinedContainer(W,V,U)* -> .
+	Given clause: 154[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+	Given clause: 153[0:Inp] || Continuous(U,V,W) -> SkP9(W,V,U)*.
+	Given clause: 316[0:Res:153.1,114.0] || Continuous(U,V,W)* -> Time(U).
+	Given clause: 152[0:Inp] || AlwaysIntConn(U,V,W) -> SkP9(W,V,U)*.
+	Given clause: 317[0:Res:153.1,115.0] || Continuous(U,V,W)* -> Time(V).
+	Given clause: 318[0:Res:153.1,116.0] || Continuous(U,V,W)* -> History(W).
+	Given clause: 319[0:Res:152.1,114.0] || AlwaysIntConn(U,V,W)* -> Time(U).
+	Given clause: 320[0:Res:152.1,115.0] || AlwaysIntConn(U,V,W)* -> Time(V).
+	Given clause: 151[0:Inp] || StaticCausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+	Given clause: 321[0:Res:152.1,116.0] || AlwaysIntConn(U,V,W)* -> History(W).
+	Given clause: 322[0:Res:151.1,105.0] || StaticCausallyIsolated(U,V,W)* -> Time(U).
+	Given clause: 323[0:Res:151.1,106.0] || StaticCausallyIsolated(U,V,W)* -> Time(V).
+	Given clause: 324[0:Res:151.1,107.0] || StaticCausallyIsolated(U,V,W)* -> ObjectSet(W).
+	Given clause: 150[0:Inp] || CausallyIsolated(U,V,W) -> SkP8(W,V,U)*.
+	Given clause: 325[0:Res:150.1,105.0] || CausallyIsolated(U,V,W)* -> Time(U).
+	Given clause: 326[0:Res:150.1,106.0] || CausallyIsolated(U,V,W)* -> Time(V).
+	Given clause: 327[0:Res:150.1,107.0] || CausallyIsolated(U,V,W)* -> ObjectSet(W).
+	Given clause: 149[0:Inp] || Motionless(U,V,W) -> SkP7(W,V,U)*.
+	Given clause: 148[0:Inp] || Released(U,V,W) -> SkP7(W,V,U)*.
+	Given clause: 328[0:Res:149.1,102.0] || Motionless(U,V,W)* -> Time(U).
+	Given clause: 329[0:Res:149.1,103.0] || Motionless(U,V,W)* -> Time(V).
+	Given clause: 330[0:Res:149.1,104.0] || Motionless(U,V,W)* -> Object(W).
+	Given clause: 331[0:Res:148.1,102.0] || Released(U,V,W)* -> Time(U).
+	Given clause: 147[0:Inp] || StableThroughout(U,V,W) -> SkP7(W,V,U)*.
+	Given clause: 332[0:Res:148.1,103.0] || Released(U,V,W)* -> Time(V).
+	Given clause: 333[0:Res:148.1,104.0] || Released(U,V,W)* -> Object(W).
+	Given clause: 334[0:Res:147.1,102.0] || StableThroughout(U,V,W)* -> Time(U).
+	Given clause: 335[0:Res:147.1,103.0] || StableThroughout(U,V,W)* -> Time(V).
+	Given clause: 146[0:Inp] || PreserveBoxWithLid(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 336[0:Res:147.1,104.0] || StableThroughout(U,V,W)* -> Object(W).
+	Given clause: 337[0:Res:146.1,79.0] || PreserveBoxWithLid(U,V,W)* -> Time(U).
+	Given clause: 338[0:Res:146.1,80.0] || PreserveBoxWithLid(U,V,W)* -> Time(V).
+	Given clause: 339[0:Res:146.1,81.0] || PreserveBoxWithLid(U,V,W)* -> Object(W).
+	Given clause: 145[0:Inp] || PreserveUContents(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 340[0:Res:145.1,79.0] || PreserveUContents(U,V,W)* -> Time(U).
+	Given clause: 341[0:Res:145.1,80.0] || PreserveUContents(U,V,W)* -> Time(V).
+	Given clause: 342[0:Res:145.1,81.0] || PreserveUContents(U,V,W)* -> Object(W).
+	Given clause: 144[0:Inp] || PreserveCContents(U,V,W) -> SkP3(W,V,U)*.
+	Given clause: 143[0:Inp] || BLContained(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 343[0:Res:144.1,79.0] || PreserveCContents(U,V,W)* -> Time(U).
+	Given clause: 344[0:Res:144.1,80.0] || PreserveCContents(U,V,W)* -> Time(V).
+	Given clause: 345[0:Res:144.1,81.0] || PreserveCContents(U,V,W)* -> Object(W).
+	Given clause: 346[0:Res:143.1,68.0] || BLContained(U,V,W)* -> Time(U).
+	Given clause: 142[0:Inp] || UContained(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 347[0:Res:143.1,69.0] || BLContained(U,V,W)* -> Object(V).
+	Given clause: 348[0:Res:143.1,70.0] || BLContained(U,V,W)* -> Object(W).
+	Given clause: 349[0:Res:142.1,68.0] || UContained(U,V,W)* -> Time(U).
+	Given clause: 350[0:Res:142.1,69.0] || UContained(U,V,W)* -> Object(V).
+	Given clause: 141[0:Inp] || CContained(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 351[0:Res:142.1,70.0] || UContained(U,V,W)* -> Object(W).
+	Given clause: 352[0:Res:141.1,68.0] || CContained(U,V,W)* -> Time(U).
+	Given clause: 353[0:Res:141.1,69.0] || CContained(U,V,W)* -> Object(V).
+	Given clause: 354[0:Res:141.1,70.0] || CContained(U,V,W)* -> Object(W).
+	Given clause: 166[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+	Given clause: 156[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+	Given clause: 169[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+	Given clause: 168[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+	Given clause: 164[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+	Given clause: 159[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 158[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+	Given clause: 163[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 162[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 167[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+	Given clause: 161[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 165[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+	Given clause: 160[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+	Given clause: 157[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 170[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+	Given clause: 250[0:MRR:249.0,248.1] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+	Given clause: 357[0:Res:170.1,53.0] || CombinedContainer(U,V,W)* -> IntConn(W).
+	Given clause: 355[0:Res:170.1,256.0] || CombinedContainer(U,V,W)* -> Region(RUnion(U,V)).
+	Given clause: 174[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+	Given clause: 175[0:Inp] || DR(U,V)*+ P(W,V)* -> DR(W,U)*.
+	Given clause: 173[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+	Given clause: 364[0:Res:173.1,126.0] || NoEntranceCavity(U,V,W,X)* -> Time(U).
+	Given clause: 365[0:Res:173.1,127.0] || NoEntranceCavity(U,V,W,X)* -> Time(V).
+	Given clause: 366[0:Res:173.1,128.0] || NoEntranceCavity(U,V,W,X)* -> History(W).
+	Given clause: 367[0:Res:173.1,129.0] || NoEntranceCavity(U,V,W,X)* -> History(X).
+	Given clause: 172[0:Inp] || NoExitCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+	Given clause: 368[0:Res:172.1,126.0] || NoExitCavity(U,V,W,X)* -> Time(U).
+	Given clause: 369[0:Res:172.1,127.0] || NoExitCavity(U,V,W,X)* -> Time(V).
+	Given clause: 370[0:Res:172.1,128.0] || NoExitCavity(U,V,W,X)* -> History(W).
+	Given clause: 371[0:Res:172.1,129.0] || NoExitCavity(U,V,W,X)* -> History(X).
+	Given clause: 171[0:Inp] || PersistentCavity(U,V,W,X) -> SkP10(X,W,V,U)*.
+	Given clause: 372[0:Res:171.1,126.0] || PersistentCavity(U,V,W,X)* -> Time(U).
+	Given clause: 373[0:Res:171.1,127.0] || PersistentCavity(U,V,W,X)* -> Time(V).
+	Given clause: 374[0:Res:171.1,128.0] || PersistentCavity(U,V,W,X)* -> History(W).
+	Given clause: 375[0:Res:171.1,129.0] || PersistentCavity(U,V,W,X)* -> History(X).
+	Given clause: 176[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+	Given clause: 363[0:Res:297.1,175.0] || Cavity(skc4,skc4) P(U,skc5) -> DR(U,skc5)*.
+	Given clause: 362[0:Res:294.1,175.0] || Cavity(U,skc4)*+ P(V,U)* -> DR(V,skc5)*.
+	Given clause: 361[0:Res:120.1,175.0] || Cavity(U,V)*+ P(W,V)* -> DR(W,U)*.
+	Given clause: 384[0:Res:197.0,361.0] || P(U,RUnion(skc7,skc6))* -> DR(U,skc4).
+	Given clause: 178[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+	Given clause: 231[0:MRR:216.0,230.0] || P(skc5,U)* equal(RUnion(skc5,skc5),skc4)**+ -> P(skc4,U).
+	Given clause: 284[0:MRR:233.0,281.1] || P(U,skc4) equal(RUnion(U,skc5),skc4)** -> P(skc4,skc4).
+	Given clause: 285[0:MRR:234.0,281.1] || P(U,skc4) equal(RUnion(skc5,U),skc4)** -> P(skc4,skc4).
+	Given clause: 232[0:MRR:217.0,230.0] || equal(U,RUnion(skc5,skc5))*+ P(skc5,U)* -> P(U,skc4)*.
+	Given clause: 180[0:Inp] Region(U) Region(V) ||  -> P(V,W)* equal(W,RUnion(V,U))*.
+	Given clause: 432[0:MRR:431.0,282.0] ||  -> Region(U)*.
+	Given clause: 433[0:MRR:15.0,432.0] ||  -> Action(TravelTo(U))*.
+	Given clause: 441[0:MRR:413.0,413.1,432.0,432.0] ||  -> P(skc7,U) Cavity(skc4,U)*.
+	Given clause: 479[0:Res:441.1,202.0] ||  -> P(skc7,skc6)*.
+	Given clause: 434[0:MRR:164.0,432.0] Object(U) ||  -> Action(ManipTo(U,V))*.
+	Given clause: 480[0:Res:441.1,203.0] ||  -> P(skc7,skc7)*.
+	Given clause: 435[0:MRR:161.0,432.0] Time(U) ||  -> ObjectSet(Contents(U,V))*.
+	Given clause: 447[0:MRR:397.0,397.1,397.2,432.0,432.0,432.0] ||  -> P(U,TravelTo(V))* Action(RUnion(U,W))*.
+	Given clause: 436[0:MRR:180.1,180.0,432.0] ||  -> P(U,V)* equal(V,RUnion(U,W))*.
+	Given clause: 437[0:MRR:179.1,179.0,432.0] ||  -> P(U,V)* equal(V,RUnion(W,U))*.
+	Given clause: 540[0:SpR:437.1,197.0] ||  -> P(skc6,U) Cavity(skc4,U)*.
+	Given clause: 556[0:Res:540.1,202.0] ||  -> P(skc6,skc6)*.
+	Given clause: 557[0:Res:540.1,203.0] ||  -> P(skc6,skc7)*.
+	Given clause: 536[0:SpR:437.1,433.0] ||  -> P(U,TravelTo(V))* Action(RUnion(W,U))*.
+	Given clause: 438[0:MRR:186.1,186.0,432.0] ||  -> equal(U,RUnion(V,W)) P(W,skf3(U,V,W))*.
+	Given clause: 442[0:MRR:390.0,390.1,432.0,432.0] ||  -> P(U,skf2(V,W))* IntConn(RUnion(U,X))*.
+	Given clause: 519[0:SpR:437.1,7.0] ||  -> P(U,skf2(V,W))* IntConn(RUnion(X,U))*.
+	Given clause: 543[0:SpR:437.1,447.1] ||  -> P(U,V)* P(W,TravelTo(X))* Action(V).
+	Given clause: 581[1:Spt:543.0,543.2] ||  -> P(U,V)* Action(V).
+	Given clause: 582[1:Res:581.0,384.0] ||  -> Action(RUnion(skc7,skc6))* DR(U,skc4)*.
+	Given clause: 588[2:Spt:585.0,582.0] ||  -> Action(RUnion(skc7,skc6))*.
+	Given clause: 121[0:Inp] || DR(skc5,skc6) DR(skc5,skc7)* -> .
+	Given clause: 593[3:Spt:121.0] || DR(skc5,skc6)* -> .
+	Given clause: 594[3:Res:120.1,593.0] || Cavity(skc5,skc6)* -> .
+	Given clause: 297[0:Res:294.1,191.0] || Cavity(skc4,skc4) -> DR(skc5,skc5)*.
+	Given clause: 191[0:Res:5.0,175.0] || DR(U,skc4)*+ -> DR(skc5,U)*.
+	Given clause: 294[0:Res:120.1,191.0] || Cavity(U,skc4) -> DR(skc5,U)*.
+	Given clause: 439[0:MRR:185.1,185.0,432.0] ||  -> equal(U,RUnion(V,W))* P(V,skf3(U,V,X))*.
+	Given clause: 599[3:Res:294.1,593.0] || Cavity(skc6,skc4)* -> .
+	Given clause: 384[0:Res:197.0,361.0] || P(U,RUnion(skc7,skc6))* -> DR(U,skc4).
+	Given clause: 589[2:SpR:437.1,588.0] ||  -> P(U,RUnion(skc7,skc6))* Action(RUnion(V,U))*.
+	Given clause: 665[2:Res:589.0,384.0] ||  -> Action(RUnion(U,V))* DR(V,skc4).
+	Given clause: 440[0:MRR:188.1,188.0,432.0] || P(U,skf3(U,V,W))*+ -> equal(U,RUnion(X,Y))*.
+	Given clause: 691[1:Rew:680.0,675.0] ||  -> Action(U)* equal(U,RUnion(V,W))*.
+	Given clause: 753[2:Obv:731.0] ||  -> Action(U)*.
+	Given clause: 683[0:Rew:680.0,440.0] || P(U,U)*+ -> equal(U,RUnion(V,W))*.
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: sn.dfg 
+SPASS derived 624 clauses, backtracked 18 clauses, performed 3 splits and kept 588 clauses.
+SPASS allocated 52939 KBytes.
+SPASS spent	0:00:00.12 on the problem.
+		0:00:00.03 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.02 for the reduction.
+
+
+Here is a proof with depth 4, length 36 :
+6[0:Inp] ||  -> CombinedContainer(skc7,skc6,skc4)*.
+36[0:Inp] || SkP4(U,V)* -> Region(U).
+40[0:Inp] || SkP6(U,V)* -> Region(U).
+86[0:Inp] || P(U,V) -> SkP4(V,U)*.
+93[0:Inp] || Cavity(U,V) -> SkP6(V,U)*.
+96[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+97[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+154[0:Inp] || Cavity(U,V) CombinedContainer(V,W,U)* -> .
+170[0:Inp] || CombinedContainer(U,V,W) -> Cavity(W,RUnion(U,V))*.
+179[0:Inp] Region(U) Region(V) ||  -> P(U,W)* equal(W,RUnion(V,U))*.
+180[0:Inp] Region(U) Region(V) ||  -> P(V,W)* equal(W,RUnion(V,U))*.
+186[0:Inp] Region(U) Region(V) ||  -> equal(W,RUnion(V,U)) P(U,skf3(W,V,U))*.
+188[0:Inp] Region(U) Region(V) || P(W,skf3(W,X,Y))* -> equal(W,RUnion(V,U))*.
+197[0:Res:6.0,170.0] ||  -> Cavity(skc4,RUnion(skc7,skc6))*.
+199[0:Res:6.0,96.0] ||  -> Region(skc7)*.
+200[0:Res:6.0,97.0] ||  -> Region(skc6)*.
+203[0:Res:6.0,154.1] || Cavity(skc4,skc7)* -> .
+256[0:Res:93.1,40.0] || Cavity(U,V)* -> Region(V).
+260[0:Res:197.0,256.0] ||  -> Region(RUnion(skc7,skc6))*.
+282[0:Res:86.1,36.0] || P(U,V)* -> Region(V).
+413[0:SpR:180.3,197.0] Region(skc6) Region(skc7) ||  -> P(skc7,U) Cavity(skc4,U)*.
+414[0:SpR:180.3,260.0] Region(skc6) Region(skc7) ||  -> P(skc7,U)* Region(U).
+431[0:SSi:414.1,414.0,199.0,200.0] ||  -> P(skc7,U)* Region(U).
+432[0:MRR:431.0,282.0] ||  -> Region(U)*.
+437[0:MRR:179.1,179.0,432.0] ||  -> P(U,V)* equal(V,RUnion(W,U))*.
+438[0:MRR:186.1,186.0,432.0] ||  -> equal(U,RUnion(V,W)) P(W,skf3(U,V,W))*.
+440[0:MRR:188.1,188.0,432.0] || P(U,skf3(U,V,W))*+ -> equal(U,RUnion(X,Y))*.
+441[0:MRR:413.0,413.1,432.0,432.0] ||  -> P(skc7,U) Cavity(skc4,U)*.
+480[0:Res:441.1,203.0] ||  -> P(skc7,skc7)*.
+676[0:Res:437.0,440.0] ||  -> equal(skf3(U,V,W),RUnion(X,U))* equal(U,RUnion(Y,Z))*.
+678[0:Res:438.1,440.0] ||  -> equal(RUnion(U,V),V)** equal(V,RUnion(W,X))*.
+680[0:Rew:678.0,676.0] ||  -> equal(skf3(U,V,W),U)** equal(U,RUnion(X,Y))*.
+683[0:Rew:680.0,440.0] || P(U,U)*+ -> equal(U,RUnion(V,W))*.
+767[0:Res:480.0,683.0] ||  -> equal(RUnion(U,V),skc7)**.
+779[0:Rew:767.0,197.0] ||  -> Cavity(skc4,skc7)*.
+859[0:MRR:779.0,203.0] ||  -> .
+Formulae used in the proof : LemSE axiom38 axiom40 axiom41 SCD4 SBD6b
+
+--------------------------SPASS-STOP------------------------------

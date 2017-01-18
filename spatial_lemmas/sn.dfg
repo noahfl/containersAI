@@ -199,19 +199,24 @@ formula(Region(Rc)).
 
 %%%% Specifications
 
-% SBD3
-formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
+% SCD4
+formula(forall([ra,rb,rc], equiv(CombinedContainer(ra,rb,rc), and(EC(ra,rb), Cavity(rc,RUnion(ra,rb)), not(Cavity(rc,ra)), not(Cavity(rc,rb))))),SCD4).
 
-% SBA4
-formula(forall([u,v,w], implies(O(u,RUnion(v,w)), or(O(u,v), O(u,w)))),SBA4).
+% SCD1
+formula(forall([u,v], equiv(Cavity(u,v), and(IntConn(u), DR(u,v), forall([r], implies(and(IntConn(r), O(r,u), DR(r,v)), P(r,u)))))),SCD1).
 
+% LemSE
+formula(forall([u,v,w], implies(and(P(u,v), DR(w,v)), DR(u,w))),LemSE).
+
+% SBD6
+formula(forall([u,v,w], implies(and(Region(u), Region(v)),equiv(equal(w,RUnion(u,v)), forall([x], implies(and(P(u,w), P(v,w), P(u,x), P(v,x)), P(w,x)))))),SBD6b).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-formula(forall([r,ra,rb], implies(and(DR(r,ra), DR(r,rb)), DR(r,Union(ra,rb)))),LemSH).
+formula(forall([u,v,w,x], implies(and(CombinedContainer(u,v,w), P(x,w)), and(DR(x,u), DR(x,v)))),LemSE).
 
 end_of_list.
 

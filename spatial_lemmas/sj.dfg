@@ -199,19 +199,21 @@ formula(Region(Rc)).
 
 %%%% Specifications
 
-% SBD3
-formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
+% SCD7
+formula(forall([ra,rb], equiv(FullyOutside(ra,rb), DC(ConvexHull(ra),ConvexHull(rb)))),SCD7).
 
-% SBA4
-formula(forall([u,v,w], implies(O(u,RUnion(v,w)), or(O(u,v), O(u,w)))),SBA4).
+% SCA4
+formula(forall([r], implies(Region(r), P(r,ConvexHull(r)))),SCA4).
 
+% LemSI
+formula(forall([u,v,w], implies(and(DC(u,v), P(w,v)), DC(u,v))),LemSI).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-formula(forall([r,ra,rb], implies(and(DR(r,ra), DR(r,rb)), DR(r,Union(ra,rb)))),LemSH).
+formula(forall([u,v], implies(FullyOutside(u,v), DC(u,v))),LemSJ).
 
 end_of_list.
 

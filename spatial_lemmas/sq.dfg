@@ -202,16 +202,15 @@ formula(Region(Rc)).
 % SBD3
 formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
 
-% SBA4
-formula(forall([u,v,w], implies(O(u,RUnion(v,w)), or(O(u,v), O(u,w)))),SBA4).
-
+% LemSP
+formula(forall([u,v], implies(O(u,v), O(v,u))),LemSP).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-formula(forall([r,ra,rb], implies(and(DR(r,ra), DR(r,rb)), DR(r,Union(ra,rb)))),LemSH).
+formula(forall([u,v], implies(DR(u,v), DR(v,u))),LemSQ).
 
 end_of_list.
 

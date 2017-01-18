@@ -183,19 +183,19 @@ formula(Region(Rc),Rc).
 
 
 % assume
-formula(OpenContained(Ra,Rb),assume).
+% formula(OpenContained(Ra,Rb),assume).
 
 % ST3
 formula(OpenContainerShape(Rb,Rc),ST3).
 
 % ST4
-formula(P(Ra,Rc),ST4).
+% formula(P(Ra,Rc),ST4).
 
 % ST9 test
 % formula(not(DC(ConvexHull(Ra),ConvexHull(Rb))),ST9).
 
 % ST8 test
-formula(O(ConvexHull(Ra),ConvexHull(Rb)),ST8).
+% formula(O(ConvexHull(Ra),ConvexHull(Rb)),ST8).
 
 
 end_of_list.
@@ -204,13 +204,13 @@ end_of_list.
 list_of_formulae(conjectures).
 
 % LemST
-% formula(forall([ra,rb], implies(OpenContained(ra,rb), not(FullyOutside(ra,rb)))),LemST).
+formula(forall([ra,rb], implies(OpenContained(ra,rb), not(FullyOutside(ra,rb)))),LemST).
 
 % ST10 (proof given ST9)
 % formula(not(FullyOutside(Ra,Rb))).
 
-% ST9 (NO proof, even with ST8 given)
-formula(not(DC(ConvexHull(Ra),ConvexHull(Rb)))).
+% ST9 (proof)
+% formula(not(DC(ConvexHull(Ra),ConvexHull(Rb)))).
 
 % ST8 (proof)
 % formula(O(ConvexHull(Ra),ConvexHull(Rb))).

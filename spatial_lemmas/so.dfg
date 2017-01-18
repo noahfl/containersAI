@@ -13,7 +13,7 @@ list_of_symbols.
 
 functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (RUnion,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra,0), (PutInUC,2), (LoadUprightContainer,2), (Sequence,2), (HPlace,1), (Slice,2), (StandStill,0), (Ta4,0), (Tb,0), (Tm1,0), (Tm2,0), (Rb,0), (Rc,0), (Ta5,0), (Ob5,0), (Ol5,0), (Rc5,0), (Os5,0), (Tb5,0), (Hu,0), (Hc,0), (Tm,0),(Oa,0), (Tx,0), (Su,0)].
 
-predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1), (Isolates,3), (ClosedContainer,3), (CausallyIsolated,3), (StaticCausallyIsolated,3), (RigidObject,1),(C,2), (Outside,2), (DC,2)].
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (Motionless,3), (Released,3), (Grasp,2), (Moves,3), (Feasible,2), (SafeManipulate,4), (PartiallyContained,2), (OSPlace,3), (PreserveCContents,3), (PreserveUContents,3), (PreserveBoxWithLid,3), (Stable,2), (StableThroughout,3), (SmallSet,2), (Fits,2), (MuchSmaller,2), (OMuchSmaller,2), (OpenContainerShape,2), (OpenContained,2), (CContained,3), (BLContained,3), (DynamicUContainer,4), (O,2), (Cavity,2), (History,1), (Constant,3), (Grasps,3), (FeasiblePlace,2), (OV,2), (BoxWithLidC,4), (BoxWithLid,3), (CombinedContainer,3), (EC,2), (PersistentCavity,4), (NoExitCavity,4), (NoEntranceCavity,4), (DR,2), (Continuous,3), (AlwaysIntConn,3), (IntConn,1), (Isolates,3), (ClosedContainer,3), (CausallyIsolated,3), (StaticCausallyIsolated,3), (RigidObject,1),(C,2), (Outside,2), (DC,2), (OpenContainer,3), (OContained,3)].
 
 end_of_list.
 
@@ -84,10 +84,10 @@ formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Regio
 formula(forall([o,r], implies(FeasiblePlace(o,r), and(Object(o), Region(r))))).
 %% Objects containing regions
 % ORSA
-formula(forall([t,o,r], implies(UprightContainer(t,o,r), and(Time(t), Object(o), Region(r))))).
+formula(forall([t,o,r], implies(or(UprightContainer(t,o,r), OpenContainer(t,o,r)), and(Time(t), Object(o), Region(r))))).
 %% Object containment
 % OCSA
-formula(forall([t,ox,ob], implies(or(CContained(t,ox,ob), UContained(t,ox,ob), BLContained(t,ox,ob)), and(Time(t), Object(ox), Object(ob))))).
+formula(forall([t,ox,ob], implies(or(CContained(t,ox,ob), UContained(t,ox,ob), OContained(t,ox,ob), BLContained(t,ox,ob)), and(Time(t), Object(ox), Object(ob))))).
 %% Fits and small set
 % OFSA
 formula(forall([o], implies(SmallObject(o), Object(o)))).
@@ -199,19 +199,27 @@ formula(Region(Rc)).
 
 %%%% Specifications
 
-% SBD3
-formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
+% OCD3
+formula(forall([t,ox,ob], equiv(UContained(t,ox,ob), exists([rc], and(UprightContainer(t,ob,rc), Object(ox), P(Place(t,ox),rc))))),OCD3).
 
-% SBA4
-formula(forall([u,v,w], implies(O(u,RUnion(v,w)), or(O(u,v), O(u,w)))),SBA4).
+% ORD3
+formula(forall([t,o,rc], equiv(UprightContainer(t,o,rc), and(Time(t), Object(o), UprightContainerShape(Place(t,o),rc)))),ORD3).
 
+% SCA2
+formula(forall([rb,rc], implies(UprightContainerShape(rb,rc), OpenContainerShape(rb,rc))),SCA2).
+
+% ORD2
+formula(forall([t,o,rc], equiv(OpenContainer(t,o,rc), and(Time(t), Object(o), OpenContainerShape(Place(t,o),rc)))),ORD2).
+
+% OCD2
+formula(forall([t,ox,ob], equiv(OContained(t,ox,ob), exists([rc], and(OpenContainer(t,ob,rc),Object(ox), P(Place(t,ox),rc))))),OCD2).
 
 end_of_list.
 
 
 list_of_formulae(conjectures).
 
-formula(forall([r,ra,rb], implies(and(DR(r,ra), DR(r,rb)), DR(r,Union(ra,rb)))),LemSH).
+formula(forall([t,oa,ob], implies(UContained(t,oa,ob), OContained(t,oa,ob))),LemSO).
 
 end_of_list.
 
