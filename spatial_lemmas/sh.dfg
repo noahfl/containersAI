@@ -211,7 +211,7 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-formula(forall([r,ra,rb], implies(and(DR(r,ra), DR(r,rb)), DR(r,Union(ra,rb)))),LemSH).
+formula(forall([r,ra,rb], implies(and(DR(r,ra), DR(r,rb)), DR(r,RUnion(ra,rb)))),LemSH).
 
 end_of_list.
 

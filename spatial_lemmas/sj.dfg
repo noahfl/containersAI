@@ -208,9 +208,28 @@ formula(forall([r], implies(Region(r), P(r,ConvexHull(r)))),SCA4).
 % LemSI
 formula(forall([u,v,w], implies(and(DC(u,v), P(w,v)), DC(u,v))),LemSI).
 
-
 % assume
 formula(FullyOutside(U,V),assume).
+
+% SBD5
+formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DC(u,v), not(C(u,v))))),SBD5).
+
+% SBA3
+formula(forall([u,v], implies(C(u,v), C(v,u))),SBA3).
+
+% SJ5
+formula(P(V,ConvexHull(V)),SJ4).
+
+% SJ4
+formula(P(U,ConvexHull(U)),SJ3).
+
+% SJ3
+formula(DC(ConvexHull(V),ConvexHull(U)),SJ2).
+
+
+% SJ2
+formula(DC(ConvexHull(U),ConvexHull(V)),SJ2).
+
 end_of_list.
 
 
@@ -218,14 +237,18 @@ list_of_formulae(conjectures).
 
 % formula(forall([u,v], implies(FullyOutside(u,v), DC(u,v))),LemSJ).
 
-% SJ5
+% SJ6
 formula(DC(U,V)).
 
-% SJ4 (proof)
+% SJ5 (proof)
 % formula(P(V,ConvexHull(V)),SJ4).
 
-% SJ3 (proof)
+% SJ4 (proof)
 % formula(P(U,ConvexHull(U)),SJ3).
+
+% SJ3 (proof)
+% formula(DC(ConvexHull(V),ConvexHull(U)),SJ2).
+
 
 % SJ2 (proof)
 % formula(DC(ConvexHull(U),ConvexHull(V)),SJ2).
