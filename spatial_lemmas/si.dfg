@@ -213,7 +213,7 @@ end_of_list.
 
 list_of_formulae(conjectures).
 
-formula(forall([u,v,w], implies(and(DC(u,v), P(w,v)), DC(u,v))),LemSI).
+formula(forall([u,v,w], implies(and(DC(u,v), P(w,v)), DC(w,u))),LemSI).
 
 end_of_list.
 
