@@ -1,0 +1,108 @@
+begin_problem(Scenario1_Piece2).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 1, Piece 2*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley*}).
+status(unsatisfiable).
+description({*November 11, 2014*}).
+end_of_list.
+
+list_of_symbols.
+functions[(RUnion,2), (Singleton,1), (Place,2), (Slice,2), (HPlace,1), (Ox1,0), (Ob1,0), (Ta1,0), (Tb1,0), (Rc1,0), (Hc1,0)].
+predicates[(Ordered,2), (Time,1), (Region,1), (History,1), (Object,1), (ObjectSet,1), (Lt,2), (Leq,2), (Leq3,3), (P,2), (Cavity,2), (OSPlace,3), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1), (O,2), (EC,2), (DR,2), (Outside,2), (NoExitCavity,4), (PersistentCavity,4), (NoEntranceCavity,4)].
+end_of_list.
+
+list_of_formulae(axioms).
+% Time Ordering
+% Sortal axioms
+% TISA
+formula(forall([x,y], implies(Lt(x,y), and(Time(x), Time(y))))).
+% TISB
+formula(forall([x,y], implies(Leq(x,y), and(Time(x), Time(y))))).
+% TISC
+formula(forall([x,y], implies(Ordered(x,y), and(Time(x), Time(y))))).
+% TISD
+formula(forall([x,y,z], implies(Leq3(x,y,z), and(Time(x), Time(y), Time(z))))).
+
+% Space
+% Basic spatial relations
+% Sortal axioms
+% SBSA
+formula(forall([u,v], implies(or(P(u,v), O(u,v), EC(u,v), DR(u,v)), and(Region(u), Region(v))))).
+% SBSB
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
+
+% Spatial Containment
+% Sortal axioms
+% SCSA
+formula(forall([u,v], implies(or(Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
+
+% Objects
+% Object Sets
+% Sortal axioms
+% OSSA
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x))))).
+
+% Objects and Object Sets: Spatio-Temporal
+% Sortal axioms
+% OTSA
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o))))).
+% OTSB
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+
+% Objects containing regions
+% Sortal axiom
+% ORSA
+formula(forall([t,s,r], implies(ClosedContainer(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+
+% Object Containment
+% Sortal axiom
+% OCSA
+formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), ObjectSet(s))))).
+
+% Histories
+% Sortal axioms
+% HISA
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+% HISC
+formula(forall([o], implies(Object(o), History(HPlace(o))))).
+
+% Evolving cavities
+% Sortal axioms
+% HCSA
+formula(forall([t1,t2,hc,ho], implies(or(NoExitCavity(t1,t2,hc,ho), NoEntranceCavity(t1,t2,hc,ho), PersistentCavity(t1,t2,hc,ho)), and(Time(t1), Time(t2), History(hc), History(ho))))).
+
+% Rigid Objects
+% Sortal axioms
+% RGSA
+formula(forall([o], implies(RigidObject(o), Object(o)))).
+% RGSB
+formula(forall([h], implies(RigidHistory(h), History(h)))).
+
+% P.2.1 - implicit from ROA1 in Part1
+formula(RigidHistory(HPlace(Ob1))).
+% P.2.2 - proved by Part1
+formula(Cavity(Rc1,Slice(Ta1,HPlace(Ob1)))).
+% HCD1
+formula(forall([t1,t2,hc,hb], equiv(PersistentCavity(t1,t2,hc,hb), and(NoExitCavity(t1,t2,hc,hb), NoEntranceCavity(t1,t2,hc,hb))))).
+% C1A3 - given
+formula(Lt(Ta1,Tb1)).
+% TID1
+formula(forall([x,y], equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))).
+% TID3
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% ROA2
+formula(forall([h,t1,tm,t2,r], implies(and(RigidHistory(h), Leq3(t1,tm,t2), Cavity(r,Slice(tm,h))), exists([hc], and(RigidHistory(hc), PersistentCavity(t1,t2,hc,h), equal(r, Slice(tm,hc))))))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+formula(exists([hc], and(equal(Rc1, Slice(Ta1,hc)), NoExitCavity(Ta1,Tb1,hc,HPlace(Ob1))))).
+% formula(exists([hc], PersistentCavity(Ta1,Tb1,hc,HPlace(Ob1)))).
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.

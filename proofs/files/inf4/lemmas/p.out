@@ -1,0 +1,914 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Object(skc7)*.
+2[0:Inp] ||  -> EmptyHanded(skc5)*.
+3[0:Inp] ||  -> AllStable(skc5)*.
+4[0:Inp] ||  -> Region(skc4)*.
+5[0:Inp] ||  -> Action(StandStill)*.
+6[0:Inp] ||  -> Object(Agent)*.
+7[0:Inp] ||  -> CanGrasp(skc6,skc7)*.
+8[0:Inp] || equal(skc7,Agent)** -> .
+9[0:Inp] || BoxedIn(skc5,Agent,skc7)* -> .
+10[0:Inp] ||  -> Occurs(skc5,skc6,TravelTo(skc4))*.
+11[0:Inp] || SmallObject(U) -> Object(U)*.
+12[0:Inp] || AllStable(U)* -> Time(U).
+13[0:Inp] || EmptyHanded(U) -> Time(U)*.
+14[0:Inp] || RigidObject(U) -> Object(U)*.
+15[0:Inp] || Region(U) -> Region(ConvexHull(U))*.
+16[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+17[0:Inp] || Region(U) -> Action(TravelTo(U))*.
+18[0:Inp] || Object(U) -> History(HPlace(U))*.
+19[0:Inp] || Element(U,V)* -> Object(U).
+20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+21[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+22[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+23[0:Inp] || FullyOutside(U,V)* -> Region(U).
+24[0:Inp] || FullyOutside(U,V)* -> Region(V).
+25[0:Inp] || Reachable(U,V)* -> Time(U).
+26[0:Inp] || Reachable(U,V)* -> Region(V).
+27[0:Inp] || SkP2(U,V)* -> Region(V).
+28[0:Inp] || SkP2(U,V)* -> Region(U).
+29[0:Inp] || SkP3(U,V)* -> Region(V).
+30[0:Inp] || SkP3(U,V)* -> Region(U).
+31[0:Inp] || Cavity(U,V)* -> Region(U).
+32[0:Inp] || Cavity(U,V)* -> Region(V).
+33[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+34[0:Inp] || SmallSet(U,V)* -> Region(V).
+35[0:Inp] || Stable(U,V)* -> Time(U).
+36[0:Inp] || Stable(U,V)* -> Object(V).
+37[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+38[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+39[0:Inp] || CanGrasp(U,V)* -> Time(U).
+40[0:Inp] || CanGrasp(U,V)* -> Object(V).
+41[0:Inp] || Graspable(U,V)* -> Time(U).
+42[0:Inp] || Graspable(U,V)* -> Object(V).
+43[0:Inp] || NoObstacles(U,V)* -> Time(U).
+44[0:Inp] || NoObstacles(U,V)* -> Region(V).
+45[0:Inp] || equal(skf3(U,V),Agent)** -> .
+46[0:Inp] || Occurs(U,V,W)* -> Time(U).
+47[0:Inp] || Occurs(U,V,W)* -> Time(V).
+48[0:Inp] || Occurs(U,V,W)* -> Action(W).
+49[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+50[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+51[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+52[0:Inp] || SkP0(U,V,W)* -> Time(W).
+53[0:Inp] || SkP0(U,V,W)* -> Object(V).
+54[0:Inp] || SkP0(U,V,W)* -> Region(U).
+55[0:Inp] || UContained(U,V,W)* -> Time(U).
+56[0:Inp] || UContained(U,V,W)* -> Object(V).
+57[0:Inp] || UContained(U,V,W)* -> Object(W).
+58[0:Inp] || CContained(U,V,W)* -> Time(U).
+59[0:Inp] || CContained(U,V,W)* -> Object(V).
+60[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+61[0:Inp] || SkP1(U,V,W)* -> Time(W).
+62[0:Inp] || SkP1(U,V,W)* -> Object(V).
+63[0:Inp] || SkP1(U,V,W)* -> Object(U).
+64[0:Inp] || P(U,V) -> SkP2(V,U)*.
+65[0:Inp] || DR(U,V) -> SkP2(V,U)*.
+66[0:Inp] || EC(U,V) -> SkP2(V,U)*.
+67[0:Inp] || C(U,V) -> SkP2(V,U)*.
+68[0:Inp] || FullyOutside(U,V) -> SkP3(V,U)*.
+69[0:Inp] || UprightContainerShape(U,V) -> SkP3(V,U)*.
+70[0:Inp] || OpenContainerShape(U,V) -> SkP3(V,U)*.
+71[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+72[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+73[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+74[0:Inp] || SkP4(U,V,W)* -> Time(W).
+75[0:Inp] || SkP4(U,V,W)* -> Object(V).
+76[0:Inp] || SkP4(U,V,W)* -> Object(U).
+77[0:Inp] || equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7))** -> .
+78[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+79[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+80[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+81[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+82[0:Inp] || equal(U,V) -> SafelyMovesWith(W,U,V)*.
+83[0:Inp] || ClosedContainer(U,V,W) -> SkP0(W,V,U)*.
+84[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+85[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+86[0:Inp] || SafelyMovesWith(U,V,W) -> SkP1(W,V,U)*.
+87[0:Inp] || BoxedIn(U,V,W) -> SkP1(W,V,U)*.
+88[0:Inp] || BoxWithLid(U,V,W) -> SkP4(W,V,U)*.
+89[0:Inp] || BLContained(U,V,W) -> SkP4(W,V,U)*.
+90[0:Inp] || UContained(U,V,W)* -> BoxedIn(U,V,W).
+91[0:Inp] || BLContained(U,V,W)* -> BoxedIn(U,V,W).
+92[0:Inp] || BoxedIn(U,V,W) -> SafelyMovesWith(U,V,W)*.
+93[0:Inp] || BoxWithLid(U,V,W) -> SafelyMovesWith(U,W,V)*.
+94[0:Inp] || CanGrasp(U,V) BoxedIn(U,Agent,V)* -> .
+95[0:Inp] || equal(U,Agent) BoxWithLid(V,U,W)* -> .
+96[0:Inp] || equal(U,Agent) BoxWithLid(V,W,U)* -> .
+97[0:Inp] || Action(U) Action(V) -> Action(Sequence(U,V))*.
+98[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+99[0:Inp] || Object(U) Object(V) -> ObjectSet(Pair(U,V))*.
+100[0:Inp] || ObjectSet(U) ObjectSet(V) -> ObjectSet(Union(U,V))*.
+101[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+102[0:Inp] || Time(U) Region(V) -> ObjectSet(Contents(U,V))*.
+103[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(CContents(U,V))*.
+104[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(UContents(U,V))*.
+105[0:Inp] || Object(U) Region(V) -> Action(ManipTo(U,V))*.
+106[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+107[0:Inp] || History(U) History(V) -> History(HUnion(U,V))*.
+108[0:Inp] || Time(U) Object(V) -> ObjectSet(MovingGroup(U,V))*.
+109[0:Inp] || Object(U) Object(V) -> Action(PutInUC(U,V))*.
+110[0:Inp] || Object(U) Object(V) -> Action(LoadUprightContainer(U,V))*.
+111[0:Inp] || CContained(U,V,Singleton(W))* -> BoxedIn(U,V,W).
+112[0:Inp] || BLContained(U,V,W) SkP5(W,V,U,X)* -> BLContained(X,V,W).
+113[0:Inp] || BLContained(U,V,W) SkP5(W,V,X,U)* -> BLContained(X,V,W).
+114[0:Inp] || SafelyMovesWith(U,V,W)* -> BoxedIn(U,V,W) BoxWithLid(U,W,V) equal(V,W).
+115[0:Inp] || BoxedIn(U,V,W) -> CContained(U,V,Singleton(W))* UContained(U,V,W) BLContained(U,V,W).
+116[0:Inp] || ObjectSet(U) ObjectSet(V) -> Element(skf2(V,U),U)* Element(skf2(V,U),V)* equal(U,V).
+117[0:Inp] || Element(U,MovingGroup(V,W))* Time(V) Object(W) Object(U) -> SafelyMovesWith(V,U,W).
+118[0:Inp] || SafelyMovesWith(U,V,W) Time(U) Object(W) Object(V) -> Element(V,MovingGroup(U,W))*.
+119[0:Inp] || Element(skf2(U,V),V)* Element(skf2(U,V),U)* ObjectSet(V) ObjectSet(U) -> equal(V,U).
+120[0:Inp] || Occurs(U,V,TravelTo(W))* AllStable(U) EmptyHanded(U) Region(W) Object(X)* -> AllStable(V) equal(X,Agent).
+121[0:Inp] || Occurs(U,V,TravelTo(W))* AllStable(U) EmptyHanded(U) Region(W) Object(X) -> equal(Place(V,X),Place(U,X))* equal(X,Agent).
+122[0:Inp] || Object(U) Object(V) Time(W) equal(Place(W,skf3(X,W)),Place(X,skf3(X,W)))* Time(X) -> SkP5(U,V,W,X)* equal(V,Agent).
+123[0:Inp] || BoxWithLid(U,V,W)* Object(V) equal(Place(X,V),Place(U,V))* equal(Place(X,W),Place(U,W))* Object(W) Time(X) Time(U) -> BoxWithLid(X,V,W)*.
+124[0:Inp] || BoxWithLid(U,V,W)* Object(V) equal(Place(U,V),Place(X,V))* equal(Place(U,W),Place(X,W))* Object(W) Time(U) Time(X) -> BoxWithLid(X,V,W)*.
+125[0:Inp] || UContained(U,V,W)* Object(V) equal(Place(X,V),Place(U,V))* equal(Place(X,W),Place(U,W))* Object(W) Time(X) Time(U) -> UContained(X,V,W)*.
+126[0:Inp] || UContained(U,V,W)* Object(V) equal(Place(U,V),Place(X,V))* equal(Place(U,W),Place(X,W))* Object(W) Time(U) Time(X) -> UContained(X,V,W)*.
+127[0:Inp] || CContained(U,V,Singleton(W))* Object(V) equal(Place(X,V),Place(U,V))* equal(Place(X,W),Place(U,W))* Object(W) Time(X) Time(U) -> CContained(X,V,Singleton(W))*.
+128[0:Inp] || CContained(U,V,Singleton(W))* Object(V) equal(Place(U,V),Place(X,V))* equal(Place(U,W),Place(X,W))* Object(W) Time(U) Time(X) -> CContained(X,V,Singleton(W))*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that has, if any, a non-trivial domain model.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: EmptyHanded.
+ Axiom clauses: 119 Conjecture clauses: 9
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=2 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf3 > skf2 > skf1 > skf0 > LoadUprightContainer > PutInUC > HUnion > Slice > ManipTo > CContents > Pair > Sequence > RUnion > MovingGroup > Contents > UContents > Union > Place > HPlace > ConvexHull > Singleton > TravelTo > Action > SkP5 > SkP4 > SkP1 > History > SafelyMovesWith > BLContained > BoxWithLid > CContained > Element > UContained > BoxedIn > AllStable > ObjectSet > Region > Object > Time > SkP0 > UprightContainer > SkP3 > FullyOutside > SmallSet > EmptyHanded > Graspable > Reachable > SafelyMovable > SmallObject > NoPartialContents > Occurs > CanGrasp > UprightContainerShape > SkP2 > P > Lt > Leq > Leq3 > DR > NoObstacles > OpenContainerShape > EC > C > OpenContainer > ClosedContainer > OSPlace > Cavity > BoxWithLidC > CombinedContainer > RigidObject > Stable > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > StandStill > Ol > Ox > R > Tb > Ta > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+2[0:Inp] ||  -> EmptyHanded(skc5)*.
+3[0:Inp] ||  -> AllStable(skc5)*.
+5[0:Inp] ||  -> Action(StandStill)*.
+4[0:Inp] ||  -> Region(skc4)*.
+6[0:Inp] ||  -> Object(Agent)*.
+1[0:Inp] ||  -> Object(skc7)*.
+143[0:Res:3.0,12.0] ||  -> Time(skc5)*.
+169[0:Res:7.0,39.0] ||  -> Time(skc6)*.
+251[0:MRR:223.1,8.0] ||  -> AllStable(skc6)*.
+7[0:Inp] ||  -> CanGrasp(skc6,skc7)*.
+155[0:Res:1.0,18.0] ||  -> History(HPlace(skc7))*.
+140[0:Res:4.0,17.0] ||  -> Action(TravelTo(skc4))*.
+154[0:Res:1.0,16.0] ||  -> ObjectSet(Singleton(skc7))*.
+139[0:Res:4.0,15.0] ||  -> Region(ConvexHull(skc4))*.
+8[0:Inp] || equal(skc7,Agent)** -> .
+207[0:Res:4.0,151.0] ||  -> Action(ManipTo(skc7,skc4))*.
+224[0:Res:1.0,164.0] ||  -> Action(LoadUprightContainer(skc7,skc7))*.
+225[0:Res:1.0,163.0] ||  -> Action(PutInUC(skc7,skc7))*.
+226[0:Res:1.0,160.0] ||  -> ObjectSet(Pair(skc7,skc7))*.
+208[0:Res:4.0,138.0] ||  -> Region(RUnion(skc4,skc4))*.
+10[0:Inp] ||  -> Occurs(skc5,skc6,TravelTo(skc4))*.
+9[0:Inp] || BoxedIn(skc5,Agent,skc7)* -> .
+13[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+12[0:Inp] AllStable(U) ||  -> Time(U)*.
+14[0:Inp] RigidObject(U) ||  -> Object(U)*.
+11[0:Inp] SmallObject(U) ||  -> Object(U)*.
+187[0:Res:90.1,9.0] || UContained(skc5,Agent,skc7)* -> .
+188[0:Res:91.1,9.0] || BLContained(skc5,Agent,skc7)* -> .
+168[0:Res:7.0,94.0] || BoxedIn(skc6,Agent,skc7)* -> .
+18[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+17[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+16[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+15[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+45[0:Inp] || equal(skf3(U,V),Agent)** -> .
+33[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+44[0:Inp] || NoObstacles(U,V)* -> Region(V).
+34[0:Inp] || SmallSet(U,V)* -> Region(V).
+32[0:Inp] || Cavity(U,V)* -> Region(V).
+31[0:Inp] || Cavity(U,V)* -> Region(U).
+26[0:Inp] || Reachable(U,V)* -> Region(V).
+24[0:Inp] || FullyOutside(U,V)* -> Region(V).
+23[0:Inp] || FullyOutside(U,V)* -> Region(U).
+30[0:Inp] || SkP3(U,V)* -> Region(U).
+29[0:Inp] || SkP3(U,V)* -> Region(V).
+28[0:Inp] || SkP2(U,V)* -> Region(U).
+27[0:Inp] || SkP2(U,V)* -> Region(V).
+43[0:Inp] || NoObstacles(U,V)* -> Time(U).
+41[0:Inp] || Graspable(U,V)* -> Time(U).
+37[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+35[0:Inp] || Stable(U,V)* -> Time(U).
+25[0:Inp] || Reachable(U,V)* -> Time(U).
+21[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+39[0:Inp] || CanGrasp(U,V)* -> Time(U).
+42[0:Inp] || Graspable(U,V)* -> Object(V).
+38[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+36[0:Inp] || Stable(U,V)* -> Object(V).
+22[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+40[0:Inp] || CanGrasp(U,V)* -> Object(V).
+19[0:Inp] || Element(U,V)* -> Object(U).
+186[0:Res:111.1,9.0] || CContained(skc5,Agent,Singleton(skc7))* -> .
+70[0:Inp] || OpenContainerShape(U,V) -> SkP3(V,U)*.
+69[0:Inp] || UprightContainerShape(U,V) -> SkP3(V,U)*.
+68[0:Inp] || FullyOutside(U,V) -> SkP3(V,U)*.
+67[0:Inp] || C(U,V) -> SkP2(V,U)*.
+66[0:Inp] || EC(U,V) -> SkP2(V,U)*.
+65[0:Inp] || DR(U,V) -> SkP2(V,U)*.
+64[0:Inp] || P(U,V) -> SkP2(V,U)*.
+48[0:Inp] || Occurs(U,V,W)* -> Action(W).
+50[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+60[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+73[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+72[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+71[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+51[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+54[0:Inp] || SkP0(U,V,W)* -> Region(U).
+49[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+74[0:Inp] || SkP4(U,V,W)* -> Time(W).
+61[0:Inp] || SkP1(U,V,W)* -> Time(W).
+52[0:Inp] || SkP0(U,V,W)* -> Time(W).
+55[0:Inp] || UContained(U,V,W)* -> Time(U).
+58[0:Inp] || CContained(U,V,W)* -> Time(U).
+47[0:Inp] || Occurs(U,V,W)* -> Time(V).
+46[0:Inp] || Occurs(U,V,W)* -> Time(U).
+76[0:Inp] || SkP4(U,V,W)* -> Object(U).
+75[0:Inp] || SkP4(U,V,W)* -> Object(V).
+63[0:Inp] || SkP1(U,V,W)* -> Object(U).
+62[0:Inp] || SkP1(U,V,W)* -> Object(V).
+53[0:Inp] || SkP0(U,V,W)* -> Object(V).
+57[0:Inp] || UContained(U,V,W)* -> Object(W).
+56[0:Inp] || UContained(U,V,W)* -> Object(V).
+59[0:Inp] || CContained(U,V,W)* -> Object(V).
+151[0:Res:1.0,105.0] Region(U) ||  -> Action(ManipTo(skc7,U))*.
+152[0:Res:1.0,109.0] Object(U) ||  -> Action(PutInUC(skc7,U))*.
+153[0:Res:1.0,110.0] Object(U) ||  -> Action(LoadUprightContainer(skc7,U))*.
+150[0:Res:1.0,99.0] Object(U) ||  -> ObjectSet(Pair(skc7,U))*.
+138[0:Res:4.0,98.0] Region(U) ||  -> Region(RUnion(skc4,U))*.
+137[0:Res:4.0,105.1] Object(U) ||  -> Action(ManipTo(U,skc4))*.
+163[0:Res:1.0,109.1] Object(U) ||  -> Action(PutInUC(U,skc7))*.
+164[0:Res:1.0,110.1] Object(U) ||  -> Action(LoadUprightContainer(U,skc7))*.
+136[0:Res:4.0,102.1] Time(U) ||  -> ObjectSet(Contents(U,skc4))*.
+162[0:Res:1.0,108.1] Time(U) ||  -> ObjectSet(MovingGroup(U,skc7))*.
+160[0:Res:1.0,99.1] Object(U) ||  -> ObjectSet(Pair(U,skc7))*.
+135[0:Res:4.0,98.1] Region(U) ||  -> Region(RUnion(U,skc4))*.
+161[0:Res:1.0,101.1] Time(U) ||  -> Region(Place(U,skc7))*.
+252[0:MRR:222.1,8.0] ||  -> equal(Place(skc6,skc7),Place(skc5,skc7))**.
+77[0:Inp] || equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7))** -> .
+82[0:Inp] || equal(U,V) -> SafelyMovesWith(W,U,V)*.
+81[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+78[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+80[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+79[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+94[0:Inp] || CanGrasp(U,V) BoxedIn(U,Agent,V)* -> .
+89[0:Inp] || BLContained(U,V,W) -> SkP4(W,V,U)*.
+87[0:Inp] || BoxedIn(U,V,W) -> SkP1(W,V,U)*.
+86[0:Inp] || SafelyMovesWith(U,V,W) -> SkP1(W,V,U)*.
+88[0:Inp] || BoxWithLid(U,V,W) -> SkP4(W,V,U)*.
+85[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+84[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+83[0:Inp] || ClosedContainer(U,V,W) -> SkP0(W,V,U)*.
+91[0:Inp] || BLContained(U,V,W)* -> BoxedIn(U,V,W).
+90[0:Inp] || UContained(U,V,W)* -> BoxedIn(U,V,W).
+92[0:Inp] || BoxedIn(U,V,W) -> SafelyMovesWith(U,V,W)*.
+93[0:Inp] || BoxWithLid(U,V,W) -> SafelyMovesWith(U,W,V)*.
+96[0:Inp] || equal(U,Agent) BoxWithLid(V,W,U)* -> .
+95[0:Inp] || equal(U,Agent) BoxWithLid(V,U,W)* -> .
+195[0:MRR:185.2,8.0] || SafelyMovesWith(skc5,Agent,skc7)* -> BoxWithLid(skc5,skc7,Agent).
+107[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+97[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+105[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+110[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+109[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+100[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+104[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+103[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+102[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+108[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+99[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+98[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+106[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+101[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+111[0:Inp] || CContained(U,V,Singleton(W))* -> BoxedIn(U,V,W).
+253[0:MRR:213.0,2.0] Region(U) || Occurs(skc5,V,TravelTo(U))* -> AllStable(V).
+175[0:Res:130.2,8.0] || Element(skf2(Agent,skc7),Agent) Element(skf2(Agent,skc7),skc7)* -> .
+179[0:Res:130.2,8.0] || Element(skf2(skc7,Agent),skc7)* Element(skf2(skc7,Agent),Agent) -> .
+199[0:MRR:183.0,183.1,183.2,3.0,2.0,4.0] Object(U) ||  -> equal(U,Agent) equal(Place(skc6,U),Place(skc5,U))**.
+174[0:Res:114.3,8.0] || SafelyMovesWith(U,skc7,Agent)* -> BoxWithLid(U,Agent,skc7) BoxedIn(U,skc7,Agent).
+178[0:Res:114.3,8.0] || SafelyMovesWith(U,Agent,skc7)* -> BoxWithLid(U,skc7,Agent) BoxedIn(U,Agent,skc7).
+158[0:Res:1.0,129.1] Time(U) || Element(V,MovingGroup(U,skc7))* -> SafelyMovesWith(U,V,skc7).
+235[0:Res:1.0,167.1] Time(U) || SafelyMovesWith(U,skc7,skc7) -> Element(skc7,MovingGroup(U,skc7))*.
+204[0:Res:4.0,197.2] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(skc4))* -> AllStable(V).
+206[0:Res:4.0,198.0] Object(U) || Occurs(skc5,V,TravelTo(skc4))* -> AllStable(V) equal(U,Agent)*.
+130[0:MRR:119.0,119.1,20.1,20.1] || Element(skf2(U,V),U)* Element(skf2(U,V),V)* -> equal(V,U).
+113[0:Inp] || BLContained(U,V,W) SkP5(W,V,X,U)* -> BLContained(X,V,W).
+112[0:Inp] || BLContained(U,V,W) SkP5(W,V,U,X)* -> BLContained(X,V,W).
+129[0:MRR:117.2,19.1] Object(U) Time(V) || Element(W,MovingGroup(V,U))* -> SafelyMovesWith(V,W,U).
+114[0:Inp] || SafelyMovesWith(U,V,W)* -> equal(V,W) BoxWithLid(U,W,V) BoxedIn(U,V,W).
+173[0:Res:116.4,8.0] ObjectSet(Agent) ObjectSet(skc7) ||  -> Element(skf2(Agent,skc7),Agent) Element(skf2(Agent,skc7),skc7)*.
+177[0:Res:116.4,8.0] ObjectSet(skc7) ObjectSet(Agent) ||  -> Element(skf2(skc7,Agent),skc7)* Element(skf2(skc7,Agent),Agent).
+167[0:Res:1.0,118.2] Object(U) Time(V) || SafelyMovesWith(V,skc7,U) -> Element(skc7,MovingGroup(V,U))*.
+159[0:Res:1.0,118.1] Object(U) Time(V) || SafelyMovesWith(V,U,skc7) -> Element(U,MovingGroup(V,skc7))*.
+254[0:MRR:211.0,2.0] Region(U) || Occurs(skc5,V,TravelTo(U))* -> equal(Place(V,skc7),Place(skc5,skc7)).
+197[0:MRR:172.3,1.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> AllStable(W).
+115[0:Inp] || BoxedIn(U,V,W) -> BLContained(U,V,W) UContained(U,V,W) CContained(U,V,Singleton(W))*.
+116[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> equal(V,U) Element(skf2(U,V),U)* Element(skf2(U,V),V)*.
+118[0:Inp] Object(U) Object(V) Time(W) || SafelyMovesWith(W,U,V) -> Element(U,MovingGroup(W,V))*.
+203[0:Res:4.0,200.2] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(skc4))* -> equal(Place(V,skc7),Place(U,skc7)).
+205[0:Res:4.0,201.0] Object(U) || Occurs(skc5,V,TravelTo(skc4))* -> equal(U,Agent) equal(Place(V,U),Place(skc5,U))*.
+200[0:MRR:171.3,1.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> equal(Place(W,skc7),Place(V,skc7)).
+201[0:MRR:144.0,3.0] Object(U) Region(V) || Occurs(skc5,W,TravelTo(V))* -> equal(U,Agent) equal(Place(W,U),Place(skc5,U))*.
+221[0:Res:1.0,202.0] Time(U) Time(V) || equal(Place(V,skf3(U,V)),Place(U,skf3(U,V)))* -> SkP5(skc7,skc7,V,U).
+255[0:Obv:219.3] Time(U) Time(V) || equal(Place(V,skc7),Place(U,skc7))* BoxWithLid(U,skc7,skc7)* -> BoxWithLid(V,skc7,skc7)*.
+193[0:Res:114.3,77.0] || SafelyMovesWith(U,MovingGroup(skc5,skc7),MovingGroup(skc6,skc7))* -> BoxWithLid(U,MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) BoxedIn(U,MovingGroup(skc5,skc7),MovingGroup(skc6,skc7)).
+190[0:Res:114.3,77.0] || SafelyMovesWith(U,MovingGroup(skc6,skc7),MovingGroup(skc5,skc7))* -> BoxWithLid(U,MovingGroup(skc5,skc7),MovingGroup(skc6,skc7)) BoxedIn(U,MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+133[0:Res:4.0,121.2] Object(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(skc4))* -> equal(U,Agent) equal(Place(W,U),Place(V,U))*.
+202[0:MRR:176.1,1.0] Time(U) Time(V) Object(W) || equal(Place(V,skf3(U,V)),Place(U,skf3(U,V)))* -> SkP5(W,skc7,V,U)*.
+121[0:Inp] Object(U) Region(V) EmptyHanded(W) AllStable(W) || Occurs(W,X,TravelTo(V))* -> equal(U,Agent) equal(Place(X,U),Place(W,U))*.
+131[0:MRR:125.0,125.1,125.3,56.1,57.1,55.1] Time(U) || equal(Place(U,V),Place(W,V))* equal(Place(U,X),Place(W,X))* UContained(W,X,V)* -> UContained(U,X,V)*.
+149[0:Res:1.0,122.0] Time(U) Time(V) Object(W) || equal(Place(V,skf3(U,V)),Place(U,skf3(U,V)))* -> equal(W,Agent) SkP5(skc7,W,V,U)*.
+147[0:Res:1.0,132.0] Time(U) || equal(Place(U,V),Place(W,V))* equal(Place(U,skc7),Place(W,skc7))* CContained(W,V,Singleton(skc7))* -> CContained(U,V,Singleton(skc7))*.
+122[0:Inp] Time(U) Time(V) Object(W) Object(X) || equal(Place(V,skf3(U,V)),Place(U,skf3(U,V)))* -> equal(W,Agent) SkP5(X,W,V,U)*.
+132[0:MRR:127.0,127.3,59.1,58.1] Time(U) Object(V) || equal(Place(U,V),Place(W,V))* equal(Place(U,X),Place(W,X))* CContained(W,X,Singleton(V))* -> CContained(U,X,Singleton(V))*.
+148[0:Res:1.0,123.0] Time(U) Time(V) Object(W) || equal(Place(V,W),Place(U,W))* equal(Place(V,skc7),Place(U,skc7))* BoxWithLid(U,skc7,W)* -> BoxWithLid(V,skc7,W)*.
+156[0:Res:1.0,123.1] Time(U) Time(V) Object(W) || equal(Place(V,W),Place(U,W))* equal(Place(V,skc7),Place(U,skc7))* BoxWithLid(U,W,skc7)* -> BoxWithLid(V,W,skc7)*.
+123[0:Inp] Time(U) Time(V) Object(W) Object(X) || equal(Place(V,W),Place(U,W))* equal(Place(V,X),Place(U,X))* BoxWithLid(U,X,W)* -> BoxWithLid(V,X,W)*.
+	Given clause: 206[0:Res:4.0,198.0] Object(U) || Occurs(skc5,V,TravelTo(skc4))*+ -> AllStable(V) equal(U,Agent)*.
+	Given clause: 257[1:Spt:206.0,206.3] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 2[0:Inp] ||  -> EmptyHanded(skc5)*.
+	Given clause: 3[0:Inp] ||  -> AllStable(skc5)*.
+	Given clause: 5[0:Inp] ||  -> Action(StandStill)*.
+	Given clause: 4[0:Inp] ||  -> Region(skc4)*.
+	Given clause: 6[0:Inp] ||  -> Object(Agent)*.
+	Given clause: 1[0:Inp] ||  -> Object(skc7)*.
+	Given clause: 261[1:Spt:260.0,206.1,206.2] || Occurs(skc5,U,TravelTo(skc4))* -> AllStable(U).
+	Given clause: 143[0:Res:3.0,12.0] ||  -> Time(skc5)*.
+	Given clause: 169[0:Res:7.0,39.0] ||  -> Time(skc6)*.
+	Given clause: 251[0:MRR:223.1,8.0] ||  -> AllStable(skc6)*.
+	Given clause: 7[0:Inp] ||  -> CanGrasp(skc6,skc7)*.
+	Given clause: 155[0:Res:1.0,18.0] ||  -> History(HPlace(skc7))*.
+	Given clause: 140[0:Res:4.0,17.0] ||  -> Action(TravelTo(skc4))*.
+	Given clause: 154[0:Res:1.0,16.0] ||  -> ObjectSet(Singleton(skc7))*.
+	Given clause: 139[0:Res:4.0,15.0] ||  -> Region(ConvexHull(skc4))*.
+	Given clause: 8[0:Inp] || equal(skc7,Agent)** -> .
+	Given clause: 207[0:Res:4.0,151.0] ||  -> Action(ManipTo(skc7,skc4))*.
+	Given clause: 224[0:Res:1.0,164.0] ||  -> Action(LoadUprightContainer(skc7,skc7))*.
+	Given clause: 225[0:Res:1.0,163.0] ||  -> Action(PutInUC(skc7,skc7))*.
+	Given clause: 226[0:Res:1.0,160.0] ||  -> ObjectSet(Pair(skc7,skc7))*.
+	Given clause: 10[0:Inp] ||  -> Occurs(skc5,skc6,TravelTo(skc4))*.
+	Given clause: 208[0:Res:4.0,138.0] ||  -> Region(RUnion(skc4,skc4))*.
+	Given clause: 9[0:Inp] || BoxedIn(skc5,Agent,skc7)* -> .
+	Given clause: 187[0:Res:90.1,9.0] || UContained(skc5,Agent,skc7)* -> .
+	Given clause: 188[0:Res:91.1,9.0] || BLContained(skc5,Agent,skc7)* -> .
+	Given clause: 13[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 168[0:Res:7.0,94.0] || BoxedIn(skc6,Agent,skc7)* -> .
+	Given clause: 12[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 14[0:Inp] RigidObject(U) ||  -> Object(U)*.
+	Given clause: 11[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 18[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+	Given clause: 186[0:Res:111.1,9.0] || CContained(skc5,Agent,Singleton(skc7))* -> .
+	Given clause: 17[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+	Given clause: 16[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 15[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+	Given clause: 45[0:Inp] || equal(skf3(U,V),Agent)** -> .
+	Given clause: 33[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 44[0:Inp] || NoObstacles(U,V)* -> Region(V).
+	Given clause: 34[0:Inp] || SmallSet(U,V)* -> Region(V).
+	Given clause: 32[0:Inp] || Cavity(U,V)* -> Region(V).
+	Given clause: 31[0:Inp] || Cavity(U,V)* -> Region(U).
+	Given clause: 26[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 24[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 23[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 30[0:Inp] || SkP3(U,V)* -> Region(U).
+	Given clause: 29[0:Inp] || SkP3(U,V)* -> Region(V).
+	Given clause: 28[0:Inp] || SkP2(U,V)* -> Region(U).
+	Given clause: 27[0:Inp] || SkP2(U,V)* -> Region(V).
+	Given clause: 43[0:Inp] || NoObstacles(U,V)* -> Time(U).
+	Given clause: 41[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 37[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 35[0:Inp] || Stable(U,V)* -> Time(U).
+	Given clause: 25[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 21[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 39[0:Inp] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 42[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 38[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 36[0:Inp] || Stable(U,V)* -> Object(V).
+	Given clause: 22[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 40[0:Inp] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 19[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 252[0:MRR:222.1,8.0] ||  -> equal(Place(skc6,skc7),Place(skc5,skc7))**.
+	Given clause: 151[0:Res:1.0,105.0] Region(U) ||  -> Action(ManipTo(skc7,U))*.
+	Given clause: 152[0:Res:1.0,109.0] Object(U) ||  -> Action(PutInUC(skc7,U))*.
+	Given clause: 70[0:Inp] || OpenContainerShape(U,V) -> SkP3(V,U)*.
+	Given clause: 266[0:Res:70.1,29.0] || OpenContainerShape(U,V)* -> Region(U).
+	Given clause: 267[0:Res:70.1,30.0] || OpenContainerShape(U,V)* -> Region(V).
+	Given clause: 153[0:Res:1.0,110.0] Object(U) ||  -> Action(LoadUprightContainer(skc7,U))*.
+	Given clause: 150[0:Res:1.0,99.0] Object(U) ||  -> ObjectSet(Pair(skc7,U))*.
+	Given clause: 69[0:Inp] || UprightContainerShape(U,V) -> SkP3(V,U)*.
+	Given clause: 268[0:Res:69.1,29.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 269[0:Res:69.1,30.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 138[0:Res:4.0,98.0] Region(U) ||  -> Region(RUnion(skc4,U))*.
+	Given clause: 137[0:Res:4.0,105.1] Object(U) ||  -> Action(ManipTo(U,skc4))*.
+	Given clause: 68[0:Inp] || FullyOutside(U,V) -> SkP3(V,U)*.
+	Given clause: 163[0:Res:1.0,109.1] Object(U) ||  -> Action(PutInUC(U,skc7))*.
+	Given clause: 164[0:Res:1.0,110.1] Object(U) ||  -> Action(LoadUprightContainer(U,skc7))*.
+	Given clause: 136[0:Res:4.0,102.1] Time(U) ||  -> ObjectSet(Contents(U,skc4))*.
+	Given clause: 162[0:Res:1.0,108.1] Time(U) ||  -> ObjectSet(MovingGroup(U,skc7))*.
+	Given clause: 67[0:Inp] || C(U,V) -> SkP2(V,U)*.
+	Given clause: 272[0:Res:67.1,27.0] || C(U,V)* -> Region(U).
+	Given clause: 273[0:Res:67.1,28.0] || C(U,V)* -> Region(V).
+	Given clause: 160[0:Res:1.0,99.1] Object(U) ||  -> ObjectSet(Pair(U,skc7))*.
+	Given clause: 135[0:Res:4.0,98.1] Region(U) ||  -> Region(RUnion(U,skc4))*.
+	Given clause: 66[0:Inp] || EC(U,V) -> SkP2(V,U)*.
+	Given clause: 274[0:Res:66.1,27.0] || EC(U,V)* -> Region(U).
+	Given clause: 275[0:Res:66.1,28.0] || EC(U,V)* -> Region(V).
+	Given clause: 161[0:Res:1.0,101.1] Time(U) ||  -> Region(Place(U,skc7))*.
+	Given clause: 277[0:SSi:276.0,169.0,251.0] ||  -> Region(Place(skc5,skc7))*.
+	Given clause: 65[0:Inp] || DR(U,V) -> SkP2(V,U)*.
+	Given clause: 278[0:Res:65.1,27.0] || DR(U,V)* -> Region(U).
+	Given clause: 279[0:Res:65.1,28.0] || DR(U,V)* -> Region(V).
+	Given clause: 64[0:Inp] || P(U,V) -> SkP2(V,U)*.
+	Given clause: 280[0:Res:64.1,27.0] || P(U,V)* -> Region(U).
+	Given clause: 48[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 281[0:Res:64.1,28.0] || P(U,V)* -> Region(V).
+	Given clause: 50[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+	Given clause: 60[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+	Given clause: 73[0:Inp] || CombinedContainer(U,V,W)* -> Region(W).
+	Given clause: 72[0:Inp] || CombinedContainer(U,V,W)* -> Region(V).
+	Given clause: 71[0:Inp] || CombinedContainer(U,V,W)* -> Region(U).
+	Given clause: 51[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+	Given clause: 54[0:Inp] || SkP0(U,V,W)* -> Region(U).
+	Given clause: 49[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+	Given clause: 74[0:Inp] || SkP4(U,V,W)* -> Time(W).
+	Given clause: 61[0:Inp] || SkP1(U,V,W)* -> Time(W).
+	Given clause: 52[0:Inp] || SkP0(U,V,W)* -> Time(W).
+	Given clause: 55[0:Inp] || UContained(U,V,W)* -> Time(U).
+	Given clause: 58[0:Inp] || CContained(U,V,W)* -> Time(U).
+	Given clause: 47[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 46[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 76[0:Inp] || SkP4(U,V,W)* -> Object(U).
+	Given clause: 75[0:Inp] || SkP4(U,V,W)* -> Object(V).
+	Given clause: 63[0:Inp] || SkP1(U,V,W)* -> Object(U).
+	Given clause: 62[0:Inp] || SkP1(U,V,W)* -> Object(V).
+	Given clause: 53[0:Inp] || SkP0(U,V,W)* -> Object(V).
+	Given clause: 57[0:Inp] || UContained(U,V,W)* -> Object(W).
+	Given clause: 56[0:Inp] || UContained(U,V,W)* -> Object(V).
+	Given clause: 59[0:Inp] || CContained(U,V,W)* -> Object(V).
+	Given clause: 77[0:Inp] || equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7))** -> .
+	Given clause: 82[0:Inp] || equal(U,V) -> SafelyMovesWith(W,U,V)*.
+	Given clause: 81[0:Inp] || BoxWithLidC(U,V,W,X)* -> Region(X).
+	Given clause: 78[0:Inp] || BoxWithLidC(U,V,W,X)* -> Time(U).
+	Given clause: 80[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(W).
+	Given clause: 79[0:Inp] || BoxWithLidC(U,V,W,X)* -> Object(V).
+	Given clause: 195[0:MRR:185.2,8.0] || SafelyMovesWith(skc5,Agent,skc7)* -> BoxWithLid(skc5,skc7,Agent).
+	Given clause: 94[0:Inp] || CanGrasp(U,V) BoxedIn(U,Agent,V)* -> .
+	Given clause: 96[0:Inp] || equal(U,Agent) BoxWithLid(V,W,U)* -> .
+	Given clause: 95[0:Inp] || equal(U,Agent) BoxWithLid(V,U,W)* -> .
+	Given clause: 89[0:Inp] || BLContained(U,V,W) -> SkP4(W,V,U)*.
+	Given clause: 286[0:Res:89.1,75.0] || BLContained(U,V,W)* -> Object(V).
+	Given clause: 287[0:Res:89.1,76.0] || BLContained(U,V,W)* -> Object(W).
+	Given clause: 288[0:Res:89.1,74.0] || BLContained(U,V,W)* -> Time(U).
+	Given clause: 87[0:Inp] || BoxedIn(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 86[0:Inp] || SafelyMovesWith(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 289[0:Res:87.1,62.0] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 290[0:Res:87.1,63.0] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 291[0:Res:87.1,61.0] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 292[0:Res:86.1,62.0] || SafelyMovesWith(U,V,W)* -> Object(V).
+	Given clause: 304[0:MRR:18.0,303.0] ||  -> History(HPlace(U))*.
+	Given clause: 303[0:AED:8.0,302.0] ||  -> Object(U)*.
+	Given clause: 305[0:MRR:16.0,303.0] ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 309[0:MRR:137.0,303.0] ||  -> Action(ManipTo(U,skc4))*.
+	Given clause: 313[0:MRR:110.1,110.0,303.0] ||  -> Action(LoadUprightContainer(U,V))*.
+	Given clause: 314[0:MRR:109.1,109.0,303.0] ||  -> Action(PutInUC(U,V))*.
+	Given clause: 317[0:MRR:99.1,99.0,303.0] ||  -> ObjectSet(Pair(U,V))*.
+	Given clause: 315[0:MRR:108.0,303.0] Time(U) ||  -> ObjectSet(MovingGroup(U,V))*.
+	Given clause: 316[0:MRR:101.0,303.0] Time(U) ||  -> Region(Place(U,V))*.
+	Given clause: 324[0:MRR:105.1,303.0] Region(U) ||  -> Action(ManipTo(V,U))*.
+	Given clause: 88[0:Inp] || BoxWithLid(U,V,W) -> SkP4(W,V,U)*.
+	Given clause: 294[0:Res:86.1,61.0] || SafelyMovesWith(U,V,W)* -> Time(U).
+	Given clause: 337[0:AED:8.0,336.0] ||  -> Time(U)*.
+	Given clause: 338[0:MRR:136.0,337.0] ||  -> ObjectSet(Contents(U,skc4))*.
+	Given clause: 339[0:MRR:315.0,337.0] ||  -> ObjectSet(MovingGroup(U,V))*.
+	Given clause: 340[0:MRR:316.0,337.0] ||  -> Region(Place(U,V))*.
+	Given clause: 348[0:MRR:106.1,337.0] History(U) ||  -> Region(Slice(V,U))*.
+	Given clause: 349[0:MRR:104.1,337.0] ObjectSet(U) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 350[0:MRR:103.1,337.0] ObjectSet(U) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 351[0:MRR:102.1,337.0] Region(U) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 85[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 353[0:Res:85.1,54.0] || OpenContainer(U,V,W)* -> Region(W).
+	Given clause: 84[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 354[0:Res:84.1,54.0] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 83[0:Inp] || ClosedContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 91[0:Inp] || BLContained(U,V,W)* -> BoxedIn(U,V,W).
+	Given clause: 355[0:Res:83.1,54.0] || ClosedContainer(U,V,W)* -> Region(W).
+	Given clause: 90[0:Inp] || UContained(U,V,W)* -> BoxedIn(U,V,W).
+	Given clause: 92[0:Inp] || BoxedIn(U,V,W) -> SafelyMovesWith(U,V,W)*.
+	Given clause: 93[0:Inp] || BoxWithLid(U,V,W) -> SafelyMovesWith(U,W,V)*.
+	Given clause: 107[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+	Given clause: 319[0:MRR:199.0,303.0] ||  -> equal(U,Agent) equal(Place(skc6,U),Place(skc5,U))**.
+	Given clause: 97[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+	Given clause: 100[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 98[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 111[0:Inp] || CContained(U,V,Singleton(W))* -> BoxedIn(U,V,W).
+	Given clause: 301[0:MRR:296.0,296.1,293.1,294.1] || SafelyMovesWith(U,V,W) -> Element(V,MovingGroup(U,W))*.
+	Given clause: 342[0:MRR:318.0,337.0] || Element(U,MovingGroup(V,W))* -> SafelyMovesWith(V,U,W).
+	Given clause: 253[0:MRR:213.0,2.0] Region(U) || Occurs(skc5,V,TravelTo(U))* -> AllStable(V).
+	Given clause: 175[0:Res:130.2,8.0] || Element(skf2(Agent,skc7),Agent) Element(skf2(Agent,skc7),skc7)* -> .
+	Given clause: 130[0:MRR:119.0,119.1,20.1,20.1] || Element(skf2(U,V),U)*+ Element(skf2(U,V),V)* -> equal(V,U).
+	Given clause: 179[0:Res:130.2,8.0] || Element(skf2(skc7,Agent),skc7)* Element(skf2(skc7,Agent),Agent) -> .
+	Given clause: 174[0:Res:114.3,8.0] || SafelyMovesWith(U,skc7,Agent)* -> BoxWithLid(U,Agent,skc7) BoxedIn(U,skc7,Agent).
+	Given clause: 178[0:Res:114.3,8.0] || SafelyMovesWith(U,Agent,skc7)* -> BoxWithLid(U,skc7,Agent) BoxedIn(U,Agent,skc7).
+	Given clause: 204[0:Res:4.0,197.2] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(skc4))* -> AllStable(V).
+	Given clause: 113[0:Inp] || BLContained(U,V,W) SkP5(W,V,X,U)* -> BLContained(X,V,W).
+	Given clause: 112[0:Inp] || BLContained(U,V,W) SkP5(W,V,U,X)* -> BLContained(X,V,W).
+	Given clause: 173[0:Res:116.4,8.0] ObjectSet(Agent) ObjectSet(skc7) ||  -> Element(skf2(Agent,skc7),Agent) Element(skf2(Agent,skc7),skc7)*.
+	Given clause: 177[0:Res:116.4,8.0] ObjectSet(skc7) ObjectSet(Agent) ||  -> Element(skf2(skc7,Agent),skc7)* Element(skf2(skc7,Agent),Agent).
+	Given clause: 254[0:MRR:211.0,2.0] Region(U) || Occurs(skc5,V,TravelTo(U))* -> equal(Place(V,skc7),Place(skc5,skc7)).
+	Given clause: 114[0:Inp] || SafelyMovesWith(U,V,W)* -> equal(V,W) BoxWithLid(U,W,V) BoxedIn(U,V,W).
+	Given clause: 320[0:MRR:205.0,303.0] || Occurs(skc5,U,TravelTo(skc4))*+ -> equal(V,Agent) equal(Place(U,V),Place(skc5,V))*.
+	Given clause: 346[0:MRR:334.0,337.0] || equal(Place(U,skc7),Place(V,skc7))*+ BoxWithLid(V,skc7,skc7)* -> BoxWithLid(U,skc7,skc7)*.
+	Given clause: 378[0:SpL:252.0,346.0] || equal(Place(skc5,skc7),Place(U,skc7))+ BoxWithLid(U,skc7,skc7)* -> BoxWithLid(skc6,skc7,skc7)*.
+	Given clause: 382[0:EqR:378.0] || BoxWithLid(skc5,skc7,skc7) -> BoxWithLid(skc6,skc7,skc7)*.
+	Given clause: 115[0:Inp] || BoxedIn(U,V,W) -> BLContained(U,V,W) UContained(U,V,W) CContained(U,V,Singleton(W))*.
+	Given clause: 380[0:SpL:252.0,346.0] || equal(Place(U,skc7),Place(skc5,skc7))+ BoxWithLid(skc6,skc7,skc7)* -> BoxWithLid(U,skc7,skc7)*.
+	Given clause: 390[0:EqR:380.0] || BoxWithLid(skc6,skc7,skc7)* -> BoxWithLid(skc5,skc7,skc7).
+	Given clause: 197[0:MRR:172.3,1.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> AllStable(W).
+	Given clause: 343[0:MRR:326.1,326.0,337.0] || equal(Place(U,skf3(V,U)),Place(V,skf3(V,U)))*+ -> SkP5(W,skc7,U,V)*.
+	Given clause: 116[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> equal(V,U) Element(skf2(U,V),U)* Element(skf2(U,V),V)*.
+	Given clause: 395[0:EqR:343.0] ||  -> SkP5(U,skc7,V,V)*.
+	Given clause: 398[0:MRR:397.1,45.0] || equal(Place(U,skf3(skc6,U)),Place(skc5,skf3(skc6,U)))*+ -> SkP5(V,skc7,U,skc6)*.
+	Given clause: 412[0:EqR:398.0] ||  -> SkP5(U,skc7,skc5,skc6)*.
+	Given clause: 415[0:Res:412.0,113.1] || BLContained(skc6,skc7,U)* -> BLContained(skc5,skc7,U).
+	Given clause: 344[0:MRR:331.1,331.0,337.0] || equal(Place(U,skf3(V,U)),Place(V,skf3(V,U)))*+ -> equal(W,Agent) SkP5(X,W,U,V)*.
+	Given clause: 417[0:EqR:344.0] ||  -> equal(U,Agent) SkP5(V,U,W,W)*.
+	Given clause: 416[0:Res:412.0,112.1] || BLContained(skc5,skc7,U) -> BLContained(skc6,skc7,U)*.
+	Given clause: 424[0:Res:416.1,91.0] || BLContained(skc5,skc7,U)* -> BoxedIn(skc6,skc7,U).
+	Given clause: 399[0:MRR:396.1,45.0] || equal(Place(skc5,skf3(U,skc6)),Place(U,skf3(U,skc6)))*+ -> SkP5(V,skc7,skc6,U)*.
+	Given clause: 323[0:MRR:121.0,303.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))*+ -> equal(X,Agent) equal(Place(W,X),Place(V,X))*.
+	Given clause: 426[0:EqR:399.0] ||  -> SkP5(U,skc7,skc6,skc5)*.
+	Given clause: 203[0:Res:4.0,200.2] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(skc4))* -> equal(Place(V,skc7),Place(U,skc7)).
+	Given clause: 321[0:MRR:201.0,303.0] Region(U) || Occurs(skc5,V,TravelTo(U))*+ -> equal(W,Agent) equal(Place(V,W),Place(skc5,W))*.
+	Given clause: 420[0:MRR:419.1,45.0] || equal(Place(U,skf3(skc6,U)),Place(skc5,skf3(skc6,U)))*+ -> equal(V,Agent) SkP5(W,V,U,skc6)*.
+	Given clause: 341[0:MRR:131.0,337.0] || equal(Place(U,V),Place(W,V))*+ equal(Place(U,X),Place(W,X))* UContained(W,X,V)* -> UContained(U,X,V)*.
+	Given clause: 434[0:EqR:420.0] ||  -> equal(U,Agent) SkP5(V,U,skc5,skc6)*.
+	Given clause: 442[0:Res:434.1,113.1] || BLContained(skc6,U,V)* -> equal(U,Agent) BLContained(skc5,U,V).
+	Given clause: 443[0:Res:434.1,112.1] || BLContained(skc5,U,V) -> equal(U,Agent) BLContained(skc6,U,V)*.
+	Given clause: 445[0:Res:443.2,91.0] || BLContained(skc5,U,V)* -> equal(U,Agent) BoxedIn(skc6,U,V).
+	Given clause: 347[0:MRR:335.0,337.0] || equal(Place(U,V),Place(W,V))*+ equal(Place(U,X),Place(W,X))* BoxWithLid(W,X,V)* -> BoxWithLid(U,X,V)*.
+	Given clause: 421[0:MRR:418.1,45.0] || equal(Place(skc5,skf3(U,skc6)),Place(U,skf3(U,skc6)))*+ -> equal(V,Agent) SkP5(W,V,skc6,U)*.
+	Given clause: 455[0:EqR:421.0] ||  -> equal(U,Agent) SkP5(V,U,skc6,skc5)*.
+	Given clause: 200[0:MRR:171.3,1.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> equal(Place(W,skc7),Place(V,skc7)).
+	Given clause: 322[0:MRR:133.0,303.0] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(skc4))*+ -> equal(W,Agent) equal(Place(V,W),Place(U,W))*.
+	Given clause: 345[0:MRR:325.0,337.0] || equal(Place(U,V),Place(W,V))*+ equal(Place(U,X),Place(W,X))* CContained(W,X,Singleton(V))* -> CContained(U,X,Singleton(V))*.
+	Given clause: 364[0:Res:301.1,130.0] || SafelyMovesWith(U,skf2(MovingGroup(U,V),W),V)*+ Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+	Given clause: 467[0:Res:82.1,364.0] || equal(skf2(MovingGroup(U,V),W),V) Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+	Given clause: 469[0:Res:93.1,364.0] || BoxWithLid(U,V,skf2(MovingGroup(U,V),W))*+ Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+	Given clause: 468[0:Res:92.1,364.0] || BoxedIn(U,skf2(MovingGroup(U,V),W),V)*+ Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+	Given clause: 408[0:SSi:406.1,339.0] ObjectSet(U) ||  -> equal(MovingGroup(V,W),U) Element(skf2(U,MovingGroup(V,W)),U)* SafelyMovesWith(V,skf2(U,MovingGroup(V,W)),W)*.
+	Given clause: 409[0:SSi:402.0,339.0] ObjectSet(U) ||  -> equal(U,MovingGroup(V,W)) Element(skf2(MovingGroup(V,W),U),U)* SafelyMovesWith(V,skf2(MovingGroup(V,W),U),W)*.
+	Given clause: 193[0:Res:114.3,77.0] || SafelyMovesWith(U,MovingGroup(skc5,skc7),MovingGroup(skc6,skc7))* -> BoxWithLid(U,MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) BoxedIn(U,MovingGroup(skc5,skc7),MovingGroup(skc6,skc7)).
+	Given clause: 190[0:Res:114.3,77.0] || SafelyMovesWith(U,MovingGroup(skc6,skc7),MovingGroup(skc5,skc7))* -> BoxWithLid(U,MovingGroup(skc5,skc7),MovingGroup(skc6,skc7)) BoxedIn(U,MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+	Given clause: 440[0:SpL:252.0,341.0] || equal(Place(U,skc7),Place(skc5,skc7))+ equal(Place(U,V),Place(skc6,V)) UContained(skc6,V,skc7)* -> UContained(U,V,skc7)*.
+	Given clause: 453[0:MRR:452.3,96.0] || equal(Place(U,V),Place(skc5,V))+ equal(Place(U,W),Place(skc6,W)) BoxWithLid(skc6,W,V)* -> BoxWithLid(U,W,V)*.
+	Given clause: 494[0:EqR:440.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc6,U,skc7)* -> UContained(skc5,U,skc7).
+	Given clause: 497[0:EqR:453.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc6,U,V)* -> BoxWithLid(skc5,U,V).
+	Given clause: 438[0:SpL:252.0,341.0] || equal(Place(skc5,skc7),Place(U,skc7))+ equal(Place(skc6,V),Place(U,V)) UContained(U,V,skc7)* -> UContained(skc6,V,skc7)*.
+	Given clause: 501[0:EqR:438.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc5,U,skc7) -> UContained(skc6,U,skc7)*.
+	Given clause: 454[0:MRR:450.3,96.0] || equal(Place(skc5,U),Place(V,U))+ equal(Place(skc6,W),Place(V,W)) BoxWithLid(V,W,U)* -> BoxWithLid(skc6,W,U)*.
+	Given clause: 505[0:Res:501.2,90.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc5,U,skc7)* -> BoxedIn(skc6,U,skc7).
+	Given clause: 506[0:EqR:454.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc5,U,V) -> BoxWithLid(skc6,U,V)*.
+	Given clause: 473[0:SSi:472.0,339.0] ObjectSet(U) || equal(skf2(MovingGroup(V,W),U),W) -> Element(skf2(MovingGroup(V,W),U),MovingGroup(V,W))* equal(U,MovingGroup(V,W)).
+	Given clause: 465[0:SpL:252.0,345.0] || equal(Place(U,skc7),Place(skc5,skc7))+ equal(Place(U,V),Place(skc6,V)) CContained(skc6,V,Singleton(skc7))* -> CContained(U,V,Singleton(skc7))*.
+	Given clause: 480[0:SSi:475.0,339.0] ||  -> equal(MovingGroup(U,V),MovingGroup(W,X)) SafelyMovesWith(U,skf2(MovingGroup(W,X),MovingGroup(U,V)),V)* SafelyMovesWith(W,skf2(MovingGroup(W,X),MovingGroup(U,V)),X)*.
+	Given clause: 519[0:EqR:465.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc6,U,Singleton(skc7))* -> CContained(skc5,U,Singleton(skc7)).
+	Given clause: 527[0:Res:115.3,519.1] || BoxedIn(skc6,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc6,U,skc7) UContained(skc6,U,skc7) CContained(skc5,U,Singleton(skc7))*.
+	Given clause: 530[0:Res:527.4,111.0] || BoxedIn(skc6,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc6,U,skc7)* UContained(skc6,U,skc7) BoxedIn(skc5,U,skc7).
+	Given clause: 536[0:MRR:535.3,91.0] || BoxedIn(skc6,skc7,skc7) -> UContained(skc6,skc7,skc7)* BoxedIn(skc5,skc7,skc7).
+	Given clause: 441[0:SpL:319.1,341.0] || equal(Place(U,V),Place(skc5,V))+ equal(Place(U,W),Place(skc6,W)) UContained(skc6,W,V)* -> equal(V,Agent) UContained(U,W,V)*.
+	Given clause: 544[0:MRR:543.2,90.0] || BoxedIn(skc6,skc7,skc7)* -> BoxedIn(skc5,skc7,skc7).
+	Given clause: 539[0:MRR:538.4,91.0] || BoxedIn(skc6,U,skc7) -> UContained(skc6,U,skc7)* BoxedIn(skc5,U,skc7) equal(U,Agent).
+	Given clause: 552[0:MRR:551.3,90.0] || BoxedIn(skc6,U,skc7)* -> BoxedIn(skc5,U,skc7) equal(U,Agent).
+	Given clause: 545[0:EqR:441.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc6,U,V)* -> equal(V,Agent) UContained(skc5,U,V).
+	Given clause: 439[0:SpL:319.1,341.0] || equal(Place(skc5,U),Place(V,U))+ equal(Place(skc6,W),Place(V,W)) UContained(V,W,U)* -> equal(U,Agent) UContained(skc6,W,U)*.
+	Given clause: 554[0:EqR:439.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc5,U,V) -> equal(V,Agent) UContained(skc6,U,V)*.
+	Given clause: 558[0:Res:554.3,90.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc5,U,V)* -> equal(V,Agent) BoxedIn(skc6,U,V).
+	Given clause: 463[0:SpL:252.0,345.0] || equal(Place(skc5,skc7),Place(U,skc7))+ equal(Place(skc6,V),Place(U,V)) CContained(U,V,Singleton(skc7))* -> CContained(skc6,V,Singleton(skc7))*.
+	Given clause: 560[0:EqR:463.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc5,U,Singleton(skc7)) -> CContained(skc6,U,Singleton(skc7))*.
+	Given clause: 466[0:SpL:319.1,345.0] || equal(Place(U,V),Place(skc5,V))+ equal(Place(U,W),Place(skc6,W)) CContained(skc6,W,Singleton(V))* -> equal(V,Agent) CContained(U,W,Singleton(V))*.
+	Given clause: 565[0:Res:560.2,111.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc5,U,Singleton(skc7))* -> BoxedIn(skc6,U,skc7).
+	Given clause: 571[0:MRR:570.3,505.1] || BoxedIn(skc5,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc5,U,skc7)* BoxedIn(skc6,U,skc7).
+	Given clause: 578[0:Obv:577.1] || BoxedIn(skc5,skc7,skc7) -> BoxedIn(skc6,skc7,skc7)*.
+	Given clause: 581[0:Obv:580.1] || BoxedIn(skc5,U,skc7) -> equal(U,Agent) BoxedIn(skc6,U,skc7)*.
+	Given clause: 464[0:SpL:319.1,345.0] || equal(Place(skc5,U),Place(V,U))+ equal(Place(skc6,W),Place(V,W)) CContained(V,W,Singleton(U))* -> equal(U,Agent) CContained(skc6,W,Singleton(U))*.
+	Given clause: 566[0:EqR:466.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc6,U,Singleton(V))* -> equal(V,Agent) CContained(skc5,U,Singleton(V)).
+	Given clause: 589[0:EqR:464.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc5,U,Singleton(V)) -> equal(V,Agent) CContained(skc6,U,Singleton(V))*.
+	Given clause: 597[0:Res:589.3,111.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc5,U,Singleton(V))* -> equal(V,Agent) BoxedIn(skc6,U,V).
+	Given clause: 600[0:MRR:599.3,558.1] || BoxedIn(skc5,U,V) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc5,U,V)* equal(V,Agent) BoxedIn(skc6,U,V).
+	Given clause: 478[0:Res:408.3,114.0] ObjectSet(U) ||  -> equal(MovingGroup(V,W),U) Element(skf2(U,MovingGroup(V,W)),U)* equal(skf2(U,MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(U,MovingGroup(V,W)))* BoxedIn(V,skf2(U,MovingGroup(V,W)),W).
+	Given clause: 607[0:Obv:606.1] || BoxedIn(skc5,skc7,U) -> equal(U,Agent) BoxedIn(skc6,skc7,U)*.
+	Given clause: 610[0:Obv:609.1] || BoxedIn(skc5,U,V) -> equal(V,Agent) equal(U,Agent) BoxedIn(skc6,U,V)*.
+	Given clause: 470[0:Res:301.1,467.1] || SafelyMovesWith(U,skf2(MovingGroup(V,W),MovingGroup(U,X)),X)* equal(skf2(MovingGroup(V,W),MovingGroup(U,X)),W) -> equal(MovingGroup(U,X),MovingGroup(V,W)).
+	Given clause: 626[0:Res:82.1,470.0] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X)**+ equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V)** -> equal(MovingGroup(W,X),MovingGroup(U,V)).
+	Given clause: 485[0:Res:409.3,114.0] ObjectSet(U) ||  -> equal(U,MovingGroup(V,W)) Element(skf2(MovingGroup(V,W),U),U)* equal(skf2(MovingGroup(V,W),U),W) BoxWithLid(V,W,skf2(MovingGroup(V,W),U))* BoxedIn(V,skf2(MovingGroup(V,W),U),W).
+	Given clause: 628[0:Res:93.1,470.0] || BoxWithLid(U,V,skf2(MovingGroup(W,X),MovingGroup(U,V)))* equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),X) -> equal(MovingGroup(U,V),MovingGroup(W,X)).
+	Given clause: 627[0:Res:92.1,470.0] || BoxedIn(U,skf2(MovingGroup(V,W),MovingGroup(U,X)),X)* equal(skf2(MovingGroup(V,W),MovingGroup(U,X)),W) -> equal(MovingGroup(U,X),MovingGroup(V,W)).
+	Given clause: 633[0:SSi:632.0,339.0] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) -> Element(skf2(MovingGroup(U,V),MovingGroup(W,X)),MovingGroup(U,V))* equal(MovingGroup(W,X),MovingGroup(U,V)).
+	Given clause: 586[0:Res:581.2,468.0] || BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),U),skc7)*+ Element(skf2(MovingGroup(skc6,skc7),U),U)* -> equal(skf2(MovingGroup(skc6,skc7),U),Agent) equal(U,MovingGroup(skc6,skc7)).
+	Given clause: 616[0:Res:478.4,95.1] ObjectSet(U) || equal(V,Agent)+ -> equal(MovingGroup(W,V),U) Element(skf2(U,MovingGroup(W,V)),U)* equal(skf2(U,MovingGroup(W,V)),V) BoxedIn(W,skf2(U,MovingGroup(W,V)),V)*.
+	Given clause: 593[0:Res:115.3,566.1] || BoxedIn(skc6,U,V) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc6,U,V) UContained(skc6,U,V) equal(V,Agent) CContained(skc5,U,Singleton(V))*.
+	Given clause: 657[0:Res:593.5,111.0] || BoxedIn(skc6,U,V) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc6,U,V)* UContained(skc6,U,V) equal(V,Agent) BoxedIn(skc5,U,V).
+	Given clause: 663[0:MRR:662.4,91.0] || BoxedIn(skc6,skc7,U) -> UContained(skc6,skc7,U)* equal(U,Agent) BoxedIn(skc5,skc7,U).
+	Given clause: 673[0:MRR:672.3,90.0] || BoxedIn(skc6,skc7,U)* -> BoxedIn(skc5,skc7,U) equal(U,Agent).
+	Given clause: 639[0:Res:485.4,95.1] ObjectSet(U) || equal(V,Agent)+ -> equal(U,MovingGroup(W,V)) Element(skf2(MovingGroup(W,V),U),U)* equal(skf2(MovingGroup(W,V),U),V) BoxedIn(W,skf2(MovingGroup(W,V),U),V)*.
+	Given clause: 666[0:MRR:665.5,91.0] || BoxedIn(skc6,U,V) -> UContained(skc6,U,V)* equal(V,Agent) BoxedIn(skc5,U,V) equal(U,Agent).
+	Given clause: 685[0:MRR:684.4,90.0] || BoxedIn(skc6,U,V)* -> BoxedIn(skc5,U,V) equal(U,Agent) equal(V,Agent).
+	Given clause: 512[0:Res:506.2,469.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),V))*+ Element(skf2(MovingGroup(skc6,U),V),V)* -> equal(V,MovingGroup(skc6,U)).
+	Given clause: 652[0:EqR:616.1] ObjectSet(U) ||  -> equal(MovingGroup(V,Agent),U) Element(skf2(U,MovingGroup(V,Agent)),U)* equal(skf2(U,MovingGroup(V,Agent)),Agent) BoxedIn(V,skf2(U,MovingGroup(V,Agent)),Agent)*.
+	Given clause: 615[0:Res:478.4,96.1] ObjectSet(U) || equal(skf2(U,MovingGroup(V,W)),Agent)+ -> equal(MovingGroup(V,W),U) Element(skf2(U,MovingGroup(V,W)),U)* equal(skf2(U,MovingGroup(V,W)),W) BoxedIn(V,skf2(U,MovingGroup(V,W)),W)*.
+	Given clause: 678[0:EqR:639.1] ObjectSet(U) ||  -> equal(U,MovingGroup(V,Agent)) Element(skf2(MovingGroup(V,Agent),U),U)* equal(skf2(MovingGroup(V,Agent),U),Agent) BoxedIn(V,skf2(MovingGroup(V,Agent),U),Agent)*.
+	Given clause: 623[0:Res:610.3,468.0] || BoxedIn(skc5,skf2(MovingGroup(skc6,U),V),U)*+ Element(skf2(MovingGroup(skc6,U),V),V)* -> equal(U,Agent) equal(skf2(MovingGroup(skc6,U),V),Agent) equal(V,MovingGroup(skc6,U)).
+	Given clause: 696[0:Obv:692.2] ObjectSet(U) || Element(skf2(U,MovingGroup(V,Agent)),MovingGroup(V,Agent))* -> equal(skf2(U,MovingGroup(V,Agent)),Agent) BoxedIn(V,skf2(U,MovingGroup(V,Agent)),Agent) equal(MovingGroup(V,Agent),U).
+	Given clause: 706[0:Res:301.1,696.1] ObjectSet(U) || SafelyMovesWith(V,skf2(U,MovingGroup(V,Agent)),Agent)* -> equal(skf2(U,MovingGroup(V,Agent)),Agent) BoxedIn(V,skf2(U,MovingGroup(V,Agent)),Agent) equal(MovingGroup(V,Agent),U).
+	Given clause: 638[0:Res:485.4,96.1] ObjectSet(U) || equal(skf2(MovingGroup(V,W),U),Agent)+ -> equal(U,MovingGroup(V,W)) Element(skf2(MovingGroup(V,W),U),U)* equal(skf2(MovingGroup(V,W),U),W) BoxedIn(V,skf2(MovingGroup(V,W),U),W)*.
+	Given clause: 727[0:MRR:724.2,96.0] ObjectSet(U) || BoxWithLid(V,Agent,skf2(U,MovingGroup(V,Agent)))* -> BoxedIn(V,skf2(U,MovingGroup(V,Agent)),Agent) equal(MovingGroup(V,Agent),U).
+	Given clause: 731[0:Res:506.2,727.1] ObjectSet(U) || equal(Place(skc6,Agent),Place(skc5,Agent)) BoxWithLid(skc5,Agent,skf2(U,MovingGroup(skc6,Agent)))* -> BoxedIn(skc6,skf2(U,MovingGroup(skc6,Agent)),Agent) equal(MovingGroup(skc6,Agent),U).
+	Given clause: 719[0:SSi:718.1,718.0,339.0,339.0] ||  -> BoxedIn(U,skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent)* equal(skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent) BoxedIn(V,skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent)* equal(MovingGroup(V,Agent),MovingGroup(U,Agent)).
+	Given clause: 739[0:MRR:738.1,467.0] || Element(skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),MovingGroup(V,Agent))* -> BoxedIn(V,skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent) equal(MovingGroup(V,Agent),MovingGroup(U,Agent)).
+	Given clause: 618[0:Obv:613.2] ObjectSet(U) || Element(skf2(U,MovingGroup(V,W)),MovingGroup(V,W))* -> equal(skf2(U,MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(U,MovingGroup(V,W))) BoxedIn(V,skf2(U,MovingGroup(V,W)),W) equal(MovingGroup(V,W),U).
+	Given clause: 751[0:SSi:750.0,339.0] ||  -> SafelyMovesWith(U,skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent)* BoxedIn(V,skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent)* equal(MovingGroup(V,Agent),MovingGroup(U,Agent)).
+	Given clause: 740[0:Res:301.1,739.0] || SafelyMovesWith(U,skf2(MovingGroup(V,Agent),MovingGroup(U,Agent)),Agent)* -> BoxedIn(U,skf2(MovingGroup(V,Agent),MovingGroup(U,Agent)),Agent) equal(MovingGroup(U,Agent),MovingGroup(V,Agent)).
+	Given clause: 785[0:MRR:779.1,627.0] || equal(skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent)** -> equal(MovingGroup(V,Agent),MovingGroup(U,Agent)).
+	Given clause: 753[0:SSi:752.1,752.0,339.0,339.0] ||  -> Element(skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),MovingGroup(U,Agent))* BoxedIn(V,skf2(MovingGroup(U,Agent),MovingGroup(V,Agent)),Agent)* equal(MovingGroup(V,Agent),MovingGroup(U,Agent)).
+	Given clause: 524[0:Res:480.2,114.0] ||  -> equal(MovingGroup(U,V),MovingGroup(W,X)) SafelyMovesWith(U,skf2(MovingGroup(W,X),MovingGroup(U,V)),V)* equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),X) BoxWithLid(W,X,skf2(MovingGroup(W,X),MovingGroup(U,V)))* BoxedIn(W,skf2(MovingGroup(W,X),MovingGroup(U,V)),X).
+	Given clause: 781[0:Res:93.1,740.0] || BoxWithLid(U,Agent,skf2(MovingGroup(V,Agent),MovingGroup(U,Agent)))* -> BoxedIn(U,skf2(MovingGroup(V,Agent),MovingGroup(U,Agent)),Agent) equal(MovingGroup(U,Agent),MovingGroup(V,Agent)).
+	Given clause: 811[0:Res:506.2,781.0] || equal(Place(skc6,Agent),Place(skc5,Agent)) BoxWithLid(skc5,Agent,skf2(MovingGroup(U,Agent),MovingGroup(skc6,Agent)))* -> BoxedIn(skc6,skf2(MovingGroup(U,Agent),MovingGroup(skc6,Agent)),Agent) equal(MovingGroup(skc6,Agent),MovingGroup(U,Agent)).
+	Given clause: 643[0:Res:506.2,628.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc5,U,skf2(MovingGroup(V,W),MovingGroup(skc6,U)))* equal(skf2(MovingGroup(V,W),MovingGroup(skc6,U)),W) -> equal(MovingGroup(skc6,U),MovingGroup(V,W)).
+	Given clause: 697[0:SSi:691.0,339.0] ||  -> equal(MovingGroup(U,Agent),MovingGroup(V,W)) equal(skf2(MovingGroup(V,W),MovingGroup(U,Agent)),Agent) BoxedIn(U,skf2(MovingGroup(V,W),MovingGroup(U,Agent)),Agent)* SafelyMovesWith(V,skf2(MovingGroup(V,W),MovingGroup(U,Agent)),W)*.
+	Given clause: 523[0:Res:480.1,114.0] ||  -> equal(MovingGroup(U,V),MovingGroup(W,X)) SafelyMovesWith(W,skf2(MovingGroup(W,X),MovingGroup(U,V)),X)* equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),V) BoxWithLid(U,V,skf2(MovingGroup(W,X),MovingGroup(U,V)))* BoxedIn(U,skf2(MovingGroup(W,X),MovingGroup(U,V)),V).
+	Given clause: 705[0:SSi:700.0,339.0] ||  -> equal(MovingGroup(U,V),MovingGroup(W,Agent)) equal(skf2(MovingGroup(W,Agent),MovingGroup(U,V)),Agent) BoxedIn(W,skf2(MovingGroup(W,Agent),MovingGroup(U,V)),Agent)* SafelyMovesWith(U,skf2(MovingGroup(W,Agent),MovingGroup(U,V)),V)*.
+	Given clause: 646[0:Res:581.2,627.0] || BoxedIn(skc5,skf2(MovingGroup(U,V),MovingGroup(skc6,skc7)),skc7)* equal(skf2(MovingGroup(U,V),MovingGroup(skc6,skc7)),V) -> equal(skf2(MovingGroup(U,V),MovingGroup(skc6,skc7)),Agent) equal(MovingGroup(skc6,skc7),MovingGroup(U,V)).
+	Given clause: 820[0:Obv:815.1] || Element(skf2(MovingGroup(U,V),MovingGroup(W,Agent)),MovingGroup(W,Agent))* -> equal(skf2(MovingGroup(U,V),MovingGroup(W,Agent)),Agent) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,Agent)),Agent) equal(MovingGroup(W,Agent),MovingGroup(U,V)).
+	Given clause: 845[0:Res:301.1,820.0] || SafelyMovesWith(U,skf2(MovingGroup(V,W),MovingGroup(U,Agent)),Agent)* -> equal(skf2(MovingGroup(V,W),MovingGroup(U,Agent)),Agent) BoxedIn(U,skf2(MovingGroup(V,W),MovingGroup(U,Agent)),Agent) equal(MovingGroup(U,Agent),MovingGroup(V,W)).
+	Given clause: 804[0:Res:524.3,95.1] || equal(U,Agent)+ -> equal(MovingGroup(V,W),MovingGroup(X,U)) SafelyMovesWith(V,skf2(MovingGroup(X,U),MovingGroup(V,W)),W)* equal(skf2(MovingGroup(X,U),MovingGroup(V,W)),U) BoxedIn(X,skf2(MovingGroup(X,U),MovingGroup(V,W)),U)*.
+	Given clause: 870[0:MRR:862.1,96.0] || BoxWithLid(U,Agent,skf2(MovingGroup(V,W),MovingGroup(U,Agent)))* -> BoxedIn(U,skf2(MovingGroup(V,W),MovingGroup(U,Agent)),Agent) equal(MovingGroup(U,Agent),MovingGroup(V,W)).
+	Given clause: 878[0:Res:506.2,870.0] || equal(Place(skc6,Agent),Place(skc5,Agent)) BoxWithLid(skc5,Agent,skf2(MovingGroup(U,V),MovingGroup(skc6,Agent)))* -> BoxedIn(skc6,skf2(MovingGroup(U,V),MovingGroup(skc6,Agent)),Agent) equal(MovingGroup(skc6,Agent),MovingGroup(U,V)).
+	Given clause: 645[0:Res:610.3,627.0] || BoxedIn(skc5,skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W)* equal(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),V) -> equal(W,Agent) equal(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),Agent) equal(MovingGroup(skc6,W),MovingGroup(U,V)).
+	Given clause: 827[0:Res:523.3,95.1] || equal(U,Agent)+ -> equal(MovingGroup(V,U),MovingGroup(W,X)) SafelyMovesWith(W,skf2(MovingGroup(W,X),MovingGroup(V,U)),X)* equal(skf2(MovingGroup(W,X),MovingGroup(V,U)),U) BoxedIn(V,skf2(MovingGroup(W,X),MovingGroup(V,U)),U)*.
+	Given clause: 617[0:Res:478.4,497.1] ObjectSet(U) || equal(Place(skc6,V),Place(skc5,V))+ -> equal(MovingGroup(skc6,V),U) Element(skf2(U,MovingGroup(skc6,V)),U)* equal(skf2(U,MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(U,MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(U,MovingGroup(skc6,V)))*.
+	Given clause: 886[0:MRR:885.1,616.1] ObjectSet(U) ||  -> equal(MovingGroup(skc6,V),U) Element(skf2(U,MovingGroup(skc6,V)),U)* equal(skf2(U,MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(U,MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(U,MovingGroup(skc6,V)))*.
+	Given clause: 899[0:Obv:889.2] ObjectSet(U) || Element(skf2(U,MovingGroup(skc6,V)),MovingGroup(skc6,V))* -> equal(skf2(U,MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(U,MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(U,MovingGroup(skc6,V))) equal(MovingGroup(skc6,V),U).
+	Given clause: 903[0:Res:301.1,899.1] ObjectSet(U) || SafelyMovesWith(skc6,skf2(U,MovingGroup(skc6,V)),V)* -> equal(skf2(U,MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(U,MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(U,MovingGroup(skc6,V))) equal(MovingGroup(skc6,V),U).
+	Given clause: 923[0:Res:93.1,903.1] ObjectSet(U) || BoxWithLid(skc6,V,skf2(U,MovingGroup(skc6,V)))* -> equal(skf2(U,MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(U,MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(U,MovingGroup(skc6,V))) equal(MovingGroup(skc6,V),U).
+	Given clause: 641[0:Res:485.4,497.1] ObjectSet(U) || equal(Place(skc6,V),Place(skc5,V))+ -> equal(U,MovingGroup(skc6,V)) Element(skf2(MovingGroup(skc6,V),U),U)* equal(skf2(MovingGroup(skc6,V),U),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),U),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),U))*.
+	Given clause: 944[0:MRR:943.1,639.1] ObjectSet(U) ||  -> equal(U,MovingGroup(skc6,V)) Element(skf2(MovingGroup(skc6,V),U),U)* equal(skf2(MovingGroup(skc6,V),U),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),U),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),U))*.
+	Given clause: 900[0:SSi:888.0,339.0] ||  -> equal(MovingGroup(skc6,U),MovingGroup(V,W)) equal(skf2(MovingGroup(V,W),MovingGroup(skc6,U)),U) BoxedIn(skc6,skf2(MovingGroup(V,W),MovingGroup(skc6,U)),U) BoxWithLid(skc5,U,skf2(MovingGroup(V,W),MovingGroup(skc6,U)))* SafelyMovesWith(V,skf2(MovingGroup(V,W),MovingGroup(skc6,U)),W)*.
+	Given clause: 957[0:SSi:946.0,339.0] ||  -> equal(MovingGroup(U,V),MovingGroup(skc6,W)) equal(skf2(MovingGroup(skc6,W),MovingGroup(U,V)),W) BoxedIn(skc6,skf2(MovingGroup(skc6,W),MovingGroup(U,V)),W) BoxWithLid(skc5,W,skf2(MovingGroup(skc6,W),MovingGroup(U,V)))* SafelyMovesWith(U,skf2(MovingGroup(skc6,W),MovingGroup(U,V)),V)*.
+	Given clause: 803[0:Res:524.3,96.1] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),Agent)+ -> equal(MovingGroup(W,X),MovingGroup(U,V)) SafelyMovesWith(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X)* equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V)*.
+	Given clause: 826[0:Res:523.3,96.1] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),Agent)+ -> equal(MovingGroup(W,X),MovingGroup(U,V)) SafelyMovesWith(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V)* equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X)*.
+	Given clause: 976[0:Obv:970.1] || Element(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),MovingGroup(skc6,W))* -> equal(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W) BoxedIn(skc6,skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W) BoxWithLid(skc5,W,skf2(MovingGroup(U,V),MovingGroup(skc6,W))) equal(MovingGroup(skc6,W),MovingGroup(U,V)).
+	Given clause: 993[0:Res:301.1,976.0] || SafelyMovesWith(skc6,skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W)* -> equal(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W) BoxedIn(skc6,skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W) BoxWithLid(skc5,W,skf2(MovingGroup(U,V),MovingGroup(skc6,W))) equal(MovingGroup(skc6,W),MovingGroup(U,V)).
+	Given clause: 1013[0:Res:93.1,993.0] || BoxWithLid(skc6,U,skf2(MovingGroup(V,W),MovingGroup(skc6,U)))* -> equal(skf2(MovingGroup(V,W),MovingGroup(skc6,U)),U) BoxedIn(skc6,skf2(MovingGroup(V,W),MovingGroup(skc6,U)),U) BoxWithLid(skc5,U,skf2(MovingGroup(V,W),MovingGroup(skc6,U))) equal(MovingGroup(skc6,U),MovingGroup(V,W)).
+	Given clause: 834[0:Obv:822.1] || Element(skf2(MovingGroup(U,V),MovingGroup(W,X)),MovingGroup(W,X))* -> equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxWithLid(W,X,skf2(MovingGroup(U,V),MovingGroup(W,X))) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X) equal(MovingGroup(W,X),MovingGroup(U,V)).
+	Given clause: 771[0:SSi:770.1,770.0,339.0,339.0] ||  -> equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) BoxWithLid(U,V,skf2(MovingGroup(U,V),MovingGroup(W,X)))* BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V) equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxWithLid(W,X,skf2(MovingGroup(U,V),MovingGroup(W,X)))* BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X) equal(MovingGroup(W,X),MovingGroup(U,V)).
+	Given clause: 918[0:SSi:917.1,917.0,339.0,339.0,251.0] ||  -> equal(skf2(MovingGroup(U,Agent),MovingGroup(skc6,V)),Agent) BoxedIn(U,skf2(MovingGroup(U,Agent),MovingGroup(skc6,V)),Agent)* equal(skf2(MovingGroup(U,Agent),MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(MovingGroup(U,Agent),MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(MovingGroup(U,Agent),MovingGroup(skc6,V)))* equal(MovingGroup(skc6,V),MovingGroup(U,Agent)).
+	Given clause: 1072[0:Res:918.4,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(V,Agent),MovingGroup(skc6,U)),Agent) BoxedIn(V,skf2(MovingGroup(V,Agent),MovingGroup(skc6,U)),Agent)* equal(skf2(MovingGroup(V,Agent),MovingGroup(skc6,U)),U) BoxedIn(skc6,skf2(MovingGroup(V,Agent),MovingGroup(skc6,U)),U)* equal(MovingGroup(skc6,U),MovingGroup(V,Agent)).
+	Given clause: 960[0:SSi:959.0,339.0] ||  -> equal(skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)))* equal(skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),Agent) BoxedIn(V,skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),Agent)* equal(MovingGroup(V,Agent),MovingGroup(skc6,U)).
+	Given clause: 1085[0:Res:960.2,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),U)* equal(skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),Agent) BoxedIn(V,skf2(MovingGroup(skc6,U),MovingGroup(V,Agent)),Agent)* equal(MovingGroup(V,Agent),MovingGroup(skc6,U)).
+	Given clause: 769[0:SSi:768.1,768.0,339.0,339.0] ||  -> equal(skf2(MovingGroup(U,Agent),MovingGroup(V,W)),Agent) BoxedIn(U,skf2(MovingGroup(U,Agent),MovingGroup(V,W)),Agent)* equal(skf2(MovingGroup(U,Agent),MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(MovingGroup(U,Agent),MovingGroup(V,W)))* BoxedIn(V,skf2(MovingGroup(U,Agent),MovingGroup(V,W)),W) equal(MovingGroup(V,W),MovingGroup(U,Agent)).
+	Given clause: 1101[0:Res:769.3,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(V,Agent),MovingGroup(W,U)),Agent) BoxedIn(V,skf2(MovingGroup(V,Agent),MovingGroup(W,U)),Agent)* equal(skf2(MovingGroup(V,Agent),MovingGroup(W,U)),U) BoxedIn(W,skf2(MovingGroup(V,Agent),MovingGroup(W,U)),U)* equal(MovingGroup(W,U),MovingGroup(V,Agent)).
+	Given clause: 721[0:SSi:720.1,720.0,339.0,339.0] ||  -> equal(skf2(MovingGroup(U,V),MovingGroup(W,Agent)),V) BoxWithLid(U,V,skf2(MovingGroup(U,V),MovingGroup(W,Agent)))* BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,Agent)),V) equal(skf2(MovingGroup(U,V),MovingGroup(W,Agent)),Agent) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,Agent)),Agent)* equal(MovingGroup(W,Agent),MovingGroup(U,V)).
+	Given clause: 1119[0:Res:721.1,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(V,U),MovingGroup(W,Agent)),U) BoxedIn(V,skf2(MovingGroup(V,U),MovingGroup(W,Agent)),U)* equal(skf2(MovingGroup(V,U),MovingGroup(W,Agent)),Agent) BoxedIn(W,skf2(MovingGroup(V,U),MovingGroup(W,Agent)),Agent)* equal(MovingGroup(W,Agent),MovingGroup(V,U)).
+	Given clause: 1064[0:MRR:1056.2,96.1] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),Agent)+ -> equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V)* equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X)* equal(MovingGroup(W,X),MovingGroup(U,V)).
+	Given clause: 1057[0:Res:771.4,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(V,W),MovingGroup(X,U)),W) BoxWithLid(V,W,skf2(MovingGroup(V,W),MovingGroup(X,U)))* BoxedIn(V,skf2(MovingGroup(V,W),MovingGroup(X,U)),W) equal(skf2(MovingGroup(V,W),MovingGroup(X,U)),U) BoxedIn(X,skf2(MovingGroup(V,W),MovingGroup(X,U)),U)* equal(MovingGroup(X,U),MovingGroup(V,W)).
+	Given clause: 1053[0:Res:771.1,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(V,U),MovingGroup(W,X)),U) BoxedIn(V,skf2(MovingGroup(V,U),MovingGroup(W,X)),U)* equal(skf2(MovingGroup(V,U),MovingGroup(W,X)),X) BoxWithLid(W,X,skf2(MovingGroup(V,U),MovingGroup(W,X)))* BoxedIn(W,skf2(MovingGroup(V,U),MovingGroup(W,X)),X) equal(MovingGroup(W,X),MovingGroup(V,U)).
+	Given clause: 963[0:SSi:962.1,962.0,339.0,251.0,339.0,251.0] ||  -> equal(skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)))* equal(skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)))* equal(MovingGroup(skc6,V),MovingGroup(skc6,U)).
+	Given clause: 1143[0:Res:963.5,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(skc6,V),MovingGroup(skc6,U)),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),MovingGroup(skc6,U)),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),MovingGroup(skc6,U)))* equal(skf2(MovingGroup(skc6,V),MovingGroup(skc6,U)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,V),MovingGroup(skc6,U)),U)* equal(MovingGroup(skc6,U),MovingGroup(skc6,V)).
+	Given clause: 1140[0:Res:963.2,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),U)* equal(skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),V) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,U),MovingGroup(skc6,V)))* equal(MovingGroup(skc6,V),MovingGroup(skc6,U)).
+	Given clause: 965[0:SSi:964.1,964.0,339.0,251.0,339.0] ||  -> equal(skf2(MovingGroup(skc6,U),MovingGroup(V,W)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(V,W)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(V,W)))* equal(skf2(MovingGroup(skc6,U),MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(MovingGroup(skc6,U),MovingGroup(V,W)))* BoxedIn(V,skf2(MovingGroup(skc6,U),MovingGroup(V,W)),W) equal(MovingGroup(V,W),MovingGroup(skc6,U)).
+	Given clause: 1165[0:Obv:1152.0] ||  -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)))* BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1180[0:MRR:1179.2,1179.3,468.0,467.0] || equal(Place(skc6,U),Place(skc5,U)) Element(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),MovingGroup(skc5,U))* -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1187[0:SSi:1186.0,339.0,2.0,3.0] || equal(Place(skc6,U),Place(skc5,U)) -> SafelyMovesWith(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1181[0:Res:301.1,1180.1] || SafelyMovesWith(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1157[0:Res:965.4,95.1] || equal(U,Agent)+ -> equal(skf2(MovingGroup(skc6,V),MovingGroup(W,U)),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),MovingGroup(W,U)),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),MovingGroup(W,U)))* equal(skf2(MovingGroup(skc6,V),MovingGroup(W,U)),U) BoxedIn(W,skf2(MovingGroup(skc6,V),MovingGroup(W,U)),U)* equal(MovingGroup(W,U),MovingGroup(skc6,V)).
+	Given clause: 1201[0:MRR:1195.2,627.0] || equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)** equal(Place(skc6,U),Place(skc5,U)) -> equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1197[0:Res:93.1,1181.0] || BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)))* equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1210[0:MRR:1209.2,1201.0] || equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+	Given clause: 1219[0:MRR:1218.0,77.0] ||  -> BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+	Given clause: 920[0:SSi:919.1,919.0,339.0,339.0,251.0] ||  -> equal(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),V) BoxWithLid(U,V,skf2(MovingGroup(U,V),MovingGroup(skc6,W)))* BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(skc6,W)),V) equal(skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W) BoxedIn(skc6,skf2(MovingGroup(U,V),MovingGroup(skc6,W)),W) BoxWithLid(skc5,W,skf2(MovingGroup(U,V),MovingGroup(skc6,W)))* equal(MovingGroup(skc6,W),MovingGroup(U,V)).
+	Given clause: 1227[0:MRR:1224.2,77.0] || equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)** -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+	Given clause: 1229[0:MRR:1228.2,77.0] || Element(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),MovingGroup(skc5,skc7))* -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+	Given clause: 1255[0:MRR:1254.0,77.0] ||  -> SafelyMovesWith(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+	Given clause: 1260[2:Spt:1255.1] ||  -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent)**.
+	Given clause: 1366[2:Spt:1363.0,1255.0] ||  -> SafelyMovesWith(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)*.
+	Given clause: 195[0:MRR:185.2,8.0] || SafelyMovesWith(skc5,Agent,skc7)* -> BoxWithLid(skc5,skc7,Agent).
+	Given clause: 1365[2:Spt:1363.0,1255.1,1260.0] || equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent)** -> .
+	Given clause: 1367[2:MRR:1219.1,1365.0] ||  -> BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)*.
+	Given clause: 1368[2:MRR:1227.1,1365.0] || equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)** -> .
+	Given clause: 1369[2:MRR:1250.1,1365.0] || SafelyMovesWith(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* -> .
+SPASS V 3.7 
+SPASS beiseite: Proof found.
+Problem: p.dfg 
+SPASS derived 903 clauses, backtracked 17 clauses, performed 2 splits and kept 478 clauses.
+SPASS allocated 53393 KBytes.
+SPASS spent	0:00:00.21 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.03 for the FLOTTER CNF translation.
+		0:00:00.03 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.08 for the reduction.
+
+
+Here is a proof with depth 16, length 192 :
+1[0:Inp] ||  -> Object(skc7)*.
+2[0:Inp] ||  -> EmptyHanded(skc5)*.
+3[0:Inp] ||  -> AllStable(skc5)*.
+4[0:Inp] ||  -> Region(skc4)*.
+7[0:Inp] ||  -> CanGrasp(skc6,skc7)*.
+8[0:Inp] || equal(skc7,Agent)** -> .
+9[0:Inp] || BoxedIn(skc5,Agent,skc7)* -> .
+10[0:Inp] ||  -> Occurs(skc5,skc6,TravelTo(skc4))*.
+19[0:Inp] || Element(U,V)* -> Object(U).
+20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+45[0:Inp] || equal(skf3(U,V),Agent)** -> .
+55[0:Inp] || UContained(U,V,W)* -> Time(U).
+56[0:Inp] || UContained(U,V,W)* -> Object(V).
+57[0:Inp] || UContained(U,V,W)* -> Object(W).
+58[0:Inp] || CContained(U,V,W)* -> Time(U).
+59[0:Inp] || CContained(U,V,W)* -> Object(V).
+61[0:Inp] || SkP1(U,V,W)* -> Time(W).
+62[0:Inp] || SkP1(U,V,W)* -> Object(V).
+63[0:Inp] || SkP1(U,V,W)* -> Object(U).
+74[0:Inp] || SkP4(U,V,W)* -> Time(W).
+77[0:Inp] || equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7))** -> .
+82[0:Inp] || equal(U,V) -> SafelyMovesWith(W,U,V)*.
+86[0:Inp] || SafelyMovesWith(U,V,W) -> SkP1(W,V,U)*.
+88[0:Inp] || BoxWithLid(U,V,W) -> SkP4(W,V,U)*.
+90[0:Inp] || UContained(U,V,W)* -> BoxedIn(U,V,W).
+91[0:Inp] || BLContained(U,V,W)* -> BoxedIn(U,V,W).
+92[0:Inp] || BoxedIn(U,V,W) -> SafelyMovesWith(U,V,W)*.
+93[0:Inp] || BoxWithLid(U,V,W) -> SafelyMovesWith(U,W,V)*.
+94[0:Inp] || CanGrasp(U,V) BoxedIn(U,Agent,V)* -> .
+95[0:Inp] || equal(U,Agent) BoxWithLid(V,U,W)* -> .
+96[0:Inp] || equal(U,Agent) BoxWithLid(V,W,U)* -> .
+108[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+111[0:Inp] || CContained(U,V,Singleton(W))* -> BoxedIn(U,V,W).
+112[0:Inp] || BLContained(U,V,W) SkP5(W,V,U,X)* -> BLContained(X,V,W).
+113[0:Inp] || BLContained(U,V,W) SkP5(W,V,X,U)* -> BLContained(X,V,W).
+114[0:Inp] || SafelyMovesWith(U,V,W)* -> equal(V,W) BoxWithLid(U,W,V) BoxedIn(U,V,W).
+115[0:Inp] || BoxedIn(U,V,W) -> BLContained(U,V,W) UContained(U,V,W) CContained(U,V,Singleton(W))*.
+116[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> equal(V,U) Element(skf2(U,V),U)* Element(skf2(U,V),V)*.
+117[0:Inp] Time(U) Object(V) Object(W) || Element(W,MovingGroup(U,V))* -> SafelyMovesWith(U,W,V).
+118[0:Inp] Object(U) Object(V) Time(W) || SafelyMovesWith(W,U,V) -> Element(U,MovingGroup(W,V))*.
+119[0:Inp] ObjectSet(U) ObjectSet(V) || Element(skf2(V,U),U)* Element(skf2(V,U),V)* -> equal(U,V).
+120[0:Inp] AllStable(U) EmptyHanded(U) Region(V) Object(W) || Occurs(U,X,TravelTo(V))* -> AllStable(X) equal(W,Agent)*.
+121[0:Inp] Object(U) Region(V) EmptyHanded(W) AllStable(W) || Occurs(W,X,TravelTo(V))* -> equal(U,Agent) equal(Place(X,U),Place(W,U))*.
+122[0:Inp] Time(U) Time(V) Object(W) Object(X) || equal(Place(V,skf3(U,V)),Place(U,skf3(U,V)))* -> equal(W,Agent) SkP5(X,W,V,U)*.
+123[0:Inp] Time(U) Time(V) Object(W) Object(X) || equal(Place(V,W),Place(U,W))* equal(Place(V,X),Place(U,X))* BoxWithLid(U,X,W)* -> BoxWithLid(V,X,W)*.
+125[0:Inp] Object(U) Object(V) Time(W) Time(X) || UContained(X,U,V)* equal(Place(W,U),Place(X,U))* equal(Place(W,V),Place(X,V))* -> UContained(W,U,V)*.
+127[0:Inp] Object(U) Object(V) Time(W) Time(X) || CContained(X,U,Singleton(V))* equal(Place(W,U),Place(X,U))* equal(Place(W,V),Place(X,V))* -> CContained(W,U,Singleton(V))*.
+129[0:MRR:117.2,19.1] Object(U) Time(V) || Element(W,MovingGroup(V,U))* -> SafelyMovesWith(V,W,U).
+130[0:MRR:119.0,119.1,20.1,20.1] || Element(skf2(U,V),U)*+ Element(skf2(U,V),V)* -> equal(V,U).
+131[0:MRR:125.0,125.1,125.3,56.1,57.1,55.1] Time(U) || equal(Place(U,V),Place(W,V))* equal(Place(U,X),Place(W,X))* UContained(W,X,V)* -> UContained(U,X,V)*.
+132[0:MRR:127.0,127.3,59.1,58.1] Time(U) Object(V) || equal(Place(U,V),Place(W,V))* equal(Place(U,X),Place(W,X))* CContained(W,X,Singleton(V))* -> CContained(U,X,Singleton(V))*.
+145[0:Res:2.0,120.1] AllStable(skc5) Region(U) Object(V) || Occurs(skc5,W,TravelTo(U))* -> AllStable(W) equal(V,Agent)*.
+168[0:Res:7.0,94.0] || BoxedIn(skc6,Agent,skc7)* -> .
+183[0:Res:10.0,121.4] AllStable(skc5) EmptyHanded(skc5) Region(skc4) Object(U) ||  -> equal(Place(skc6,U),Place(skc5,U))** equal(U,Agent).
+184[0:Res:10.0,120.4] AllStable(skc5) EmptyHanded(skc5) Region(skc4) Object(U) ||  -> AllStable(skc6)* equal(U,Agent)*.
+196[0:MRR:184.0,184.1,184.2,3.0,2.0,4.0] Object(U) ||  -> AllStable(skc6)* equal(U,Agent)*.
+198[0:MRR:145.0,3.0] Region(U) Object(V) || Occurs(skc5,W,TravelTo(U))* -> AllStable(W) equal(V,Agent)*.
+199[0:MRR:183.0,183.1,183.2,3.0,2.0,4.0] Object(U) ||  -> equal(U,Agent) equal(Place(skc6,U),Place(skc5,U))**.
+206[0:Res:4.0,198.0] Object(U) || Occurs(skc5,V,TravelTo(skc4))*+ -> AllStable(V) equal(U,Agent)*.
+222[0:Res:1.0,199.0] ||  -> equal(Place(skc6,skc7),Place(skc5,skc7))** equal(skc7,Agent).
+223[0:Res:1.0,196.0] ||  -> AllStable(skc6)* equal(skc7,Agent).
+251[0:MRR:223.1,8.0] ||  -> AllStable(skc6)*.
+252[0:MRR:222.1,8.0] ||  -> equal(Place(skc6,skc7),Place(skc5,skc7))**.
+257[1:Spt:206.0,206.3] Object(U) ||  -> equal(U,Agent)*.
+259[1:EmS:257.0,1.0] ||  -> equal(skc7,Agent)**.
+260[1:MRR:259.0,8.0] ||  -> .
+261[1:Spt:260.0,206.1,206.2] || Occurs(skc5,U,TravelTo(skc4))* -> AllStable(U).
+292[0:Res:86.1,62.0] || SafelyMovesWith(U,V,W)* -> Object(V).
+293[0:Res:86.1,63.0] || SafelyMovesWith(U,V,W)* -> Object(W).
+294[0:Res:86.1,61.0] || SafelyMovesWith(U,V,W)* -> Time(U).
+296[0:MRR:118.0,292.1] Object(U) Time(V) || SafelyMovesWith(V,W,U) -> Element(W,MovingGroup(V,U))*.
+301[0:MRR:296.0,296.1,293.1,294.1] || SafelyMovesWith(U,V,W) -> Element(V,MovingGroup(U,W))*.
+302[0:Res:82.1,292.0] || equal(U,V)* -> Object(U)*.
+303[0:AED:8.0,302.0] ||  -> Object(U)*.
+315[0:MRR:108.0,303.0] Time(U) ||  -> ObjectSet(MovingGroup(U,V))*.
+318[0:MRR:129.0,303.0] Time(U) || Element(V,MovingGroup(U,W))* -> SafelyMovesWith(U,V,W).
+319[0:MRR:199.0,303.0] ||  -> equal(U,Agent) equal(Place(skc6,U),Place(skc5,U))**.
+325[0:MRR:132.1,303.0] Time(U) || equal(Place(U,V),Place(W,V))* equal(Place(U,X),Place(W,X))* CContained(W,X,Singleton(V))* -> CContained(U,X,Singleton(V))*.
+329[0:MRR:123.3,123.2,303.0] Time(U) Time(V) || equal(Place(V,W),Place(U,W))* equal(Place(V,X),Place(U,X))* BoxWithLid(U,X,W)* -> BoxWithLid(V,X,W)*.
+331[0:MRR:122.3,122.2,303.0] Time(U) Time(V) || equal(Place(V,skf3(U,V)),Place(U,skf3(U,V)))* -> equal(W,Agent) SkP5(X,W,V,U)*.
+333[0:Res:88.1,74.0] || BoxWithLid(U,V,W)* -> Time(U).
+335[0:MRR:329.0,333.1] Time(U) || equal(Place(U,V),Place(W,V))* equal(Place(U,X),Place(W,X))* BoxWithLid(W,X,V)* -> BoxWithLid(U,X,V)*.
+336[0:Res:82.1,294.0] || equal(U,V)* -> Time(W)*.
+337[0:AED:8.0,336.0] ||  -> Time(U)*.
+339[0:MRR:315.0,337.0] ||  -> ObjectSet(MovingGroup(U,V))*.
+341[0:MRR:131.0,337.0] || equal(Place(U,V),Place(W,V))*+ equal(Place(U,X),Place(W,X))* UContained(W,X,V)* -> UContained(U,X,V)*.
+342[0:MRR:318.0,337.0] || Element(U,MovingGroup(V,W))* -> SafelyMovesWith(V,U,W).
+344[0:MRR:331.1,331.0,337.0] || equal(Place(U,skf3(V,U)),Place(V,skf3(V,U)))*+ -> equal(W,Agent) SkP5(X,W,U,V)*.
+345[0:MRR:325.0,337.0] || equal(Place(U,V),Place(W,V))*+ equal(Place(U,X),Place(W,X))* CContained(W,X,Singleton(V))* -> CContained(U,X,Singleton(V))*.
+347[0:MRR:335.0,337.0] || equal(Place(U,V),Place(W,V))*+ equal(Place(U,X),Place(W,X))* BoxWithLid(W,X,V)* -> BoxWithLid(U,X,V)*.
+364[0:Res:301.1,130.0] || SafelyMovesWith(U,skf2(MovingGroup(U,V),W),V)*+ Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+402[0:Res:116.3,342.0] ObjectSet(MovingGroup(U,V)) ObjectSet(W) ||  -> equal(W,MovingGroup(U,V)) Element(skf2(MovingGroup(U,V),W),W)* SafelyMovesWith(U,skf2(MovingGroup(U,V),W),V)*.
+406[0:Res:116.4,342.0] ObjectSet(U) ObjectSet(MovingGroup(V,W)) ||  -> equal(MovingGroup(V,W),U) Element(skf2(U,MovingGroup(V,W)),U)* SafelyMovesWith(V,skf2(U,MovingGroup(V,W)),W)*.
+408[0:SSi:406.1,339.0] ObjectSet(U) ||  -> equal(MovingGroup(V,W),U) Element(skf2(U,MovingGroup(V,W)),U)* SafelyMovesWith(V,skf2(U,MovingGroup(V,W)),W)*.
+409[0:SSi:402.0,339.0] ObjectSet(U) ||  -> equal(U,MovingGroup(V,W)) Element(skf2(MovingGroup(V,W),U),U)* SafelyMovesWith(V,skf2(MovingGroup(V,W),U),W)*.
+419[0:SpL:319.1,344.0] || equal(Place(U,skf3(skc6,U)),Place(skc5,skf3(skc6,U)))* -> equal(skf3(skc6,U),Agent) equal(V,Agent) SkP5(W,V,U,skc6)*.
+420[0:MRR:419.1,45.0] || equal(Place(U,skf3(skc6,U)),Place(skc5,skf3(skc6,U)))*+ -> equal(V,Agent) SkP5(W,V,U,skc6)*.
+434[0:EqR:420.0] ||  -> equal(U,Agent) SkP5(V,U,skc5,skc6)*.
+438[0:SpL:252.0,341.0] || equal(Place(skc5,skc7),Place(U,skc7))+ equal(Place(skc6,V),Place(U,V)) UContained(U,V,skc7)* -> UContained(skc6,V,skc7)*.
+440[0:SpL:252.0,341.0] || equal(Place(U,skc7),Place(skc5,skc7))+ equal(Place(U,V),Place(skc6,V)) UContained(skc6,V,skc7)* -> UContained(U,V,skc7)*.
+442[0:Res:434.1,113.1] || BLContained(skc6,U,V)* -> equal(U,Agent) BLContained(skc5,U,V).
+443[0:Res:434.1,112.1] || BLContained(skc5,U,V) -> equal(U,Agent) BLContained(skc6,U,V)*.
+445[0:Res:443.2,91.0] || BLContained(skc5,U,V)* -> equal(U,Agent) BoxedIn(skc6,U,V).
+450[0:SpL:319.1,347.0] || equal(Place(skc5,U),Place(V,U)) equal(Place(skc6,W),Place(V,W)) BoxWithLid(V,W,U)* -> equal(U,Agent) BoxWithLid(skc6,W,U)*.
+452[0:SpL:319.1,347.0] || equal(Place(U,V),Place(skc5,V)) equal(Place(U,W),Place(skc6,W)) BoxWithLid(skc6,W,V)* -> equal(V,Agent) BoxWithLid(U,W,V)*.
+453[0:MRR:452.3,96.0] || equal(Place(U,V),Place(skc5,V))+ equal(Place(U,W),Place(skc6,W)) BoxWithLid(skc6,W,V)* -> BoxWithLid(U,W,V)*.
+454[0:MRR:450.3,96.0] || equal(Place(skc5,U),Place(V,U))+ equal(Place(skc6,W),Place(V,W)) BoxWithLid(V,W,U)* -> BoxWithLid(skc6,W,U)*.
+463[0:SpL:252.0,345.0] || equal(Place(skc5,skc7),Place(U,skc7))+ equal(Place(skc6,V),Place(U,V)) CContained(U,V,Singleton(skc7))* -> CContained(skc6,V,Singleton(skc7))*.
+465[0:SpL:252.0,345.0] || equal(Place(U,skc7),Place(skc5,skc7))+ equal(Place(U,V),Place(skc6,V)) CContained(skc6,V,Singleton(skc7))* -> CContained(U,V,Singleton(skc7))*.
+467[0:Res:82.1,364.0] || equal(skf2(MovingGroup(U,V),W),V) Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+468[0:Res:92.1,364.0] || BoxedIn(U,skf2(MovingGroup(U,V),W),V)*+ Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+469[0:Res:93.1,364.0] || BoxWithLid(U,V,skf2(MovingGroup(U,V),W))*+ Element(skf2(MovingGroup(U,V),W),W)* -> equal(W,MovingGroup(U,V)).
+470[0:Res:301.1,467.1] || SafelyMovesWith(U,skf2(MovingGroup(V,W),MovingGroup(U,X)),X)* equal(skf2(MovingGroup(V,W),MovingGroup(U,X)),W) -> equal(MovingGroup(U,X),MovingGroup(V,W)).
+478[0:Res:408.3,114.0] ObjectSet(U) ||  -> equal(MovingGroup(V,W),U) Element(skf2(U,MovingGroup(V,W)),U)* equal(skf2(U,MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(U,MovingGroup(V,W)))* BoxedIn(V,skf2(U,MovingGroup(V,W)),W).
+485[0:Res:409.3,114.0] ObjectSet(U) ||  -> equal(U,MovingGroup(V,W)) Element(skf2(MovingGroup(V,W),U),U)* equal(skf2(MovingGroup(V,W),U),W) BoxWithLid(V,W,skf2(MovingGroup(V,W),U))* BoxedIn(V,skf2(MovingGroup(V,W),U),W).
+494[0:EqR:440.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc6,U,skc7)* -> UContained(skc5,U,skc7).
+497[0:EqR:453.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc6,U,V)* -> BoxWithLid(skc5,U,V).
+501[0:EqR:438.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc5,U,skc7) -> UContained(skc6,U,skc7)*.
+505[0:Res:501.2,90.0] || equal(Place(skc6,U),Place(skc5,U)) UContained(skc5,U,skc7)* -> BoxedIn(skc6,U,skc7).
+506[0:EqR:454.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc5,U,V) -> BoxWithLid(skc6,U,V)*.
+512[0:Res:506.2,469.0] || equal(Place(skc6,U),Place(skc5,U)) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),V))*+ Element(skf2(MovingGroup(skc6,U),V),V)* -> equal(V,MovingGroup(skc6,U)).
+519[0:EqR:465.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc6,U,Singleton(skc7))* -> CContained(skc5,U,Singleton(skc7)).
+527[0:Res:115.3,519.1] || BoxedIn(skc6,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc6,U,skc7) UContained(skc6,U,skc7) CContained(skc5,U,Singleton(skc7))*.
+530[0:Res:527.4,111.0] || BoxedIn(skc6,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc6,U,skc7)* UContained(skc6,U,skc7) BoxedIn(skc5,U,skc7).
+533[0:Res:530.2,442.0] || BoxedIn(skc6,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> UContained(skc6,U,skc7) BoxedIn(skc5,U,skc7) equal(U,Agent) BLContained(skc5,U,skc7)*.
+537[0:Rew:319.1,533.1] || BoxedIn(skc6,U,skc7) equal(Place(skc5,U),Place(skc5,U)) -> UContained(skc6,U,skc7) BoxedIn(skc5,U,skc7) equal(U,Agent) BLContained(skc5,U,skc7)*.
+538[0:Obv:537.1] || BoxedIn(skc6,U,skc7) -> UContained(skc6,U,skc7) BoxedIn(skc5,U,skc7) equal(U,Agent) BLContained(skc5,U,skc7)*.
+539[0:MRR:538.4,91.0] || BoxedIn(skc6,U,skc7) -> UContained(skc6,U,skc7)* BoxedIn(skc5,U,skc7) equal(U,Agent).
+548[0:Res:539.1,494.1] || BoxedIn(skc6,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc5,U,skc7) equal(U,Agent) UContained(skc5,U,skc7)*.
+550[0:Rew:319.1,548.1] || BoxedIn(skc6,U,skc7) equal(Place(skc5,U),Place(skc5,U)) -> BoxedIn(skc5,U,skc7) equal(U,Agent) UContained(skc5,U,skc7)*.
+551[0:Obv:550.1] || BoxedIn(skc6,U,skc7) -> BoxedIn(skc5,U,skc7) equal(U,Agent) UContained(skc5,U,skc7)*.
+552[0:MRR:551.3,90.0] || BoxedIn(skc6,U,skc7)* -> BoxedIn(skc5,U,skc7) equal(U,Agent).
+560[0:EqR:463.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc5,U,Singleton(skc7)) -> CContained(skc6,U,Singleton(skc7))*.
+565[0:Res:560.2,111.0] || equal(Place(skc6,U),Place(skc5,U)) CContained(skc5,U,Singleton(skc7))* -> BoxedIn(skc6,U,skc7).
+570[0:Res:115.3,565.1] || BoxedIn(skc5,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc5,U,skc7)* UContained(skc5,U,skc7) BoxedIn(skc6,U,skc7).
+571[0:MRR:570.3,505.1] || BoxedIn(skc5,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BLContained(skc5,U,skc7)* BoxedIn(skc6,U,skc7).
+575[0:Res:571.2,445.0] || BoxedIn(skc5,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc6,U,skc7)* equal(U,Agent) BoxedIn(skc6,U,skc7)*.
+579[0:Obv:575.2] || BoxedIn(skc5,U,skc7) equal(Place(skc6,U),Place(skc5,U)) -> equal(U,Agent) BoxedIn(skc6,U,skc7)*.
+580[0:Rew:319.1,579.1] || BoxedIn(skc5,U,skc7) equal(Place(skc5,U),Place(skc5,U)) -> equal(U,Agent) BoxedIn(skc6,U,skc7)*.
+581[0:Obv:580.1] || BoxedIn(skc5,U,skc7) -> equal(U,Agent) BoxedIn(skc6,U,skc7)*.
+586[0:Res:581.2,468.0] || BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),U),skc7)*+ Element(skf2(MovingGroup(skc6,skc7),U),U)* -> equal(skf2(MovingGroup(skc6,skc7),U),Agent) equal(U,MovingGroup(skc6,skc7)).
+613[0:Res:478.2,130.0] ObjectSet(U) || Element(skf2(U,MovingGroup(V,W)),MovingGroup(V,W))* -> equal(MovingGroup(V,W),U) equal(skf2(U,MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(U,MovingGroup(V,W))) BoxedIn(V,skf2(U,MovingGroup(V,W)),W) equal(MovingGroup(V,W),U).
+618[0:Obv:613.2] ObjectSet(U) || Element(skf2(U,MovingGroup(V,W)),MovingGroup(V,W))* -> equal(skf2(U,MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(U,MovingGroup(V,W))) BoxedIn(V,skf2(U,MovingGroup(V,W)),W) equal(MovingGroup(V,W),U).
+627[0:Res:92.1,470.0] || BoxedIn(U,skf2(MovingGroup(V,W),MovingGroup(U,X)),X)* equal(skf2(MovingGroup(V,W),MovingGroup(U,X)),W) -> equal(MovingGroup(U,X),MovingGroup(V,W)).
+639[0:Res:485.4,95.1] ObjectSet(U) || equal(V,Agent)+ -> equal(U,MovingGroup(W,V)) Element(skf2(MovingGroup(W,V),U),U)* equal(skf2(MovingGroup(W,V),U),V) BoxedIn(W,skf2(MovingGroup(W,V),U),V)*.
+641[0:Res:485.4,497.1] ObjectSet(U) || equal(Place(skc6,V),Place(skc5,V))+ -> equal(U,MovingGroup(skc6,V)) Element(skf2(MovingGroup(skc6,V),U),U)* equal(skf2(MovingGroup(skc6,V),U),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),U),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),U))*.
+762[0:Res:485.2,618.1] ObjectSet(MovingGroup(U,V)) ObjectSet(MovingGroup(W,X)) ||  -> equal(MovingGroup(U,V),MovingGroup(W,X)) equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),X) BoxWithLid(W,X,skf2(MovingGroup(W,X),MovingGroup(U,V)))* BoxedIn(W,skf2(MovingGroup(W,X),MovingGroup(U,V)),X) equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),V) BoxWithLid(U,V,skf2(MovingGroup(W,X),MovingGroup(U,V)))* BoxedIn(U,skf2(MovingGroup(W,X),MovingGroup(U,V)),V) equal(MovingGroup(U,V),MovingGroup(W,X)).
+770[0:Obv:762.2] ObjectSet(MovingGroup(U,V)) ObjectSet(MovingGroup(W,X)) ||  -> equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),X) BoxWithLid(W,X,skf2(MovingGroup(W,X),MovingGroup(U,V)))* BoxedIn(W,skf2(MovingGroup(W,X),MovingGroup(U,V)),X) equal(skf2(MovingGroup(W,X),MovingGroup(U,V)),V) BoxWithLid(U,V,skf2(MovingGroup(W,X),MovingGroup(U,V)))* BoxedIn(U,skf2(MovingGroup(W,X),MovingGroup(U,V)),V) equal(MovingGroup(U,V),MovingGroup(W,X)).
+771[0:SSi:770.1,770.0,339.0,339.0] ||  -> equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) BoxWithLid(U,V,skf2(MovingGroup(U,V),MovingGroup(W,X)))* BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V) equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxWithLid(W,X,skf2(MovingGroup(U,V),MovingGroup(W,X)))* BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X) equal(MovingGroup(W,X),MovingGroup(U,V)).
+941[0:SpL:319.1,641.1] ObjectSet(U) || equal(Place(skc5,V),Place(skc5,V)) -> equal(V,Agent) equal(U,MovingGroup(skc6,V)) Element(skf2(MovingGroup(skc6,V),U),U)* equal(skf2(MovingGroup(skc6,V),U),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),U),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),U))*.
+943[0:Obv:941.1] ObjectSet(U) ||  -> equal(V,Agent) equal(U,MovingGroup(skc6,V)) Element(skf2(MovingGroup(skc6,V),U),U)* equal(skf2(MovingGroup(skc6,V),U),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),U),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),U))*.
+944[0:MRR:943.1,639.1] ObjectSet(U) ||  -> equal(U,MovingGroup(skc6,V)) Element(skf2(MovingGroup(skc6,V),U),U)* equal(skf2(MovingGroup(skc6,V),U),V) BoxedIn(skc6,skf2(MovingGroup(skc6,V),U),V) BoxWithLid(skc5,V,skf2(MovingGroup(skc6,V),U))*.
+949[0:Res:944.2,618.1] ObjectSet(MovingGroup(U,V)) ObjectSet(MovingGroup(skc6,W)) ||  -> equal(MovingGroup(U,V),MovingGroup(skc6,W)) equal(skf2(MovingGroup(skc6,W),MovingGroup(U,V)),W) BoxedIn(skc6,skf2(MovingGroup(skc6,W),MovingGroup(U,V)),W) BoxWithLid(skc5,W,skf2(MovingGroup(skc6,W),MovingGroup(U,V)))* equal(skf2(MovingGroup(skc6,W),MovingGroup(U,V)),V) BoxWithLid(U,V,skf2(MovingGroup(skc6,W),MovingGroup(U,V)))* BoxedIn(U,skf2(MovingGroup(skc6,W),MovingGroup(U,V)),V) equal(MovingGroup(U,V),MovingGroup(skc6,W)).
+964[0:Obv:949.2] ObjectSet(MovingGroup(U,V)) ObjectSet(MovingGroup(skc6,W)) ||  -> equal(skf2(MovingGroup(skc6,W),MovingGroup(U,V)),W) BoxedIn(skc6,skf2(MovingGroup(skc6,W),MovingGroup(U,V)),W) BoxWithLid(skc5,W,skf2(MovingGroup(skc6,W),MovingGroup(U,V)))* equal(skf2(MovingGroup(skc6,W),MovingGroup(U,V)),V) BoxWithLid(U,V,skf2(MovingGroup(skc6,W),MovingGroup(U,V)))* BoxedIn(U,skf2(MovingGroup(skc6,W),MovingGroup(U,V)),V) equal(MovingGroup(U,V),MovingGroup(skc6,W)).
+965[0:SSi:964.1,964.0,339.0,251.0,339.0] ||  -> equal(skf2(MovingGroup(skc6,U),MovingGroup(V,W)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(V,W)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(V,W)))* equal(skf2(MovingGroup(skc6,U),MovingGroup(V,W)),W) BoxWithLid(V,W,skf2(MovingGroup(skc6,U),MovingGroup(V,W)))* BoxedIn(V,skf2(MovingGroup(skc6,U),MovingGroup(V,W)),W) equal(MovingGroup(V,W),MovingGroup(skc6,U)).
+1056[0:Res:771.4,96.1] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),Agent) -> equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) BoxWithLid(U,V,skf2(MovingGroup(U,V),MovingGroup(W,X)))* BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V) equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X)* equal(MovingGroup(W,X),MovingGroup(U,V)).
+1064[0:MRR:1056.2,96.1] || equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),Agent)+ -> equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),V) BoxedIn(U,skf2(MovingGroup(U,V),MovingGroup(W,X)),V)* equal(skf2(MovingGroup(U,V),MovingGroup(W,X)),X) BoxedIn(W,skf2(MovingGroup(U,V),MovingGroup(W,X)),X)* equal(MovingGroup(W,X),MovingGroup(U,V)).
+1152[0:Fac:965.2,965.4] ||  -> equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)))* BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1165[0:Obv:1152.0] ||  -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)))* BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1175[0:Res:1165.2,512.1] || equal(Place(skc6,U),Place(skc5,U)) Element(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),MovingGroup(skc5,U))* -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1179[0:Obv:1175.5] || equal(Place(skc6,U),Place(skc5,U)) Element(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),MovingGroup(skc5,U))* -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1180[0:MRR:1179.2,1179.3,468.0,467.0] || equal(Place(skc6,U),Place(skc5,U)) Element(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),MovingGroup(skc5,U))* -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1181[0:Res:301.1,1180.1] || SafelyMovesWith(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1195[0:Res:82.1,1181.0] || equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1197[0:Res:93.1,1181.0] || BoxWithLid(skc5,U,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)))* equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1201[0:MRR:1195.2,627.0] || equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)** equal(Place(skc6,U),Place(skc5,U)) -> equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1208[0:Res:1165.2,1197.0] || equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)) BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1209[0:Obv:1208.4] || equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* equal(skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1210[0:MRR:1209.2,1201.0] || equal(Place(skc6,U),Place(skc5,U)) -> BoxedIn(skc6,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U)* BoxedIn(skc5,skf2(MovingGroup(skc6,U),MovingGroup(skc5,U)),U) equal(MovingGroup(skc6,U),MovingGroup(skc5,U)).
+1215[0:Res:1210.1,552.0] || equal(Place(skc6,skc7),Place(skc5,skc7)) -> BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1216[0:Obv:1215.1] || equal(Place(skc6,skc7),Place(skc5,skc7)) -> equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1217[0:Rew:252.0,1216.0] || equal(Place(skc5,skc7),Place(skc5,skc7)) -> equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1218[0:Obv:1217.0] ||  -> equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1219[0:MRR:1218.0,77.0] ||  -> BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1225[0:Res:1219.0,586.0] || Element(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),MovingGroup(skc5,skc7))* -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent) equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent) equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+1228[0:Obv:1225.1] || Element(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),MovingGroup(skc5,skc7))* -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent) equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+1229[0:MRR:1228.2,77.0] || Element(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),MovingGroup(skc5,skc7))* -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1250[0:Res:301.1,1229.0] || SafelyMovesWith(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1252[0:Res:409.2,1229.0] ObjectSet(MovingGroup(skc5,skc7)) ||  -> equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) SafelyMovesWith(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1254[0:SSi:1252.0,339.0,2.0,3.0] ||  -> equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)) SafelyMovesWith(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1255[0:MRR:1254.0,77.0] ||  -> SafelyMovesWith(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent).
+1260[2:Spt:1255.1] ||  -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent)**.
+1291[2:SpL:1260.0,1064.0] || equal(Agent,Agent) -> equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7) BoxedIn(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7) BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7) equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+1361[2:Obv:1291.1] ||  -> BoxedIn(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7) BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7) equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+1362[2:Rew:1260.0,1361.2,1260.0,1361.1,1260.0,1361.0] ||  -> BoxedIn(skc6,Agent,skc7)* equal(skc7,Agent) BoxedIn(skc5,Agent,skc7) equal(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)).
+1363[2:MRR:1362.0,1362.1,1362.2,1362.3,168.0,8.0,9.0,77.0] ||  -> .
+1365[2:Spt:1363.0,1255.1,1260.0] || equal(skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),Agent)** -> .
+1366[2:Spt:1363.0,1255.0] ||  -> SafelyMovesWith(skc6,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)*.
+1367[2:MRR:1219.1,1365.0] ||  -> BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)*.
+1369[2:MRR:1250.1,1365.0] || SafelyMovesWith(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* -> .
+1382[2:Res:92.1,1369.0] || BoxedIn(skc5,skf2(MovingGroup(skc6,skc7),MovingGroup(skc5,skc7)),skc7)* -> .
+1386[2:MRR:1382.0,1367.0] ||  -> .
+Formulae used in the proof : conjecture0 axiom20 Lem4J axiom23 axiom24 axiom26 axiom43 ASD5 ASD4 Lem4B RBA1mod axiom16 OSA1 ASD6 Lem4A Lem4I
+
+--------------------------SPASS-STOP------------------------------

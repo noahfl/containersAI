@@ -1,0 +1,122 @@
+begin_problem(Scenario1_Piece4).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 1, Piece 4*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*December 6, 2014 (revised 6 April 2016)*}).
+end_of_list.
+
+list_of_symbols.
+functions[(RUnion,2), (Singleton,1), (Place,2), (Slice,2), (HPlace,1), (Ox1,0), (Ob1,0), (Ta1,0), (Tb1,0), (Hc1,0)].
+predicates[(Ordered,2), (Time,1), (Region,1), (History,1), (Object,1), (ObjectSet,1), (Lt,2), (Leq,2), (Leq3,3), (P,2), (Cavity,2), (OSPlace,3), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1), (O,2), (EC,2), (DR,2), (Outside,2), (NoExitCavity,4), (PersistentCavity,4), (NoEntranceCavity,4), (Continuous,3), (WeaklyContinuous,3), (Constant,3)].
+end_of_list.
+
+list_of_formulae(axioms).
+% Time Ordering
+% Sortal axioms
+% TISA
+formula(forall([x,y], implies(Lt(x,y), and(Time(x), Time(y))))).
+% TISB
+formula(forall([x,y], implies(Leq(x,y), and(Time(x), Time(y))))).
+% TISC
+formula(forall([x,y], implies(Ordered(x,y), and(Time(x), Time(y))))).
+% TISD
+formula(forall([x,y,z], implies(Leq3(x,y,z), and(Time(x), Time(y), Time(z))))).
+
+% Space
+% Basic spatial relations
+% Sortal axioms
+% SBSA
+formula(forall([u,v], implies(or(P(u,v), O(u,v), EC(u,v), DR(u,v)), and(Region(u), Region(v))))).
+% SBSB
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
+
+% Spatial Containment
+% Sortal axioms
+% SCSA
+formula(forall([u,v], implies(or(Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
+
+% Objects
+% Object Sets
+% Sortal axioms
+% OSSA
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x))))).
+
+% Objects and Object Sets: Spatio-Temporal
+% Sortal axioms
+% OTSA
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o))))).
+% OTSB
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+
+% Objects containing regions
+% Sortal axiom
+% ORSA
+formula(forall([t,s,r], implies(ClosedContainer(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+
+% Object Containment
+% Sortal axiom
+% OCSA
+formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), ObjectSet(s))))).
+
+% Histories
+% Sortal axioms
+% HISA
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+% HISB
+formula(forall([ta,tb,h], implies(or(Continuous(ta,tb,h), WeaklyContinuous(ta,tb,h)), and(Time(ta), Time(tb), History(h))))).
+% HISC
+formula(forall([o], implies(Object(o), History(HPlace(o))))).
+% HISD
+formula(forall([t1,t2,h], implies(Constant(t1,t2,h), and(Time(t1), Time(t2), History(h))))).
+
+% Evolving cavities
+% Sortal axioms
+% HCSA
+formula(forall([t1,t2,hc,ho], implies(or(NoExitCavity(t1,t2,hc,ho), NoEntranceCavity(t1,t2,hc,ho), PersistentCavity(t1,t2,hc,ho)), and(Time(t1), Time(t2), History(hc), History(ho))))).
+
+% Rigid Objects
+% Sortal axioms
+% RGSA
+formula(forall([o], implies(RigidObject(o), Object(o)))).
+% RGSB
+formula(forall([h], implies(RigidHistory(h), History(h)))).
+
+% P.4.1 - proved by Part3
+formula(P(Slice(Tb1,HPlace(Ox1)), Slice(Tb1,Hc1))).
+% P.4.2 - proved by Part2
+formula(NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))).
+% C1A1 - given
+formula(RigidObject(Ob1)).
+% C1A2 - given
+formula(CContained(Ta1,Ox1,Singleton(Ob1))).
+% C1A3 - given
+formula(Lt(Ta1,Tb1)).
+% HCA1
+formula(forall([t1,t2,hc,hb], implies(or(NoExitCavity(t1,t2,hc,hb), NoEntranceCavity(t1,t2,hc,hb)), and(Lt(t1,t2), WeaklyContinuous(t1,t2,hc), forall([t], implies(Leq3(t1,t,t2), Cavity(Slice(t,hc),Slice(t,hb)))))))).
+% HIA2
+formula(forall([t,o], implies(and(Time(t), Object(o)), equal(Place(t,o), Slice(t,HPlace(o)))))).
+% OTAF (as in Part1, the formula below is unchanged from Angelica's encoding; O.T.A.F in the old axiom definitions doesn't even correspond to this, nor does anything I can find in the new axioms)
+formula(forall([t,o,r], implies(and(Time(t), Object(o)), equiv(OSPlace(t,Singleton(o),r), equal(Place(t,o), r))))).
+% ORD1
+formula(forall([t,s,rc], equiv(ClosedContainer(t,s,rc), exists([rs], and(OSPlace(t,s,rs), Cavity(rc,rs)))))).
+% OCD1
+formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc)))))).
+% TID1
+formula(forall([x,y], equiv(Leq(x,y), or(Lt(x,y), equal(x,y))))).
+% TID3
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+% 1.30 (final)
+formula(CContained(Tb1,Ox1,Singleton(Ob1))).
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.

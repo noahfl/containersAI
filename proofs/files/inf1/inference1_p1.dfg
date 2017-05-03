@@ -1,0 +1,106 @@
+begin_problem(Scenario1_Piece1).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 1, Piece 1*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley*}).
+status(unsatisfiable).
+description({*November 8, 2014*}).
+end_of_list.
+
+list_of_symbols.
+functions[(RUnion,2), (Singleton,1), (Place,2), (Slice,2), (HPlace,1), (Ox1,0), (Ob1,0), (Ta1,0), (Tb1,0)].
+predicates[(Ordered,2), (Time,1), (Region,1), (History,1), (Object,1), (ObjectSet,1), (Lt,2), (Leq,2), (Leq3,3), (P,2), (Cavity,2), (OSPlace,3), (ClosedContainer,3), (CContained,3), (RigidObject,1), (RigidHistory,1), (O,2), (EC,2), (DR,2), (Outside,2)].
+end_of_list.
+
+list_of_formulae(axioms).
+% Time Ordering
+% Sortal axioms
+% TISA
+formula(forall([x,y], implies(Lt(x,y), and(Time(x), Time(y))))).
+% TISB
+formula(forall([x,y], implies(Leq(x,y), and(Time(x), Time(y))))).
+% TISC
+formula(forall([x,y], implies(Ordered(x,y), and(Time(x), Time(y))))).
+% TISD
+formula(forall([x,y,z], implies(Leq3(x,y,z), and(Time(x), Time(y), Time(z))))).
+
+% Space
+% Basic spatial relations
+% Sortal axioms
+% SBSA
+formula(forall([u,v], implies(or(P(u,v), O(u,v), EC(u,v), DR(u,v)), and(Region(u), Region(v))))).
+% SBSB
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v))))).
+
+% Spatial Containment
+% Sortal axioms
+% SCSA
+formula(forall([u,v], implies(or(Cavity(u,v), Outside(u,v)), and(Region(u), Region(v))))).
+
+% Objects
+% Object Sets
+% Sortal axioms
+% OSSA
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x))))).
+
+% Objects and Object Sets: Spatio-Temporal
+% Sortal axioms
+% OTSA
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o))))).
+% OTSB
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+
+% Objects containing regions
+% Sortal axiom
+% ORSA
+formula(forall([t,s,rc], implies(ClosedContainer(t,s,rc), and(Time(t), ObjectSet(s), Region(rc))))).
+
+% Object Containment
+% Sortal axiom
+% OCSA
+formula(forall([t,ox,s], implies(CContained(t,ox,s), and(Time(t), Object(ox), ObjectSet(s))))).
+
+% Histories
+% Sortal axioms
+% HISA
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h))))).
+% HISC
+formula(forall([o], implies(Object(o), History(HPlace(o))))).
+
+% Rigid Objects
+% Sortal axioms
+% RGSA
+formula(forall([o], implies(RigidObject(o), Object(o)))).
+% RGSB
+formula(forall([h], implies(RigidHistory(h), History(h)))).
+
+% C1A1 - given
+formula(RigidObject(Ob1)).
+% C1A2 - given
+formula(CContained(Ta1,Ox1,Singleton(Ob1))).
+% C1A3 - given
+formula(Lt(Ta1,Tb1)).
+% C1AD - given
+formula(not(equal(Ox1, Ob1))).
+% R0A1
+formula(forall([o], implies(RigidObject(o), RigidHistory(HPlace(o))))).
+% OCD1
+formula(forall([t,ox,s], equiv(CContained(t,ox,s), exists([rc], and(ClosedContainer(t,s,rc), Object(ox), P(Place(t,ox),rc)))))).
+% ORD1
+formula(forall([t,s,rc], equiv(ClosedContainer(t,s,rc), exists([rs], and(OSPlace(t,s,rs), Cavity(rc,rs)))))).
+% HIA2
+formula(forall([t,o], implies(and(Time(t), Object(o)), equal(Place(t,o), Slice(t,HPlace(o)))))).
+% OTAF (the formula below is unchanged from Angelica's encoding; O.T.A.F in the old axiom definitions doesn't even correspond to this, nor does anything I can find in the new axioms)
+formula(forall([t,o,r], implies(and(Time(t), Object(o)), equiv(OSPlace(t,Singleton(o),r), equal(Place(t,o), r))))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+formula(exists([rc], and(Cavity(rc,Slice(Ta1,HPlace(Ob1))), P(Place(Ta1,Ox1),rc)))).
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.

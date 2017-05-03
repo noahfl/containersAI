@@ -1,0 +1,220 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> EmptyHanded(skc8)*.
+2[0:Inp] ||  -> AllStable(skc8)*.
+3[0:Inp] ||  -> Region(skc5)*.
+4[0:Inp] ||  -> Reachable(skc8,skc6)*.
+5[0:Inp] || Reachable(skc7,skc6)* -> .
+6[0:Inp] ||  -> Occurs(skc8,skc7,TravelTo(skc5))*.
+7[0:Inp] || SmallObject(U) -> Object(U)*.
+8[0:Inp] || IntConn(U)* -> Region(U).
+9[0:Inp] || AllStable(U) -> Time(U)*.
+10[0:Inp] || EmptyHanded(U) -> Time(U)*.
+11[0:Inp] ||  -> Region(U)* Reachable(V,W)*.
+12[0:Inp] || Feasible(U,V)* -> Time(U).
+13[0:Inp] || Feasible(U,V)* -> Action(V).
+14[0:Inp] || Element(U,V)* -> Object(U).
+15[0:Inp] || Element(U,V)* -> ObjectSet(V).
+16[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+17[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+18[0:Inp] || FullyOutside(U,V)* -> Region(U).
+19[0:Inp] || FullyOutside(U,V)* -> Region(V).
+20[0:Inp] || Reachable(U,V)* -> Time(U).
+21[0:Inp] || Reachable(U,V)* -> Region(V).
+22[0:Inp] || P(U,V)* -> Region(U).
+23[0:Inp] || P(U,V)* -> Region(V).
+24[0:Inp] || SkP0(U,V)* -> Region(V).
+25[0:Inp] || SkP0(U,V)* -> Region(U).
+26[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+27[0:Inp] || SmallSet(U,V)* -> Region(V).
+28[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+29[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+30[0:Inp] || CanGrasp(U,V)* -> Time(U).
+31[0:Inp] || CanGrasp(U,V)* -> Object(V).
+32[0:Inp] || Graspable(U,V)* -> Time(U).
+33[0:Inp] || Graspable(U,V)* -> Object(V).
+34[0:Inp] || Occurs(U,V,W)* -> Time(U).
+35[0:Inp] || Occurs(U,V,W)* -> Time(V).
+36[0:Inp] || Occurs(U,V,W)* -> Action(W).
+37[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+38[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+39[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+40[0:Inp] || UContained(U,V,W)* -> Time(U).
+41[0:Inp] || UContained(U,V,W)* -> Object(V).
+42[0:Inp] || UContained(U,V,W)* -> Object(W).
+43[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+44[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+45[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+46[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+47[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+48[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+49[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+50[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+51[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+52[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+53[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+54[0:Inp] || Reachable(U,V) Region(skc9) -> IntConn(RUnion(skf1(U,V),V))*.
+55[0:Inp] || Reachable(U,V)* Region(skc9) -> Feasible(U,TravelTo(skf1(U,W)))*.
+56[0:Inp] || IntConn(RUnion(U,V))* Feasible(W,TravelTo(U))* -> Reachable(W,V)*.
+57[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+58[0:Inp] || Occurs(U,V,TravelTo(W))* EmptyHanded(U) AllStable(U) Feasible(U,TravelTo(X))* Region(W) -> Feasible(V,TravelTo(X))*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ All equations are many sorted.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: AllStable, EmptyHanded.
+ Axiom clauses: 52 Conjecture clauses: 6
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSST=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf1 > skf0 > RUnion > MovingGroup > Contents > UContents > Union > Place > TravelTo > Leq3 > Leq > Lt > Time > Object > Action > Feasible > IntConn > Reachable > Region > UprightContainer > SkP0 > FullyOutside > ObjectSet > SmallSet > AllStable > EmptyHanded > Graspable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > Occurs > CanGrasp > UprightContainerShape > UContained > P > Element > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Rd > R > Tb > Ta > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+2[0:Inp] ||  -> AllStable(skc8)*.
+1[0:Inp] ||  -> EmptyHanded(skc8)*.
+59[0:MRR:21.0,11.1] ||  -> Region(U)*.
+64[0:Res:2.0,9.0] ||  -> Time(skc8)*.
+72[0:Res:6.0,35.0] ||  -> Time(skc7)*.
+4[0:Inp] ||  -> Reachable(skc8,skc6)*.
+73[0:Res:6.0,36.0] ||  -> Action(TravelTo(skc5))*.
+5[0:Inp] || Reachable(skc7,skc6)* -> .
+6[0:Inp] ||  -> Occurs(skc8,skc7,TravelTo(skc5))*.
+7[0:Inp] SmallObject(U) ||  -> Object(U)*.
+10[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+9[0:Inp] AllStable(U) ||  -> Time(U)*.
+26[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+15[0:Inp] || Element(U,V)* -> ObjectSet(V).
+13[0:Inp] || Feasible(U,V)* -> Action(V).
+33[0:Inp] || Graspable(U,V)* -> Object(V).
+31[0:Inp] || CanGrasp(U,V)* -> Object(V).
+29[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+17[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+14[0:Inp] || Element(U,V)* -> Object(U).
+32[0:Inp] || Graspable(U,V)* -> Time(U).
+30[0:Inp] || CanGrasp(U,V)* -> Time(U).
+28[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+16[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+20[0:Inp] || Reachable(U,V)* -> Time(U).
+12[0:Inp] || Feasible(U,V)* -> Time(U).
+67[0:Res:4.0,61.0] ||  -> IntConn(RUnion(skf1(skc8,skc6),skc6))*.
+68[0:Res:4.0,60.0] ||  -> Feasible(skc8,TravelTo(skf1(skc8,U)))*.
+47[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+46[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+36[0:Inp] || Occurs(U,V,W)* -> Action(W).
+38[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+45[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+44[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+42[0:Inp] || UContained(U,V,W)* -> Object(W).
+41[0:Inp] || UContained(U,V,W)* -> Object(V).
+37[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+43[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+40[0:Inp] || UContained(U,V,W)* -> Time(U).
+35[0:Inp] || Occurs(U,V,W)* -> Time(V).
+34[0:Inp] || Occurs(U,V,W)* -> Time(U).
+49[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+48[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+75[0:MRR:74.0,74.1,1.0,2.0] || Feasible(skc8,TravelTo(U))* -> Feasible(skc7,TravelTo(U)).
+61[0:MRR:54.1,59.0] || Reachable(U,V) -> IntConn(RUnion(skf1(U,V),V))*.
+60[0:MRR:55.1,59.0] || Reachable(U,V)* -> Feasible(U,TravelTo(skf1(U,W)))*.
+70[0:Res:56.2,5.0] || IntConn(RUnion(U,skc6)) Feasible(skc7,TravelTo(U))* -> .
+50[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+51[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+52[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+53[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+56[0:Inp] || IntConn(RUnion(U,V))* Feasible(W,TravelTo(U))* -> Reachable(W,V)*.
+76[0:MRR:63.0,1.0] || Feasible(skc8,TravelTo(U))* Occurs(skc8,V,TravelTo(W))* -> Feasible(V,TravelTo(U))*.
+57[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+62[0:MRR:58.2,59.0] AllStable(U) EmptyHanded(U) || Feasible(U,TravelTo(V))* Occurs(U,W,TravelTo(X))* -> Feasible(W,TravelTo(V))*.
+	Given clause: 2[0:Inp] ||  -> AllStable(skc8)*.
+	Given clause: 1[0:Inp] ||  -> EmptyHanded(skc8)*.
+	Given clause: 64[0:Res:2.0,9.0] ||  -> Time(skc8)*.
+	Given clause: 72[0:Res:6.0,35.0] ||  -> Time(skc7)*.
+	Given clause: 59[0:MRR:21.0,11.1] ||  -> Region(U)*.
+	Given clause: 4[0:Inp] ||  -> Reachable(skc8,skc6)*.
+	Given clause: 73[0:Res:6.0,36.0] ||  -> Action(TravelTo(skc5))*.
+	Given clause: 5[0:Inp] || Reachable(skc7,skc6)* -> .
+	Given clause: 6[0:Inp] ||  -> Occurs(skc8,skc7,TravelTo(skc5))*.
+	Given clause: 7[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 10[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 9[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 67[0:Res:4.0,61.0] ||  -> IntConn(RUnion(skf1(skc8,skc6),skc6))*.
+	Given clause: 68[0:Res:4.0,60.0] ||  -> Feasible(skc8,TravelTo(skf1(skc8,U)))*.
+	Given clause: 26[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 15[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 13[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 114[0:Res:68.0,13.0] ||  -> Action(TravelTo(skf1(skc8,U)))*.
+	Given clause: 33[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 31[0:Inp] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 29[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 17[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 14[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 32[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 30[0:Inp] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 28[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 16[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 20[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 12[0:Inp] || Feasible(U,V)* -> Time(U).
+	Given clause: 47[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+	Given clause: 46[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+	Given clause: 36[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 38[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 45[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 44[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 42[0:Inp] || UContained(U,V,W)* -> Object(W).
+	Given clause: 41[0:Inp] || UContained(U,V,W)* -> Object(V).
+	Given clause: 37[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+	Given clause: 43[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 40[0:Inp] || UContained(U,V,W)* -> Time(U).
+	Given clause: 35[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 34[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 49[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 48[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 61[0:MRR:54.1,59.0] || Reachable(U,V) -> IntConn(RUnion(skf1(U,V),V))*.
+	Given clause: 75[0:MRR:74.0,74.1,1.0,2.0] || Feasible(skc8,TravelTo(U))* -> Feasible(skc7,TravelTo(U)).
+	Given clause: 120[0:Res:68.0,75.0] ||  -> Feasible(skc7,TravelTo(skf1(skc8,U)))*.
+	Given clause: 70[0:Res:56.2,5.0] || IntConn(RUnion(U,skc6)) Feasible(skc7,TravelTo(U))* -> .
+SPASS V 3.7 
+SPASS beiseite: Proof found.
+Problem: lemmas/g.dfg 
+SPASS derived 23 clauses, backtracked 0 clauses, performed 0 splits and kept 66 clauses.
+SPASS allocated 55614 KBytes.
+SPASS spent	0:00:00.05 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+Here is a proof with depth 3, length 23 :
+1[0:Inp] ||  -> EmptyHanded(skc8)*.
+2[0:Inp] ||  -> AllStable(skc8)*.
+4[0:Inp] ||  -> Reachable(skc8,skc6)*.
+5[0:Inp] || Reachable(skc7,skc6)* -> .
+6[0:Inp] ||  -> Occurs(skc8,skc7,TravelTo(skc5))*.
+11[0:Inp] ||  -> Region(U)* Reachable(V,W)*.
+21[0:Inp] || Reachable(U,V)* -> Region(V).
+54[0:Inp] || Reachable(U,V) Region(skc9) -> IntConn(RUnion(skf1(U,V),V))*.
+55[0:Inp] || Reachable(U,V)* Region(skc9) -> Feasible(U,TravelTo(skf1(U,W)))*.
+56[0:Inp] || IntConn(RUnion(U,V))* Feasible(W,TravelTo(U))* -> Reachable(W,V)*.
+58[0:Inp] EmptyHanded(U) AllStable(U) Region(V) || Feasible(U,TravelTo(W))* Occurs(U,X,TravelTo(V))* -> Feasible(X,TravelTo(W))*.
+59[0:MRR:21.0,11.1] ||  -> Region(U)*.
+60[0:MRR:55.1,59.0] || Reachable(U,V)* -> Feasible(U,TravelTo(skf1(U,W)))*.
+61[0:MRR:54.1,59.0] || Reachable(U,V) -> IntConn(RUnion(skf1(U,V),V))*.
+62[0:MRR:58.2,59.0] AllStable(U) EmptyHanded(U) || Feasible(U,TravelTo(V))* Occurs(U,W,TravelTo(X))* -> Feasible(W,TravelTo(V))*.
+67[0:Res:4.0,61.0] ||  -> IntConn(RUnion(skf1(skc8,skc6),skc6))*.
+68[0:Res:4.0,60.0] ||  -> Feasible(skc8,TravelTo(skf1(skc8,U)))*.
+70[0:Res:56.2,5.0] || IntConn(RUnion(U,skc6)) Feasible(skc7,TravelTo(U))* -> .
+74[0:Res:6.0,62.3] EmptyHanded(skc8) AllStable(skc8) || Feasible(skc8,TravelTo(U))* -> Feasible(skc7,TravelTo(U)).
+75[0:MRR:74.0,74.1,1.0,2.0] || Feasible(skc8,TravelTo(U))* -> Feasible(skc7,TravelTo(U)).
+120[0:Res:68.0,75.0] ||  -> Feasible(skc7,TravelTo(skf1(skc8,U)))*.
+123[0:Res:120.0,70.1] || IntConn(RUnion(skf1(skc8,U),skc6))* -> .
+124[0:UnC:123.0,67.0] ||  -> .
+Formulae used in the proof : conjecture0 ALD3 axiom8 Lem4F
+
+--------------------------SPASS-STOP------------------------------

@@ -1,0 +1,99 @@
+
+Lemma S.A  forall(u,v,w) P(u,v) ^ P(v,w) => P(u,w). Proof: SBD1
+Lemma S.B  forall(u) Region(u) => P(u,u).           Proof: SBD1
+Lemma S.C: forall(u,v) P(u,v) => O(u,v).            Proof: SBD2 + LemS.B
+Lemma S.D: forall(u,v) P(u,v) => not DR(u,v).       Proof. LemS.C + SBD3
+
+
+Lemma S.E. P(u,v) ^ DR(v,w) => DR(u,w).
+Proof of contrapositive. 
+Assume: SE.1 Assume P(U,V) and not DR(U,W).
+Infer:  SE.2 O(U,W).                                SBD3 + SE.1.
+        SE.3 exists(X) P(X,U) ^ P(X,W).             SBD2 + SE.2
+        SE.4 exists(X) P(X,V) ^ P(X,W)              3E.3 + LemS.A
+        SE.5 O(V,W).                                SBD2 + SE.4
+        SE.6 not DR(V,W).                           SBD3 + SE.5
+Discharge SE.6 against SE.1 and rearrange.
+
+Lemma S.F. Outside(u,v) ^ P(w,u) ^ Cavity(x,v) => not P(w,x). 
+Assume SF.1 Outside(U,V) ^ P(W,U) ^ Cavity(X,V)
+Infer  SF.2 DR(U,X)                                           SCD2.
+       SF.3 DR(W,X).                                 LemS.E + SF.2
+       SF.4 not P(W,X).                              LemS.D + SF.3
+Discharge SF.4 against SF.1
+
+Lemma S.G: EC(ra,rb) ^ DC(rb,rc) => not P(ra,rc).
+Proof of the contrapositive:
+
+Assume SG.1 EC(Ra,Rb)
+       SG.2 DC(Rb,Rc)                        
+Infer  SG.3 C(Rb,Ra)                                           SBD4 + SBA3
+       SG.4 not C(Rb,Rc)                                       SG.2 + SGD5
+       SG.5 not P(Ra,Rc)                                SGD1 + SG.3 + SG.4
+SG.6: EC(ra,rb) ^ DC(rb,rc) => not P(ra,rc)
+                                Discharge SG.5 against SG.1, SG.2.
+
+
+Lemma S.H DR(r,ra) ^ DR(r,rb) => DR(r,RUnion(ra,rb))
+Proof: Since O(u,v) <=> not DR(u,v) (SBD3), Lemma S.H is just the 
+       contrapositive of SBA4.
+      
+
+Lemma S.I DC(u,v) ^ P(w,v) => DC(w,u).
+Proof: By SBD1 C(u,w) ^ P(w,v) => C(u,v). This is the contrapositive, 
+       using SBD5 and SBA3.
+
+
+
+Lemma S.J FullyOutside(u,v) => DC(u,v).
+Assume SJ.1 FullyOutside(U,V). 
+Infer  SJ.2 DC(ConvexHull(U),ConvexHull(V)).                            SCD7
+       SJ.3 DC(ConvexHull(V),ConvexHull(U)).              SBD5 + SBA3 + SJ.2
+       SJ.4 P(U,ConvexHull(U)).                                         SCA4
+       SJ.5 P(V,ConvexHull(U)).                                         SCA4
+       SJ.6 DC(U,V)                               LemS.I+SJ.2+SJ.3+SJ.4+SJ.5
+
+Lemma S.K DC(u,v) => DR(u,v).
+Proof:
+Assume SK.1 O(U,V).
+Infer  SK.2 exists(w) P(w,U) ^ P(w,V).                                 SBD2
+       SK.3 P(W,U) ^ P(W,V).                                          Naming
+       SK.4 C(W,W).                                                    SBA2
+       SK.5 C(W,U).                                               SBD1 + SK.3.
+       SK.6 C(U,W).                                                    SBA3
+       SK.7 C(U,V)                                                SBD1 + SK.3
+SK.8 forall(u,v) O(u,v) => C(u,v).                Discharge SK.7 against SK.8
+SK.9 forall(u,v) DC(u,v) => DR(u,v).    Contrapositive of SK.8 + SBD5 + SBD3        
+Lemma S.L P(u,v) => C(u,v). Proof: SBA2 + SBD1.
+
+Lemma S.M DR(u,v) => u !=v.
+Proof: Lemma S.D + Lemma S.B
+        
+Lemma S.N CombinedContainer(u,v,w) ^ P(x,w) => DR(x,u) ^ DR(x,v)
+Assume: SN.1 CombinedContainer(U,V,W)
+        SN.2 P(X,W)
+Infer:  SN.3 Cavity(W,RUnion(U,V))                             SCD4 + SN.1
+        SN.4 DR(W,RUnion(U,V))                                 SCD1 + SN.3
+        SN.5 DR(X,RUnion(U,V))                                 LemSE
+        SN.6 P(U,RUnion(U,V)) ^ P(V,RUnion(U,V))               SBD6
+        SN.7 DR(X,U) ^ DR(X,V)                                 LemSE
+
+
+Lemma S.P O(u,v) => O(v,u)                                     SBD2
+Lemma S.Q DR(u,v) => DR(v,u)                                   LemSP, SBD3
+
+Lemma S.O UContained(t.oa,ob) => OContained(t,oa,ob).  
+                                           Proof: OCD3, ORD3, SCA2, ORD2, OCD2
+
+Lemma S.T OpenContained(ra,rb) => not FullyOutside(ra,rb).
+Assume:  ST.1 OpenContained(Ra,Rb)
+Infer    ST.2 exists(rc) OpenContainerShape(Rb,rc) ^ P(Ra,rc). SCD6 + ST.1
+         ST.3 OpenContainerShape(Rb,Rc).                      Naming ST.2
+         ST.4 P(Ra,Rc)                                        Naming ST.2
+         ST.5 P(Rc,ConvexHull(Rb))                            SCA6 + ST.3
+         ST.6 P(Ra,ConvexHull(Rb)).                    LemSA + ST.4 + ST.5
+         ST.7 P(Ra,ConvexHull(Ra))                            SCA4
+         ST.8 O(ConvexHull(Ra),ConvexHull(Rb))           SBD2 + ST.6 + ST.7   
+         ST.9 not DC(ConvexHull(Ra),ConvexHull(Rb)).   LemSK + SBD3 + ST.8
+         ST.10 not FullyOutside(Ra,Rb)                 SCD7 + ST.9 
+

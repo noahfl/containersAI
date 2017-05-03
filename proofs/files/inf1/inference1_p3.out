@@ -1,0 +1,763 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> RigidObject(Ob1)*.
+2[0:Inp] ||  -> Lt(Ta1,Tb1)*.
+3[0:Inp] || IntConn(U)* -> Region(U).
+4[0:Inp] || RigidObject(U) -> Object(U)*.
+5[0:Inp] || RigidHistory(U)* -> History(U).
+6[0:Inp] ||  -> P(Place(Ta1,Ox1),Rc1)*.
+7[0:Inp] ||  -> equal(Slice(Ta1,Hc1),Rc1)**.
+8[0:Inp] ||  -> CContained(Ta1,Ox1,Singleton(Ob1))*.
+9[0:Inp] || Lt(U,V)* -> Time(U).
+10[0:Inp] || Lt(U,V)* -> Time(V).
+11[0:Inp] || Leq(U,V)* -> Time(U).
+12[0:Inp] || Leq(U,V)* -> Time(V).
+13[0:Inp] || Ordered(U,V)* -> Time(U).
+14[0:Inp] || Ordered(U,V)* -> Time(V).
+15[0:Inp] || SkP0(U,V)* -> Region(V).
+16[0:Inp] || SkP0(U,V)* -> Region(U).
+17[0:Inp] || SkP1(U,V)* -> Region(V).
+18[0:Inp] || SkP1(U,V)* -> Region(U).
+19[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+20[0:Inp] || Object(U) -> History(HPlace(U))*.
+21[0:Inp] ||  -> PersistentCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+22[0:Inp] ||  -> NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+23[0:Inp] || DR(U,V)* -> Region(U).
+24[0:Inp] || DR(U,V)* -> Region(V).
+25[0:Inp] || Cavity(U,V)* -> IntConn(U).
+26[0:Inp] || CContained(U,V,Singleton(V))* -> .
+27[0:Inp] || Leq3(U,V,W)* -> Time(U).
+28[0:Inp] || Leq3(U,V,W)* -> Time(V).
+29[0:Inp] || Leq3(U,V,W)* -> Time(W).
+30[0:Inp] || P(U,V) -> SkP0(V,U)*.
+31[0:Inp] || O(U,V) -> SkP0(V,U)*.
+32[0:Inp] || EC(U,V) -> SkP0(V,U)*.
+33[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+34[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
+35[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
+36[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+37[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+38[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+39[0:Inp] || ClosedContainer(U,V,W)* -> Time(U).
+40[0:Inp] || ClosedContainer(U,V,W)* -> ObjectSet(V).
+41[0:Inp] || ClosedContainer(U,V,W)* -> Region(W).
+42[0:Inp] || CContained(U,V,W)* -> Time(U).
+43[0:Inp] || CContained(U,V,W)* -> Object(V).
+44[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+45[0:Inp] || SkP2(U,V,W)* -> Time(W).
+46[0:Inp] || SkP2(U,V,W)* -> Time(V).
+47[0:Inp] || SkP2(U,V,W)* -> History(U).
+48[0:Inp] || Constant(U,V,W)* -> Time(U).
+49[0:Inp] || Constant(U,V,W)* -> Time(V).
+50[0:Inp] || Constant(U,V,W)* -> History(W).
+51[0:Inp] || AlwaysIntConn(U,V,W)* -> Time(U).
+52[0:Inp] || AlwaysIntConn(U,V,W)* -> Time(V).
+53[0:Inp] || AlwaysIntConn(U,V,W)* -> History(W).
+54[0:Inp] || Cavity(U,V) -> DR(U,V)*.
+55[0:Inp] || AlwaysIntConn(U,V,W)* -> History(W).
+56[0:Inp] || SkP3(U,V,W,X)* -> Time(X).
+57[0:Inp] || SkP3(U,V,W,X)* -> Time(W).
+58[0:Inp] || SkP3(U,V,W,X)* -> History(V).
+59[0:Inp] || SkP3(U,V,W,X)* -> History(U).
+60[0:Inp] || O(U,V) DR(U,V)* -> .
+61[0:Inp] || AlwaysIntConn(U,V,W)* -> Lt(U,V).
+62[0:Inp] || P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))* -> .
+63[0:Inp] || Continuous(U,V,W) -> SkP2(W,V,U)*.
+64[0:Inp] || WeaklyContinuous(U,V,W) -> SkP2(W,V,U)*.
+65[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+66[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+67[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+68[0:Inp] || NoExitCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+69[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+70[0:Inp] || PersistentCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+71[0:Inp] || Lt(U,V) Object(W) -> Continuous(U,V,HPlace(W))*.
+72[0:Inp] || Region(U) Region(V) -> O(V,U) DR(V,U)*.
+73[0:Inp] || Object(U) Lt(V,W) -> AlwaysIntConn(V,W,HPlace(U))*.
+74[0:Inp] || Time(U) Object(V) -> equal(Slice(U,HPlace(V)),Place(U,V))**.
+75[0:Inp] || DR(U,V)* IntConn(U) -> IntConn(skf4(W,X))* Cavity(U,V).
+76[0:Inp] || Leq3(U,V,W)* AlwaysIntConn(U,W,X)* -> IntConn(Slice(V,X))*.
+77[0:Inp] || DR(U,V) IntConn(U) -> O(skf4(V,U),U)* Cavity(U,V).
+78[0:Inp] || DR(U,V)* IntConn(U) -> DR(skf4(V,W),V)* Cavity(U,V).
+79[0:Inp] || P(skf4(U,V),V)* DR(V,U) IntConn(V) -> Cavity(V,U).
+80[0:Inp] || IntConn(U) O(U,V)* DR(U,W)* Cavity(V,W)* -> P(U,V).
+81[0:Inp] || Lt(U,V) History(W) -> Leq3(U,skf5(W,V,U),V)* AlwaysIntConn(U,V,W).
+82[0:Inp] || Object(U) Object(V) Time(W) -> equal(U,V) DR(Place(W,U),Place(W,V))*.
+83[0:Inp] || IntConn(Slice(skf5(U,V,W),U))* Lt(X,Y) History(U) -> AlwaysIntConn(X,Y,U)*.
+84[0:Inp] || Cavity(U,Slice(V,W))* RigidHistory(W) Leq3(X,V,Y)* -> RigidHistory(skf7(Z,X1,X2,X3,X4))*.
+85[0:Inp] || Cavity(U,Slice(V,W))* RigidHistory(W) Leq3(X,V,Y)* -> equal(Slice(V,skf7(V,U,Z,X1,X2)),U)**.
+86[0:Inp] || Cavity(U,Slice(V,W)) RigidHistory(W) Leq3(X,V,Y) -> PersistentCavity(X,Y,skf7(V,U,W,Y,X),W)*.
+87[0:Inp] || NoExitCavity(U,V,W,X)* P(Slice(U,Y),Slice(U,W))* AlwaysIntConn(U,V,Y)* Continuous(U,V,Y) -> Lt(skf6(U,V,Z,X1),V)* P(Slice(V,Y),Slice(V,W))*.
+88[0:Inp] || NoExitCavity(U,V,W,X)* P(Slice(U,Y),Slice(U,W))* AlwaysIntConn(U,V,Y)* Continuous(U,V,Y) -> Lt(U,skf6(U,Z,X1,X2))* P(Slice(V,Y),Slice(V,W))*.
+89[0:Inp] || NoExitCavity(U,V,W,X)* P(Slice(U,Y),Slice(U,W))* AlwaysIntConn(U,V,Y) Continuous(U,V,Y) -> O(Slice(skf6(U,V,X,Y),Y),Slice(skf6(U,V,X,Y),X))* P(Slice(V,Y),Slice(V,W))*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: RigidObject.
+ Axiom clauses: 88 Conjecture clauses: 1
+ Inferences: IEmS=1 ISoR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf7 > skf3 > skf6 > skf2 > skf5 > skf1 > skf4 > skf0 > Slice > Place > RUnion > HPlace > Singleton > SkP3 > SkP2 > SkP1 > SkP0 > IntConn > AlwaysIntConn > Continuous > PersistentCavity > DR > O > RigidHistory > Cavity > P > Leq3 > Lt > History > Region > Time > Ordered > ObjectSet > Object > Leq > OSPlace > ClosedContainer > CContained > RigidObject > EC > Outside > NoExitCavity > NoEntranceCavity > WeaklyContinuous > Constant > skc14 > skc13 > skc12 > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Hc1 > Rc1 > Tb1 > Ta1 > Ob1 > Ox1
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> RigidObject(Ob1)*.
+2[0:Inp] ||  -> Lt(Ta1,Tb1)*.
+8[0:Inp] ||  -> CContained(Ta1,Ox1,Singleton(Ob1))*.
+7[0:Inp] ||  -> equal(Slice(Ta1,Hc1),Rc1)**.
+6[0:Inp] ||  -> P(Place(Ta1,Ox1),Rc1)*.
+4[0:Inp] RigidObject(U) ||  -> Object(U)*.
+5[0:Inp] RigidHistory(U) ||  -> History(U)*.
+3[0:Inp] IntConn(U) ||  -> Region(U)*.
+21[0:Inp] ||  -> PersistentCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+22[0:Inp] ||  -> NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+19[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+20[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+26[0:Inp] || CContained(U,V,Singleton(V))* -> .
+25[0:Inp] || Cavity(U,V)* -> IntConn(U).
+18[0:Inp] || SkP1(U,V)* -> Region(U).
+17[0:Inp] || SkP1(U,V)* -> Region(V).
+16[0:Inp] || SkP0(U,V)* -> Region(U).
+15[0:Inp] || SkP0(U,V)* -> Region(V).
+24[0:Inp] || DR(U,V)* -> Region(V).
+23[0:Inp] || DR(U,V)* -> Region(U).
+14[0:Inp] || Ordered(U,V)* -> Time(V).
+13[0:Inp] || Ordered(U,V)* -> Time(U).
+12[0:Inp] || Leq(U,V)* -> Time(V).
+11[0:Inp] || Leq(U,V)* -> Time(U).
+10[0:Inp] || Lt(U,V)* -> Time(V).
+9[0:Inp] || Lt(U,V)* -> Time(U).
+35[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
+34[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
+32[0:Inp] || EC(U,V) -> SkP0(V,U)*.
+31[0:Inp] || O(U,V) -> SkP0(V,U)*.
+30[0:Inp] || P(U,V) -> SkP0(V,U)*.
+33[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+54[0:Inp] || Cavity(U,V) -> DR(U,V)*.
+40[0:Inp] || ClosedContainer(U,V,W)* -> ObjectSet(V).
+37[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+44[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+50[0:Inp] || Constant(U,V,W)* -> History(W).
+47[0:Inp] || SkP2(U,V,W)* -> History(U).
+43[0:Inp] || CContained(U,V,W)* -> Object(V).
+55[0:Inp] || AlwaysIntConn(U,V,W)* -> History(W).
+41[0:Inp] || ClosedContainer(U,V,W)* -> Region(W).
+38[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+49[0:Inp] || Constant(U,V,W)* -> Time(V).
+48[0:Inp] || Constant(U,V,W)* -> Time(U).
+39[0:Inp] || ClosedContainer(U,V,W)* -> Time(U).
+36[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+46[0:Inp] || SkP2(U,V,W)* -> Time(V).
+45[0:Inp] || SkP2(U,V,W)* -> Time(W).
+42[0:Inp] || CContained(U,V,W)* -> Time(U).
+29[0:Inp] || Leq3(U,V,W)* -> Time(W).
+28[0:Inp] || Leq3(U,V,W)* -> Time(V).
+27[0:Inp] || Leq3(U,V,W)* -> Time(U).
+52[0:Inp] || AlwaysIntConn(U,V,W)* -> Time(V).
+51[0:Inp] || AlwaysIntConn(U,V,W)* -> Time(U).
+60[0:Inp] || DR(U,V)* O(U,V) -> .
+61[0:Inp] || AlwaysIntConn(U,V,W)* -> Lt(U,V).
+59[0:Inp] || SkP3(U,V,W,X)* -> History(U).
+58[0:Inp] || SkP3(U,V,W,X)* -> History(V).
+57[0:Inp] || SkP3(U,V,W,X)* -> Time(W).
+56[0:Inp] || SkP3(U,V,W,X)* -> Time(X).
+62[0:Inp] || P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))* -> .
+64[0:Inp] || WeaklyContinuous(U,V,W) -> SkP2(W,V,U)*.
+63[0:Inp] || Continuous(U,V,W) -> SkP2(W,V,U)*.
+65[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+67[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+66[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+69[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+70[0:Inp] || PersistentCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+68[0:Inp] || NoExitCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+72[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
+71[0:Inp] Object(U) || Lt(V,W) -> Continuous(V,W,HPlace(U))*.
+73[0:Inp] Object(U) || Lt(V,W) -> AlwaysIntConn(V,W,HPlace(U))*.
+74[0:Inp] Object(U) Time(V) ||  -> equal(Slice(V,HPlace(U)),Place(V,U))**.
+75[0:Inp] IntConn(U) || DR(U,V)* -> IntConn(skf4(W,X))* Cavity(U,V).
+76[0:Inp] || AlwaysIntConn(U,V,W)* Leq3(U,X,V)* -> IntConn(Slice(X,W))*.
+77[0:Inp] IntConn(U) || DR(U,V) -> Cavity(U,V) O(skf4(V,U),U)*.
+78[0:Inp] IntConn(U) || DR(U,V)* -> Cavity(U,V) DR(skf4(V,W),V)*.
+79[0:Inp] IntConn(U) || DR(U,V) P(skf4(V,U),U)* -> Cavity(U,V).
+81[0:Inp] History(U) || Lt(V,W) -> AlwaysIntConn(V,W,U) Leq3(V,skf5(U,W,V),W)*.
+80[0:Inp] IntConn(U) || Cavity(V,W)* DR(U,W)* O(U,V)* -> P(U,V).
+82[0:Inp] Time(U) Object(V) Object(W) ||  -> equal(W,V) DR(Place(U,W),Place(U,V))*.
+83[0:Inp] History(U) || IntConn(Slice(skf5(U,V,W),U))* Lt(X,Y) -> AlwaysIntConn(X,Y,U)*.
+84[0:Inp] RigidHistory(U) || Cavity(V,Slice(W,U))* Leq3(X,W,Y)* -> RigidHistory(skf7(Z,X1,X2,X3,X4))*.
+86[0:Inp] RigidHistory(U) || Cavity(V,Slice(W,U)) Leq3(X,W,Y) -> PersistentCavity(X,Y,skf7(W,V,U,Y,X),U)*.
+85[0:Inp] RigidHistory(U) || Cavity(V,Slice(W,U))* Leq3(X,W,Y)* -> equal(Slice(W,skf7(W,V,Z,X1,X2)),V)**.
+90[0:Res:80.4,62.0] IntConn(Slice(Tb1,HPlace(Ox1))) || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* O(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))* -> .
+93[0:Res:87.5,62.0] || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(skf6(U,Tb1,W,X),Tb1)*.
+92[0:Res:88.5,62.0] || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(U,skf6(U,W,X,Y))*.
+87[0:Inp] || P(Slice(U,V),Slice(U,W))* Continuous(U,X,V) AlwaysIntConn(U,X,V)* NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* Lt(skf6(U,X,Z,X1),X)*.
+88[0:Inp] || P(Slice(U,V),Slice(U,W))* Continuous(U,X,V) AlwaysIntConn(U,X,V)* NoExitCavity(U,X,W,Y)* -> Lt(U,skf6(U,Z,X1,X2))* P(Slice(X,V),Slice(X,W))*.
+89[0:Inp] || P(Slice(U,V),Slice(U,W))* Continuous(U,X,V) AlwaysIntConn(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf6(U,X,Y,V),V),Slice(skf6(U,X,Y,V),Y))*.
+	Given clause: 75[0:Inp] IntConn(U) || DR(U,V)*+ -> IntConn(skf4(W,X))* Cavity(U,V).
+	Given clause: 94[1:Spt:75.0,75.1,75.3] IntConn(U) || DR(U,V)* -> Cavity(U,V).
+	Given clause: 1[0:Inp] ||  -> RigidObject(Ob1)*.
+	Given clause: 2[0:Inp] ||  -> Lt(Ta1,Tb1)*.
+	Given clause: 8[0:Inp] ||  -> CContained(Ta1,Ox1,Singleton(Ob1))*.
+	Given clause: 7[0:Inp] ||  -> equal(Slice(Ta1,Hc1),Rc1)**.
+	Given clause: 6[0:Inp] ||  -> P(Place(Ta1,Ox1),Rc1)*.
+	Given clause: 4[0:Inp] RigidObject(U) ||  -> Object(U)*.
+	Given clause: 5[0:Inp] RigidHistory(U) ||  -> History(U)*.
+	Given clause: 3[0:Inp] IntConn(U) ||  -> Region(U)*.
+	Given clause: 21[0:Inp] ||  -> PersistentCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 22[0:Inp] ||  -> NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 19[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 20[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+	Given clause: 26[0:Inp] || CContained(U,V,Singleton(V))* -> .
+	Given clause: 25[0:Inp] || Cavity(U,V)* -> IntConn(U).
+	Given clause: 18[0:Inp] || SkP1(U,V)* -> Region(U).
+	Given clause: 17[0:Inp] || SkP1(U,V)* -> Region(V).
+	Given clause: 16[0:Inp] || SkP0(U,V)* -> Region(U).
+	Given clause: 15[0:Inp] || SkP0(U,V)* -> Region(V).
+	Given clause: 24[0:Inp] || DR(U,V)* -> Region(V).
+	Given clause: 23[0:Inp] || DR(U,V)* -> Region(U).
+	Given clause: 14[0:Inp] || Ordered(U,V)* -> Time(V).
+	Given clause: 13[0:Inp] || Ordered(U,V)* -> Time(U).
+	Given clause: 12[0:Inp] || Leq(U,V)* -> Time(V).
+	Given clause: 11[0:Inp] || Leq(U,V)* -> Time(U).
+	Given clause: 10[0:Inp] || Lt(U,V)* -> Time(V).
+	Given clause: 96[0:Res:2.0,10.0] ||  -> Time(Tb1)*.
+	Given clause: 9[0:Inp] || Lt(U,V)* -> Time(U).
+	Given clause: 97[0:Res:2.0,9.0] ||  -> Time(Ta1)*.
+	Given clause: 35[0:Inp] || Outside(U,V) -> SkP1(V,U)*.
+	Given clause: 34[0:Inp] || Cavity(U,V) -> SkP1(V,U)*.
+	Given clause: 98[0:Res:35.1,17.0] || Outside(U,V)* -> Region(U).
+	Given clause: 99[0:Res:35.1,18.0] || Outside(U,V)* -> Region(V).
+	Given clause: 100[0:Res:34.1,17.0] || Cavity(U,V)* -> Region(U).
+	Given clause: 101[0:Res:34.1,18.0] || Cavity(U,V)* -> Region(V).
+	Given clause: 32[0:Inp] || EC(U,V) -> SkP0(V,U)*.
+	Given clause: 102[0:Res:32.1,15.0] || EC(U,V)* -> Region(U).
+	Given clause: 103[0:Res:32.1,16.0] || EC(U,V)* -> Region(V).
+	Given clause: 31[0:Inp] || O(U,V) -> SkP0(V,U)*.
+	Given clause: 104[0:Res:31.1,15.0] || O(U,V)* -> Region(U).
+	Given clause: 30[0:Inp] || P(U,V) -> SkP0(V,U)*.
+	Given clause: 105[0:Res:31.1,16.0] || O(U,V)* -> Region(V).
+	Given clause: 106[0:Res:30.1,15.0] || P(U,V)* -> Region(U).
+	Given clause: 108[0:Res:6.0,106.0] ||  -> Region(Place(Ta1,Ox1))*.
+	Given clause: 107[0:Res:30.1,16.0] || P(U,V)* -> Region(V).
+	Given clause: 33[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+	Given clause: 109[0:Res:6.0,107.0] ||  -> Region(Rc1)*.
+	Given clause: 54[0:Inp] || Cavity(U,V) -> DR(U,V)*.
+	Given clause: 40[0:Inp] || ClosedContainer(U,V,W)* -> ObjectSet(V).
+	Given clause: 37[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+	Given clause: 44[0:Inp] || CContained(U,V,W)* -> ObjectSet(W).
+	Given clause: 115[0:Res:8.0,44.0] ||  -> ObjectSet(Singleton(Ob1))*.
+	Given clause: 50[0:Inp] || Constant(U,V,W)* -> History(W).
+	Given clause: 47[0:Inp] || SkP2(U,V,W)* -> History(U).
+	Given clause: 43[0:Inp] || CContained(U,V,W)* -> Object(V).
+	Given clause: 55[0:Inp] || AlwaysIntConn(U,V,W)* -> History(W).
+	Given clause: 116[0:Res:8.0,43.0] ||  -> Object(Ox1)*.
+	Given clause: 41[0:Inp] || ClosedContainer(U,V,W)* -> Region(W).
+	Given clause: 38[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+	Given clause: 49[0:Inp] || Constant(U,V,W)* -> Time(V).
+	Given clause: 48[0:Inp] || Constant(U,V,W)* -> Time(U).
+	Given clause: 39[0:Inp] || ClosedContainer(U,V,W)* -> Time(U).
+	Given clause: 36[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+	Given clause: 46[0:Inp] || SkP2(U,V,W)* -> Time(V).
+	Given clause: 45[0:Inp] || SkP2(U,V,W)* -> Time(W).
+	Given clause: 42[0:Inp] || CContained(U,V,W)* -> Time(U).
+	Given clause: 29[0:Inp] || Leq3(U,V,W)* -> Time(W).
+	Given clause: 28[0:Inp] || Leq3(U,V,W)* -> Time(V).
+	Given clause: 27[0:Inp] || Leq3(U,V,W)* -> Time(U).
+	Given clause: 52[0:Inp] || AlwaysIntConn(U,V,W)* -> Time(V).
+	Given clause: 51[0:Inp] || AlwaysIntConn(U,V,W)* -> Time(U).
+	Given clause: 60[0:Inp] || DR(U,V)* O(U,V) -> .
+	Given clause: 118[0:Res:54.1,60.0] || Cavity(U,V) O(U,V)* -> .
+	Given clause: 61[0:Inp] || AlwaysIntConn(U,V,W)* -> Lt(U,V).
+	Given clause: 59[0:Inp] || SkP3(U,V,W,X)* -> History(U).
+	Given clause: 58[0:Inp] || SkP3(U,V,W,X)* -> History(V).
+	Given clause: 57[0:Inp] || SkP3(U,V,W,X)* -> Time(W).
+	Given clause: 56[0:Inp] || SkP3(U,V,W,X)* -> Time(X).
+	Given clause: 62[0:Inp] || P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))* -> .
+	Given clause: 64[0:Inp] || WeaklyContinuous(U,V,W) -> SkP2(W,V,U)*.
+	Given clause: 63[0:Inp] || Continuous(U,V,W) -> SkP2(W,V,U)*.
+	Given clause: 119[0:Res:64.1,45.0] || WeaklyContinuous(U,V,W)* -> Time(U).
+	Given clause: 120[0:Res:64.1,46.0] || WeaklyContinuous(U,V,W)* -> Time(V).
+	Given clause: 121[0:Res:64.1,47.0] || WeaklyContinuous(U,V,W)* -> History(W).
+	Given clause: 122[0:Res:63.1,45.0] || Continuous(U,V,W)* -> Time(U).
+	Given clause: 65[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 123[0:Res:63.1,46.0] || Continuous(U,V,W)* -> Time(V).
+	Given clause: 124[0:Res:63.1,47.0] || Continuous(U,V,W)* -> History(W).
+	Given clause: 67[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+	Given clause: 66[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+	Given clause: 69[0:Inp] || NoEntranceCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+	Given clause: 126[0:Res:69.1,56.0] || NoEntranceCavity(U,V,W,X)* -> Time(U).
+	Given clause: 127[0:Res:69.1,57.0] || NoEntranceCavity(U,V,W,X)* -> Time(V).
+	Given clause: 128[0:Res:69.1,58.0] || NoEntranceCavity(U,V,W,X)* -> History(W).
+	Given clause: 129[0:Res:69.1,59.0] || NoEntranceCavity(U,V,W,X)* -> History(X).
+	Given clause: 70[0:Inp] || PersistentCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+	Given clause: 130[0:Res:70.1,56.0] || PersistentCavity(U,V,W,X)* -> Time(U).
+	Given clause: 131[0:Res:70.1,57.0] || PersistentCavity(U,V,W,X)* -> Time(V).
+	Given clause: 132[0:Res:70.1,58.0] || PersistentCavity(U,V,W,X)* -> History(W).
+	Given clause: 136[0:Res:21.0,132.0] ||  -> History(Hc1)*.
+	Given clause: 68[0:Inp] || NoExitCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+	Given clause: 133[0:Res:70.1,59.0] || PersistentCavity(U,V,W,X)* -> History(X).
+	Given clause: 141[0:Res:21.0,133.0] ||  -> History(HPlace(Ob1))*.
+	Given clause: 137[0:Res:68.1,56.0] || NoExitCavity(U,V,W,X)* -> Time(U).
+	Given clause: 138[0:Res:68.1,57.0] || NoExitCavity(U,V,W,X)* -> Time(V).
+	Given clause: 72[0:Inp] Region(U) Region(V) ||  -> DR(U,V)* O(U,V).
+	Given clause: 139[0:Res:68.1,58.0] || NoExitCavity(U,V,W,X)* -> History(W).
+	Given clause: 140[0:Res:68.1,59.0] || NoExitCavity(U,V,W,X)* -> History(X).
+	Given clause: 71[0:Inp] Object(U) || Lt(V,W) -> Continuous(V,W,HPlace(U))*.
+	Given clause: 73[0:Inp] Object(U) || Lt(V,W) -> AlwaysIntConn(V,W,HPlace(U))*.
+	Given clause: 74[0:Inp] Object(U) Time(V) ||  -> equal(Slice(V,HPlace(U)),Place(V,U))**.
+	Given clause: 161[0:SSi:160.1,160.0,96.0,116.0] || P(Place(Tb1,Ox1),Slice(Tb1,Hc1))* -> .
+	Given clause: 148[1:SSi:147.0,3.1] Region(U) IntConn(V) ||  -> O(V,U)* Cavity(V,U).
+	Given clause: 76[0:Inp] || AlwaysIntConn(U,V,W)*+ Leq3(U,X,V)* -> IntConn(Slice(X,W))*.
+	Given clause: 166[0:Res:73.2,76.0] Object(U) || Lt(V,W) Leq3(V,X,W)*+ -> IntConn(Slice(X,HPlace(U)))*.
+	Given clause: 80[0:Inp] IntConn(U) || Cavity(V,W)*+ DR(U,W)* O(U,V)* -> P(U,V).
+	Given clause: 81[0:Inp] History(U) || Lt(V,W) -> AlwaysIntConn(V,W,U) Leq3(V,skf5(U,W,V),W)*.
+	Given clause: 168[0:Res:81.3,28.0] History(U) || Lt(V,W) -> AlwaysIntConn(V,W,U) Time(skf5(U,W,V))*.
+	Given clause: 82[0:Inp] Time(U) Object(V) Object(W) ||  -> equal(W,V) DR(Place(U,W),Place(U,V))*.
+	Given clause: 83[0:Inp] History(U) || IntConn(Slice(skf5(U,V,W),U))*+ Lt(X,Y) -> AlwaysIntConn(X,Y,U)*.
+	Given clause: 84[0:Inp] RigidHistory(U) || Cavity(V,Slice(W,U))*+ Leq3(X,W,Y)* -> RigidHistory(skf7(Z,X1,X2,X3,X4))*.
+	Given clause: 177[0:SpL:7.0,84.1] RigidHistory(Hc1) || Cavity(U,Rc1)* Leq3(V,Ta1,W)* -> RigidHistory(skf7(X,Y,Z,X1,X2))*.
+	Given clause: 172[0:Res:82.4,60.0] Time(U) Object(V) Object(W) || O(Place(U,W),Place(U,V))* -> equal(W,V).
+	Given clause: 171[0:Obv:170.2] History(U) Object(V) || Lt(W,X) -> AlwaysIntConn(W,X,U) IntConn(Slice(skf5(U,X,W),HPlace(V)))*.
+	Given clause: 186[0:MRR:185.0,168.3] History(U) Object(V) || Lt(W,X) -> AlwaysIntConn(W,X,U) IntConn(Place(skf5(U,X,W),V))*.
+	Given clause: 85[0:Inp] RigidHistory(U) || Cavity(V,Slice(W,U))*+ Leq3(X,W,Y)* -> equal(Slice(W,skf7(W,V,Z,X1,X2)),V)**.
+	Given clause: 187[0:SpL:7.0,85.1] RigidHistory(Hc1) || Cavity(U,Rc1) Leq3(V,Ta1,W)* -> equal(Slice(Ta1,skf7(Ta1,U,X,Y,Z)),U)**.
+	Given clause: 175[1:Res:82.4,94.1] Time(U) Object(V) Object(W) IntConn(Place(U,W)) ||  -> equal(W,V) Cavity(Place(U,W),Place(U,V))*.
+	Given clause: 86[0:Inp] RigidHistory(U) || Cavity(V,Slice(W,U)) Leq3(X,W,Y) -> PersistentCavity(X,Y,skf7(W,V,U,Y,X),U)*.
+	Given clause: 194[0:Res:86.3,132.0] RigidHistory(U) || Cavity(V,Slice(W,U)) Leq3(X,W,Y) -> History(skf7(W,V,U,Y,X))*.
+	Given clause: 87[0:Inp] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) AlwaysIntConn(U,X,V)* NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* Lt(skf6(U,X,Z,X1),X)*.
+	Given clause: 179[0:MRR:178.1,28.1] Object(U) RigidHistory(HPlace(U)) || Cavity(V,Place(W,U))* Leq3(X,W,Y)* -> RigidHistory(skf7(Z,X1,X2,X3,X4))*.
+	Given clause: 90[0:Res:80.4,62.0] IntConn(Slice(Tb1,HPlace(Ox1))) || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* O(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))* -> .
+	Given clause: 189[0:MRR:188.1,28.1] Object(U) RigidHistory(HPlace(U)) || Cavity(V,Place(W,U))* Leq3(X,W,Y)* -> equal(Slice(W,skf7(W,V,Z,X1,X2)),V)**.
+	Given clause: 205[0:SSi:203.0,116.0] || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* O(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))*+ Leq3(V,Tb1,W)* Lt(V,W) -> .
+	Given clause: 88[0:Inp] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) AlwaysIntConn(U,X,V)* NoExitCavity(U,X,W,Y)* -> Lt(U,skf6(U,Z,X1,X2))* P(Slice(X,V),Slice(X,W))*.
+	Given clause: 209[0:SSi:208.1,208.0,96.0,116.0] || Cavity(Slice(Tb1,Hc1),U) DR(Place(Tb1,Ox1),U)* O(Place(Tb1,Ox1),Slice(Tb1,Hc1))*+ Leq3(V,Tb1,W)* Lt(V,W) -> .
+	Given clause: 204[0:SoR:90.0,76.2] || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* O(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))*+ Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> .
+	Given clause: 222[0:SSi:221.1,221.0,96.0,116.0] || Cavity(Slice(Tb1,Hc1),U) DR(Place(Tb1,Ox1),U)* O(Place(Tb1,Ox1),Slice(Tb1,Hc1))*+ Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> .
+	Given clause: 224[1:MRR:223.0,76.2] || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)*+ Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> Cavity(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))*.
+	Given clause: 89[0:Inp] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) AlwaysIntConn(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf6(U,X,Y,V),V),Slice(skf6(U,X,Y,V),Y))*.
+	Given clause: 231[1:SSi:230.1,230.0,96.0,116.0] || Cavity(Slice(Tb1,Hc1),U)+ DR(Place(Tb1,Ox1),U)* Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> Cavity(Place(Tb1,Ox1),Slice(Tb1,Hc1))*.
+	Given clause: 233[1:MRR:232.0,101.1] || Cavity(Slice(Tb1,Hc1),U)+ Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> O(Slice(Tb1,HPlace(Ox1)),U)* Cavity(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))*.
+	Given clause: 240[2:Spt:233.0,233.3] || Cavity(Slice(Tb1,Hc1),U) -> O(Slice(Tb1,HPlace(Ox1)),U)*.
+	Given clause: 244[2:Res:240.1,104.0] || Cavity(Slice(Tb1,Hc1),U)* -> Region(Slice(Tb1,HPlace(Ox1))).
+	Given clause: 247[2:SSi:241.1,241.0,96.0,116.0] || Cavity(Slice(Tb1,Hc1),U) -> O(Place(Tb1,Ox1),U)*.
+	Given clause: 93[0:Res:87.5,62.0] || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))*+ Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(skf6(U,Tb1,W,X),Tb1)*.
+	Given clause: 250[2:Res:247.1,104.0] || Cavity(Slice(Tb1,Hc1),U)* -> Region(Place(Tb1,Ox1)).
+	Given clause: 248[2:Res:247.1,118.1] || Cavity(Slice(Tb1,Hc1),U)* Cavity(Place(Tb1,Ox1),U) -> .
+	Given clause: 242[2:Res:240.1,118.1] || Cavity(Slice(Tb1,Hc1),U) Cavity(Slice(Tb1,HPlace(Ox1)),U)* -> .
+	Given clause: 254[2:SSi:251.2,251.0,116.0,96.0] Object(U) || Cavity(Slice(Tb1,Hc1),Place(Tb1,U))* -> equal(Ox1,U).
+	Given clause: 92[0:Res:88.5,62.0] || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))*+ Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(U,skf6(U,W,X,Y))*.
+	Given clause: 253[2:Res:247.1,209.2] || Cavity(Slice(Tb1,Hc1),Slice(Tb1,Hc1))*+ Cavity(Slice(Tb1,Hc1),U) DR(Place(Tb1,Ox1),U)* Leq3(V,Tb1,W)* Lt(V,W) -> .
+	Given clause: 246[2:Res:240.1,205.2] || Cavity(Slice(Tb1,Hc1),Slice(Tb1,Hc1))*+ Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* Leq3(V,Tb1,W)* Lt(V,W) -> .
+	Given clause: 252[2:Res:247.1,222.2] || Cavity(Slice(Tb1,Hc1),Slice(Tb1,Hc1))*+ Cavity(Slice(Tb1,Hc1),U) DR(Place(Tb1,Ox1),U)* Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> .
+	Given clause: 255[0:SpL:7.0,93.0] || P(Slice(Ta1,HPlace(Ox1)),Rc1)+ Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(skf6(Ta1,Tb1,V,W),Tb1)*.
+	Given clause: 213[0:SpL:7.0,88.0] || P(Rc1,Slice(Ta1,U))+ Continuous(Ta1,V,Hc1) AlwaysIntConn(Ta1,V,Hc1) NoExitCavity(Ta1,V,U,W)* -> Lt(Ta1,skf6(Ta1,X,Y,Z))* P(Slice(V,Hc1),Slice(V,U))*.
+	Given clause: 267[3:Spt:213.0,213.1,213.2,213.3,213.5] || P(Rc1,Slice(Ta1,U))+ Continuous(Ta1,V,Hc1) AlwaysIntConn(Ta1,V,Hc1) NoExitCavity(Ta1,V,U,W)* -> P(Slice(V,Hc1),Slice(V,U))*.
+	Given clause: 266[0:MRR:265.0,6.0] || Continuous(Ta1,Tb1,HPlace(Ox1))+ AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(skf6(Ta1,Tb1,V,W),Tb1)*.
+	Given clause: 273[0:MRR:272.0,61.1] || AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))+ NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(skf6(Ta1,Tb1,V,W),Tb1)*.
+	Given clause: 276[0:MRR:275.0,2.0] || NoExitCavity(Ta1,Tb1,Hc1,U)*+ -> Lt(skf6(Ta1,Tb1,V,W),Tb1)*.
+	Given clause: 277[0:Res:22.0,276.0] ||  -> Lt(skf6(Ta1,Tb1,U,V),Tb1)*.
+	Given clause: 211[0:SpL:7.0,88.0] || P(Slice(Ta1,U),Rc1)+ Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W)* -> Lt(Ta1,skf6(Ta1,X,Y,Z))* P(Slice(V,U),Slice(V,Hc1))*.
+	Given clause: 280[4:Spt:211.0,211.1,211.2,211.3,211.5] || P(Slice(Ta1,U),Rc1)+ Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,U),Slice(V,Hc1))*.
+	Given clause: 278[0:Res:277.0,9.0] ||  -> Time(skf6(Ta1,Tb1,U,V))*.
+	Given clause: 268[3:SpL:7.0,267.0] || P(Rc1,Rc1) Continuous(Ta1,U,Hc1) AlwaysIntConn(Ta1,U,Hc1) NoExitCavity(Ta1,U,Hc1,V)*+ -> P(Slice(U,Hc1),Slice(U,Hc1))*.
+	Given clause: 284[3:Res:22.0,268.3] || P(Rc1,Rc1) Continuous(Ta1,Tb1,Hc1) AlwaysIntConn(Ta1,Tb1,Hc1) -> P(Slice(Tb1,Hc1),Slice(Tb1,Hc1))*.
+	Given clause: 285[3:Res:284.3,107.0] || P(Rc1,Rc1) Continuous(Ta1,Tb1,Hc1) AlwaysIntConn(Ta1,Tb1,Hc1)* -> Region(Slice(Tb1,Hc1)).
+	Given clause: 201[0:MRR:198.1,137.1] Object(U) || P(Slice(V,W),Place(V,U))*+ Continuous(V,X,W) AlwaysIntConn(V,X,W)* NoExitCavity(V,X,HPlace(U),Y)* -> P(Slice(X,W),Slice(X,HPlace(U)))* Lt(skf6(V,X,Z,X1),X)*.
+	Given clause: 260[0:SpL:7.0,92.0] || P(Slice(Ta1,HPlace(Ox1)),Rc1)+ Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+	Given clause: 295[0:MRR:294.0,6.0] || Continuous(Ta1,Tb1,HPlace(Ox1))+ AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+	Given clause: 298[0:MRR:297.0,61.1] || AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))+ NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+	Given clause: 301[0:MRR:300.0,2.0] || NoExitCavity(Ta1,Tb1,Hc1,U)*+ -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+	Given clause: 215[0:MRR:212.1,137.1] Object(U) || P(Slice(V,W),Place(V,U))*+ Continuous(V,X,W) AlwaysIntConn(V,X,W)* NoExitCavity(V,X,HPlace(U),Y)* -> Lt(V,skf6(V,Z,X1,X2))* P(Slice(X,W),Slice(X,HPlace(U)))*.
+	Given clause: 302[0:Res:22.0,301.0] ||  -> Lt(Ta1,skf6(Ta1,U,V,W))*.
+	Given clause: 307[0:Res:302.0,10.0] ||  -> Time(skf6(Ta1,U,V,W))*.
+	Given clause: 245[2:Res:240.1,204.2] || Cavity(Slice(Tb1,Hc1),Slice(Tb1,Hc1))*+ Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* Leq3(V,Tb1,W) AlwaysIntConn(V,W,HPlace(Ox1))* -> .
+	Given clause: 218[1:SSi:217.0,67.0,96.0,136.2] IntConn(Place(Tb1,Ox1)) || Cavity(Slice(Tb1,Hc1),U) DR(Place(Tb1,Ox1),U)* Leq3(V,Tb1,W)* Lt(V,W) -> Cavity(Place(Tb1,Ox1),Slice(Tb1,Hc1))*.
+	Given clause: 202[0:MRR:200.1,137.1] Object(U) || P(Place(V,U),Slice(V,W))*+ Continuous(V,X,HPlace(U)) AlwaysIntConn(V,X,HPlace(U))* NoExitCavity(V,X,W,Y)* -> P(Slice(X,HPlace(U)),Slice(X,W))* Lt(skf6(V,X,Z,X1),X)*.
+	Given clause: 258[0:MRR:257.0,137.1] || P(Place(U,Ox1),Slice(U,Hc1))*+ Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(skf6(U,Tb1,W,X),Tb1)*.
+	Given clause: 263[0:MRR:262.0,137.1] || P(Place(U,Ox1),Slice(U,Hc1))*+ Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(U,skf6(U,W,X,Y))*.
+	Given clause: 192[1:MRR:191.0,168.3] Object(U) Object(V) History(W) || Lt(X,Y) -> equal(V,U) Cavity(Place(skf5(W,Y,X),V),Place(skf5(W,Y,X),U))* AlwaysIntConn(X,Y,W).
+	Given clause: 313[1:Res:192.5,100.0] Object(U) Object(V) History(W) || Lt(X,Y)+ -> equal(V,U)* AlwaysIntConn(X,Y,W) Region(Place(skf5(W,Y,X),V))*.
+	Given clause: 216[0:MRR:214.1,137.1] Object(U) || P(Place(V,U),Slice(V,W))*+ Continuous(V,X,HPlace(U)) AlwaysIntConn(V,X,HPlace(U))* NoExitCavity(V,X,W,Y)* -> Lt(V,skf6(V,Z,X1,X2))* P(Slice(X,HPlace(U)),Slice(X,W))*.
+	Given clause: 316[1:Res:2.0,313.3] Object(U) Object(V) History(W) ||  -> equal(V,U)* AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),V))*.
+	Given clause: 580[1:SSi:321.1,4.0,1.1] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ob1))* RigidObject(U)*.
+	Given clause: 603[5:Spt:580.0,580.4] Object(U) ||  -> RigidObject(U)*.
+	Given clause: 581[1:SSi:353.1,116.0] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ox1))* Region(Place(Ta1,U))*.
+	Given clause: 604[6:Spt:581.0,581.4] Object(U) ||  -> Region(Place(Ta1,U))*.
+	Given clause: 363[1:SpR:316.3,136.0] Object(U) Object(Hc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* History(U)*.
+	Given clause: 238[0:MRR:235.1,137.1] Object(U) || P(Slice(V,W),Place(V,U))*+ Continuous(V,X,W) AlwaysIntConn(V,X,W) NoExitCavity(V,X,HPlace(U),Y)* -> P(Slice(X,W),Slice(X,HPlace(U)))* O(Slice(skf6(V,X,Y,W),W),Slice(skf6(V,X,Y,W),Y))*.
+	Given clause: 358[1:SpR:316.3,109.0] Object(U) Object(Rc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* Region(U)*.
+	Given clause: 343[1:SpR:316.3,97.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(U)*.
+	Given clause: 330[1:SpR:316.3,96.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Time(U)*.
+	Given clause: 582[1:SSi:352.1,116.0] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ox1))* P(Place(Ta1,U),Rc1)*.
+	Given clause: 619[7:Spt:582.0,582.4] Object(U) ||  -> P(Place(Ta1,U),Rc1)*.
+	Given clause: 239[0:MRR:237.1,137.1] Object(U) || P(Place(V,U),Slice(V,W))*+ Continuous(V,X,HPlace(U)) AlwaysIntConn(V,X,HPlace(U)) NoExitCavity(V,X,W,Y)* -> P(Slice(X,HPlace(U)),Slice(X,W))* O(Slice(skf6(V,X,Y,HPlace(U)),HPlace(U)),Slice(skf6(V,X,Y,HPlace(U)),Y))*.
+	Given clause: 583[1:SSi:351.1,116.0] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ox1))* CContained(Ta1,U,Singleton(Ob1))*.
+	Given clause: 633[8:Spt:583.0,583.4] Object(U) ||  -> CContained(Ta1,U,Singleton(Ob1))*.
+	Given clause: 643[8:Spt:641.0,583.1,583.2,583.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ox1))*.
+	Given clause: 584[1:SSi:322.1,4.0,1.1] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ob1))* CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 652[9:Spt:584.0,584.4] Object(U) ||  -> CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 662[9:Spt:661.0,584.1,584.2,584.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ob1))*.
+	Given clause: 608[1:SoR:363.1,4.1] Object(U) History(V) RigidObject(Hc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* History(U)*.
+	Given clause: 616[1:SoR:358.1,4.1] Object(U) History(V) RigidObject(Rc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* Region(U)*.
+	Given clause: 292[0:MRR:291.1,137.1] Object(U) Object(V) || P(Place(W,U),Place(W,V))*+ Continuous(W,X,HPlace(U)) AlwaysIntConn(W,X,HPlace(U))* NoExitCavity(W,X,HPlace(V),Y)* -> P(Slice(X,HPlace(U)),Slice(X,HPlace(V)))* Lt(skf6(W,X,Z,X1),X)*.
+	Given clause: 617[1:SoR:343.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(U)*.
+	Given clause: 618[1:SoR:330.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Time(U)*.
+	Given clause: 336[1:SpR:316.3,2.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,Tb1)*.
+	Given clause: 327[1:SpR:316.3,2.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Lt(Ta1,U)*.
+	Given clause: 305[0:MRR:304.1,137.1] Object(U) Object(V) || P(Place(W,U),Place(W,V))*+ Continuous(W,X,HPlace(U)) AlwaysIntConn(W,X,HPlace(U))* NoExitCavity(W,X,HPlace(V),Y)* -> Lt(W,skf6(W,Z,X1,X2))* P(Slice(X,HPlace(U)),Slice(X,HPlace(V)))*.
+	Given clause: 679[1:SoR:336.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,Tb1)*.
+	Given clause: 680[1:SoR:327.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Lt(Ta1,U)*.
+	Given clause: 382[1:SpR:316.3,141.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* History(U)*.
+	Given clause: 349[1:SpR:316.3,115.0] Object(U) Object(Singleton(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* ObjectSet(U)*.
+	Given clause: 615[0:MRR:614.1,137.1] Object(U) Object(V) || P(Place(W,U),Place(W,V))*+ Continuous(W,X,HPlace(U)) AlwaysIntConn(W,X,HPlace(U)) NoExitCavity(W,X,HPlace(V),Y)* -> P(Slice(X,HPlace(U)),Slice(X,HPlace(V)))* O(Slice(skf6(W,X,Y,HPlace(U)),HPlace(U)),Slice(skf6(W,X,Y,HPlace(U)),Y))*.
+	Given clause: 340[1:SpR:316.3,108.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,Ox1))*.
+	Given clause: 687[1:SoR:382.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* History(U)*.
+	Given clause: 688[1:SoR:349.1,4.1] Object(U) History(V) RigidObject(Singleton(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* ObjectSet(U)*.
+	Given clause: 693[1:SoR:340.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,Ox1))*.
+	Given clause: 620[7:MRR:283.1,619.1] Object(U) || Continuous(Ta1,V,HPlace(U))+ AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,HPlace(U)),Slice(V,Hc1))*.
+	Given clause: 702[7:MRR:701.1,61.1] Object(U) || AlwaysIntConn(Ta1,V,HPlace(U))+ NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,HPlace(U)),Slice(V,Hc1))*.
+	Given clause: 707[7:Obv:706.0] Object(U) || Lt(Ta1,V) NoExitCavity(Ta1,V,Hc1,W)*+ -> P(Slice(V,HPlace(U)),Slice(V,Hc1))*.
+	Given clause: 711[7:MRR:710.1,2.0] Object(U) ||  -> P(Slice(Tb1,HPlace(U)),Slice(Tb1,Hc1))*.
+	Given clause: 734[7:Spt:729.0,582.1,582.2,582.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ox1))*.
+	Given clause: 584[1:SSi:322.1,4.0,1.1] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ob1))* CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 743[8:Spt:584.0,584.4] Object(U) ||  -> CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 753[8:Spt:752.0,584.1,584.2,584.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ob1))*.
+	Given clause: 270[3:SSi:269.1,97.0] Object(U) || P(Rc1,Place(Ta1,U)) Continuous(Ta1,V,Hc1) AlwaysIntConn(Ta1,V,Hc1) NoExitCavity(Ta1,V,HPlace(U),W)*+ -> P(Slice(V,Hc1),Slice(V,HPlace(U)))*.
+	Given clause: 359[1:SpR:316.3,7.0] Object(U) Object(Hc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* equal(Slice(Ta1,U),Rc1)**.
+	Given clause: 357[1:SpR:316.3,6.0] Object(U) Object(Rc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* P(Place(Ta1,Ox1),U)*.
+	Given clause: 339[1:SpR:316.3,6.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* P(Place(U,Ox1),Rc1)*.
+	Given clause: 338[1:SpR:316.3,7.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* equal(Slice(U,Hc1),Rc1)**.
+	Given clause: 283[4:SSi:282.1,97.0] Object(U) || P(Place(Ta1,U),Rc1)+ Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,HPlace(U)),Slice(V,Hc1))*.
+	Given clause: 337[1:SpR:316.3,8.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* CContained(U,Ox1,Singleton(Ob1))*.
+	Given clause: 587[1:Rew:7.0,364.4] Object(U) Object(Slice(Ta1,Hc1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* equal(U,Rc1)*.
+	Given clause: 765[1:SoR:359.1,4.1] Object(U) History(V) RigidObject(Hc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* equal(Slice(Ta1,U),Rc1)**.
+	Given clause: 766[1:SoR:357.1,4.1] Object(U) History(V) RigidObject(Rc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* P(Place(Ta1,Ox1),U)*.
+	Given clause: 210[1:SSi:207.0,67.0,96.0,136.2] IntConn(Slice(Tb1,HPlace(Ox1))) || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)* Leq3(V,Tb1,W)* Lt(V,W) -> Cavity(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))*.
+	Given clause: 767[1:SoR:339.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* P(Place(U,Ox1),Rc1)*.
+	Given clause: 768[1:SoR:338.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* equal(Slice(U,Hc1),Rc1)**.
+	Given clause: 775[1:SoR:337.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* CContained(U,Ox1,Singleton(Ob1))*.
+	Given clause: 776[1:SoR:587.1,4.1] Object(U) History(V) RigidObject(Slice(Ta1,Hc1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* equal(U,Rc1)*.
+	Given clause: 774[4:SSi:773.0,116.0] || Continuous(Ta1,U,HPlace(Ox1))+ AlwaysIntConn(Ta1,U,HPlace(Ox1)) NoExitCavity(Ta1,U,Hc1,V)* -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))*.
+	Given clause: 792[4:MRR:791.0,61.1] || AlwaysIntConn(Ta1,U,HPlace(Ox1))+ NoExitCavity(Ta1,U,Hc1,V)* -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))*.
+	Given clause: 797[4:SSi:796.0,116.0] || Lt(Ta1,U) NoExitCavity(Ta1,U,Hc1,V)*+ -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))*.
+	Given clause: 580[1:SSi:321.1,4.0,1.1] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ob1))* RigidObject(U)*.
+	Given clause: 803[5:Spt:580.0,580.4] Object(U) ||  -> RigidObject(U)*.
+	Given clause: 581[1:SSi:353.1,116.0] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ox1))* Region(Place(Ta1,U))*.
+	Given clause: 819[6:Spt:581.0,581.4] Object(U) ||  -> Region(Place(Ta1,U))*.
+	Given clause: 197[0:SpL:7.0,87.0] || P(Slice(Ta1,U),Rc1)+ Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,U),Slice(V,Hc1))* Lt(skf6(Ta1,V,X,Y),V)*.
+	Given clause: 582[1:SSi:352.1,116.0] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ox1))* P(Place(Ta1,U),Rc1)*.
+	Given clause: 829[7:Spt:582.0,582.4] Object(U) ||  -> P(Place(Ta1,U),Rc1)*.
+	Given clause: 583[1:SSi:351.1,116.0] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ox1))* CContained(Ta1,U,Singleton(Ob1))*.
+	Given clause: 838[8:Spt:583.0,583.4] Object(U) ||  -> CContained(Ta1,U,Singleton(Ob1))*.
+	Given clause: 848[8:Spt:846.0,583.1,583.2,583.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ox1))*.
+	Given clause: 584[1:SSi:322.1,4.0,1.1] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ob1))* CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 857[9:Spt:584.0,584.4] Object(U) ||  -> CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 867[9:Spt:866.0,584.1,584.2,584.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ob1))*.
+	Given clause: 371[1:SpR:316.3,108.0] Object(U) Object(Place(Ta1,Ox1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Ta1,Ox1)))* Region(U)*.
+	Given clause: 234[0:SpL:7.0,89.0] || P(Slice(Ta1,U),Rc1) Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,U),Slice(V,Hc1)) O(Slice(skf6(Ta1,V,W,U),U),Slice(skf6(Ta1,V,W,U),W))*.
+	Given clause: 361[1:SpR:316.3,22.0] Object(U) Object(Hc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* NoExitCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 360[1:SpR:316.3,21.0] Object(U) Object(Hc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* PersistentCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 348[1:SpR:316.3,8.0] Object(U) Object(Singleton(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* CContained(Ta1,Ox1,U)*.
+	Given clause: 342[1:SpR:316.3,22.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* NoExitCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 830[7:MRR:308.1,829.1] Object(U) || Continuous(Ta1,V,HPlace(U))+ AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Lt(skf6(Ta1,V,X,Y),V)*.
+	Given clause: 341[1:SpR:316.3,21.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* PersistentCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 329[1:SpR:316.3,22.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* NoExitCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 328[1:SpR:316.3,21.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* PersistentCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 876[1:SoR:371.1,4.1] Object(U) History(V) RigidObject(Place(Ta1,Ox1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Ta1,Ox1)))* Region(U)*.
+	Given clause: 891[0:Res:234.5,104.0] || P(Slice(Ta1,U),Rc1)+ Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,U),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,U),U))*.
+	Given clause: 894[1:SoR:361.1,4.1] Object(U) History(V) RigidObject(Hc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* NoExitCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 895[1:SoR:360.1,4.1] Object(U) History(V) RigidObject(Hc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* PersistentCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 896[1:SoR:348.1,4.1] Object(U) History(V) RigidObject(Singleton(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* CContained(Ta1,Ox1,U)*.
+	Given clause: 897[1:SoR:342.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* NoExitCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 890[0:Res:234.5,105.0] || P(Slice(Ta1,U),Rc1)+ Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,U),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,U),W))*.
+	Given clause: 904[1:SoR:341.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* PersistentCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 905[1:SoR:329.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* NoExitCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 906[1:SoR:328.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* PersistentCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 412[1:SpR:316.3,20.1] Object(HPlace(U)) Object(V) History(W) Object(U) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),V))* History(V).
+	Given clause: 889[0:Res:234.5,118.1] || P(Slice(Ta1,U),Rc1) Continuous(Ta1,V,U) AlwaysIntConn(Ta1,V,U) NoExitCavity(Ta1,V,Hc1,W) Cavity(Slice(skf6(Ta1,V,W,U),U),Slice(skf6(Ta1,V,W,U),W))* -> P(Slice(V,U),Slice(V,Hc1)).
+	Given clause: 401[1:SpR:316.3,19.1] Object(Singleton(U)) Object(V) History(W) Object(U) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),V))* ObjectSet(V).
+	Given clause: 345[1:SpR:316.3,307.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(skf6(U,W,X,Y))*.
+	Given clause: 931[1:SoR:412.0,4.1] Object(U) History(V) Object(W) RigidObject(HPlace(W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* History(U).
+	Given clause: 946[1:SoR:401.0,4.1] Object(U) History(V) Object(W) RigidObject(Singleton(W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* ObjectSet(U).
+	Given clause: 831[7:MRR:629.1,829.1] Object(U) || Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1)) O(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)),Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 947[1:SoR:345.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(skf6(U,W,X,Y))*.
+	Given clause: 548[1:SpL:316.3,26.0] Object(Singleton(U)) Object(V) History(W) || CContained(X,U,V)* -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),V))*.
+	Given clause: 428[1:SpR:316.3,307.0] Object(skf6(Ta1,U,V,W)) Object(X) History(Y) ||  -> AlwaysIntConn(Ta1,Tb1,Y) Region(Place(skf5(Y,Tb1,Ta1),X))* Time(X).
+	Given clause: 976[1:SoR:548.0,4.1] Object(U) History(V) RigidObject(Singleton(W)) || CContained(X,W,U)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))*.
+	Given clause: 892[0:SSi:882.1,307.1,20.0] Object(U) || P(Slice(Ta1,V),Rc1) Continuous(Ta1,W,V) AlwaysIntConn(Ta1,W,V) NoExitCavity(Ta1,W,Hc1,HPlace(U)) -> P(Slice(W,V),Slice(W,Hc1)) O(Slice(skf6(Ta1,W,HPlace(U),V),V),Place(skf6(Ta1,W,HPlace(U),V),U))*.
+	Given clause: 977[1:SoR:428.0,4.1] Object(U) History(V) RigidObject(skf6(Ta1,W,X,Y)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Time(U).
+	Given clause: 381[1:SpR:316.3,22.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* NoExitCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 380[1:SpR:316.3,21.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* PersistentCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 370[1:SpR:316.3,6.0] Object(U) Object(Place(Ta1,Ox1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Ta1,Ox1)))* P(U,Rc1)*.
+	Given clause: 903[7:MRR:902.1,61.1] Object(U) || AlwaysIntConn(Ta1,V,HPlace(U))+ NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Lt(skf6(Ta1,V,X,Y),V)*.
+	Given clause: 998[1:SoR:381.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* NoExitCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 999[1:SoR:380.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* PersistentCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 1000[1:SoR:370.1,4.1] Object(U) History(V) RigidObject(Place(Ta1,Ox1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Ta1,Ox1)))* P(U,Rc1)*.
+	Given clause: 344[1:SpR:316.3,277.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(skf6(U,Tb1,W,X),Tb1)*.
+	Given clause: 927[7:MRR:926.1,829.1] Object(U) || Continuous(Ta1,V,HPlace(U))+ AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 820[6:SpR:316.3,819.1] Object(U) Object(Ta1) History(V) Object(W) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,W))*.
+	Given clause: 1009[1:SoR:344.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(skf6(U,Tb1,W,X),Tb1)*.
+	Given clause: 1016[6:SoR:820.1,4.1] Object(U) History(V) Object(W) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,W))*.
+	Given clause: 426[1:SpR:316.3,277.0] Object(skf6(Ta1,Tb1,U,V)) Object(W) History(X) ||  -> AlwaysIntConn(Ta1,Tb1,X) Region(Place(skf5(X,Tb1,Ta1),W))* Lt(W,Tb1).
+	Given clause: 915[7:MRR:914.1,829.1] Object(U) || Continuous(Ta1,V,HPlace(U))+ AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)))*.
+	Given clause: 383[1:SpR:316.3,20.1] Object(U) Object(HPlace(V)) History(W) Object(V) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),HPlace(V)))* History(U)*.
+	Given clause: 350[1:SpR:316.3,19.1] Object(U) Object(Singleton(V)) History(W) Object(V) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),Singleton(V)))* ObjectSet(U)*.
+	Given clause: 334[1:SpR:316.3,277.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Lt(skf6(Ta1,U,W,X),U)*.
+	Given clause: 821[6:SpR:316.3,819.1] Object(Place(Ta1,U)) Object(V) History(W) Object(U) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),V))* Region(V).
+	Given clause: 995[0:Res:892.6,105.0] Object(U) || P(Slice(Ta1,V),Rc1) Continuous(Ta1,W,V) AlwaysIntConn(Ta1,W,V) NoExitCavity(Ta1,W,Hc1,HPlace(U))+ -> P(Slice(W,V),Slice(W,Hc1))* Region(Place(skf6(Ta1,W,HPlace(U),V),U))*.
+	Given clause: 1019[1:SoR:426.0,4.1] Object(U) History(V) RigidObject(skf6(Ta1,Tb1,W,X)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Lt(U,Tb1).
+	Given clause: 1026[1:SoR:383.1,4.1] Object(U) History(V) Object(W) RigidObject(HPlace(W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(W)))* History(U)*.
+	Given clause: 1027[1:SoR:350.1,4.1] Object(U) History(V) Object(W) RigidObject(Singleton(W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(W)))* ObjectSet(U)*.
+	Given clause: 1028[1:SoR:334.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Lt(skf6(Ta1,U,W,X),U)*.
+	Given clause: 972[7:SSi:971.0,307.1,20.0] Object(U) || Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1)) O(Place(skf6(Ta1,V,W,HPlace(U)),U),Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 1029[6:SoR:821.0,4.1] Object(U) History(V) Object(W) RigidObject(Place(Ta1,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 451[1:SpL:316.3,26.0] Object(U) Object(Singleton(V)) History(W) || CContained(X,V,U)* -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),Singleton(V)))*.
+	Given clause: 427[1:SpR:316.3,302.0] Object(skf6(Ta1,U,V,W)) Object(X) History(Y) ||  -> AlwaysIntConn(Ta1,Tb1,Y) Region(Place(skf5(Y,Tb1,Ta1),X))* Lt(Ta1,X).
+	Given clause: 346[1:SpR:316.3,302.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,skf6(U,W,X,Y))*.
+	Given clause: 968[7:Res:831.5,118.1] Object(U) || Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) Cavity(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)),Slice(skf6(Ta1,V,W,HPlace(U)),W))* -> P(Slice(V,HPlace(U)),Slice(V,Hc1)).
+	Given clause: 1059[1:SoR:451.1,4.1] Object(U) History(V) RigidObject(Singleton(W)) || CContained(X,W,U)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(W)))*.
+	Given clause: 1060[1:SoR:427.0,4.1] Object(U) History(V) RigidObject(skf6(Ta1,W,X,Y)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Lt(Ta1,U).
+	Given clause: 1061[1:SoR:346.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,skf6(U,W,X,Y))*.
+	Given clause: 467[1:SpL:316.3,161.0] Object(U) Object(Hc1) History(V) || P(Place(Tb1,Ox1),Slice(Tb1,U))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))*.
+	Given clause: 944[0:SSi:937.1,307.1,20.0] Object(U) || P(Slice(Ta1,V),Rc1) Continuous(Ta1,W,V) AlwaysIntConn(Ta1,W,V) NoExitCavity(Ta1,W,Hc1,HPlace(U)) Cavity(Slice(skf6(Ta1,W,HPlace(U),V),V),Place(skf6(Ta1,W,HPlace(U),V),U))* -> P(Slice(W,V),Slice(W,Hc1)).
+	Given clause: 1086[1:SoR:467.1,4.1] Object(U) History(V) RigidObject(Hc1) || P(Place(Tb1,Ox1),Slice(Tb1,U))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))*.
+	Given clause: 442[1:SpL:316.3,161.0] Object(U) Object(Tb1) History(V) || P(Place(U,Ox1),Slice(U,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))*.
+	Given clause: 1103[1:SoR:442.1,4.1] Object(U) History(V) RigidObject(Tb1) || P(Place(U,Ox1),Slice(U,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))*.
+	Given clause: 833[7:SpR:316.3,829.1] Object(U) Object(Ta1) History(V) Object(W) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* P(Place(U,W),Rc1)*.
+	Given clause: 974[7:SSi:973.1,307.1,20.1,20.0] Object(U) Object(V) || Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U)) -> P(Slice(W,HPlace(V)),Slice(W,Hc1)) O(Place(skf6(Ta1,W,HPlace(U),HPlace(V)),V),Place(skf6(Ta1,W,HPlace(U),HPlace(V)),U))*.
+	Given clause: 832[7:SpR:316.3,829.1] Object(U) Object(Rc1) History(V) Object(W) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* P(Place(Ta1,W),U)*.
+	Given clause: 1105[7:SoR:833.1,4.1] Object(U) History(V) Object(W) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* P(Place(U,W),Rc1)*.
+	Given clause: 1130[7:SoR:832.1,4.1] Object(U) History(V) Object(W) RigidObject(Rc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Rc1))* P(Place(Ta1,W),U)*.
+	Given clause: 834[7:SpR:316.3,829.1] Object(Place(Ta1,U)) Object(V) History(W) Object(U) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),V))* P(V,Rc1).
+	Given clause: 1005[7:Obv:1004.0] Object(U) || Lt(Ta1,V) NoExitCavity(Ta1,V,Hc1,W)*+ -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Lt(skf6(Ta1,V,X,Y),V)*.
+	Given clause: 1133[7:SoR:834.0,4.1] Object(U) History(V) Object(W) RigidObject(Place(Ta1,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* P(U,Rc1).
+	Given clause: 466[1:SpL:316.3,62.0] Object(U) Object(Hc1) History(V) || P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,U))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))*.
+	Given clause: 1138[1:SoR:466.1,4.1] Object(U) History(V) RigidObject(Hc1) || P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,U))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))*.
+	Given clause: 437[1:SpL:316.3,62.0] Object(U) Object(Tb1) History(V) || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))*.
+	Given clause: 782[1:SSi:781.0,116.0] || Cavity(Slice(Tb1,Hc1),U) DR(Slice(Tb1,HPlace(Ox1)),U)*+ Leq3(V,Tb1,W)* Lt(V,W) -> Cavity(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))*.
+	Given clause: 1149[1:SSi:1148.1,1148.0,96.0,116.0] || Cavity(Slice(Tb1,Hc1),U)+ DR(Place(Tb1,Ox1),U)* Leq3(V,Tb1,W)* Lt(V,W) -> Cavity(Place(Tb1,Ox1),Slice(Tb1,Hc1))*.
+	Given clause: 1140[1:SoR:437.1,4.1] Object(U) History(V) RigidObject(Tb1) || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))*.
+	Given clause: 822[6:SpR:316.3,819.1] Object(U) Object(Place(Ta1,V)) History(W) Object(V) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),Place(Ta1,V)))* Region(U)*.
+	Given clause: 1154[6:SoR:822.1,4.1] Object(U) History(V) Object(W) RigidObject(Place(Ta1,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Ta1,W)))* Region(U)*.
+	Given clause: 1035[0:SSi:1034.0,4.0,1.1] || P(Slice(Ta1,U),Rc1) Continuous(Ta1,Tb1,U) AlwaysIntConn(Ta1,Tb1,U) -> P(Slice(Tb1,U),Slice(Tb1,Hc1)) Region(Place(skf6(Ta1,Tb1,HPlace(Ob1),U),Ob1))*.
+	Given clause: 540[1:SpL:316.3,62.0] Object(U) Object(HPlace(Ox1)) History(V) || P(Slice(Tb1,U),Slice(Tb1,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ox1)))*.
+	Given clause: 528[1:SpL:316.3,161.0] Object(U) Object(Place(Tb1,Ox1)) History(V) || P(U,Slice(Tb1,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Tb1,Ox1)))*.
+	Given clause: 488[1:SpL:316.3,161.0] Object(U) Object(Slice(Tb1,Hc1)) History(V) || P(Place(Tb1,Ox1),U)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Slice(Tb1,Hc1)))*.
+	Given clause: 1165[1:SoR:540.1,4.1] Object(U) History(V) RigidObject(HPlace(Ox1)) || P(Slice(Tb1,U),Slice(Tb1,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ox1)))*.
+	Given clause: 1015[7:MRR:1014.1,61.1] Object(U) || AlwaysIntConn(Ta1,V,HPlace(U))+ NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 1166[1:SoR:528.1,4.1] Object(U) History(V) RigidObject(Place(Tb1,Ox1)) || P(U,Slice(Tb1,Hc1))* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Tb1,Ox1)))*.
+	Given clause: 1167[1:SoR:488.1,4.1] Object(U) History(V) RigidObject(Slice(Tb1,Hc1)) || P(Place(Tb1,Ox1),U)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Slice(Tb1,Hc1)))*.
+	Given clause: 469[2:SpL:316.3,250.0] Object(U) Object(Hc1) History(V) || Cavity(Slice(Tb1,U),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* Region(Place(Tb1,Ox1)).
+	Given clause: 430[2:SpL:316.3,250.0] Object(U) Object(Tb1) History(V) || Cavity(Slice(U,Hc1),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Place(Tb1,Ox1)).
+	Given clause: 1025[7:MRR:1024.1,61.1] Object(U) || AlwaysIntConn(Ta1,V,HPlace(U))+ NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)))*.
+	Given clause: 1176[2:SoR:469.1,4.1] Object(U) History(V) RigidObject(Hc1) || Cavity(Slice(Tb1,U),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* Region(Place(Tb1,Ox1)).
+	Given clause: 1177[2:SoR:430.1,4.1] Object(U) History(V) RigidObject(Tb1) || Cavity(Slice(U,Hc1),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Place(Tb1,Ox1)).
+	Given clause: 835[7:SpR:316.3,829.1] Object(U) Object(Place(Ta1,V)) History(W) Object(V) ||  -> AlwaysIntConn(Ta1,Tb1,W) Region(Place(skf5(W,Tb1,Ta1),Place(Ta1,V)))* P(U,Rc1)*.
+	Given clause: 1185[7:SoR:835.1,4.1] Object(U) History(V) Object(W) RigidObject(Place(Ta1,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Place(Ta1,W)))* P(U,Rc1)*.
+	Given clause: 1129[7:SSi:1128.0,307.1,20.1,20.0] Object(U) Object(V) || Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U))*+ -> P(Slice(W,HPlace(V)),Slice(W,Hc1))* equal(V,U)*.
+	Given clause: 1192[7:SSi:1191.0,4.0,1.1] Object(U) || Continuous(Ta1,Tb1,HPlace(U)) AlwaysIntConn(Ta1,Tb1,HPlace(U)) -> P(Slice(Tb1,HPlace(U)),Slice(Tb1,Hc1))* equal(U,Ob1).
+	Given clause: 1210[7:SSi:1204.0,116.0] || Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+	Given clause: 1219[7:MRR:1218.0,2.0] || Continuous(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+	Given clause: 1289[7:Spt:1284.0,582.1,582.2,582.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ox1))*.
+	Given clause: 1[0:Inp] ||  -> RigidObject(Ob1)*.
+	Given clause: 8[0:Inp] ||  -> CContained(Ta1,Ox1,Singleton(Ob1))*.
+	Given clause: 141[0:Res:21.0,133.0] ||  -> History(HPlace(Ob1))*.
+	Given clause: 115[0:Res:8.0,44.0] ||  -> ObjectSet(Singleton(Ob1))*.
+	Given clause: 22[0:Inp] ||  -> NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 21[0:Inp] ||  -> PersistentCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 308[0:SpL:7.0,202.1] Object(U) || P(Place(Ta1,U),Rc1)+ Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W)* -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Lt(skf6(Ta1,V,X,Y),V)*.
+	Given clause: 343[1:SpR:316.3,97.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(U)*.
+	Given clause: 617[1:SoR:343.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(U)*.
+	Given clause: 584[1:SSi:322.1,4.0,1.1] Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ob1))* CContained(Ta1,Ox1,Singleton(U))*.
+	Given clause: 1340[8:Spt:584.1,584.2,584.3] History(U) ||  -> AlwaysIntConn(Ta1,Tb1,U) Region(Place(skf5(U,Tb1,Ta1),Ob1))*.
+	Given clause: 336[1:SpR:316.3,2.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,Tb1)*.
+	Given clause: 893[0:SSi:888.1,307.1,20.0] Object(U) || P(Slice(Ta1,HPlace(U)),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1)) O(Place(skf6(Ta1,V,W,HPlace(U)),U),Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 679[1:SoR:336.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,Tb1)*.
+	Given clause: 340[1:SpR:316.3,108.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,Ox1))*.
+	Given clause: 693[1:SoR:340.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,Ox1))*.
+	Given clause: 688[1:SoR:349.1,4.1] Object(U) History(V) RigidObject(Singleton(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* ObjectSet(U)*.
+	Given clause: 629[0:SpL:7.0,239.1] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1)) O(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)),Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 349[1:SpR:316.3,115.0] Object(U) Object(Singleton(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* ObjectSet(U)*.
+	Given clause: 687[1:SoR:382.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* History(U)*.
+	Given clause: 382[1:SpR:316.3,141.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* History(U)*.
+	Given clause: 338[1:SpR:316.3,7.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* equal(Slice(U,Hc1),Rc1)**.
+	Given clause: 1337[0:SSi:1336.0,116.0] || Continuous(Ta1,U,HPlace(Ox1))+ AlwaysIntConn(Ta1,U,HPlace(Ox1)) NoExitCavity(Ta1,U,Hc1,V)* -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Lt(skf6(Ta1,U,W,X),U)*.
+	Given clause: 339[1:SpR:316.3,6.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* P(Place(U,Ox1),Rc1)*.
+	Given clause: 768[1:SoR:338.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* equal(Slice(U,Hc1),Rc1)**.
+	Given clause: 767[1:SoR:339.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* P(Place(U,Ox1),Rc1)*.
+	Given clause: 775[1:SoR:337.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* CContained(U,Ox1,Singleton(Ob1))*.
+	Given clause: 926[0:SSi:925.1,97.0] Object(U) || P(Place(Ta1,U),Rc1)+ Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 337[1:SpR:316.3,8.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* CContained(U,Ox1,Singleton(Ob1))*.
+	Given clause: 896[1:SoR:348.1,4.1] Object(U) History(V) RigidObject(Singleton(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* CContained(Ta1,Ox1,U)*.
+	Given clause: 348[1:SpR:316.3,8.0] Object(U) Object(Singleton(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Singleton(Ob1)))* CContained(Ta1,Ox1,U)*.
+	Given clause: 894[1:SoR:361.1,4.1] Object(U) History(V) RigidObject(Hc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* NoExitCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 914[0:SSi:913.1,97.0] Object(U) || P(Place(Ta1,U),Rc1)+ Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)))*.
+	Given clause: 361[1:SpR:316.3,22.0] Object(U) Object(Hc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* NoExitCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 895[1:SoR:360.1,4.1] Object(U) History(V) RigidObject(Hc1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* PersistentCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 360[1:SpR:316.3,21.0] Object(U) Object(Hc1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* PersistentCavity(Ta1,Tb1,U,HPlace(Ob1))*.
+	Given clause: 897[1:SoR:342.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* NoExitCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 1367[0:Res:893.6,104.0] Object(U) || P(Slice(Ta1,HPlace(U)),Rc1)+ Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Place(skf6(Ta1,V,W,HPlace(U)),U))*.
+	Given clause: 342[1:SpR:316.3,22.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* NoExitCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 904[1:SoR:341.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* PersistentCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 341[1:SpR:316.3,21.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* PersistentCavity(U,Tb1,Hc1,HPlace(Ob1))*.
+	Given clause: 905[1:SoR:329.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* NoExitCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 1394[0:SSi:1393.0,307.1,20.0] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1)) O(Place(skf6(Ta1,V,W,HPlace(U)),U),Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+	Given clause: 329[1:SpR:316.3,22.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* NoExitCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 906[1:SoR:328.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* PersistentCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 328[1:SpR:316.3,21.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* PersistentCavity(Ta1,U,Hc1,HPlace(Ob1))*.
+	Given clause: 345[1:SpR:316.3,307.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(skf6(U,W,X,Y))*.
+	Given clause: 945[0:SSi:943.1,307.1,20.0] Object(U) || P(Slice(Ta1,HPlace(U)),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) Cavity(Place(skf6(Ta1,V,W,HPlace(U)),U),Slice(skf6(Ta1,V,W,HPlace(U)),W))* -> P(Slice(V,HPlace(U)),Slice(V,Hc1)).
+	Given clause: 947[1:SoR:345.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Time(skf6(U,W,X,Y))*.
+	Given clause: 999[1:SoR:380.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* PersistentCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 998[1:SoR:381.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* NoExitCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 380[1:SpR:316.3,21.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* PersistentCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 1390[0:Res:629.6,118.1] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) Cavity(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)),Slice(skf6(Ta1,V,W,HPlace(U)),W))* -> P(Slice(V,HPlace(U)),Slice(V,Hc1)).
+	Given clause: 381[1:SpR:316.3,22.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* NoExitCavity(Ta1,Tb1,Hc1,U)*.
+	Given clause: 820[6:SpR:316.3,819.1] Object(U) Object(Ta1) History(V) Object(W) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,W))*.
+	Given clause: 344[1:SpR:316.3,277.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(skf6(U,Tb1,W,X),Tb1)*.
+	Given clause: 1016[6:SoR:820.1,4.1] Object(U) History(V) Object(W) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Place(U,W))*.
+	Given clause: 1396[0:SSi:1395.1,307.1,20.1,20.0] Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U)) -> P(Slice(W,HPlace(V)),Slice(W,Hc1)) O(Place(skf6(Ta1,W,HPlace(U),HPlace(V)),V),Place(skf6(Ta1,W,HPlace(U),HPlace(V)),U))*.
+	Given clause: 1009[1:SoR:344.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(skf6(U,Tb1,W,X),Tb1)*.
+	Given clause: 346[1:SpR:316.3,302.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,skf6(U,W,X,Y))*.
+	Given clause: 1061[1:SoR:346.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Lt(U,skf6(U,W,X,Y))*.
+	Given clause: 1406[0:MRR:1405.0,61.1] || AlwaysIntConn(Ta1,U,HPlace(Ox1))+ NoExitCavity(Ta1,U,Hc1,V)* -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Lt(skf6(Ta1,U,W,X),U)*.
+	Given clause: 1290[0:SSi:993.1,307.1,20.1,20.0] Object(U) Object(V) || P(Slice(Ta1,HPlace(U)),Rc1) Continuous(Ta1,W,HPlace(U)) AlwaysIntConn(Ta1,W,HPlace(U)) NoExitCavity(Ta1,W,Hc1,HPlace(V)) -> P(Slice(W,HPlace(U)),Slice(W,Hc1)) O(Place(skf6(Ta1,W,HPlace(V),HPlace(U)),U),Place(skf6(Ta1,W,HPlace(V),HPlace(U)),V))*.
+	Given clause: 1541[0:SSi:1540.0,116.0] || Lt(Ta1,U) NoExitCavity(Ta1,U,Hc1,V)*+ -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Lt(skf6(Ta1,U,W,X),U)*.
+	Given clause: 417[1:SpR:316.3,65.2] Object(RUnion(U,V)) Object(W) History(X) Region(V) Region(U) ||  -> AlwaysIntConn(Ta1,Tb1,X) Region(Place(skf5(X,Tb1,Ta1),W))* Region(W).
+	Given clause: 405[1:SpR:316.3,66.2] Object(Place(U,V)) Object(W) History(X) Object(V) Time(U) ||  -> AlwaysIntConn(Ta1,Tb1,X) Region(Place(skf5(X,Tb1,Ta1),W))* Region(W).
+	Given clause: 403[1:SpR:316.3,67.2] Object(Slice(U,V)) Object(W) History(X) History(V) Time(U) ||  -> AlwaysIntConn(Ta1,Tb1,X) Region(Place(skf5(X,Tb1,Ta1),W))* Region(W).
+	Given clause: 1035[0:SSi:1034.0,4.0,1.1] || P(Slice(Ta1,U),Rc1) Continuous(Ta1,Tb1,U) AlwaysIntConn(Ta1,Tb1,U) -> P(Slice(Tb1,U),Slice(Tb1,Hc1)) Region(Place(skf6(Ta1,Tb1,HPlace(Ob1),U),Ob1))*.
+	Given clause: 1569[1:SoR:417.0,4.1] Object(U) History(V) Region(W) Region(X) RigidObject(RUnion(X,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 1570[1:SoR:405.0,4.1] Object(U) History(V) Object(W) Time(X) RigidObject(Place(X,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 1571[1:SoR:403.0,4.1] Object(U) History(V) History(W) Time(X) RigidObject(Slice(X,W)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 400[1:SpR:316.3,307.0] Object(U) Object(skf6(Ta1,V,W,X)) History(Y) ||  -> AlwaysIntConn(Ta1,Tb1,Y) Region(Place(skf5(Y,Tb1,Ta1),skf6(Ta1,V,W,X)))* Time(U)*.
+	Given clause: 1416[0:SSi:1415.0,116.0] || Continuous(Ta1,U,HPlace(Ox1))+ AlwaysIntConn(Ta1,U,HPlace(Ox1)) NoExitCavity(Ta1,U,Hc1,V) -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Region(Slice(skf6(Ta1,U,V,HPlace(Ox1)),V))*.
+	Given clause: 1590[0:MRR:1589.0,61.1] || AlwaysIntConn(Ta1,U,HPlace(Ox1))+ NoExitCavity(Ta1,U,Hc1,V) -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Region(Slice(skf6(Ta1,U,V,HPlace(Ox1)),V))*.
+	Given clause: 1595[0:SSi:1594.0,116.0] || Lt(Ta1,U) NoExitCavity(Ta1,U,Hc1,V)+ -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Region(Slice(skf6(Ta1,U,V,HPlace(Ox1)),V))*.
+	Given clause: 1599[0:MRR:1598.0,1598.1,2.0,62.0] ||  -> Region(Slice(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1)))*.
+	Given clause: 1584[1:SoR:400.1,4.1] Object(U) History(V) RigidObject(skf6(Ta1,W,X,Y)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),skf6(Ta1,W,X,Y)))* Time(U)*.
+	Given clause: 1426[0:SSi:1425.0,116.0] || Continuous(Ta1,U,HPlace(Ox1))+ AlwaysIntConn(Ta1,U,HPlace(Ox1)) NoExitCavity(Ta1,U,Hc1,V) -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Region(Slice(skf6(Ta1,U,V,HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 1619[0:MRR:1618.0,61.1] || AlwaysIntConn(Ta1,U,HPlace(Ox1))+ NoExitCavity(Ta1,U,Hc1,V) -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Region(Slice(skf6(Ta1,U,V,HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 1624[0:SSi:1623.0,116.0] || Lt(Ta1,U) NoExitCavity(Ta1,U,Hc1,V)+ -> P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))* Region(Slice(skf6(Ta1,U,V,HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 1628[0:MRR:1627.0,1627.1,2.0,62.0] ||  -> Region(Slice(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 487[1:SpL:316.3,62.0] Object(U) Object(Slice(Tb1,Hc1)) History(V) || P(Slice(Tb1,HPlace(Ox1)),U)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Slice(Tb1,Hc1)))*.
+	Given clause: 1533[0:SSi:1532.0,307.1,20.1,20.0] Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U))*+ -> P(Slice(W,HPlace(V)),Slice(W,Hc1))* equal(V,U)*.
+	Given clause: 1607[1:SpR:316.3,1599.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Slice(skf6(U,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1)))*.
+	Given clause: 1606[1:SpR:316.3,1599.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Slice(skf6(Ta1,U,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1)))*.
+	Given clause: 1636[1:SpR:316.3,1628.0] Object(U) Object(Ta1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Slice(skf6(U,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 1635[1:SpR:316.3,1628.0] Object(U) Object(Tb1) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Slice(skf6(Ta1,U,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 1565[0:SSi:1564.0,307.1,20.1,20.0] Object(U) Object(V) || P(Slice(Ta1,HPlace(V)),Rc1)+ Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U))* -> P(Slice(W,HPlace(V)),Slice(W,Hc1))* equal(V,U)*.
+	Given clause: 1642[1:SoR:487.1,4.1] Object(U) History(V) RigidObject(Slice(Tb1,Hc1)) || P(Slice(Tb1,HPlace(Ox1)),U)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Slice(Tb1,Hc1)))*.
+	Given clause: 1649[1:SoR:1607.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Slice(skf6(U,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1)))*.
+	Given clause: 1650[1:SoR:1606.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Slice(skf6(Ta1,U,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1)))*.
+	Given clause: 1651[1:SoR:1636.1,4.1] Object(U) History(V) RigidObject(Ta1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Ta1))* Region(Slice(skf6(U,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 1439[0:SSi:1438.0,97.0] Object(U) || P(Place(Ta1,U),Rc1)+ Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1))* Region(Place(skf6(Ta1,V,W,HPlace(U)),U))*.
+	Given clause: 1652[1:SoR:1635.1,4.1] Object(U) History(V) RigidObject(Tb1) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Slice(skf6(Ta1,U,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1)))*.
+	Given clause: 470[2:SpL:316.3,244.0] Object(U) Object(Hc1) History(V) || Cavity(Slice(Tb1,U),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* Region(Slice(Tb1,HPlace(Ox1))).
+	Given clause: 431[2:SpL:316.3,244.0] Object(U) Object(Tb1) History(V) || Cavity(Slice(U,Hc1),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Slice(Tb1,HPlace(Ox1))).
+	Given clause: 1610[1:SpR:316.3,1599.0] Object(Slice(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1))) Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 1529[0:Res:1396.7,105.0] Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U))+ -> P(Slice(W,HPlace(V)),Slice(W,Hc1))* Region(Place(skf6(Ta1,W,HPlace(U),HPlace(V)),U))*.
+	Given clause: 1608[1:SpR:316.3,1599.0] Object(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1))) Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(Slice(U,HPlace(Ob1))).
+	Given clause: 1605[1:SpR:316.3,1599.0] Object(U) Object(HPlace(Ob1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* Region(Slice(skf6(Ta1,Tb1,U,HPlace(Ox1)),U))*.
+	Given clause: 1639[1:SpR:316.3,1628.0] Object(Slice(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1))) Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 1637[1:SpR:316.3,1628.0] Object(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1))) Object(U) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(Slice(U,HPlace(Ox1))).
+	Given clause: 1459[0:Res:1394.6,118.1] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) Cavity(Place(skf6(Ta1,V,W,HPlace(U)),U),Slice(skf6(Ta1,V,W,HPlace(U)),W))* -> P(Slice(V,HPlace(U)),Slice(V,Hc1)).
+	Given clause: 1632[1:SpR:316.3,1628.0] Object(U) Object(HPlace(Ox1)) History(V) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ox1)))* Region(Slice(skf6(Ta1,Tb1,HPlace(Ob1),U),U))*.
+	Given clause: 1672[2:SoR:470.1,4.1] Object(U) History(V) RigidObject(Hc1) || Cavity(Slice(Tb1,U),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Hc1))* Region(Slice(Tb1,HPlace(Ox1))).
+	Given clause: 1673[2:SoR:431.1,4.1] Object(U) History(V) RigidObject(Tb1) || Cavity(Slice(U,Hc1),W)* -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* Region(Slice(Tb1,HPlace(Ox1))).
+	Given clause: 1674[1:SoR:1610.0,4.1] Object(U) History(V) RigidObject(Slice(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ob1))) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 1505[0:SSi:1504.1,307.1,20.1,20.0] Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U)) Cavity(Place(skf6(Ta1,W,HPlace(U),HPlace(V)),V),Place(skf6(Ta1,W,HPlace(U),HPlace(V)),U))* -> P(Slice(W,HPlace(V)),Slice(W,Hc1)).
+	Given clause: 1681[1:SoR:1608.0,4.1] Object(U) History(V) RigidObject(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1))) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(Slice(U,HPlace(Ob1))).
+	Given clause: 1682[1:SoR:1605.1,4.1] Object(U) History(V) RigidObject(HPlace(Ob1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ob1)))* Region(Slice(skf6(Ta1,Tb1,U,HPlace(Ox1)),U))*.
+	Given clause: 1683[1:SoR:1639.0,4.1] Object(U) History(V) RigidObject(Slice(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1)),HPlace(Ox1))) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(U).
+	Given clause: 1684[1:SoR:1637.0,4.1] Object(U) History(V) RigidObject(skf6(Ta1,Tb1,HPlace(Ob1),HPlace(Ox1))) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),U))* Region(Slice(U,HPlace(Ox1))).
+	Given clause: 1291[0:SSi:1101.1,307.1,20.1,20.0] Object(U) Object(V) || P(Slice(Ta1,HPlace(U)),Rc1) Continuous(Ta1,W,HPlace(U)) AlwaysIntConn(Ta1,W,HPlace(U)) NoExitCavity(Ta1,W,Hc1,HPlace(V)) Cavity(Place(skf6(Ta1,W,HPlace(V),HPlace(U)),U),Place(skf6(Ta1,W,HPlace(V),HPlace(U)),V))* -> P(Slice(W,HPlace(U)),Slice(W,Hc1)).
+	Given clause: 1700[1:SoR:1632.1,4.1] Object(U) History(V) RigidObject(HPlace(Ox1)) ||  -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),HPlace(Ox1)))* Region(Slice(skf6(Ta1,Tb1,HPlace(Ob1),U),U))*.
+	Given clause: 333[2:SpR:316.3,247.1] Object(U) Object(Tb1) History(V) || Cavity(Slice(Tb1,Hc1),W) -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* O(Place(U,Ox1),W)*.
+	Given clause: 1745[2:SoR:333.1,4.1] Object(U) History(V) RigidObject(Tb1) || Cavity(Slice(Tb1,Hc1),W) -> AlwaysIntConn(Ta1,Tb1,V) Region(Place(skf5(V,Tb1,Ta1),Tb1))* O(Place(U,Ox1),W)*.
+	Given clause: 398[1:SpR:316.3,277.0] Object(U) Object(skf6(Ta1,Tb1,V,W)) History(X) ||  -> AlwaysIntConn(Ta1,Tb1,X) Region(Place(skf5(X,Tb1,Ta1),skf6(Ta1,Tb1,V,W)))* Lt(U,Tb1)*.
+	Given clause: 1648[0:SSi:1647.0,4.0,1.1] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,Tb1,HPlace(U)) AlwaysIntConn(Ta1,Tb1,HPlace(U)) -> P(Slice(Tb1,HPlace(U)),Slice(Tb1,Hc1))* equal(U,Ob1).
+	Given clause: 1766[0:MRR:1765.0,6.0] || Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+	Given clause: 1775[0:MRR:1774.0,2.0] || Continuous(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+SPASS V 3.7 
+SPASS beiseite: Proof found.
+Problem: inference1_p3.dfg 
+SPASS derived 1572 clauses, backtracked 155 clauses, performed 16 splits and kept 1281 clauses.
+SPASS allocated 54792 KBytes.
+SPASS spent	0:00:00.66 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.03 for inferences.
+		0:00:00.02 for the backtracking.
+		0:00:00.54 for the reduction.
+
+
+Here is a proof with depth 8, length 62 :
+1[0:Inp] ||  -> RigidObject(Ob1)*.
+2[0:Inp] ||  -> Lt(Ta1,Tb1)*.
+4[0:Inp] RigidObject(U) ||  -> Object(U)*.
+6[0:Inp] ||  -> P(Place(Ta1,Ox1),Rc1)*.
+7[0:Inp] ||  -> equal(Slice(Ta1,Hc1),Rc1)**.
+8[0:Inp] ||  -> CContained(Ta1,Ox1,Singleton(Ob1))*.
+9[0:Inp] || Lt(U,V)* -> Time(U).
+10[0:Inp] || Lt(U,V)* -> Time(V).
+20[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+22[0:Inp] ||  -> NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1))*.
+26[0:Inp] || CContained(U,V,Singleton(V))* -> .
+43[0:Inp] || CContained(U,V,W)* -> Object(V).
+56[0:Inp] || SkP3(U,V,W,X)* -> Time(X).
+60[0:Inp] || DR(U,V)* O(U,V) -> .
+61[0:Inp] || AlwaysIntConn(U,V,W)* -> Lt(U,V).
+62[0:Inp] || P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1))* -> .
+68[0:Inp] || NoExitCavity(U,V,W,X) -> SkP3(X,W,V,U)*.
+71[0:Inp] Object(U) || Lt(V,W) -> Continuous(V,W,HPlace(U))*.
+73[0:Inp] Object(U) || Lt(V,W) -> AlwaysIntConn(V,W,HPlace(U))*.
+74[0:Inp] Object(U) Time(V) ||  -> equal(Slice(V,HPlace(U)),Place(V,U))**.
+82[0:Inp] Time(U) Object(V) Object(W) ||  -> equal(W,V) DR(Place(U,W),Place(U,V))*.
+88[0:Inp] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) AlwaysIntConn(U,X,V)* NoExitCavity(U,X,W,Y)* -> Lt(U,skf6(U,Z,X1,X2))* P(Slice(X,V),Slice(X,W))*.
+89[0:Inp] || P(Slice(U,V),Slice(U,W))*+ Continuous(U,X,V) AlwaysIntConn(U,X,V) NoExitCavity(U,X,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf6(U,X,Y,V),V),Slice(skf6(U,X,Y,V),Y))*.
+92[0:Res:88.5,62.0] || P(Slice(U,HPlace(Ox1)),Slice(U,Hc1))*+ Continuous(U,Tb1,HPlace(Ox1)) AlwaysIntConn(U,Tb1,HPlace(Ox1)) NoExitCavity(U,Tb1,Hc1,V)* -> Lt(U,skf6(U,W,X,Y))*.
+97[0:Res:2.0,9.0] ||  -> Time(Ta1)*.
+116[0:Res:8.0,43.0] ||  -> Object(Ox1)*.
+137[0:Res:68.1,56.0] || NoExitCavity(U,V,W,X)* -> Time(U).
+172[0:Res:82.4,60.0] Time(U) Object(V) Object(W) || O(Place(U,W),Place(U,V))* -> equal(W,V).
+237[0:SpL:74.2,89.0] Object(U) Time(V) || P(Place(V,U),Slice(V,W))* Continuous(V,X,HPlace(U)) AlwaysIntConn(V,X,HPlace(U)) NoExitCavity(V,X,W,Y)* -> P(Slice(X,HPlace(U)),Slice(X,W))* O(Slice(skf6(V,X,Y,HPlace(U)),HPlace(U)),Slice(skf6(V,X,Y,HPlace(U)),Y))*.
+239[0:MRR:237.1,137.1] Object(U) || P(Place(V,U),Slice(V,W))*+ Continuous(V,X,HPlace(U)) AlwaysIntConn(V,X,HPlace(U)) NoExitCavity(V,X,W,Y)* -> P(Slice(X,HPlace(U)),Slice(X,W))* O(Slice(skf6(V,X,Y,HPlace(U)),HPlace(U)),Slice(skf6(V,X,Y,HPlace(U)),Y))*.
+260[0:SpL:7.0,92.0] || P(Slice(Ta1,HPlace(Ox1)),Rc1)+ Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+293[0:SpL:74.2,260.0] Object(Ox1) Time(Ta1) || P(Place(Ta1,Ox1),Rc1) Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+294[0:SSi:293.1,293.0,97.0,116.0] || P(Place(Ta1,Ox1),Rc1) Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+295[0:MRR:294.0,6.0] || Continuous(Ta1,Tb1,HPlace(Ox1))+ AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+296[0:Res:71.2,295.0] Object(Ox1) || Lt(Ta1,Tb1) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+297[0:SSi:296.0,116.0] || Lt(Ta1,Tb1) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1)) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+298[0:MRR:297.0,61.1] || AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))+ NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+299[0:Res:73.2,298.0] Object(Ox1) || Lt(Ta1,Tb1) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+300[0:SSi:299.0,116.0] || Lt(Ta1,Tb1) NoExitCavity(Ta1,Tb1,Hc1,U)* -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+301[0:MRR:300.0,2.0] || NoExitCavity(Ta1,Tb1,Hc1,U)*+ -> Lt(Ta1,skf6(Ta1,V,W,X))*.
+302[0:Res:22.0,301.0] ||  -> Lt(Ta1,skf6(Ta1,U,V,W))*.
+307[0:Res:302.0,10.0] ||  -> Time(skf6(Ta1,U,V,W))*.
+629[0:SpL:7.0,239.1] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,V,HPlace(U)) AlwaysIntConn(Ta1,V,HPlace(U)) NoExitCavity(Ta1,V,Hc1,W) -> P(Slice(V,HPlace(U)),Slice(V,Hc1)) O(Slice(skf6(Ta1,V,W,HPlace(U)),HPlace(U)),Slice(skf6(Ta1,V,W,HPlace(U)),W))*.
+1379[0:SpR:74.2,629.6] Object(U) Time(skf6(Ta1,V,HPlace(U),HPlace(W))) Object(W) || P(Place(Ta1,W),Rc1) Continuous(Ta1,V,HPlace(W)) AlwaysIntConn(Ta1,V,HPlace(W)) NoExitCavity(Ta1,V,Hc1,HPlace(U)) -> P(Slice(V,HPlace(W)),Slice(V,Hc1)) O(Slice(skf6(Ta1,V,HPlace(U),HPlace(W)),HPlace(W)),Place(skf6(Ta1,V,HPlace(U),HPlace(W)),U))*.
+1395[0:Rew:74.2,1379.8] Object(U) Time(skf6(Ta1,V,HPlace(U),HPlace(W))) Object(W) || P(Place(Ta1,W),Rc1) Continuous(Ta1,V,HPlace(W)) AlwaysIntConn(Ta1,V,HPlace(W)) NoExitCavity(Ta1,V,Hc1,HPlace(U)) -> P(Slice(V,HPlace(W)),Slice(V,Hc1)) O(Place(skf6(Ta1,V,HPlace(U),HPlace(W)),W),Place(skf6(Ta1,V,HPlace(U),HPlace(W)),U))*.
+1396[0:SSi:1395.1,307.1,20.1,20.0] Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U)) -> P(Slice(W,HPlace(V)),Slice(W,Hc1)) O(Place(skf6(Ta1,W,HPlace(U),HPlace(V)),V),Place(skf6(Ta1,W,HPlace(U),HPlace(V)),U))*.
+1531[0:Res:1396.7,172.3] Object(U) Object(V) Time(skf6(Ta1,W,HPlace(U),HPlace(V))) Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U))* -> P(Slice(W,HPlace(V)),Slice(W,Hc1))* equal(V,U)*.
+1532[0:Obv:1531.1] Time(skf6(Ta1,U,HPlace(V),HPlace(W))) Object(V) Object(W) || P(Place(Ta1,W),Rc1) Continuous(Ta1,U,HPlace(W)) AlwaysIntConn(Ta1,U,HPlace(W)) NoExitCavity(Ta1,U,Hc1,HPlace(V))* -> P(Slice(U,HPlace(W)),Slice(U,Hc1))* equal(W,V)*.
+1533[0:SSi:1532.0,307.1,20.1,20.0] Object(U) Object(V) || P(Place(Ta1,V),Rc1) Continuous(Ta1,W,HPlace(V)) AlwaysIntConn(Ta1,W,HPlace(V)) NoExitCavity(Ta1,W,Hc1,HPlace(U))*+ -> P(Slice(W,HPlace(V)),Slice(W,Hc1))* equal(V,U)*.
+1647[0:Res:22.0,1533.5] Object(Ob1) Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,Tb1,HPlace(U)) AlwaysIntConn(Ta1,Tb1,HPlace(U)) -> P(Slice(Tb1,HPlace(U)),Slice(Tb1,Hc1))* equal(U,Ob1).
+1648[0:SSi:1647.0,4.0,1.1] Object(U) || P(Place(Ta1,U),Rc1) Continuous(Ta1,Tb1,HPlace(U)) AlwaysIntConn(Ta1,Tb1,HPlace(U)) -> P(Slice(Tb1,HPlace(U)),Slice(Tb1,Hc1))* equal(U,Ob1).
+1759[0:Res:1648.4,62.0] Object(Ox1) || P(Place(Ta1,Ox1),Rc1) Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+1765[0:SSi:1759.0,116.0] || P(Place(Ta1,Ox1),Rc1) Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+1766[0:MRR:1765.0,6.0] || Continuous(Ta1,Tb1,HPlace(Ox1)) AlwaysIntConn(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+1773[0:Res:73.2,1766.1] Object(Ox1) || Lt(Ta1,Tb1) Continuous(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+1774[0:SSi:1773.0,116.0] || Lt(Ta1,Tb1) Continuous(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+1775[0:MRR:1774.0,2.0] || Continuous(Ta1,Tb1,HPlace(Ox1))* -> equal(Ob1,Ox1).
+1780[0:Res:71.2,1775.0] Object(Ox1) || Lt(Ta1,Tb1)* -> equal(Ob1,Ox1).
+1781[0:SSi:1780.0,116.0] || Lt(Ta1,Tb1)* -> equal(Ob1,Ox1).
+1782[0:MRR:1781.0,2.0] ||  -> equal(Ob1,Ox1)**.
+1784[0:Rew:1782.0,8.0] ||  -> CContained(Ta1,Ox1,Singleton(Ox1))*.
+1863[0:MRR:1784.0,26.0] ||  -> .
+Formulae used in the proof : C1A1 C1A3 axiom19 Pdot3dot2 Pdot3dot3 C1A2 axiom0 axiom15 Pdot3dot1 Lem1D axiom12 axiom18 SBD3 HID4 1dot22 HIA1 Lem1A HIA2 OTA2 HCA2
+
+--------------------------SPASS-STOP------------------------------

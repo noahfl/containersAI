@@ -1,0 +1,93 @@
+/*Author: Noah Frazier-Logue*/
+
+body {
+	background: black;
+	font-family: Roboto;
+}
+
+@font-face {
+    font-family: 'Roboto'; /*a name to be used later*/
+    src: url('Roboto-Regular.ttf'); /*URL to font*/
+}
+
+h1 {
+	text-align:center;
+	padding: 25px;
+	color:white;
+}
+
+p {
+	color:white;
+	margin: auto;
+	width: 50%;
+	padding-bottom: 20px;
+}
+
+a {
+	color: black;
+	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size: 1.25em;*/
+}
+
+h2 {
+	color: black;
+	text-align:center;
+	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+}
+
+h3 {
+	color: black;
+	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+}
+
+
+#originals {
+	background-color: #FF3606;
+	border-radius: 25px;
+	padding: 20px;
+	width: 50%;
+	margin:auto;
+}
+#inf1 {
+	background-color: #FF6E54;
+	border-radius: 25px;
+	width: 50%;
+	margin:auto;
+	padding: 20px;
+}
+#inf2 {
+	background-color: #ff9830;
+	border-radius: 25px;
+	width: 50%;
+	margin:auto;
+	padding: 20px;
+}
+#inf3 {
+	background-color: #FFBB36;
+	border-radius: 25px;
+	width: 50%;
+	margin:auto;
+	padding: 20px;
+}
+#inf4 {
+	background-color: #49FFB4;
+	border-radius: 25px;
+	width: 50%;
+	margin:auto;
+	padding: 20px;
+}
+#inf5 {
+	background-color: #28AFFF;
+	border-radius: 25px;
+	width: 50%;
+	margin:auto;
+	padding: 20px;
+}
+#spatial {
+	background-color: violet;
+	border-radius: 25px;
+	width: 50%;
+	margin:auto;
+	padding: 20px;
+}
+

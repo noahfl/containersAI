@@ -1,0 +1,46 @@
+begin_problem(Scenario2C).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 2, Lemma C*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*25 February 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+functions[(Singleton,1), (Place,2), (Slice,2), (HPlace,1), (Os2,0), (Ob2a,0), (Ob2b,0), (Ta2,0), (Tb2,0)].
+
+predicates[(Continuous,3), (NoEntranceCavity,4), (Time, 1), (RigidObject, 1), (CContained, 3), (Ordered, 2), (Contained, 2), (Region,1), (History,1), (Object,1), (ObjectSet,1), (Lt,2), (Leq,2), (Leq3,3), (P,2), (Cavity,2), (OSPlace,3), (ClosedContainer,3), (RigidHistory,1), (O,2), (EC,2), (DR,2), (Outside,2), (AlwaysIntConn,3)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+
+% Inference 1
+formula(forall([tb,ox,ob], CContained(tb,ox,Singleton(ob)))).
+
+% 13. edit to 2D Proof
+formula(forall([ta,tb,hc,ob], NoEntranceCavity(ta,tb,hc, HPlace(ob)))).
+
+% HCA3
+formula(forall([t1,t2,hc,hb,hs], implies(and(NoEntranceCavity(t1,t2,hc,hb), Continuous(t1,t2,hs), AlwaysIntConn(t1,t2,hs), not(P(Slice(t1,hs),Slice(t1,hc))), P(Slice(t2,hs),Slice(t2,hc))), exists([tm], and(Lt(t1,tm), Lt(tm,t2), O(Slice(tm,hs),Slice(tm,hb)))))),HCA3).
+
+% 21. edit to 2D proof
+formula(forall([tb,ta], Leq3(tb,tb,ta))).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+
+formula(forall([ob,ox,ta,tb], implies(and(RigidObject(ob), CContained(ta,ox,Singleton(ob)), Lt(tb,ta)), CContained(tb,ox,Singleton(ob))))).
+
+end_of_list.
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+

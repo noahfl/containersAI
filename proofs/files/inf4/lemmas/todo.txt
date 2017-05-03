@@ -1,0 +1,19 @@
+DONE:
+A
+E
+F
+G
+H
+R
+W
+Q
+J
+I
+D
+
+UNFINISHED:
+P
+R?
+
+NOTES:
+find a way to make OSA1 work; perhaps another axiom/definition?

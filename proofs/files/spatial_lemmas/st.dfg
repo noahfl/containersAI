@@ -1,0 +1,238 @@
+begin_problem(SpatialLemma).
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Spatial Lemma SA*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*23 December 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+
+functions[(Sequence,2), (Contents,2), (Place,2), (RUnion,2), (ConvexHull,1), (Singleton,1), (Pair,2), (Union,2), (CContents,2), (UContents,2), (TravelTo,1), (StandStill,0), (ManipTo,2), (Slice,2), (HPlace,1), (HUnion,2), (MovingGroup,2), (PutInUC,2), (LoadUprightContainer,2), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Place,2), (Union,2), (UContents,2), (Contents,2), (MovingGroup,2), (Ta4,0), (Ob4,0), (Rc4,0), (Ox4,0), (Agent,0), (TravelTo,1), (Tm1,0), (Ra1,0), (RUnion,2), (Ta,0), (T,0), (R,0), (Rd,0), (Null,0), (ConvexHull,1), (Ra,0), (Rb,0), (Rc,0)].
+
+predicates[(Time,1), (Object,1), (Region,1), (UprightContainer,3), (FullyOutside,2), (SmallSet,2), (ObjectSet,1), (AllStable,1), (EmptyHanded,1), (Graspable,2), (Reachable,2), (FullyOutside,2), (SafelyMovable,2), (SmallObject,1), (BoxedIn,3), (NoPartialContents,2), (Occurs,3), (Action,1), (CanGrasp,2), (UprightContainerShape,2), (UContained,3), (P,2), (Element,2), (Lt,2), (Leq,2), (Leq3, 3), (IntConn,1), (Feasible,2), (Fits,2), (OSPlace,3), (MuchSmaller,2), (OMuchSmaller,2), (FeasiblePlace,2), (OpenContained,2), (OpenContainerShape,2), (OpenContainer,3), (O,2), (History,1), (Cavity,2), (Contained,2), (DC,2), (DR,2)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+% Sequence
+formula(forall([a1,a2], implies(and(Action(a1), Action(a2)), Action(Sequence(a1,a2)))),Sequence).
+% RUnion
+formula(forall([u,v], implies(and(Region(u), Region(v)), Region(RUnion(u,v)))),RUnion).
+% ConvexHull
+formula(forall([r], implies(Region(r), Region(ConvexHull(r)))),ConvexHull).
+% Singleton
+formula(forall([x], implies(Object(x), ObjectSet(Singleton(x)))),Singleton).
+% Pair
+formula(forall([x,y], implies(and(Object(x), Object(y)), ObjectSet(Pair(x,y)))),Pair).
+% Union
+formula(forall([sa,sb], implies(and(ObjectSet(sa), ObjectSet(sb)), ObjectSet(Union(sa,sb)))),Union).
+% Place
+formula(forall([t,o], implies(and(Time(t), Object(o)), Region(Place(t,o)))),Place).
+% Contents
+formula(forall([t,r], implies(and(Time(t), Region(r)), ObjectSet(Contents(t,r)))),Contents).
+% CContents
+formula(forall([t,s], implies(and(Time(t), ObjectSet(s)), ObjectSet(CContents(t,s)))),CContents).
+% UContents
+formula(forall([t,s], implies(and(Time(t), Object(s)), ObjectSet(UContents(t,s)))),UContents).
+% TravelTo
+formula(forall([r], implies(Region(r), Action(TravelTo(r)))),TravelTo).
+% StandStill
+formula(Action(StandStill),StandStill).
+% ManipTo
+formula(forall([o,r], implies(and(Object(o), Region(r)), Action(ManipTo(o,r)))),ManipTo).
+% Slice
+formula(forall([t,h], implies(and(Time(t), History(h)), Region(Slice(t,h)))),Slice).
+% HPlace
+formula(forall([o], implies(Object(o), History(HPlace(o)))),HPlace).
+% HUnion
+formula(forall([ha,hb], implies(and(History(ha), History(hb)), History(HUnion(ha,hb)))),HUnion).
+% MovingGroup
+formula(forall([t,ox], implies(and(Time(t), Object(ox)), ObjectSet(MovingGroup(t,ox)))),MovingGroup).
+% PutInUC
+formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(PutInUC(ox,ob)))),PutInUC).
+% LoadUprightContainer
+formula(forall([ox,ob], implies(and(Object(ox), Object(ob)), Action(LoadUprightContainer(ox,ob)))),LoadUprightContainer).
+
+
+
+%%%% Sortal Axioms
+
+%%% Time
+%% Actions
+% TASA
+formula(forall([ta,tb,a], implies(Occurs(ta,tb,a), and(Time(ta), Time(tb), Action(a))))).
+%% Time ordering
+% TOSA
+formula(forall([t,a], implies(Feasible(t,a), and(Time(t), Action(a))))).
+
+%%% Objects
+%% Object sets
+% OSSA
+formula(forall([x,s], implies(Element(x,s), and(Object(x), ObjectSet(s))))).
+%% Objects and Object Sets: Spatio-Temporal
+% OOSA
+formula(forall([t,s,r], implies(OSPlace(t,s,r), and(Time(t), ObjectSet(s), Region(r))))).
+% SMA1
+formula(forall([ra], not(MuchSmaller(ra,ra))),SMA1).
+% OOSB
+formula(forall([o,r], implies(FeasiblePlace(o,r), and(Object(o), Region(r))))).
+%% Objects containing regions
+% ORSA
+formula(forall([t,o,r], implies(or(OpenContainer(t,o,r), UprightContainer(t,o,r)), and(Time(t), Object(o), Region(r))))).
+%% Object containment
+% OCSA
+formula(forall([t,ox,ob], implies(UContained(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+%% Fits and Small Set
+% OFSA
+formula(forall([s,r], implies(Fits(s,r), and(ObjectSet(s), Region(r))))).
+% OFSB
+formula(forall([o,r], implies(OMuchSmaller(o,r), and(Object(o), Region(r))))).
+
+
+%%% Specific Actions
+%% Safe manipulation
+% ASSA
+formula(forall([t,o], implies(SafelyMovable(t,o), and(Time(t), Object(o))))).
+% ASSB
+formula(forall([t,ox,ob], implies(BoxedIn(t,ox,ob), and(Time(t), Object(ox), Object(ob))))).
+%% Loading an upright container
+% ALSA
+formula(forall([ra,rb], implies(FullyOutside(ra,rb), and(Region(ra), Region(rb))))).
+% ALSB
+formula(forall([t,r], implies(Reachable(t,r), and(Time(t), Region(r))))).
+%% Fits and small set
+% OFSA
+formula(forall([o], implies(SmallObject(o), Object(o)))).
+
+%%% Spatial Relations
+%% Basic Spatial Relations
+% SRSA
+formula(forall([u,v], implies(or(P(u,v),O(u,v),DC(u,v), DR(u,v)), and(Region(u), Region(v))))).
+%% Spatial containment
+% SCSA/B
+formula(forall([ra,rb], implies(or(FullyOutside(ra,rb), OpenContainerShape(ra,rb), UprightContainerShape(ra,rb), Cavity(ra,rb), Contained(ra,rb)), and(Region(ra), Region(rb))))).
+% SCSC
+formula(forall([r], implies(IntConn(r), Region(r)))).
+% SCSD
+formula(forall([ra,rb], implies(OpenContained(ra,rb), and(Region(ra), Region(rb))))).
+% SCSE
+%% Much smaller
+% SMSA
+formula(forall([s,r], implies(SmallSet(s,r), and(ObjectSet(s), Region(r))))).
+% SMSB
+formula(forall([ra,rb], implies(MuchSmaller(ra,rb), and(Region(ra), Region(rb))))).
+
+%%% Motion and Manipulation
+%% Stability and falling
+% MSSA
+formula(forall([t], implies(AllStable(t), Time(t)))).
+%% Frame axioms
+% MFSA
+formula(forall([t,o], implies(NoPartialContents(t,o), and(Time(t), Object(o))))).
+%% Grasping an object
+% MGSA
+formula(forall([t], implies(EmptyHanded(t), Time(t)))).
+% MGSB
+formula(forall([t,o], implies(CanGrasp(t,o), and(Time(t), Object(o))))).
+%% Feasibility of Traveling
+% MFSA
+formula(forall([t,o], implies(Graspable(t,o), and(Time(t),Object(o))))).
+
+% Temporal Axioms
+% TID3
+formula(forall([x,y,z], equiv(Leq3(x,y,z), and(Leq(x,y), Leq(y,z))))).
+% TID1
+formula(forall([x,y], implies(and(Time(x), Time(y)), equiv(Leq(x,y), or(Lt(x,y), equal(x,y)))))).
+% TIA2
+formula(forall([x,y,z], implies(and(Lt(x,y), Lt(y,z)), Lt(x,z)))).
+
+%%%% Specifications
+
+
+% SCD6
+formula(forall([ra,rb], equiv(OpenContained(ra,rb), exists([rc], and(OpenContainerShape(rb,rc), P(ra,rc))))),SCD6).
+
+% SCA6
+formula(forall([u,v], implies(OpenContainerShape(u,v), P(v,ConvexHull(u)))),SCA6).
+
+% LemSA
+formula(forall([u,v,w], implies(and(P(u,v), P(v,w)), P(u,w))),LemSA).
+
+% SCA4
+formula(forall([r], implies(Region(r), P(r,ConvexHull(r)))),SCA4).
+
+% SBD2
+formula(forall([u,v], equiv(O(u,v), exists([z], and(P(z,u), P(z,v))))),SBD2).
+
+% SBD3
+formula(forall([u,v], implies(and(Region(u), Region(v)), equiv(DR(u,v), not(O(u,v))))),SBD3).
+
+% SCD7
+formula(forall([ra,rb], equiv(FullyOutside(ra,rb), DC(ConvexHull(ra),ConvexHull(rb)))),SCD7).
+
+% LemSK
+formula(forall([u,v], implies(DC(u,v), DR(u,v))),LemSK).
+
+formula(Region(Ra),Ra).
+formula(Region(Rb),Rb).
+formula(Region(Rc),Rc).
+
+
+% assume
+% formula(OpenContained(Ra,Rb),assume).
+
+% ST3
+formula(OpenContainerShape(Rb,Rc),ST3).
+
+% ST4
+% formula(P(Ra,Rc),ST4).
+
+% ST9 test
+% formula(not(DC(ConvexHull(Ra),ConvexHull(Rb))),ST9).
+
+% ST8 test
+% formula(O(ConvexHull(Ra),ConvexHull(Rb)),ST8).
+
+
+end_of_list.
+
+
+list_of_formulae(conjectures).
+
+% LemST
+formula(forall([ra,rb], implies(OpenContained(ra,rb), not(FullyOutside(ra,rb)))),LemST).
+
+% ST10 (proof given ST9)
+% formula(not(FullyOutside(Ra,Rb))).
+
+% ST9 (proof)
+% formula(not(DC(ConvexHull(Ra),ConvexHull(Rb)))).
+
+% ST8 (proof)
+% formula(O(ConvexHull(Ra),ConvexHull(Rb))).
+
+% ST7 (proof)
+% formula(P(Ra,ConvexHull(Ra))).
+
+% ST6 (proof)
+% formula(P(Ra,ConvexHull(Rb))).
+
+% ST5 (proof)
+% formula(P(Rc,ConvexHull(Rb))).
+
+% ST2 (proof)
+% formula(exists([rc], and(OpenContainerShape(Rb,rc), P(Ra,rc)))).
+
+end_of_list.
+
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.
+

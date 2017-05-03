@@ -1,0 +1,81 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> W(skf1(U))*.
+2[0:Inp] ||  -> Q(F(skc1))* W(G(skc1)).
+3[0:Inp] || Q(U) -> P(U,skf1(U))*.
+4[0:Inp] || Q(F(skc1))* W(G(skc1)) -> .
+5[0:Inp] || P(F(U),V)* -> equal(V,G(U)).
+6[0:Inp] || equal(U,G(V)) -> P(F(V),U)*.
+7[0:Inp] || P(U,V)* W(V) -> Q(U).
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 5 Conjecture clauses: 2
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf1 > skf0 > G > F > Q > P > W > skc2 > skc1 > skc0
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> W(skf1(U))*.
+2[0:Inp] ||  -> W(G(skc1)) Q(F(skc1))*.
+3[0:Inp] Q(U) ||  -> P(U,skf1(U))*.
+4[0:Inp] || W(G(skc1)) Q(F(skc1))* -> .
+6[0:Inp] || equal(U,G(V)) -> P(F(V),U)*.
+5[0:Inp] || P(F(U),V)* -> equal(V,G(U)).
+7[0:Inp] W(U) || P(V,U)* -> Q(V).
+	Given clause: 1[0:Inp] ||  -> W(skf1(U))*.
+	Given clause: 2[0:Inp] ||  -> W(G(skc1)) Q(F(skc1))*.
+	Given clause: 8[1:Spt:2.0] ||  -> W(G(skc1))*.
+	Given clause: 9[1:MRR:4.0,8.0] || Q(F(skc1))* -> .
+	Given clause: 3[0:Inp] Q(U) ||  -> P(U,skf1(U))*.
+	Given clause: 6[0:Inp] || equal(U,G(V)) -> P(F(V),U)*.
+	Given clause: 5[0:Inp] || P(F(U),V)* -> equal(V,G(U)).
+	Given clause: 7[0:Inp] W(U) || P(V,U)* -> Q(V).
+	Given clause: 10[0:Res:3.1,5.0] Q(F(U)) ||  -> equal(skf1(F(U)),G(U))**.
+	Given clause: 13[0:Res:6.1,7.1] W(U) || equal(U,G(V))*+ -> Q(F(V))*.
+	Given clause: 15[0:EqR:13.1] W(G(U)) ||  -> Q(F(U))*.
+	Given clause: 19[1:Spt:17.0,2.1] ||  -> Q(F(skc1))*.
+	Given clause: 18[1:Spt:17.0,2.0,8.0] || W(G(skc1))* -> .
+	Given clause: 20[1:SoR:10.0,19.0] ||  -> equal(skf1(F(skc1)),G(skc1))**.
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: inference2b_test.dfg 
+SPASS derived 13 clauses, backtracked 3 clauses, performed 1 splits and kept 19 clauses.
+SPASS allocated 52204 KBytes.
+SPASS spent	0:00:00.04 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+Here is a proof with depth 3, length 19 :
+1[0:Inp] ||  -> W(skf1(U))*.
+2[0:Inp] ||  -> W(G(skc1)) Q(F(skc1))*.
+3[0:Inp] Q(U) ||  -> P(U,skf1(U))*.
+4[0:Inp] || W(G(skc1)) Q(F(skc1))* -> .
+5[0:Inp] || P(F(U),V)* -> equal(V,G(U)).
+6[0:Inp] || equal(U,G(V)) -> P(F(V),U)*.
+7[0:Inp] W(U) || P(V,U)* -> Q(V).
+8[1:Spt:2.0] ||  -> W(G(skc1))*.
+9[1:MRR:4.0,8.0] || Q(F(skc1))* -> .
+10[0:Res:3.1,5.0] Q(F(U)) ||  -> equal(skf1(F(U)),G(U))**.
+13[0:Res:6.1,7.1] W(U) || equal(U,G(V))*+ -> Q(F(V))*.
+15[0:EqR:13.1] W(G(U)) ||  -> Q(F(U))*.
+16[1:SoR:15.0,8.0] ||  -> Q(F(skc1))*.
+17[1:MRR:16.0,9.0] ||  -> .
+18[1:Spt:17.0,2.0,8.0] || W(G(skc1))* -> .
+19[1:Spt:17.0,2.1] ||  -> Q(F(skc1))*.
+20[1:SoR:10.0,19.0] ||  -> equal(skf1(F(skc1)),G(skc1))**.
+21[1:SpR:20.0,1.0] ||  -> W(G(skc1))*.
+24[1:MRR:21.0,18.0] ||  -> .
+Formulae used in the proof : axiom1 conjecture0 axiom0
+
+--------------------------SPASS-STOP------------------------------

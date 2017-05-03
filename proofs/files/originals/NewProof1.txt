@@ -1,0 +1,98 @@
+Inference 1:
+
+Qualitative prediction. If Ob1 is a rigid object and it is a
+closed container container object Ox1, then Ox1 remains
+inside Ob1.
+
+Given:
+
+C1A1: RigidObject(Ob1).
+C1A2: CContained(Ta1,Ox1,Singleton(Ob1)).
+C1A3: Lt(Ta1,Tb1).
+
+Infer: CContained(Tb1,Ox1,Singleton(Ob1)).
+
+Lemma 1.A Object(ob) ^ Lt(ta,tb) => AlwaysIntConn(ta,tb,HPlace(ob))
+Proof:                                HID1 + HIA2 + OTD3 + OTA4
+
+Lemma 1.B forall(t,o,r) Time(t) ^ Object(o) =>
+                    OSPlace(t,Singleton(o),r) <=> r = Place(t,o).
+Proof: 
+Assume: 1B.1 Time(T) ^ Object(O).
+    Assume: 1B.2 OSPlace(T,Singleton(O),R).
+    Infer:  1B.3 P(Place(T,O),R)                           OTD1 + OSD2 + 1B.2
+            1B.4 forall(ra) P(Place(T,O),ra) => P(R,ra)    OTD1 + OSD2 + 1B.2
+            1B.5 P(Place(T,O),Place(T,O))                  Lemma SB
+            1B.6  P(R,Place(T,O)).                         1B.4 + 1B.5
+            1B.7 R = Place(T,O)                            SBA1 + 1B.3 + 1B.6
+    1B.8 forall(r) OSPlace(T,Singleton(O),r) =>  Discharge 1B.7 against 1B.2
+                   r=Place(T,O)         
+    Assume 1B.9 R = Place(T,O)
+    Infer  1B.10 Singleton(O) != Null                       OSD1 + OSD2.
+           1B.11 exists1(ra) OSPlace(T,Singleton(O),ra).   OTA3 + 1B.10
+           1B.12 OSPlace(T,Singleton(O),RA)                1B.11, naming
+           1B.13 RA = Place(T,O)                           1B.12 + 1B.7 
+           1B.14 RA = R                                    1B.13 + 1B.8
+           1B.15 OSPlace(T,Singleton(O),R).                1B.12 + 1B.14
+    1B.16 forall(r) r = Place(T,O) =>            Discharge 1B.15 against 1B.9
+                    OSPlace(T,Singleton(O),r)
+1B.17 forall(t,o,r) Time(t) ^ Object(r) =>       Discharge 1B.16, 1B.8 against 
+             OSPlace(t,Singleton(o),r) <=> r = Place(t,o).      1B.1.
+
+Lemma 1.C CContained(t,oa,s) => not Element(oa,s).
+Proof by contradiction.
+Assume 1C.1 CContained(T,Oa,S).
+       1C.2 Element(Oa,S).
+Infer  1C.3 exists(rc) ClosedContainer(T,S,rc) ^           OCD1 + 1C.1
+                 P(Place(T,Oa),Rc)
+       1C.4 ClosedContainer(T,S,Rc)                        Naming 1C.3
+       1C.5 P(Place(T,Oa),Rc)                              Naming 1C.3
+       1C.6 exists(rs) OSPlace(Ta,S,rs) ^ Cavity(Rc,rs)    ORD1 + 1C.4
+       1C.7 OSPlace(T,S,Rs).                               Naming 1C.6
+       1C.8 Cavity(Rc,Rs).                                  Naming 1C.6
+       1C.9 DR(Rc,Rs)                                       SCD1 + 1C.8
+       1C.10 P(Place(T,Oa),Rs).                             OTD1 + 1C.2 + 1C.7
+       1C.11 DR(Place(T,Oa),Place(T,Oa))   LemSE(twice) + 1C.5 + 1C.9 + 1C.10
+       1C.12 Contradiction                                LemSM + 1C.11
+Completes the proof.
+
+Lemma 1.D CContained(t,oa,Singleton(ob)) => oa != ob.
+Proof: From Lemma 1.C plus OSD2
+
+Proof of Inference 1:
+
+1.1. RigidHistory(Ta1,Tb1,HPlace(Ob1))                           C1A1 + ROA1
+1.2. ClosedContainer(Ta1,Singleton(Ob1),Rc1)             C1A2 + OCD1 + naming
+1.3. P(Place(Ta1,Ox1),Rc1).                              C1A2 + OCD1 + naming
+1.4. OSPlace(Ta1,Singleton(Ob1), Rs1).                    1.2 + ORD1 + naming 
+1.5. Cavity(Rc1,Rs1).                                     1.2 + ORD1 + naming
+1.6. Slice(Ta1,HPlace(Ob1)) = Place(Ta1,Ob1).                        HIA2.
+1.7. Rs1 = Place(Ta1,Ob1).                                      Lem1.B + 1.4
+1.8. Rs1 = Slice(Ta1,HPlace(Ob1)).                              1.6 + 1.7.
+1.9. Cavity(Rc1,Slice(Ta1,HPlace(Ob1))).                        1.5 + 1.8.
+1.10 Intentionally omitted
+1.11. PersistentCavity(Ta1,Tb1,Hc1,HPlace(Ob1)).  C1A3+ROA2+1.1+1.9 + naming 
+1.12. Rc1 = Slice(Ta1,Hc1).                       C1A3+ROA2+1.1+1.9 + naming 
+1.13. NoExitCavity(Ta1,Tb1,Hc1,HPlace(Ob1)).                  HCD1 + 1.11
+1.14. Continuous(Ta1,Tb1,HPlace(Ox1)).                        HIA1 + C1A3
+1.15. Slice(Ta1,HPlace(Ox1)) = Place(Ta1,Ox1).                       HIA2.
+1.16. P(Slice(Ta1,HPlace(Ox1)),Rc1).                           1.3 + 1.15.
+1.17. P(Slice(Ta1,HPlace(Ox1)),Slice(Ta1,Hc1)).               1.16 + 1.12.
+1.18  Ox1 != Ob1                                            Lem1.D + C1A1
+1.19. forall(t) DR(Place(t,Ob1),Place(t,Ox1)).                OTA1 + 1.18
+1.20. forall(t) not O(Place(t,Ob1),Place(t,Ox1)).             SBD3 + 1.19
+1.21  forall(t) not O(Slice(t,HPlace(Ob1)), Slice(t,HPlace(Ox1)) HIA2 + 1.20
+1.22. P(Slice(Tb1,HPlace(Ox1)),Slice(Tb1,Hc1)) HCA2 + 1.21 + 1.17 + 1.14 + 
+                                                            1.13 + Lem1.A 
+1.23. Leq3(Ta1,Tb1,Tb1).                               TID3 + TID1 + C1A3
+1.24. Cavity(Slice(Tb1,Hc1),Slice(Tb1,HPlace(Ob1))).   HCA1 + 1.23 + 1.13 
+1.25. Slice(Tb1,HPlace(Ob1)) = Place(Tb1,Ob1).                       HIA2.
+1.26. OSPlace(Tb1,Singleton(Ob1),Place(Tb1,Ob1)).                  Lem1.B
+1.27. ClosedContainer(Tb1,Singleton(Ob1),Slice(Tb1,Hc1)). ORD1 + 1.24 +
+                                                              1.25 + 1.26
+1.28. Slice(Tb1,HPlace(Ox1)) = Place(Tb1,Ox1).                       HIA2.
+1.29. P(Place(Tb1,Ox1),Slice(Tb1,Hc1)).                       1.22 + 1.28.
+1.30. CContained(Tb1,Ox1,Singleton(Ob1)).              OCD1 + 1.27 + 1.29 
+
+
+

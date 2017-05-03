@@ -1,0 +1,56 @@
+[?1049h[?1h=[1;50r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[50;1H"inference5_e.dfg" 392L, 15041C[1;1Hend_of_list.
+
+
+list_of_formulae(conjectures).
+
+% full inference (proof)
+formula(not(Motionless(Ta5,Tb5,Ol5))).
+
+% 5.68 (proof)
+% formula(Motionless(Ta5,Tb5,Os5)).
+
+% 5.67 (proof)
+% formula(Element(Os5,Contents(Ta5,Rc5))).
+
+% 5.66 (proof in separate file)
+% formula(StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+
+% 5.65A (proof in separate file)
+% formula(not(Element(Agent,Contents(Ta5,Rc5))),5dot65A).
+
+% 5.65B (proof in separate file)
+% formula(forall([tx,ox], implies(and(Leq3(Ta5,tx,Tb5), Element(ox,Contents(Ta5,Rc5))), not(Grasp(([23;1Htx,ox)))),5dot65B).
+
+% 5.65 (proof in separate file)
+% formula(CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc5))).
+% formula(Isolates(Tx,Su,Contents(Tx,Rc5))).
+
+% 5.59 (proof)
+% formula(ClosedContainer(Tx,Su,Rc5)).
+
+% 5.58 (proof in separate file)
+% formula(BoxWithLidC(Tx,Ob5,Ol5,Rc5)).
+
+% 5.56 (proof)
+% formula(not(Element(Agent,Su))).
+
+% 5.55 (proof)
+% formula(forall([o], equiv(Element(o,Su), or(equal(o,Ob5), equal(o,Ol5))))).
+
+
+end_of_list.
+
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l
+Type  :quit<Enter>  to exit Vim[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H392,1[9CBot[49;1H[?12l[?25h[?25l[50;86H1[49;11H[?12l[?25h[?25l.[49;12H[K[49;11H[?12l[?25h[?25l
+[1m-- INSERT --[m[50;13H[K[50;81H392,11[8CBot[49;11H[?12l[?25h[?25lt.[50;86H2[49;12H[?12l[?25h[?25l[1;49r[49;1H
+[1;50r[48;12H[K[49;1H.[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;1H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l
+Type  :quit<Enter>  to exit Vim[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h[?25l[50;81H[K[50;81H393,1[9CBot[49;1H[?12l[?25h
+[?1l>[?1049lVim: Error reading input, exiting...
+Vim: preserving files...
+Vim: Finished.
+[50;1H

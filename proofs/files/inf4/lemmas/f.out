@@ -1,0 +1,485 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> EmptyHanded(skc9)*.
+2[0:Inp] ||  -> AllStable(skc9)*.
+3[0:Inp] ||  -> Region(skc6)*.
+4[0:Inp] ||  -> NoObstacles(U,V)*.
+5[0:Inp] ||  -> Feasible(skc9,TravelTo(skc7))*.
+6[0:Inp] ||  -> Object(skf7(U,V))*.
+7[0:Inp] ||  -> Object(skf9(U,V))*.
+8[0:Inp] ||  -> Occurs(skc9,skc8,TravelTo(skc6))*.
+9[0:Inp] || Feasible(skc8,TravelTo(skc7))* -> .
+10[0:Inp] || SmallObject(U) -> Object(U)*.
+11[0:Inp] || AllStable(U)* -> Time(U).
+12[0:Inp] || EmptyHanded(U)* -> Time(U).
+13[0:Inp] || EmptyHanded(U)* -> Time(U).
+14[0:Inp] || EmptyHanded(U)* -> Object(V)*.
+15[0:Inp] ||  -> Time(U)* Feasible(V,W)*.
+16[0:Inp] || Feasible(U,V)* -> Time(U).
+17[0:Inp] || Feasible(U,V)* -> Action(V).
+18[0:Inp] || Element(U,V)* -> Object(U).
+19[0:Inp] || Element(U,V)* -> ObjectSet(V).
+20[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+21[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+22[0:Inp] || FullyOutside(U,V)* -> Region(U).
+23[0:Inp] || FullyOutside(U,V)* -> Region(V).
+24[0:Inp] || Reachable(U,V)* -> Time(U).
+25[0:Inp] || Reachable(U,V)* -> Region(V).
+26[0:Inp] || SkP0(U,V)* -> Region(V).
+27[0:Inp] || SkP0(U,V)* -> Region(U).
+28[0:Inp] || SkP1(U,V)* -> Region(V).
+29[0:Inp] || SkP1(U,V)* -> Region(U).
+30[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+31[0:Inp] || SmallSet(U,V)* -> Region(V).
+32[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+33[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+34[0:Inp] || SkP2(U,V)* -> Time(V).
+35[0:Inp] || SkP2(U,V)* -> Object(U).
+36[0:Inp] || Graspable(U,V)* -> Time(U).
+37[0:Inp] || Graspable(U,V)* -> Object(V).
+38[0:Inp] || NoObstacles(U,V)* -> Time(U).
+39[0:Inp] || NoObstacles(U,V)* -> Region(V).
+40[0:Inp] || NoObstacles(U,V)* -> Time(U).
+41[0:Inp] ||  -> NoObstacles(U,skf10(V,W,U))*.
+42[0:Inp] || Occurs(U,V,W)* -> Time(U).
+43[0:Inp] || Occurs(U,V,W)* -> Time(V).
+44[0:Inp] || Occurs(U,V,W)* -> Action(W).
+45[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+46[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+47[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+48[0:Inp] || UContained(U,V,W)* -> Time(U).
+49[0:Inp] || UContained(U,V,W)* -> Object(V).
+50[0:Inp] || UContained(U,V,W)* -> Object(W).
+51[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+52[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+53[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+54[0:Inp] || P(U,V) -> SkP0(V,U)*.
+55[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+56[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+57[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+58[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+59[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+60[0:Inp] || Released(U,V,W)* -> Time(U).
+61[0:Inp] || Released(U,V,W)* -> Time(V).
+62[0:Inp] || Released(U,V,W)* -> Object(W).
+63[0:Inp] || Trajectory(U,V,W)* -> Time(U).
+64[0:Inp] || Trajectory(U,V,W)* -> Time(V).
+65[0:Inp] || Trajectory(U,V,W)* -> Time(W).
+66[0:Inp] || Grasp(U,V)* EmptyHanded(U) -> .
+67[0:Inp] || Released(U,V,W)* -> Object(W).
+68[0:Inp] || StaysIn(U,V,W,X)* -> Time(U).
+69[0:Inp] || StaysIn(U,V,W,X)* -> Time(V).
+70[0:Inp] || StaysIn(U,V,W,X)* -> Object(W).
+71[0:Inp] || StaysIn(U,V,W,X)* -> Region(X).
+72[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+73[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+74[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+75[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+76[0:Inp] || Trajectory(U,V,W)* -> Trajectory(V,U,W)*.
+77[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+78[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+79[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+80[0:Inp] || Time(U) Object(skc10) -> Grasp(U,skf8(U))* EmptyHanded(U).
+81[0:Inp] || equal(skf9(U,V),Agent)** Time(V) -> NoObstacles(V,U).
+82[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+83[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+84[0:Inp] || Object(U) Occurs(V,W,TravelTo(X))* -> Released(V,W,U)*.
+85[0:Inp] || Feasible(U,V) Time(skc20) -> Occurs(U,skf12(V,U),V)*.
+86[0:Inp] || DR(Place(U,skf9(V,U)),V)* Time(U) -> NoObstacles(U,V).
+87[0:Inp] || Object(U) NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+88[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+89[0:Inp] || Trajectory(U,V,W)* Trajectory(V,X,Y)* -> Trajectory(U,X,RUnion(W,Y))*.
+90[0:Inp] || Lt(U,V)* Leq(V,W)* Grasp(V,X)* Released(U,W,X)* -> .
+91[0:Inp] || Lt(U,V) Object(W) -> Lt(U,skf13(V,U,X))* Released(U,V,W)*.
+92[0:Inp] || Lt(U,V) Object(W) -> Leq(skf13(V,X,Y),V)* Released(U,V,W)*.
+93[0:Inp] || Lt(U,V) Object(W) -> Grasp(skf13(V,U,W),W)* Released(U,V,W).
+94[0:Inp] || Released(U,V,skf7(V,U))* equal(W,Place(V,Agent)) -> Occurs(U,V,TravelTo(W))*.
+95[0:Inp] || Occurs(U,V,TravelTo(W)) EmptyHanded(U) AllStable(U) -> StaysIn(U,V,Agent,skf10(V,W,U))*.
+96[0:Inp] || Occurs(U,V,TravelTo(W)) EmptyHanded(U) AllStable(U) -> Trajectory(Place(U,Agent),W,skf10(V,W,U))*.
+97[0:Inp] || Occurs(U,V,TravelTo(W))* AllStable(U) EmptyHanded(U) Region(W) Object(X)* -> AllStable(V) equal(X,Agent).
+98[0:Inp] || Trajectory(Place(U,Agent),V,W) NoObstacles(U,W) EmptyHanded(U) AllStable(U) -> StaysIn(U,skf11(V,U,W),Agent,W)*.
+99[0:Inp] || Trajectory(Place(U,Agent),V,W)* NoObstacles(U,W) EmptyHanded(U) AllStable(U) -> Occurs(U,skf11(V,U,X),TravelTo(V))*.
+100[0:Inp] || Occurs(U,V,TravelTo(W))* AllStable(U) EmptyHanded(U) Region(W) Object(X) -> equal(Place(V,X),Place(U,X))* equal(X,Agent).
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 94 Conjecture clauses: 6
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf13 > skf11 > skf10 > skf6 > skf4 > skf3 > skf12 > skf9 > skf7 > skf5 > skf2 > skf0 > MovingGroup > Contents > UContents > RUnion > Union > Place > skf8 > skf1 > TravelTo > Action > SkP2 > SkP0 > Feasible > DR > Grasp > Released > NoObstacles > StaysIn > Trajectory > Leq3 > Leq > Lt > Occurs > EmptyHanded > AllStable > Region > Object > Time > UprightContainer > SkP1 > FullyOutside > ObjectSet > SmallSet > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > CanGrasp > UprightContainerShape > UContained > P > Element > skc23 > skc22 > skc21 > skc20 > skc19 > skc18 > skc17 > skc16 > skc15 > skc14 > skc13 > skc12 > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> EmptyHanded(skc9)*.
+2[0:Inp] ||  -> AllStable(skc9)*.
+101[0:MRR:40.0,4.0] ||  -> Time(U)*.
+102[0:MRR:39.0,4.0] ||  -> Region(U)*.
+126[0:Res:1.0,14.0] ||  -> Object(U)*.
+4[0:Inp] ||  -> NoObstacles(U,V)*.
+128[0:Res:5.0,17.0] ||  -> Action(TravelTo(skc7))*.
+132[0:Res:8.0,44.0] ||  -> Action(TravelTo(skc6))*.
+5[0:Inp] ||  -> Feasible(skc9,TravelTo(skc7))*.
+131[0:Res:8.0,74.0] ||  -> Feasible(skc9,TravelTo(skc6))*.
+144[0:MRR:130.0,126.0] ||  -> Released(skc9,skc8,U)*.
+125[0:Res:1.0,66.0] || Grasp(skc9,U)* -> .
+8[0:Inp] ||  -> Occurs(skc9,skc8,TravelTo(skc6))*.
+9[0:Inp] || Feasible(skc8,TravelTo(skc7))* -> .
+137[0:Res:8.0,78.0] ||  -> equal(Place(skc8,Agent),skc6)**.
+145[0:MRR:134.0,134.1,2.0,1.0] ||  -> AllStable(skc8)* equal(U,Agent)*.
+143[0:MRR:103.0,126.0] ||  -> EmptyHanded(U) Grasp(U,skf8(U))*.
+30[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+19[0:Inp] || Element(U,V)* -> ObjectSet(V).
+17[0:Inp] || Feasible(U,V)* -> Action(V).
+129[0:Res:74.1,9.0] || Occurs(skc8,U,TravelTo(skc7))* -> .
+66[0:Inp] EmptyHanded(U) || Grasp(U,V)* -> .
+58[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+57[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+56[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+54[0:Inp] || P(U,V) -> SkP0(V,U)*.
+55[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+59[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+105[0:MRR:83.0,83.1,101.0,101.0] || equal(U,V) -> Leq(U,V)*.
+106[0:MRR:82.0,82.1,101.0,101.0] || Lt(U,V) -> Leq(U,V)*.
+44[0:Inp] || Occurs(U,V,W)* -> Action(W).
+139[0:MRR:107.0,126.0] ||  -> equal(U,Agent) DR(Place(V,U),W)*.
+74[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+73[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+72[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+75[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+147[0:MRR:136.0,136.1,1.0,2.0] ||  -> StaysIn(skc9,skc8,Agent,skf10(skc8,skc6,skc9))*.
+76[0:Inp] || Trajectory(U,V,W)* -> Trajectory(V,U,W)*.
+148[0:MRR:135.0,135.1,1.0,2.0] ||  -> Trajectory(Place(skc9,Agent),skc6,skf10(skc8,skc6,skc9))*.
+104[0:MRR:85.1,101.0] || Feasible(U,V) -> Occurs(U,skf12(V,U),V)*.
+108[0:MRR:88.0,88.1,101.0,101.0] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+138[0:MRR:84.0,126.0] || Occurs(U,V,TravelTo(W))* -> Released(U,V,X)*.
+149[0:MRR:133.0,133.1,2.0,1.0] ||  -> equal(U,Agent) equal(Place(skc9,U),Place(skc8,U))**.
+78[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+77[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+146[0:MRR:116.0,1.0] || Occurs(skc9,U,TravelTo(V))* -> AllStable(U) equal(W,Agent)*.
+79[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+140[0:MRR:93.0,126.0] || Lt(U,V) -> Grasp(skf13(V,U,W),W)* Released(U,V,W).
+142[0:MRR:91.0,126.0] || Lt(U,V) -> Lt(U,skf13(V,U,W))* Released(U,V,X)*.
+141[0:MRR:92.0,126.0] || Lt(U,V) -> Leq(skf13(V,W,X),V)* Released(U,V,Y)*.
+150[0:MRR:118.0,1.0] || Occurs(skc9,U,TravelTo(V)) -> StaysIn(skc9,U,Agent,skf10(U,V,skc9))*.
+152[0:MRR:115.0,1.0] || Trajectory(Place(skc9,Agent),U,V) -> StaysIn(skc9,skf11(U,skc9,V),Agent,V)*.
+153[0:MRR:117.0,1.0] || Occurs(skc9,U,TravelTo(V)) -> Trajectory(Place(skc9,Agent),V,skf10(U,V,skc9))*.
+151[0:MRR:114.0,1.0] || Trajectory(Place(skc9,Agent),U,V)* -> Occurs(skc9,skf11(U,skc9,W),TravelTo(U))*.
+89[0:Inp] || Trajectory(U,V,W)* Trajectory(X,U,Y)* -> Trajectory(X,V,RUnion(Y,W))*.
+155[0:MRR:154.0,1.0] || Occurs(skc9,U,TravelTo(V))* -> equal(W,Agent) equal(Place(U,W),Place(skc8,W))*.
+109[0:MRR:97.2,97.3,102.0,14.1] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))* -> AllStable(V) equal(X,Agent)*.
+90[0:Inp] || Grasp(U,V)* Leq(U,W)* Lt(X,U)* Released(X,W,V)* -> .
+94[0:Inp] || equal(U,Place(V,Agent)) Released(W,V,skf7(V,W))* -> Occurs(W,V,TravelTo(U))*.
+95[0:Inp] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) -> StaysIn(U,V,Agent,skf10(V,W,U))*.
+110[0:MRR:98.3,4.0] AllStable(U) EmptyHanded(U) || Trajectory(Place(U,Agent),V,W) -> StaysIn(U,skf11(V,U,W),Agent,W)*.
+96[0:Inp] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) -> Trajectory(Place(U,Agent),W,skf10(V,W,U))*.
+111[0:MRR:99.3,4.0] AllStable(U) EmptyHanded(U) || Trajectory(Place(U,Agent),V,W)* -> Occurs(U,skf11(V,U,X),TravelTo(V))*.
+112[0:MRR:100.2,100.3,102.0,14.1] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))* -> equal(X,Agent) equal(Place(V,X),Place(U,X))*.
+	Given clause: 109[0:MRR:97.2,97.3,102.0,14.1] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))*+ -> AllStable(V) equal(X,Agent)*.
+	Given clause: 162[1:Spt:109.0,109.1,109.2,109.3] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))* -> AllStable(V).
+	Given clause: 146[0:MRR:116.0,1.0] || Occurs(skc9,U,TravelTo(V))*+ -> AllStable(U) equal(W,Agent)*.
+	Given clause: 163[2:Spt:146.0,146.1] || Occurs(skc9,U,TravelTo(V))* -> AllStable(U).
+	Given clause: 1[0:Inp] ||  -> EmptyHanded(skc9)*.
+	Given clause: 145[0:MRR:134.0,134.1,2.0,1.0] ||  -> AllStable(skc8)* equal(U,Agent)*.
+	Given clause: 209[3:Spt:207.0,145.0] ||  -> AllStable(skc8)*.
+	Given clause: 1[0:Inp] ||  -> EmptyHanded(skc9)*.
+	Given clause: 2[0:Inp] ||  -> AllStable(skc9)*.
+	Given clause: 101[0:MRR:40.0,4.0] ||  -> Time(U)*.
+	Given clause: 102[0:MRR:39.0,4.0] ||  -> Region(U)*.
+	Given clause: 126[0:Res:1.0,14.0] ||  -> Object(U)*.
+	Given clause: 128[0:Res:5.0,17.0] ||  -> Action(TravelTo(skc7))*.
+	Given clause: 132[0:Res:8.0,44.0] ||  -> Action(TravelTo(skc6))*.
+	Given clause: 4[0:Inp] ||  -> NoObstacles(U,V)*.
+	Given clause: 5[0:Inp] ||  -> Feasible(skc9,TravelTo(skc7))*.
+	Given clause: 131[0:Res:8.0,74.0] ||  -> Feasible(skc9,TravelTo(skc6))*.
+	Given clause: 125[0:Res:1.0,66.0] || Grasp(skc9,U)* -> .
+	Given clause: 144[0:MRR:130.0,126.0] ||  -> Released(skc9,skc8,U)*.
+	Given clause: 8[0:Inp] ||  -> Occurs(skc9,skc8,TravelTo(skc6))*.
+	Given clause: 9[0:Inp] || Feasible(skc8,TravelTo(skc7))* -> .
+	Given clause: 137[0:Res:8.0,78.0] ||  -> equal(Place(skc8,Agent),skc6)**.
+	Given clause: 129[0:Res:74.1,9.0] || Occurs(skc8,U,TravelTo(skc7))* -> .
+	Given clause: 30[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 19[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 17[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 143[0:MRR:103.0,126.0] ||  -> EmptyHanded(U) Grasp(U,skf8(U))*.
+	Given clause: 66[0:Inp] EmptyHanded(U) || Grasp(U,V)* -> .
+	Given clause: 58[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+	Given clause: 57[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+	Given clause: 56[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+	Given clause: 54[0:Inp] || P(U,V) -> SkP0(V,U)*.
+	Given clause: 55[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+	Given clause: 59[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+	Given clause: 105[0:MRR:83.0,83.1,101.0,101.0] || equal(U,V) -> Leq(U,V)*.
+	Given clause: 106[0:MRR:82.0,82.1,101.0,101.0] || Lt(U,V) -> Leq(U,V)*.
+	Given clause: 44[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 147[0:MRR:136.0,136.1,1.0,2.0] ||  -> StaysIn(skc9,skc8,Agent,skf10(skc8,skc6,skc9))*.
+	Given clause: 163[2:Spt:146.0,146.1] || Occurs(skc9,U,TravelTo(V))* -> AllStable(U).
+	Given clause: 139[0:MRR:107.0,126.0] ||  -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 74[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+	Given clause: 73[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 72[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 75[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+	Given clause: 219[0:Res:144.0,75.0] ||  -> Lt(skc9,skc8)*.
+	Given clause: 76[0:Inp] || Trajectory(U,V,W)*+ -> Trajectory(V,U,W)*.
+	Given clause: 148[0:MRR:135.0,135.1,1.0,2.0] ||  -> Trajectory(Place(skc9,Agent),skc6,skf10(skc8,skc6,skc9))*.
+	Given clause: 220[0:Res:148.0,76.0] ||  -> Trajectory(skc6,Place(skc9,Agent),skf10(skc8,skc6,skc9))*.
+	Given clause: 149[0:MRR:133.0,133.1,2.0,1.0] ||  -> equal(U,Agent) equal(Place(skc9,U),Place(skc8,U))**.
+	Given clause: 108[0:MRR:88.0,88.1,101.0,101.0] || Leq(U,V)* -> equal(U,V) Lt(U,V).
+	Given clause: 138[0:MRR:84.0,126.0] || Occurs(U,V,TravelTo(W))*+ -> Released(U,V,X)*.
+	Given clause: 104[0:MRR:85.1,101.0] || Feasible(U,V) -> Occurs(U,skf12(V,U),V)*.
+	Given clause: 231[2:Res:104.1,163.0] || Feasible(skc9,TravelTo(U)) -> AllStable(skf12(TravelTo(U),skc9))*.
+	Given clause: 78[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+	Given clause: 77[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+	Given clause: 79[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+	Given clause: 237[0:Res:219.0,77.0] || Lt(U,skc9)* -> Lt(U,skc8).
+	Given clause: 232[0:Res:104.1,138.0] || Feasible(U,TravelTo(V)) -> Released(U,skf12(TravelTo(V),U),W)*.
+	Given clause: 240[0:Res:232.1,75.0] || Feasible(U,TravelTo(V)) -> Lt(U,skf12(TravelTo(V),U))*.
+	Given clause: 236[0:Res:104.1,78.0] || Feasible(U,TravelTo(V)) -> equal(Place(skf12(TravelTo(V),U),Agent),V)**.
+	Given clause: 142[0:MRR:91.0,126.0] || Lt(U,V)+ -> Lt(U,skf13(V,U,W))* Released(U,V,X)*.
+	Given clause: 150[0:MRR:118.0,1.0] || Occurs(skc9,U,TravelTo(V)) -> StaysIn(skc9,U,Agent,skf10(U,V,skc9))*.
+	Given clause: 162[1:Spt:109.0,109.1,109.2,109.3] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))* -> AllStable(V).
+	Given clause: 140[0:MRR:93.0,126.0] || Lt(U,V) -> Grasp(skf13(V,U,W),W)* Released(U,V,W).
+	Given clause: 248[0:Res:140.1,66.1] EmptyHanded(skf13(U,V,W)) || Lt(V,U) -> Released(V,U,W)*.
+	Given clause: 141[0:MRR:92.0,126.0] || Lt(U,V)+ -> Leq(skf13(V,W,X),V)* Released(U,V,Y)*.
+	Given clause: 153[0:MRR:117.0,1.0] || Occurs(skc9,U,TravelTo(V)) -> Trajectory(Place(skc9,Agent),V,skf10(U,V,skc9))*.
+	Given clause: 151[0:MRR:114.0,1.0] || Trajectory(Place(skc9,Agent),U,V)*+ -> Occurs(skc9,skf11(U,skc9,W),TravelTo(U))*.
+	Given clause: 254[0:Res:148.0,151.0] ||  -> Occurs(skc9,skf11(skc6,skc9,U),TravelTo(skc6))*.
+	Given clause: 256[2:Res:254.0,163.0] ||  -> AllStable(skf11(skc6,skc9,U))*.
+	Given clause: 89[0:Inp] || Trajectory(U,V,W)*+ Trajectory(X,U,Y)* -> Trajectory(X,V,RUnion(Y,W))*.
+	Given clause: 259[0:Res:254.0,138.0] ||  -> Released(skc9,skf11(skc6,skc9,U),V)*.
+	Given clause: 265[0:Res:259.0,75.0] ||  -> Lt(skc9,skf11(skc6,skc9,U))*.
+	Given clause: 258[0:Res:254.0,78.0] ||  -> equal(Place(skf11(skc6,skc9,U),Agent),skc6)**.
+	Given clause: 268[0:Res:265.0,77.0] || Lt(U,skc9) -> Lt(U,skf11(skc6,skc9,V))*.
+	Given clause: 90[0:Inp] || Grasp(U,V)* Leq(U,W)* Lt(X,U)* Released(X,W,V)*+ -> .
+	Given clause: 274[0:Res:144.0,90.3] || Grasp(U,V)* Leq(U,skc8) Lt(skc9,U) -> .
+	Given clause: 277[0:Res:143.1,274.0] || Leq(U,skc8)* Lt(skc9,U) -> EmptyHanded(U).
+	Given clause: 279[0:Res:106.1,277.0] || Lt(U,skc8)*+ Lt(skc9,U)* -> EmptyHanded(U).
+	Given clause: 280[0:Res:105.1,277.0] || equal(U,skc8) Lt(skc9,U)* -> EmptyHanded(U).
+	Given clause: 94[0:Inp] || equal(U,Place(V,Agent)) Released(W,V,skf7(V,W))*+ -> Occurs(W,V,TravelTo(U))*.
+	Given clause: 286[0:Obv:284.0] ||  -> EmptyHanded(skc8)*.
+	Given clause: 290[0:Rew:137.0,287.0] || equal(U,skc6) -> Occurs(skc9,skc8,TravelTo(U))*.
+	Given clause: 298[0:Res:290.1,44.0] || equal(U,skc6) -> Action(TravelTo(U))*.
+	Given clause: 297[0:Res:290.1,74.0] || equal(U,skc6) -> Feasible(skc9,TravelTo(U))*.
+	Given clause: 95[0:Inp] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) -> StaysIn(U,V,Agent,skf10(V,W,U))*.
+	Given clause: 285[0:Res:265.0,280.1] || equal(skf11(skc6,skc9,U),skc8) -> EmptyHanded(skf11(skc6,skc9,U))*.
+	Given clause: 291[0:Rew:258.0,288.0] || equal(U,skc6) -> Occurs(skc9,skf11(skc6,skc9,V),TravelTo(U))*.
+	Given clause: 255[0:Res:153.1,151.0] || Occurs(skc9,U,TravelTo(V))*+ -> Occurs(skc9,skf11(V,skc9,W),TravelTo(V))*.
+	Given clause: 315[0:Res:290.1,255.0] || equal(U,skc6) -> Occurs(skc9,skf11(U,skc9,V),TravelTo(U))*.
+	Given clause: 111[0:MRR:99.3,4.0] AllStable(U) EmptyHanded(U) || Trajectory(Place(U,Agent),V,W)*+ -> Occurs(U,skf11(V,U,X),TravelTo(V))*.
+	Given clause: 320[2:Res:315.1,163.0] || equal(U,skc6) -> AllStable(skf11(U,skc9,V))*.
+	Given clause: 323[0:Res:315.1,138.0] || equal(U,skc6) -> Released(skc9,skf11(U,skc9,V),W)*.
+	Given clause: 334[0:Res:323.1,75.0] || equal(U,skc6) -> Lt(skc9,skf11(U,skc9,V))*.
+	Given clause: 322[0:Res:315.1,78.0] || equal(U,skc6) -> equal(Place(skf11(U,skc9,V),Agent),U)**.
+	Given clause: 110[0:MRR:98.3,4.0] AllStable(U) EmptyHanded(U) || Trajectory(Place(U,Agent),V,W) -> StaysIn(U,skf11(V,U,W),Agent,W)*.
+	Given clause: 318[0:Res:104.1,255.0] || Feasible(skc9,TravelTo(U)) -> Occurs(skc9,skf11(U,skc9,V),TravelTo(U))*.
+	Given clause: 348[2:Res:318.1,163.0] || Feasible(skc9,TravelTo(U)) -> AllStable(skf11(U,skc9,V))*.
+	Given clause: 351[0:Res:318.1,138.0] || Feasible(skc9,TravelTo(U)) -> Released(skc9,skf11(U,skc9,V),W)*.
+	Given clause: 354[0:Res:351.1,75.0] || Feasible(skc9,TravelTo(U)) -> Lt(skc9,skf11(U,skc9,V))*.
+	Given clause: 96[0:Inp] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) -> Trajectory(Place(U,Agent),W,skf10(V,W,U))*.
+	Given clause: 350[0:Res:318.1,78.0] || Feasible(skc9,TravelTo(U)) -> equal(Place(skf11(U,skc9,V),Agent),U)**.
+	Given clause: 332[3:SSi:326.1,326.0,209.0,286.0,209.0,286.0] || Trajectory(skc6,U,V)*+ -> Occurs(skc8,skf11(U,skc8,W),TravelTo(U))*.
+	Given clause: 383[3:Res:220.0,332.0] ||  -> Occurs(skc8,skf11(Place(skc9,Agent),skc8,U),TravelTo(Place(skc9,Agent)))*.
+	Given clause: 390[3:Res:383.0,44.0] ||  -> Action(TravelTo(Place(skc9,Agent)))*.
+	Given clause: 112[0:MRR:100.2,100.3,102.0,14.1] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))*+ -> equal(X,Agent) equal(Place(V,X),Place(U,X))*.
+	Given clause: 389[3:Res:383.0,74.0] ||  -> Feasible(skc8,TravelTo(Place(skc9,Agent)))*.
+	Given clause: 391[3:SSi:386.1,386.0,209.0,286.0,209.0,286.0] ||  -> AllStable(skf11(Place(skc9,Agent),skc8,U))*.
+	Given clause: 388[3:Res:383.0,138.0] ||  -> Released(skc8,skf11(Place(skc9,Agent),skc8,U),V)*.
+	Given clause: 415[3:Res:388.0,75.0] ||  -> Lt(skc8,skf11(Place(skc9,Agent),skc8,U))*.
+	Given clause: 152[0:MRR:115.0,1.0] || Trajectory(Place(skc9,Agent),U,V) -> StaysIn(skc9,skf11(U,skc9,V),Agent,V)*.
+	Given clause: 387[3:Res:383.0,78.0] ||  -> equal(Place(skf11(Place(skc9,Agent),skc8,U),Agent),Place(skc9,Agent))**.
+	Given clause: 422[3:Res:415.0,77.0] || Lt(U,skc8) -> Lt(U,skf11(Place(skc9,Agent),skc8,V))*.
+	Given clause: 402[0:SSi:401.1,401.0,1.0,2.0,1.0,2.0] ||  -> equal(U,Agent) equal(Place(skf11(skc6,skc9,V),U),Place(skc8,U))**.
+	Given clause: 371[3:SSi:362.1,362.0,209.0,286.0,209.0,286.0] || Occurs(skc8,U,TravelTo(V)) -> Trajectory(skc6,V,skf10(U,V,skc8))*.
+	Given clause: 155[0:MRR:154.0,1.0] || Occurs(skc9,U,TravelTo(V))*+ -> equal(W,Agent) equal(Place(U,W),Place(skc8,W))*.
+	Given clause: 445[3:Res:371.1,76.0] || Occurs(skc8,U,TravelTo(V)) -> Trajectory(V,skc6,skf10(U,V,skc8))*.
+	Given clause: 273[0:Res:268.1,77.0] || Lt(U,skc9)*+ Lt(V,U)* -> Lt(V,skf11(skc6,skc9,W))*.
+	Given clause: 340[0:Res:334.1,77.0] || equal(U,skc6) Lt(V,skc9) -> Lt(V,skf11(U,skc9,W))*.
+	Given clause: 446[3:Res:371.1,332.0] || Occurs(skc8,U,TravelTo(V))*+ -> Occurs(skc8,skf11(V,skc8,W),TravelTo(V))*.
+	Given clause: 372[0:Obv:369.1] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W))*+ -> Occurs(U,skf11(W,U,X),TravelTo(W))*.
+	Given clause: 465[3:Res:104.1,446.0] || Feasible(skc8,TravelTo(U)) -> Occurs(skc8,skf11(U,skc8,V),TravelTo(U))*.
+	Given clause: 483[3:SSi:478.1,478.0,209.0,286.0,209.0,286.0] || Feasible(skc8,TravelTo(U)) -> AllStable(skf11(U,skc8,V))*.
+	Given clause: 480[3:Res:465.1,138.0] || Feasible(skc8,TravelTo(U)) -> Released(skc8,skf11(U,skc8,V),W)*.
+	Given clause: 485[3:Res:480.1,75.0] || Feasible(skc8,TravelTo(U)) -> Lt(skc8,skf11(U,skc8,V))*.
+	Given clause: 368[0:Res:96.3,76.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) -> Trajectory(W,Place(U,Agent),skf10(V,W,U))*.
+	Given clause: 479[3:Res:465.1,78.0] || Feasible(skc8,TravelTo(U)) -> equal(Place(skf11(U,skc8,V),Agent),U)**.
+	Given clause: 404[3:SSi:399.1,399.0,209.0,286.0,209.0,286.0] ||  -> equal(U,Agent) equal(Place(skf11(Place(skc9,Agent),skc8,V),U),Place(skc8,U))**.
+	Given clause: 252[0:Res:153.1,76.0] || Occurs(skc9,U,TravelTo(V)) -> Trajectory(V,Place(skc9,Agent),skf10(U,V,skc9))*.
+	Given clause: 275[0:Res:259.0,90.3] || Grasp(U,V)* Leq(U,skf11(skc6,skc9,W))*+ Lt(skc9,U) -> .
+	Given clause: 400[0:Res:104.1,112.2] EmptyHanded(U) AllStable(U) || Feasible(U,TravelTo(V)) -> equal(W,Agent) equal(Place(skf12(TravelTo(V),U),W),Place(U,W))**.
+	Given clause: 360[0:Res:354.1,77.0] || Feasible(skc9,TravelTo(U)) Lt(V,skc9) -> Lt(V,skf11(U,skc9,W))*.
+	Given clause: 491[3:Res:485.1,77.0] || Feasible(skc8,TravelTo(U)) Lt(V,skc8) -> Lt(V,skf11(U,skc8,W))*.
+	Given clause: 533[0:Res:106.1,275.1] || Lt(U,skf11(skc6,skc9,V))*+ Grasp(U,W)* Lt(skc9,U) -> .
+	Given clause: 551[0:Res:268.1,533.0] || Lt(U,skc9) Grasp(U,V)* Lt(skc9,U) -> .
+	Given clause: 367[0:Res:96.3,89.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) Trajectory(X,Place(U,Agent),Y) -> Trajectory(X,W,RUnion(Y,skf10(V,W,U)))*.
+	Given clause: 559[0:Res:143.1,551.1] || Lt(U,skc9)*+ Lt(skc9,U)* -> EmptyHanded(U).
+	Given clause: 534[0:Res:105.1,275.1] || equal(U,skf11(skc6,skc9,V))*+ Grasp(U,W)* Lt(skc9,U) -> .
+	Given clause: 567[0:MRR:566.1,265.0] || Grasp(skf11(skc6,skc9,U),V)* -> .
+	Given clause: 568[0:Res:143.1,567.0] ||  -> EmptyHanded(skf11(skc6,skc9,U))*.
+	Given clause: 262[0:Res:148.0,89.0] || Trajectory(U,Place(skc9,Agent),V) -> Trajectory(U,skc6,RUnion(V,skf10(skc8,skc6,skc9)))*.
+	Given clause: 576[3:Res:262.1,332.0] || Trajectory(skc6,Place(skc9,Agent),U)*+ -> Occurs(skc8,skf11(skc6,skc8,V),TravelTo(skc6))*.
+	Given clause: 578[3:Res:220.0,576.0] ||  -> Occurs(skc8,skf11(skc6,skc8,U),TravelTo(skc6))*.
+	Given clause: 589[3:Res:578.0,74.0] ||  -> Feasible(skc8,TravelTo(skc6))*.
+	Given clause: 591[3:SSi:586.1,586.0,209.0,286.0,209.0,286.0] ||  -> AllStable(skf11(skc6,skc8,U))*.
+	Given clause: 247[1:Res:104.1,162.2] EmptyHanded(U) AllStable(U) || Feasible(U,TravelTo(V)) -> AllStable(skf12(TravelTo(V),U))*.
+	Given clause: 588[3:Res:578.0,138.0] ||  -> Released(skc8,skf11(skc6,skc8,U),V)*.
+	Given clause: 594[3:Res:588.0,75.0] ||  -> Lt(skc8,skf11(skc6,skc8,U))*.
+	Given clause: 587[3:Res:578.0,78.0] ||  -> equal(Place(skf11(skc6,skc8,U),Agent),skc6)**.
+	Given clause: 600[3:Res:594.0,77.0] || Lt(U,skc8) -> Lt(U,skf11(skc6,skc8,V))*.
+	Given clause: 292[0:Rew:236.1,289.1] || Feasible(U,TravelTo(V)) equal(W,V) -> Occurs(U,skf12(TravelTo(V),U),TravelTo(W))*.
+	Given clause: 615[0:Res:292.2,129.0] || Feasible(skc8,TravelTo(U))* equal(skc7,U) -> .
+	Given clause: 634[3:Res:589.0,615.0] || equal(skc7,skc6)** -> .
+	Given clause: 633[3:Res:389.0,615.0] || equal(Place(skc9,Agent),skc7)** -> .
+	Given clause: 614[3:MRR:613.0,219.0] || equal(skf11(skc6,skc8,U),skc8) -> EmptyHanded(skf11(skc6,skc8,U))*.
+	Given clause: 453[0:Res:104.1,155.0] || Feasible(skc9,TravelTo(U)) -> equal(V,Agent) equal(Place(skf12(TravelTo(U),skc9),V),Place(skc8,V))**.
+	Given clause: 597[3:Rew:587.0,596.0] || equal(U,skc6) -> Occurs(skc8,skf11(skc6,skc8,V),TravelTo(U))*.
+	Given clause: 652[3:Res:597.1,74.0] || equal(U,skc6) -> Feasible(skc8,TravelTo(U))*.
+	Given clause: 659[3:Res:652.1,615.0] || equal(U,skc6) equal(skc7,U)* -> .
+	Given clause: 646[3:Res:597.1,446.0] || equal(U,skc6) -> Occurs(skc8,skf11(U,skc8,V),TravelTo(U))*.
+	Given clause: 473[0:Res:104.1,372.2] AllStable(U) EmptyHanded(U) || Feasible(U,TravelTo(V)) -> Occurs(U,skf11(V,U,W),TravelTo(V))*.
+	Given clause: 671[3:SSi:666.1,666.0,209.0,286.0,209.0,286.0] || equal(U,skc6) -> AllStable(skf11(U,skc8,V))*.
+	Given clause: 668[3:Res:646.1,138.0] || equal(U,skc6) -> Released(skc8,skf11(U,skc8,V),W)*.
+	Given clause: 688[3:Res:668.1,75.0] || equal(U,skc6) -> Lt(skc8,skf11(U,skc8,V))*.
+	Given clause: 667[3:Res:646.1,78.0] || equal(U,skc6) -> equal(Place(skf11(U,skc8,V),Agent),U)**.
+	Given clause: 276[0:Res:232.1,90.3] || Feasible(U,TravelTo(V)) Grasp(W,X)* Leq(W,skf12(TravelTo(V),U))*+ Lt(U,W) -> .
+	Given clause: 626[0:Res:292.2,44.0] || Feasible(U,TravelTo(V))*+ equal(W,V)* -> Action(TravelTo(W))*.
+	Given clause: 709[0:Res:5.0,626.0] || equal(U,skc7) -> Action(TravelTo(U))*.
+	Given clause: 712[3:Res:389.0,626.0] || equal(U,Place(skc9,Agent))*+ -> Action(TravelTo(U))*.
+	Given clause: 711[0:Res:297.1,626.0] || equal(U,skc6)*+ equal(V,U)* -> Action(TravelTo(V))*.
+	Given clause: 264[0:Res:153.1,89.0] || Occurs(skc9,U,TravelTo(V)) Trajectory(W,Place(skc9,Agent),X) -> Trajectory(W,V,RUnion(X,skf10(U,V,skc9)))*.
+	Given clause: 592[3:SSi:585.1,585.0,209.0,286.0,209.0,286.0] ||  -> equal(U,Agent) equal(Place(skf11(skc6,skc8,V),U),Place(skc8,U))**.
+	Given clause: 625[0:Res:292.2,74.0] || Feasible(U,TravelTo(V))*+ equal(W,V)* -> Feasible(U,TravelTo(W))*.
+	Given clause: 732[0:Res:5.0,625.0] || equal(U,skc7) -> Feasible(skc9,TravelTo(U))*.
+	Given clause: 735[3:Res:389.0,625.0] || equal(U,Place(skc9,Agent)) -> Feasible(skc8,TravelTo(U))*.
+	Given clause: 503[0:Res:368.3,151.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(Place(skc9,Agent)))*+ -> Occurs(skc9,skf11(Place(U,Agent),skc9,W),TravelTo(Place(U,Agent)))*.
+	Given clause: 742[3:Res:735.1,615.0] || equal(U,Place(skc9,Agent))* equal(skc7,U) -> .
+	Given clause: 740[0:Res:732.1,626.0] || equal(U,skc7)*+ equal(V,U)* -> Action(TravelTo(V))*.
+	Given clause: 734[0:Res:297.1,625.0] || equal(U,skc6)*+ equal(V,U)* -> Feasible(skc9,TravelTo(V))*.
+	Given clause: 736[3:Res:652.1,625.0] || equal(U,skc6)*+ equal(V,U)* -> Feasible(skc8,TravelTo(V))*.
+	Given clause: 500[0:Res:368.3,89.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) Trajectory(X,W,Y) -> Trajectory(X,Place(U,Agent),RUnion(Y,skf10(V,W,U)))*.
+	Given clause: 739[0:Res:732.1,625.0] || equal(U,skc7)*+ equal(V,U)* -> Feasible(skc9,TravelTo(V))*.
+	Given clause: 745[3:Res:735.1,626.0] || equal(U,Place(skc9,Agent))*+ equal(V,U)* -> Action(TravelTo(V))*.
+	Given clause: 744[3:Res:735.1,625.0] || equal(U,Place(skc9,Agent))*+ equal(V,U)* -> Feasible(skc8,TravelTo(V))*.
+	Given clause: 612[3:Res:600.1,77.0] || Lt(U,skc8)*+ Lt(V,U)* -> Lt(V,skf11(skc6,skc8,W))*.
+	Given clause: 562[0:Res:367.4,76.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) Trajectory(X,Place(U,Agent),Y) -> Trajectory(W,X,RUnion(Y,skf10(V,W,U)))*.
+	Given clause: 799[3:Res:219.0,612.0] || Lt(U,skc9) -> Lt(U,skf11(skc6,skc8,V))*.
+	Given clause: 694[3:Res:688.1,77.0] || equal(U,skc6) Lt(V,skc8) -> Lt(V,skf11(U,skc8,W))*.
+	Given clause: 807[3:Res:799.1,77.0] || Lt(U,skc9)*+ Lt(V,U)* -> Lt(V,skf11(skc6,skc8,W))*.
+	Given clause: 595[3:Res:588.0,90.3] || Grasp(U,V)* Leq(U,skf11(skc6,skc8,W))*+ Lt(skc8,U) -> .
+	Given clause: 564[0:Res:367.4,151.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W))* Trajectory(Place(skc9,Agent),Place(U,Agent),X)*+ -> Occurs(skc9,skf11(W,skc9,Y),TravelTo(W))*.
+	Given clause: 814[3:Res:106.1,595.1] || Lt(U,skf11(skc6,skc8,V))*+ Grasp(U,W)* Lt(skc8,U) -> .
+	Given clause: 850[3:Res:594.0,814.0] || Grasp(skc8,U)* Lt(skc8,skc8) -> .
+	Given clause: 853[3:Res:799.1,814.0] || Lt(U,skc9) Grasp(U,V)* Lt(skc8,U) -> .
+	Given clause: 860[3:Res:143.1,853.1] || Lt(U,skc9)*+ Lt(skc8,U)* -> EmptyHanded(U).
+	Given clause: 502[0:Res:368.3,111.2] AllStable(U) EmptyHanded(U) AllStable(V) EmptyHanded(V) || Occurs(U,W,TravelTo(Place(V,Agent)))*+ -> Occurs(V,skf11(Place(U,Agent),V,X),TravelTo(Place(U,Agent)))*.
+	Given clause: 854[3:Res:600.1,814.0] || Lt(U,skc8) Grasp(U,V)* Lt(skc8,U) -> .
+	Given clause: 901[3:Res:143.1,854.1] || Lt(U,skc8)*+ Lt(skc8,U)* -> EmptyHanded(U).
+	Given clause: 815[3:Res:105.1,595.1] || equal(U,skf11(skc6,skc8,V))*+ Grasp(U,W)* Lt(skc8,U) -> .
+	Given clause: 905[3:MRR:904.1,594.0] || Grasp(skf11(skc6,skc8,U),V)* -> .
+	Given clause: 563[0:Res:367.4,111.2] AllStable(U) EmptyHanded(U) AllStable(V) EmptyHanded(V) || Occurs(U,W,TravelTo(X))* Trajectory(Place(V,Agent),Place(U,Agent),Y)*+ -> Occurs(V,skf11(X,V,Z),TravelTo(X))*.
+	Given clause: 906[3:Res:143.1,905.0] ||  -> EmptyHanded(skf11(skc6,skc8,U))*.
+	Given clause: 241[0:Res:240.1,77.0] || Feasible(U,TravelTo(V)) Lt(W,U) -> Lt(W,skf12(TravelTo(V),U))*.
+	Given clause: 435[3:MRR:434.0,219.0] || equal(skf11(Place(skc9,Agent),skc8,U),skc8) -> EmptyHanded(skf11(Place(skc9,Agent),skc8,U))*.
+	Given clause: 418[3:Rew:387.0,417.0] || equal(U,Place(skc9,Agent)) -> Occurs(skc8,skf11(Place(skc9,Agent),skc8,V),TravelTo(U))*.
+	Given clause: 561[0:Res:367.4,89.0] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) Trajectory(X,Place(U,Agent),Y)*+ Trajectory(Z,X,X1)* -> Trajectory(Z,W,RUnion(X1,RUnion(Y,skf10(V,W,U))))*.
+	Given clause: 979[3:Res:418.1,446.0] || equal(U,Place(skc9,Agent)) -> Occurs(skc8,skf11(U,skc8,V),TravelTo(U))*.
+	Given clause: 1045[3:SSi:1038.1,1038.0,209.0,286.0,209.0,286.0] || equal(U,Place(skc9,Agent)) -> AllStable(skf11(U,skc8,V))*.
+	Given clause: 1040[3:Res:979.1,138.0] || equal(U,Place(skc9,Agent)) -> Released(skc8,skf11(U,skc8,V),W)*.
+	Given clause: 1050[3:Res:1040.1,75.0] || equal(U,Place(skc9,Agent)) -> Lt(skc8,skf11(U,skc8,V))*.
+	Given clause: 327[0:SpL:236.1,111.2] AllStable(skf12(TravelTo(U),V)) EmptyHanded(skf12(TravelTo(U),V)) || Feasible(V,TravelTo(U)) Trajectory(U,W,X)* -> Occurs(skf12(TravelTo(U),V),skf11(W,skf12(TravelTo(U),V),Y),TravelTo(W))*.
+	Given clause: 1039[3:Res:979.1,78.0] || equal(U,Place(skc9,Agent)) -> equal(Place(skf11(U,skc8,V),Agent),U)**.
+	Given clause: 263[0:Res:220.0,89.0] || Trajectory(U,skc6,V) -> Trajectory(U,Place(skc9,Agent),RUnion(V,skf10(skc8,skc6,skc9)))*.
+	Given clause: 573[0:Res:262.1,76.0] || Trajectory(U,Place(skc9,Agent),V) -> Trajectory(skc6,U,RUnion(V,skf10(skc8,skc6,skc9)))*.
+	Given clause: 1097[3:Res:573.1,332.0] || Trajectory(U,Place(skc9,Agent),V)*+ -> Occurs(skc8,skf11(U,skc8,W),TravelTo(U))*.
+	Given clause: 363[0:SpR:236.1,96.3] AllStable(skf12(TravelTo(U),V)) EmptyHanded(skf12(TravelTo(U),V)) || Feasible(V,TravelTo(U)) Occurs(skf12(TravelTo(U),V),W,TravelTo(X)) -> Trajectory(U,X,skf10(W,X,skf12(TravelTo(U),V)))*.
+	Given clause: 1109[3:Res:263.1,1097.0] || Trajectory(U,skc6,V)*+ -> Occurs(skc8,skf11(U,skc8,W),TravelTo(U))*.
+	Given clause: 1102[3:Res:252.1,1097.0] || Occurs(skc9,U,TravelTo(V))*+ -> Occurs(skc8,skf11(V,skc8,W),TravelTo(V))*.
+	Given clause: 1127[3:Res:318.1,1102.0] || Feasible(skc9,TravelTo(U)) -> Occurs(skc8,skf11(U,skc8,V),TravelTo(U))*.
+SPASS V 3.7 
+SPASS beiseite: Proof found.
+Problem: lemmas/f.dfg 
+SPASS derived 821 clauses, backtracked 38 clauses, performed 3 splits and kept 530 clauses.
+SPASS allocated 53364 KBytes.
+SPASS spent	0:00:00.14 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.01 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.06 for the reduction.
+
+
+Here is a proof with depth 7, length 68 :
+1[0:Inp] ||  -> EmptyHanded(skc9)*.
+2[0:Inp] ||  -> AllStable(skc9)*.
+4[0:Inp] ||  -> NoObstacles(U,V)*.
+5[0:Inp] ||  -> Feasible(skc9,TravelTo(skc7))*.
+8[0:Inp] ||  -> Occurs(skc9,skc8,TravelTo(skc6))*.
+9[0:Inp] || Feasible(skc8,TravelTo(skc7))* -> .
+14[0:Inp] EmptyHanded(U) ||  -> Object(V)*.
+39[0:Inp] || NoObstacles(U,V)* -> Region(V).
+40[0:Inp] || NoObstacles(U,V)* -> Time(U).
+74[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+75[0:Inp] || Released(U,V,W)* -> Lt(U,V).
+76[0:Inp] || Trajectory(U,V,W)*+ -> Trajectory(V,U,W)*.
+78[0:Inp] || Occurs(U,V,TravelTo(W))* -> equal(W,Place(V,Agent)).
+80[0:Inp] Time(U) || Object(skc10) -> Grasp(U,skf8(U))* EmptyHanded(U).
+83[0:Inp] Time(U) Time(V) || equal(U,V) -> Leq(U,V)*.
+84[0:Inp] Object(U) || Occurs(V,W,TravelTo(X))* -> Released(V,W,U)*.
+85[0:Inp] || Feasible(U,V) Time(skc20) -> Occurs(U,skf12(V,U),V)*.
+89[0:Inp] || Trajectory(U,V,W)*+ Trajectory(X,U,Y)* -> Trajectory(X,V,RUnion(Y,W))*.
+90[0:Inp] || Grasp(U,V)* Leq(U,W)* Lt(X,U)* Released(X,W,V)*+ -> .
+96[0:Inp] AllStable(U) EmptyHanded(U) || Occurs(U,V,TravelTo(W)) -> Trajectory(Place(U,Agent),W,skf10(V,W,U))*.
+97[0:Inp] AllStable(U) EmptyHanded(U) Region(V) Object(W) || Occurs(U,X,TravelTo(V))* -> AllStable(X) equal(W,Agent)*.
+99[0:Inp] EmptyHanded(U) AllStable(U) || Trajectory(Place(U,Agent),V,W)* NoObstacles(U,W) -> Occurs(U,skf11(V,U,X),TravelTo(V))*.
+101[0:MRR:40.0,4.0] ||  -> Time(U)*.
+102[0:MRR:39.0,4.0] ||  -> Region(U)*.
+103[0:MRR:80.0,101.0] || Object(skc10) -> Grasp(U,skf8(U))* EmptyHanded(U).
+104[0:MRR:85.1,101.0] || Feasible(U,V) -> Occurs(U,skf12(V,U),V)*.
+105[0:MRR:83.0,83.1,101.0,101.0] || equal(U,V) -> Leq(U,V)*.
+109[0:MRR:97.2,97.3,102.0,14.1] EmptyHanded(U) AllStable(U) || Occurs(U,V,TravelTo(W))*+ -> AllStable(V) equal(X,Agent)*.
+111[0:MRR:99.3,4.0] AllStable(U) EmptyHanded(U) || Trajectory(Place(U,Agent),V,W)*+ -> Occurs(U,skf11(V,U,X),TravelTo(V))*.
+114[0:Res:2.0,111.1] EmptyHanded(skc9) || Trajectory(Place(skc9,Agent),U,V)* -> Occurs(skc9,skf11(U,skc9,W),TravelTo(U))*.
+117[0:Res:2.0,96.1] EmptyHanded(skc9) || Occurs(skc9,U,TravelTo(V)) -> Trajectory(Place(skc9,Agent),V,skf10(U,V,skc9))*.
+126[0:Res:1.0,14.0] ||  -> Object(U)*.
+129[0:Res:74.1,9.0] || Occurs(skc8,U,TravelTo(skc7))* -> .
+130[0:Res:8.0,84.1] Object(U) ||  -> Released(skc9,skc8,U)*.
+134[0:Res:8.0,109.2] AllStable(skc9) EmptyHanded(skc9) ||  -> AllStable(skc8)* equal(U,Agent)*.
+135[0:Res:8.0,96.2] EmptyHanded(skc9) AllStable(skc9) ||  -> Trajectory(Place(skc9,Agent),skc6,skf10(skc8,skc6,skc9))*.
+137[0:Res:8.0,78.0] ||  -> equal(Place(skc8,Agent),skc6)**.
+143[0:MRR:103.0,126.0] ||  -> EmptyHanded(U) Grasp(U,skf8(U))*.
+144[0:MRR:130.0,126.0] ||  -> Released(skc9,skc8,U)*.
+145[0:MRR:134.0,134.1,2.0,1.0] ||  -> AllStable(skc8)* equal(U,Agent)*.
+148[0:MRR:135.0,135.1,1.0,2.0] ||  -> Trajectory(Place(skc9,Agent),skc6,skf10(skc8,skc6,skc9))*.
+151[0:MRR:114.0,1.0] || Trajectory(Place(skc9,Agent),U,V)*+ -> Occurs(skc9,skf11(U,skc9,W),TravelTo(U))*.
+153[0:MRR:117.0,1.0] || Occurs(skc9,U,TravelTo(V)) -> Trajectory(Place(skc9,Agent),V,skf10(U,V,skc9))*.
+164[1:Spt:145.1] ||  -> equal(U,Agent)*.
+189[1:Rew:164.0,8.0] ||  -> Occurs(skc9,Agent,TravelTo(skc6))*.
+190[1:Rew:164.0,129.0] || Occurs(Agent,U,TravelTo(skc7))* -> .
+204[1:Rew:164.0,189.0,164.0,189.0,164.0,189.0] ||  -> Occurs(Agent,Agent,Agent)*.
+206[1:Rew:164.0,190.0,164.0,190.0] || Occurs(Agent,U,Agent)* -> .
+207[1:UnC:206.0,204.0] ||  -> .
+209[1:Spt:207.0,145.0] ||  -> AllStable(skc8)*.
+219[0:Res:144.0,75.0] ||  -> Lt(skc9,skc8)*.
+252[0:Res:153.1,76.0] || Occurs(skc9,U,TravelTo(V)) -> Trajectory(V,Place(skc9,Agent),skf10(U,V,skc9))*.
+255[0:Res:153.1,151.0] || Occurs(skc9,U,TravelTo(V))*+ -> Occurs(skc9,skf11(V,skc9,W),TravelTo(V))*.
+262[0:Res:148.0,89.0] || Trajectory(U,Place(skc9,Agent),V) -> Trajectory(U,skc6,RUnion(V,skf10(skc8,skc6,skc9)))*.
+274[0:Res:144.0,90.3] || Grasp(U,V)* Leq(U,skc8) Lt(skc9,U) -> .
+277[0:Res:143.1,274.0] || Leq(U,skc8)* Lt(skc9,U) -> EmptyHanded(U).
+280[0:Res:105.1,277.0] || equal(U,skc8) Lt(skc9,U)* -> EmptyHanded(U).
+284[0:Res:219.0,280.1] || equal(skc8,skc8) -> EmptyHanded(skc8)*.
+286[0:Obv:284.0] ||  -> EmptyHanded(skc8)*.
+318[0:Res:104.1,255.0] || Feasible(skc9,TravelTo(U)) -> Occurs(skc9,skf11(U,skc9,V),TravelTo(U))*.
+326[0:SpL:137.0,111.2] AllStable(skc8) EmptyHanded(skc8) || Trajectory(skc6,U,V)* -> Occurs(skc8,skf11(U,skc8,W),TravelTo(U))*.
+332[1:SSi:326.1,326.0,209.0,286.0,209.0,286.0] || Trajectory(skc6,U,V)*+ -> Occurs(skc8,skf11(U,skc8,W),TravelTo(U))*.
+573[0:Res:262.1,76.0] || Trajectory(U,Place(skc9,Agent),V) -> Trajectory(skc6,U,RUnion(V,skf10(skc8,skc6,skc9)))*.
+1097[1:Res:573.1,332.0] || Trajectory(U,Place(skc9,Agent),V)*+ -> Occurs(skc8,skf11(U,skc8,W),TravelTo(U))*.
+1102[1:Res:252.1,1097.0] || Occurs(skc9,U,TravelTo(V))*+ -> Occurs(skc8,skf11(V,skc8,W),TravelTo(V))*.
+1127[1:Res:318.1,1102.0] || Feasible(skc9,TravelTo(U)) -> Occurs(skc8,skf11(U,skc8,V),TravelTo(U))*.
+1132[1:Res:1127.1,129.0] || Feasible(skc9,TravelTo(skc7))* -> .
+1143[1:MRR:1132.0,5.0] ||  -> .
+Formulae used in the proof : conjecture0 Lem4E MGD1 MFSD MFD1 TAD1 MGD4 MFA4 MOD3 TID1 MFA5 MFA7 Lem4A MFA8
+
+--------------------------SPASS-STOP------------------------------

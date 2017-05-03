@@ -1,0 +1,694 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Action(StandStill)*.
+2[0:Inp] ||  -> Region(Ra)*.
+3[0:Inp] ||  -> Region(Rb)*.
+4[0:Inp] ||  -> Region(Rc)*.
+5[0:Inp] ||  -> OpenContained(skc2,skc3)*.
+6[0:Inp] ||  -> FullyOutside(skc2,skc3)*.
+7[0:Inp] ||  -> OpenContainerShape(Rb,Rc)*.
+8[0:Inp] || MuchSmaller(U,U)* -> .
+9[0:Inp] || SmallObject(U) -> Object(U)*.
+10[0:Inp] || IntConn(U) -> Region(U)*.
+11[0:Inp] || AllStable(U) -> Time(U)*.
+12[0:Inp] || EmptyHanded(U) -> Time(U)*.
+13[0:Inp] || Region(U) -> Region(ConvexHull(U))*.
+14[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+15[0:Inp] || Region(U) -> Action(TravelTo(U))*.
+16[0:Inp] || Object(U) -> History(HPlace(U))*.
+17[0:Inp] || Feasible(U,V)* -> Time(U).
+18[0:Inp] || Feasible(U,V)* -> Action(V).
+19[0:Inp] || Element(U,V)* -> Object(U).
+20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+21[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+22[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+23[0:Inp] || Fits(U,V)* -> ObjectSet(U).
+24[0:Inp] || Fits(U,V)* -> Region(V).
+25[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+26[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+27[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+28[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+29[0:Inp] || FullyOutside(U,V)* -> Region(U).
+30[0:Inp] || FullyOutside(U,V)* -> Region(V).
+31[0:Inp] || Reachable(U,V)* -> Time(U).
+32[0:Inp] || Reachable(U,V)* -> Region(V).
+33[0:Inp] || SkP1(U,V)* -> Region(V).
+34[0:Inp] || SkP1(U,V)* -> Region(U).
+35[0:Inp] || SkP2(U,V)* -> Region(V).
+36[0:Inp] || SkP2(U,V)* -> Region(U).
+37[0:Inp] || OpenContained(U,V)* -> Region(U).
+38[0:Inp] || OpenContained(U,V)* -> Region(V).
+39[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+40[0:Inp] || SmallSet(U,V)* -> Region(V).
+41[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+42[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+43[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+44[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+45[0:Inp] || CanGrasp(U,V)* -> Time(U).
+46[0:Inp] || CanGrasp(U,V)* -> Object(V).
+47[0:Inp] || Graspable(U,V)* -> Time(U).
+48[0:Inp] || Graspable(U,V)* -> Object(V).
+49[0:Inp] || Occurs(U,V,W)* -> Time(U).
+50[0:Inp] || Occurs(U,V,W)* -> Time(V).
+51[0:Inp] || Occurs(U,V,W)* -> Action(W).
+52[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+53[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+54[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+55[0:Inp] || SkP0(U,V,W)* -> Time(W).
+56[0:Inp] || SkP0(U,V,W)* -> Object(V).
+57[0:Inp] || SkP0(U,V,W)* -> Region(U).
+58[0:Inp] || UContained(U,V,W)* -> Time(U).
+59[0:Inp] || UContained(U,V,W)* -> Object(V).
+60[0:Inp] || UContained(U,V,W)* -> Object(W).
+61[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+62[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+63[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+64[0:Inp] || P(U,V) -> SkP1(V,U)*.
+65[0:Inp] || O(U,V) -> SkP1(V,U)*.
+66[0:Inp] || DC(U,V) -> SkP1(V,U)*.
+67[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+68[0:Inp] || FullyOutside(U,V) -> SkP2(V,U)*.
+69[0:Inp] || OpenContainerShape(U,V) -> SkP2(V,U)*.
+70[0:Inp] || UprightContainerShape(U,V) -> SkP2(V,U)*.
+71[0:Inp] || Cavity(U,V) -> SkP2(V,U)*.
+72[0:Inp] || Contained(U,V) -> SkP2(V,U)*.
+73[0:Inp] || Region(U) -> P(U,ConvexHull(U))*.
+74[0:Inp] || DC(U,V) -> DR(U,V)*.
+75[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+76[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+77[0:Inp] || OpenContainerShape(U,V) -> P(V,ConvexHull(U))*.
+78[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+79[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+80[0:Inp] || OpenContained(U,V) -> OpenContainerShape(V,skf2(U,V))*.
+81[0:Inp] || OpenContained(U,V)* -> P(U,skf2(U,W))*.
+82[0:Inp] || O(U,V) -> P(skf3(V,U),U)*.
+83[0:Inp] || O(U,V)* -> P(skf3(V,W),V)*.
+84[0:Inp] || FullyOutside(U,V) -> DC(ConvexHull(U),ConvexHull(V))*.
+85[0:Inp] || DC(ConvexHull(U),ConvexHull(V))* -> FullyOutside(U,V).
+86[0:Inp] || Action(U) Action(V) -> Action(Sequence(U,V))*.
+87[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+88[0:Inp] || Object(U) Object(V) -> ObjectSet(Pair(U,V))*.
+89[0:Inp] || ObjectSet(U) ObjectSet(V) -> ObjectSet(Union(U,V))*.
+90[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+91[0:Inp] || Time(U) Region(V) -> ObjectSet(Contents(U,V))*.
+92[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(CContents(U,V))*.
+93[0:Inp] || Time(U) Object(V) -> ObjectSet(UContents(U,V))*.
+94[0:Inp] || Object(U) Region(V) -> Action(ManipTo(U,V))*.
+95[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+96[0:Inp] || History(U) History(V) -> History(HUnion(U,V))*.
+97[0:Inp] || Time(U) Object(V) -> ObjectSet(MovingGroup(U,V))*.
+98[0:Inp] || Object(U) Object(V) -> Action(PutInUC(U,V))*.
+99[0:Inp] || Object(U) Object(V) -> Action(LoadUprightContainer(U,V))*.
+100[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+101[0:Inp] || OpenContainerShape(U,V)* P(W,V)* -> OpenContained(W,U)*.
+102[0:Inp] || P(U,V)* P(V,W)* -> P(U,W)*.
+103[0:Inp] || P(U,V)* P(U,W)* -> O(V,W)*.
+104[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+105[0:Inp] || Region(U) Region(V) -> O(U,V) DR(U,V)*.
+106[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+107[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+108[0:Inp] || DR(U,V)* O(U,V) Region(U) Region(V) -> .
+109[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ All equations are many sorted.
+ The conjecture is ground.
+ Axiom clauses: 107 Conjecture clauses: 2
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSST=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf3 > skf2 > skf1 > skf0 > LoadUprightContainer > PutInUC > MovingGroup > HUnion > Slice > ManipTo > UContents > CContents > Union > Pair > RUnion > Place > Contents > Sequence > HPlace > TravelTo > Singleton > ConvexHull > Leq3 > Leq > Lt > ObjectSet > Action > SkP2 > SkP1 > DR > O > OpenContainerShape > OpenContained > P > Region > Time > History > Object > SkP0 > UprightContainer > DC > FullyOutside > SmallSet > AllStable > EmptyHanded > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > Occurs > CanGrasp > UprightContainerShape > UContained > Element > IntConn > Feasible > Fits > OSPlace > MuchSmaller > OMuchSmaller > FeasiblePlace > OpenContainer > Cavity > Contained > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Rc > Rb > Ra > Null > Rd > R > T > Ta > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4 > StandStill
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> Action(StandStill)*.
+4[0:Inp] ||  -> Region(Rc)*.
+3[0:Inp] ||  -> Region(Rb)*.
+2[0:Inp] ||  -> Region(Ra)*.
+112[0:Res:6.0,29.0] ||  -> Region(skc2)*.
+113[0:Res:6.0,30.0] ||  -> Region(skc3)*.
+7[0:Inp] ||  -> OpenContainerShape(Rb,Rc)*.
+6[0:Inp] ||  -> FullyOutside(skc2,skc3)*.
+5[0:Inp] ||  -> OpenContained(skc2,skc3)*.
+111[0:Res:6.0,68.0] ||  -> SkP2(skc3,skc2)*.
+8[0:Inp] || MuchSmaller(U,U)* -> .
+9[0:Inp] SmallObject(U) ||  -> Object(U)*.
+12[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+11[0:Inp] AllStable(U) ||  -> Time(U)*.
+10[0:Inp] IntConn(U) ||  -> Region(U)*.
+110[0:Res:6.0,84.0] ||  -> DC(ConvexHull(skc2),ConvexHull(skc3))*.
+114[0:Res:5.0,80.0] ||  -> OpenContainerShape(skc3,skf2(skc2,skc3))*.
+115[0:Res:5.0,81.0] ||  -> P(skc2,skf2(skc2,U))*.
+16[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+15[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+14[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+13[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+18[0:Inp] || Feasible(U,V)* -> Action(V).
+39[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+23[0:Inp] || Fits(U,V)* -> ObjectSet(U).
+20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+48[0:Inp] || Graspable(U,V)* -> Object(V).
+46[0:Inp] || CanGrasp(U,V)* -> Object(V).
+44[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+28[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+25[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+21[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+19[0:Inp] || Element(U,V)* -> Object(U).
+47[0:Inp] || Graspable(U,V)* -> Time(U).
+45[0:Inp] || CanGrasp(U,V)* -> Time(U).
+43[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+31[0:Inp] || Reachable(U,V)* -> Time(U).
+27[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+17[0:Inp] || Feasible(U,V)* -> Time(U).
+40[0:Inp] || SmallSet(U,V)* -> Region(V).
+32[0:Inp] || Reachable(U,V)* -> Region(V).
+26[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+24[0:Inp] || Fits(U,V)* -> Region(V).
+22[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+42[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+41[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+38[0:Inp] || OpenContained(U,V)* -> Region(V).
+37[0:Inp] || OpenContained(U,V)* -> Region(U).
+34[0:Inp] || SkP1(U,V)* -> Region(U).
+33[0:Inp] || SkP1(U,V)* -> Region(V).
+30[0:Inp] || FullyOutside(U,V)* -> Region(V).
+29[0:Inp] || FullyOutside(U,V)* -> Region(U).
+36[0:Inp] || SkP2(U,V)* -> Region(U).
+35[0:Inp] || SkP2(U,V)* -> Region(V).
+73[0:Inp] Region(U) ||  -> P(U,ConvexHull(U))*.
+74[0:Inp] || DC(U,V) -> DR(U,V)*.
+67[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+66[0:Inp] || DC(U,V) -> SkP1(V,U)*.
+65[0:Inp] || O(U,V) -> SkP1(V,U)*.
+64[0:Inp] || P(U,V) -> SkP1(V,U)*.
+72[0:Inp] || Contained(U,V) -> SkP2(V,U)*.
+71[0:Inp] || Cavity(U,V) -> SkP2(V,U)*.
+70[0:Inp] || UprightContainerShape(U,V) -> SkP2(V,U)*.
+69[0:Inp] || OpenContainerShape(U,V) -> SkP2(V,U)*.
+68[0:Inp] || FullyOutside(U,V) -> SkP2(V,U)*.
+51[0:Inp] || Occurs(U,V,W)* -> Action(W).
+53[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+63[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+62[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+60[0:Inp] || UContained(U,V,W)* -> Object(W).
+59[0:Inp] || UContained(U,V,W)* -> Object(V).
+56[0:Inp] || SkP0(U,V,W)* -> Object(V).
+61[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+58[0:Inp] || UContained(U,V,W)* -> Time(U).
+52[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+50[0:Inp] || Occurs(U,V,W)* -> Time(V).
+49[0:Inp] || Occurs(U,V,W)* -> Time(U).
+55[0:Inp] || SkP0(U,V,W)* -> Time(W).
+54[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+57[0:Inp] || SkP0(U,V,W)* -> Region(U).
+77[0:Inp] || OpenContainerShape(U,V) -> P(V,ConvexHull(U))*.
+76[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+75[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+82[0:Inp] || O(U,V) -> P(skf3(V,U),U)*.
+84[0:Inp] || FullyOutside(U,V) -> DC(ConvexHull(U),ConvexHull(V))*.
+80[0:Inp] || OpenContained(U,V) -> OpenContainerShape(V,skf2(U,V))*.
+85[0:Inp] || DC(ConvexHull(U),ConvexHull(V))* -> FullyOutside(U,V).
+79[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+78[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+83[0:Inp] || O(U,V)* -> P(skf3(V,W),V)*.
+81[0:Inp] || OpenContained(U,V)* -> P(U,skf2(U,W))*.
+96[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+86[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+99[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+98[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+94[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+89[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+88[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+92[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+97[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+93[0:Inp] Object(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+91[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+95[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+90[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+87[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+100[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+101[0:Inp] || P(U,V)* OpenContainerShape(W,V)* -> OpenContained(U,W)*.
+103[0:Inp] || P(U,V)* P(U,W)* -> O(W,V)*.
+102[0:Inp] || P(U,V)* P(W,U)* -> P(W,V)*.
+105[0:Inp] Region(U) Region(V) ||  -> DR(V,U)* O(V,U).
+104[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+106[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+107[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+108[0:Inp] Region(U) Region(V) || O(V,U) DR(V,U)* -> .
+109[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+	Given clause: 1[0:Inp] ||  -> Action(StandStill)*.
+	Given clause: 4[0:Inp] ||  -> Region(Rc)*.
+	Given clause: 3[0:Inp] ||  -> Region(Rb)*.
+	Given clause: 2[0:Inp] ||  -> Region(Ra)*.
+	Given clause: 7[0:Inp] ||  -> OpenContainerShape(Rb,Rc)*.
+	Given clause: 112[0:Res:6.0,29.0] ||  -> Region(skc2)*.
+	Given clause: 113[0:Res:6.0,30.0] ||  -> Region(skc3)*.
+	Given clause: 6[0:Inp] ||  -> FullyOutside(skc2,skc3)*.
+	Given clause: 5[0:Inp] ||  -> OpenContained(skc2,skc3)*.
+	Given clause: 8[0:Inp] || MuchSmaller(U,U)* -> .
+	Given clause: 111[0:Res:6.0,68.0] ||  -> SkP2(skc3,skc2)*.
+	Given clause: 110[0:Res:6.0,84.0] ||  -> DC(ConvexHull(skc2),ConvexHull(skc3))*.
+	Given clause: 114[0:Res:5.0,80.0] ||  -> OpenContainerShape(skc3,skf2(skc2,skc3))*.
+	Given clause: 115[0:Res:5.0,81.0] ||  -> P(skc2,skf2(skc2,U))*.
+	Given clause: 9[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 12[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 11[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 10[0:Inp] IntConn(U) ||  -> Region(U)*.
+	Given clause: 16[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+	Given clause: 15[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+	Given clause: 14[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 13[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+	Given clause: 18[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 39[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 23[0:Inp] || Fits(U,V)* -> ObjectSet(U).
+	Given clause: 20[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 48[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 46[0:Inp] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 44[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 28[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 25[0:Inp] || OMuchSmaller(U,V)* -> Object(U).
+	Given clause: 21[0:Inp] || FeasiblePlace(U,V)* -> Object(U).
+	Given clause: 19[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 47[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 45[0:Inp] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 43[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 31[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 27[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 17[0:Inp] || Feasible(U,V)* -> Time(U).
+	Given clause: 40[0:Inp] || SmallSet(U,V)* -> Region(V).
+	Given clause: 32[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 26[0:Inp] || OMuchSmaller(U,V)* -> Region(V).
+	Given clause: 24[0:Inp] || Fits(U,V)* -> Region(V).
+	Given clause: 22[0:Inp] || FeasiblePlace(U,V)* -> Region(V).
+	Given clause: 42[0:Inp] || MuchSmaller(U,V)* -> Region(V).
+	Given clause: 41[0:Inp] || MuchSmaller(U,V)* -> Region(U).
+	Given clause: 38[0:Inp] || OpenContained(U,V)* -> Region(V).
+	Given clause: 37[0:Inp] || OpenContained(U,V)* -> Region(U).
+	Given clause: 34[0:Inp] || SkP1(U,V)* -> Region(U).
+	Given clause: 33[0:Inp] || SkP1(U,V)* -> Region(V).
+	Given clause: 30[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 29[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 36[0:Inp] || SkP2(U,V)* -> Region(U).
+	Given clause: 35[0:Inp] || SkP2(U,V)* -> Region(V).
+	Given clause: 73[0:Inp] Region(U) ||  -> P(U,ConvexHull(U))*.
+	Given clause: 74[0:Inp] || DC(U,V) -> DR(U,V)*.
+	Given clause: 67[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+	Given clause: 199[0:Res:67.1,33.0] || DR(U,V)* -> Region(U).
+	Given clause: 200[0:Res:67.1,34.0] || DR(U,V)* -> Region(V).
+	Given clause: 66[0:Inp] || DC(U,V) -> SkP1(V,U)*.
+	Given clause: 203[0:Res:74.1,199.0] || DC(U,V)* -> Region(U).
+	Given clause: 207[0:Res:110.0,203.0] ||  -> Region(ConvexHull(skc2))*.
+	Given clause: 204[0:Res:74.1,200.0] || DC(U,V)* -> Region(V).
+	Given clause: 208[0:Res:110.0,204.0] ||  -> Region(ConvexHull(skc3))*.
+	Given clause: 65[0:Inp] || O(U,V) -> SkP1(V,U)*.
+	Given clause: 209[0:Res:65.1,33.0] || O(U,V)* -> Region(U).
+	Given clause: 210[0:Res:65.1,34.0] || O(U,V)* -> Region(V).
+	Given clause: 64[0:Inp] || P(U,V) -> SkP1(V,U)*.
+	Given clause: 211[0:Res:64.1,33.0] || P(U,V)* -> Region(U).
+	Given clause: 72[0:Inp] || Contained(U,V) -> SkP2(V,U)*.
+	Given clause: 212[0:Res:64.1,34.0] || P(U,V)* -> Region(V).
+	Given clause: 217[0:Res:115.0,212.0] ||  -> Region(skf2(skc2,U))*.
+	Given clause: 215[0:Res:72.1,35.0] || Contained(U,V)* -> Region(U).
+	Given clause: 216[0:Res:72.1,36.0] || Contained(U,V)* -> Region(V).
+	Given clause: 71[0:Inp] || Cavity(U,V) -> SkP2(V,U)*.
+	Given clause: 219[0:Res:71.1,35.0] || Cavity(U,V)* -> Region(U).
+	Given clause: 220[0:Res:71.1,36.0] || Cavity(U,V)* -> Region(V).
+	Given clause: 70[0:Inp] || UprightContainerShape(U,V) -> SkP2(V,U)*.
+	Given clause: 221[0:Res:70.1,35.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 69[0:Inp] || OpenContainerShape(U,V) -> SkP2(V,U)*.
+	Given clause: 222[0:Res:70.1,36.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 223[0:Res:69.1,35.0] || OpenContainerShape(U,V)* -> Region(U).
+	Given clause: 224[0:Res:69.1,36.0] || OpenContainerShape(U,V)* -> Region(V).
+	Given clause: 68[0:Inp] || FullyOutside(U,V) -> SkP2(V,U)*.
+	Given clause: 51[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 53[0:Inp] || OSPlace(U,V,W)* -> ObjectSet(V).
+	Given clause: 63[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 62[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 60[0:Inp] || UContained(U,V,W)* -> Object(W).
+	Given clause: 59[0:Inp] || UContained(U,V,W)* -> Object(V).
+	Given clause: 56[0:Inp] || SkP0(U,V,W)* -> Object(V).
+	Given clause: 61[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 58[0:Inp] || UContained(U,V,W)* -> Time(U).
+	Given clause: 52[0:Inp] || OSPlace(U,V,W)* -> Time(U).
+	Given clause: 50[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 49[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 55[0:Inp] || SkP0(U,V,W)* -> Time(W).
+	Given clause: 54[0:Inp] || OSPlace(U,V,W)* -> Region(W).
+	Given clause: 57[0:Inp] || SkP0(U,V,W)* -> Region(U).
+	Given clause: 77[0:Inp] || OpenContainerShape(U,V) -> P(V,ConvexHull(U))*.
+	Given clause: 231[0:Res:77.1,212.0] || OpenContainerShape(U,V)* -> Region(ConvexHull(U)).
+	Given clause: 233[0:Res:7.0,231.0] ||  -> Region(ConvexHull(Rb))*.
+	Given clause: 202[0:MRR:201.0,200.1] || O(U,V) DR(U,V)* -> .
+	Given clause: 235[0:Res:74.1,202.1] || DC(U,V) O(U,V)* -> .
+	Given clause: 76[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 75[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 84[0:Inp] || FullyOutside(U,V) -> DC(ConvexHull(U),ConvexHull(V))*.
+	Given clause: 236[0:Res:84.1,204.0] || FullyOutside(U,V)*+ -> Region(ConvexHull(V))*.
+	Given clause: 237[0:Res:84.1,203.0] || FullyOutside(U,V)*+ -> Region(ConvexHull(U))*.
+	Given clause: 85[0:Inp] || DC(ConvexHull(U),ConvexHull(V))* -> FullyOutside(U,V).
+	Given clause: 82[0:Inp] || O(U,V) -> P(skf3(V,U),U)*.
+	Given clause: 243[0:Res:82.1,211.0] || O(U,V) -> Region(skf3(V,U))*.
+	Given clause: 80[0:Inp] || OpenContained(U,V) -> OpenContainerShape(V,skf2(U,V))*.
+	Given clause: 244[0:Res:80.1,231.0] || OpenContained(U,V)* -> Region(ConvexHull(V)).
+	Given clause: 83[0:Inp] || O(U,V)*+ -> P(skf3(V,W),V)*.
+	Given clause: 245[0:Res:80.1,224.0] || OpenContained(U,V) -> Region(skf2(U,V))*.
+	Given clause: 81[0:Inp] || OpenContained(U,V)*+ -> P(U,skf2(U,W))*.
+	Given clause: 79[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 249[0:Res:79.1,57.0] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 78[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 250[0:Res:79.1,55.0] || UprightContainer(U,V,W)* -> Time(U).
+	Given clause: 251[0:Res:79.1,56.0] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 252[0:Res:78.1,57.0] || OpenContainer(U,V,W)* -> Region(W).
+	Given clause: 253[0:Res:78.1,55.0] || OpenContainer(U,V,W)* -> Time(U).
+	Given clause: 96[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+	Given clause: 254[0:Res:78.1,56.0] || OpenContainer(U,V,W)* -> Object(V).
+	Given clause: 86[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+	Given clause: 99[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+	Given clause: 98[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+	Given clause: 94[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+	Given clause: 89[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 88[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+	Given clause: 92[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 97[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+	Given clause: 93[0:Inp] Object(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 91[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 95[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+	Given clause: 90[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+	Given clause: 87[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 100[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+	Given clause: 101[0:Inp] || P(U,V)*+ OpenContainerShape(W,V)* -> OpenContained(U,W)*.
+	Given clause: 255[0:Res:115.0,101.0] || OpenContainerShape(U,skf2(skc2,V))* -> OpenContained(skc2,U).
+	Given clause: 256[0:Res:73.1,101.0] Region(U) || OpenContainerShape(V,ConvexHull(U))* -> OpenContained(U,V).
+	Given clause: 103[0:Inp] || P(U,V)*+ P(U,W)* -> O(W,V)*.
+	Given clause: 102[0:Inp] || P(U,V)*+ P(W,U)* -> P(W,V)*.
+	Given clause: 265[0:MRR:262.0,211.1] || P(U,V) -> O(V,ConvexHull(U))*.
+	Given clause: 273[0:Res:265.1,210.0] || P(U,V)* -> Region(ConvexHull(U)).
+	Given clause: 277[0:Res:77.1,273.0] || OpenContainerShape(U,V)* -> Region(ConvexHull(V)).
+	Given clause: 279[0:Res:7.0,277.0] ||  -> Region(ConvexHull(Rc))*.
+	Given clause: 105[0:Inp] Region(U) Region(V) ||  -> DR(V,U)* O(V,U).
+	Given clause: 280[0:Res:114.0,277.0] ||  -> Region(ConvexHull(skf2(skc2,skc3)))*.
+	Given clause: 270[0:MRR:267.0,212.1] || P(U,V) -> P(U,ConvexHull(V))*.
+	Given clause: 289[0:Res:270.1,212.0] || P(U,V)* -> Region(ConvexHull(V)).
+	Given clause: 291[0:Res:115.0,289.0] ||  -> Region(ConvexHull(skf2(skc2,U)))*.
+	Given clause: 104[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+	Given clause: 292[0:Res:73.1,289.0] Region(U) ||  -> Region(ConvexHull(ConvexHull(U)))*.
+	Given clause: 295[0:Res:82.1,289.0] || O(U,V)* -> Region(ConvexHull(U)).
+	Given clause: 293[0:Res:270.1,289.0] || P(U,V)*+ -> Region(ConvexHull(ConvexHull(V)))*.
+	Given clause: 299[0:Res:115.0,293.0] ||  -> Region(ConvexHull(ConvexHull(skf2(skc2,U))))*.
+	Given clause: 106[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+	Given clause: 300[0:Res:73.1,293.0] Region(U) ||  -> Region(ConvexHull(ConvexHull(ConvexHull(U))))*.
+	Given clause: 294[0:Res:77.1,289.0] || OpenContainerShape(U,V)*+ -> Region(ConvexHull(ConvexHull(U)))*.
+	Given clause: 304[0:Res:7.0,294.0] ||  -> Region(ConvexHull(ConvexHull(Rb)))*.
+	Given clause: 305[0:Res:114.0,294.0] ||  -> Region(ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 107[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+	Given clause: 303[0:Res:82.1,293.0] || O(U,V)*+ -> Region(ConvexHull(ConvexHull(U)))*.
+	Given clause: 306[0:Res:80.1,294.0] || OpenContained(U,V)*+ -> Region(ConvexHull(ConvexHull(V)))*.
+	Given clause: 261[0:Res:115.0,103.0] || P(skc2,U) -> O(U,skf2(skc2,V))*.
+	Given clause: 266[0:Res:115.0,102.0] || P(U,skc2) -> P(U,skf2(skc2,V))*.
+	Given clause: 109[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+	Given clause: 301[0:Res:270.1,293.0] || P(U,V)*+ -> Region(ConvexHull(ConvexHull(ConvexHull(V))))*.
+	Given clause: 325[0:Res:115.0,301.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(skf2(skc2,U)))))*.
+	Given clause: 326[0:Res:73.1,301.0] Region(U) ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(U)))))*.
+	Given clause: 302[0:Res:77.1,293.0] || OpenContainerShape(U,V)*+ -> Region(ConvexHull(ConvexHull(ConvexHull(U))))*.
+	Given clause: 257[0:Res:77.1,101.0] || OpenContainerShape(U,V)* OpenContainerShape(W,ConvexHull(U))*+ -> OpenContained(V,W)*.
+	Given clause: 331[0:Res:7.0,302.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(Rb))))*.
+	Given clause: 332[0:Res:114.0,302.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(skc3))))*.
+	Given clause: 330[0:Res:82.1,301.0] || O(U,V)*+ -> Region(ConvexHull(ConvexHull(ConvexHull(U))))*.
+	Given clause: 333[0:Res:80.1,302.0] || OpenContained(U,V)*+ -> Region(ConvexHull(ConvexHull(ConvexHull(V))))*.
+	Given clause: 263[0:Res:77.1,103.0] || OpenContainerShape(U,V)*+ P(V,W)* -> O(W,ConvexHull(U))*.
+	Given clause: 337[0:Res:7.0,263.0] || P(Rc,U) -> O(U,ConvexHull(Rb))*.
+	Given clause: 344[0:Res:337.1,235.1] || P(Rc,U) DC(U,ConvexHull(Rb))* -> .
+	Given clause: 347[0:Res:84.1,344.1] || FullyOutside(U,Rb) P(Rc,ConvexHull(U))* -> .
+	Given clause: 351[0:SSi:348.0,4.0] || FullyOutside(Rc,Rb)* -> .
+	Given clause: 268[0:Res:77.1,102.0] || OpenContainerShape(U,V)*+ P(W,V)* -> P(W,ConvexHull(U))*.
+	Given clause: 349[0:Res:270.1,347.1] || P(Rc,U)* FullyOutside(U,Rb) -> .
+	Given clause: 359[0:SSi:355.0,4.0] || FullyOutside(ConvexHull(Rc),Rb)* -> .
+	Given clause: 350[0:Res:77.1,347.1] || OpenContainerShape(U,Rc)* FullyOutside(U,Rb) -> .
+	Given clause: 360[0:Res:7.0,350.0] || FullyOutside(Rb,Rb)* -> .
+	Given clause: 258[0:Res:82.1,101.0] || O(U,V) OpenContainerShape(W,U) -> OpenContained(skf3(V,U),W)*.
+	Given clause: 352[0:Res:7.0,268.0] || P(U,Rc) -> P(U,ConvexHull(Rb))*.
+	Given clause: 376[0:Res:352.1,349.0] || P(Rc,Rc) FullyOutside(ConvexHull(Rb),Rb)* -> .
+	Given clause: 356[0:Res:270.1,349.0] || P(Rc,U) FullyOutside(ConvexHull(U),Rb)* -> .
+	Given clause: 358[0:Res:77.1,349.0] || OpenContainerShape(U,Rc) FullyOutside(ConvexHull(U),Rb)* -> .
+	Given clause: 264[0:Res:82.1,103.0] || O(U,V) P(skf3(V,U),W)* -> O(W,U).
+	Given clause: 384[0:Obv:383.0] || O(U,V)*+ -> O(U,U)*.
+	Given clause: 386[0:Res:265.1,384.0] || P(U,V)*+ -> O(V,V)*.
+	Given clause: 389[0:Res:115.0,386.0] ||  -> O(skf2(skc2,U),skf2(skc2,U))*.
+	Given clause: 401[0:Res:389.0,235.1] || DC(skf2(skc2,U),skf2(skc2,U))* -> .
+	Given clause: 269[0:Res:82.1,102.0] || O(U,V) P(W,skf3(V,U))* -> P(W,U).
+	Given clause: 390[0:Res:73.1,386.0] Region(U) ||  -> O(ConvexHull(U),ConvexHull(U))*.
+	Given clause: 392[0:Res:352.1,386.0] || P(U,Rc)*+ -> O(ConvexHull(Rb),ConvexHull(Rb))*.
+	Given clause: 413[0:Res:82.1,392.0] || O(Rc,U)*+ -> O(ConvexHull(Rb),ConvexHull(Rb))*.
+	Given clause: 400[0:Res:389.0,83.0] ||  -> P(skf3(skf2(skc2,U),V),skf2(skc2,U))*.
+	Given clause: 272[0:Res:265.1,235.1] || P(U,V) DC(V,ConvexHull(U))* -> .
+	Given clause: 428[0:Res:110.0,272.1] || P(skc3,ConvexHull(skc2))* -> .
+	Given clause: 430[0:Res:270.1,428.0] || P(skc3,skc2)* -> .
+	Given clause: 431[0:Res:77.1,428.0] || OpenContainerShape(skc2,skc3)* -> .
+	Given clause: 426[0:Res:400.0,211.0] ||  -> Region(skf3(skf2(skc2,U),V))*.
+	Given clause: 338[0:Res:114.0,263.0] || P(skf2(skc2,skc3),U)* -> O(U,ConvexHull(skc3)).
+	Given clause: 437[0:SSi:432.0,217.0,113.0] ||  -> O(ConvexHull(skf2(skc2,skc3)),ConvexHull(skc3))*.
+	Given clause: 442[0:Res:437.0,83.0] ||  -> P(skf3(ConvexHull(skc3),U),ConvexHull(skc3))*.
+	Given clause: 446[0:Res:442.0,386.0] ||  -> O(ConvexHull(skc3),ConvexHull(skc3))*.
+	Given clause: 455[0:Res:442.0,211.0] ||  -> Region(skf3(ConvexHull(skc3),U))*.
+	Given clause: 353[0:Res:114.0,268.0] || P(U,skf2(skc2,skc3))* -> P(U,ConvexHull(skc3)).
+	Given clause: 465[0:Res:115.0,353.0] ||  -> P(skc2,ConvexHull(skc3))*.
+	Given clause: 447[0:Res:442.0,301.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skc3)))))*.
+	Given clause: 462[0:Res:446.0,235.1] || DC(ConvexHull(skc3),ConvexHull(skc3))* -> .
+	Given clause: 479[0:Res:84.1,462.0] || FullyOutside(skc3,skc3)* -> .
+	Given clause: 385[0:MRR:378.0,243.1] || O(U,V) -> O(ConvexHull(skf3(V,U)),U)*.
+	Given clause: 450[0:Res:442.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(skc3),U)))*.
+	Given clause: 421[0:Res:400.0,273.0] ||  -> Region(ConvexHull(skf3(skf2(skc2,U),V)))*.
+	Given clause: 439[0:Res:437.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skf2(skc2,skc3))))))*.
+	Given clause: 443[0:Res:437.0,235.1] || DC(ConvexHull(skf2(skc2,skc3)),ConvexHull(skc3))* -> .
+	Given clause: 271[0:Res:265.1,83.0] || P(U,V)*+ -> P(skf3(ConvexHull(U),W),ConvexHull(U))*.
+	Given clause: 488[0:Res:84.1,443.0] || FullyOutside(skf2(skc2,skc3),skc3)* -> .
+	Given clause: 489[0:Res:115.0,271.0] ||  -> P(skf3(ConvexHull(skc2),U),ConvexHull(skc2))*.
+	Given clause: 503[0:Res:489.0,289.0] ||  -> Region(ConvexHull(ConvexHull(skc2)))*.
+	Given clause: 500[0:Res:489.0,386.0] ||  -> O(ConvexHull(skc2),ConvexHull(skc2))*.
+	Given clause: 286[0:Res:270.1,102.0] || P(U,V)*+ P(W,U)* -> P(W,ConvexHull(V))*.
+	Given clause: 502[0:Res:489.0,293.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(skc2))))*.
+	Given clause: 509[0:Res:489.0,211.0] ||  -> Region(skf3(ConvexHull(skc2),U))*.
+	Given clause: 501[0:Res:489.0,301.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skc2)))))*.
+	Given clause: 516[0:Res:500.0,235.1] || DC(ConvexHull(skc2),ConvexHull(skc2))* -> .
+	Given clause: 287[0:Res:270.1,103.0] || P(U,V)*+ P(U,W)* -> O(W,ConvexHull(V))*.
+	Given clause: 531[0:Res:84.1,516.0] || FullyOutside(skc2,skc2)* -> .
+	Given clause: 504[0:Res:489.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(skc2),U)))*.
+	Given clause: 468[0:Res:400.0,353.0] ||  -> P(skf3(skf2(skc2,skc3),U),ConvexHull(skc3))*.
+	Given clause: 466[0:Res:266.1,353.0] || P(U,skc2) -> P(U,ConvexHull(skc3))*.
+	Given clause: 288[0:Res:270.1,101.0] || P(U,V)* OpenContainerShape(W,ConvexHull(V))*+ -> OpenContained(U,W)*.
+	Given clause: 573[0:Res:466.1,347.1] || P(Rc,skc2)* FullyOutside(skc3,Rb) -> .
+	Given clause: 475[0:Res:465.0,103.0] || P(skc2,U) -> O(U,ConvexHull(skc3))*.
+	Given clause: 476[0:Res:465.0,101.0] || OpenContainerShape(U,ConvexHull(skc3))* -> OpenContained(skc2,U).
+	Given clause: 438[0:Res:437.0,384.0] ||  -> O(ConvexHull(skf2(skc2,skc3)),ConvexHull(skf2(skc2,skc3)))*.
+	Given clause: 339[0:Res:80.1,263.0] || OpenContained(U,V) P(skf2(U,V),W)* -> O(W,ConvexHull(V)).
+	Given clause: 572[0:Res:466.1,349.0] || P(Rc,skc2) FullyOutside(ConvexHull(skc3),Rb)* -> .
+	Given clause: 456[0:Res:442.0,264.1] || O(U,ConvexHull(skc3))*+ -> O(ConvexHull(skc3),U)*.
+	Given clause: 602[0:Res:437.0,456.0] ||  -> O(ConvexHull(skc3),ConvexHull(skf2(skc2,skc3)))*.
+	Given clause: 610[0:Res:602.0,235.1] || DC(ConvexHull(skc3),ConvexHull(skf2(skc2,skc3)))* -> .
+	Given clause: 354[0:Res:80.1,268.0] || OpenContained(U,V) P(W,skf2(U,V))* -> P(W,ConvexHull(V)).
+	Given clause: 613[0:Res:84.1,610.0] || FullyOutside(skc3,skf2(skc2,skc3))* -> .
+	Given clause: 599[0:Res:265.1,456.0] || P(skc3,U) -> O(ConvexHull(skc3),U)*.
+	Given clause: 601[0:Res:475.1,456.0] || P(skc2,U) -> O(ConvexHull(skc3),U)*.
+	Given clause: 614[0:Res:115.0,354.1] || OpenContained(skc2,U) -> P(skc2,ConvexHull(U))*.
+	Given clause: 379[0:Res:270.1,264.1] || P(skf3(U,V),W)* O(V,U) -> O(ConvexHull(W),V).
+	Given clause: 660[0:Obv:655.0] || O(U,V)*+ -> O(ConvexHull(U),U)*.
+	Given clause: 669[0:Res:446.0,660.0] ||  -> O(ConvexHull(ConvexHull(skc3)),ConvexHull(skc3))*.
+	Given clause: 670[0:Res:500.0,660.0] ||  -> O(ConvexHull(ConvexHull(skc2)),ConvexHull(skc2))*.
+	Given clause: 685[0:Res:669.0,456.0] ||  -> O(ConvexHull(skc3),ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 382[0:Res:77.1,264.1] || OpenContainerShape(U,skf3(V,W))* O(W,V) -> O(ConvexHull(U),W).
+	Given clause: 677[0:Res:669.0,384.0] ||  -> O(ConvexHull(ConvexHull(skc3)),ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 678[0:Res:669.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skc3))))))*.
+	Given clause: 682[0:Res:669.0,235.1] || DC(ConvexHull(ConvexHull(skc3)),ConvexHull(skc3))* -> .
+	Given clause: 713[0:Res:84.1,682.0] || FullyOutside(ConvexHull(skc3),skc3)* -> .
+	Given clause: 363[0:Res:258.2,81.0] || O(U,V)+ OpenContainerShape(W,U)* -> P(skf3(V,U),skf2(skf3(V,U),X))*.
+	Given clause: 687[0:Res:670.0,384.0] ||  -> O(ConvexHull(ConvexHull(skc2)),ConvexHull(ConvexHull(skc2)))*.
+	Given clause: 688[0:Res:670.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skc2))))))*.
+	Given clause: 692[0:Res:670.0,235.1] || DC(ConvexHull(ConvexHull(skc2)),ConvexHull(skc2))* -> .
+	Given clause: 742[0:Res:84.1,692.0] || FullyOutside(ConvexHull(skc2),skc2)* -> .
+	Given clause: 404[0:Res:82.1,269.1] || O(skf3(U,V),W) O(V,U) -> P(skf3(W,skf3(U,V)),V)*.
+	Given clause: 701[0:Res:685.0,235.1] || DC(ConvexHull(skc3),ConvexHull(ConvexHull(skc3)))* -> .
+	Given clause: 764[0:Res:84.1,701.0] || FullyOutside(skc3,ConvexHull(skc3))* -> .
+	Given clause: 676[0:Res:669.0,660.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(skc3))),ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 686[0:Res:670.0,660.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(skc2))),ConvexHull(ConvexHull(skc2)))*.
+	Given clause: 278[0:Res:82.1,273.0] || O(U,V) -> Region(ConvexHull(skf3(V,U)))*.
+	Given clause: 710[0:Res:677.0,235.1] || DC(ConvexHull(ConvexHull(skc3)),ConvexHull(ConvexHull(skc3)))* -> .
+	Given clause: 785[0:Res:84.1,710.0] || FullyOutside(ConvexHull(skc3),ConvexHull(skc3))* -> .
+	Given clause: 739[0:Res:687.0,235.1] || DC(ConvexHull(ConvexHull(skc2)),ConvexHull(ConvexHull(skc2)))* -> .
+	Given clause: 786[0:Res:84.1,739.0] || FullyOutside(ConvexHull(skc2),ConvexHull(skc2))* -> .
+	Given clause: 429[0:Res:84.1,272.1] || FullyOutside(U,V) P(V,ConvexHull(U))* -> .
+	Given clause: 787[0:Res:465.0,429.1] || FullyOutside(skc3,skc2)* -> .
+	Given clause: 799[0:MRR:789.0,30.1] || FullyOutside(U,U)* -> .
+	Given clause: 795[0:Res:442.0,429.1] || FullyOutside(skc3,skf3(ConvexHull(skc3),U))* -> .
+	Given clause: 796[0:Res:489.0,429.1] || FullyOutside(skc2,skf3(ConvexHull(skc2),U))* -> .
+	Given clause: 530[0:MRR:521.0,212.1] || P(U,V) -> P(U,ConvexHull(ConvexHull(V)))*.
+	Given clause: 768[0:Res:676.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skc3)))))))*.
+	Given clause: 778[0:Res:686.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skc2)))))))*.
+	Given clause: 797[0:Res:468.0,429.1] || FullyOutside(skc3,skf3(skf2(skc2,skc3),U))* -> .
+	Given clause: 664[0:Res:389.0,660.0] ||  -> O(ConvexHull(skf2(skc2,U)),skf2(skc2,U))*.
+	Given clause: 543[0:MRR:534.0,211.1] || P(U,V) -> O(V,ConvexHull(ConvexHull(U)))*.
+	Given clause: 823[0:Res:664.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(skf2(skc2,U))))))*.
+	Given clause: 788[0:Res:614.1,429.1] || OpenContained(skc2,U)* FullyOutside(U,skc2) -> .
+	Given clause: 791[0:Res:352.1,429.1] || P(U,Rc)* FullyOutside(Rb,U) -> .
+	Given clause: 792[0:Res:466.1,429.1] || P(U,skc2)* FullyOutside(skc3,U) -> .
+	Given clause: 484[0:Res:385.1,83.0] || O(U,V)*+ -> P(skf3(U,W),U)*.
+	Given clause: 838[0:Res:543.1,210.0] || P(U,V)*+ -> Region(ConvexHull(ConvexHull(U)))*.
+	Given clause: 880[0:Res:442.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(skc3),U))))*.
+	Given clause: 881[0:Res:489.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(skc2),U))))*.
+	Given clause: 879[0:Res:400.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(skf2(skc2,U),V))))*.
+	Given clause: 312[0:Res:261.1,235.1] || P(skc2,U) DC(U,skf2(skc2,V))* -> .
+	Given clause: 877[0:Res:77.1,838.0] || OpenContainerShape(U,V)*+ -> Region(ConvexHull(ConvexHull(V)))*.
+	Given clause: 884[0:Res:7.0,877.0] ||  -> Region(ConvexHull(ConvexHull(Rc)))*.
+	Given clause: 662[0:Res:265.1,660.0] || P(U,V)*+ -> O(ConvexHull(V),V)*.
+	Given clause: 790[0:Res:270.1,429.1] || P(U,V)* FullyOutside(V,U) -> .
+	Given clause: 519[0:Res:115.0,286.0] || P(U,skc2) -> P(U,ConvexHull(skf2(skc2,V)))*.
+	Given clause: 904[0:Res:465.0,790.0] || FullyOutside(ConvexHull(skc3),skc2)* -> .
+	Given clause: 919[0:MRR:906.0,30.1] || FullyOutside(ConvexHull(U),U)* -> .
+	Given clause: 903[0:Res:115.0,790.0] || FullyOutside(skf2(skc2,U),skc2)* -> .
+	Given clause: 915[0:Res:442.0,790.0] || FullyOutside(ConvexHull(skc3),skf3(ConvexHull(skc3),U))* -> .
+	Given clause: 532[0:Res:115.0,287.0] || P(skc2,U) -> O(U,ConvexHull(skf2(skc2,V)))*.
+	Given clause: 916[0:Res:489.0,790.0] || FullyOutside(ConvexHull(skc2),skf3(ConvexHull(skc2),U))* -> .
+	Given clause: 793[0:Res:77.1,429.1] || OpenContainerShape(U,V)* FullyOutside(U,V) -> .
+	Given clause: 955[0:Res:7.0,793.0] || FullyOutside(Rb,Rc)* -> .
+	Given clause: 767[0:Res:676.0,384.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(skc3))),ConvexHull(ConvexHull(ConvexHull(skc3))))*.
+	Given clause: 434[0:Res:352.1,338.0] || P(skf2(skc2,skc3),Rc) -> O(ConvexHull(Rb),ConvexHull(skc3))*.
+	Given clause: 772[0:Res:676.0,235.1] || DC(ConvexHull(ConvexHull(ConvexHull(skc3))),ConvexHull(ConvexHull(skc3)))* -> .
+	Given clause: 777[0:Res:686.0,384.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(skc2))),ConvexHull(ConvexHull(ConvexHull(skc2))))*.
+	Given clause: 782[0:Res:686.0,235.1] || DC(ConvexHull(ConvexHull(ConvexHull(skc2))),ConvexHull(ConvexHull(skc2)))* -> .
+	Given clause: 700[0:Res:685.0,83.0] ||  -> P(skf3(ConvexHull(ConvexHull(skc3)),U),ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 343[0:Res:337.1,83.0] || P(Rc,U)*+ -> P(skf3(ConvexHull(Rb),V),ConvexHull(Rb))*.
+	Given clause: 1009[0:Res:700.0,211.0] ||  -> Region(skf3(ConvexHull(ConvexHull(skc3)),U))*.
+	Given clause: 1004[0:Res:700.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(ConvexHull(skc3)),U)))*.
+	Given clause: 1021[0:SSi:1013.0,4.0] ||  -> P(skf3(ConvexHull(Rb),U),ConvexHull(Rb))*.
+	Given clause: 1028[0:Res:1021.0,386.0] ||  -> O(ConvexHull(Rb),ConvexHull(Rb))*.
+	Given clause: 433[0:Res:270.1,338.0] || P(skf2(skc2,skc3),U) -> O(ConvexHull(U),ConvexHull(skc3))*.
+	Given clause: 1037[0:Res:1021.0,211.0] ||  -> Region(skf3(ConvexHull(Rb),U))*.
+	Given clause: 1023[0:Res:1021.0,662.0] ||  -> O(ConvexHull(ConvexHull(Rb)),ConvexHull(Rb))*.
+	Given clause: 1029[0:Res:1021.0,301.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(Rb)))))*.
+	Given clause: 1049[0:Res:1028.0,235.1] || DC(ConvexHull(Rb),ConvexHull(Rb))* -> .
+	Given clause: 436[0:Res:77.1,338.0] || OpenContainerShape(U,skf2(skc2,skc3)) -> O(ConvexHull(U),ConvexHull(skc3))*.
+	Given clause: 1032[0:Res:1021.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(Rb),U)))*.
+	Given clause: 1067[0:Res:1023.0,384.0] ||  -> O(ConvexHull(ConvexHull(Rb)),ConvexHull(ConvexHull(Rb)))*.
+	Given clause: 1068[0:Res:1023.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(Rb))))))*.
+	Given clause: 1072[0:Res:1023.0,235.1] || DC(ConvexHull(ConvexHull(Rb)),ConvexHull(Rb))* -> .
+	Given clause: 485[0:Res:385.1,235.1] || O(U,V) DC(ConvexHull(skf3(V,U)),U)* -> .
+	Given clause: 1024[0:Res:1021.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(Rb),U))))*.
+	Given clause: 1038[0:Res:1021.0,429.1] || FullyOutside(Rb,skf3(ConvexHull(Rb),U))* -> .
+	Given clause: 1066[0:Res:1023.0,660.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(Rb))),ConvexHull(ConvexHull(Rb)))*.
+	Given clause: 1096[0:Res:1067.0,235.1] || DC(ConvexHull(ConvexHull(Rb)),ConvexHull(ConvexHull(Rb)))* -> .
+	Given clause: 495[0:Res:77.1,271.0] || OpenContainerShape(U,V)*+ -> P(skf3(ConvexHull(V),W),ConvexHull(V))*.
+	Given clause: 1113[0:Res:7.0,495.0] ||  -> P(skf3(ConvexHull(Rc),U),ConvexHull(Rc))*.
+	Given clause: 1122[0:Res:1113.0,386.0] ||  -> O(ConvexHull(Rc),ConvexHull(Rc))*.
+	Given clause: 1124[0:Res:1113.0,293.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(Rc))))*.
+	Given clause: 1131[0:Res:1113.0,211.0] ||  -> Region(skf3(ConvexHull(Rc),U))*.
+	Given clause: 598[0:MRR:592.0,245.1] || OpenContained(U,V) -> O(ConvexHull(skf2(U,V)),ConvexHull(V))*.
+	Given clause: 1117[0:Res:1113.0,662.0] ||  -> O(ConvexHull(ConvexHull(Rc)),ConvexHull(Rc))*.
+	Given clause: 1123[0:Res:1113.0,301.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(Rc)))))*.
+	Given clause: 1143[0:Res:1122.0,235.1] || DC(ConvexHull(Rc),ConvexHull(Rc))* -> .
+	Given clause: 1126[0:Res:1113.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(Rc),U)))*.
+	Given clause: 661[0:MRR:649.0,243.1] || O(U,V) -> O(ConvexHull(ConvexHull(skf3(V,U))),U)*.
+	Given clause: 1161[0:Res:1117.0,384.0] ||  -> O(ConvexHull(ConvexHull(Rc)),ConvexHull(ConvexHull(Rc)))*.
+	Given clause: 1162[0:Res:1117.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(Rc))))))*.
+	Given clause: 1166[0:Res:1117.0,235.1] || DC(ConvexHull(ConvexHull(Rc)),ConvexHull(Rc))* -> .
+	Given clause: 1118[0:Res:1113.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(Rc),U))))*.
+	Given clause: 435[0:Res:266.1,338.0] || P(skf2(skc2,skc3),skc2) -> O(skf2(skc2,U),ConvexHull(skc3))*.
+	Given clause: 1132[0:Res:1113.0,429.1] || FullyOutside(Rc,skf3(ConvexHull(Rc),U))* -> .
+	Given clause: 1105[0:Res:1066.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(Rb)))))))*.
+	Given clause: 1160[0:Res:1117.0,660.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(Rc))),ConvexHull(ConvexHull(Rc)))*.
+	Given clause: 1190[0:Res:1161.0,235.1] || DC(ConvexHull(ConvexHull(Rc)),ConvexHull(ConvexHull(Rc)))* -> .
+	Given clause: 371[0:Res:352.1,102.0] || P(U,Rc)*+ P(V,U)* -> P(V,ConvexHull(Rb))*.
+	Given clause: 1210[0:Res:1160.0,330.0] ||  -> Region(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(ConvexHull(Rc)))))))*.
+	Given clause: 996[0:Res:700.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(ConvexHull(skc3)),U))))*.
+	Given clause: 1022[0:Res:1021.0,790.0] || FullyOutside(ConvexHull(Rb),skf3(ConvexHull(Rb),U))* -> .
+	Given clause: 1116[0:Res:1113.0,790.0] || FullyOutside(ConvexHull(Rc),skf3(ConvexHull(Rc),U))* -> .
+	Given clause: 372[0:Res:352.1,103.0] || P(U,Rc)*+ P(U,V)* -> O(V,ConvexHull(Rb))*.
+	Given clause: 1104[0:Res:1066.0,384.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(Rb))),ConvexHull(ConvexHull(ConvexHull(Rb))))*.
+	Given clause: 1109[0:Res:1066.0,235.1] || DC(ConvexHull(ConvexHull(ConvexHull(Rb))),ConvexHull(ConvexHull(Rb)))* -> .
+	Given clause: 1209[0:Res:1160.0,384.0] ||  -> O(ConvexHull(ConvexHull(ConvexHull(Rc))),ConvexHull(ConvexHull(ConvexHull(Rc))))*.
+	Given clause: 1214[0:Res:1160.0,235.1] || DC(ConvexHull(ConvexHull(ConvexHull(Rc))),ConvexHull(ConvexHull(Rc)))* -> .
+	Given clause: 373[0:Res:352.1,101.0] || P(U,Rc) OpenContainerShape(V,ConvexHull(Rb))*+ -> OpenContained(U,V)*.
+	Given clause: 738[0:Res:687.0,83.0] ||  -> P(skf3(ConvexHull(ConvexHull(skc2)),U),ConvexHull(ConvexHull(skc2)))*.
+	Given clause: 1261[0:Res:738.0,211.0] ||  -> Region(skf3(ConvexHull(ConvexHull(skc2)),U))*.
+	Given clause: 1256[0:Res:738.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(ConvexHull(skc2)),U)))*.
+	Given clause: 1248[0:Res:738.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(ConvexHull(skc2)),U))))*.
+	Given clause: 615[0:Res:266.1,354.1] || P(U,skc2) OpenContained(skc2,V) -> P(U,ConvexHull(V))*.
+	Given clause: 917[0:Res:468.0,790.0] || FullyOutside(ConvexHull(skc3),skf3(skf2(skc2,skc3),U))* -> .
+	Given clause: 1010[0:Res:700.0,429.1] || FullyOutside(ConvexHull(skc3),skf3(ConvexHull(ConvexHull(skc3)),U))* -> .
+	Given clause: 1064[0:Res:1023.0,484.0] ||  -> P(skf3(ConvexHull(ConvexHull(Rb)),U),ConvexHull(ConvexHull(Rb)))*.
+	Given clause: 1304[0:Res:1064.0,211.0] ||  -> Region(skf3(ConvexHull(ConvexHull(Rb)),U))*.
+	Given clause: 523[0:Res:352.1,286.0] || P(U,Rc)*+ P(V,U)* -> P(V,ConvexHull(ConvexHull(Rb)))*.
+	Given clause: 1299[0:Res:1064.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(ConvexHull(Rb)),U)))*.
+	Given clause: 1291[0:Res:1064.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(ConvexHull(Rb)),U))))*.
+	Given clause: 1158[0:Res:1117.0,484.0] ||  -> P(skf3(ConvexHull(ConvexHull(Rc)),U),ConvexHull(ConvexHull(Rc)))*.
+	Given clause: 1325[0:Res:1158.0,211.0] ||  -> Region(skf3(ConvexHull(ConvexHull(Rc)),U))*.
+	Given clause: 536[0:Res:352.1,287.0] || P(U,Rc)*+ P(U,V)* -> O(V,ConvexHull(ConvexHull(Rb)))*.
+	Given clause: 1320[0:Res:1158.0,273.0] ||  -> Region(ConvexHull(skf3(ConvexHull(ConvexHull(Rc)),U)))*.
+	Given clause: 1312[0:Res:1158.0,838.0] ||  -> Region(ConvexHull(ConvexHull(skf3(ConvexHull(ConvexHull(Rc)),U))))*.
+	Given clause: 1262[0:Res:738.0,429.1] || FullyOutside(ConvexHull(skc2),skf3(ConvexHull(ConvexHull(skc2)),U))* -> .
+	Given clause: 1305[0:Res:1064.0,429.1] || FullyOutside(ConvexHull(Rb),skf3(ConvexHull(ConvexHull(Rb)),U))* -> .
+	Given clause: 318[0:Res:266.1,102.0] || P(U,skc2)*+ P(V,U)* -> P(V,skf2(skc2,W))*.
+	Given clause: 1326[0:Res:1158.0,429.1] || FullyOutside(ConvexHull(Rc),skf3(ConvexHull(ConvexHull(Rc)),U))* -> .
+	Given clause: 510[0:Res:489.0,264.1] || O(U,ConvexHull(skc2))*+ -> O(ConvexHull(skc2),U)*.
+	Given clause: 1336[0:Res:670.0,510.0] ||  -> O(ConvexHull(skc2),ConvexHull(ConvexHull(skc2)))*.
+	Given clause: 1350[0:Res:1336.0,235.1] || DC(ConvexHull(skc2),ConvexHull(ConvexHull(skc2)))* -> .
+	Given clause: 319[0:Res:266.1,103.0] || P(U,skc2)*+ P(U,V)* -> O(V,skf2(skc2,W))*.
+	Given clause: 1353[0:Res:84.1,1350.0] || FullyOutside(skc2,ConvexHull(skc2))* -> .
+	Given clause: 1333[0:Res:265.1,510.0] || P(skc2,U) -> O(ConvexHull(skc2),U)*.
+	Given clause: 520[0:Res:465.0,286.0] || P(U,skc2) -> P(U,ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 533[0:Res:465.0,287.0] || P(skc2,U) -> O(U,ConvexHull(ConvexHull(skc3)))*.
+	Given clause: 320[0:Res:266.1,101.0] || P(U,skc2) OpenContainerShape(V,skf2(skc2,W))*+ -> OpenContained(U,V)*.
+	Given clause: 1403[0:Res:114.0,320.1] || P(U,skc2) -> OpenContained(U,skc3)*.
+	Given clause: 580[0:Res:475.1,235.1] || P(skc2,U) DC(U,ConvexHull(skc3))* -> .
+	Given clause: 1412[0:Res:110.0,580.1] || P(skc2,ConvexHull(skc2))* -> .
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: st.dfg 
+SPASS derived 1216 clauses, backtracked 0 clauses, performed 0 splits and kept 730 clauses.
+SPASS allocated 56239 KBytes.
+SPASS spent	0:00:00.08 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.01 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.03 for the reduction.
+
+
+Here is a proof with depth 7, length 32 :
+5[0:Inp] ||  -> OpenContained(skc2,skc3)*.
+6[0:Inp] ||  -> FullyOutside(skc2,skc3)*.
+29[0:Inp] || FullyOutside(U,V)* -> Region(U).
+33[0:Inp] || SkP1(U,V)* -> Region(V).
+34[0:Inp] || SkP1(U,V)* -> Region(U).
+67[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+73[0:Inp] Region(U) ||  -> P(U,ConvexHull(U))*.
+74[0:Inp] || DC(U,V) -> DR(U,V)*.
+77[0:Inp] || OpenContainerShape(U,V) -> P(V,ConvexHull(U))*.
+80[0:Inp] || OpenContained(U,V) -> OpenContainerShape(V,skf2(U,V))*.
+81[0:Inp] || OpenContained(U,V)*+ -> P(U,skf2(U,W))*.
+84[0:Inp] || FullyOutside(U,V) -> DC(ConvexHull(U),ConvexHull(V))*.
+102[0:Inp] || P(U,V)*+ P(W,U)* -> P(W,V)*.
+103[0:Inp] || P(U,V)*+ P(U,W)* -> O(W,V)*.
+108[0:Inp] Region(U) Region(V) || O(V,U) DR(V,U)* -> .
+110[0:Res:6.0,84.0] ||  -> DC(ConvexHull(skc2),ConvexHull(skc3))*.
+112[0:Res:6.0,29.0] ||  -> Region(skc2)*.
+114[0:Res:5.0,80.0] ||  -> OpenContainerShape(skc3,skf2(skc2,skc3))*.
+115[0:Res:5.0,81.0] ||  -> P(skc2,skf2(skc2,U))*.
+199[0:Res:67.1,33.0] || DR(U,V)* -> Region(U).
+200[0:Res:67.1,34.0] || DR(U,V)* -> Region(V).
+201[0:MRR:108.1,199.1] Region(U) || O(V,U) DR(V,U)* -> .
+202[0:MRR:201.0,200.1] || O(U,V) DR(U,V)* -> .
+235[0:Res:74.1,202.1] || DC(U,V) O(U,V)* -> .
+268[0:Res:77.1,102.0] || OpenContainerShape(U,V)*+ P(W,V)* -> P(W,ConvexHull(U))*.
+353[0:Res:114.0,268.0] || P(U,skf2(skc2,skc3))* -> P(U,ConvexHull(skc3)).
+465[0:Res:115.0,353.0] ||  -> P(skc2,ConvexHull(skc3))*.
+475[0:Res:465.0,103.0] || P(skc2,U) -> O(U,ConvexHull(skc3))*.
+580[0:Res:475.1,235.1] || P(skc2,U) DC(U,ConvexHull(skc3))* -> .
+1412[0:Res:110.0,580.1] || P(skc2,ConvexHull(skc2))* -> .
+1415[0:Res:73.1,1412.0] Region(skc2) ||  -> .
+1419[0:SSi:1415.0,112.0] ||  -> .
+Formulae used in the proof : LemST axiom31 axiom34 SCA4 LemSK SCA6 SCD6 SCD7 LemSA SBD2 SBD3
+
+--------------------------SPASS-STOP------------------------------

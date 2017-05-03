@@ -1,0 +1,344 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Action(StandStill)*.
+2[0:Inp] ||  -> UContained(skc3,skc2,skc2)*.
+3[0:Inp] || DR(U,U)* -> .
+4[0:Inp] || SmallObject(U) -> Object(U)*.
+5[0:Inp] || AllStable(U) -> Time(U)*.
+6[0:Inp] || EmptyHanded(U) -> Time(U)*.
+7[0:Inp] || Region(U) -> Region(ConvexHull(U))*.
+8[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+9[0:Inp] || Region(U) -> Action(TravelTo(U))*.
+10[0:Inp] || Object(U) -> History(HPlace(U))*.
+11[0:Inp] || Element(U,V)* -> Object(U).
+12[0:Inp] || Element(U,V)* -> ObjectSet(V).
+13[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+14[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+15[0:Inp] || FullyOutside(U,V)* -> Region(U).
+16[0:Inp] || FullyOutside(U,V)* -> Region(V).
+17[0:Inp] || Reachable(U,V)* -> Time(U).
+18[0:Inp] || Reachable(U,V)* -> Region(V).
+19[0:Inp] || SkP1(U,V)* -> Region(V).
+20[0:Inp] || SkP1(U,V)* -> Region(U).
+21[0:Inp] || SkP2(U,V)* -> Region(V).
+22[0:Inp] || SkP2(U,V)* -> Region(U).
+23[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+24[0:Inp] || SmallSet(U,V)* -> Region(V).
+25[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+26[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+27[0:Inp] || CanGrasp(U,V)* -> Time(U).
+28[0:Inp] || CanGrasp(U,V)* -> Object(V).
+29[0:Inp] || Graspable(U,V)* -> Time(U).
+30[0:Inp] || Graspable(U,V)* -> Object(V).
+31[0:Inp] || NoObstacles(U,V)* -> Time(U).
+32[0:Inp] || NoObstacles(U,V)* -> Region(V).
+33[0:Inp] || Occurs(U,V,W)* -> Time(U).
+34[0:Inp] || Occurs(U,V,W)* -> Time(V).
+35[0:Inp] || Occurs(U,V,W)* -> Action(W).
+36[0:Inp] || SkP0(U,V,W)* -> Time(W).
+37[0:Inp] || SkP0(U,V,W)* -> Object(V).
+38[0:Inp] || SkP0(U,V,W)* -> Region(U).
+39[0:Inp] || UContained(U,V,W)* -> Time(U).
+40[0:Inp] || UContained(U,V,W)* -> Object(V).
+41[0:Inp] || UContained(U,V,W)* -> Object(W).
+42[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+43[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+44[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+45[0:Inp] || O(U,V) -> SkP1(V,U)*.
+46[0:Inp] || P(U,V) -> SkP1(V,U)*.
+47[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+48[0:Inp] || EC(U,V) -> SkP1(V,U)*.
+49[0:Inp] || C(U,V) -> SkP1(V,U)*.
+50[0:Inp] || FullyOutside(U,V) -> SkP2(V,U)*.
+51[0:Inp] || UprightContainerShape(U,V) -> SkP2(V,U)*.
+52[0:Inp] || OpenContainerShape(U,V) -> SkP2(V,U)*.
+53[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+54[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+55[0:Inp] || UContained(U,V,W)* -> Object(V).
+56[0:Inp] || UprightContainerShape(U,V) -> OpenContainerShape(U,V)*.
+57[0:Inp] || OpenContainerShape(U,V) -> EC(U,V)*.
+58[0:Inp] || EC(U,V)* -> DR(U,V).
+59[0:Inp] || EC(U,V) -> C(U,V)*.
+60[0:Inp] || DR(U,V)* -> DR(V,U)*.
+61[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+62[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+63[0:Inp] || Action(U) Action(V) -> Action(Sequence(U,V))*.
+64[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+65[0:Inp] || Object(U) Object(V) -> ObjectSet(Pair(U,V))*.
+66[0:Inp] || ObjectSet(U) ObjectSet(V) -> ObjectSet(Union(U,V))*.
+67[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+68[0:Inp] || Time(U) Region(V) -> ObjectSet(Contents(U,V))*.
+69[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(CContents(U,V))*.
+70[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(UContents(U,V))*.
+71[0:Inp] || Object(U) Region(V) -> Action(ManipTo(U,V))*.
+72[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+73[0:Inp] || History(U) History(V) -> History(HUnion(U,V))*.
+74[0:Inp] || Time(U) Object(V) -> ObjectSet(MovingGroup(U,V))*.
+75[0:Inp] || Object(U) Object(V) -> Action(PutInUC(U,V))*.
+76[0:Inp] || Object(U) Object(V) -> Action(LoadUprightContainer(U,V))*.
+77[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+78[0:Inp] || DR(U,V) C(U,V)* -> EC(U,V).
+79[0:Inp] || P(U,V)* DR(V,W)* -> DR(U,W)*.
+80[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf1(V,U,W))*.
+81[0:Inp] || UContained(U,V,W)* -> P(Place(U,V),skf1(V,U,X))*.
+82[0:Inp] || UprightContainerShape(Place(U,V),W)* Object(V) Time(U) -> UprightContainer(U,V,W).
+83[0:Inp] || UprightContainer(U,V,W)* P(Place(U,X),W)* Object(X) -> UContained(U,X,V)*.
+ This is a first-order Horn problem without equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 82 Conjecture clauses: 1
+ Inferences: IEmS=1 ISoR=1 IORe=1 
+ Reductions: RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSST=1 RSSi=1 RFSub=1 RBSub=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, No Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: TravelTo > ConvexHull > Singleton > HPlace > Place > Union > UContents > Contents > MovingGroup > RUnion > Sequence > Pair > CContents > ManipTo > Slice > HUnion > PutInUC > LoadUprightContainer > skf0 > skf1 > Action > ObjectSet > Region > SkP1 > C > EC > DR > History > SkP2 > OpenContainerShape > SkP0 > P > UContained > UprightContainerShape > UprightContainer > Object > Time > FullyOutside > SmallSet > AllStable > EmptyHanded > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > Occurs > CanGrasp > Element > Lt > Leq > Leq3 > NoObstacles > OpenContainer > O > Ta4 > Ob4 > Rc4 > Ox4 > Agent > Tm1 > Ra1 > StandStill > skc0 > skc1 > skc2 > skc3 > skc4 > skc5 > skc6 > skc7
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> Action(StandStill)*.
+86[0:Res:2.0,39.0] ||  -> Time(skc3)*.
+87[0:Res:2.0,41.0] ||  -> Object(skc2)*.
+2[0:Inp] ||  -> UContained(skc3,skc2,skc2)*.
+3[0:Inp] || DR(U,U)* -> .
+6[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+5[0:Inp] AllStable(U) ||  -> Time(U)*.
+4[0:Inp] SmallObject(U) ||  -> Object(U)*.
+10[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+9[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+8[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+7[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+23[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+12[0:Inp] || Element(U,V)* -> ObjectSet(V).
+32[0:Inp] || NoObstacles(U,V)* -> Region(V).
+24[0:Inp] || SmallSet(U,V)* -> Region(V).
+18[0:Inp] || Reachable(U,V)* -> Region(V).
+16[0:Inp] || FullyOutside(U,V)* -> Region(V).
+15[0:Inp] || FullyOutside(U,V)* -> Region(U).
+22[0:Inp] || SkP2(U,V)* -> Region(U).
+21[0:Inp] || SkP2(U,V)* -> Region(V).
+20[0:Inp] || SkP1(U,V)* -> Region(U).
+19[0:Inp] || SkP1(U,V)* -> Region(V).
+31[0:Inp] || NoObstacles(U,V)* -> Time(U).
+29[0:Inp] || Graspable(U,V)* -> Time(U).
+27[0:Inp] || CanGrasp(U,V)* -> Time(U).
+25[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+17[0:Inp] || Reachable(U,V)* -> Time(U).
+13[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+30[0:Inp] || Graspable(U,V)* -> Object(V).
+28[0:Inp] || CanGrasp(U,V)* -> Object(V).
+26[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+14[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+11[0:Inp] || Element(U,V)* -> Object(U).
+56[0:Inp] || UprightContainerShape(U,V) -> OpenContainerShape(U,V)*.
+59[0:Inp] || EC(U,V) -> C(U,V)*.
+57[0:Inp] || OpenContainerShape(U,V) -> EC(U,V)*.
+52[0:Inp] || OpenContainerShape(U,V) -> SkP2(V,U)*.
+50[0:Inp] || FullyOutside(U,V) -> SkP2(V,U)*.
+51[0:Inp] || UprightContainerShape(U,V) -> SkP2(V,U)*.
+45[0:Inp] || O(U,V) -> SkP1(V,U)*.
+49[0:Inp] || C(U,V) -> SkP1(V,U)*.
+48[0:Inp] || EC(U,V) -> SkP1(V,U)*.
+46[0:Inp] || P(U,V) -> SkP1(V,U)*.
+47[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+58[0:Inp] || EC(U,V)* -> DR(U,V).
+60[0:Inp] || DR(U,V)* -> DR(V,U)*.
+35[0:Inp] || Occurs(U,V,W)* -> Action(W).
+38[0:Inp] || SkP0(U,V,W)* -> Region(U).
+42[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+34[0:Inp] || Occurs(U,V,W)* -> Time(V).
+33[0:Inp] || Occurs(U,V,W)* -> Time(U).
+36[0:Inp] || SkP0(U,V,W)* -> Time(W).
+39[0:Inp] || UContained(U,V,W)* -> Time(U).
+53[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+44[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+43[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+37[0:Inp] || SkP0(U,V,W)* -> Object(V).
+55[0:Inp] || UContained(U,V,W)* -> Object(V).
+41[0:Inp] || UContained(U,V,W)* -> Object(W).
+54[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+85[0:Res:2.0,80.0] ||  -> UprightContainer(skc3,skc2,skf1(skc2,skc3,skc2))*.
+84[0:Res:2.0,81.0] ||  -> P(Place(skc3,skc2),skf1(skc2,skc3,U))*.
+62[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+61[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+73[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+63[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+71[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+76[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+75[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+66[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+70[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+69[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+68[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+74[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+65[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+64[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+72[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+67[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+77[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+78[0:Inp] || C(U,V)* DR(U,V) -> EC(U,V).
+79[0:Inp] || DR(U,V)* P(W,U)* -> DR(W,V)*.
+80[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf1(V,U,W))*.
+81[0:Inp] || UContained(U,V,W)* -> P(Place(U,V),skf1(V,U,X))*.
+82[0:Inp] Time(U) Object(V) || UprightContainerShape(Place(U,V),W)* -> UprightContainer(U,V,W).
+83[0:Inp] Object(U) || P(Place(V,U),W)* UprightContainer(V,X,W)* -> UContained(V,U,X)*.
+	Given clause: 1[0:Inp] ||  -> Action(StandStill)*.
+	Given clause: 86[0:Res:2.0,39.0] ||  -> Time(skc3)*.
+	Given clause: 87[0:Res:2.0,41.0] ||  -> Object(skc2)*.
+	Given clause: 2[0:Inp] ||  -> UContained(skc3,skc2,skc2)*.
+	Given clause: 3[0:Inp] || DR(U,U)* -> .
+	Given clause: 6[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 5[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 4[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 10[0:Inp] Object(U) ||  -> History(HPlace(U))*.
+	Given clause: 9[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+	Given clause: 8[0:Inp] Object(U) ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 7[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+	Given clause: 23[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 12[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 32[0:Inp] || NoObstacles(U,V)* -> Region(V).
+	Given clause: 24[0:Inp] || SmallSet(U,V)* -> Region(V).
+	Given clause: 18[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 16[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 15[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 22[0:Inp] || SkP2(U,V)* -> Region(U).
+	Given clause: 21[0:Inp] || SkP2(U,V)* -> Region(V).
+	Given clause: 20[0:Inp] || SkP1(U,V)* -> Region(U).
+	Given clause: 19[0:Inp] || SkP1(U,V)* -> Region(V).
+	Given clause: 31[0:Inp] || NoObstacles(U,V)* -> Time(U).
+	Given clause: 29[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 27[0:Inp] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 25[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 17[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 13[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 30[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 28[0:Inp] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 26[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 14[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 11[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 56[0:Inp] || UprightContainerShape(U,V) -> OpenContainerShape(U,V)*.
+	Given clause: 85[0:Res:2.0,80.0] ||  -> UprightContainer(skc3,skc2,skf1(skc2,skc3,skc2))*.
+	Given clause: 59[0:Inp] || EC(U,V) -> C(U,V)*.
+	Given clause: 57[0:Inp] || OpenContainerShape(U,V) -> EC(U,V)*.
+	Given clause: 52[0:Inp] || OpenContainerShape(U,V) -> SkP2(V,U)*.
+	Given clause: 50[0:Inp] || FullyOutside(U,V) -> SkP2(V,U)*.
+	Given clause: 149[0:Res:52.1,21.0] || OpenContainerShape(U,V)* -> Region(U).
+	Given clause: 150[0:Res:52.1,22.0] || OpenContainerShape(U,V)* -> Region(V).
+	Given clause: 153[0:Res:56.1,149.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 154[0:Res:56.1,150.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 51[0:Inp] || UprightContainerShape(U,V) -> SkP2(V,U)*.
+	Given clause: 45[0:Inp] || O(U,V) -> SkP1(V,U)*.
+	Given clause: 157[0:Res:45.1,19.0] || O(U,V)* -> Region(U).
+	Given clause: 158[0:Res:45.1,20.0] || O(U,V)* -> Region(V).
+	Given clause: 49[0:Inp] || C(U,V) -> SkP1(V,U)*.
+	Given clause: 48[0:Inp] || EC(U,V) -> SkP1(V,U)*.
+	Given clause: 159[0:Res:49.1,19.0] || C(U,V)* -> Region(U).
+	Given clause: 160[0:Res:49.1,20.0] || C(U,V)* -> Region(V).
+	Given clause: 161[0:Res:48.1,19.0] || EC(U,V)* -> Region(U).
+	Given clause: 162[0:Res:48.1,20.0] || EC(U,V)* -> Region(V).
+	Given clause: 46[0:Inp] || P(U,V) -> SkP1(V,U)*.
+	Given clause: 167[0:Res:46.1,19.0] || P(U,V)* -> Region(U).
+	Given clause: 168[0:Res:46.1,20.0] || P(U,V)* -> Region(V).
+	Given clause: 47[0:Inp] || DR(U,V) -> SkP1(V,U)*.
+	Given clause: 169[0:Res:47.1,19.0] || DR(U,V)* -> Region(U).
+	Given clause: 58[0:Inp] || EC(U,V)* -> DR(U,V).
+	Given clause: 170[0:Res:47.1,20.0] || DR(U,V)* -> Region(V).
+	Given clause: 60[0:Inp] || DR(U,V)*+ -> DR(V,U)*.
+	Given clause: 35[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 38[0:Inp] || SkP0(U,V,W)* -> Region(U).
+	Given clause: 42[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 34[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 33[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 36[0:Inp] || SkP0(U,V,W)* -> Time(W).
+	Given clause: 39[0:Inp] || UContained(U,V,W)* -> Time(U).
+	Given clause: 53[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+	Given clause: 44[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 43[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 37[0:Inp] || SkP0(U,V,W)* -> Object(V).
+	Given clause: 55[0:Inp] || UContained(U,V,W)* -> Object(V).
+	Given clause: 41[0:Inp] || UContained(U,V,W)* -> Object(W).
+	Given clause: 54[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 171[0:Res:57.1,58.0] || OpenContainerShape(U,V) -> DR(U,V)*.
+	Given clause: 177[0:Res:171.1,3.0] || OpenContainerShape(U,U)* -> .
+	Given clause: 181[0:Res:56.1,177.0] || UprightContainerShape(U,U)* -> .
+	Given clause: 62[0:Inp] || OpenContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 178[0:Res:171.1,60.0] || OpenContainerShape(U,V) -> DR(V,U)*.
+	Given clause: 182[0:Res:62.1,37.0] || OpenContainer(U,V,W)* -> Object(V).
+	Given clause: 183[0:Res:62.1,36.0] || OpenContainer(U,V,W)* -> Time(U).
+	Given clause: 184[0:Res:62.1,38.0] || OpenContainer(U,V,W)* -> Region(W).
+	Given clause: 61[0:Inp] || UprightContainer(U,V,W) -> SkP0(W,V,U)*.
+	Given clause: 191[0:Res:61.1,38.0] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 192[0:Res:85.0,191.0] ||  -> Region(skf1(skc2,skc3,skc2))*.
+	Given clause: 84[0:Res:2.0,81.0] ||  -> P(Place(skc3,skc2),skf1(skc2,skc3,U))*.
+	Given clause: 194[0:Res:84.0,167.0] ||  -> Region(Place(skc3,skc2))*.
+	Given clause: 73[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+	Given clause: 193[0:Res:84.0,168.0] ||  -> Region(skf1(skc2,skc3,U))*.
+	Given clause: 63[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+	Given clause: 71[0:Inp] Region(U) Object(V) ||  -> Action(ManipTo(V,U))*.
+	Given clause: 76[0:Inp] Object(U) Object(V) ||  -> Action(LoadUprightContainer(V,U))*.
+	Given clause: 75[0:Inp] Object(U) Object(V) ||  -> Action(PutInUC(V,U))*.
+	Given clause: 66[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 70[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(UContents(V,U))*.
+	Given clause: 69[0:Inp] ObjectSet(U) Time(V) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 68[0:Inp] Region(U) Time(V) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 74[0:Inp] Object(U) Time(V) ||  -> ObjectSet(MovingGroup(V,U))*.
+	Given clause: 65[0:Inp] Object(U) Object(V) ||  -> ObjectSet(Pair(V,U))*.
+	Given clause: 64[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 72[0:Inp] History(U) Time(V) ||  -> Region(Slice(V,U))*.
+	Given clause: 67[0:Inp] Object(U) Time(V) ||  -> Region(Place(V,U))*.
+	Given clause: 77[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+	Given clause: 197[0:Res:77.1,181.0] || UprightContainer(U,V,Place(U,V))* -> .
+	Given clause: 196[0:Res:77.1,153.0] || UprightContainer(U,V,W)*+ -> Region(Place(U,V))*.
+	Given clause: 78[0:Inp] || C(U,V)* DR(U,V) -> EC(U,V).
+	Given clause: 79[0:Inp] || DR(U,V)*+ P(W,U)* -> DR(W,V)*.
+	Given clause: 80[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf1(V,U,W))*.
+	Given clause: 202[0:Res:80.1,196.0] || UContained(U,V,W)*+ -> Region(Place(U,W))*.
+	Given clause: 203[0:Res:80.1,191.0] || UContained(U,V,W) -> Region(skf1(V,U,W))*.
+	Given clause: 200[0:Res:171.1,79.0] || OpenContainerShape(U,V)*+ P(W,U)* -> DR(W,V)*.
+	Given clause: 201[0:Res:178.1,79.0] || OpenContainerShape(U,V)*+ P(W,V)* -> DR(W,U)*.
+	Given clause: 81[0:Inp] || UContained(U,V,W)*+ -> P(Place(U,V),skf1(V,U,X))*.
+	Given clause: 207[0:Res:56.1,200.0] || UprightContainerShape(U,V)*+ P(W,U)* -> DR(W,V)*.
+	Given clause: 208[0:Res:56.1,201.0] || UprightContainerShape(U,V)*+ P(W,V)* -> DR(W,U)*.
+	Given clause: 210[0:Res:77.1,207.0] || UprightContainer(U,V,W)* P(X,Place(U,V))*+ -> DR(X,W)*.
+	Given clause: 211[0:Res:77.1,208.0] || UprightContainer(U,V,W)*+ P(X,W)* -> DR(X,Place(U,V))*.
+	Given clause: 82[0:Inp] Time(U) Object(V) || UprightContainerShape(Place(U,V),W)* -> UprightContainer(U,V,W).
+	Given clause: 212[0:Res:85.0,211.0] || P(U,skf1(skc2,skc3,skc2))* -> DR(U,Place(skc3,skc2)).
+SPASS V 3.7 
+SPASS beiseite: Proof found.
+Problem: y.dfg 
+SPASS derived 72 clauses, backtracked 0 clauses, performed 0 splits and kept 124 clauses.
+SPASS allocated 52404 KBytes.
+SPASS spent	0:00:00.09 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+Here is a proof with depth 7, length 20 :
+2[0:Inp] ||  -> UContained(skc3,skc2,skc2)*.
+3[0:Inp] || DR(U,U)* -> .
+56[0:Inp] || UprightContainerShape(U,V) -> OpenContainerShape(U,V)*.
+57[0:Inp] || OpenContainerShape(U,V) -> EC(U,V)*.
+58[0:Inp] || EC(U,V)* -> DR(U,V).
+60[0:Inp] || DR(U,V)*+ -> DR(V,U)*.
+77[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+79[0:Inp] || DR(U,V)*+ P(W,U)* -> DR(W,V)*.
+80[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf1(V,U,W))*.
+81[0:Inp] || UContained(U,V,W)*+ -> P(Place(U,V),skf1(V,U,X))*.
+84[0:Res:2.0,81.0] ||  -> P(Place(skc3,skc2),skf1(skc2,skc3,U))*.
+85[0:Res:2.0,80.0] ||  -> UprightContainer(skc3,skc2,skf1(skc2,skc3,skc2))*.
+171[0:Res:57.1,58.0] || OpenContainerShape(U,V) -> DR(U,V)*.
+178[0:Res:171.1,60.0] || OpenContainerShape(U,V) -> DR(V,U)*.
+201[0:Res:178.1,79.0] || OpenContainerShape(U,V)*+ P(W,V)* -> DR(W,U)*.
+208[0:Res:56.1,201.0] || UprightContainerShape(U,V)*+ P(W,V)* -> DR(W,U)*.
+211[0:Res:77.1,208.0] || UprightContainer(U,V,W)*+ P(X,W)* -> DR(X,Place(U,V))*.
+212[0:Res:85.0,211.0] || P(U,skf1(skc2,skc3,skc2))* -> DR(U,Place(skc3,skc2)).
+215[0:Res:84.0,212.0] ||  -> DR(Place(skc3,skc2),Place(skc3,skc2))*.
+216[0:MRR:215.0,3.0] ||  -> .
+Formulae used in the proof : conjecture0 LemSM SCA2 SCA3 SBD4 LemSQ ORD3 axiom43 OCD3
+
+--------------------------SPASS-STOP------------------------------

@@ -1,0 +1,45 @@
+begin_problem(Scenario4b).
+
+
+list_of_descriptions.
+name({*Qualitative Reasoning About Containers - Case 4b*}).
+author({*Professor Ernest Davis, Angelica Chen, Casey McGinley, Noah Frazier-Logue*}).
+status(unsatisfiable).
+description({*12 July 2016*}).
+
+end_of_list.
+
+list_of_symbols.
+
+functions[(Union,2), (C,0), (D,0), (E,0)].
+predicates[(Element,2)].
+
+end_of_list.
+
+list_of_formulae(axioms).
+
+
+% OSD6
+formula(forall([sa,sb,x], equiv(Element(x,Union(sa,sb)), or(Element(x,sa), Element(x,sb)))),OSD6).
+
+% OSA1
+formula(forall([sa,sb],  implies(forall([x], equiv(Element(x,sa), Element(x,sb))), equal(sa,sb)))).
+
+% 4.89 (proof)
+formula(forall([o], equiv(Element(o,C), or(Element(o,D), Element(o,E)))),4dot89).
+
+end_of_list.
+
+list_of_formulae(conjectures).
+
+% 4.90 (NO proof)
+formula(equal(C,Union(D,E))).
+
+end_of_list.
+
+
+list_of_settings(SPASS).
+{*set_flag(DocProof,1).*}
+end_of_list.
+
+end_problem.

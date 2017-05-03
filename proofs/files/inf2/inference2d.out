@@ -1,0 +1,55 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> RigidObject(skc6)*.
+2[0:Inp] ||  -> Lt(skc5,skc4)*.
+3[0:Inp] ||  -> Leq3(U,U,V)*.
+4[0:Inp] ||  -> CContained(skc4,skc7,Singleton(skc6))*.
+5[0:Inp] ||  -> CContained(U,V,Singleton(W))*.
+6[0:Inp] || CContained(skc5,skc7,Singleton(skc6))* -> .
+7[0:Inp] ||  -> NoEntranceCavity(U,V,W,HPlace(X))*.
+8[0:Inp] || NoEntranceCavity(U,V,W,X)* AlwaysIntConn(U,V,Y) Continuous(U,V,Y)* P(Slice(V,Y),Slice(V,W))* -> Lt(skf1(U,V,Z,X1),V)* P(Slice(U,Y),Slice(U,W))*.
+9[0:Inp] || NoEntranceCavity(U,V,W,X)* AlwaysIntConn(U,V,Y) Continuous(U,V,Y)* P(Slice(V,Y),Slice(V,W))* -> Lt(U,skf1(U,Z,X1,X2))* P(Slice(U,Y),Slice(U,W))*.
+10[0:Inp] || NoEntranceCavity(U,V,W,X)* AlwaysIntConn(U,V,Y) Continuous(U,V,Y) P(Slice(V,Y),Slice(V,W))* -> O(Slice(skf1(U,V,X,Y),Y),Slice(skf1(U,V,X,Y),X))* P(Slice(U,Y),Slice(U,W))*.
+ This is a first-order Non-Horn problem without equality.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: RigidObject.
+ Axiom clauses: 6 Conjecture clauses: 4
+ Inferences: IORe=1 IOFc=1 
+ Reductions: RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RFSub=1 RBSub=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: Singleton > HPlace > Place > Slice > skf0 > skf1 > O > Lt > P > Continuous > NoEntranceCavity > Time > RigidObject > CContained > Ordered > Contained > Region > History > Object > ObjectSet > Leq > Leq3 > Cavity > OSPlace > ClosedContainer > RigidHistory > EC > DR > Outside > AlwaysIntConn > Os2 > Ob2a > Ob2b > Ta2 > Tb2 > skc0 > skc1 > skc2 > skc3 > skc4 > skc5 > skc6 > skc7 > skc8 > skc9 > skc10 > skc11
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+1[0:Inp] ||  -> RigidObject(skc6)*.
+2[0:Inp] ||  -> Lt(skc5,skc4)*.
+3[0:Inp] ||  -> Leq3(U,U,V)*.
+5[0:Inp] ||  -> CContained(U,V,Singleton(W))*.
+7[0:Inp] ||  -> NoEntranceCavity(U,V,W,HPlace(X))*.
+8[0:Inp] || P(Slice(U,V),Slice(U,W))* Continuous(X,U,V)* AlwaysIntConn(X,U,V) NoEntranceCavity(X,U,W,Y)* -> P(Slice(X,V),Slice(X,W))* Lt(skf1(X,U,Z,X1),U)*.
+9[0:Inp] || P(Slice(U,V),Slice(U,W))* Continuous(X,U,V)* AlwaysIntConn(X,U,V) NoEntranceCavity(X,U,W,Y)* -> Lt(X,skf1(X,Z,X1,X2))* P(Slice(X,V),Slice(X,W))*.
+10[0:Inp] || P(Slice(U,V),Slice(U,W))* Continuous(X,U,V) AlwaysIntConn(X,U,V) NoEntranceCavity(X,U,W,Y)* -> P(Slice(X,V),Slice(X,W))* O(Slice(skf1(X,U,Y,V),V),Slice(skf1(X,U,Y,V),Y))*.
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: inference2d.dfg 
+SPASS derived 0 clauses, backtracked 0 clauses, performed 0 splits and kept 6 clauses.
+SPASS allocated 45990 KBytes.
+SPASS spent	0:00:00.04 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.00 for the reduction.
+
+
+Here is a proof with depth 0, length 3 :
+5[0:Inp] ||  -> CContained(U,V,Singleton(W))*.
+6[0:Inp] || CContained(skc5,skc7,Singleton(skc6))* -> .
+11[0:MRR:6.0,5.0] ||  -> .
+Formulae used in the proof : axiom0 conjecture0
+
+--------------------------SPASS-STOP------------------------------

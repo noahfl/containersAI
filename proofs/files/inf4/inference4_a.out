@@ -1,0 +1,585 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> Action(StandStill)*.
+2[0:Inp] ||  -> Time(Ta4)*.
+3[0:Inp] ||  -> Time(Tb4)*.
+4[0:Inp] ||  -> Time(Tm1)*.
+5[0:Inp] ||  -> Time(Tm2)*.
+6[0:Inp] ||  -> Object(Ob4)*.
+7[0:Inp] ||  -> Object(Ox4)*.
+8[0:Inp] ||  -> Region(Rc4)*.
+9[0:Inp] ||  -> Region(Ra1)*.
+10[0:Inp] ||  -> Object(Agent)*.
+11[0:Inp] ||  -> AllStable(Ta4)*.
+12[0:Inp] ||  -> EmptyHanded(Ta4)*.
+13[0:Inp] ||  -> SmallObject(Ob4)*.
+14[0:Inp] ||  -> Graspable(Ta4,Ox4)*.
+15[0:Inp] ||  -> Reachable(Ta4,Rc4)*.
+16[0:Inp] ||  -> SafelyMovable(Ta4,Ox4)*.
+17[0:Inp] ||  -> NoPartialContents(Ta4,Ob4)*.
+18[0:Inp] ||  -> SafelyMovable(U,V)*.
+19[0:Inp] ||  -> CanGrasp(Tm1,Ox4)*.
+20[0:Inp] ||  -> UprightContainer(Ta4,Ob4,Rc4)*.
+21[0:Inp] || equal(Agent,Ox4)** -> .
+22[0:Inp] || equal(Agent,Ob4)** -> .
+23[0:Inp] || equal(Ox4,Ob4)** -> .
+24[0:Inp] || SmallObject(U) -> Object(U)*.
+25[0:Inp] || AllStable(U)* -> Time(U).
+26[0:Inp] || EmptyHanded(U) -> Time(U)*.
+27[0:Inp] || BoxedIn(Ta4,Agent,Ox4)* -> .
+28[0:Inp] ||  -> Time(U)* Feasible(V,W)*.
+29[0:Inp] ||  -> Occurs(Ta4,Tm1,TravelTo(Ra1))*.
+30[0:Inp] || Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))* -> .
+31[0:Inp] || Region(U) -> Region(ConvexHull(U))*.
+32[0:Inp] || Object(U) -> ObjectSet(Singleton(U))*.
+33[0:Inp] || Region(U) -> Action(TravelTo(U))*.
+34[0:Inp] || Object(U) -> History(HPlace(U))*.
+35[0:Inp] || Feasible(U,V)* -> Time(U).
+36[0:Inp] || Feasible(U,V)* -> Action(V).
+37[0:Inp] || Element(U,V)* -> Object(U).
+38[0:Inp] || Element(U,V)* -> ObjectSet(V).
+39[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+40[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+41[0:Inp] || FullyOutside(U,V)* -> Region(U).
+42[0:Inp] || FullyOutside(U,V)* -> Region(V).
+43[0:Inp] || Reachable(U,V)* -> Time(U).
+44[0:Inp] || Reachable(U,V)* -> Region(V).
+45[0:Inp] || P(U,V)* -> Region(U).
+46[0:Inp] || P(U,V)* -> Region(V).
+47[0:Inp] || SkP0(U,V)* -> Region(V).
+48[0:Inp] || SkP0(U,V)* -> Region(U).
+49[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+50[0:Inp] || SmallSet(U,V)* -> Region(V).
+51[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+52[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+53[0:Inp] || CanGrasp(U,V)* -> Time(U).
+54[0:Inp] || CanGrasp(U,V)* -> Object(V).
+55[0:Inp] || Grasp(U,V)* -> Time(U).
+56[0:Inp] || Grasp(U,V)* -> Object(V).
+57[0:Inp] || Graspable(U,V)* -> Time(U).
+58[0:Inp] || Graspable(U,V)* -> Object(V).
+59[0:Inp] || equal(skf15(U,V),Agent)** -> .
+60[0:Inp] ||  -> Feasible(Tm1,TravelTo(Place(Ta4,Agent)))*.
+61[0:Inp] ||  -> Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4))*.
+62[0:Inp] || Occurs(U,V,W)* -> Time(U).
+63[0:Inp] || Occurs(U,V,W)* -> Time(V).
+64[0:Inp] || Occurs(U,V,W)* -> Action(W).
+65[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+66[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+67[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+68[0:Inp] || UContained(U,V,W)* -> Time(U).
+69[0:Inp] || UContained(U,V,W)* -> Object(V).
+70[0:Inp] || UContained(U,V,W)* -> Object(W).
+71[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+72[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+73[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+74[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+75[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+76[0:Inp] || Moves(U,V,W)* -> Time(U).
+77[0:Inp] || Moves(U,V,W)* -> Time(V).
+78[0:Inp] || Moves(U,V,W)* -> Object(W).
+79[0:Inp] || SkP1(U,V,W)* -> Time(W).
+80[0:Inp] || SkP1(U,V,W)* -> Time(V).
+81[0:Inp] || SkP1(U,V,W)* -> Object(U).
+82[0:Inp] ||  -> FullyOutside(Place(Ta4,Ox4),Place(Ta4,Ob4))*.
+83[0:Inp] ||  -> FullyOutside(Place(Ta4,Agent),Place(Ta4,Ob4))*.
+84[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+85[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+86[0:Inp] || UContained(U,V,W)* -> Object(V).
+87[0:Inp] || UContained(U,Agent,V)* SmallObject(V) -> .
+88[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+89[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
+90[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
+91[0:Inp] ||  -> SmallSet(Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)),Rc4)*.
+92[0:Inp] || Graspable(U,V)* -> CanGrasp(skf10(V,W),V)*.
+93[0:Inp] || EmptyHanded(U) -> Feasible(U,TravelTo(Place(U,Agent)))*.
+94[0:Inp] || UContained(Tm1,U,Ob4)* -> UContained(Ta4,U,Ob4).
+95[0:Inp] || UContained(Ta4,U,Ob4) -> UContained(Tm1,U,Ob4)*.
+96[0:Inp] || Action(U) Action(V) -> Action(Sequence(U,V))*.
+97[0:Inp] || Region(U) Region(V) -> Region(RUnion(U,V))*.
+98[0:Inp] || Object(U) Object(V) -> ObjectSet(Pair(U,V))*.
+99[0:Inp] || ObjectSet(U) ObjectSet(V) -> ObjectSet(Union(U,V))*.
+100[0:Inp] || Time(U) Object(V) -> Region(Place(U,V))*.
+101[0:Inp] || Time(U) Region(V) -> ObjectSet(Contents(U,V))*.
+102[0:Inp] || Time(U) ObjectSet(V) -> ObjectSet(CContents(U,V))*.
+103[0:Inp] || Time(U) Object(V) -> ObjectSet(UContents(U,V))*.
+104[0:Inp] || Object(U) Region(V) -> Action(ManipTo(U,V))*.
+105[0:Inp] || Time(U) History(V) -> Region(Slice(U,V))*.
+106[0:Inp] || History(U) History(V) -> History(HUnion(U,V))*.
+107[0:Inp] || Time(U) Object(V) -> ObjectSet(MovingGroup(U,V))*.
+108[0:Inp] || Object(U) Object(V) -> Action(PutInUC(U,V))*.
+109[0:Inp] || Object(U) Object(V) -> Action(LoadUprightContainer(U,V))*.
+110[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+111[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf12(V,U,W))*.
+112[0:Inp] || Graspable(U,V) -> Occurs(U,skf10(V,U),TravelTo(skf11(V,U)))*.
+113[0:Inp] || Occurs(U,V,TravelTo(W))* CanGrasp(V,X)* -> Graspable(U,X)*.
+114[0:Inp] || UContained(U,V,W)* -> P(Place(U,V),skf12(V,U,X))*.
+115[0:Inp] || Feasible(U,V) Time(skc23) -> Occurs(U,skf18(V,U),V)*.
+116[0:Inp] || UprightContainerShape(Place(U,V),W)* Object(V) Time(U) -> UprightContainer(U,V,W).
+117[0:Inp] || UprightContainer(U,V,W)* P(Place(U,X),W)* Object(X) -> UContained(U,X,V)*.
+118[0:Inp] || ObjectSet(U) ObjectSet(V) -> Element(skf14(V,U),U)* Element(skf14(V,U),V)* equal(U,V).
+119[0:Inp] || Element(skf14(U,V),V)* Element(skf14(U,V),U)* ObjectSet(V) ObjectSet(U) -> equal(V,U).
+120[0:Inp] || Occurs(U,V,PutInUC(W,X))* FullyOutside(Y,Place(U,X))* Feasible(U,TravelTo(Y)) -> Feasible(V,TravelTo(Y))*.
+121[0:Inp] || Occurs(U,V,TravelTo(W))* EmptyHanded(U) AllStable(U) Reachable(U,X)* Region(W) -> Reachable(V,X)*.
+122[0:Inp] || UContained(U,V,W)* equal(X,UContents(U,W))* Time(U) Object(W) ObjectSet(X) -> Element(V,X)*.
+123[0:Inp] || Element(U,V)* equal(V,UContents(W,X))* Time(W) Object(X) ObjectSet(V) -> UContained(W,U,X)*.
+124[0:Inp] || Occurs(U,V,TravelTo(W))* AllStable(U) EmptyHanded(U) Region(W) Object(X)* -> AllStable(V) equal(X,Agent).
+125[0:Inp] || Occurs(U,V,TravelTo(W))* EmptyHanded(U) AllStable(U) Feasible(U,TravelTo(X))* Region(W) -> Feasible(V,TravelTo(X))*.
+126[0:Inp] || Occurs(U,V,Sequence(W,X)) Time(U) Time(V) Action(W) Action(X) -> Occurs(skf19(W,U,X,V),V,X)*.
+127[0:Inp] || Occurs(U,V,Sequence(W,X))* Time(U) Time(V) Action(W) Action(X) -> Occurs(U,skf19(W,U,Y,Z),W)*.
+128[0:Inp] || Time(U) Object(V) ObjectSet(W) -> Element(skf13(V,U,W),W)* UContained(U,skf13(V,U,W),V)* equal(W,UContents(U,V)).
+129[0:Inp] || Occurs(U,V,W)* Occurs(V,X,Y)* Time(U) Time(X) Action(W) Action(Y) -> Occurs(U,X,Sequence(W,Y))*.
+130[0:Inp] || Occurs(U,V,LoadUprightContainer(W,X))* Time(U) Time(V) Object(W) Object(X) -> FullyOutside(skf16(X,U,Y,Z),Place(U,X))*.
+131[0:Inp] || Occurs(U,V,TravelTo(W))* AllStable(U) EmptyHanded(U) Region(W) Object(X) -> equal(Place(V,X),Place(U,X))* equal(X,Agent).
+132[0:Inp] || Element(skf13(U,V,W),W)* UContained(V,skf13(U,V,W),U)* Time(V) Object(U) ObjectSet(W) -> equal(W,UContents(V,U)).
+133[0:Inp] || Object(U) CanGrasp(V,U) Occurs(W,V,TravelTo(X))* EmptyHanded(W) AllStable(W) Region(X) -> equal(U,Agent) BoxedIn(W,Agent,U)* equal(MovingGroup(V,U),MovingGroup(W,U))*.
+134[0:Inp] || Occurs(U,V,Sequence(TravelTo(W),Sequence(PutInUC(X,Y),TravelTo(Z))))* FullyOutside(Z,Place(U,Y)) Time(U) Time(V) Object(X) Object(Y) -> Occurs(U,V,LoadUprightContainer(X,Y)).
+135[0:Inp] || CanGrasp(U,V) SafelyMovable(U,V) SmallSet(Union(UContents(U,W),MovingGroup(U,V)),X)* Reachable(U,X) UprightContainer(U,W,X) AllStable(U) SmallObject(W) -> Feasible(U,PutInUC(V,W)).
+136[0:Inp] || Occurs(U,V,LoadUprightContainer(W,X)) Time(U) Time(V) Object(W) Object(X) -> Occurs(U,V,Sequence(TravelTo(skf17(X,W,V,U)),Sequence(PutInUC(W,X),TravelTo(skf16(X,U,W,V)))))*.
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that has, if any, a non-trivial domain model.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ The following monadic predicates have finite extensions: SmallObject, EmptyHanded.
+ Axiom clauses: 135 Conjecture clauses: 1
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=2 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf19 > skf17 > skf16 > skf9 > skf7 > skf6 > skf13 > skf12 > skf3 > skf2 > skf18 > skf15 > skf14 > skf11 > skf10 > skf8 > skf5 > skf4 > skf1 > skf0 > HUnion > Slice > ManipTo > CContents > Pair > RUnion > Sequence > LoadUprightContainer > PutInUC > MovingGroup > Contents > UContents > Union > Place > HPlace > Singleton > ConvexHull > TravelTo > SkP0 > History > Feasible > Element > P > UContained > UprightContainerShape > CanGrasp > Action > Occurs > BoxedIn > Reachable > Graspable > AllStable > ObjectSet > FullyOutside > UprightContainer > Region > Object > Time > SmallSet > EmptyHanded > SafelyMovable > SmallObject > NoPartialContents > Lt > Leq > Leq3 > SkP1 > Motionless > Released > Grasp > Moves > skc27 > skc26 > skc25 > skc24 > skc23 > skc22 > skc21 > skc20 > skc19 > skc18 > skc17 > skc16 > skc15 > skc14 > skc13 > skc12 > skc11 > skc10 > skc9 > skc8 > skc7 > skc6 > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Tb4 > Tm2 > StandStill > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+13[0:Inp] ||  -> SmallObject(Ob4)*.
+12[0:Inp] ||  -> EmptyHanded(Ta4)*.
+11[0:Inp] ||  -> AllStable(Ta4)*.
+1[0:Inp] ||  -> Action(StandStill)*.
+9[0:Inp] ||  -> Region(Ra1)*.
+8[0:Inp] ||  -> Region(Rc4)*.
+137[0:MRR:40.0,18.0] ||  -> Object(U)*.
+138[0:MRR:39.0,18.0] ||  -> Time(U)*.
+17[0:Inp] ||  -> NoPartialContents(Ta4,Ob4)*.
+14[0:Inp] ||  -> Graspable(Ta4,Ox4)*.
+19[0:Inp] ||  -> CanGrasp(Tm1,Ox4)*.
+15[0:Inp] ||  -> Reachable(Ta4,Rc4)*.
+139[0:MRR:34.0,137.0] ||  -> History(HPlace(U))*.
+140[0:MRR:32.0,137.0] ||  -> ObjectSet(Singleton(U))*.
+18[0:Inp] ||  -> SafelyMovable(U,V)*.
+20[0:Inp] ||  -> UprightContainer(Ta4,Ob4,Rc4)*.
+23[0:Inp] || equal(Ox4,Ob4)** -> .
+22[0:Inp] || equal(Agent,Ob4)** -> .
+21[0:Inp] || equal(Agent,Ox4)** -> .
+141[0:MRR:109.0,109.1,137.0,137.0] ||  -> Action(LoadUprightContainer(U,V))*.
+142[0:MRR:108.0,108.1,137.0,137.0] ||  -> Action(PutInUC(U,V))*.
+143[0:MRR:107.0,107.1,138.0,137.0] ||  -> ObjectSet(MovingGroup(U,V))*.
+146[0:MRR:103.0,103.1,138.0,137.0] ||  -> ObjectSet(UContents(U,V))*.
+150[0:MRR:98.0,98.1,137.0,137.0] ||  -> ObjectSet(Pair(U,V))*.
+149[0:MRR:100.0,100.1,138.0,137.0] ||  -> Region(Place(U,V))*.
+29[0:Inp] ||  -> Occurs(Ta4,Tm1,TravelTo(Ra1))*.
+27[0:Inp] || BoxedIn(Ta4,Agent,Ox4)* -> .
+61[0:Inp] ||  -> Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4))*.
+60[0:Inp] ||  -> Feasible(Tm1,TravelTo(Place(Ta4,Agent)))*.
+30[0:Inp] || Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))* -> .
+33[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+31[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+59[0:Inp] || equal(skf15(U,V),Agent)** -> .
+36[0:Inp] || Feasible(U,V)* -> Action(V).
+49[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+38[0:Inp] || Element(U,V)* -> ObjectSet(V).
+50[0:Inp] || SmallSet(U,V)* -> Region(V).
+48[0:Inp] || SkP0(U,V)* -> Region(U).
+47[0:Inp] || SkP0(U,V)* -> Region(V).
+46[0:Inp] || P(U,V)* -> Region(V).
+45[0:Inp] || P(U,V)* -> Region(U).
+44[0:Inp] || Reachable(U,V)* -> Region(V).
+42[0:Inp] || FullyOutside(U,V)* -> Region(V).
+41[0:Inp] || FullyOutside(U,V)* -> Region(U).
+83[0:Inp] ||  -> FullyOutside(Place(Ta4,Agent),Place(Ta4,Ob4))*.
+82[0:Inp] ||  -> FullyOutside(Place(Ta4,Ox4),Place(Ta4,Ob4))*.
+145[0:MRR:104.0,137.0] Region(U) ||  -> Action(ManipTo(V,U))*.
+147[0:MRR:102.0,138.0] ObjectSet(U) ||  -> ObjectSet(CContents(V,U))*.
+148[0:MRR:101.0,138.0] Region(U) ||  -> ObjectSet(Contents(V,U))*.
+144[0:MRR:105.0,138.0] History(U) ||  -> Region(Slice(V,U))*.
+75[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+74[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+64[0:Inp] || Occurs(U,V,W)* -> Action(W).
+67[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+169[0:Res:88.1,30.0] || Occurs(Ta4,U,LoadUprightContainer(Ox4,Ob4))* -> .
+87[0:Inp] SmallObject(U) || UContained(V,Agent,U)* -> .
+88[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+91[0:Inp] ||  -> SmallSet(Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)),Rc4)*.
+93[0:Inp] EmptyHanded(U) ||  -> Feasible(U,TravelTo(Place(U,Agent)))*.
+95[0:Inp] || UContained(Ta4,U,Ob4) -> UContained(Tm1,U,Ob4)*.
+94[0:Inp] || UContained(Tm1,U,Ob4)* -> UContained(Ta4,U,Ob4).
+90[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
+89[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
+92[0:Inp] || Graspable(U,V)* -> CanGrasp(skf10(V,W),V)*.
+106[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+96[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+99[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+97[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+151[0:MRR:115.1,138.0] || Feasible(U,V) -> Occurs(U,skf18(V,U),V)*.
+152[0:MRR:116.0,116.1,137.0,138.0] || UprightContainerShape(Place(U,V),W)* -> UprightContainer(U,V,W).
+110[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+111[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf12(V,U,W))*.
+112[0:Inp] || Graspable(U,V) -> Occurs(U,skf10(V,U),TravelTo(skf11(V,U)))*.
+114[0:Inp] || UContained(U,V,W)* -> P(Place(U,V),skf12(V,U,X))*.
+113[0:Inp] || CanGrasp(U,V)* Occurs(W,U,TravelTo(X))* -> Graspable(W,V)*.
+156[0:MRR:123.0,123.1,123.2,138.0,137.0,38.1] || Element(U,V)* equal(V,UContents(W,X))* -> UContained(W,U,X)*.
+154[0:MRR:119.0,119.1,38.1,38.1] || Element(skf14(U,V),U)* Element(skf14(U,V),V)* -> equal(V,U).
+153[0:MRR:117.0,137.0] || P(Place(U,V),W)* UprightContainer(U,X,W)* -> UContained(U,V,X)*.
+161[0:MRR:129.0,129.1,129.2,129.3,138.0,138.0,64.1,64.1] || Occurs(U,V,W)* Occurs(X,U,Y)* -> Occurs(X,V,Sequence(Y,W))*.
+162[0:MRR:130.0,130.1,130.2,130.3,138.0,138.0,137.0,137.0] || Occurs(U,V,LoadUprightContainer(W,X))* -> FullyOutside(skf16(X,U,Y,Z),Place(U,X))*.
+155[0:MRR:122.0,122.1,138.0,137.0] ObjectSet(U) || equal(U,UContents(V,W))* UContained(V,X,W)* -> Element(X,U)*.
+118[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> equal(V,U) Element(skf14(U,V),U)* Element(skf14(U,V),V)*.
+164[0:MRR:132.0,132.1,132.2,138.0,137.0,38.1] || Element(skf13(U,V,W),W)* UContained(V,skf13(U,V,W),U)* -> equal(W,UContents(V,U)).
+157[0:MRR:124.3,137.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> AllStable(W) equal(X,Agent)*.
+160[0:MRR:128.0,128.1,138.0,137.0] ObjectSet(U) ||  -> equal(U,UContents(V,W)) Element(skf13(W,V,U),U)* UContained(V,skf13(W,V,U),W)*.
+158[0:MRR:126.0,126.1,138.0,138.0] Action(U) Action(V) || Occurs(W,X,Sequence(V,U)) -> Occurs(skf19(V,W,U,X),X,U)*.
+159[0:MRR:127.0,127.1,138.0,138.0] Action(U) Action(V) || Occurs(W,X,Sequence(V,U))* -> Occurs(W,skf19(V,W,Y,Z),V)*.
+121[0:Inp] Region(U) AllStable(V) EmptyHanded(V) || Reachable(V,W)* Occurs(V,X,TravelTo(U))* -> Reachable(X,W)*.
+120[0:Inp] || Feasible(U,TravelTo(V)) FullyOutside(V,Place(U,W))* Occurs(U,X,PutInUC(Y,W))* -> Feasible(X,TravelTo(V))*.
+125[0:Inp] Region(U) AllStable(V) EmptyHanded(V) || Feasible(V,TravelTo(W))* Occurs(V,X,TravelTo(U))* -> Feasible(X,TravelTo(W))*.
+163[0:MRR:131.3,137.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> equal(X,Agent) equal(Place(W,X),Place(V,X))*.
+166[0:MRR:134.0,134.1,134.2,134.3,138.0,138.0,137.0,137.0] || FullyOutside(U,Place(V,W)) Occurs(V,X,Sequence(TravelTo(Y),Sequence(PutInUC(Z,W),TravelTo(U))))* -> Occurs(V,X,LoadUprightContainer(Z,W)).
+168[0:MRR:136.0,136.1,136.2,136.3,138.0,138.0,137.0,137.0] || Occurs(U,V,LoadUprightContainer(W,X)) -> Occurs(U,V,Sequence(TravelTo(skf17(X,W,V,U)),Sequence(PutInUC(W,X),TravelTo(skf16(X,U,W,V)))))*.
+165[0:MRR:133.0,137.0] Region(U) AllStable(V) EmptyHanded(V) || CanGrasp(W,X) Occurs(V,W,TravelTo(U))* -> equal(X,Agent) equal(MovingGroup(W,X),MovingGroup(V,X))* BoxedIn(V,Agent,X)*.
+167[0:MRR:135.6,18.0] SmallObject(U) AllStable(V) || CanGrasp(V,W) Reachable(V,X) SmallSet(Union(UContents(V,U),MovingGroup(V,W)),X)* UprightContainer(V,U,X) -> Feasible(V,PutInUC(W,U)).
+	Given clause: 157[0:MRR:124.3,137.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))*+ -> AllStable(W) equal(X,Agent)*.
+	Given clause: 170[1:Spt:157.0,157.1,157.2,157.3,157.4] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))* -> AllStable(W).
+	Given clause: 13[0:Inp] ||  -> SmallObject(Ob4)*.
+	Given clause: 12[0:Inp] ||  -> EmptyHanded(Ta4)*.
+	Given clause: 11[0:Inp] ||  -> AllStable(Ta4)*.
+	Given clause: 1[0:Inp] ||  -> Action(StandStill)*.
+	Given clause: 9[0:Inp] ||  -> Region(Ra1)*.
+	Given clause: 8[0:Inp] ||  -> Region(Rc4)*.
+	Given clause: 137[0:MRR:40.0,18.0] ||  -> Object(U)*.
+	Given clause: 138[0:MRR:39.0,18.0] ||  -> Time(U)*.
+	Given clause: 17[0:Inp] ||  -> NoPartialContents(Ta4,Ob4)*.
+	Given clause: 14[0:Inp] ||  -> Graspable(Ta4,Ox4)*.
+	Given clause: 19[0:Inp] ||  -> CanGrasp(Tm1,Ox4)*.
+	Given clause: 15[0:Inp] ||  -> Reachable(Ta4,Rc4)*.
+	Given clause: 139[0:MRR:34.0,137.0] ||  -> History(HPlace(U))*.
+	Given clause: 140[0:MRR:32.0,137.0] ||  -> ObjectSet(Singleton(U))*.
+	Given clause: 18[0:Inp] ||  -> SafelyMovable(U,V)*.
+	Given clause: 20[0:Inp] ||  -> UprightContainer(Ta4,Ob4,Rc4)*.
+	Given clause: 23[0:Inp] || equal(Ox4,Ob4)** -> .
+	Given clause: 22[0:Inp] || equal(Agent,Ob4)** -> .
+	Given clause: 21[0:Inp] || equal(Agent,Ox4)** -> .
+	Given clause: 141[0:MRR:109.0,109.1,137.0,137.0] ||  -> Action(LoadUprightContainer(U,V))*.
+	Given clause: 142[0:MRR:108.0,108.1,137.0,137.0] ||  -> Action(PutInUC(U,V))*.
+	Given clause: 143[0:MRR:107.0,107.1,138.0,137.0] ||  -> ObjectSet(MovingGroup(U,V))*.
+	Given clause: 146[0:MRR:103.0,103.1,138.0,137.0] ||  -> ObjectSet(UContents(U,V))*.
+	Given clause: 150[0:MRR:98.0,98.1,137.0,137.0] ||  -> ObjectSet(Pair(U,V))*.
+	Given clause: 149[0:MRR:100.0,100.1,138.0,137.0] ||  -> Region(Place(U,V))*.
+	Given clause: 29[0:Inp] ||  -> Occurs(Ta4,Tm1,TravelTo(Ra1))*.
+	Given clause: 172[1:SSi:171.2,171.1,171.0,12.0,11.0,12.0,11.0,9.0] ||  -> AllStable(Tm1)*.
+	Given clause: 27[0:Inp] || BoxedIn(Ta4,Agent,Ox4)* -> .
+	Given clause: 61[0:Inp] ||  -> Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4))*.
+	Given clause: 60[0:Inp] ||  -> Feasible(Tm1,TravelTo(Place(Ta4,Agent)))*.
+	Given clause: 30[0:Inp] || Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))* -> .
+	Given clause: 33[0:Inp] Region(U) ||  -> Action(TravelTo(U))*.
+	Given clause: 31[0:Inp] Region(U) ||  -> Region(ConvexHull(U))*.
+	Given clause: 59[0:Inp] || equal(skf15(U,V),Agent)** -> .
+	Given clause: 36[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 173[0:Res:60.0,36.0] ||  -> Action(TravelTo(Place(Ta4,Agent)))*.
+	Given clause: 49[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 38[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 50[0:Inp] || SmallSet(U,V)* -> Region(V).
+	Given clause: 48[0:Inp] || SkP0(U,V)* -> Region(U).
+	Given clause: 47[0:Inp] || SkP0(U,V)* -> Region(V).
+	Given clause: 46[0:Inp] || P(U,V)* -> Region(V).
+	Given clause: 45[0:Inp] || P(U,V)* -> Region(U).
+	Given clause: 44[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 42[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 41[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 83[0:Inp] ||  -> FullyOutside(Place(Ta4,Agent),Place(Ta4,Ob4))*.
+	Given clause: 82[0:Inp] ||  -> FullyOutside(Place(Ta4,Ox4),Place(Ta4,Ob4))*.
+	Given clause: 169[0:Res:88.1,30.0] || Occurs(Ta4,U,LoadUprightContainer(Ox4,Ob4))* -> .
+	Given clause: 145[0:MRR:104.0,137.0] Region(U) ||  -> Action(ManipTo(V,U))*.
+	Given clause: 147[0:MRR:102.0,138.0] ObjectSet(U) ||  -> ObjectSet(CContents(V,U))*.
+	Given clause: 148[0:MRR:101.0,138.0] Region(U) ||  -> ObjectSet(Contents(V,U))*.
+	Given clause: 144[0:MRR:105.0,138.0] History(U) ||  -> Region(Slice(V,U))*.
+	Given clause: 75[0:Inp] || UprightContainerShape(U,V) -> SkP0(V,U)*.
+	Given clause: 74[0:Inp] || FullyOutside(U,V) -> SkP0(V,U)*.
+	Given clause: 179[0:Res:75.1,47.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 180[0:Res:75.1,48.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 64[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 183[0:Res:29.0,64.0] ||  -> Action(TravelTo(Ra1))*.
+	Given clause: 67[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 87[0:Inp] SmallObject(U) || UContained(V,Agent,U)* -> .
+	Given clause: 88[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+	Given clause: 186[0:Res:29.0,88.0] ||  -> Feasible(Ta4,TravelTo(Ra1))*.
+	Given clause: 187[0:Res:61.0,88.0] ||  -> Feasible(Tm1,PutInUC(Ox4,Ob4))*.
+	Given clause: 91[0:Inp] ||  -> SmallSet(Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)),Rc4)*.
+	Given clause: 191[0:Res:91.0,49.0] ||  -> ObjectSet(Union(UContents(Ta4,Ob4),MovingGroup(Ta4,Ox4)))*.
+	Given clause: 95[0:Inp] || UContained(Ta4,U,Ob4) -> UContained(Tm1,U,Ob4)*.
+	Given clause: 94[0:Inp] || UContained(Tm1,U,Ob4)* -> UContained(Ta4,U,Ob4).
+	Given clause: 93[0:Inp] EmptyHanded(U) ||  -> Feasible(U,TravelTo(Place(U,Agent)))*.
+	Given clause: 92[0:Inp] || Graspable(U,V)*+ -> CanGrasp(skf10(V,W),V)*.
+	Given clause: 195[0:Res:14.0,92.0] ||  -> CanGrasp(skf10(Ox4,U),Ox4)*.
+	Given clause: 194[0:Res:93.1,36.0] EmptyHanded(U) ||  -> Action(TravelTo(Place(U,Agent)))*.
+	Given clause: 90[0:Inp] || Motionless(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 89[0:Inp] || Released(U,V,W) -> SkP1(W,V,U)*.
+	Given clause: 106[0:Inp] History(U) History(V) ||  -> History(HUnion(V,U))*.
+	Given clause: 96[0:Inp] Action(U) Action(V) ||  -> Action(Sequence(V,U))*.
+	Given clause: 99[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> ObjectSet(Union(V,U))*.
+	Given clause: 97[0:Inp] Region(U) Region(V) ||  -> Region(RUnion(V,U))*.
+	Given clause: 151[0:MRR:115.1,138.0] || Feasible(U,V) -> Occurs(U,skf18(V,U),V)*.
+	Given clause: 152[0:MRR:116.0,116.1,137.0,138.0] || UprightContainerShape(Place(U,V),W)* -> UprightContainer(U,V,W).
+	Given clause: 110[0:Inp] || UprightContainer(U,V,W) -> UprightContainerShape(Place(U,V),W)*.
+	Given clause: 111[0:Inp] || UContained(U,V,W) -> UprightContainer(U,W,skf12(V,U,W))*.
+	Given clause: 203[0:Res:111.1,67.0] || UContained(U,V,W) -> Region(skf12(V,U,W))*.
+	Given clause: 112[0:Inp] || Graspable(U,V) -> Occurs(U,skf10(V,U),TravelTo(skf11(V,U)))*.
+	Given clause: 113[0:Inp] || CanGrasp(U,V)* Occurs(W,U,TravelTo(X))*+ -> Graspable(W,V)*.
+	Given clause: 207[0:Res:29.0,113.1] || CanGrasp(Tm1,U)* -> Graspable(Ta4,U).
+	Given clause: 206[0:Res:112.1,64.0] || Graspable(U,V) -> Action(TravelTo(skf11(V,U)))*.
+	Given clause: 205[0:Res:112.1,88.0] || Graspable(U,V) -> Feasible(U,TravelTo(skf11(V,U)))*.
+	Given clause: 209[0:Res:112.1,113.1] || Graspable(U,V) CanGrasp(skf10(V,U),W)* -> Graspable(U,W).
+	Given clause: 114[0:Inp] || UContained(U,V,W)*+ -> P(Place(U,V),skf12(V,U,X))*.
+	Given clause: 213[0:Res:95.1,114.0] || UContained(Ta4,U,Ob4) -> P(Place(Tm1,U),skf12(U,Tm1,V))*.
+	Given clause: 215[0:Res:213.1,46.0] || UContained(Ta4,U,Ob4) -> Region(skf12(U,Tm1,V))*.
+	Given clause: 156[0:MRR:123.0,123.1,123.2,138.0,137.0,38.1] || Element(U,V)* equal(V,UContents(W,X))*+ -> UContained(W,U,X)*.
+	Given clause: 216[0:EqR:156.1] || Element(U,UContents(V,W))* -> UContained(V,U,W).
+	Given clause: 154[0:MRR:119.0,119.1,38.1,38.1] || Element(skf14(U,V),U)*+ Element(skf14(U,V),V)* -> equal(V,U).
+	Given clause: 208[0:Res:151.1,113.1] || Feasible(U,TravelTo(V)) CanGrasp(skf18(TravelTo(V),U),W)* -> Graspable(U,W).
+	Given clause: 153[0:MRR:117.0,137.0] || P(Place(U,V),W)*+ UprightContainer(U,X,W)* -> UContained(U,V,X)*.
+	Given clause: 161[0:MRR:129.0,129.1,129.2,129.3,138.0,138.0,64.1,64.1] || Occurs(U,V,W)*+ Occurs(X,U,Y)* -> Occurs(X,V,Sequence(Y,W))*.
+	Given clause: 218[0:Res:29.0,161.0] || Occurs(U,Ta4,V) -> Occurs(U,Tm1,Sequence(V,TravelTo(Ra1)))*.
+	Given clause: 162[0:MRR:130.0,130.1,130.2,130.3,138.0,138.0,137.0,137.0] || Occurs(U,V,LoadUprightContainer(W,X))*+ -> FullyOutside(skf16(X,U,Y,Z),Place(U,X))*.
+	Given clause: 224[0:Res:218.1,64.0] || Occurs(U,Ta4,V)*+ -> Action(Sequence(V,TravelTo(Ra1)))*.
+	Given clause: 223[0:Res:218.1,88.0] || Occurs(U,Ta4,V) -> Feasible(U,Sequence(V,TravelTo(Ra1)))*.
+	Given clause: 219[0:Res:61.0,161.0] || Occurs(U,Tm1,V) -> Occurs(U,Tm2,Sequence(V,PutInUC(Ox4,Ob4)))*.
+	Given clause: 229[0:Res:219.1,64.0] || Occurs(U,Tm1,V)*+ -> Action(Sequence(V,PutInUC(Ox4,Ob4)))*.
+	Given clause: 155[0:MRR:122.0,122.1,138.0,137.0] ObjectSet(U) || equal(U,UContents(V,W))*+ UContained(V,X,W)* -> Element(X,U)*.
+	Given clause: 230[0:Res:29.0,229.0] ||  -> Action(Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4)))*.
+	Given clause: 233[0:SSi:232.0,146.0] || UContained(U,V,W) -> Element(V,UContents(U,W))*.
+	Given clause: 228[0:Res:219.1,88.0] || Occurs(U,Tm1,V) -> Feasible(U,Sequence(V,PutInUC(Ox4,Ob4)))*.
+	Given clause: 231[0:Res:218.1,229.0] || Occurs(U,Ta4,V)*+ -> Action(Sequence(Sequence(V,TravelTo(Ra1)),PutInUC(Ox4,Ob4)))*.
+	Given clause: 118[0:Inp] ObjectSet(U) ObjectSet(V) ||  -> equal(V,U) Element(skf14(U,V),U)* Element(skf14(U,V),V)*.
+	Given clause: 225[0:Res:151.1,162.0] || Feasible(U,LoadUprightContainer(V,W))*+ -> FullyOutside(skf16(W,U,X,Y),Place(U,W))*.
+	Given clause: 217[0:Res:213.1,153.0] || UContained(Ta4,U,Ob4) UprightContainer(Tm1,V,skf12(U,Tm1,W))* -> UContained(Tm1,U,V).
+	Given clause: 220[0:Res:151.1,161.0] || Feasible(U,V) Occurs(W,U,X) -> Occurs(W,skf18(V,U),Sequence(X,V))*.
+	Given clause: 249[0:Res:220.2,64.0] || Feasible(U,V)* Occurs(W,U,X)*+ -> Action(Sequence(X,V))*.
+	Given clause: 164[0:MRR:132.0,132.1,132.2,138.0,137.0,38.1] || Element(skf13(U,V,W),W)* UContained(V,skf13(U,V,W),U)*+ -> equal(W,UContents(V,U)).
+	Given clause: 250[0:Res:29.0,249.1] || Feasible(Tm1,U) -> Action(Sequence(TravelTo(Ra1),U))*.
+	Given clause: 251[0:Res:61.0,249.1] || Feasible(Tm2,U) -> Action(Sequence(PutInUC(Ox4,Ob4),U))*.
+	Given clause: 252[0:Res:151.1,249.1] || Feasible(U,V) Feasible(skf18(V,U),W)* -> Action(Sequence(V,W)).
+	Given clause: 248[0:Res:220.2,88.0] || Feasible(U,V)* Occurs(W,U,X)*+ -> Feasible(W,Sequence(X,V))*.
+	Given clause: 158[0:MRR:126.0,126.1,138.0,138.0] Action(U) Action(V) || Occurs(W,X,Sequence(V,U)) -> Occurs(skf19(V,W,U,X),X,U)*.
+	Given clause: 262[0:Res:29.0,248.1] || Feasible(Tm1,U) -> Feasible(Ta4,Sequence(TravelTo(Ra1),U))*.
+	Given clause: 263[0:Res:61.0,248.1] || Feasible(Tm2,U) -> Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),U))*.
+	Given clause: 264[0:Res:151.1,248.1] || Feasible(U,V) Feasible(skf18(V,U),W)* -> Feasible(U,Sequence(V,W)).
+	Given clause: 254[0:Res:218.1,249.1] || Occurs(U,Ta4,V)*+ Feasible(Tm1,W) -> Action(Sequence(Sequence(V,TravelTo(Ra1)),W))*.
+	Given clause: 159[0:MRR:127.0,127.1,138.0,138.0] Action(U) Action(V) || Occurs(W,X,Sequence(V,U))*+ -> Occurs(W,skf19(V,W,Y,Z),V)*.
+	Given clause: 295[0:MRR:294.0,64.1] || Occurs(U,Ta4,V) -> Occurs(U,skf19(V,U,W,X),V)*.
+	Given clause: 297[0:MRR:296.0,64.1] || Occurs(U,Tm1,V) -> Occurs(U,skf19(V,U,W,X),V)*.
+	Given clause: 255[0:Res:219.1,249.1] || Occurs(U,Tm1,V)*+ Feasible(Tm2,W) -> Action(Sequence(Sequence(V,PutInUC(Ox4,Ob4)),W))*.
+	Given clause: 320[0:Res:29.0,255.0] || Feasible(Tm2,U) -> Action(Sequence(Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4)),U))*.
+	Given clause: 160[0:MRR:128.0,128.1,138.0,137.0] ObjectSet(U) ||  -> equal(U,UContents(V,W)) Element(skf13(W,V,U),U)* UContained(V,skf13(W,V,U),W)*.
+	Given clause: 266[0:Res:218.1,248.1] || Occurs(U,Ta4,V) Feasible(Tm1,W) -> Feasible(U,Sequence(Sequence(V,TravelTo(Ra1)),W))*.
+	Given clause: 253[0:Res:112.1,249.1] || Graspable(U,V) Feasible(skf10(V,U),W) -> Action(Sequence(TravelTo(skf11(V,U)),W))*.
+	Given clause: 304[0:Res:295.1,249.1] || Occurs(U,Ta4,V) Feasible(skf19(V,U,W,X),Y)* -> Action(Sequence(V,Y)).
+	Given clause: 314[0:Res:297.1,249.1] || Occurs(U,Tm1,V) Feasible(skf19(V,U,W,X),Y)* -> Action(Sequence(V,Y)).
+	Given clause: 121[0:Inp] Region(U) AllStable(V) EmptyHanded(V) || Reachable(V,W)* Occurs(V,X,TravelTo(U))*+ -> Reachable(X,W)*.
+	Given clause: 348[0:SSi:342.2,342.1,342.0,12.0,11.0,12.0,11.0,9.0] || Reachable(Ta4,U) -> Reachable(Tm1,U)*.
+	Given clause: 298[0:MRR:292.0,292.1,36.1,64.1] || Feasible(U,V)* Occurs(W,U,X)*+ -> Occurs(W,skf19(X,W,Y,Z),X)*.
+	Given clause: 351[0:Res:29.0,298.1] || Feasible(Tm1,U)*+ -> Occurs(Ta4,skf19(TravelTo(Ra1),Ta4,V,W),TravelTo(Ra1))*.
+	Given clause: 361[0:Res:60.0,351.0] ||  -> Occurs(Ta4,skf19(TravelTo(Ra1),Ta4,U,V),TravelTo(Ra1))*.
+	Given clause: 120[0:Inp] || Feasible(U,TravelTo(V)) FullyOutside(V,Place(U,W))* Occurs(U,X,PutInUC(Y,W))*+ -> Feasible(X,TravelTo(V))*.
+	Given clause: 378[1:SSi:369.2,369.1,369.0,12.0,11.0,12.0,11.0,9.0] ||  -> AllStable(skf19(TravelTo(Ra1),Ta4,U,V))*.
+	Given clause: 371[0:Res:361.0,113.1] || CanGrasp(skf19(TravelTo(Ra1),Ta4,U,V),W)* -> Graspable(Ta4,W).
+	Given clause: 379[0:SSi:370.2,370.1,370.0,12.0,11.0,12.0,11.0,9.0] || Reachable(Ta4,U) -> Reachable(skf19(TravelTo(Ra1),Ta4,V,W),U)*.
+	Given clause: 374[0:Res:361.0,249.1] || Feasible(skf19(TravelTo(Ra1),Ta4,U,V),W)* -> Action(Sequence(TravelTo(Ra1),W)).
+	Given clause: 125[0:Inp] Region(U) AllStable(V) EmptyHanded(V) || Feasible(V,TravelTo(W))* Occurs(V,X,TravelTo(U))*+ -> Feasible(X,TravelTo(W))*.
+	Given clause: 399[0:SSi:392.2,392.1,392.0,12.0,11.0,12.0,11.0,9.0] || Feasible(Ta4,TravelTo(U)) -> Feasible(Tm1,TravelTo(U))*.
+	Given clause: 400[0:SSi:393.2,393.1,393.0,12.0,11.0,12.0,11.0,9.0] || Feasible(Ta4,TravelTo(U)) -> Feasible(skf19(TravelTo(Ra1),Ta4,V,W),TravelTo(U))*.
+	Given clause: 404[0:Res:400.1,374.0] || Feasible(Ta4,TravelTo(U)) -> Action(Sequence(TravelTo(Ra1),TravelTo(U)))*.
+	Given clause: 380[0:Res:61.0,120.2] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Tm1,Ob4))* -> Feasible(Tm2,TravelTo(U)).
+	Given clause: 163[0:MRR:131.3,137.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))*+ -> equal(X,Agent) equal(Place(W,X),Place(V,X))*.
+	Given clause: 414[0:SSi:407.2,407.1,407.0,12.0,11.0,12.0,11.0,9.0] ||  -> equal(U,Agent) equal(Place(Tm1,U),Place(Ta4,U))**.
+	Given clause: 418[0:SpR:414.1,110.1] || UprightContainer(Tm1,U,V) -> equal(U,Agent) UprightContainerShape(Place(Ta4,U),V)*.
+	Given clause: 429[0:Res:418.2,152.0] || UprightContainer(Tm1,U,V)* -> equal(U,Agent) UprightContainer(Ta4,U,V).
+	Given clause: 423[0:SpL:414.1,152.0] || UprightContainerShape(Place(Ta4,U),V)* -> equal(U,Agent) UprightContainer(Tm1,U,V).
+	Given clause: 166[0:MRR:134.0,134.1,134.2,134.3,138.0,138.0,137.0,137.0] || FullyOutside(U,Place(V,W)) Occurs(V,X,Sequence(TravelTo(Y),Sequence(PutInUC(Z,W),TravelTo(U))))* -> Occurs(V,X,LoadUprightContainer(Z,W)).
+	Given clause: 431[0:Res:110.1,423.0] || UprightContainer(Ta4,U,V) -> equal(U,Agent) UprightContainer(Tm1,U,V)*.
+	Given clause: 426[0:MRR:425.2,22.0] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Ta4,Ob4))* -> Feasible(Tm2,TravelTo(U)).
+	Given clause: 443[0:MRR:441.0,60.0] ||  -> Feasible(Tm2,TravelTo(Place(Ta4,Agent)))*.
+	Given clause: 442[0:Res:82.0,426.1] || Feasible(Tm1,TravelTo(Place(Ta4,Ox4))) -> Feasible(Tm2,TravelTo(Place(Ta4,Ox4)))*.
+	Given clause: 168[0:MRR:136.0,136.1,136.2,136.3,138.0,138.0,137.0,137.0] || Occurs(U,V,LoadUprightContainer(W,X)) -> Occurs(U,V,Sequence(TravelTo(skf17(X,W,V,U)),Sequence(PutInUC(W,X),TravelTo(skf16(X,U,W,V)))))*.
+	Given clause: 373[0:Res:361.0,248.1] || Feasible(skf19(TravelTo(Ra1),Ta4,U,V),W)* -> Feasible(Ta4,Sequence(TravelTo(Ra1),W)).
+	Given clause: 464[0:Res:400.1,373.0] || Feasible(Ta4,TravelTo(U)) -> Feasible(Ta4,Sequence(TravelTo(Ra1),TravelTo(U)))*.
+	Given clause: 415[0:SSi:408.2,408.1,408.0,12.0,11.0,12.0,11.0,9.0] ||  -> equal(U,Agent) equal(Place(skf19(TravelTo(Ra1),Ta4,V,W),U),Place(Ta4,U))**.
+	Given clause: 430[0:Res:111.1,429.0] || UContained(Tm1,U,V) -> equal(V,Agent) UprightContainer(Ta4,V,skf12(U,Tm1,V))*.
+	Given clause: 165[0:MRR:133.0,137.0] Region(U) AllStable(V) EmptyHanded(V) || CanGrasp(W,X) Occurs(V,W,TravelTo(U))*+ -> equal(X,Agent) equal(MovingGroup(W,X),MovingGroup(V,X))* BoxedIn(V,Agent,X)*.
+	Given clause: 352[0:Res:61.0,298.1] || Feasible(Tm2,U)*+ -> Occurs(Tm1,skf19(PutInUC(Ox4,Ob4),Tm1,V,W),PutInUC(Ox4,Ob4))*.
+	Given clause: 489[0:Res:443.0,352.0] ||  -> Occurs(Tm1,skf19(PutInUC(Ox4,Ob4),Tm1,U,V),PutInUC(Ox4,Ob4))*.
+	Given clause: 493[0:Res:489.0,249.1] || Feasible(skf19(PutInUC(Ox4,Ob4),Tm1,U,V),W)* -> Action(Sequence(PutInUC(Ox4,Ob4),W)).
+	Given clause: 421[0:SpR:414.1,213.1] || UContained(Ta4,U,Ob4) -> equal(U,Agent) P(Place(Ta4,U),skf12(U,Tm1,V))*.
+	Given clause: 167[0:MRR:135.6,18.0] SmallObject(U) AllStable(V) || CanGrasp(V,W) Reachable(V,X) SmallSet(Union(UContents(V,U),MovingGroup(V,W)),X)* UprightContainer(V,U,X) -> Feasible(V,PutInUC(W,U)).
+	Given clause: 508[0:MRR:507.1,507.2,15.0,20.0] || CanGrasp(Ta4,Ox4) -> Feasible(Ta4,PutInUC(Ox4,Ob4))*.
+	Given clause: 492[0:Res:489.0,248.1] || Feasible(skf19(PutInUC(Ox4,Ob4),Tm1,U,V),W)* -> Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),W)).
+	Given clause: 375[0:Res:361.0,161.0] || Occurs(U,Ta4,V) -> Occurs(U,skf19(TravelTo(Ra1),Ta4,W,X),Sequence(V,TravelTo(Ra1)))*.
+	Given clause: 389[0:Res:223.1,374.0] || Occurs(skf19(TravelTo(Ra1),Ta4,U,V),Ta4,W)* -> Action(Sequence(TravelTo(Ra1),Sequence(W,TravelTo(Ra1)))).
+	Given clause: 481[0:SSi:474.2,474.1,474.0,12.0,11.0,12.0,11.0,9.0] || CanGrasp(Tm1,U) -> equal(U,Agent) equal(MovingGroup(Tm1,U),MovingGroup(Ta4,U)) BoxedIn(Ta4,Agent,U)*.
+	Given clause: 526[0:MRR:525.0,525.1,19.0,21.0] ||  -> equal(MovingGroup(Tm1,Ox4),MovingGroup(Ta4,Ox4))**.
+	Given clause: 267[0:Res:219.1,248.1] || Occurs(U,Tm1,V) Feasible(Tm2,W) -> Feasible(U,Sequence(Sequence(V,PutInUC(Ox4,Ob4)),W))*.
+	Given clause: 278[0:Res:158.3,224.0] Action(U) Action(V) || Occurs(W,Ta4,Sequence(V,U))* -> Action(Sequence(U,TravelTo(Ra1))).
+	Given clause: 258[0:Res:93.1,252.1] EmptyHanded(skf18(U,V)) || Feasible(V,U) -> Action(Sequence(U,TravelTo(Place(skf18(U,V),Agent))))*.
+	Given clause: 257[0:Res:95.1,164.1] || UContained(Ta4,skf13(Ob4,Tm1,U),Ob4)*+ Element(skf13(Ob4,Tm1,U),U)* -> equal(U,UContents(Tm1,Ob4)).
+	Given clause: 260[0:Res:223.1,252.1] || Occurs(skf18(U,V),Ta4,W)*+ Feasible(V,U) -> Action(Sequence(U,Sequence(W,TravelTo(Ra1))))*.
+	Given clause: 424[0:SpL:414.1,153.0] || P(Place(Ta4,U),V)*+ UprightContainer(Tm1,W,V)* -> equal(U,Agent) UContained(Tm1,U,W)*.
+	Given clause: 467[0:SpR:415.1,110.1] || UprightContainer(skf19(TravelTo(Ra1),Ta4,U,V),W,X)* -> equal(W,Agent) UprightContainerShape(Place(Ta4,W),X).
+	Given clause: 471[0:SpL:415.1,152.0] || UprightContainerShape(Place(Ta4,U),V) -> equal(U,Agent) UprightContainer(skf19(TravelTo(Ra1),Ta4,W,X),U,V)*.
+	Given clause: 221[0:Res:112.1,161.0] || Graspable(U,V) Occurs(W,U,X) -> Occurs(W,skf10(V,U),Sequence(X,TravelTo(skf11(V,U))))*.
+	Given clause: 555[0:Res:221.2,64.0] || Graspable(U,V) Occurs(W,U,X)*+ -> Action(Sequence(X,TravelTo(skf11(V,U))))*.
+	Given clause: 558[0:Res:29.0,555.1] || Graspable(Tm1,U) -> Action(Sequence(TravelTo(Ra1),TravelTo(skf11(U,Tm1))))*.
+	Given clause: 560[0:Res:61.0,555.1] || Graspable(Tm2,U) -> Action(Sequence(PutInUC(Ox4,Ob4),TravelTo(skf11(U,Tm2))))*.
+	Given clause: 554[0:Res:221.2,88.0] || Graspable(U,V) Occurs(W,U,X) -> Feasible(W,Sequence(X,TravelTo(skf11(V,U))))*.
+	Given clause: 274[0:Res:158.3,88.0] Action(U) Action(V) || Occurs(W,X,Sequence(V,U)) -> Feasible(skf19(V,W,U,X),U)*.
+	Given clause: 557[0:MRR:556.0,556.1,206.1,64.1] || Graspable(U,V)* Occurs(W,U,X)*+ -> Occurs(W,skf19(X,W,Y,Z),X)*.
+	Given clause: 265[0:Res:112.1,248.1] || Graspable(U,V) Feasible(skf10(V,U),W) -> Feasible(U,Sequence(TravelTo(skf11(V,U)),W))*.
+	Given clause: 301[0:Res:295.1,113.1] || Occurs(U,Ta4,TravelTo(V)) CanGrasp(skf19(TravelTo(V),U,W,X),Y)* -> Graspable(U,Y).
+	Given clause: 311[0:Res:297.1,113.1] || Occurs(U,Tm1,TravelTo(V)) CanGrasp(skf19(TravelTo(V),U,W,X),Y)* -> Graspable(U,Y).
+	Given clause: 289[0:Res:151.1,159.2] Action(U) Action(V) || Feasible(W,Sequence(V,U))*+ -> Occurs(W,skf19(V,W,X,Y),V)*.
+	Given clause: 303[0:Res:295.1,248.1] || Occurs(U,Ta4,V) Feasible(skf19(V,U,W,X),Y)* -> Feasible(U,Sequence(V,Y)).
+	Given clause: 313[0:Res:297.1,248.1] || Occurs(U,Tm1,V) Feasible(skf19(V,U,W,X),Y)* -> Feasible(U,Sequence(V,Y)).
+	Given clause: 353[0:Res:151.1,298.1] || Feasible(U,V) Feasible(skf18(V,U),W)*+ -> Occurs(U,skf19(V,U,X,Y),V)*.
+	Given clause: 644[0:Res:93.1,353.1] EmptyHanded(skf18(U,V)) || Feasible(V,U) -> Occurs(V,skf19(U,V,W,X),U)*.
+	Given clause: 326[0:Res:160.3,94.0] ObjectSet(U) ||  -> equal(U,UContents(Tm1,Ob4)) Element(skf13(Ob4,Tm1,U),U)* UContained(Ta4,skf13(Ob4,Tm1,U),Ob4)*.
+	Given clause: 593[0:Res:151.1,557.1] || Feasible(U,V) Graspable(skf18(V,U),W)*+ -> Occurs(U,skf19(V,U,X,Y),V)*.
+	Given clause: 524[0:SSi:523.1,33.0,9.1] Action(U) || Occurs(Ta4,Ta4,Sequence(TravelTo(Ra1),U)) -> Action(Sequence(TravelTo(Ra1),Sequence(U,TravelTo(Ra1))))*.
+	Given clause: 390[0:Res:228.1,374.0] || Occurs(skf19(TravelTo(Ra1),Ta4,U,V),Tm1,W)*+ -> Action(Sequence(TravelTo(Ra1),Sequence(W,PutInUC(Ox4,Ob4))))*.
+	Given clause: 461[0:Res:223.1,373.0] || Occurs(skf19(TravelTo(Ra1),Ta4,U,V),Ta4,W)*+ -> Feasible(Ta4,Sequence(TravelTo(Ra1),Sequence(W,TravelTo(Ra1))))*.
+	Given clause: 343[0:Res:151.1,121.4] Region(U) AllStable(V) EmptyHanded(V) || Feasible(V,TravelTo(U)) Reachable(V,W) -> Reachable(skf18(TravelTo(U),V),W)*.
+	Given clause: 565[0:Res:218.1,555.1] || Occurs(U,Ta4,V)*+ Graspable(Tm1,W) -> Action(Sequence(Sequence(V,TravelTo(Ra1)),TravelTo(skf11(W,Tm1))))*.
+	Given clause: 279[0:Res:158.3,229.0] Action(U) Action(V) || Occurs(W,Tm1,Sequence(V,U))*+ -> Action(Sequence(U,PutInUC(Ox4,Ob4)))*.
+	Given clause: 494[0:Res:489.0,161.0] || Occurs(U,Tm1,V) -> Occurs(U,skf19(PutInUC(Ox4,Ob4),Tm1,W,X),Sequence(V,PutInUC(Ox4,Ob4)))*.
+	Given clause: 196[1:Res:151.1,170.3] Region(U) EmptyHanded(V) AllStable(V) || Feasible(V,TravelTo(U)) -> AllStable(skf18(TravelTo(U),V))*.
+	Given clause: 346[0:Res:112.1,121.4] Region(skf11(U,V)) AllStable(V) EmptyHanded(V) || Graspable(V,U) Reachable(V,W) -> Reachable(skf10(U,V),W)*.
+	Given clause: 261[0:Res:228.1,252.1] || Occurs(skf18(U,V),Tm1,W)*+ Feasible(V,U) -> Action(Sequence(U,Sequence(W,PutInUC(Ox4,Ob4))))*.
+	Given clause: 204[1:Res:112.1,170.3] Region(skf11(U,V)) EmptyHanded(V) AllStable(V) || Graspable(V,U) -> AllStable(skf10(U,V))*.
+	Given clause: 222[0:Res:218.1,161.0] || Occurs(U,Ta4,V)*+ Occurs(W,U,X)* -> Occurs(W,Tm1,Sequence(X,Sequence(V,TravelTo(Ra1))))*.
+	Given clause: 284[0:Res:93.1,264.1] EmptyHanded(skf18(U,V)) || Feasible(V,U) -> Feasible(V,Sequence(U,TravelTo(Place(skf18(U,V),Agent))))*.
+	Given clause: 381[0:Res:151.1,120.2] || Feasible(U,PutInUC(V,W)) Feasible(U,TravelTo(X)) FullyOutside(X,Place(U,W)) -> Feasible(skf18(PutInUC(V,W),U),TravelTo(X))*.
+	Given clause: 286[0:Res:223.1,264.1] || Occurs(skf18(U,V),Ta4,W) Feasible(V,U) -> Feasible(V,Sequence(U,Sequence(W,TravelTo(Ra1))))*.
+	Given clause: 259[0:Res:205.1,252.1] || Graspable(skf18(U,V),W) Feasible(V,U) -> Action(Sequence(U,TravelTo(skf11(W,skf18(U,V)))))*.
+	Given clause: 646[0:Res:223.1,353.1] || Occurs(skf18(U,V),Ta4,W)*+ Feasible(V,U) -> Occurs(V,skf19(U,V,X,Y),U)*.
+	Given clause: 647[0:Res:228.1,353.1] || Occurs(skf18(U,V),Tm1,W)*+ Feasible(V,U) -> Occurs(V,skf19(U,V,X,Y),U)*.
+	Given clause: 451[0:Res:168.1,64.0] || Occurs(U,V,LoadUprightContainer(W,X)) -> Action(Sequence(TravelTo(skf17(X,W,V,U)),Sequence(PutInUC(W,X),TravelTo(skf16(X,U,W,V)))))*.
+	Given clause: 660[0:SSi:659.1,33.0,9.1] Action(U) || Occurs(Ta4,Tm1,Sequence(TravelTo(Ra1),U)) -> Action(Sequence(TravelTo(Ra1),Sequence(U,PutInUC(Ox4,Ob4))))*.
+	Given clause: 663[0:SSi:662.1,33.0,9.1] Action(U) || Occurs(Ta4,Ta4,Sequence(TravelTo(Ra1),U)) -> Feasible(Ta4,Sequence(TravelTo(Ra1),Sequence(U,TravelTo(Ra1))))*.
+	Given clause: 462[0:Res:228.1,373.0] || Occurs(skf19(TravelTo(Ra1),Ta4,U,V),Tm1,W)*+ -> Feasible(Ta4,Sequence(TravelTo(Ra1),Sequence(W,PutInUC(Ox4,Ob4))))*.
+	Given clause: 500[0:Res:223.1,493.0] || Occurs(skf19(PutInUC(Ox4,Ob4),Tm1,U,V),Ta4,W)* -> Action(Sequence(PutInUC(Ox4,Ob4),Sequence(W,TravelTo(Ra1)))).
+	Given clause: 394[0:Res:151.1,125.4] Region(U) AllStable(V) EmptyHanded(V) || Feasible(V,TravelTo(U)) Feasible(V,TravelTo(W)) -> Feasible(skf18(TravelTo(U),V),TravelTo(W))*.
+	Given clause: 321[0:Res:218.1,255.0] || Occurs(U,Ta4,V)*+ Feasible(Tm2,W) -> Action(Sequence(Sequence(Sequence(V,TravelTo(Ra1)),PutInUC(Ox4,Ob4)),W))*.
+	Given clause: 566[0:Res:219.1,555.1] || Occurs(U,Tm1,V)*+ Graspable(Tm2,W) -> Action(Sequence(Sequence(V,PutInUC(Ox4,Ob4)),TravelTo(skf11(W,Tm2))))*.
+	Given clause: 726[0:Res:29.0,566.0] || Graspable(Tm2,U) -> Action(Sequence(Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4)),TravelTo(skf11(U,Tm2))))*.
+	Given clause: 439[0:Res:431.2,217.1] || UprightContainer(Ta4,U,skf12(V,Tm1,W))* UContained(Ta4,V,Ob4) -> equal(U,Agent) UContained(Tm1,V,U).
+	Given clause: 397[0:Res:112.1,125.4] Region(skf11(U,V)) AllStable(V) EmptyHanded(V) || Graspable(V,U) Feasible(V,TravelTo(W)) -> Feasible(skf10(U,V),TravelTo(W))*.
+	Given clause: 505[0:Res:421.2,153.0] || UContained(Ta4,U,Ob4) UprightContainer(Ta4,V,skf12(U,Tm1,W))* -> equal(U,Agent) UContained(Ta4,U,V).
+	Given clause: 731[0:Res:430.2,505.1] || UContained(Tm1,U,V)* UContained(Ta4,U,Ob4) -> equal(V,Agent) equal(U,Agent) UContained(Ta4,U,V).
+	Given clause: 227[0:Res:219.1,161.0] || Occurs(U,Tm1,V)*+ Occurs(W,U,X)* -> Occurs(W,Tm2,Sequence(X,Sequence(V,PutInUC(Ox4,Ob4))))*.
+	Given clause: 734[0:Res:29.0,227.0] || Occurs(U,Ta4,V) -> Occurs(U,Tm2,Sequence(V,Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4))))*.
+	Given clause: 450[0:Res:168.1,88.0] || Occurs(U,V,LoadUprightContainer(W,X)) -> Feasible(U,Sequence(TravelTo(skf17(X,W,V,U)),Sequence(PutInUC(W,X),TravelTo(skf16(X,U,W,V)))))*.
+	Given clause: 745[0:Res:734.1,64.0] || Occurs(U,Ta4,V)*+ -> Action(Sequence(V,Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4))))*.
+	Given clause: 744[0:Res:734.1,88.0] || Occurs(U,Ta4,V) -> Feasible(U,Sequence(V,Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4))))*.
+	Given clause: 742[0:Res:734.1,249.1] || Occurs(U,Ta4,V)*+ Feasible(Tm2,W) -> Action(Sequence(Sequence(V,Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4))),W))*.
+	Given clause: 287[0:Res:228.1,264.1] || Occurs(skf18(U,V),Tm1,W) Feasible(V,U) -> Feasible(V,Sequence(U,Sequence(W,PutInUC(Ox4,Ob4))))*.
+	Given clause: 409[0:Res:151.1,163.3] Region(U) EmptyHanded(V) AllStable(V) || Feasible(V,TravelTo(U)) -> equal(W,Agent) equal(Place(skf18(TravelTo(U),V),W),Place(V,W))**.
+	Given clause: 285[0:Res:205.1,264.1] || Graspable(skf18(U,V),W) Feasible(V,U) -> Feasible(V,Sequence(U,TravelTo(skf11(W,skf18(U,V)))))*.
+	Given clause: 305[0:Res:295.1,161.0] || Occurs(U,Ta4,V) Occurs(W,U,X) -> Occurs(W,skf19(V,U,Y,Z),Sequence(X,V))*.
+	Given clause: 817[0:Res:305.2,64.0] || Occurs(U,Ta4,V)*+ Occurs(W,U,X)* -> Action(Sequence(X,V))*.
+	Given clause: 816[0:Res:305.2,88.0] || Occurs(U,Ta4,V)*+ Occurs(W,U,X)* -> Feasible(W,Sequence(X,V))*.
+	Given clause: 412[0:Res:112.1,163.3] Region(skf11(U,V)) EmptyHanded(V) AllStable(V) || Graspable(V,U) -> equal(W,Agent) equal(Place(skf10(U,V),W),Place(V,W))**.
+	Given clause: 820[0:MRR:818.0,818.1,64.1,64.1] || Occurs(U,Ta4,V)*+ Occurs(W,U,X)* -> Occurs(W,skf19(X,W,Y,Z),X)*.
+	Given clause: 315[0:Res:297.1,161.0] || Occurs(U,Tm1,V) Occurs(W,U,X) -> Occurs(W,skf19(V,U,Y,Z),Sequence(X,V))*.
+	Given clause: 834[0:Res:315.2,64.0] || Occurs(U,Tm1,V)*+ Occurs(W,U,X)* -> Action(Sequence(X,V))*.
+	Given clause: 833[0:Res:315.2,88.0] || Occurs(U,Tm1,V)*+ Occurs(W,U,X)* -> Feasible(W,Sequence(X,V))*.
+	Given clause: 270[0:Res:158.3,113.1] Action(TravelTo(U)) Action(V) || Occurs(W,X,Sequence(V,TravelTo(U))) CanGrasp(X,Y) -> Graspable(skf19(V,W,TravelTo(U),X),Y)*.
+	Given clause: 839[0:Res:218.1,834.0] || Occurs(U,Ta4,V)*+ Occurs(W,U,X)* -> Action(Sequence(X,Sequence(V,TravelTo(Ra1))))*.
+	Given clause: 843[0:Res:218.1,833.0] || Occurs(U,Ta4,V)*+ Occurs(W,U,X)* -> Feasible(W,Sequence(X,Sequence(V,TravelTo(Ra1))))*.
+	Given clause: 837[0:MRR:835.0,835.1,64.1,64.1] || Occurs(U,Tm1,V)*+ Occurs(W,U,X)* -> Occurs(W,skf19(X,W,Y,Z),X)*.
+	Given clause: 712[0:SSi:711.1,33.0,9.1] Action(U) || Occurs(Ta4,Tm1,Sequence(TravelTo(Ra1),U)) -> Feasible(Ta4,Sequence(TravelTo(Ra1),Sequence(U,PutInUC(Ox4,Ob4))))*.
+	Given clause: 273[0:Res:158.3,161.0] Action(U) Action(V) || Occurs(W,X,Sequence(V,U)) Occurs(Y,skf19(V,W,U,X),Z)* -> Occurs(Y,X,Sequence(Z,U)).
+	Given clause: 715[0:SSi:714.1,142.0,13.0] Action(U) || Occurs(Tm1,Ta4,Sequence(PutInUC(Ox4,Ob4),U)) -> Action(Sequence(PutInUC(Ox4,Ob4),Sequence(U,TravelTo(Ra1))))*.
+	Given clause: 387[0:Res:93.1,374.0] EmptyHanded(skf19(TravelTo(Ra1),Ta4,U,V)) ||  -> Action(Sequence(TravelTo(Ra1),TravelTo(Place(skf19(TravelTo(Ra1),Ta4,U,V),Agent))))*.
+	Given clause: 501[0:Res:228.1,493.0] || Occurs(skf19(PutInUC(Ox4,Ob4),Tm1,U,V),Tm1,W)*+ -> Action(Sequence(PutInUC(Ox4,Ob4),Sequence(W,PutInUC(Ox4,Ob4))))*.
+	Given clause: 512[0:Res:223.1,492.0] || Occurs(skf19(PutInUC(Ox4,Ob4),Tm1,U,V),Ta4,W)*+ -> Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),Sequence(W,TravelTo(Ra1))))*.
+	Given clause: 327[0:Res:160.3,114.0] ObjectSet(U) ||  -> equal(U,UContents(V,W)) Element(skf13(W,V,U),U) P(Place(V,skf13(W,V,U)),skf12(skf13(W,V,U),V,X))*.
+	Given clause: 497[0:Res:489.0,120.2] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Tm1,Ob4)) -> Feasible(skf19(PutInUC(Ox4,Ob4),Tm1,V,W),TravelTo(U))*.
+	Given clause: 891[0:Res:497.2,493.0] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Tm1,Ob4)) -> Action(Sequence(PutInUC(Ox4,Ob4),TravelTo(U)))*.
+	Given clause: 890[0:Res:497.2,492.0] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Tm1,Ob4)) -> Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),TravelTo(U)))*.
+	Given clause: 741[0:Res:734.1,248.1] || Occurs(U,Ta4,V) Feasible(Tm2,W) -> Feasible(U,Sequence(Sequence(V,Sequence(TravelTo(Ra1),PutInUC(Ox4,Ob4))),W))*.
+	Given clause: 281[0:SSi:276.0,141.0] Action(U) || Occurs(V,W,Sequence(U,LoadUprightContainer(X,Y))) -> FullyOutside(skf16(Y,skf19(U,V,LoadUprightContainer(X,Y),W),Z,X1),Place(skf19(U,V,LoadUprightContainer(X,Y),W),Y))*.
+	Given clause: 517[0:Res:375.1,249.1] || Occurs(U,Ta4,V)* Feasible(skf19(TravelTo(Ra1),Ta4,W,X),Y)*+ -> Action(Sequence(Sequence(V,TravelTo(Ra1)),Y))*.
+	Given clause: 927[0:Res:400.1,517.1] || Feasible(Ta4,TravelTo(U))+ Occurs(V,Ta4,W)* -> Action(Sequence(Sequence(W,TravelTo(Ra1)),TravelTo(U)))*.
+	Given clause: 932[0:Res:186.0,927.0] || Occurs(U,Ta4,V)*+ -> Action(Sequence(Sequence(V,TravelTo(Ra1)),TravelTo(Ra1)))*.
+	Given clause: 935[0:SSi:933.0,12.0,11.0] || Occurs(U,Ta4,V)*+ -> Action(Sequence(Sequence(V,TravelTo(Ra1)),TravelTo(Place(Ta4,Agent))))*.
+	Given clause: 433[0:Res:151.1,166.1] || Feasible(U,Sequence(TravelTo(V),Sequence(PutInUC(W,X),TravelTo(Y)))) FullyOutside(Y,Place(U,X)) -> Occurs(U,skf18(Sequence(TravelTo(V),Sequence(PutInUC(W,X),TravelTo(Y))),U),LoadUprightContainer(W,X))*.
+	Given clause: 940[0:Res:433.2,169.0] || Feasible(Ta4,Sequence(TravelTo(U),Sequence(PutInUC(Ox4,Ob4),TravelTo(V))))* FullyOutside(V,Place(Ta4,Ob4)) -> .
+	Given clause: 950[0:Res:262.1,940.0] || Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),TravelTo(U)))* FullyOutside(U,Place(Ta4,Ob4)) -> .
+	Given clause: 956[0:Res:263.1,950.0] || Feasible(Tm2,TravelTo(U)) FullyOutside(U,Place(Ta4,Ob4))* -> .
+SPASS V 3.5 
+SPASS beiseite: Proof found.
+Problem: inference4_a.dfg 
+SPASS derived 733 clauses, backtracked 0 clauses, performed 1 splits and kept 639 clauses.
+SPASS allocated 53690 KBytes.
+SPASS spent	0:00:00.14 on the problem.
+		0:00:00.01 for the input.
+		0:00:00.02 for the FLOTTER CNF translation.
+		0:00:00.01 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.08 for the reduction.
+
+
+Here is a proof with depth 6, length 43 :
+9[0:Inp] ||  -> Region(Ra1)*.
+11[0:Inp] ||  -> AllStable(Ta4)*.
+12[0:Inp] ||  -> EmptyHanded(Ta4)*.
+18[0:Inp] ||  -> SafelyMovable(U,V)*.
+22[0:Inp] || equal(Agent,Ob4)** -> .
+29[0:Inp] ||  -> Occurs(Ta4,Tm1,TravelTo(Ra1))*.
+30[0:Inp] || Feasible(Ta4,LoadUprightContainer(Ox4,Ob4))* -> .
+39[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+40[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+60[0:Inp] ||  -> Feasible(Tm1,TravelTo(Place(Ta4,Agent)))*.
+61[0:Inp] ||  -> Occurs(Tm1,Tm2,PutInUC(Ox4,Ob4))*.
+64[0:Inp] || Occurs(U,V,W)* -> Action(W).
+83[0:Inp] ||  -> FullyOutside(Place(Ta4,Agent),Place(Ta4,Ob4))*.
+88[0:Inp] || Occurs(U,V,W)* -> Feasible(U,W).
+115[0:Inp] || Feasible(U,V) Time(skc23) -> Occurs(U,skf18(V,U),V)*.
+120[0:Inp] || Feasible(U,TravelTo(V)) FullyOutside(V,Place(U,W))* Occurs(U,X,PutInUC(Y,W))*+ -> Feasible(X,TravelTo(V))*.
+129[0:Inp] Time(U) Time(V) Action(W) Action(X) || Occurs(U,Y,W)* Occurs(Y,V,X)* -> Occurs(U,V,Sequence(W,X))*.
+131[0:Inp] AllStable(U) EmptyHanded(U) Region(V) Object(W) || Occurs(U,X,TravelTo(V))* -> equal(Place(X,W),Place(U,W))* equal(W,Agent).
+134[0:Inp] Time(U) Time(V) Object(W) Object(X) || Occurs(U,V,Sequence(TravelTo(Y),Sequence(PutInUC(W,X),TravelTo(Z))))* FullyOutside(Z,Place(U,X)) -> Occurs(U,V,LoadUprightContainer(W,X)).
+137[0:MRR:40.0,18.0] ||  -> Object(U)*.
+138[0:MRR:39.0,18.0] ||  -> Time(U)*.
+151[0:MRR:115.1,138.0] || Feasible(U,V) -> Occurs(U,skf18(V,U),V)*.
+161[0:MRR:129.0,129.1,129.2,129.3,138.0,138.0,64.1,64.1] || Occurs(U,V,W)*+ Occurs(X,U,Y)* -> Occurs(X,V,Sequence(Y,W))*.
+163[0:MRR:131.3,137.0] Region(U) EmptyHanded(V) AllStable(V) || Occurs(V,W,TravelTo(U))*+ -> equal(X,Agent) equal(Place(W,X),Place(V,X))*.
+166[0:MRR:134.0,134.1,134.2,134.3,138.0,138.0,137.0,137.0] || FullyOutside(U,Place(V,W)) Occurs(V,X,Sequence(TravelTo(Y),Sequence(PutInUC(Z,W),TravelTo(U))))* -> Occurs(V,X,LoadUprightContainer(Z,W)).
+169[0:Res:88.1,30.0] || Occurs(Ta4,U,LoadUprightContainer(Ox4,Ob4))* -> .
+220[0:Res:151.1,161.0] || Feasible(U,V) Occurs(W,U,X) -> Occurs(W,skf18(V,U),Sequence(X,V))*.
+248[0:Res:220.2,88.0] || Feasible(U,V)* Occurs(W,U,X)*+ -> Feasible(W,Sequence(X,V))*.
+262[0:Res:29.0,248.1] || Feasible(Tm1,U) -> Feasible(Ta4,Sequence(TravelTo(Ra1),U))*.
+263[0:Res:61.0,248.1] || Feasible(Tm2,U) -> Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),U))*.
+380[0:Res:61.0,120.2] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Tm1,Ob4))* -> Feasible(Tm2,TravelTo(U)).
+407[0:Res:29.0,163.3] Region(Ra1) EmptyHanded(Ta4) AllStable(Ta4) ||  -> equal(U,Agent) equal(Place(Tm1,U),Place(Ta4,U))**.
+414[0:SSi:407.2,407.1,407.0,12.0,11.0,12.0,11.0,9.0] ||  -> equal(U,Agent) equal(Place(Tm1,U),Place(Ta4,U))**.
+425[0:SpL:414.1,380.1] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Ta4,Ob4))* -> equal(Agent,Ob4) Feasible(Tm2,TravelTo(U)).
+426[0:MRR:425.2,22.0] || Feasible(Tm1,TravelTo(U)) FullyOutside(U,Place(Ta4,Ob4))* -> Feasible(Tm2,TravelTo(U)).
+433[0:Res:151.1,166.1] || Feasible(U,Sequence(TravelTo(V),Sequence(PutInUC(W,X),TravelTo(Y)))) FullyOutside(Y,Place(U,X)) -> Occurs(U,skf18(Sequence(TravelTo(V),Sequence(PutInUC(W,X),TravelTo(Y))),U),LoadUprightContainer(W,X))*.
+441[0:Res:83.0,426.1] || Feasible(Tm1,TravelTo(Place(Ta4,Agent))) -> Feasible(Tm2,TravelTo(Place(Ta4,Agent)))*.
+443[0:MRR:441.0,60.0] ||  -> Feasible(Tm2,TravelTo(Place(Ta4,Agent)))*.
+940[0:Res:433.2,169.0] || Feasible(Ta4,Sequence(TravelTo(U),Sequence(PutInUC(Ox4,Ob4),TravelTo(V))))* FullyOutside(V,Place(Ta4,Ob4)) -> .
+950[0:Res:262.1,940.0] || Feasible(Tm1,Sequence(PutInUC(Ox4,Ob4),TravelTo(U)))* FullyOutside(U,Place(Ta4,Ob4)) -> .
+956[0:Res:263.1,950.0] || Feasible(Tm2,TravelTo(U)) FullyOutside(U,Place(Ta4,Ob4))* -> .
+963[0:Res:83.0,956.1] || Feasible(Tm2,TravelTo(Place(Ta4,Agent)))* -> .
+965[0:MRR:963.0,443.0] ||  -> .
+Formulae used in the proof : axiom47 C4A4 C4A5 ASA3 C4A8 4dot2 conjecture0 axiom24 4dot20 4dot18 axiom19 C4A9 TAD1 ALA2 TAD2 Lem4A ALD2
+
+--------------------------SPASS-STOP------------------------------

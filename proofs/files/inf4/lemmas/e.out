@@ -1,0 +1,441 @@
+
+--------------------------SPASS-START-----------------------------
+Input Problem:
+1[0:Inp] ||  -> NoObstacles(skc3,skc5)*.
+2[0:Inp] ||  -> NoObstacles(skc3,skc4)*.
+3[0:Inp] ||  -> Object(skf1(U,V))*.
+4[0:Inp] || SmallObject(U) -> Object(U)*.
+5[0:Inp] || AllStable(U) -> Time(U)*.
+6[0:Inp] || EmptyHanded(U) -> Time(U)*.
+7[0:Inp] || NoObstacles(skc3,RUnion(skc5,skc4))* -> .
+8[0:Inp] || Feasible(U,V)* -> Time(U).
+9[0:Inp] || Feasible(U,V)* -> Action(V).
+10[0:Inp] || Element(U,V)* -> Object(U).
+11[0:Inp] || Element(U,V)* -> ObjectSet(V).
+12[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+13[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+14[0:Inp] || FullyOutside(U,V)* -> Region(U).
+15[0:Inp] || FullyOutside(U,V)* -> Region(V).
+16[0:Inp] || Reachable(U,V)* -> Time(U).
+17[0:Inp] || Reachable(U,V)* -> Region(V).
+18[0:Inp] || SkP0(U,V)* -> Region(V).
+19[0:Inp] || SkP0(U,V)* -> Region(U).
+20[0:Inp] || SkP1(U,V)* -> Region(V).
+21[0:Inp] || SkP1(U,V)* -> Region(U).
+22[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+23[0:Inp] || SmallSet(U,V)* -> Region(V).
+24[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+25[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+26[0:Inp] || SkP2(U,V)* -> Time(V).
+27[0:Inp] || SkP2(U,V)* -> Object(U).
+28[0:Inp] || Graspable(U,V)* -> Time(U).
+29[0:Inp] || Graspable(U,V)* -> Object(V).
+30[0:Inp] || NoObstacles(U,V)* -> Time(U).
+31[0:Inp] || NoObstacles(U,V)* -> Region(V).
+32[0:Inp] || NoObstacles(U,V)* -> Time(U).
+33[0:Inp] || Occurs(U,V,W)* -> Time(U).
+34[0:Inp] || Occurs(U,V,W)* -> Time(V).
+35[0:Inp] || Occurs(U,V,W)* -> Action(W).
+36[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+37[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+38[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+39[0:Inp] || UContained(U,V,W)* -> Time(U).
+40[0:Inp] || UContained(U,V,W)* -> Object(V).
+41[0:Inp] || UContained(U,V,W)* -> Object(W).
+42[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+43[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+44[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+45[0:Inp] || P(U,V) -> SkP0(V,U)*.
+46[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+47[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+48[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+49[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+50[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+51[0:Inp] || Released(U,V,W)* -> Time(U).
+52[0:Inp] || Released(U,V,W)* -> Time(V).
+53[0:Inp] || Released(U,V,W)* -> Object(W).
+54[0:Inp] || Trajectory(U,V,W)* -> Time(U).
+55[0:Inp] || Trajectory(U,V,W)* -> Time(V).
+56[0:Inp] || Trajectory(U,V,W)* -> Time(W).
+57[0:Inp] || StaysIn(U,V,W,X)* -> Time(U).
+58[0:Inp] || StaysIn(U,V,W,X)* -> Time(V).
+59[0:Inp] || StaysIn(U,V,W,X)* -> Object(W).
+60[0:Inp] || StaysIn(U,V,W,X)* -> Region(X).
+61[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+62[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+63[0:Inp] || Lt(U,V)* Lt(V,W)* -> Lt(U,W)*.
+64[0:Inp] || Leq(U,V) Leq(W,U) -> Leq3(W,U,V)*.
+65[0:Inp] || equal(skf1(U,V),Agent)** Time(V) -> NoObstacles(V,U).
+66[0:Inp] || Lt(U,V) Time(U) Time(V) -> Leq(U,V)*.
+67[0:Inp] || equal(U,V) Time(U) Time(V) -> Leq(U,V)*.
+68[0:Inp] || DR(U,V) DR(U,W) -> DR(U,RUnion(V,W))*.
+69[0:Inp] || DR(Place(U,skf1(V,U)),V)* Time(U) -> NoObstacles(U,V).
+70[0:Inp] || Object(U) NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+71[0:Inp] || Leq(U,V)* Time(U) Time(V) -> Lt(U,V) equal(U,V).
+ This is a first-order Non-Horn problem containing equality.
+ This is a problem that contains sort information.
+ The conjecture is ground.
+ Axiom clauses: 68 Conjecture clauses: 3
+ Inferences: IEmS=1 ISoR=1 IEqR=1 IEqF=1 ISpR=1 ISpL=1 IORe=1 IOFc=1 
+ Reductions: RFRew=1 RBRew=1 RFMRR=1 RBMRR=1 RObv=1 RUnC=1 RTaut=1 RSSi=1 RFSub=1 RBSub=1 RAED=1 RCon=1 
+ Extras    : Input Saturation, Dynamic Selection, Full Splitting, Full Reduction,  Ratio: 5, FuncWeight: 1, VarWeight: 1
+ Precedence: skf1 > skf0 > MovingGroup > Contents > UContents > RUnion > Union > Place > TravelTo > Leq3 > Leq > Lt > Region > SkP0 > DR > NoObstacles > Time > Object > UprightContainer > SkP1 > FullyOutside > ObjectSet > SmallSet > AllStable > EmptyHanded > Graspable > Reachable > SafelyMovable > SmallObject > BoxedIn > NoPartialContents > Action > Occurs > SkP2 > CanGrasp > UprightContainerShape > UContained > P > Element > Trajectory > StaysIn > Released > Grasp > Feasible > skc5 > skc4 > skc3 > skc2 > skc1 > skc0 > Rb > Ra > T > Ra1 > Tm1 > Agent > Ox4 > Rc4 > Ob4 > Ta4
+ Ordering  : KBO
+Processed Problem:
+
+Worked Off Clauses:
+
+Usable Clauses:
+72[0:Res:2.0,31.0] ||  -> Region(skc4)*.
+75[0:Res:1.0,31.0] ||  -> Region(skc5)*.
+73[0:Res:2.0,32.0] ||  -> Time(skc3)*.
+2[0:Inp] ||  -> NoObstacles(skc3,skc4)*.
+1[0:Inp] ||  -> NoObstacles(skc3,skc5)*.
+3[0:Inp] ||  -> Object(skf1(U,V))*.
+4[0:Inp] SmallObject(U) ||  -> Object(U)*.
+6[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+5[0:Inp] AllStable(U) ||  -> Time(U)*.
+7[0:Inp] || NoObstacles(skc3,RUnion(skc5,skc4))* -> .
+22[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+11[0:Inp] || Element(U,V)* -> ObjectSet(V).
+9[0:Inp] || Feasible(U,V)* -> Action(V).
+23[0:Inp] || SmallSet(U,V)* -> Region(V).
+17[0:Inp] || Reachable(U,V)* -> Region(V).
+15[0:Inp] || FullyOutside(U,V)* -> Region(V).
+14[0:Inp] || FullyOutside(U,V)* -> Region(U).
+21[0:Inp] || SkP1(U,V)* -> Region(U).
+20[0:Inp] || SkP1(U,V)* -> Region(V).
+19[0:Inp] || SkP0(U,V)* -> Region(U).
+18[0:Inp] || SkP0(U,V)* -> Region(V).
+31[0:Inp] || NoObstacles(U,V)* -> Region(V).
+29[0:Inp] || Graspable(U,V)* -> Object(V).
+25[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+13[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+10[0:Inp] || Element(U,V)* -> Object(U).
+27[0:Inp] || SkP2(U,V)* -> Object(U).
+28[0:Inp] || Graspable(U,V)* -> Time(U).
+24[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+16[0:Inp] || Reachable(U,V)* -> Time(U).
+12[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+8[0:Inp] || Feasible(U,V)* -> Time(U).
+26[0:Inp] || SkP2(U,V)* -> Time(V).
+32[0:Inp] || NoObstacles(U,V)* -> Time(U).
+50[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+49[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+48[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+45[0:Inp] || P(U,V) -> SkP0(V,U)*.
+47[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+46[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+35[0:Inp] || Occurs(U,V,W)* -> Action(W).
+38[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+53[0:Inp] || Released(U,V,W)* -> Object(W).
+44[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+43[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+41[0:Inp] || UContained(U,V,W)* -> Object(W).
+40[0:Inp] || UContained(U,V,W)* -> Object(V).
+37[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+56[0:Inp] || Trajectory(U,V,W)* -> Time(W).
+55[0:Inp] || Trajectory(U,V,W)* -> Time(V).
+54[0:Inp] || Trajectory(U,V,W)* -> Time(U).
+52[0:Inp] || Released(U,V,W)* -> Time(V).
+51[0:Inp] || Released(U,V,W)* -> Time(U).
+42[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+39[0:Inp] || UContained(U,V,W)* -> Time(U).
+36[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+34[0:Inp] || Occurs(U,V,W)* -> Time(V).
+33[0:Inp] || Occurs(U,V,W)* -> Time(U).
+62[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+61[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+60[0:Inp] || StaysIn(U,V,W,X)* -> Region(X).
+59[0:Inp] || StaysIn(U,V,W,X)* -> Object(W).
+58[0:Inp] || StaysIn(U,V,W,X)* -> Time(V).
+57[0:Inp] || StaysIn(U,V,W,X)* -> Time(U).
+63[0:Inp] || Lt(U,V)* Lt(W,U)* -> Lt(W,V)*.
+74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+64[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+66[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+67[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+68[0:Inp] || DR(U,V) DR(U,W) -> DR(U,RUnion(W,V))*.
+69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+71[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+	Given clause: 72[0:Res:2.0,31.0] ||  -> Region(skc4)*.
+	Given clause: 75[0:Res:1.0,31.0] ||  -> Region(skc5)*.
+	Given clause: 73[0:Res:2.0,32.0] ||  -> Time(skc3)*.
+	Given clause: 2[0:Inp] ||  -> NoObstacles(skc3,skc4)*.
+	Given clause: 1[0:Inp] ||  -> NoObstacles(skc3,skc5)*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 4[0:Inp] SmallObject(U) ||  -> Object(U)*.
+	Given clause: 6[0:Inp] EmptyHanded(U) ||  -> Time(U)*.
+	Given clause: 5[0:Inp] AllStable(U) ||  -> Time(U)*.
+	Given clause: 7[0:Inp] || NoObstacles(skc3,RUnion(skc5,skc4))* -> .
+	Given clause: 22[0:Inp] || SmallSet(U,V)* -> ObjectSet(U).
+	Given clause: 11[0:Inp] || Element(U,V)* -> ObjectSet(V).
+	Given clause: 9[0:Inp] || Feasible(U,V)* -> Action(V).
+	Given clause: 23[0:Inp] || SmallSet(U,V)* -> Region(V).
+	Given clause: 17[0:Inp] || Reachable(U,V)* -> Region(V).
+	Given clause: 15[0:Inp] || FullyOutside(U,V)* -> Region(V).
+	Given clause: 14[0:Inp] || FullyOutside(U,V)* -> Region(U).
+	Given clause: 21[0:Inp] || SkP1(U,V)* -> Region(U).
+	Given clause: 20[0:Inp] || SkP1(U,V)* -> Region(V).
+	Given clause: 19[0:Inp] || SkP0(U,V)* -> Region(U).
+	Given clause: 18[0:Inp] || SkP0(U,V)* -> Region(V).
+	Given clause: 31[0:Inp] || NoObstacles(U,V)* -> Region(V).
+	Given clause: 29[0:Inp] || Graspable(U,V)* -> Object(V).
+	Given clause: 25[0:Inp] || NoPartialContents(U,V)* -> Object(V).
+	Given clause: 13[0:Inp] || SafelyMovable(U,V)* -> Object(V).
+	Given clause: 10[0:Inp] || Element(U,V)* -> Object(U).
+	Given clause: 27[0:Inp] || SkP2(U,V)* -> Object(U).
+	Given clause: 28[0:Inp] || Graspable(U,V)* -> Time(U).
+	Given clause: 24[0:Inp] || NoPartialContents(U,V)* -> Time(U).
+	Given clause: 16[0:Inp] || Reachable(U,V)* -> Time(U).
+	Given clause: 12[0:Inp] || SafelyMovable(U,V)* -> Time(U).
+	Given clause: 8[0:Inp] || Feasible(U,V)* -> Time(U).
+	Given clause: 26[0:Inp] || SkP2(U,V)* -> Time(V).
+	Given clause: 32[0:Inp] || NoObstacles(U,V)* -> Time(U).
+	Given clause: 50[0:Inp] || Grasp(U,V) -> SkP2(V,U)*.
+	Given clause: 84[0:Res:50.1,26.0] || Grasp(U,V)* -> Time(U).
+	Given clause: 85[0:Res:50.1,27.0] || Grasp(U,V)* -> Object(V).
+	Given clause: 49[0:Inp] || CanGrasp(U,V) -> SkP2(V,U)*.
+	Given clause: 86[0:Res:49.1,26.0] || CanGrasp(U,V)* -> Time(U).
+	Given clause: 48[0:Inp] || UprightContainerShape(U,V) -> SkP1(V,U)*.
+	Given clause: 87[0:Res:49.1,27.0] || CanGrasp(U,V)* -> Object(V).
+	Given clause: 88[0:Res:48.1,20.0] || UprightContainerShape(U,V)* -> Region(U).
+	Given clause: 89[0:Res:48.1,21.0] || UprightContainerShape(U,V)* -> Region(V).
+	Given clause: 45[0:Inp] || P(U,V) -> SkP0(V,U)*.
+	Given clause: 47[0:Inp] || FullyOutside(U,V) -> SkP1(V,U)*.
+	Given clause: 90[0:Res:45.1,18.0] || P(U,V)* -> Region(U).
+	Given clause: 91[0:Res:45.1,19.0] || P(U,V)* -> Region(V).
+	Given clause: 46[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+	Given clause: 94[0:Res:46.1,18.0] || DR(U,V)* -> Region(U).
+	Given clause: 35[0:Inp] || Occurs(U,V,W)* -> Action(W).
+	Given clause: 95[0:Res:46.1,19.0] || DR(U,V)* -> Region(V).
+	Given clause: 38[0:Inp] || UprightContainer(U,V,W)* -> Region(W).
+	Given clause: 53[0:Inp] || Released(U,V,W)* -> Object(W).
+	Given clause: 44[0:Inp] || BoxedIn(U,V,W)* -> Object(W).
+	Given clause: 43[0:Inp] || BoxedIn(U,V,W)* -> Object(V).
+	Given clause: 41[0:Inp] || UContained(U,V,W)* -> Object(W).
+	Given clause: 40[0:Inp] || UContained(U,V,W)* -> Object(V).
+	Given clause: 37[0:Inp] || UprightContainer(U,V,W)* -> Object(V).
+	Given clause: 56[0:Inp] || Trajectory(U,V,W)* -> Time(W).
+	Given clause: 55[0:Inp] || Trajectory(U,V,W)* -> Time(V).
+	Given clause: 54[0:Inp] || Trajectory(U,V,W)* -> Time(U).
+	Given clause: 52[0:Inp] || Released(U,V,W)* -> Time(V).
+	Given clause: 51[0:Inp] || Released(U,V,W)* -> Time(U).
+	Given clause: 42[0:Inp] || BoxedIn(U,V,W)* -> Time(U).
+	Given clause: 39[0:Inp] || UContained(U,V,W)* -> Time(U).
+	Given clause: 36[0:Inp] || UprightContainer(U,V,W)* -> Time(U).
+	Given clause: 34[0:Inp] || Occurs(U,V,W)* -> Time(V).
+	Given clause: 33[0:Inp] || Occurs(U,V,W)* -> Time(U).
+	Given clause: 62[0:Inp] || Leq3(U,V,W)* -> Leq(V,W).
+	Given clause: 61[0:Inp] || Leq3(U,V,W)* -> Leq(U,V).
+	Given clause: 60[0:Inp] || StaysIn(U,V,W,X)* -> Region(X).
+	Given clause: 59[0:Inp] || StaysIn(U,V,W,X)* -> Object(W).
+	Given clause: 58[0:Inp] || StaysIn(U,V,W,X)* -> Time(V).
+	Given clause: 57[0:Inp] || StaysIn(U,V,W,X)* -> Time(U).
+	Given clause: 63[0:Inp] || Lt(U,V)*+ Lt(W,U)* -> Lt(W,V)*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 64[0:Inp] || Leq(U,V) Leq(V,W) -> Leq3(U,V,W)*.
+	Given clause: 66[0:Inp] Time(U) Time(V) || Lt(V,U) -> Leq(V,U)*.
+	Given clause: 67[0:Inp] Time(U) Time(V) || equal(V,U) -> Leq(V,U)*.
+	Given clause: 68[0:Inp] || DR(U,V) DR(U,W) -> DR(U,RUnion(W,V))*.
+	Given clause: 102[0:Res:68.2,95.0] || DR(U,V)*+ DR(U,W)* -> Region(RUnion(W,V))*.
+	Given clause: 69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+	Given clause: 70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 113[0:Res:70.3,94.0] Object(U) || NoObstacles(V,W)*+ -> equal(U,Agent) Region(Place(V,U))*.
+	Given clause: 106[0:Res:74.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc4)).
+	Given clause: 121[0:Obv:118.2] Object(U) ||  -> equal(U,Agent)* Region(RUnion(skc4,skc4))*.
+	Given clause: 124[1:Spt:121.0,121.1] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 129[1:Rew:126.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 126[1:EmS:124.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 125[1:EmS:124.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 131[1:Obv:127.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 138[1:Spt:137.0,121.2] ||  -> Region(RUnion(skc4,skc4))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 122[0:Obv:119.2] Object(U) ||  -> equal(U,Agent)* Region(RUnion(skc5,skc4))*.
+	Given clause: 139[2:Spt:122.0,122.1] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 143[2:Rew:140.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 140[2:EmS:139.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 141[2:EmS:139.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 146[2:Obv:142.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 153[2:Spt:152.0,122.2] ||  -> Region(RUnion(skc5,skc4))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 123[0:Obv:120.3] Object(U) || NoObstacles(skc3,V)+ -> equal(U,Agent)* Region(RUnion(V,skc4))*.
+	Given clause: 160[3:Spt:123.0,123.2] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 164[3:Rew:161.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 161[3:EmS:160.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 162[3:EmS:160.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 167[3:Obv:163.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 174[3:Spt:173.0,123.1,123.3] || NoObstacles(skc3,U) -> Region(RUnion(U,skc4))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 113[0:Res:70.3,94.0] Object(U) || NoObstacles(V,W)*+ -> equal(U,Agent) Region(Place(V,U))*.
+	Given clause: 69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+	Given clause: 70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 106[0:Res:74.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc4)).
+	Given clause: 71[0:Inp] Time(U) Time(V) || Leq(V,U)* -> equal(V,U) Lt(V,U).
+	Given clause: 107[0:Res:77.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc5)).
+	Given clause: 203[0:Obv:200.2] Object(U) ||  -> equal(U,Agent)* Region(RUnion(skc4,skc5))*.
+	Given clause: 206[4:Spt:203.0,203.1] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 211[4:Rew:207.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 207[4:EmS:206.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 213[4:Obv:209.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 220[4:Spt:219.0,203.2] ||  -> Region(RUnion(skc4,skc5))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 204[0:Obv:201.2] Object(U) ||  -> equal(U,Agent)* Region(RUnion(skc5,skc5))*.
+	Given clause: 221[5:Spt:204.0,204.1] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 224[5:Rew:222.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 222[5:EmS:221.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 228[5:Obv:226.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 235[5:Spt:234.0,204.2] ||  -> Region(RUnion(skc5,skc5))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 205[0:Obv:202.3] Object(U) || NoObstacles(skc3,V)+ -> equal(U,Agent)* Region(RUnion(V,skc5))*.
+	Given clause: 242[6:Spt:205.0,205.2] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 246[6:Rew:243.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 243[6:EmS:242.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 244[6:EmS:242.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 249[6:Obv:245.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 256[6:Spt:255.0,205.1,205.3] || NoObstacles(skc3,U) -> Region(RUnion(U,skc5))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 113[0:Res:70.3,94.0] Object(U) || NoObstacles(V,W)*+ -> equal(U,Agent) Region(Place(V,U))*.
+	Given clause: 69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+	Given clause: 70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 106[0:Res:74.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc4)).
+	Given clause: 108[0:Res:68.2,69.1] Time(U) || DR(Place(U,skf1(RUnion(V,W),U)),W)*+ DR(Place(U,skf1(RUnion(V,W),U)),V)* -> NoObstacles(U,RUnion(V,W)).
+	Given clause: 107[0:Res:77.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc5)).
+	Given clause: 105[0:Res:68.2,102.0] || DR(U,V)*+ DR(U,W)* DR(U,X)* -> Region(RUnion(X,RUnion(W,V)))*.
+	Given clause: 111[0:Res:70.3,102.0] Object(U) || NoObstacles(V,W)* DR(Place(V,U),X)*+ -> equal(U,Agent) Region(RUnion(X,W))*.
+	Given clause: 302[0:Obv:300.3] Object(U) || NoObstacles(skc3,V)+ -> equal(U,Agent)* Region(RUnion(skc5,V))*.
+	Given clause: 305[7:Spt:302.0,302.2] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 311[7:Rew:306.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 306[7:EmS:305.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 307[7:EmS:305.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 313[7:Obv:309.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 320[7:Spt:319.0,302.1,302.3] || NoObstacles(skc3,U) -> Region(RUnion(skc5,U))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 303[0:Obv:299.3] Object(U) || NoObstacles(skc3,V)+ -> equal(U,Agent)* Region(RUnion(skc4,V))*.
+	Given clause: 329[8:Spt:303.0,303.2] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 333[8:Rew:330.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 330[8:EmS:329.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 331[8:EmS:329.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 337[8:Obv:332.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 344[8:Spt:343.0,303.1,303.3] || NoObstacles(skc3,U) -> Region(RUnion(skc4,U))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 113[0:Res:70.3,94.0] Object(U) || NoObstacles(V,W)*+ -> equal(U,Agent) Region(Place(V,U))*.
+	Given clause: 69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+	Given clause: 70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 106[0:Res:74.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc4)).
+	Given clause: 107[0:Res:77.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc5)).
+	Given clause: 304[0:Obv:301.4] Object(U) || NoObstacles(V,W)*+ NoObstacles(V,X)* -> equal(U,Agent)* Region(RUnion(W,X))*.
+	Given clause: 377[9:Spt:304.0,304.3] Object(U) ||  -> equal(U,Agent)*.
+	Given clause: 382[9:Rew:378.0,3.0] ||  -> Object(Agent)*.
+	Given clause: 378[9:EmS:377.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+	Given clause: 379[9:EmS:377.0,4.1] SmallObject(U) ||  -> equal(U,Agent)*.
+	Given clause: 385[9:Obv:380.1] Time(U) ||  -> NoObstacles(U,V)*.
+	Given clause: 392[9:Spt:391.0,304.1,304.2,304.4] || NoObstacles(U,V)*+ NoObstacles(U,W)* -> Region(RUnion(V,W))*.
+	Given clause: 3[0:Inp] ||  -> Object(skf1(U,V))*.
+	Given clause: 65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+	Given clause: 97[0:Res:74.2,94.0] Object(U) ||  -> equal(U,Agent) Region(Place(skc3,U))*.
+	Given clause: 74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+	Given clause: 77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+	Given clause: 113[0:Res:70.3,94.0] Object(U) || NoObstacles(V,W)*+ -> equal(U,Agent) Region(Place(V,U))*.
+	Given clause: 69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+	Given clause: 70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+	Given clause: 106[0:Res:74.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc4)).
+	Given clause: 107[0:Res:77.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc5)).
+	Given clause: 111[0:Res:70.3,102.0] Object(U) || NoObstacles(V,W)* DR(Place(V,U),X)*+ -> equal(U,Agent) Region(RUnion(X,W))*.
+	Given clause: 108[0:Res:68.2,69.1] Time(U) || DR(Place(U,skf1(RUnion(V,W),U)),W)*+ DR(Place(U,skf1(RUnion(V,W),U)),V)* -> NoObstacles(U,RUnion(V,W)).
+	Given clause: 284[0:SSi:280.1,280.0,73.0,3.0,73.0] || DR(Place(skc3,skf1(RUnion(U,skc4),skc3)),U)* -> equal(skf1(RUnion(U,skc4),skc3),Agent) NoObstacles(skc3,RUnion(U,skc4)).
+	Given clause: 444[2:MRR:443.1,7.0] ||  -> equal(skf1(RUnion(skc5,skc4),skc3),Agent)**.
+SPASS V 3.7 
+SPASS beiseite: Proof found.
+Problem: lemmas/e.dfg 
+SPASS derived 309 clauses, backtracked 165 clauses, performed 9 splits and kept 349 clauses.
+SPASS allocated 52509 KBytes.
+SPASS spent	0:00:00.08 on the problem.
+		0:00:00.02 for the input.
+		0:00:00.01 for the FLOTTER CNF translation.
+		0:00:00.00 for inferences.
+		0:00:00.00 for the backtracking.
+		0:00:00.02 for the reduction.
+
+
+Here is a proof with depth 6, length 46 :
+1[0:Inp] ||  -> NoObstacles(skc3,skc5)*.
+2[0:Inp] ||  -> NoObstacles(skc3,skc4)*.
+3[0:Inp] ||  -> Object(skf1(U,V))*.
+7[0:Inp] || NoObstacles(skc3,RUnion(skc5,skc4))* -> .
+19[0:Inp] || SkP0(U,V)* -> Region(U).
+32[0:Inp] || NoObstacles(U,V)* -> Time(U).
+46[0:Inp] || DR(U,V) -> SkP0(V,U)*.
+65[0:Inp] Time(U) || equal(skf1(V,U),Agent)** -> NoObstacles(U,V).
+68[0:Inp] || DR(U,V) DR(U,W) -> DR(U,RUnion(W,V))*.
+69[0:Inp] Time(U) || DR(Place(U,skf1(V,U)),V)* -> NoObstacles(U,V).
+70[0:Inp] Object(U) || NoObstacles(V,W) -> equal(U,Agent) DR(Place(V,U),W)*.
+73[0:Res:2.0,32.0] ||  -> Time(skc3)*.
+74[0:Res:2.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc4)*.
+77[0:Res:1.0,70.1] Object(U) ||  -> equal(U,Agent) DR(Place(skc3,U),skc5)*.
+95[0:Res:46.1,19.0] || DR(U,V)* -> Region(V).
+102[0:Res:68.2,95.0] || DR(U,V)*+ DR(U,W)* -> Region(RUnion(W,V))*.
+106[0:Res:74.2,102.0] Object(U) || DR(Place(skc3,U),V)* -> equal(U,Agent) Region(RUnion(V,skc4)).
+108[0:Res:68.2,69.1] Time(U) || DR(Place(U,skf1(RUnion(V,W),U)),W)*+ DR(Place(U,skf1(RUnion(V,W),U)),V)* -> NoObstacles(U,RUnion(V,W)).
+118[0:Res:74.2,106.1] Object(U) Object(U) ||  -> equal(U,Agent)* equal(U,Agent)* Region(RUnion(skc4,skc4))*.
+119[0:Res:77.2,106.1] Object(U) Object(U) ||  -> equal(U,Agent)* equal(U,Agent)* Region(RUnion(skc5,skc4))*.
+121[0:Obv:118.2] Object(U) ||  -> equal(U,Agent)* Region(RUnion(skc4,skc4))*.
+122[0:Obv:119.2] Object(U) ||  -> equal(U,Agent)* Region(RUnion(skc5,skc4))*.
+124[1:Spt:121.0,121.1] Object(U) ||  -> equal(U,Agent)*.
+126[1:EmS:124.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+127[1:Rew:126.0,65.1] Time(U) || equal(Agent,Agent) -> NoObstacles(U,V)*.
+131[1:Obv:127.1] Time(U) ||  -> NoObstacles(U,V)*.
+134[1:Res:131.1,7.0] Time(skc3) ||  -> .
+137[1:SSi:134.0,73.0] ||  -> .
+138[1:Spt:137.0,121.2] ||  -> Region(RUnion(skc4,skc4))*.
+139[2:Spt:122.0,122.1] Object(U) ||  -> equal(U,Agent)*.
+140[2:EmS:139.0,3.0] ||  -> equal(skf1(U,V),Agent)**.
+142[2:Rew:140.0,65.1] Time(U) || equal(Agent,Agent) -> NoObstacles(U,V)*.
+146[2:Obv:142.1] Time(U) ||  -> NoObstacles(U,V)*.
+149[2:Res:146.1,7.0] Time(skc3) ||  -> .
+152[2:SSi:149.0,73.0] ||  -> .
+153[2:Spt:152.0,122.2] ||  -> Region(RUnion(skc5,skc4))*.
+280[0:Res:74.2,108.1] Object(skf1(RUnion(U,skc4),skc3)) Time(skc3) || DR(Place(skc3,skf1(RUnion(U,skc4),skc3)),U)* -> equal(skf1(RUnion(U,skc4),skc3),Agent) NoObstacles(skc3,RUnion(U,skc4)).
+284[0:SSi:280.1,280.0,73.0,3.0,73.0] || DR(Place(skc3,skf1(RUnion(U,skc4),skc3)),U)* -> equal(skf1(RUnion(U,skc4),skc3),Agent) NoObstacles(skc3,RUnion(U,skc4)).
+440[0:Res:77.2,284.0] Object(skf1(RUnion(skc5,skc4),skc3)) ||  -> equal(skf1(RUnion(skc5,skc4),skc3),Agent)** equal(skf1(RUnion(skc5,skc4),skc3),Agent)** NoObstacles(skc3,RUnion(skc5,skc4)).
+442[0:Obv:440.1] Object(skf1(RUnion(skc5,skc4),skc3)) ||  -> equal(skf1(RUnion(skc5,skc4),skc3),Agent)** NoObstacles(skc3,RUnion(skc5,skc4)).
+443[2:SSi:442.0,3.0,153.0,73.0] ||  -> equal(skf1(RUnion(skc5,skc4),skc3),Agent)** NoObstacles(skc3,RUnion(skc5,skc4)).
+444[2:MRR:443.1,7.0] ||  -> equal(skf1(RUnion(skc5,skc4),skc3),Agent)**.
+451[2:SpL:444.0,65.1] Time(skc3) || equal(Agent,Agent) -> NoObstacles(skc3,RUnion(skc5,skc4))*.
+455[2:Obv:451.1] Time(skc3) ||  -> NoObstacles(skc3,RUnion(skc5,skc4))*.
+456[2:SSi:455.0,73.0] ||  -> NoObstacles(skc3,RUnion(skc5,skc4))*.
+457[2:MRR:456.0,7.0] ||  -> .
+Formulae used in the proof : conjecture0 MFD1 axiom10 LemSH
+
+--------------------------SPASS-STOP------------------------------

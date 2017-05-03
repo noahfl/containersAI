@@ -1,0 +1,172 @@
+Inference 5
+
+Let Ob5 and Ol5 be a box with lid at time Ta5, and let Os5 be some stuff 
+inside the box. Assume that the agent is outside the box at time Ta5. 
+If Os5 is somewhere else at time Tb5, and the box is fixed throughout 
+[Ta5,Tb5]  then the lid must have moved at some time in 
+between Ta5 and Tb5.
+
+C.5.A.1 BoxWithLidC(Ta5,Ob5,Ol5,Rc5).
+C.5.A.2 P(Place(Ta5,Os5),Rc5).
+C.5.A.3 not P(Place(Ta5,Agent),Rc5).
+C.5.A.4 AllStable(Ta5).
+C.5.A.5 Place(Ta5,Os5) != Place(Tb5,Os5)
+C.5.A.6 Constant(Ta5,Tb5,HPlace(Ob5))
+Infer: not Motionless(Ta5,Tb4,Ol5).
+
+Lemma 5.G forall(oa,ob,r) Object(oa) ^ Object(ob) ^ Time(t) =>
+                OSPlace(t,Pair(oa,ob), RUnion(Place(t,oa),Place(t,ob)))
+Assume: Time(T) ^ Object(Oa) ^ Object(Ob).
+5G.1 Su = Pair(Oa,Ob)                                     Naming, for brevity.
+5G.2 forall (o) Element(o,Su) <=> o = Oa V O = ob.           OSD4 +5G.1 
+5G.3 Su != Null.                                             OSD1 + 5G.2
+5G.4 exists(r) OSPlace(T,Su,r).                              OTA3 + 5G.3
+5G.5 OSPlace(T,Su,Ru)                                        5G.4, naming
+5G.6 [forall(o) Element(o,Su) => P(Place(T,o),Ru)] ^         OTD1 + 5G.5
+     [forall(ra) [forall(o) Element(o,Su) => P(Place(T,o),ra] => P(Ru,ra).
+5G.7 [forall(o) [o=Oa V o=Ob]  => P(Place(T,o),Ru)] ^        5G.6 + 5G.2
+     [forall(ra) [forall(o) [o=Oa V o=Ob] => P(Place(T,o),ra] => P(Ru,ra).
+5G.8 P(Place(T,Oa),Ru) ^ P(Place(T,Ob),Ru) ^                 5G.7.
+     [forall(ra) [P(Place(T,Oa),ra) ^ P(Place(T,Ob),ra)] => P(Ru,ra)].
+5G.9 Ru = RUnion(Place(T,Oa),Place(T,Ob)).                   SBD6 + 5G.8
+5G.10 OSPlace(T,Pair(Oa,Ob)                                 5G.5 + 5G.1 + 5G.9
+              RUnion(Place(T,Oa),Place(T,Ob)))
+
+
+Lemma 5.K BoxWithLidC(t,ob,ol,rc) =>
+          ClosedContainer(t,Pair(ob,ol),rc)
+
+Assume:
+5K.1 BoxWithLidC(T,Ob,Ol,Rc).
+
+Infer:
+5K.2 CombinedContainer(Place(T,Ol),Place(T,Ob),Rc)            RBD1 + 5K.1
+5K.3 Cavity(Rc,RUnion(Place(T,Ol),Place(T,Ob))).              SCD4 + SK.2
+5K.4 OSPlace(T,Pair(Ol,Ob),RUnion(Place(T,Ol),Place(T,Ob))    Lem5G
+5K.5 ClosedContainer(T,Pair(Ol,Ob),Rc)                 ORD1 + SK.3 + SK.4
+
+Lemma 5.L BoxWithLidC(t,ob,ol,rc) ^ Object(oa) ^ P(Place(t,oa),rc) =>
+          oa != ob ^ oa != ol
+Assume
+5L.1 BoxWithLidC(T,Ob,Ol,Rc)
+5L.2 P(Place(T,Oa),Rc)
+Infer
+5L.3 CombinedContainer(Place(T,Ob),Place(T,Ol),Rc)            RBD1 + 5L.1
+5L.4 DR(Place(T,Oa),Place(T,Ob))                              LemSN + 5L.3
+5L.5 DR(Place(T,Oa),Place(T,Ol))                              LemSN + 5L.3
+5L.6 Oa != Ol ^ Oa != Ob                                 LemSM + 5L.4 + 5L.5
+
+
+
+Proof: RBD1 + LemSN + LemSE + LemSQ + LemSM
+
+
+
+Inference 5
+
+C.5.A.1 BoxWithLidC(Ta5,Ob5,Ol5,Rc5).
+C.5.A.2 P(Place(Ta5,Os5),Rc5).
+C.5.A.3 not P(Place(Ta5,Agent),Rc5).
+C.5.A.4 AllStable(Ta5).
+C.5.A.5 Place(Ta5,Os5) != Place(Tb5,Os5)
+C.5.A.6 Motionless(Ta5,Tb5,Ob5)
+Infer: not Motionless(Ta5,Tb5,Ol5).
+
+Proof by contradiction.
+Assume 5.1 Motionless(Ta5,Tb5,Ol5)
+Infer:
+5.2  forall(tm) Leq3(Ta5,tm,Tb5) => Place(tm,Ol5) = Place(Ta5,Ol5). MOD2+5.1
+5.3 Lt(Ta5,Tb5).                                                   MOD2+C5A6
+5.4  forall(tc) Leq3(Ta5,tc,Tb5) => Place(tc,Ob5) = Place(Ta5,Ob5)  MOD2+C5A6      
+5.5  forall(tc) Leq3(Ta5,tc,Tb5) =>                              5.4 + 5.2
+         RUnion(Place(tc,Ob5),Place(tc,Ol5)) = 
+         RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)) 
+5.6  exists(h) Constant(Ta5,Tb5,h) ^                                   HIA3
+         Slice(Ta5,h) =  RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5)) 
+5.7  Constant(Ta5,Tb5,Hu)                                       5.6, naming
+5.8  Slice(Ta5,Hu) =  RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5))     5.6, naming
+5.9  exists(h) Constant(Ta5,Tb5,h) ^ Slice(Ta,h) = Rc5                 HIA3
+5.10 Constant(Ta5,Tb5,Hc)                                       5.9, naming
+5.11 Slice(Ta5,Hc) = Rc5                                        5.9, naming
+5.12 CombinedContainer(Place(Ta5,Ob5),Place(Ta5,Ol5),Rc5).      RBD1 + C5A1  
+5.13 intentionally omitted
+5.14 Cavity(Rc5,RUnion(Place(Ta5,Ob5),Place(Ta5,Ol5))).         SCD4 + 5.12
+5.15 PersistentCavity(Ta5,Tb5,Hc,Hu).        HCA4 + 5.7 + 5.8 + 5.10 + 5.14
+5.16 NoExitCavity(Ta5,Tb5,Hc,Hu).                               HCD1 + 5.15
+5.17 NoEntranceCavity(Ta5,Tb5,Hc,Hu).                           HCD1 + 5.15
+5.18 forall(t) Leq(Ta5,t,Tb5) => 
+        Slice(t,Hu) = RUnion(Place(t,Ob5),Place(t,Ol5)).   HID3+5.5+5.7+5.8
+Assume 5.19 Object(Oa)
+       5.20 Oa != Ol5 ^ Oa != Ob5
+       5.21 Leq3(Ta5,Tm,Tb5).                               
+       5.22 O(Slice(Tm,HPlace(Oa)),Slice(Tm,Hu)).   
+Infer  5.23 O(Place(Tm,Oa),Place(Tm,Ob5)) V O(Place(Tm,Oa),Place(Tm,Ol5))
+                                                   SBA4 + HIA2 + 5.18 + 5.22  
+       5.24 Contradiction                          OTA1 + SBD3 + 5.23 + 5.20 
+5.25 forall (o,t) Object(o) ^ o!=Ob5 ^ o!=Ol5 ^ Leq3(Ta5,t,Tb5) =>
+          not O(Slice(t,HPlace(o)),Slice(t,Hu)) 
+                              Discharge 5.26 against 5.20-5.23, rearrange.
+
+Assume 5.26 Object(Oa).
+       5.27 P(Place(Ta5,Oa), Rc5).
+       5.28 Lt(Ta5,Tx)
+       5.28A Leq(Tx,Tb5)
+       5.29 not P(Place(Tx,Oa), Rc5).
+Infer  5.30 Ob1 != Oa != Ol1                               Lem5L + 5.27 + C5A1
+       5.31 Continuous(Ta5,Tx,HPlace(Oa))                         HIA1
+       5.32 P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))         HIA2 + 5.27 + 5.11 
+       5.33 Slice(Tx,Hc)=Rc5.                              HID3 + 5.10 + 5.11
+       5.34 not P(Slice(Tx,HPlace(Oa)),Slice(Tx,Hc))      HIA2+5.28+5.29+5.33
+       5.34A NoExitCavity(Ta5,Tx,Hc,Hu)                   HCA6 + 5.16
+       5.35 exists (tm) Lt(Ta5,tm) ^ Lt(tm,Tx) ^    HCA2 + 5.31 + 5.32 + 5.34
+               O(Slice(tm,HPlace(Oa)),Slice(tm,Hu)).     5.34A + Lemma 1.A
+       5.36 Contradiction                           TIA2 + 5.35 + 5.25 + 5.30
+5.37 forall(o,tx) Object(o) ^ P(Place(Ta5,o),Rc5) ^ Leq3(Ta5,tx,Tb5) =>
+                      P(Place(tx,o),Rc5).    Discharge 5.36 against 5.26-5.29
+
+Assume 5.38 Object(Oa).
+       5.39 Ob5 != Oa != Ol5
+       5.40 not P(Place(Ta5,Oa), Rc5).
+       5.41 Lt(Ta5,Tx) ^ Leq(Tx,Tb5).
+       5.42 not DR(Place(Tx,Oa), Rc5).
+Infer  5.43 Continuous(Ta5,Tx,HPlace(Oa))                                 HIA1
+       5.44 not P(Slice(Ta5,HPlace(Oa)),Slice(Ta5,Hc))      HIA2 + 5.11 + 5.40
+       5.45 Slice(Tx,Hc)=Rc5.                               HID3 + 5.10 + 5.11
+       5.46 O(Place(Tx,Oa),Rc5)                                    SBD3 + 5.42
+       5.47 Cavity(Rc5,Slice(Tx,Hu) )                  HID3 + 5.14 + 5.7 + 5.8
+       5.48 DR(Place(Tx,Oa),Slice(Tx,Hu))                   HIA2 + SBD3 + 5.25
+       5.49 IntConn(Place(Tx,Oa)).                                 OTD3 + OTA4
+       5.50 P(Place(Tx,Oa),Rc5).              SCD1 + 5.47 + 5.49 + 5.46 + 5.48
+       5.51 exists (tm) Lt(Ta5,tm) ^ Lt(tm,Tx) ^  HCA3+HCA7+HIA2+5.17+5.43+ 
+               O(Slice(tm,HPlace(Oa)),Slice(tm,Hu)). 5.44+5.45+5.50+Lem1.A
+       5.52 Contradiction                           TIA2 +  5.51 + 5.25 + 5.39
+5.53 forall(o,tx) Object(o) ^ not P(Place(Ta5,o),Rc5) ^ Lt(Ta5,tx) ^ 
+                                                        Leq(tx,Tb5) =>
+                      DR(Place(tx,o),Rc5).    Discharge 5.52 against 5.38-5.42
+5.53a forall(o,tx) Object(o) ^ not P(Place(Ta5,o),Rc5) ^ 
+                                Lt(Ta5,tx) ^ Leq(tx,Tb5) =>
+                      not P(Place(tx,o),Rc5).                     5.53 + LemSD
+
+5.54 Su = Pair(Ob5,Ol5)                                                Naming
+5.55 Element(o,Su) <=> o=Ob5 V o=Ol5                              OSD4 + 5.54 
+5.56 not Element(Agent,Su).                         RBD1 + RBA1 + 5.55 + C5A1
+Assume: 5.57 Leq3(Ta5,Tx,Tb5)
+Infer:  5.58 BoxWithLidC(Tx,Ob1,Ol1,Rc)           RBA5+RBD1+5.2+5.4+C5A1+5.57
+        5.59 ClosedContainer(Tx,Su,Rc).                   Lem5K + 5.58 + 5.54
+        5.60 Isolates(Tx,Su,Contents(Tx,Rc)).       OIA3 + 5.59 + 5.53 + C5A3
+        5.61 Contents(Tx,Rc) = Contents(Ta5,Rc)     OSA1+OTD2+5.37+5.53a+5.57
+        5.62 Isolates(Tx,Su,Contents(Ta5,Rc)).                    5.60 + 5.61
+5.63 intentionally omitted
+5.64 forall(tx) Leq(Ta5,tx,Tb5) =>                Discharge 5.62 against 5.57
+                   Isolates(tx,Su,Contents(Ta5,Rc))
+5.65 CausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc))        MRD1+5.55+C5A6+5.1+5.64
+5.65A not Element(Agent,Contents(Ta5,Rc))              OIA1 + OID1 + 5.64 + 5.3
+5.65B forall(tx,ox) Leq(Ta5,tx,Tb5) ^                  MGA1 + 5.64
+                       Element(ox,Contents(Ta5,Rc)) =>
+                   not Grasp(tx,ox)
+5.66 StaticCausallyIsolated(Ta5,Tb5,Contents(Ta5,Rc)) MRD2+MSD1+C5A4+5.65+5.65A
+5.67 Element(Os5,Contents(Ta5,Rc))                                OSD2 + C5A2
+5.68 Motionless(Ta5,Tb5,Os5).                              MRA2 + 5.66 + 5.67
+5.69 Contradiction                                       MOD2 + 5.68 + C5A5
+
+QED Inference 5
